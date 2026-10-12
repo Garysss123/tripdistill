@@ -76,6 +76,13 @@ const franceFr02Lastmod = '2026-10-11';
 const franceDordogneLastmod = '2026-10-11';
 const franceToulouseOccitanieLastmod = '2026-10-11';
 const franceMarseilleLastmod = '2026-10-12';
+const franceLanguedocLastmod = '2026-10-12';
+const franceLanguedocEditedRoutes = [
+  '/france/languedoc-camargue/',
+  '/france/languedoc-camargue/montpellier-sete/',
+  '/france/languedoc-camargue/nimes-pont-du-gard/',
+  '/france/languedoc-camargue/arles-camargue/'
+];
 const franceMarseilleEditedRoutes = [
   '/france/marseille-calanques/',
   '/france/marseille-calanques/old-port-panier-mucem/',
@@ -826,6 +833,11 @@ for (const route of franceMarseilleEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Marseille/Calanques route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: franceMarseilleLastmod });
+}
+for (const route of franceLanguedocEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Languedoc-Camargue route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceLanguedocLastmod });
 }
 for (const route of franceProvenceEditedRoutes) {
   const record = records.get(route);

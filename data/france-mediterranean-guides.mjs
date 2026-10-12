@@ -8,15 +8,48 @@ export const franceMediterraneanClusters = [
     slug: 'languedoc-camargue',
     name: 'Montpellier, Nîmes & the Camargue',
     region: 'Occitanie and western Provence',
+    countryCardIntro: 'Montpellier, Nîmes and Arles sit on a strong rail corridor, but the Pont du Gard, Camargue wetlands and coast require distinct buses, bicycles, tours or cars. Roman monuments, living cities and protected lagoons should not be collapsed into one hot-weather checklist.',
     band: 'mediterranean-island',
     family: 'stone-lagoon-tram-sheet',
     label: 'Stone and lagoon sheet',
-    tagline: 'Separate the tram city, Roman corridor and wetland road system.',
-    hubIntro: 'Montpellier, Nîmes and Arles sit on a strong rail corridor, but the Pont du Gard, Camargue wetlands and coast require distinct buses, bicycles, tours or cars. Roman monuments, living cities and protected lagoons should not be collapsed into one hot-weather checklist.',
-    stay: 'Three or four nights support two city days and one landscape excursion. Montpellier offers urban transit and coast links; Nîmes centers the Roman corridor; Arles shortens access to the Camargue and Alpilles.',
-    transfer: 'TER trains join the main cities, while the Pont du Gard and wetland sites use seasonal buses, road approaches or tours. Know the exact station—Montpellier Saint-Roch versus Sud de France also matters for timed connections.',
-    season: 'Summer heat, mistral, mosquitoes, fire controls and festival calendars shape the region. Wetland water levels and bird presence vary naturally; advertised wildlife is never guaranteed.',
-    fallback: 'Use city museums, markets and shaded historic routes when heat or wind undermines open landscapes. If a wetland road or trail closes, remain in Arles or use an official visitor center rather than entering a restricted track.',
+    tagline: 'Choose a rail base first; treat the aqueduct and wetlands as separate last-mile days.',
+    hubIntro: 'Montpellier, Nîmes and Arles sit on the regional rail spine, but Sète, the Pont du Gard and Camargue visitor sites each add a different walk, local network or rural connection. Decide which city earns the overnight before adding a coast or wetland day; a station name alone does not solve the last mile.',
+    stay: 'Four nights work best as two bases, not four one-night stops: spend two nights around Montpellier Saint-Roch/Comédie for the Écusson and one Sète rail day, then choose two nights in Nîmes Centre for the Roman core plus a Pont du Gard day, or in Arles for a city day plus one Camargue departure. Five nights can give Montpellier and either Nîmes or Arles more breathing room; six nights supports two nights in each of the three rail cities and at least one full day per base, with the actual number of excursions limited by arrival, departure and hotel moves. Add a seventh night if you want a separate full city day and rural excursion in all three bases. Stay near the station you will actually use: Montpellier Saint-Roch is central, Sud de France is outside the old center, and Nîmes Pont du Gard is a TGV station, not the Roman site. Arles is a walkable base for its center and the listed Camargue bus corridor. Count a hotel move as a partial day, and skip one city rather than adding a rushed check-out.',
+    transfer: 'Use TER Occitanie for the Montpellier–Sète–Nîmes–Arles rail corridor, checking the exact station and dated return in the official planner. Montpellier Saint-Roch serves the center; Sud de France needs its own connector. For the aqueduct, Pont du Gard names liO Car line 121 from Nîmes and the destination “Vers – Rond Point Pont du Gard”; Nîmes Centre is the rail gateway, not Nîmes Pont du Gard TGV station. For the wetland, ENViA’s A50 timetable lists Arles Gare SNCF, Pont de Gau and Saintes-Maries-de-la-Mer (La Brise); its summer and October–March schedules differ. Confirm the current departure, service day and return before booking either excursion.',
+    season: 'Plan exposed stone, lagoon and river walks for cooler hours in summer; heat, mistral, mosquitoes, fire controls, event dates and shorter winter daylight can change the usable route. The Camargue’s water, trail access and wildlife vary naturally, so flamingos or horses are not a guaranteed sighting. Markets, museums, beach access and rural buses follow their own calendars: confirm each for the date instead of relying on a remembered weekday or seasonal pattern.',
+    fallback: 'When heat, wind, fire restrictions, a missed rural bus or a closed track removes an open-air plan, stay in the city already reached: use a currently open museum, a bounded historic-center walk or a market if it is operating. Do not substitute a chain of unplanned taxis or enter a restricted wetland road. Keep a confirmed rail or bus return, water and daylight margin before leaving a base.',
+    reviewDisclaimer: 'The official TER Occitanie, TaM, liO, Pont du Gard and ENViA pages were checked on 12 October 2026. Exact train/bus departures, service days, fares, admission, market and museum hours, and access can change; this guide quotes no live fare or guaranteed frequency. Reopen the operator and site pages for the exact date, including the return leg.',
+    hubContent: {
+      reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
+      itineraryLabel: 'A four-to-six-night base choice',
+      itineraryHeading: 'Add nights to a rail base before adding another check-in.',
+      itineraryIntro: 'Use this as a sequence of base decisions, not a promise of daily departures. Check TER and the rural operator for the exact date before committing to the next hotel.',
+      itinerary: [
+        ['4 nights · two bases', 'Spend two nights near Montpellier Saint-Roch/Comédie, using one full day for Montpellier or Sète. Spend the other two near Nîmes Centre for the Roman center and, only with a confirmed liO 121 return, Pont du Gard; choose Arles instead when a Camargue day matters more. Do not try to add both rural branches.'],
+        ['5 nights · a slower second base', 'Keep the two-night Montpellier start and give Nîmes or Arles three nights. The extra night lets a city day and its rural excursion stay separate, or absorbs a weather fallback. Use a single rail transfer between bases rather than a same-day coast–aqueduct–wetland circuit.'],
+        ['6 nights · all three city bases', 'Two nights each in Montpellier, Nîmes and Arles gives each base a full day, but arrival, departure and two hotel moves limit how many rural excursions fit. Add a seventh night if you want a separate full city day and rural branch in all three. Keep luggage out of excursion days and leave a rail margin before a flight or long-distance train.'],
+        ['Arrival and departure margin', 'Treat the first and last days as station-to-hotel days until a live itinerary proves otherwise. If a departure is early or a rural line has only a limited dated service, drop the farthest excursion rather than depend on a last connection.']
+      ],
+      faq: [
+        ['How many nights should I book?', 'Four nights are a useful minimum for two bases and one regional excursion. Five nights give one base a slower day; six nights can cover Montpellier, Nîmes and Arles with two nights each. The six-night version involves two check-outs, so skip a city if moving luggage would cost the day.'],
+        ['Should I sleep in Nîmes or Arles?', 'Choose Nîmes Centre for its walkable Roman core and the official liO 121 access chain toward Vers–Rond Point Pont du Gard. Choose Arles for its own center and the ENViA A50 corridor toward Pont de Gau or Saintes-Maries-de-la-Mer. They solve different day trips.'],
+        ['Can I use the TGV stations for the monuments?', 'No station name replaces the last mile. Nîmes Centre is the city gateway to the bus plan; Nîmes Pont du Gard is a TGV station, not the aqueduct entrance. Montpellier Sud de France is also separate from the central Saint-Roch station. Read the complete ticket and connection.'],
+        ['Can I cover the coast, aqueduct and Camargue in one day?', 'Not as a dependable public-transport plan. Give each branch a separate day and base, verify both directions, and let weather or the dated operator timetable decide whether the rural outing runs.']
+      ],
+      sources: [
+        ['https://www.ter.sncf.com/occitanie', 'TER Occitanie — official regional rail planner'],
+        ['https://www.tam-voyages.com/fr/cartographie/transport', 'TaM — Montpellier tram/bus map and service information'],
+        ['https://www.montpellier-france.com/', 'Montpellier Tourism — official city visitor guide'],
+        ['https://en.tourisme-sete.com/', 'Sète Tourist Office — official city and coast guide'],
+        ['https://www.lio-occitanie.fr/horaires-et-plans/', 'liO Occitanie — dated regional bus timetables and plans'],
+        ['https://pontdugard.fr/en/getting-here', 'Pont du Gard — official access, liO line 121 and named destination'],
+        ['https://www.nimes-tourisme.com/en/', 'Nîmes Tourism — official city visitor guide'],
+        ['https://www.tout-envia.com/du-nouveau-sur-mon-reseau/', 'ENViA — current Arles/Saintes-Maries bus network and A50 timetable'],
+        ['https://www.arlestourisme.com/en/', 'Arles Camargue Tourism — official city and regional guide'],
+        ['https://www.parc-camargue.fr/', 'Camargue Regional Nature Park — protected-area notices'],
+        ['https://meteofrance.com/', 'Météo-France — official weather information']
+      ]
+    },
     sources: [
       ['https://www.visit-occitanie.com/en/', 'Occitanie Tourism — official regional guide'],
       ['https://www.ter.sncf.com/occitanie', 'liO Train / TER Occitanie — official rail information'],
@@ -31,32 +64,57 @@ export const franceMediterraneanClusters = [
         imageQuery: 'Montpellier Place de la Comedie France city',
         imageAlt: 'Place de la Comédie and central Montpellier architecture',
         purpose: 'Decide whether Montpellier’s pedestrian center and contemporary districts or Sète’s canals and port carry the day, then use the rail corridor without adding a fragile beach transfer.',
-        summary: 'Walk Montpellier from Écusson to one tram-served modern district, or take a direct train to Sète for canals, market and Mont Saint-Clair; a two-city day must stay selective.',
+        summary: 'Walk Montpellier from Comédie through the Écusson to Peyrou, or use a dated TER trip to Sète for its canal center; a two-city day must stay selective.',
+        searchSummary: 'Walk Montpellier from Comédie through the Écusson to Peyrou, or use a dated TER trip to Sète for its canal center; a two-city day must stay selective.',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         choices: [
           ['Montpellier old and new', 'Connect Écusson, Peyrou and one contemporary district by tram. This shows the city’s layers without a coastal transfer.'],
           ['Sète canal and port city', 'Use the station-to-canals route, market and one museum or Mont Saint-Clair connection. Fishing-port work remains distinct from visitor space.'],
-          ['Two-city rail day', 'Keep Montpellier to a compact center and Sète to a canal loop, using frequent rail only when the exact schedule leaves a backup.']
+          ['Two-city rail day', 'Keep Montpellier to a compact center and Sète to a canal loop. Use TER Occitanie’s dated planner and leave a return option; no fixed headway is assumed here.']
         ],
-        access: 'Montpellier Saint-Roch is central; Montpellier Sud de France is outside the historic core and requires a connector. Sète station is north of the canal center. Read the ticket before assuming either arrival is walkable.',
-        tradeoff: 'Adding a beach, long museum and both cities turns the day into transfers. The route keeps one urban argument in depth or two bounded city loops.',
+        access: 'Use TER Occitanie for the Montpellier–Sète rail leg and check which station appears on the ticket: Montpellier Saint-Roch sits by the center, while Sud de France is outside the historic core and needs its own TaM connector; Sète station is north of the canal center. Do not assume that the regional train, city tram and Sète local bus share one ticket or one timetable.',
+        tradeoff: 'For two or three nights, sleep near Saint-Roch/Comédie if Montpellier is the anchor; stay near Sète’s station-to-canal side only when the port city deserves an early start or evening. A hotel change buys coast time but consumes a check-in block. On a day trip, choose either the Montpellier center or Sète as the substantial walk; a beach, full museum and both cities do not fit reliably.',
         stages: [
-          ['Enter through the correct station', 'At Montpellier, distinguish Saint-Roch from Sud de France; at Sète, identify the canal route and final station return.'],
-          ['Read the first city’s structure', 'Use Écusson and Peyrou or Sète’s canal and market spine, placing exposed climbs outside the hottest hours.'],
-          ['Commit to one second layer', 'Take tram to a modern Montpellier district, climb or bus toward Mont Saint-Clair, or board the regional train for the other city.'],
-          ['Finish near rail or tram', 'End with a meal close to a direct return line, not at a distant beach whose bus service has thinned.']
+          ['Enter through the correct station', 'From Saint-Roch, walk toward Place de la Comédie. From Sud de France, first use the live TaM network map to solve the connector. In Sète, leave the station north of the canals and keep the rail return visible.'],
+          ['Walk one Montpellier line', 'Use Comédie → Écusson lanes → Promenade du Peyrou and its esplanade; add Antigone or another modern district only as a named TaM tram branch. This is a neighborhood sequence, not a measured distance.'],
+          ['Or take one Sète line', 'From Sète station walk toward Quai de la Résistance and the central canals, then choose the covered market/port area or a museum. Mont Saint-Clair is a separate exposed climb or current local-bus connection, not an automatic continuation.'],
+          ['Close beside the booked return', 'Use TER Occitanie for the intercity leg and reopen the dated timetable before leaving the center. If the return window is narrow, end by the station and omit the beach, hill or second city.']
         ],
-        fallback: 'In heat, storms or strong wind, use Montpellier museums and tram-linked interiors or Sète’s museum and canal center. If the rail corridor is disrupted, stay in the city already reached.',
+        fallback: 'In heat, a tram disruption or strong wind, keep the Montpellier route to shaded Écusson streets, a currently open interior and one short transit ride. In Sète, use the canal center and an open museum rather than the hill or exposed waterfront. If TER service changes, remain in the city already reached and check the operator notice before attempting a road transfer.',
         watch: [
           ['Two Montpellier stations are not equivalent', 'A TGV arrival at Sud de France needs transfer time and may affect the last train.'],
           ['Mont Saint-Clair adds a real climb', 'Use the current bus or limit the route when heat and mobility make the ascent unsuitable.'],
           ['Ports are workplaces', 'Stay clear of loading, auction and boat operations; use designated visitor paths.']
         ],
-        duration: 'Allow five to seven hours for either city and eight to ten for a selective two-city day. A beach block should replace the second city.',
+        duration: 'Allow a half to full day for one city and keep a two-city day to a short Montpellier center plus one Sète canal loop. Add time for the actual TER departure and station access; the guide does not promise a departure interval.',
         combine: 'Combine Montpellier and Sète only along the rail line. Keep Nîmes, Pont du Gard and the Camargue for separate days.',
-        verify: 'Check exact station, TaM tram or Sète bus, market and museum hours, heat or wind and the final regional train.',
+        verify: 'Check the exact TER stations and return, TaM tram/bus map, Sète Agglopôle local transport, current market and museum hours, any event street changes, weather and the last suitable train. No fare or fixed frequency is quoted.',
         sources: [
           ['https://www.montpellier-france.com/', 'Montpellier Tourism — official city planning'],
+          ['https://www.tam-voyages.com/fr/cartographie/transport', 'TaM — Montpellier tram/bus map and service information'],
+          ['https://www.ter.sncf.com/occitanie', 'TER Occitanie — official dated rail planner'],
           ['https://en.tourisme-sete.com/', 'Sète Tourist Office — official port and city guide']
+        ],
+        operations: {
+          entryReturn: 'For Montpellier, begin at Saint-Roch/Comédie and walk the Écusson–Peyrou axis; use the TaM map only when choosing a tram-served district. For Sète, start at Gare de Sète, walk toward the central canals and finish back toward the station. If the ticket says Sud de France, plan its connector before setting a museum or train time.',
+          booking: 'Book accommodation around Saint-Roch/Comédie for a short Montpellier stay; choose Sète only when its canal/port day merits moving bags. Check TER tickets and any timed museum entry for the exact date. Market opening, event diversions and local bus links are not assumed to follow the same calendar year-round.',
+          weather: 'Move Peyrou, the waterfront and Mont Saint-Clair to cooler hours in heat or strong wind. On a stormy or very hot day, replace the hill/beach branch with a currently open museum and compact tram-free walk; if the return train changes, stay local rather than crossing to the other city.'
+        },
+        siteContext: {
+          label: 'MONTPELLIER–SÈTE WALKING PLAN',
+          heading: 'Keep the rail day inside two walkable city fields',
+          intro: 'Both centers reward walking, but neither station places every waterfront, hill and museum at the same door. Choose one coherent neighborhood line and protect the rail return.',
+          details: [
+            ['2–3 nights · Montpellier base', 'Stay around Saint-Roch, Comédie or the Écusson edge for a walk-home evening. The Sud de France TGV station is a different arrival; check its TaM connector before choosing a hotel or timed visit.'],
+            ['City walk · Écusson to Peyrou', 'Start at Place de la Comédie, pass through the old-center lanes toward Place Royale du Peyrou, then decide whether energy allows a tram ride to Antigone or another modern quarter. Do not turn this into a cross-city backtrack.'],
+            ['Sète day · station to canals', 'Use TER to Gare de Sète, then walk into the canal/port center and choose the market or a museum. Mont Saint-Clair adds a separate hill or current local bus leg; verify it and the return before setting out.'],
+            ['Season and bookings', 'Summer heat, beach crowding and event dates make early starts useful. Recheck the rail planner, TaM map, Sète local network, museum/market hours and weather; no departure interval or opening time is fixed in this guide.']
+          ]
+        },
+        faq: [
+          ['Where should I stay for Montpellier and Sète?', 'Use two or three nights around Montpellier Saint-Roch/Comédie when the Écusson is the anchor; Sète station/canal-side lodging suits a slower port visit. A day trip avoids moving bags, while an overnight in Sète is worthwhile only if you want an early or evening waterfront walk.'],
+          ['Is Montpellier Sud de France the central station?', 'No. Saint-Roch serves the historic center; Sud de France is outside it and requires a separate connector. Read the exact destination on the ticket and check the TaM map before booking around a timed entry.'],
+          ['Can I add Mont Saint-Clair after the Sète canal walk?', 'Only if the climb or date-specific local bus, weather, opening and TER return fit. Treat it as the day’s hill branch, not a guaranteed short walk from the canal center.']
         ]
       }),
       g({
@@ -68,31 +126,56 @@ export const franceMediterraneanClusters = [
         imageAlt: 'The Roman Pont du Gard aqueduct crossing the Gardon valley',
         purpose: 'Read Nîmes’s Roman monuments as an urban circuit, then reach the Pont du Gard through a verified bus or road connection with time for the museum and landscape.',
         summary: 'Use the Arena, Maison Carrée and Jardins de la Fontaine as one city line; the aqueduct is a separate rural site whose last bus and heat exposure determine the pairing.',
+        searchSummary: 'Use the Arena, Maison Carrée and Jardins de la Fontaine as one city line; the aqueduct is a separate rural site whose last bus and heat exposure determine the pairing.',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         choices: [
           ['Roman Nîmes', 'Keep the Arena, Maison Carrée, Musée de la Romanité and fountain gardens together. This is a full city day.'],
           ['Pont du Gard in depth', 'Give the aqueduct, museum, trails and river context most of the day. Access and return are the main contract.'],
           ['City plus aqueduct', 'Use one or two Nîmes monuments early and a confirmed afternoon bus or car to the Pont du Gard. This sacrifices museum depth.']
         ],
-        access: 'Nîmes Centre is walkable to the Roman core; Nîmes Pont du Gard TGV station is not the monument. Reach the actual Pont du Gard site by the current regional bus, tour, bicycle or car and confirm the return stop.',
-        tradeoff: 'A complete museum visit, all Nîmes monuments and the aqueduct do not fit comfortably into one day. The route chooses one deep layer and one abbreviated layer.',
+        access: 'Use Nîmes Centre for the walkable Roman center. The Pont du Gard’s official directions name liO Car line 121 from Nîmes and the destination “Vers – Rond Point Pont du Gard”; liO Train to Nîmes Centre plus that bus is a separate last-mile chain. Nîmes Pont du Gard TGV station is not at the monument. Check the exact service day, boarding point, destination and return in the dated liO planner before choosing rail or a tour.',
+        tradeoff: 'A complete Nîmes museum/monument day and the aqueduct landscape cannot both be deep visits on one day. Two nights near Nîmes Centre allow one city walk and one rural day without moving hotels; a one-night stop is better for the Roman core alone. Choose either one major Nîmes interior plus a short aqueduct block or give the aqueduct its own day.',
         stages: [
-          ['Start on the Nîmes civic axis', 'Walk from Nîmes Centre toward the Arena and Maison Carrée, identifying the bus departure or vehicle route for later.'],
-          ['Complete one Roman city anchor', 'Use the Arena or Musée de la Romanité as the main interior, then connect the fountain gardens only if time and heat allow.'],
-          ['Travel to the actual aqueduct site', 'Board the named regional service or drive to the official visitor area, not the similarly named TGV station.'],
-          ['Read structure and landscape, then return', 'Use the museum and signed viewpoints, respecting river and trail restrictions, and leave before the last bus or closing traffic peak.']
+          ['Walk the compact city spine', 'From Nîmes Centre head to the Arena and Esplanade Charles-de-Gaulle, continue toward Maison Carrée and the Écusson lanes, then use Jardins de la Fontaine as the uphill garden branch. This is a city circuit, not a measured route.'],
+          ['Choose one ticketed interior', 'Make the Arena or Musée de la Romanité the anchor, then keep Maison Carrée/gardens as the exterior layer that current access and energy allow. Check each site’s own entry terms.'],
+          ['Use the named rural connection', 'For the aqueduct day, follow Pont du Gard’s official directions: liO Car 121 from Nîmes to “Vers – Rond Point Pont du Gard,” or a separately confirmed tour/road plan. The Nîmes Pont du Gard TGV station is not the site entrance.'],
+          ['Protect the bus and station return', 'Reopen the valid-for-date liO timetable before entering the river valley. Use signed paths and current site/river notices; if the return service does not fit, stay in Nîmes or book a different plan before departure.']
         ],
-        fallback: 'If the Pont du Gard bus or site access fails, remain in Nîmes for the Roman museum and gardens. If heat makes the exposed aqueduct route unsuitable, use the museum and nearest shaded viewpoints only.',
+        fallback: 'If liO 121 does not match the travel date, the site entrance is restricted or heat makes the exposed valley unsuitable, stay in Nîmes for the Roman museum, Écusson and gardens. Do not use the TGV station name as a substitute for the monument or improvise a final taxi after the bus has gone.',
         watch: [
-          ['The TGV name causes a major error', 'Nîmes Pont du Gard station is not walking access to the monument. Use the official site directions.'],
-          ['Stone and river heat build quickly', 'Carry water, use shade and follow fire or bathing restrictions.'],
-          ['Monument tickets are separate products', 'Check which Nîmes sites a pass covers and whether timed entry applies.']
+          ['Station and destination are different', 'Use Nîmes Centre for the Roman city and the official “Vers – Rond Point Pont du Gard” bus destination for the aqueduct. The TGV station is not the visitor entrance.'],
+          ['The rural timetable is date-specific', 'The official bus planner lists validity periods; confirm the service day and return before buying the rail leg or leaving town. Frequency and fares are not asserted here.'],
+          ['Stone and river exposure change the visit', 'Use water and shade, follow current river/fire restrictions and select a signed viewpoint. If the access or weather notice changes, use Nîmes as the fallback.']
         ],
         duration: 'Allow five to seven hours for Nîmes alone and a full day for the Pont du Gard plus a short city block. The aqueduct site deserves at least three to four hours.',
         combine: 'Combine one Nîmes anchor with the Pont du Gard only on a verified connection. Keep Arles and the Camargue separate.',
-        verify: 'Check monument openings, actual Pont du Gard access, liO bus, heat or fire notices and the final return before leaving Nîmes.',
+        verify: 'Check the Arena, Maison Carrée and museum’s individual entry calendars; Pont du Gard’s dated line 121 directions and “Vers – Rond Point Pont du Gard” stop; the liO service day and return; plus heat, river and fire notices. No departure time or fare is promised.',
         sources: [
           ['https://www.nimes-tourisme.com/en/', 'Nîmes Tourism — official city planning'],
-          ['https://pontdugard.fr/en', 'Pont du Gard — official access and visitor information']
+          ['https://www.ter.sncf.com/occitanie', 'TER Occitanie — official rail planner to Nîmes Centre'],
+          ['https://www.lio-occitanie.fr/horaires-et-plans/', 'liO — current dated regional bus timetables'],
+          ['https://pontdugard.fr/en/getting-here', 'Pont du Gard — official line 121, stop and site access']
+        ],
+        operations: {
+          entryReturn: 'For the city, start at Nîmes Centre and keep the Arena/Esplanade → Maison Carrée/Écusson → Jardins de la Fontaine sequence to one side of the center. For the aqueduct, plan the complete TER-to-Nîmes Centre plus liO Car 121 chain to “Vers – Rond Point Pont du Gard”; confirm the actual boarding stop and reverse journey in the official date-valid timetable.',
+          booking: 'Two nights around Nîmes Centre suit the Roman walk and the separate aqueduct day. Reserve a timed monument only after its official calendar confirms the date; the rural bus is its own dated service and the site admission is a separate decision. Do not select Nîmes Pont du Gard TGV as an aqueduct hotel or bus endpoint.',
+          weather: 'In summer heat, put the city walk or exposed valley segment early and shorten the viewpoint loop. On mistral, storm, fire restriction or a bus/calendar mismatch, stay in the shaded city core and use an open museum; do not force a same-day taxi replacement.'
+        },
+        siteContext: {
+          label: 'NÎMES–PONT DU GARD ACCESS PLAN',
+          heading: 'Keep the Roman city and aqueduct on separate clocks',
+          intro: 'Nîmes is a walkable city sequence. The aqueduct is a separate rural destination with a named bus stop and a return timetable that controls the day.',
+          details: [
+            ['2 nights · Nîmes Centre', 'Stay by Nîmes Centre/Écusson for the old town on foot and an early departure toward the bus. A single night can cover the center, but leaves little margin for a date-limited rural connection.'],
+            ['City walk · Arena to gardens', 'Connect the Arena and Esplanade, Maison Carrée and the old center, then decide whether to climb to Jardins de la Fontaine. Pick one interior and leave the other monuments as exterior/context stops.'],
+            ['Pont du Gard · line 121', 'The official site identifies liO Car 121 from Nîmes and “Vers – Rond Point Pont du Gard.” Route 121’s valid dates and departures can change; verify the complete outbound and return journey, not only a search result for Nîmes.'],
+            ['Season and fallback', 'Summer river heat and seasonal/date-valid transport can shorten the visit. If the bus or valley access is unsuitable, use a second Nîmes city day; no fare, opening hour or guaranteed bus frequency is printed here.']
+          ]
+        },
+        faq: [
+          ['Which station serves the Pont du Gard?', 'Nîmes Centre is the rail gateway for the city and the official bus directions. Pont du Gard’s access page names liO Car 121 and the stop “Vers – Rond Point Pont du Gard.” Nîmes Pont du Gard TGV is not the aqueduct entrance.'],
+          ['How many nights do I need in Nîmes?', 'Two nights make room for a full city walk and a separate aqueduct day from one hotel. With one night, choose either the city interior route or the rural excursion rather than expecting both to fit around arrival and departure.'],
+          ['Can I visit the Arena, Maison Carrée, museum, gardens and aqueduct together?', 'The sites can be selected across more than one day. For one day, choose one principal indoor monument and a bounded garden or old-town walk; the aqueduct needs its own confirmed transport and return window.']
         ]
       }),
       g({
@@ -104,31 +187,57 @@ export const franceMediterraneanClusters = [
         imageAlt: 'Roman arena and historic stone buildings in Arles',
         purpose: 'Use Arles as a complete Roman and artistic city, adding one Camargue visitor route only through an official road, bicycle, bus or guided plan that respects protected wetlands.',
         summary: 'Arles’s monuments and Rhône streets deserve their own circuit; the Camargue is a living wetland and agricultural region, not a guaranteed flamingo-and-horse drive-by.',
+        searchSummary: 'Arles’s monuments and Rhône streets deserve their own circuit; the Camargue is a living wetland and agricultural region, not a guaranteed flamingo-and-horse drive-by.',
+        reviewedOn: { label: '12 October 2026', iso: '2026-10-12' },
         choices: [
           ['Roman Arles', 'Use the arena, theater, Alyscamps or archaeological museum selectively through a current pass or tickets. This is a full city day.'],
           ['Art and Rhône city', 'Trace Van Gogh context carefully without presenting modern streets as preserved canvases, then use museums and river edges.'],
           ['Camargue field day', 'Choose one official visitor center, signed wetland route or guided excursion with transport, weather and closing time confirmed.']
         ],
-        access: 'Arles station is north of the center and walkable to the Roman core. Camargue sites spread south across roads and lagoons; a car, bicycle, seasonal bus or tour must be matched to one named destination.',
-        tradeoff: 'A deep Arles monument day and substantial Camargue excursion cannot share equal time. The route gives up one so protected landscapes are not reduced to a rushed roadside loop.',
+        access: 'Arles Gare SNCF is north of the historic core and walkable to its center. For a no-car wetland day, ENViA route A50 lists Gare SNCF Arles, Pont de Gau and Saintes-Maries-de-la-Mer (La Brise); choose one named stop, then confirm that the dated run serves it in both directions. The operator separates summer and October–March tables. A car, bicycle or guided trip is a different plan with its own access and return.',
+        tradeoff: 'Two nights near Arles center/Gare SNCF let you give one full day to the Roman city and another to either Pont de Gau or Saintes-Maries-de-la-Mer. A single night usually means choosing the city or wetlands, while a third can absorb a weather fallback or second nature stop. Do not plan both A50 destinations plus all Arles interiors in the same day.',
         stages: [
-          ['Enter Arles from the station', 'Walk toward the arena or Rhône, noting the return and heat. Buy only the monument product that matches the chosen sites.'],
-          ['Read one city narrative', 'Follow Roman structures or art-and-river context, limiting interiors so lunch and any wetland departure remain realistic.'],
-          ['Commit to city depth or one wetland site', 'Continue to a museum, or meet the arranged Camargue transport and follow official roads and trails.'],
-          ['Return before dusk changes the road contract', 'Leave the wetland with daylight and fuel margin, or finish the city loop close to the station.']
+          ['Walk Arles in one historic-center loop', 'From Gare SNCF enter via Place de la République; connect Place du Forum, the Roman Theatre and Arena, then return by the Rhône edge or station-side streets. Treat Alyscamps as a separate branch rather than a spontaneous extension.'],
+          ['Choose a city anchor', 'Give the Arena/theater or one currently open museum the main interior block; let the other monuments, Place de la République and Rhône remain a compact exterior walk. Check event-day street and entry changes.'],
+          ['Choose one Camargue destination', 'From Arles Gare SNCF use ENViA A50 only after checking whether the dated trip serves Pont de Gau or La Brise in Saintes-Maries-de-la-Mer. Pick one site, its current opening/access rules and the return service.'],
+          ['Keep the wetland visit inside the return window', 'Follow signed visitor paths and any park/road restrictions. Wildlife is not scheduled; if service, wind, fire or access changes, return to Arles and use the city fallback rather than entering a closed track.']
         ],
-        fallback: 'If wind, heat, fire risk or access removes the Camargue, stay in Arles for museums and monuments. If city sites close for events, use the Rhône and current museum alternatives rather than entering restricted wetland tracks.',
+        fallback: 'If the A50 service does not match the date, a destination is closed, or wind, heat and fire notices constrain the wetlands, stay in Arles for an open museum, the old-center loop and Rhône edge. If a festival changes monument access, reopen the Arles visitor notice; do not substitute a wetland track that the park or road authority has restricted.',
         watch: [
-          ['Wildlife is not guaranteed', 'Observe from designated areas, keep distance and never bait or pursue birds, horses or cattle for photographs.'],
-          ['Wetland roads and trails can close', 'Flood, fire, breeding seasons and management work override saved routes.'],
-          ['Festival access reshapes Arles', 'Major events change monument hours, streets and accommodation; check the exact date.']
+          ['A50 has different seasonal tables', 'The ENViA operator separates summer and October–March service. Confirm service day, stop, current timetable and the return for your date; this guide gives no departure time or frequency.'],
+          ['Wetland access and wildlife vary', 'Flood, fire, wind, breeding seasons and management work can close a route. Stay on signed paths and observe wildlife from designated areas without approaching or baiting it.'],
+          ['Events and heat reshape the city day', 'Arles festivals can change access, lodging demand and street routing. Book only after confirming the date-specific event and monument notices; shift exposed walks to a cooler time.']
         ],
         duration: 'Allow six to eight hours for Arles and a separate full day for the Camargue from a suitable base. A short visitor-center excursion can pair only with a limited city morning.',
         combine: 'Combine Arles with one nearby official wetland site when transport is firm. Keep Saintes-Maries, Aigues-Mortes and multiple reserves for separate routes.',
-        verify: 'Check Arles monument and event calendar, Camargue park notices, chosen visitor center, road or bus access, wind, heat and fire restrictions.',
+        verify: 'Check Arles monument/event dates, ENViA A50’s applicable summer or October–March timetable and the exact Gare SNCF/Pont de Gau/La Brise stop pair, the chosen site’s own access and opening notice, the park/road/fire map and weather. The schedules, fares and openings can change.',
         sources: [
           ['https://www.arlestourisme.com/en/', 'Arles Camargue Tourism — official city and region planning'],
-          ['https://www.parc-camargue.fr/', 'Camargue Regional Nature Park — official protected-area information']
+          ['https://www.tout-envia.com/du-nouveau-sur-mon-reseau/', 'ENViA — current A50 route and date-valid timetable'],
+          ['https://www.parc-camargue.fr/', 'Camargue Regional Nature Park — official protected-area information'],
+          ['https://www.parcornithologique.com/en/practical-information/open-hours.html', 'Parc ornithologique de Pont de Gau — official visitor access and seasonal hours'],
+          ['https://meteofrance.com/', 'Météo-France — official weather information']
+        ],
+        operations: {
+          entryReturn: 'For the city, walk from Gare SNCF through Place de la République and Place du Forum to the Roman Theatre/Arena, then return by the Rhône edge or station-side streets. For Camargue, board ENViA A50 at Gare SNCF only after its date-valid timetable confirms the chosen Pont de Gau or La Brise trip and return. The bus stop is the start of a named visit, not permission to roam off signed paths.',
+          booking: 'Two nights near the center or station support one Arles day plus one wetland day without packing between them; three nights provide a weather buffer or a second separate destination. Check festival lodging demand, current monument entry, the A50 season table and the chosen site’s own hours before paying for a nonrefundable rural stay or tour.',
+          weather: 'In heat, move the stone-center walk early and shorten the open wetland block. Strong wind, fire risk, flooding or a park closure can remove the rural day; keep the Arles museum/old-town route as the backup and follow current closures rather than a saved map.'
+        },
+        siteContext: {
+          label: 'ARLES–CAMARGUE BASE AND ROUTE',
+          heading: 'Use Arles as the walkable base, then name one wetland stop',
+          intro: 'Arles has a compact historic center; the Camargue spreads across a working landscape. The bus reaches selected points, not a complete loop of every reserve and village.',
+          details: [
+            ['2 nights · Arles center', 'Stay between Gare SNCF and the historic core for the station, monuments and evening walk. Two nights make room for a full city day and a separate A50 excursion; add a third for a weather or second-stop buffer.'],
+            ['City walk · Republic to Arena', 'Walk Place de la République → Place du Forum → Roman Theatre → Arena, then use a Rhône-side return. Place the Alyscamps branch on another block so the center loop remains bounded.'],
+            ['A50 · Pont de Gau or La Brise', 'The official ENViA timetable lists Arles Gare SNCF, Pont de Gau and Saintes-Maries-de-la-Mer/La Brise. Choose one destination, check that the date-valid run calls there, and plan the return before setting out.'],
+            ['Season and booking', 'The operator publishes different summer and October–March tables. Heat, mistral, fire/flood closures, event traffic and variable wildlife also change the day. Confirm the chosen park/site opening, path access and event calendar; no live departure or fare is claimed.']
+          ]
+        },
+        faq: [
+          ['How many nights should I stay in Arles?', 'Two nights are useful for a full historic-center day and a separate Camargue visit. A third night protects a weather fallback or lets you choose another destination; one night usually requires choosing either the city or wetlands.'],
+          ['Which Camargue stop can I reach by bus from Arles?', 'ENViA route A50’s current timetable lists Gare SNCF Arles, Pont de Gau and Saintes-Maries-de-la-Mer (La Brise). Confirm that the dated run serves the stop and has a suitable return; its summer and October–March schedules differ.'],
+          ['Can I count on flamingos or a complete wetland loop?', 'No. Wildlife varies by season and conditions, and the bus only serves listed stops. Use signed access, obey park/road closures and choose one visitor site instead of assuming a through-route across the wetlands.']
         ]
       })
     ]
