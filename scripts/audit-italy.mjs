@@ -130,6 +130,25 @@ for (const cluster of italyClusters) {
     check(new Set(allPlanCopy).size === allPlanCopy.length, 'Umbria: local-plan copy must not be repeated across children');
     check(cluster.sources.some(([url]) => url.includes('assisi-link.html')) && cluster.sources.some(([url]) => url.includes('orvieto-link.html')), 'Umbria: integrated station-to-hill links missing from hub sources');
   }
+  if (cluster.slug === 'sorrento-amalfi-capri') {
+    check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Sorrento/Amalfi/Capri: review date metadata must match the 12 October 2026 refresh');
+    check(cluster.publishedIsoDate === '2026-09-26', 'Sorrento/Amalfi/Capri: original publication date must be preserved');
+    const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
+    const allPlanCopy = [];
+    for (const guide of cluster.guides) {
+      check(guide.localPlan && fields.every((field) => typeof guide.localPlan[field] === 'string' && guide.localPlan[field].trim()), `${guide.url}: route-specific stay/walk/booking/season plan missing`);
+      if (guide.localPlan) allPlanCopy.push(...fields.map((field) => guide.localPlan[field]));
+      check(guide.summary.length >= 120, `${guide.url}: Sorrento/Amalfi/Capri summary below editorial floor`);
+      check(guide.reviewIsoDate === undefined || guide.reviewIsoDate === '2026-10-12', `${guide.url}: stale review date override`);
+      check(guide.publishedIsoDate === undefined || guide.publishedIsoDate === '2026-09-26', `${guide.url}: original publication date changed`);
+    }
+    check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Sorrento/Amalfi/Capri: focused local-plan headings must be unique');
+    check(new Set(allPlanCopy).size === allPlanCopy.length, 'Sorrento/Amalfi/Capri: local-plan copy must not be repeated across children');
+    check(cluster.sources.some(([url]) => url.includes('eavsrl.it')) && cluster.sources.some(([url]) => url.includes('sitasudtrasporti.it/campania/orari')),
+      'Sorrento/Amalfi/Capri: current EAV and SITA Sud route tools missing');
+    check(cluster.sources.some(([url]) => url.includes('travelmar.it/en/timetable')) && cluster.sources.some(([url]) => url.includes('snav.it/en/shop-2')),
+      'Sorrento/Amalfi/Capri: current ferry operator sources missing');
+  }
   if (cluster.slug === 'siena-southern-tuscany') {
     check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', 'Siena/Val d’Orcia/Maremma: review date metadata must match the 12 October 2026 refresh');
     check(cluster.publishedIsoDate === '2026-09-26', 'Siena/Val d’Orcia/Maremma: original publication date must be preserved');
@@ -242,6 +261,10 @@ for (const route of routes) {
       if (guide.localPlan) check(pageText.includes(guide.localPlan.stay) && pageText.includes(guide.localPlan.walk) && pageText.includes(guide.localPlan.booking) && pageText.includes(guide.localPlan.season), `${route}: Emilia-Romagna local planning copy is not rendered`);
       if (guide.image.assetType === 'original-planning-diagram') check(pageText.includes(guide.image.legendTitle) && guide.image.legend.every((item) => pageText.includes(item)), `${route}: original diagram legend is missing or incomplete`);
     }
+    if (guide.hubSlug === 'sorrento-amalfi-capri') {
+      check(dom.filter((node) => classHas(node, 'it-local-plan')).length === 1, `${route}: route-specific stay/walk/booking/season plan missing`);
+      if (guide.localPlan) check(pageText.includes(guide.localPlan.stay) && pageText.includes(guide.localPlan.walk) && pageText.includes(guide.localPlan.booking) && pageText.includes(guide.localPlan.season), `${route}: route-specific local planning copy is not rendered`);
+    }
     check(html.includes(`data-it-family="${escape(guide.family)}"`), `${route}: guide family marker missing`);
     check(html.includes(`data-it-layout="${escape(guide.layout)}"`), `${route}: guide layout marker missing`);
     check(html.includes(`data-it-structure="${escape(guide.structure)}"`), `${route}: guide structure marker missing`);
@@ -290,7 +313,7 @@ check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from bui
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') || route === '/italy/umbria/' || route.startsWith('/italy/umbria/') ? '2026-10-12' : '2026-09-26';
+    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') || route === '/italy/umbria/' || route.startsWith('/italy/umbria/') || route === '/italy/sorrento-amalfi-capri/' || route.startsWith('/italy/sorrento-amalfi-capri/') ? '2026-10-12' : '2026-09-26';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

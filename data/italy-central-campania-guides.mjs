@@ -471,19 +471,27 @@ export const italyCentralCampaniaClusters = [
     slug: 'sorrento-amalfi-capri',
     name: 'Sorrento, Amalfi Coast & Capri',
     region: 'Campania',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
+    publishedIsoDate: '2026-09-26',
     band: 'south-volcano-coast',
     family: 'tyrrhenian-return-manifest',
     label: 'Campania · coastal folio 03',
     tagline: 'Choose the base, the vessel or road spine and the final return before the celebrated view.',
-    hubIntro: 'Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption.',
-    stay: 'Three to five nights gives room for one peninsula day, one coast route and one island window without making every evening a transfer. Sorrento works well for Naples rail and Capri boats; Salerno is strong for the eastern coast; a village stay reduces sightseeing transfers but complicates luggage and departure-day reliability.',
-    transfer: 'EAV rail reaches Sorrento, mainline rail reaches Salerno, coast buses use named stops and ferries use specific ports with seasonal schedules. Marina Piccola, Sorrento’s centre and the rail station have a real height gap. Build every route from the final return backward.',
-    season: 'Marine service, heat, cliff paths and road congestion are strongly seasonal. Summer adds frequency but also full vessels, queues and road pressure; winter can remove routes entirely. Sea state and fire or path controls can override a sunny forecast.',
-    fallback: 'Keep a complete land day in the base: Sorrento’s historic centre, Salerno and its collections, or one coast town reached by the most reliable current road service. A cancelled boat is not permission to improvise a multi-town taxi chase.',
+    hubIntro: 'Sorrento, the Amalfi Coast and Capri sit close on a map but operate through different rail, bus, road and marine systems. A credible plan chooses Sorrento, Salerno or a coast village as the base, names the port or bus stop and keeps one complete land-side alternative for rough sea or road disruption. Sorrento is the Naples-and-Capri anchor; Salerno links mainline rail with the eastern coast; Amalfi puts the cathedral town and Ravello road connection at the centre but adds stairs and luggage handling. Choose the nights first, then build each day around one verified outward-and-return spine.',
+    stay: 'Three nights: keep one Sorrento room near Piazza Tasso or the Circumvesuviana station and give the days separate jobs—Sorrento or the peninsula, the coast, and Capri if a direct sailing is operating. Four nights can stay in Sorrento with a weather or arrival buffer, or split two Sorrento nights and two Salerno nights when Capri and the eastern coast both matter. Five nights can support three Sorrento nights plus two in Salerno or Amalfi: Salerno favors mainline rail and the eastern bus corridor; Amalfi favors an early coast start but requires a realistic plan for stairs and bags. Avoid a one-night sequence through Positano, Amalfi and Ravello.',
+    transfer: 'From Napoli Centrale, use the EAV Circumvesuviana from Napoli Garibaldi to Sorrento; it is a separate local railway, not the high-speed train. The Sorrento station is above the centre, while Marina Piccola is below it; choose the current lift, bus, road or stair access before carrying luggage downhill. Capri boats use Marina Piccola in Sorrento and Marina Grande on Capri, but the exact operator and seasonal departure must be confirmed. On the coast, SITA Sud serves named road stops and its 5110 route links Amalfi, Ravello and Scala when operating; Travelmar uses separate passenger-ferry piers. Save the return from the same town and port before buying an outward ticket.',
+    season: 'Coast ferries and island sailings are date- and sea-state dependent; a sunny forecast does not promise a route or landing. Summer brings heat, queues, road pressure and high demand for boats and timed interiors, so choose one town pair and check the operator before reserving the rest of the day. Shoulder and winter dates can have fewer or no marine options. SITA Sud timetables also carry route and day-type notices; recheck the exact stop, service date and return before fixing an overnight outside the rail towns. Treat path, fire and sea notices as separate gates.',
+    fallback: 'Keep one complete land day matched to the booked base: from Sorrento, walk Piazza Tasso, Via San Cesareo, the cathedral quarter and Villa Comunale without descending to the marina; from Salerno, use the old town and waterfront; from Amalfi, stay within the port-to-cathedral core and check the paper-museum opening. If a sailing is cancelled, do not replace it with a taxi chain across several villages. If the road corridor is disrupted, shorten to the town already reached and protect the rail or accommodation return.',
     sources: [
-      ['https://www.eavsrl.it/', 'EAV — official rail information for Sorrento'],
-      ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — official coast bus information'],
-      ['https://www.travelmar.it/en', 'Travelmar — official Amalfi Coast ferry information']
+      ['https://www.eavsrl.it/', 'EAV — route planning, ticket and service information'],
+      ['https://orariotreni.eavsrl.it/', 'EAV — current station departures and arrivals'],
+      ['https://www.eavsrl.it/infomobilita-ferrovia/', 'EAV — railway service notices'],
+      ['https://sitasudtrasporti.it/campania/orari/', 'SITA Sud Campania — current bus timetables and line stops'],
+      ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — tickets and service notices'],
+      ['https://www.travelmar.it/en/timetable', 'Travelmar — ferry timetables and fares'],
+      ['https://www.snav.it/en/shop-2', 'SNAV — current ferry routes and booking'],
+      ['https://www.capritourism.com/en', 'Capri Tourism — official island planning information']
     ],
     guides: [
       g({
@@ -495,7 +503,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Sorrento cliffs Marina Piccola Bay of Naples',
         imageAlt: 'Sorrento’s cliffs and marina above the Bay of Naples',
         purpose: 'Decide whether the day belongs to Sorrento itself, a Massa Lubrense–Punta Campanella peninsula branch or a direct island departure, then account for the station-to-marina height change and luggage before adding distance.',
-        summary: 'Arrive by the confirmed EAV service, orient between station, old town and marina, choose the Sorrento, protected-peninsula or port layer and finish near the transport used the next morning.',
+        summary: 'Use EAV to reach Sorrento, choose the upper-town walk or the descent to Marina Piccola, and confirm the ferry return before fixing the next day’s base.',
         choices: [
           ['Sorrento base day', 'Use the old town, cliff viewpoints and marina as an arrival or reset day. It gives low transport risk but sacrifices a major coast or island excursion.'],
           ['Massa Lubrense & Punta Campanella branch', 'Use one verified bus, tour or legal road approach toward Massa Lubrense, Termini or a currently open protected-area route. It adds peninsula landscape but depends on the named return and current trail access.'],
@@ -517,11 +525,25 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow four to six hours for a complete Sorrento arrival day, or most of a day for one peninsula branch. Keep a ferry departure day lightly scheduled.',
         combine: 'Combine the old town with the marina or a single nearby land branch. Keep Capri and the full Amalfi coast line as their own days.',
-        verify: 'Check EAV rail, the current station-to-marina connection, the exact ferry port and any hotel or road access restriction before travel.',
+        verify: 'Check EAV departures and railway notices, the current station-to-marina connection, the exact ferry operator and port, and any hotel or road access restriction before travel.',
+        localPlan: {
+          title: 'A Sorrento day with one descent',
+          intro: 'Keep the station, upper town and lower marina in one deliberate loop. Do not cross the peninsula to meet a boat.',
+          stayTitle: 'Sleep near the first morning threshold',
+          stay: 'For one to three nights, choose the upper centre around Piazza Tasso for food and a walk-first morning, or the station side if an early EAV departure matters more. The lower Marina Piccola is convenient only when the hotel’s uphill access and luggage route are clear. If the next day starts with a ferry, stay close enough to reach the port without assuming the lift or shuttle will operate at your preferred time.',
+          walkTitle: 'Read the upper town before the cliff',
+          walk: 'Start at Sorrento station and walk toward Piazza Tasso; continue through Via San Cesareo to Sedil Dominova and the cathedral quarter. Follow the old lanes to the Chiostro di San Francesco, then use Villa Comunale for the cliff edge and bay view. Descend to Marina Piccola only if stairs or the currently operating lift fit the group; otherwise return to Piazza Tasso by the same upper route. This is a town loop with one optional vertical branch, not a marina-to-station shortcut.',
+          bookingTitle: 'Book the sailing; treat caves as conditional',
+          booking: 'For a Capri day, check SNAV and any other current operator from Marina Piccola to Marina Grande for the exact date, baggage rules, check-in and return port. Keep the return ticket and boarding margin visible before leaving the town. A Blue Grotto or boat circuit is a separate sea-state and queue decision; do not treat an island ferry ticket as a reservation or guarantee for it. Check the Sorrento municipality and venue pages for any local event or interior opening that changes the walk.',
+          seasonTitle: 'Shift the descent around heat and sea',
+          season: 'In hot months, walk the upper centre first and place the exposed cliff and marina branch later, only if the lift, stairs or bus access is available. Leave a separate full day for a boat rather than joining it to the arrival walk. In shoulder or winter dates, verify the sailing calendar before choosing a port-side hotel; in rain or rough sea, stay on the upper-town loop and remove the descent.'
+        },
         sources: [
           ['https://www.eavsrl.it/', 'EAV — official Sorrento rail information'],
           ['https://www.comune.sorrento.na.it/', 'Comune di Sorrento — official municipal information'],
-          ['https://www.puntacampanella.org/', 'Punta Campanella Marine Protected Area — official access information']
+          ['https://www.puntacampanella.org/', 'Punta Campanella Marine Protected Area — official access information'],
+          ['https://www.snav.it/en/shop-2', 'SNAV — ferry routes, booking and current trip conditions'],
+          ['https://www.capritourism.com/en', 'Capri Tourism — official island planning information']
         ]
       }),
       g({
@@ -533,7 +555,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Amalfi Coast Positano cliff town sea panorama',
         imageAlt: 'Positano stacked above the sea on the Amalfi Coast',
         purpose: 'Choose Positano’s stair town, Amalfi plus Ravello or a limited ferry corridor as the day’s main coast argument, then protect the last road or marine return before adding another village.',
-        summary: 'Enter from Sorrento or Salerno on one verified mode, complete one town pair or bounded coast view and leave before vessel capacity, road congestion or darkness removes the return.',
+        summary: 'Choose one Positano landing or an Amalfi-to-Ravello road pair; walk from the named pier or stop, then verify the SITA Sud or Travelmar return for that date.',
         choices: [
           ['Positano depth', 'Use one landing or bus stop and accept the town’s vertical streets. It gives iconic coast scale but sacrifices Ravello and a long Amalfi interior.'],
           ['Amalfi and Ravello', 'Use Amalfi as the transport hinge and one confirmed uphill connection to Ravello. This gives cathedral and terrace contrast but not a relaxed Positano visit.'],
@@ -555,10 +577,24 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow a full day for one town pair or a coast sailing with one meaningful stop. A single town still deserves five to seven hours including transport.',
         combine: 'Combine Amalfi with Ravello or Positano with one bounded sea view. Do not add Capri or Pompeii to the same operating day.',
-        verify: 'Check SITA and Travelmar schedules, marine weather, stop or port identity, any path closure and the last return to the accommodation base.',
+        verify: 'Check SITA Sud route 5110 and its day-specific notices, Travelmar’s actual departure pier, marine weather, any path closure and the final return to the booked base.',
+        localPlan: {
+          title: 'One coast pair, one named return',
+          intro: 'Use Amalfi as the road-and-sea hinge only when the return from the chosen town is already clear.',
+          stayTitle: 'Choose the bed by tomorrow’s exit',
+          stay: 'For a day trip, Sorrento works when Naples rail or a Capri sailing is the next priority; Salerno is stronger for mainline rail and an eastern-coast start. An Amalfi night places the cathedral, ferry pier and Ravello bus nearer, but upper lodging can mean stairs with bags. Positano suits an early beach or town start only if the booked room’s actual level and arrival stop are manageable. For two nights, keep the same room rather than changing towns after a full coast day.',
+          walkTitle: 'Walk Amalfi, then decide on Ravello',
+          walk: 'From Amalfi’s passenger pier, follow the waterfront into Piazza Flavio Gioia and Piazza Duomo; take the cathedral steps only if the interior visit fits the day, then walk the level lanes toward the Paper Museum if it is open. For a second layer, use the confirmed SITA Sud 5110 bus from Amalfi to Ravello, then walk from the stop through Piazza Duomo toward Villa Rufolo; treat Villa Cimbrone as a farther uphill extension, not an automatic add-on. Return by the checked bus to Amalfi or use one Positano landing as a separate day instead of compressing three towns.',
+          bookingTitle: 'Match each ticket to its terminal',
+          booking: 'Before buying a Travelmar sailing, confirm that the departure is from the pier beside the town you plan to visit and that the return still reaches your accommodation base. For the road option, check SITA Sud’s 5110 line, stop sequence, valid service date and notices; a route listing is not a promise of a particular departure. Check current cathedral, garden and museum access separately. Never build a timed ferry-to-bus transfer on two independently changing tickets.',
+          seasonTitle: 'Make heat, sea and road a three-way gate',
+          season: 'In summer, start the town walk early and choose ferry or bus as the main spine; do not add a cliff path at midday without checking its status and shade. Shoulder and winter service can differ from the summer pattern, and sea state can remove a sailing after a land plan is fixed. If ferries stop, choose Amalfi plus the verified Ravello bus or one road-served town only. If the road is congested or disrupted, stay in the town already reached and protect the return.'
+        },
         sources: [
-          ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — official bus information'],
-          ['https://www.travelmar.it/en', 'Travelmar — official Amalfi Coast ferry information']
+          ['https://sitasudtrasporti.it/campania/orari/', 'SITA Sud Campania — current route timetables and stops'],
+          ['https://sitasudtrasporti.it/campania/', 'SITA Sud Campania — tickets and service notices'],
+          ['https://www.travelmar.it/en/timetable', 'Travelmar — ferry timetables and fares'],
+          ['https://www.visitamalfi.info/en/', 'Visit Amalfi — official town planning information']
         ]
       }),
       g({
@@ -570,7 +606,7 @@ export const italyCentralCampaniaClusters = [
         imageQuery: 'Capri Faraglioni island coast panorama Italy',
         imageAlt: 'Capri’s cliffs and Faraglioni rising from the Tyrrhenian Sea',
         purpose: 'Choose Capri town and Villa Jovis, Anacapri and Monte Solaro or a marine circuit as the island’s primary line, then fit funicular, bus and boat products around the last mainland return.',
-        summary: 'Land at Marina Grande, move once to the chosen island half, complete one cultural or landscape sequence and return to the port before the sailing queue controls the evening.',
+        summary: 'From Marina Piccola, choose Capri town or Anacapri, verify SNAV and island transport for the date, and return to Marina Grande with boarding margin.',
         choices: [
           ['Capri town and Villa Jovis', 'Use the funicular or bus for the upper town and a bounded historical walk. It gives Roman and civic context but sacrifices Anacapri depth.'],
           ['Anacapri and Monte Solaro', 'Move directly to Anacapri for the chairlift or town layer. It offers elevation and quieter streets but less Capri-town time.'],
@@ -592,10 +628,23 @@ export const italyCentralCampaniaClusters = [
         ],
         duration: 'Allow a full day from the mainland for one island half plus a secondary stop. An overnight stay supports both halves without making the last sailing the central anxiety.',
         combine: 'Combine Capri town with one villa, or Anacapri with Monte Solaro when operating. Keep the Amalfi Coast and Pompeii for other days.',
-        verify: 'Check the exact mainland port, ferry operator and check-in, island transport status, official cultural-site openings and marine conditions before departure.',
+        verify: 'Check SNAV or the operating ferry company for the exact Marina Piccola–Marina Grande date and return, then verify the island bus, funicular, lift and cultural-site notices.',
+        localPlan: {
+          title: 'One island half, one mainland return',
+          intro: 'Decide whether Capri town or Anacapri is the main ascent before joining the Marina Grande queues.',
+          stayTitle: 'Use a base that survives a late boat',
+          stay: 'With one Capri day, stay in Sorrento near the upper station or Piazza Tasso if the EAV arrival and the next mainland rail day matter; budget the separate descent to Marina Piccola. An overnight on Capri earns a second day for the other island half and removes the last-sailing pressure, but choose lodging only after checking its stair or bus access from the port. A Salerno base is less direct for this route, so confirm the specific operator and departure pier before booking around it.',
+          walkTitle: 'Choose Capri town or Anacapri, not both at full depth',
+          walk: 'From Marina Grande, use the currently operating funicular or a checked bus to Capri town. Walk the Piazzetta and Via Camerelle, then continue toward the Gardens of Augustus only if open; return by the same upper connection with time for the port queue. For Anacapri, take the confirmed island bus to Piazza Vittoria, choose Villa San Michele or the Monte Solaro chairlift, and retrace to the bus for Marina Grande. These are alternative uphill lines; do not promise time for both plus a Blue Grotto queue.',
+          bookingTitle: 'Protect the return before the viewpoint',
+          booking: 'Check the SNAV sailing or the operator serving Sorrento Marina Piccola to Capri Marina Grande on the exact date, including return, check-in, baggage and any separate ticket condition. If the intended return is full or seasonal service is absent, change the day before leaving Sorrento. Confirm the funicular and island-bus notices and the official opening or booking conditions for the chosen site. Blue Grotto entry and around-island circuits remain separate, weather-sensitive activities.',
+          seasonTitle: 'Let marine operation set the island day',
+          season: 'During busy warm-weather dates, select one town-half route and verify the boat before reserving other activities; queues can form at the port and at the island’s small uphill services. Shoulder and winter schedules may reduce direct sailings, so do not assume the coast route shown for summer will run. If rough sea cancels the crossing, move the island day rather than replacing it with an improvised bus-and-taxi chain; if upper services stop, stay around Marina Grande and the accessible lower town.'
+        },
         sources: [
           ['https://www.capritourism.com/en', 'Capri official tourism — island planning information'],
-          ['https://museicapri.cultura.gov.it/', 'Musei e Parchi Archeologici di Capri — official sites']
+          ['https://museicapri.cultura.gov.it/', 'Musei e Parchi Archeologici di Capri — official sites'],
+          ['https://www.snav.it/en/shop-2', 'SNAV — ferry routes, booking and current trip conditions']
         ]
       })
     ]
