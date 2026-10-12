@@ -493,10 +493,11 @@ if (requestedClusterSlug) {
     'taman-negara': ['kuala-tahan-park-headquarters', 'canopy-bukit-teresek', 'tahan-river-lata-berkoh', 'merapoh-sungai-relau'],
     'sandakan-kinabatangan': ['sandakan-heritage-waterfront', 'sepilok-conservation-centres', 'sukau-kinabatangan', 'gomantong-batu-puteh'],
     'kuching-bako': ['kuching-waterfront-old-courthouse', 'borneo-cultures-museum', 'semenggoh-wildlife-centre', 'bako-national-park'],
-    'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day']
+    'semporna-tun-sakaran': ['semporna-jetty-operator', 'bohey-dulang-bodgaya', 'mabul-kapalai', 'sipadan-permit-day'],
+    'perhentian-redang': ['kuala-besut-transfer', 'perhentian-kecil', 'perhentian-besar', 'redang-merang-transfer']
   };
   const reviewedGuideSlugs = boundedGuideLists[requestedClusterSlug];
-  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed George Town & Penang, Cameron Highlands, Langkawi, Melaka, Taman Negara, Sandakan & Kinabatangan and Kuching & Bako source clusters.');
+  if (!reviewedGuideSlugs) throw new Error('Bounded generation is enabled only for reviewed Malaysia source clusters listed in boundedGuideLists.');
   const cluster = malaysiaDepthClusters.find((item) => item.hubSlug === requestedClusterSlug);
   const reviewedGuideSlugSet = new Set(reviewedGuideSlugs);
   const guides = malaysiaDepthGuides.filter((guide) => guide.hubSlug === requestedClusterSlug && reviewedGuideSlugSet.has(guide.slug));
