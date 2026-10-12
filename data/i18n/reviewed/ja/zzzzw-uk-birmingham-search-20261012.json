@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Birmingham New Street for mainline arrivals, Moor Street for the Stratford rail branch, or Snow Hill/Jewellery Quarter for a west-side base. Two nights gives one full city day; three adds either Stratford or Ironbridge; four can fit both, with no weather spare. Ironbridge requires a separate Telford Central–bus-station–Arriva 8/8A chain.": "幹線列車で到着するならBirmingham New Street、ストラトフォード方面への支線ならMoor Street、西側に泊まるならSnow Hill/Jewellery Quarterを選びます。2泊なら市内の丸一日、3泊ならストラトフォードかアイアンブリッジのどちらかを追加できます。4泊なら両方へ行けますが天候予備日はありません。アイアンブリッジへはTelford Centralからバス駅へ移動し、Arriva 8/8Aに乗る別接続が必要です。",
+    "Walk Birmingham New Street to Victoria Square, BMAG at Chamberlain Square, Library of Birmingham, Brindleyplace and Gas Street Basin. Choose one extra district: the Jewellery Quarter by West Midlands Metro and a timed Museum of the Jewellery Quarter tour, or Digbeth on another day.": "Birmingham New StreetからVictoria Square、Chamberlain SquareのBMAG、Library of Birmingham、Brindleyplace、Gas Street Basinへ歩きます。さらに一地区を選びます。West Midlands MetroでJewellery Quarterへ行き時間指定の博物館ツアーに参加するか、Digbethは別日に回します。",
+    "From Stratford-upon-Avon station, walk into town for Shakespeare’s Birthplace, a second currently open Trust house or an RSC performance on Waterside. Build one Henley Street–river route, check each property separately and secure the train return before booking an evening show.": "Stratford-upon-Avon駅から町へ歩き、シェイクスピアの生家、当日開館中のTrust邸宅一軒、またはWatersideのRSC公演を選びます。Henley Streetから川沿いまでを一つのルートにし、各邸宅の公開状況を個別に確認してください。夜公演の前に列車の帰路を確保します。",
+    "Plan the Telford Central–Telford bus station–Arriva 8/8A chain before an Ironbridge day; the Gorge’s sites are spread across the valley. Choose one museum area and verify current closures, bus stop and return. Shrewsbury is the rail-simple town fallback.": "アイアンブリッジへ行く前に、Telford CentralからTelfordバスステーションへ移動し、Arriva 8/8Aに乗る接続を確認します。峡谷の施設は分散しています。博物館エリアを一つ選び、最新の休館情報、停留所、帰路を確認してください。鉄道だけで行きやすい町の予備案はシュルーズベリーです。"
+  }
+}
