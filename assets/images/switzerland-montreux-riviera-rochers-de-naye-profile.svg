@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Rochers-de-Naye railway and return profile</title>
+  <desc id="desc">A conceptual, not-to-scale station sequence from Montreux via Glion and Haut-de-Caux to Rochers-de-Naye at 2,042 metres, with a closure fallback and a visible English, Traditional Chinese, Japanese, Korean and Thai legend. No departures or fares are shown.</desc>
+  <rect x="0" y="0" width="1600" height="1066" fill="#edf2f3"/>
+  <rect x="48" y="34" width="1504" height="996" rx="28" fill="#fffefa" stroke="#c9d7dd" stroke-width="3"/>
+  <text x="102" y="102" fill="#173e4b" font-family="Arial,sans-serif" font-size="38" font-weight="700">ROCHERS-DE-NAYE · THE RAILWAY TO 2,042 M</text>
+  <text x="104" y="142" fill="#526970" font-family="Arial,sans-serif" font-size="21">MOB rack railway · published ride: 55 minutes · check exact-date service and upper-mountain visibility</text>
+
+  <rect x="88" y="168" width="1424" height="408" rx="22" fill="#f2f6f6" stroke="#d8e1e3" stroke-width="2"/>
+  <text x="126" y="208" fill="#173e4b" font-family="Arial,sans-serif" font-size="24" font-weight="700">LAKE SHORE → MOUNTAIN STATION · ROUTE ORDER ONLY</text>
+  <line x1="200" y1="472" x2="550" y2="412" stroke="#c44b3f" stroke-width="9" stroke-linecap="round"/>
+  <line x1="550" y1="412" x2="910" y2="342" stroke="#c44b3f" stroke-width="9" stroke-linecap="round"/>
+  <line x1="910" y1="342" x2="1340" y2="260" stroke="#c44b3f" stroke-width="9" stroke-linecap="round"/>
+  <circle data-station-index="1" cx="200" cy="472" r="21" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle data-station-index="2" cx="550" cy="412" r="21" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle data-station-index="3" cx="910" cy="342" r="21" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle data-station-index="4" cx="1340" cy="260" r="21" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <text x="200" y="527" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="23" font-weight="700">MONTREUX</text>
+  <text x="550" y="467" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="23" font-weight="700">GLION</text>
+  <text x="910" y="397" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="23" font-weight="700">HAUT-DE-CAUX</text>
+  <text x="1340" y="315" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="22" font-weight="700">ROCHERS-DE-NAYE</text>
+  <text x="1340" y="343" text-anchor="middle" fill="#526970" font-family="Arial,sans-serif" font-size="18">2,042 m</text>
+  <text x="126" y="553" fill="#526970" font-family="Arial,sans-serif" font-size="16">Station order follows operator route notices; the rising profile is symbolic and not a surveyed gradient.</text>
+
+  <rect x="88" y="600" width="690" height="188" rx="20" fill="#eef5f2" stroke="#b8d1c6" stroke-width="2"/>
+  <rect x="88" y="600" width="12" height="188" rx="6" fill="#39765e"/>
+  <text x="128" y="643" fill="#173e4b" font-family="Arial,sans-serif" font-size="25" font-weight="700">OPERATING LINE + USEFUL VISIBILITY</text>
+  <text x="128" y="686" fill="#334f56" font-family="Arial,sans-serif" font-size="19">Confirm service and summit weather before boarding.</text>
+  <text x="128" y="721" fill="#334f56" font-family="Arial,sans-serif" font-size="19">Save the practical descent before leaving Montreux.</text>
+  <text x="128" y="756" fill="#334f56" font-family="Arial,sans-serif" font-size="19">The 55-minute ride figure is not a live timetable.</text>
+
+  <rect x="822" y="600" width="690" height="188" rx="20" fill="#f8f1e7" stroke="#e3cfaa" stroke-width="2"/>
+  <rect x="822" y="600" width="12" height="188" rx="6" fill="#b47b20"/>
+  <text x="862" y="643" fill="#173e4b" font-family="Arial,sans-serif" font-size="25" font-weight="700">LINE CLOSED OR SUMMIT CLOUDY</text>
+  <text x="862" y="686" fill="#334f56" font-family="Arial,sans-serif" font-size="19">The dated works bus reached Haut-de-Caux only.</text>
+  <text x="862" y="721" fill="#334f56" font-family="Arial,sans-serif" font-size="19">Choose Vevey or Chillon, or verify Les Pléiades.</text>
+  <text x="862" y="756" fill="#334f56" font-family="Arial,sans-serif" font-size="19">Check the other line and its return independently.</text>
+
+  <rect x="88" y="812" width="1424" height="154" rx="18" fill="#f7f9f8" stroke="#d8e1e3" stroke-width="2"/>
+  <text x="124" y="846" fill="#173e4b" font-family="Arial,sans-serif" font-size="19" font-weight="700">FIVE-LANGUAGE ROUTE CHECK</text>
+  <text x="126" y="892" fill="#526970" font-family="Arial,sans-serif" font-size="17">EN · Check view + service</text>
+  <text x="414" y="892" fill="#526970" font-family="Arial,sans-serif" font-size="17">繁中 · 查天候／列車</text>
+  <text x="704" y="892" fill="#526970" font-family="Arial,sans-serif" font-size="17">日本語 · 天候・運行を確認</text>
+  <text x="1010" y="892" fill="#526970" font-family="Arial,sans-serif" font-size="17">한국어 · 날씨·운행 확인</text>
+  <text x="1302" y="892" fill="#526970" font-family="Arial,sans-serif" font-size="16">ไทย · เช็กฟ้า/รถไฟ</text>
+  <text x="126" y="932" fill="#526970" font-family="Arial,sans-serif" font-size="16">Named stops are labels, not a map. No geographic scale, departures, operating promise or fare is encoded.</text>
+  <text x="102" y="1000" fill="#526970" font-family="Arial,sans-serif" font-size="17">Conceptual planning diagram · not to scale · verify the dated operator notice, mountain forecast and final descent.</text>
+</svg>

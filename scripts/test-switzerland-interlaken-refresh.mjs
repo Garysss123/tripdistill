@@ -34,7 +34,13 @@ const lausanneRoutes = [
   '/switzerland/lausanne-lavaux/lavaux-terraces/',
   '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
 ];
-const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes].map((route) => `${locale.prefix}${route}`)));
+const montreuxRoutes = [
+  '/switzerland/montreux-riviera/',
+  '/switzerland/montreux-riviera/montreux-chillon/',
+  '/switzerland/montreux-riviera/rochers-de-naye/',
+  '/switzerland/montreux-riviera/vevey-lakeside/'
+];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes].map((route) => `${locale.prefix}${route}`)));
 
 function descendants(node) { return [node, ...(node.childNodes || []).flatMap(descendants)]; }
 function getAttr(node, name) { return node?.attrs?.find((item) => item.name === name)?.value; }
@@ -138,7 +144,7 @@ const oldSitemap = sitemapRecords(baseline('sitemap.xml'));
 const newSitemap = sitemapRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...newSitemap.keys()].sort(), [...oldSitemap.keys()].sort(), 'sitemap URL set unchanged');
 const changedDates = [...newSitemap].filter(([route, date]) => oldSitemap.get(route) !== date);
-assert.deepEqual(new Set(changedDates.map(([route]) => route)), expectedDateChanges, 'only Interlaken, Geneva-dependent and Lausanne existing routes across five editions have changed lastmod');
+assert.deepEqual(new Set(changedDates.map(([route]) => route)), expectedDateChanges, 'only Interlaken, Geneva-dependent, Lausanne and Montreux existing routes across five editions have changed lastmod');
 for (const [route, date] of changedDates) assert.equal(date, '2026-10-12', `${route}: sitemap lastmod`);
 
 console.log(`Interlaken refresh regression passed: four existing routes, five locales, ${expectedDateChanges.size} sitemap dates, ${JSON.stringify(wordDeltas)} English main-text word deltas; exact URLs, canonical/hreflang, article dates, translated search summaries, route detail, photo captions/credits/licenses and unchanged sitemap URL set passed.`);

@@ -8293,7 +8293,7 @@
     "url": "/switzerland/montreux-riviera/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Montreux and Vevey share a dramatic lake-and-mountain setting but serve different days. Chillon is a fixed historical anchor, Rochers-de-Naye is a weather-sensitive mountain excursion, and Vevey adds a smaller urban scale. The regional train network means you never need to walk the entire Riviera to prove you saw it.",
+    "summary": "Montreux and Vevey share one shore but do not make one continuous attraction. Chillon is a date-sensitive indoor visit east of town; Vevey is a quieter station-to-market-square-to-lake walk; Rochers-de-Naye is a separate, visibility-led ascent from Montreux. Two nights can cover one castle day and one Vevey day. A third night creates a real weather buffer for the mountain rather than forcing it between fixed connections. Choose one lakeside base, use the mainline train between towns, and do not walk the full shoreline simply because the map looks short.",
     "keywords": [
       "Montreux, Vevey & the Riviera",
       "Lake Geneva east",
@@ -8305,7 +8305,7 @@
     "url": "/switzerland/montreux-riviera/montreux-chillon/",
     "parent": "Montreux, Vevey & the Riviera",
     "type": "Local guide",
-    "summary": "Use Montreux’s waterfront as the approach or release from Chillon, with bus, train or a selective walk replacing the urge to cover every kilometer of promenade.",
+    "summary": "Make Chillon the fixed anchor and the lakefront a one-way approach or release. Use VMCV 201 or S5 for the other leg; the full Montreux–Chillon shore is about 4 km, so an out-and-back is optional, not the default.",
     "keywords": [
       "Montreux Waterfront & Chillon Castle",
       "Montreux, Vevey & the Riviera",
@@ -8318,11 +8318,11 @@
     "url": "/switzerland/montreux-riviera/rochers-de-naye/",
     "parent": "Montreux, Vevey & the Riviera",
     "type": "Local guide",
-    "summary": "Treat Rochers-de-Naye as a weather-gated rail excursion from Montreux, with the lake panorama as the reward and a protected descent as the non-negotiable part.",
+    "summary": "Treat the 2,042 m summit as a date- and visibility-gated excursion, not a guaranteed panorama. The official page publishes a 55-minute rack-train ride; the line also has announced maintenance closures, so the return and a lower-altitude day must be ready first.",
     "keywords": [
       "Rochers-de-Naye Mountain Railway",
       "Montreux, Vevey & the Riviera",
-      "lake-to-summit profile",
+      "rail closure and return profile",
       "summit-profile"
     ]
   },
@@ -8331,7 +8331,7 @@
     "url": "/switzerland/montreux-riviera/vevey-lakeside/",
     "parent": "Montreux, Vevey & the Riviera",
     "type": "Local guide",
-    "summary": "Use Vevey as the quieter Riviera counterpoint to Montreux, with the lakeside, old streets and one cultural stop connected by rail instead of another long promenade march.",
+    "summary": "Use Vevey for a compact, low-elevation Riviera day: start from the station, walk the pedestrian old town from Grande Place toward Jardin Roussy, then finish at the lake rather than marching the whole shore.",
     "keywords": [
       "Vevey, Lakeside & Riviera Towns",
       "Montreux, Vevey & the Riviera",

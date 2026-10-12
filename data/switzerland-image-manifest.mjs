@@ -196,6 +196,7 @@ export const switzerlandImageManifest = {
   "montreux-riviera/montreux-chillon": {
     "src": "/assets/images/switzerland-montreux-riviera-montreux-chillon.webp",
     "alt": "Chillon Castle on Lake Geneva near Montreux",
+    "displayTitle": "Chillon Castle on Lake Geneva near Montreux",
     "source": "https://commons.wikimedia.org/wiki/File:Chateau_Chillon_Montreux,_Alps_Castle_Lake_L%C3%A9man.jpg",
     "label": "Chateau Chillon Montreux, Alps Castle Lake Léman.jpg",
     "creator": "Karim Kanoun Photography",
@@ -204,18 +205,24 @@ export const switzerlandImageManifest = {
     "remoteSha1": "a7fb692f7a6ed7304d155b93c50d58ce8e54190c"
   },
   "montreux-riviera/rochers-de-naye": {
-    "src": "/assets/images/switzerland-montreux-riviera-rochers-de-naye.webp",
-    "alt": "Mountain view from Rochers-de-Naye above Lake Geneva",
-    "source": "https://commons.wikimedia.org/wiki/File:Rochers-de-naye-train-at-montreux-station.jpg",
-    "label": "Rochers-de-naye-train-at-montreux-station.jpg",
-    "creator": "Cheeni",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Rochers-de-naye-train-at-montreux-station.jpg",
-    "remoteSha1": "a26de0727cdcacaf820a76f3b5b137f9bb615ac7"
+    "src": "/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+    "alt": "Original five-language schematic of the Montreux–Rochers-de-Naye railway, route order and closure fallback; conceptual and not to scale",
+    "diagramNote": "Original five-language planning schematic. It names Montreux, Glion, Haut-de-Caux and Rochers-de-Naye in route order, then separates an operating clear-weather day from a dated closure or cloud fallback. It is not a geographic map, live timetable, service promise or fare quote; check the current notice, mountain forecast and return before travel.",
+    "diagramCardNote": "Five-language route key: Montreux → Glion → Haut-de-Caux → Rochers-de-Naye. Route order only; verify service, visibility and return. Not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+    "label": "Rochers-de-Naye five-language railway and return schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "fe4cdecbaa79a7c4f5e38e70383ada305f7efa5b"
   },
   "montreux-riviera/vevey-lakeside": {
     "src": "/assets/images/switzerland-montreux-riviera-vevey-lakeside.webp",
-    "alt": "Vevey waterfront on Lake Geneva",
+    "alt": "Vevey town and lakeside on Lake Geneva",
+    "displayTitle": "Vevey town and lakeside on Lake Geneva",
     "source": "https://commons.wikimedia.org/wiki/File:Vevey,_Switzerland.jpg",
     "label": "Vevey, Switzerland.jpg",
     "creator": "Marek Ślusarczyk ( Tupungato ) Photo gallery",
@@ -538,6 +545,21 @@ export const switzerlandRetiredImageRecords = {
     inventoryStatus: 'unused',
     rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
     retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the local image depicts the Jet d’Eau and open water, not the claimed Old Town skyline. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
+  },
+  montreuxRochersTrainMismatch: {
+    src: '/assets/images/switzerland-montreux-riviera-rochers-de-naye.webp',
+    alt: 'Mountain view from Rochers-de-Naye above Lake Geneva',
+    source: 'https://commons.wikimedia.org/wiki/File:Rochers-de-naye-train-at-montreux-station.jpg',
+    label: 'Rochers-de-naye-train-at-montreux-station.jpg',
+    creator: 'Cheeni',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: 'File:Rochers-de-naye-train-at-montreux-station.jpg',
+    remoteSha1: 'a26de0727cdcacaf820a76f3b5b137f9bb615ac7',
+    localSha1: 'fbc67b9ca4cb03eac6d46c69dd745110ae35041f',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the train at Montreux station, not the claimed mountain view from Rochers-de-Naye. The train is destination-related, but it does not support the summit-view alt or the guide’s mountain-conditions decision. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
   },
   zermattGlacierParadiseConflict: {
     src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',

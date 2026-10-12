@@ -31,6 +31,14 @@ const lausanneRoutes = [
   '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
 ];
 const lausanneLastmod = '2026-10-12';
+const montreux = switzerlandClusters.find((cluster) => cluster.slug === 'montreux-riviera');
+const montreuxRoutes = [
+  '/switzerland/montreux-riviera/',
+  '/switzerland/montreux-riviera/montreux-chillon/',
+  '/switzerland/montreux-riviera/rochers-de-naye/',
+  '/switzerland/montreux-riviera/vevey-lakeside/'
+];
+const montreuxLastmod = '2026-10-12';
 const geneva = switzerlandClusters.find((cluster) => cluster.slug === 'geneva-lake');
 const genevaRoutes = ['/switzerland/geneva-lake/', '/switzerland/geneva-lake/old-town-lakefront/', '/switzerland/geneva-lake/international-quarter/', '/switzerland/geneva-lake/carouge-arve/'];
 const genevaSitemapRoutes = ['/switzerland/', ...genevaRoutes];
@@ -95,6 +103,8 @@ check(Boolean(zurich), 'Zurich hub must exist');
 check(Boolean(zermatt) && zermatt?.reviewDate === '12 October 2026' && zermatt?.isoDate === zermattLastmod, 'Zermatt editorial review metadata must match the source review date');
 check(Boolean(interlaken) && interlaken?.reviewDate === '12 October 2026' && interlaken?.isoDate === interlakenLastmod, 'Interlaken editorial review metadata must match the source review date');
 check(Boolean(geneva) && geneva?.reviewDate === '12 October 2026' && geneva?.isoDate === genevaLastmod, 'Geneva editorial review metadata must match the source review date');
+check(Boolean(montreux) && montreux?.reviewDate === '12 October 2026' && montreux?.isoDate === montreuxLastmod, 'Montreux editorial review metadata must match the source review date');
+check(montreux?.guides.map((guide) => guide.slug).join(',') === 'montreux-chillon,rochers-de-naye,vevey-lakeside', 'Montreux refresh must retain its hub and same three child routes');
 check(genevaRoutes.length === 4 && geneva?.guides.map((guide) => guide.slug).join(',') === 'old-town-lakefront,international-quarter,carouge-arve', 'Geneva refresh must retain the hub and its same three child routes');
 if (geneva) {
   check(geneva.faq?.length === 3, 'Geneva hub must have three date-aware, district-specific FAQs');
@@ -246,7 +256,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = genevaSitemapRoutes.includes(route) ? genevaLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
+    const expectedLastmod = genevaSitemapRoutes.includes(route) ? genevaLastmod : montreuxRoutes.includes(route) ? montreuxLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

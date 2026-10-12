@@ -109,6 +109,13 @@ const lausanneEditedRoutes = [
   '/switzerland/lausanne-lavaux/lavaux-terraces/',
   '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
 ];
+const montreuxLastmod = '2026-10-12';
+const montreuxEditedRoutes = [
+  '/switzerland/montreux-riviera/',
+  '/switzerland/montreux-riviera/montreux-chillon/',
+  '/switzerland/montreux-riviera/rochers-de-naye/',
+  '/switzerland/montreux-riviera/vevey-lakeside/'
+];
 const southKoreaLastmod = '2026-10-08';
 const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
@@ -968,6 +975,11 @@ for (const route of lausanneEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error('Cannot date edited Lausanne route absent from sitemap: ' + route);
   records.set(route, { ...record, lastmod: lausanneLastmod });
+}
+for (const route of montreuxEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Montreux route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: montreuxLastmod });
 }
 
 for (const route of southKoreaEditedRoutes) {
