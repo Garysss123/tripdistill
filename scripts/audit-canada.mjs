@@ -211,8 +211,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/winnipeg-churchill/human-rights-assiniboine/',
     '/canada/winnipeg-churchill/churchill-hudson-bay/'
   ]);
+  const whitehorseUpdatedRoutes = new Set([
+    '/canada/whitehorse-kluane/',
+    '/canada/whitehorse-kluane/whitehorse-river/',
+    '/canada/whitehorse-kluane/kluane-haines-junction/',
+    '/canada/whitehorse-kluane/miles-canyon-aurora/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) || halifaxUpdatedRoutes.has(route) || peiUpdatedRoutes.has(route) || winnipegUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) || halifaxUpdatedRoutes.has(route) || peiUpdatedRoutes.has(route) || winnipegUpdatedRoutes.has(route) || whitehorseUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

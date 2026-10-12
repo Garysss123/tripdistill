@@ -641,21 +641,189 @@ export const canadaAtlanticNorthClusters = [
 
   defineCanadaCluster({
     slug: 'whitehorse-kluane', name: 'Whitehorse & Kluane', region: 'Yukon', band: 'north', family: 'yukon-roadbook',
-    label: 'Yukon gateway · river city and immense mountain park', tagline: 'road readiness comes before remoteness.',
-    hubIntro: 'Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky condition, not a guaranteed nightly attraction.',
-    stay: 'Two Whitehorse nights plus two or three Kluane/Haines Junction nights creates a useful first trip. Add more for serious hiking or a longer highway journey.',
-    transfer: 'A car is highly useful outside Whitehorse. Highway conditions, fuel, wildlife and limited cell service matter; flights or tours do not replace every park-road decision.',
-    season: 'Summer offers very long daylight; winter brings cold, short days and aurora opportunities. Shoulder seasons can combine snow, ice and reduced services.',
-    fallback: 'Whitehorse museums, cultural centres and short river walks are the weather fallback; in Kluane, shorten the trail or use lower viewpoints rather than forcing alpine objectives.',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
+    label: 'Yukon gateway · river city and immense mountain park', tagline: 'Choose the base before the road.',
+    hubIntro: 'Choose Yukon by where you can spend the night: Whitehorse for its riverfront and services, or Haines Junction for Kluane’s road-accessible edge. Parks Canada places the park 160 km west of Whitehorse; its interior generally requires flightseeing or a serious mountaineering or ski expedition.',
+    stay: 'Plan four or five nights for a first road-led trip: two in Whitehorse and two or three in Haines Junction. One night in Haines Junction leaves little room to move a park day when cloud, smoke, ice or a cancelled flightseeing outing changes the plan.',
+    transfer: 'Whitehorse has a city bus network, but Parks Canada says Kluane trailheads have no public transportation and can be difficult to reach without a vehicle. Arrange a rental or named operator before booking hikes; check Yukon 511 for each highway leg and do not assume an unlisted shuttle.',
+    season: 'Summer daylight supports a city walk and a full park day, but can hide fatigue. Shoulder-season and winter snow, ice, shorter light and reduced services narrow the choices. Visitor-centre hours are seasonal; dark skies make aurora possible but never guaranteed.',
+    fallback: 'If a high trail, road or flightseeing plan fails, switch to an open lower route such as the 0.5-km Kokanee boardwalk at Kathleen Lake, or use the Haines Junction visitor centre only when it is operating. On 12 October 2026, Parks Canada listed the Kathleen Lake campground and oTENTik as closed until May 2027. Whitehorse’s river and cultural route is a separate weather-buffer day; recheck every site and road before leaving.',
+    firstVisitPlan: {
+      heading: 'Two bases, one moveable mountain day',
+      intro: 'Keep the town day, road transfer and park choice in separate blocks. This is an itinerary frame; live services, trail notices and weather decide what can actually run.',
+      days: [
+        ['Day 1 · Whitehorse', 'Stay in town, check the City transit schedule, then choose one open cultural stop and a Yukon River walk. Do not add Miles Canyon if it turns the arrival day into a long hike before an aurora night.'],
+        ['Day 2 · Move west', 'Drive the 160-km Alaska Highway leg to Haines Junction only after checking Yukon 511, the forecast and the fuel or lodging services you will rely on. Confirm those stops directly; do not infer that every map pin is open.'],
+        ['Day 3 · Kluane choice', 'Choose one trail by footing and ability: the accessible 0.5-km Kokanee boardwalk, Parks Canada’s 7.6-km St. Elias Lake day hike listed at 2–4 hours, or a more demanding route only when current notices and conditions support it. Keep another night nearby if weather can move the outing.']
+      ]
+    },
     sources: [
-      ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — transit information'],
-      ['https://parks.canada.ca/pn-np/yt/kluane', 'Parks Canada — Kluane National Park and Reserve'],
-      ['https://511yukon.ca/', 'Yukon 511 — highway conditions and incidents']
+      ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — transit routes, schedules and current amendments'],
+      ['https://kwanlindunculturalcentre.com/', 'Kwanlin Dün Cultural Centre — visit and current hours'],
+      ['https://parks.canada.ca/lhn-nhs/yt/ssklondike/visit', 'Parks Canada — S.S. Klondike location and river-trail access'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/visit', 'Parks Canada — Kluane access, distance and visitor information'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/activ/randonnee-hiking', 'Parks Canada — named hiking routes, difficulty and trail notices'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/kathleen', 'Parks Canada — Kathleen Lake boardwalk and seasonal services'],
+      ['https://parks.canada.ca/pn-np/yt/kluane/activ/aeriennes-flightseeing', 'Parks Canada — Kluane flightseeing and park-interior access'],
+      ['https://511yukon.ca/', '511 Yukon — current road conditions, closures, visibility and wildlife hotspots'],
+      ['https://weather.gc.ca/', 'Environment and Climate Change Canada — current forecasts and weather alerts'],
+      ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — Miles Canyon walking route and seasonal road access'],
+      ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — dark-sky, cloud and cold-weather viewing conditions']
+    ],
+    faq: [
+      ['How many nights should I split between Whitehorse and Kluane?', 'For a first road-led visit, use about two Whitehorse nights and two or three in Haines Junction. The second base prevents a 160-km-each-way park drive from consuming the hiking day and gives weather a chance to move the outing.'],
+      ['Can I use Whitehorse city transit to reach Kluane trailheads?', 'No. Whitehorse Transit is for the city; Parks Canada says there is no public transportation to Kluane trailheads. Arrange your own vehicle or a confirmed operator, and check the highway before departure.'],
+      ['Can I drive into the interior of Kluane?', 'Not on an ordinary park road. Parks Canada says the interior is generally reached by flightseeing or a serious mountaineering or ski-tour expedition. A roadside visit and a flightseeing trip are different plans.'],
+      ['Are visitor centres and camping open all year?', 'No fixed year-round opening should be assumed. The current Parks Canada page lists seasonal visitor-centre dates, and its 12 October 2026 Kathleen Lake listing says the campground and oTENTik are closed until May 2027. Recheck the exact season before lodging or trail planning.']
     ],
     guides: [
-      g({ slug: 'whitehorse-river', name: 'Whitehorse & Yukon River', instrument: 'river-service base map', layout: 'field-notebook', imageQuery: 'Whitehorse Yukon River Canada', imageAlt: 'Yukon River landscape at Whitehorse', summary: 'Use Whitehorse to understand the Yukon River and prepare the road trip: one cultural institution, one river/canyon walk and the practical fuel/food stop before Kluane.', access: 'Central Whitehorse has transit and walkable areas, but most regional branches need a car, tour or explicit shuttle.', tradeoff: 'A city day gives Indigenous, river and Gold Rush-era context plus logistics; it sacrifices distance but improves every later road day.', fallback: 'Cold, smoke or rain can move more time into museums and cultural centres while the river walk shortens.', duration: 'One full day plus an arrival/departure half-day works for a first visit.', combine: 'Pair with Miles Canyon or another close branch, not a full Kluane excursion on the same day.', verify: 'Check Whitehorse Transit, selected cultural-site hours, Yukon 511 and wildfire/smoke or severe-weather notices.', stages: [['Cultural context first', 'Choose one museum or cultural centre that explains the river, Indigenous history and northern settlement.'], ['Walk the river', 'Use a maintained waterfront or nearby route rather than improvising remote access.'], ['Prepare the highway', 'Fuel, food and download maps before leaving for Kluane.'], ['Protect the night plan', 'If aurora is possible, keep the evening flexible rather than exhausting the day first.']], watch: [['Smoke', 'Wildfire smoke can remove views and make outdoor exertion unhealthy.'], ['Long daylight', 'Summer light can disguise fatigue; a bright evening is still the end of a long day.'], ['Aurora expectations', 'Cloud and solar activity are uncertain; do not sacrifice every daytime plan for a guaranteed sighting that does not exist.']] }),
-      g({ slug: 'kluane-haines-junction', name: 'Kluane & Haines Junction', instrument: 'mountain weather gate', layout: 'park-gate', imageQuery: 'Kluane National Park Yukon mountains Canada', imageAlt: 'Mountain landscape in Kluane National Park Yukon', summary: 'Base in Haines Junction or nearby, then choose one Kluane trail/visitor sector by weather and ability; the park’s scale makes “seeing Kluane” a meaningless one-stop goal.', access: 'Drive from Whitehorse on the Alaska Highway/Haines Road corridor with fuel and road conditions checked. Trailheads and viewpoints are dispersed.', tradeoff: 'The park offers huge mountain and glacier landscapes but many deep interiors are not road-accessible; a scenic flight is a separate weather-dependent product.', fallback: 'Cloud or wind can cancel flightseeing and reduce alpine value; use visitor interpretation, lower trails and lake/road viewpoints.', duration: 'Two or three nights gives one major trail day plus weather margin; serious backcountry trips need much more planning.', combine: 'Connect from Whitehorse and sleep locally. Do not drive out, hike long and return to Whitehorse late the same day.', verify: 'Check Parks Canada trail/bear advisories, Yukon 511, weather, fuel and any flightseeing operator cancellation terms.', stages: [['Stop at the visitor centre', 'Confirm current trail, wildlife and weather conditions before committing to the day.'], ['Choose one trail level', 'Match elevation and distance to real ability and the forecast.'], ['Keep flightseeing optional', 'Book only with a clear cancellation/weather policy and do not treat it as guaranteed access.'], ['Return to Haines Junction', 'End close to lodging so the next road day begins rested.']], watch: [['Bear country', 'Food storage, group behavior and current bear advisories are core planning.'], ['Rapid weather change', 'Mountain conditions can diverge sharply from Whitehorse forecasts.'], ['Remote trailheads', 'Limited cell service and long emergency response times raise the cost of overreaching.']] }),
-      g({ slug: 'miles-canyon-aurora', name: 'Miles Canyon & Aurora Planning', instrument: 'daylight-darkness clock', layout: 'two-clock-board', imageQuery: 'Miles Canyon Whitehorse Yukon Canada', imageAlt: 'Yukon River canyon landscape near Whitehorse', summary: 'Keep Miles Canyon as the daylight activity and treat aurora viewing as a separate late-night probability window so one uncertain sky event does not erase the entire day.', access: 'Miles Canyon is close to Whitehorse but needs a car/taxi/tour or appropriate seasonal access plan. Aurora sites require safe night transport and warm shelter strategy.', tradeoff: 'A short canyon day preserves energy for a late night; a full hiking day plus midnight aurora tour can create unsafe fatigue.', fallback: 'Cloudy aurora nights should end early without regret; the daytime canyon and cultural plan still make the day complete.', duration: 'Half a day for Miles Canyon plus an optional evening/night block; schedule a slower following morning.', combine: 'Use it as a Whitehorse buffer day before/after Kluane, not the night before a long early highway drive.', verify: 'Check trail access, Yukon 511 if driving, weather/cloud cover, aurora forecast as probability only and the chosen tour’s pickup/cold policy.', stages: [['Daylight canyon', 'Walk one maintained canyon/river section while footing and visibility are good.'], ['Rest before dark', 'Eat and sleep or relax instead of filling the gap with another long excursion.'], ['Make a go/no-go sky decision', 'Use cloud, temperature and operator advice; aurora forecasts are not guarantees.'], ['Return warm and rested', 'End the night with safe transport and protect the following morning from fatigue.']], watch: [['Night driving', 'Dark rural roads, wildlife and ice require a sober transport plan.'], ['Cold exposure', 'Standing still for sky viewing feels far colder than daytime walking.'], ['Forecast overconfidence', 'High activity can be hidden by cloud; clear sky can still produce weak displays.']] })
+      g({
+        slug: 'whitehorse-river', name: 'Whitehorse & Yukon River', instrument: 'river-service base map', layout: 'field-notebook',
+        imageQuery: 'Whitehorse Yukon River Canada', imageAlt: 'Yukon River landscape at Whitehorse',
+        summary: 'Use Whitehorse as a recovery-and-road-prep base: city transit serves urban stops, while Kluane and Miles Canyon need separate access plans. Link the downtown river walk to S.S. Klondike by the riverbank pedestrian trail, then choose one cultural stop after checking its date-specific hours.',
+        access: 'Whitehorse Transit publishes routes and schedules for city trips. Parks Canada says the S.S. Klondike can be reached by the Yukon River pedestrian trail from downtown or by transit; neither means the separate Kluane trailheads are on a bus route.',
+        tradeoff: 'A Whitehorse day gives the trip a usable city start, a named river walk and time to prepare for the Alaska Highway. It sacrifices distance into the park, which is useful when the road day needs a rested driver.',
+        fallback: 'If rain, smoke, ice or a holiday closing makes the riverside walk unattractive, choose one open indoor cultural site or shorten the walk to the serviced downtown edge. If both sites are closed, use this as the vehicle, food and weather-check day rather than inventing an open attraction.',
+        duration: 'Allow one unhurried city day, or split the river walk across an arrival and departure half-day. These are planning estimates, not measured venue visits.',
+        combine: 'Pair the river route with a local cultural stop; keep Miles Canyon as its own outing and Kluane as a separate road-and-overnight decision. Do not finish a long canyon loop and begin the highway drive tired.',
+        verify: 'Checked 12 October 2026: Parks Canada describes the S.S. Klondike river path and transit access; the City publishes live route schedules and amendments. Check the Kwanlin Dün Cultural Centre and S.S. Klondike pages for the actual date, then check Yukon 511 before a westbound drive.',
+        routeChoices: {
+          heading: 'Choose the city day by its access chain',
+          intro: 'Whitehorse can be explored on foot and by city bus, but a river walk, a cultural visit and a remote trail are not interchangeable stops. Pick the route that fits arrival time and current opening notices.',
+          options: [
+            ['No rental car today', 'Downtown and one open cultural stop', 'Use the current City schedule for the downtown bus leg, then visit the Kwanlin Dün Cultural Centre if it is open. This is the lower-driving choice for arrival day; check holiday hours before building the day around admission.'],
+            ['River history and an easy return', 'Downtown to S.S. Klondike', 'Parks Canada describes a pedestrian trail along the Yukon River from downtown to the S.S. Klondike and also lists transit access. Check footing and site hours, then return on the same path or a currently operating bus.'],
+            ['Preparing for the highway', 'Keep the afternoon for road logistics', 'Use the city day to verify current fuel, food, vehicle and forecast plans before Kluane. Services vary by date; confirm the actual stop rather than relying on a map listing.']
+          ]
+        },
+        routeEyebrow: 'Whitehorse river-to-road sequence', routeHeading: 'One cultural anchor, the river path, then a rested departure', routeStageLabels: ['Orient', 'Choose', 'Walk', 'Prepare'],
+        routeSourcesHeading: 'Urban access and the next road day',
+        routeSourcesNote: 'The City and Parks Canada explain separate transit and walking options. Cultural hours, city schedules and Yukon highway conditions are date-specific; verify the service you intend to use.',
+        sources: [
+          ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — current transit schedules and amendments'],
+          ['https://www.whitehorse.ca/routes-schedules/', 'City of Whitehorse — route maps and schedules'],
+          ['https://kwanlindunculturalcentre.com/', 'Kwanlin Dün Cultural Centre — visit information'],
+          ['https://parks.canada.ca/lhn-nhs/yt/ssklondike/visit', 'Parks Canada — S.S. Klondike river-trail and transit access'],
+          ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — separate Miles Canyon route choices'],
+          ['https://511yukon.ca/', '511 Yukon — road checks before the Alaska Highway']
+        ],
+        faq: [
+          ['Does Whitehorse Transit run to Kluane trailheads?', 'No. Parks Canada says Kluane trailheads have no public transportation and can be difficult to reach without a vehicle. City transit is useful in Whitehorse, not a substitute for a park-road plan.'],
+          ['How can I reach the S.S. Klondike without driving?', 'Parks Canada lists a pedestrian trail along the Yukon River from downtown or the campground, as well as Whitehorse Transit. Check present footing, schedule amendments and site hours before choosing one.'],
+          ['Can I add Miles Canyon to this walk?', 'Travel Yukon describes a separate roughly 15-km walking loop from town via the Millennium Trail and fish ladder, as well as shorter vehicle access. Treat the canyon as its own outing; do not append the long loop to a road-transfer day.'],
+          ['What if the cultural sites are closed?', 'Do not assume a holiday or seasonal schedule. Keep the river walk flexible, check each site’s current page, and use the time for road, fuel and weather planning if no indoor stop is open.']
+        ],
+        stages: [
+          ['Start with the day’s arrival time', 'If you land or check in late, stay near downtown and use the live City schedule for any bus leg. Do not place a fixed museum visit before confirming that day’s hours.'],
+          ['Choose one cultural stop', 'Check the Kwanlin Dün Cultural Centre and S.S. Klondike visitor pages separately. Pick the one that fits its own open hours and your interest; a closed interior does not cancel the river route.'],
+          ['Follow the Yukon River path', 'Parks Canada describes the pedestrian route from downtown to the S.S. Klondike. Check current footing, take the same route back or use transit only if a suitable departure is posted.'],
+          ['End with highway preparation', 'Before leaving Whitehorse, confirm the vehicle, the road condition, daylight and the services you will rely on. Keep this buffer in town if an early or long drive would otherwise follow a full day on foot.']
+        ],
+        watch: [
+          ['Site hours and holiday dates', 'The Kwanlin Dün Cultural Centre and S.S. Klondike publish their own visitor information. Verify both for the exact day rather than assuming every cultural site shares a schedule.'],
+          ['Path footing', 'Rain, freeze-thaw and snow can change the river walk. Shorten it at a safe return point when surfaces are slick.'],
+          ['City versus regional transport', 'A Whitehorse bus plan ends where city service ends. Confirm a vehicle or named operator before promising a canyon or Kluane connection.']
+        ]
+      }),
+      g({
+        slug: 'kluane-haines-junction', name: 'Kluane & Haines Junction', instrument: 'mountain weather gate', layout: 'park-gate',
+        imageQuery: 'Kluane National Park Yukon mountains Canada', imageAlt: 'Mountain landscape in Kluane National Park Yukon',
+        summary: 'Use Haines Junction as the overnight gateway, then choose one Kluane road-accessible sector and a trail that matches ability, footing and daylight. Parks Canada places the park 160 km west of Whitehorse, says trailheads lack public transit and notes that the interior is generally accessed by flightseeing or a serious expedition.',
+        access: 'Drive the Alaska Highway west from Whitehorse to Haines Junction; Parks Canada gives the distance as 160 km. The trailheads are dispersed and have no public transport. Check Yukon 511, weather, verified services and Parks Canada closures before the road leg.',
+        tradeoff: 'Two or three Haines Junction nights cost more lodging moves than a day trip but give the Kluane outing a local start and a weather-move option. Whitehorse is a services base, not a close trailhead.',
+        fallback: 'When cloud, wind, smoke, snow or a trail closure removes the high route or flightseeing, choose the currently open short option such as the Kokanee boardwalk or a lower road-side walk. If those are closed or icy, use an operating visitor centre or stay in town; do not replace a closed trail with an unmarked route.',
+        duration: 'Two or three nights in Haines Junction allow a transfer, one focused park day and a possible weather move. This is an itinerary allowance, not a minimum. Serious backcountry trips require their own permits, route-finding and equipment plan.',
+        combine: 'Sleep in Haines Junction before and after the park day. Do not drive 160 km from Whitehorse, take a long hike or flightseeing trip, then plan to drive the same distance back late.',
+        verify: 'Checked 12 October 2026: Parks Canada lists the Haines Junction Visitor Centre for 15 May–20 September and Thechàl Dhâl Visitor Centre for 20 May–6 September; its hiking page lists current trail lengths and says there is no public transport to trailheads. Recheck notices, Yukon 511, local forecast, fuel/services and flightseeing cancellation terms.',
+        routeChoices: {
+          heading: 'Choose the Kluane day by effort and access',
+          intro: 'All three choices start from a road-access plan. Confirm the exact trail notice and weather first; the listed distances and times come from Parks Canada and are not promises about your pace.',
+          options: [
+            ['Short and lower walking', 'Kathleen Lake · Kokanee boardwalk', 'Parks Canada describes a 0.5-km wheelchair-accessible boardwalk from the Kathleen Lake day-use area. It suits a scenic, lower-effort visit when the day-use area and route are open; it is not a substitute for an accessible journey from Whitehorse.'],
+            ['Moderate day-hike choice', 'St. Elias Lake', 'The Parks Canada trail listing gives 7.6 km return and 2–4 hours on easy terrain. Check the current trail, bridges, footing and daylight, and leave room for a slower return.'],
+            ['Longer mountain effort', 'Auriol or King’s Throne', 'Parks Canada lists Auriol as a 15-km loop taking 4–6 hours at moderate difficulty; King’s Throne is a steep 10-km return, 4–6 hours and difficult. Pick one only if the group, weather and return margin fit.']
+          ]
+        },
+        routeEyebrow: 'A Haines Junction park day', routeHeading: 'Check the gate, select one trail, return to the same base', routeStageLabels: ['Transfer', 'Check', 'Choose', 'Return'],
+        routeSourcesHeading: 'Trail status, visitor services and road conditions',
+        routeSourcesNote: 'Parks Canada publishes trail ratings, distances, seasonal visitor-centre windows and important bulletins. The Yukon road map and forecast are separate checks; flightseeing operators set their own weather and cancellation rules.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit', 'Parks Canada — Kluane location, Haines Junction base and seasonal facilities'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/activ/randonnee-hiking', 'Parks Canada — trail distances, listed effort and current trail notices'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/kathleen', 'Parks Canada — Kathleen Lake day-use area and Kokanee boardwalk'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/visit/services/info', 'Parks Canada — visitor-centre seasonal hours'],
+          ['https://parks.canada.ca/pn-np/yt/kluane/activ/aeriennes-flightseeing', 'Parks Canada — park-interior flightseeing information'],
+          ['https://511yukon.ca/', '511 Yukon — current Alaska Highway and Haines Road conditions'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local forecast and warnings']
+        ],
+        faq: [
+          ['Is Kluane a Whitehorse day trip?', 'Whitehorse is 160 km from Kluane according to Parks Canada, and the dispersed trailheads have no public transport. A park hike as a same-day there-and-back leaves a long road day around the activity; base in Haines Junction for a focused route and weather margin.'],
+          ['Which trail is the easiest starting point?', 'Parks Canada lists the 0.5-km Kokanee boardwalk at Kathleen Lake as wheelchair accessible, and St. Elias Lake as a 7.6-km return, 2–4-hour route on easy terrain. Check current access and choose based on your actual needs and the day’s footing.'],
+          ['Can I take a bus to a trailhead?', 'Parks Canada says there is no public transportation to Kluane trailheads. Arrange a vehicle or confirm a specific operator and pickup before lodging or trail bookings.'],
+          ['Will flightseeing always run if booked?', 'No. Parks Canada describes the remote interior as generally accessed by flightseeing or a serious mountaineering or ski expedition. Weather can change flight operations; read the operator’s cancellation terms and use the road-accessible trails as a separate fallback.'],
+          ['Is the Kathleen Lake campground open in October?', 'The Parks Canada page checked on 12 October 2026 listed the campground and oTENTik as closed until May 2027. Recheck the page for a later season, and do not make those facilities the fallback for a shoulder-season trip.']
+        ],
+        stages: [
+          ['Make the road a separate trip leg', 'Choose a departure after checking Yukon 511 and the local forecast. Confirm fuel, food and lodging services directly; the site does not publish a guaranteed service timetable for this corridor.'],
+          ['Check the visitor and trail notices', 'Use the Parks Canada Kluane page for seasonal visitor-centre hours and important bulletins. As checked on 12 October 2026, its two listed visitor-centre periods had ended; a closed desk means you need the online trail and safety information before leaving town.'],
+          ['Choose one effort level', 'Use Kokanee for the short lake-side boardwalk, St. Elias Lake for a longer easy-terrain day, or a strenuous trail only when ability, forecast, trail status and daylight agree. Carry the gear and bear-safety plan appropriate to the route.'],
+          ['Return to Haines Junction', 'Finish close to your lodging and reassess the next day. Move a weather-sensitive flight or hike within your extra night if possible; do not add the long drive back to Whitehorse after a full outing.']
+        ],
+        watch: [
+          ['Trailhead access', 'Parks Canada says trailheads can be difficult to reach without a vehicle and that no public transportation serves them. Confirm your actual ride before selecting a trail.'],
+          ['Mountain weather and visibility', 'Kluane conditions can differ from a Whitehorse city forecast. Use the local forecast, park bulletins and operator call before committing to an exposed route or scenic flight.'],
+          ['Seasonal services', 'Visitor centres and Kathleen Lake overnight facilities publish seasonal dates. A listing from another month or year does not establish that a facility is open for your trip.']
+        ]
+      }),
+      g({
+        slug: 'miles-canyon-aurora', name: 'Miles Canyon & Aurora Planning', instrument: 'daylight-darkness clock', layout: 'two-clock-board',
+        imageQuery: 'Miles Canyon Whitehorse Yukon Canada', imageAlt: 'Yukon River canyon landscape near Whitehorse',
+        summary: 'Keep the Miles Canyon walk in daylight and treat northern lights as a separate, optional dark-sky night. Travel Yukon describes a roughly 15-km walking loop from town; the shorter vehicle approach and winter access use different roads, so decide the access version before setting out.',
+        access: 'Miles Canyon is reached on foot or by car, not by assuming a Whitehorse bus reaches the trailhead. Travel Yukon describes a 15-km downtown loop via the Millennium Trail and fish ladder, a separate south-side parking approach, and winter access from the north via Chadburn Lake Road.',
+        tradeoff: 'The canyon is a daylight landscape walk; aurora viewing is a late-night probability window with separate darkness, cloud, cold and return-transport needs. Pairing a long walk with an all-night drive can make both less safe.',
+        fallback: 'If the south access road is seasonally closed, use the north-side approach only after checking current road and trail conditions; if surfaces are icy or the trail network is not suitable, skip the canyon. If cloud, daylight or cold rules out an aurora stop, return early and keep the river or cultural day complete.',
+        duration: 'Choose either the roughly 15-km walking loop described by Travel Yukon or a shorter confirmed vehicle outing; keep any aurora attempt as a separate evening and protect the following morning. These are planning choices, not measured visit times.',
+        combine: 'Use Miles Canyon as a separate Whitehorse half- or full-day, not as a detour on the 160-km Kluane transfer. Add the late night only when the next morning has no long drive or fixed early departure.',
+        verify: 'Checked 12 October 2026: Travel Yukon describes the downtown Millennium Trail–fish ladder–canyon walk, the south access road’s winter closure and the north-side Chadburn Lake Road approach. The Canadian Space Agency says aurora visibility needs darkness and clear sky; check local weather, Yukon 511 for a drive and the chosen tour’s pickup, return and cold-weather terms.',
+        routeChoices: {
+          heading: 'Pick one daylight access route before planning the sky',
+          intro: 'The canyon and the aurora use different clocks. Select the trail or vehicle approach first; add a night outing only after checking darkness, clouds, cold and a safe return.',
+          options: [
+            ['Long walk · no canyon parking required', 'Millennium Trail to the fish ladder and canyon', 'Travel Yukon describes a roughly 15-km loop from Whitehorse via the Millennium Trail and fish ladder. Make this the main outdoor activity, check footing and daylight, and do not place an early highway drive after a late sky watch.'],
+            ['Shorter daytime visit · vehicle access', 'South access road and suspension bridge', 'Travel Yukon describes a short drive from town to a small parking area near the canyon and bridge, about seven kilometres out. Check the road and parking access on the day; do not read the distance as a promised drive time.'],
+            ['Night option · only if dark and clear', 'A separate aurora viewing window', 'The Canadian Space Agency says clear, dark skies are needed and notes that clouds and cold affect viewing. Use a confirmed tour pickup or a sober driver and legal parking plan; forecasts indicate a chance, not a display guarantee.']
+          ]
+        },
+        routeEyebrow: 'A daylight walk and a separate night decision', routeHeading: 'Choose the canyon access, rest, then make a go/no-go call', routeStageLabels: ['Choose', 'Walk', 'Rest', 'Decide'],
+        routeSourcesHeading: 'Canyon access, road status and dark-sky checks',
+        routeSourcesNote: 'Travel Yukon describes the named foot and seasonal vehicle approaches. The Canadian Space Agency advises checking the aurora forecast and local weather; a space-weather forecast cannot confirm clear sky or a safe road return.',
+        sources: [
+          ['https://www.travelyukon.com/en/see-and-do/activities/hiking-near-whitehorse-exploring-miles-canyon', 'Travel Yukon — Millennium Trail loop, Canyon access and seasonal road notes'],
+          ['https://511yukon.ca/', '511 Yukon — current road, visibility and wildlife-collision checks'],
+          ['https://www.whitehorse.ca/living-in-whitehorse/transit/', 'City of Whitehorse — city transit schedule, not a Canyon shuttle promise'],
+          ['https://www.asc-csa.gc.ca/eng/astronomy/northern-lights/aurora-viewing-tips.asp', 'Canadian Space Agency — darkness, clouds, forecasts and cold'],
+          ['https://weather.gc.ca/', 'Environment and Climate Change Canada — local weather forecast and alerts'],
+          ['https://www.gi.alaska.edu/monitors/aurora-forecast', 'University of Alaska Fairbanks Geophysical Institute — aurora activity context']
+        ],
+        faq: [
+          ['Can I do Miles Canyon as a short city-centre stroll?', 'Not by assuming the canyon is next to downtown. Travel Yukon describes a roughly 15-km walk via the Millennium Trail and fish ladder or a separate vehicle approach; choose based on your distance, footing and return plan.'],
+          ['Is the south-side Canyon road open in winter?', 'Travel Yukon says the south access road closes in winter and describes year-round access on the north side via Chadburn Lake Road. Check current Yukon 511 and trail notices before relying on that approach.'],
+          ['Does a high aurora forecast mean the lights will appear?', 'No. The Canadian Space Agency says a dark, clear sky is needed; cloud, daylight and cold change the experience. Treat activity forecasts as one input, not a guaranteed event or a reason to keep driving when the road plan is unsafe.'],
+          ['Can I combine the canyon walk with a midnight tour?', 'Only if you can rest between them and have a confirmed pickup and return. The long walking loop plus a very late finish can create fatigue; avoid scheduling a long Kluane drive the following morning.'],
+          ['What should I do if clouds block the sky?', 'Call the night early. The canyon is a complete daylight outing on its own; use the next day for the riverfront or cultural plan rather than repeating an unsafe road search for a clear patch.']
+        ],
+        stages: [
+          ['Choose the access version', 'For the foot route, start in town and follow the Millennium Trail to the fish ladder and canyon as described by Travel Yukon. For the shorter visit, confirm a vehicle and current parking-road access before leaving.'],
+          ['Walk in daylight', 'Use the route that fits your ability and available light. In winter the published south access road is closed; check present conditions before using the north-side Chadburn Lake Road option.'],
+          ['Return, eat and rest', 'Finish the Canyon outing before deciding on an aurora tour. Set a warm-shelter plan, check the local forecast and agree on who is driving before dark.'],
+          ['Make a late-night go/no-go call', 'Choose a confirmed operator pickup or a legal, safe vehicle plan. Leave if cloud, cold, visibility or fatigue makes the return poor; never stop in a travel lane or treat an aurora forecast as a promise.']
+        ],
+        watch: [
+          ['Seasonal road closure', 'Travel Yukon’s access note says the south approach closes in winter. Road status and winter trail footing can still change; check current information before using the alternative.'],
+          ['Fatigue after midnight', 'The Aurora is not a reason to drive a long highway leg tired. Protect the following morning or skip the night outing.'],
+          ['Forecast versus sky', 'Activity, darkness and cloud are separate conditions. A strong geomagnetic forecast cannot clear cloud or extend summer darkness.']
+        ]
+      })
     ]
   }),
 

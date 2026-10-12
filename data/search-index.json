@@ -7535,57 +7535,6 @@
     ]
   },
   {
-    "title": "Whitehorse & Kluane",
-    "url": "/canada/whitehorse-kluane/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Whitehorse is the service base; Kluane is a vast park region reached by road with weather, fuel and limited-service planning. Aurora is an optional sky condition, not a guaranteed nightly attraction.",
-    "keywords": [
-      "Whitehorse & Kluane",
-      "Yukon",
-      "north"
-    ]
-  },
-  {
-    "title": "Whitehorse & Yukon River",
-    "url": "/canada/whitehorse-kluane/whitehorse-river/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Use Whitehorse to understand the Yukon River and prepare the road trip: one cultural institution, one river/canyon walk and the practical fuel/food stop before Kluane.",
-    "keywords": [
-      "Whitehorse & Yukon River",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "field-notebook"
-    ]
-  },
-  {
-    "title": "Kluane & Haines Junction",
-    "url": "/canada/whitehorse-kluane/kluane-haines-junction/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Base in Haines Junction or nearby, then choose one Kluane trail/visitor sector by weather and ability; the park’s scale makes “seeing Kluane” a meaningless one-stop goal.",
-    "keywords": [
-      "Kluane & Haines Junction",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "park-gate"
-    ]
-  },
-  {
-    "title": "Miles Canyon & Aurora Planning",
-    "url": "/canada/whitehorse-kluane/miles-canyon-aurora/",
-    "parent": "Whitehorse & Kluane",
-    "type": "Local guide",
-    "summary": "Keep Miles Canyon as the daylight activity and treat aurora viewing as a separate late-night probability window so one uncertain sky event does not erase the entire day.",
-    "keywords": [
-      "Miles Canyon & Aurora Planning",
-      "Whitehorse & Kluane",
-      "Yukon",
-      "two-clock-board"
-    ]
-  },
-  {
     "title": "Yellowknife & Great Slave Lake",
     "url": "/canada/yellowknife-great-slave/",
     "parent": "Canada",
@@ -13189,6 +13138,57 @@
       "Winnipeg & Churchill",
       "Manitoba",
       "expedition-board"
+    ]
+  },
+  {
+    "title": "Whitehorse & Kluane",
+    "url": "/canada/whitehorse-kluane/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Choose Yukon by where you can spend the night: Whitehorse for its riverfront and services, or Haines Junction for Kluane’s road-accessible edge. Parks Canada places the park 160 km west of Whitehorse; its interior generally requires flightseeing or a serious mountaineering or ski expedition.",
+    "keywords": [
+      "Whitehorse & Kluane",
+      "Yukon",
+      "north"
+    ]
+  },
+  {
+    "title": "Whitehorse & Yukon River",
+    "url": "/canada/whitehorse-kluane/whitehorse-river/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Use Whitehorse as a recovery-and-road-prep base: city transit serves urban stops, while Kluane and Miles Canyon need separate access plans. Link the downtown river walk to S.S. Klondike by the riverbank pedestrian trail, then choose one cultural stop after checking its date-specific hours.",
+    "keywords": [
+      "Whitehorse & Yukon River",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "field-notebook"
+    ]
+  },
+  {
+    "title": "Kluane & Haines Junction",
+    "url": "/canada/whitehorse-kluane/kluane-haines-junction/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Use Haines Junction as the overnight gateway, then choose one Kluane road-accessible sector and a trail that matches ability, footing and daylight. Parks Canada places the park 160 km west of Whitehorse, says trailheads lack public transit and notes that the interior is generally accessed by flightseeing or a serious expedition.",
+    "keywords": [
+      "Kluane & Haines Junction",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "park-gate"
+    ]
+  },
+  {
+    "title": "Miles Canyon & Aurora Planning",
+    "url": "/canada/whitehorse-kluane/miles-canyon-aurora/",
+    "parent": "Whitehorse & Kluane",
+    "type": "Local guide",
+    "summary": "Keep the Miles Canyon walk in daylight and treat northern lights as a separate, optional dark-sky night. Travel Yukon describes a roughly 15-km walking loop from town; the shorter vehicle approach and winter access use different roads, so decide the access version before setting out.",
+    "keywords": [
+      "Miles Canyon & Aurora Planning",
+      "Whitehorse & Kluane",
+      "Yukon",
+      "two-clock-board"
     ]
   }
 ]

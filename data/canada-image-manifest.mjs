@@ -486,7 +486,7 @@ export const canadaImageManifest = {
   },
   "whitehorse-kluane/kluane-haines-junction": {
     "src": "/assets/images/canada-whitehorse-kluane-kluane-haines-junction.webp",
-    "alt": "Mountain landscape in Kluane National Park Yukon",
+    "alt": "Dall sheep on a rocky slope beneath a high mountain face in Kluane National Park",
     "source": "https://commons.wikimedia.org/wiki/File:Dall_sheep_in_Kluane_National_Park.JPG",
     "label": "Dall sheep in Kluane National Park.JPG",
     "creator": "Jsayre64",
