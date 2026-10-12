@@ -22,6 +22,14 @@ const malaysiaLangkawiEditedRoutes = [
   '/malaysia/langkawi/machinchang-skycab/',
   '/malaysia/langkawi/kilim-geoforest/'
 ];
+const malaysiaMelakaLastmod = '2026-10-12';
+const malaysiaMelakaEditedRoutes = [
+  '/malaysia/melaka/',
+  '/malaysia/melaka/bandar-hilir-portuguese-settlement/',
+  '/malaysia/melaka/dutch-square-st-pauls/',
+  '/malaysia/melaka/jonker-harmony-street/',
+  '/malaysia/melaka/melaka-river-kampung-morten/'
+];
 const malaysiaIpohEditedRoutes = [
   '/malaysia/ipoh-kinta-valley/',
   '/malaysia/ipoh-kinta-valley/old-town-railway-civic-quarter/',
@@ -236,6 +244,13 @@ const unitedKingdomKentSussexEditedRoutes = [
   '/united-kingdom/kent-sussex-south-coast/brighton-lanes-seafront/',
   '/united-kingdom/kent-sussex-south-coast/canterbury-dover/',
   '/united-kingdom/kent-sussex-south-coast/seven-sisters-eastbourne/'
+];
+const unitedKingdomBelfastLastmod = '2026-10-12';
+const unitedKingdomBelfastEditedRoutes = [
+  '/united-kingdom/belfast-northern-ireland/',
+  '/united-kingdom/belfast-northern-ireland/belfast-civic-maritime/',
+  '/united-kingdom/belfast-northern-ireland/giants-causeway-coast/',
+  '/united-kingdom/belfast-northern-ireland/derry-walls-bogside/'
 ];
 // The North Wales and Scottish Islands hubs are updated generated summaries;
 // their dates follow the dated child routes, though hubs do not count as main routes.
@@ -647,6 +662,11 @@ for (const route of unitedKingdomKentSussexEditedRoutes) {
   if (!record) throw new Error(`Cannot date edited UK Kent/Sussex route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomKentSussexLastmod });
 }
+for (const route of unitedKingdomBelfastEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited UK Belfast route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomBelfastLastmod });
+}
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Lake route absent from sitemap: ${route}`);
@@ -731,6 +751,11 @@ for (const route of malaysiaLangkawiEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Langkawi route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: malaysiaLangkawiLastmod });
+}
+for (const route of malaysiaMelakaEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Melaka route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: malaysiaMelakaLastmod });
 }
 for (const route of parisEditedRoutes) {
   const record = records.get(route);
