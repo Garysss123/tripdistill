@@ -519,7 +519,7 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 12, 'inventory must count project-original artwork including Montreux, Melaka, Somerset, Peak District, the Malaysia diagrams, Geneva, Lucerne and Zermatt');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 13, 'inventory must count project-original artwork including Bern/Emmental, Montreux, Melaka, Somerset, Peak District, the Malaysia diagrams, Geneva, Lucerne and Zermatt');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 509, 'the regenerated merged inventory includes Côte d’Azur, Marseille, Peak District, Provence inland, two Zermatt and three Interlaken-area photo source-page checks; source-page declarations do not establish independent rights clearance, and project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -646,7 +646,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 1, 'the preserved rights-review file must not be published in dist');
-  assert.equal(report.counts.expectedBuildImageCount, 804, 'the Montreux, Geneva, Lucerne, Zermatt and Malaysia original diagrams must be included while the preserved Melaka rights-review photo remains excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 805, 'the Bern/Emmental, Montreux, Geneva, Lucerne, Zermatt and Malaysia original diagrams must be included while the preserved rights-review photos remain excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

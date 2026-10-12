@@ -11,7 +11,6 @@
   ],
   "translations": {
     "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore": "日內瓦湖畔的洛桑烏希區，一艘小船靠近岸邊",
-    "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train.…": "洛桑可分成上下兩層來規劃：舊城位於車站上方，烏希區則通往下方湖岸。城東的拉沃是仍在耕作的梯田景觀，可搭區域列車抵達。…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced…": "洛桑可分成上下兩層來規劃：舊城位於車站上方，烏希區則通往下方湖岸。城東的拉沃是搭區域列車可抵達的葡萄園…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train. A useful stay protects one complete Lausanne route and one selected vineyard section instead of treating every lake village as a stop on the same walk.": "洛桑可分成上下兩層來規劃：舊城位於車站上方，烏希區則通往下方湖岸。城東的拉沃是仍在耕作的梯田景觀，可搭區域列車抵達。妥善安排住宿，才能保留一段完整的洛桑路線與一段挑選好的葡萄園步道，而不是把每個湖畔村莊都排成同一次長途步行。",
     "How many nights should I stay in Lausanne?": "在洛桑應住幾晚？",
@@ -149,16 +148,7 @@
     "The Olympic Museum — official visitor information": "奧林匹克博物館 — 官方參訪資訊",
     "Lausanne Tourisme — Ouchy and quays": "洛桑觀光局 — 烏希與湖岸碼頭",
     "CGN — N1 and N2 dated timetables and fares": "CGN — N1、N2 指定日期時刻表與票價",
-    "TL — M2 service information": "TL — M2 服務資訊",
-    "Lausanne": "洛桑",
-    "Lavaux": "拉沃",
-    "Ouchy": "烏希",
-    "Cully": "庫利",
-    "vineyard terraces": "葡萄園梯田",
-    "Lake Geneva": "日內瓦湖",
-    "old city ouchy": "洛桑舊城與烏希",
-    "lavaux terraces": "拉沃葡萄園梯田",
-    "olympic lake cruise": "奧林匹克博物館與湖上航線"
+    "TL — M2 service information": "TL — M2 服務資訊"
   },
   "reviewProvenance": {
     "writer": "Codex GPT-6",

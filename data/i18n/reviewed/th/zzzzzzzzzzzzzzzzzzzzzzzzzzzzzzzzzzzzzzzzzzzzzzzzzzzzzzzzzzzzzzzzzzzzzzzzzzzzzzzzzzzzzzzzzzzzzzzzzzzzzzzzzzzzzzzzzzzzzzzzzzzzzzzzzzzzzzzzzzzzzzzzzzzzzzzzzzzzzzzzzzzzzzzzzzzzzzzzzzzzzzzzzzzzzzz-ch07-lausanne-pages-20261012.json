@@ -11,7 +11,6 @@
   ],
   "translations": {
     "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore": "เรือลำเล็กใกล้ชายฝั่ง Ouchy ริมทะเลสาบเจนีวาในเมืองโลซาน",
-    "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train.…": "วางแผนโลซานเป็นเมืองสองระดับ: เมืองเก่าอยู่เหนือสถานี ส่วน Ouchy เปิดสู่ชายฝั่งทะเลสาบด้านล่าง ทางตะวันออกคือ Lavaux ภูมิทัศน์ไร่องุ่นขั้นบันไดที่ยังทำเกษตรและเดินทางถึงได้ด้วยรถไฟท้องถิ่น…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced…": "วางแผนโลซานเป็นเมืองสองระดับ: เมืองเก่าอยู่เหนือสถานี ส่วน Ouchy เปิดสู่ชายฝั่งทะเลสาบด้านล่าง ทางตะวันออกมีไร่องุ่นที่ไปถึงได้ด้วยรถไฟท้องถิ่น…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train. A useful stay protects one complete Lausanne route and one selected vineyard section instead of treating every lake village as a stop on the same walk.": "วางแผนโลซานเป็นเมืองสองระดับ: เมืองเก่าอยู่เหนือสถานี ส่วน Ouchy เปิดสู่ชายฝั่งทะเลสาบด้านล่าง ทางตะวันออกคือ Lavaux ภูมิทัศน์ไร่องุ่นขั้นบันไดที่ยังทำเกษตรและเดินทางถึงได้ด้วยรถไฟท้องถิ่น จัดคืนพักให้เหมาะเพื่อมีเวลาสำหรับเส้นทางเดินในโลซานเต็มวัน และเส้นทางไร่องุ่นที่เลือกไว้อีกหนึ่งช่วง ไม่จำเป็นต้องยัดทุกหมู่บ้านริมทะเลสาบเข้าเป็นการเดินไกลครั้งเดียว",
     "How many nights should I stay in Lausanne?": "ควรพักในโลซานกี่คืน?",
@@ -149,16 +148,7 @@
     "The Olympic Museum — official visitor information": "Olympic Museum — ข้อมูลผู้เข้าชมอย่างเป็นทางการ",
     "Lausanne Tourisme — Ouchy and quays": "Lausanne Tourisme — Ouchy และทางเดินริมน้ำ",
     "CGN — N1 and N2 dated timetables and fares": "CGN — ตารางและค่าโดยสาร N1, N2 ตามวันที่",
-    "TL — M2 service information": "TL — ข้อมูลบริการ M2",
-    "Lausanne": "โลซาน",
-    "Lavaux": "Lavaux",
-    "Ouchy": "Ouchy",
-    "Cully": "Cully",
-    "vineyard terraces": "ไร่องุ่นขั้นบันได",
-    "Lake Geneva": "ทะเลสาบเจนีวา",
-    "old city ouchy": "เมืองเก่าโลซานและ Ouchy",
-    "lavaux terraces": "ไร่องุ่น Lavaux",
-    "olympic lake cruise": "วันเที่ยว Olympic Museum และทะเลสาบเจนีวา"
+    "TL — M2 service information": "TL — ข้อมูลบริการ M2"
   },
   "reviewProvenance": {
     "writer": "Codex GPT-6",

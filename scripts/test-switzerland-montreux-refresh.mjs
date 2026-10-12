@@ -128,9 +128,16 @@ function sitemapMap(source) {
 const currentMap = sitemapMap(sitemap), baseMap = sitemapMap(baseSitemap);
 assert.deepEqual([...currentMap.keys()].sort(), [...baseMap.keys()].sort(), 'sitemap URL inventory is unchanged');
 const routeLocs = new Set(routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const bernEmmentalRoutes = [
+  '/switzerland/bern-emmental/',
+  '/switzerland/bern-emmental/old-city-aare/',
+  '/switzerland/bern-emmental/museums-rose-garden/',
+  '/switzerland/bern-emmental/emmental-day-trip/'
+];
+const bernEmmentalLocs = new Set(bernEmmentalRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
 const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...routeLocs].sort(), 'only the 20 existing Montreux locale routes receive this sprint date');
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs])].sort(), 'only the existing Montreux and Bern/Emmental locale routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;

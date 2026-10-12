@@ -11,7 +11,6 @@
   ],
   "translations": {
     "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore": "ローザンヌのウシー湖岸と、岸近くの小舟",
-    "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train.…": "ローザンヌは上下二層の街として計画できます。旧市街は駅より高く、ウシーからは低地の湖岸へ出られます。街の東には、地域列車で訪ねられる、今も営農が続く段々畑の景観ラヴォーが広がります。…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced…": "ローザンヌは上下二層の街として計画できます。旧市街は駅より高く、ウシーからは低地の湖岸へ出られます。街の東には、地域列車で訪ねられるブドウ畑が…",
     "Lausanne works as a two-level city day: the old center sits above the station, while Ouchy opens onto the lake below. East of town, Lavaux is a working terraced landscape reached by regional train. A useful stay protects one complete Lausanne route and one selected vineyard section instead of treating every lake village as a stop on the same walk.": "ローザンヌは上下二層の街として計画できます。旧市街は駅より高く、ウシーからは低地の湖岸へ出られます。街の東には、地域列車で訪ねられる、今も営農が続く段々畑の景観ラヴォーが広がります。宿泊日程をうまく組めば、ローザンヌを丸一日歩く時間と、選んだブドウ畑の区間を歩く時間を確保できます。湖岸の村をすべて一度の長距離散策に詰め込む必要はありません。",
     "How many nights should I stay in Lausanne?": "ローザンヌには何泊すればよいですか？",
@@ -149,16 +148,7 @@
     "The Olympic Museum — official visitor information": "オリンピック博物館 — 公式ビジター情報",
     "Lausanne Tourisme — Ouchy and quays": "ローザンヌ観光局 — ウシーと湖岸の桟橋",
     "CGN — N1 and N2 dated timetables and fares": "CGN — N1・N2の日付別時刻表と運賃",
-    "TL — M2 service information": "TL — M2運行情報",
-    "Lausanne": "ローザンヌ",
-    "Lavaux": "ラヴォー",
-    "Ouchy": "ウシー",
-    "Cully": "クリー",
-    "vineyard terraces": "ブドウ畑の段々地形",
-    "Lake Geneva": "レマン湖",
-    "old city ouchy": "ローザンヌ旧市街とウシー",
-    "lavaux terraces": "ラヴォーのブドウ畑",
-    "olympic lake cruise": "オリンピック博物館とレマン湖の日"
+    "TL — M2 service information": "TL — M2運行情報"
   },
   "reviewProvenance": {
     "writer": "Codex GPT-6",

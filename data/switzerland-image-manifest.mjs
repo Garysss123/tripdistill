@@ -71,6 +71,7 @@ export const switzerlandImageManifest = {
   "bern-emmental/old-city-aare": {
     "src": "/assets/images/switzerland-bern-emmental-old-city-aare.webp",
     "alt": "Bern old town inside the Aare river bend",
+    "displayTitle": "Bern Old City and the Aare Bend",
     "source": "https://commons.wikimedia.org/wiki/File:Old_City_and_the_Aare_river_-_Bern,_Switzerland_-_panoramio.jpg",
     "label": "Old City and the Aare river - Bern, Switzerland - panoramio.jpg",
     "creator": "Sergey Ashmarin",
@@ -81,6 +82,7 @@ export const switzerlandImageManifest = {
   "bern-emmental/museums-rose-garden": {
     "src": "/assets/images/switzerland-bern-emmental-museums-rose-garden.webp",
     "alt": "View over Bern old town from the Rosengarten",
+    "displayTitle": "Bern Old City from the Rosengarten",
     "source": "https://commons.wikimedia.org/wiki/File:Bern_Altstadt_von_Rosengarten_20211007.jpg",
     "label": "Bern Altstadt von Rosengarten 20211007.jpg",
     "creator": "Daniel Kraft",
@@ -89,14 +91,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "ab23b4e482fb78033031acc5e2a1e8ad552d9c54"
   },
   "bern-emmental/emmental-day-trip": {
-    "src": "/assets/images/switzerland-bern-emmental-emmental-day-trip.webp",
-    "alt": "Green Emmental landscape with traditional farmhouses",
-    "source": "https://commons.wikimedia.org/wiki/File:Wintertime_in_Emmental,_Switzerland.jpg",
-    "label": "Wintertime in Emmental, Switzerland.jpg",
-    "creator": "Dirk Breer",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Wintertime in Emmental, Switzerland.jpg",
-    "remoteSha1": "3be08742a184c7861eeee6f5beb80c214fa9abc9"
+    "src": "/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+    "alt": "Original five-language Emmental planning diagram comparing Burgdorf, the Affoltern show-dairy transfer and a mapped countryside walk; conceptual and not to scale",
+    "diagramNote": "Five-language route key: 1 Burgdorf town and castle; 2 rail to Huttwil or Hasle-Rüegsau, then confirm the BLS bus or book mybuxi to Affoltern show dairy; 3 choose one locally signed walk from a verified rail gateway and return to that station. The branches compare planning choices, not geography, live timetables, operating dates or fare quotes.",
+    "diagramCardNote": "Diagram key: 1 Burgdorf; 2 Affoltern show dairy with a checked BLS/mybuxi feeder; 3 one mapped countryside walk from a confirmed rail gateway. Concept only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+    "label": "Bern and Emmental gateway-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale. All gateway and feeder information requires an exact-date operator check.",
+    "localSha1": "e0111ab8ddc5345216d6cc4cec956dde4a0c6a6a"
   },
   "basel-rhine/old-town-rhine": {
     "src": "/assets/images/switzerland-basel-rhine-old-town-rhine.webp",
@@ -517,6 +524,21 @@ export const switzerlandImageManifest = {
 
 // Preserve the retired file and its source-declared metadata for inventory and audit only.
 export const switzerlandRetiredImageRecords = {
+  bernEmmentalMismatch: {
+    src: '/assets/images/switzerland-bern-emmental-emmental-day-trip.webp',
+    alt: 'Green Emmental landscape with traditional farmhouses',
+    source: 'https://commons.wikimedia.org/wiki/File:Wintertime_in_Emmental,_Switzerland.jpg',
+    label: 'Wintertime in Emmental, Switzerland.jpg',
+    creator: 'Dirk Breer',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 4.0'],
+    commonsTitle: 'File:Wintertime in Emmental, Switzerland.jpg',
+    remoteSha1: '3be08742a184c7861eeee6f5beb80c214fa9abc9',
+    localSha1: 'cec21b3831e0d8421e32b36a142f973a64f55f47',
+    inventoryStatus: 'unused',
+    rightsStatus: 'The Commons page declares CC BY-SA 4.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed a sunset silhouette of two visitors beneath a bare tree, with no visible farmhouse or identifiable Emmental detail. The original WebP bytes and source metadata remain archived; this record does not independently verify the location, uploader authority or rights.'
+  },
   lucerneRigiView: {
     src: '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp',
     alt: 'View from Mount Rigi over Lake Lucerne',

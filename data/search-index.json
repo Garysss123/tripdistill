@@ -8070,7 +8070,7 @@
     "url": "/switzerland/bern-emmental/",
     "parent": "Switzerland",
     "type": "Regional guide",
-    "summary": "Bern’s UNESCO-listed old city is unusually coherent, so a checklist works worse than a directional walk. Use the station-to-bear-park axis once, then branch to the Aare, museums or Gurten. Emmental belongs on a separate day because rural transport and opening patterns are slower than the capital’s tram grid.",
+    "summary": "Bern and Emmental work as a two-speed stay. Bern’s medieval street plan runs along a ridge inside the Aare bend, so one west-to-east walk links the market streets, fountains, cathedral terrace and river edge without turning each landmark into a separate trip. The Emmental is a rural region, not a single attraction: choose Burgdorf, Affoltern im Emmental or one mapped walking gateway, then plan its return before leaving the city.",
     "keywords": [
       "Bern & Emmental",
       "Swiss Plateau",
@@ -8082,7 +8082,7 @@
     "url": "/switzerland/bern-emmental/old-city-aare/",
     "parent": "Bern & Emmental",
     "type": "Local guide",
-    "summary": "Walk Bern from the station through the arcaded old city to the Zytglogge, cathedral terraces and river edge, using the Aare bend to avoid backtracking.",
+    "summary": "Follow Bern’s western-to-eastern ridge from Bern station through Bundesplatz, Zytglogge and the cathedral terrace to Nydeggbrücke and the Aare bend, then choose a lower riverside leg only if footing and energy support it.",
     "keywords": [
       "Bern Old City & Aare Bend",
       "Bern & Emmental",
@@ -8095,7 +8095,7 @@
     "url": "/switzerland/bern-emmental/museums-rose-garden/",
     "parent": "Bern & Emmental",
     "type": "Local guide",
-    "summary": "Choose one museum anchor, then add either Rosengarten or Gurten for perspective; this is a deliberate contrast day, not a second walk through the same old-town axis.",
+    "summary": "Choose one museum by collection, then add Rosengarten for the Aare-bend view or Gurten for a separate hill outing; the two viewpoints serve different days better than a checklist.",
     "keywords": [
       "Bern Museums, Rosengarten & Gurten",
       "Bern & Emmental",
@@ -8104,13 +8104,13 @@
     ]
   },
   {
-    "title": "Emmental Villages & Cheese Country",
+    "title": "Emmental Gateways & Cheese Country",
     "url": "/switzerland/bern-emmental/emmental-day-trip/",
     "parent": "Bern & Emmental",
     "type": "Local guide",
-    "summary": "Leave Bern for rolling Emmental countryside only with a named village, rail/bus chain and one primary purpose such as landscape, food production or a signed walking route.",
+    "summary": "Choose one Emmental gateway—Burgdorf town and castle, the Affoltern show dairy, or a dated signed walk—and plan its last rail or bus return before leaving Bern.",
     "keywords": [
-      "Emmental Villages & Cheese Country",
+      "Emmental Gateways & Cheese Country",
       "Bern & Emmental",
       "rural transfer notebook",
       "rural-notebook"
@@ -8227,14 +8227,7 @@
     "keywords": [
       "Lausanne & Lavaux",
       "Vaud",
-      "lakes",
-      "Lausanne",
-      "Lavaux",
-      "Ouchy",
-      "Cully",
-      "vineyard terraces",
-      "Swiss rail",
-      "Lake Geneva"
+      "lakes"
     ]
   },
   {
@@ -8247,11 +8240,7 @@
       "Lausanne Old City & Ouchy",
       "Lausanne & Lavaux",
       "vertical metro section",
-      "vertical-section",
-      "Lausanne",
-      "Lavaux",
-      "Lake Geneva",
-      "old city ouchy"
+      "vertical-section"
     ]
   },
   {
@@ -8264,11 +8253,7 @@
       "Lavaux Vineyard Terraces",
       "Lausanne & Lavaux",
       "rail-stop terrace ladder",
-      "terrace-ladder",
-      "Lausanne",
-      "Lavaux",
-      "Lake Geneva",
-      "lavaux terraces"
+      "terrace-ladder"
     ]
   },
   {
@@ -8281,11 +8266,7 @@
       "Olympic Museum & Lake Geneva Day",
       "Lausanne & Lavaux",
       "museum-to-pier timecard",
-      "timecard",
-      "Lausanne",
-      "Lavaux",
-      "Lake Geneva",
-      "olympic lake cruise"
+      "timecard"
     ]
   },
   {

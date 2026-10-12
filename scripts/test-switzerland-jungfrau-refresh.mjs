@@ -80,7 +80,7 @@ function articleNode(nodes) {
   return null;
 }
 
-// Confirm the original Jungfrau dates, known Zermatt follow-up and this
+// Confirm reviewed Switzerland dates since the source baseline and this
 // Interlaken refresh are the only five-language sitemap date changes.
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -103,13 +103,25 @@ const lausanneRoutes = [
   '/switzerland/lausanne-lavaux/lavaux-terraces/',
   '/switzerland/lausanne-lavaux/olympic-lake-cruise/'
 ];
+const montreuxRoutes = [
+  '/switzerland/montreux-riviera/',
+  '/switzerland/montreux-riviera/montreux-chillon/',
+  '/switzerland/montreux-riviera/rochers-de-naye/',
+  '/switzerland/montreux-riviera/vevey-lakeside/'
+];
+const bernEmmentalRoutes = [
+  '/switzerland/bern-emmental/',
+  '/switzerland/bern-emmental/old-city-aare/',
+  '/switzerland/bern-emmental/museums-rose-garden/',
+  '/switzerland/bern-emmental/emmental-day-trip/'
+];
 for (const locale of locales) {
-  for (const route of [...genevaDateRoutes, ...lausanneRoutes]) {
+  for (const route of [...genevaDateRoutes, ...lausanneRoutes, ...montreuxRoutes, ...bernEmmentalRoutes]) {
     expectedDateChanges.add(`https://tripdistill.com${locale.prefix}${route}`);
   }
 }
 const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, 105, 'the Jungfrau, Zermatt, Interlaken, Geneva-dependent and Lausanne routes retain their five-language date history');
+assert.equal(dateChanges.length, 145, 'the reviewed Switzerland clusters and overview routes retain their five-language date history');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
   assert.equal(date, '2026-10-12', `review date for ${url}`);
@@ -222,4 +234,4 @@ for (const locale of locales) {
   }
 }
 
-console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, the five-language Jungfrau/Zermatt/Interlaken/Geneva/Lausanne date history, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);
+console.log(`Switzerland Jungfrau regression passed: ${routes.length} existing routes, five locales, ${dateChanges.length} five-language reviewed-cluster and dependent-overview date updates through Montreux and Bern/Emmental, ${totalWordGain} added English main-text words (${JSON.stringify(wordDeltas)}); protected Lucerne/Rigi checks passed.`);

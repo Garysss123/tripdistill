@@ -93,6 +93,13 @@ const interlakenEditedRoutes = [
   '/switzerland/interlaken-lakes/brienz-giessbach/',
   '/switzerland/interlaken-lakes/thun-spiez/'
 ];
+const bernEmmentalLastmod = '2026-10-12';
+const bernEmmentalEditedRoutes = [
+  '/switzerland/bern-emmental/',
+  '/switzerland/bern-emmental/old-city-aare/',
+  '/switzerland/bern-emmental/museums-rose-garden/',
+  '/switzerland/bern-emmental/emmental-day-trip/'
+];
 const genevaLastmod = '2026-10-12';
 const genevaEditedRoutes = [
   '/switzerland/',
@@ -964,6 +971,11 @@ for (const route of interlakenEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Interlaken route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: interlakenLastmod });
+}
+for (const route of bernEmmentalEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Bern/Emmental route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: bernEmmentalLastmod });
 }
 
 for (const route of genevaEditedRoutes) {

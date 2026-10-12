@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Bern and Emmental gateway choices</title>
+  <desc id="desc">A conceptual, not-to-scale decision diagram connecting Bern station with three separate Emmental day choices: Burgdorf, the Affoltern show dairy transfer, or one verified countryside walk.</desc>
+  <rect x="0" y="0" width="1600" height="1066" fill="#f3efe4" />
+  <rect x="56" y="52" width="1488" height="176" rx="20" fill="#182b39" />
+  <text x="96" y="108" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#d7a94b" letter-spacing="2">SWISS PLATEAU · RURAL DAY CHOICE</text>
+  <text x="96" y="164" font-family="Arial, sans-serif" font-size="39" font-weight="700" fill="#fffaf0">Choose one Emmental gateway from Bern</text>
+  <text x="96" y="203" font-family="Arial, sans-serif" font-size="20" fill="#e0e6e7">Conceptual branches only · not a geographic map, timetable, operating promise or fare quote</text>
+
+  <rect x="74" y="337" width="340" height="462" rx="24" fill="#fffaf0" stroke="#b8c4c4" stroke-width="3" />
+  <circle cx="244" cy="455" r="64" fill="#d71920" />
+  <text x="244" y="449" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">BERN</text>
+  <text x="244" y="484" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">MAIN STATION</text>
+  <text x="244" y="581" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#182b39">Start with the return</text>
+  <text x="244" y="624" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#344c59">Check SBB to one rail gateway.</text>
+  <text x="244" y="658" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#344c59">For Affoltern, confirm the</text>
+  <text x="244" y="692" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#344c59">BLS bus or book mybuxi too.</text>
+  <text x="244" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#647883">Choose one branch for the day</text>
+
+  <line x1="414" y1="568" x2="584" y2="568" stroke="#d71920" stroke-width="5" />
+  <line x1="584" y1="405" x2="584" y2="731" stroke="#d71920" stroke-width="5" />
+
+  <line x1="584" y1="405" x2="716" y2="405" stroke="#416d75" stroke-width="5" />
+  <circle cx="584" cy="405" r="15" fill="#d7a94b" stroke="#182b39" stroke-width="3" />
+  <rect x="716" y="305" width="806" height="200" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <circle cx="768" cy="355" r="25" fill="#d71920" />
+  <text x="768" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">1</text>
+  <text x="816" y="363" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#182b39">Burgdorf</text>
+  <text x="816" y="409" font-family="Arial, sans-serif" font-size="21" fill="#344c59">Rail-first town walk · old center · castle above the Emme</text>
+  <text x="816" y="453" font-family="Arial, sans-serif" font-size="18" fill="#647883">Check Castle Museum hours and the return train for your date.</text>
+
+  <line x1="584" y1="568" x2="716" y2="568" stroke="#416d75" stroke-width="5" />
+  <circle cx="584" cy="568" r="15" fill="#d7a94b" stroke="#182b39" stroke-width="3" />
+  <rect x="716" y="468" width="806" height="200" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <circle cx="768" cy="518" r="25" fill="#d71920" />
+  <text x="768" y="527" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">2</text>
+  <text x="816" y="526" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#182b39">Affoltern im Emmental</text>
+  <text x="816" y="572" font-family="Arial, sans-serif" font-size="20" fill="#344c59">Rail to Huttwil or Hasle-Rüegsau, then feeder to dairy</text>
+  <text x="816" y="616" font-family="Arial, sans-serif" font-size="18" fill="#647883">Check BLS bus or book mybuxi; confirm return and activity.</text>
+
+  <line x1="584" y1="731" x2="716" y2="731" stroke="#416d75" stroke-width="5" />
+  <circle cx="584" cy="731" r="15" fill="#d7a94b" stroke="#182b39" stroke-width="3" />
+  <rect x="716" y="631" width="806" height="200" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <circle cx="768" cy="681" r="25" fill="#d71920" />
+  <text x="768" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff">3</text>
+  <text x="816" y="689" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#182b39">One signed countryside walk</text>
+  <text x="816" y="735" font-family="Arial, sans-serif" font-size="20" fill="#344c59">Pick one marked route near a checked rail gateway.</text>
+  <text x="816" y="779" font-family="Arial, sans-serif" font-size="18" fill="#647883">Check daylight, trail status and return connections.</text>
+
+  <rect x="56" y="866" width="1488" height="156" rx="20" fill="#e2e9e5" stroke="#b8c4c4" stroke-width="2" />
+  <text x="800" y="900" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#182b39">FIVE-LANGUAGE KEY · CHECK THE RETURN BEFORE THE RURAL LEG</text>
+  <line x1="350" y1="922" x2="350" y2="1004" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="650" y1="922" x2="650" y2="1004" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="950" y1="922" x2="950" y2="1004" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="1250" y1="922" x2="1250" y2="1004" stroke="#b8c4c4" stroke-width="2" />
+  <text x="200" y="948" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="en">ENGLISH</text>
+  <text x="200" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#344c59">Choose one gateway</text>
+  <text x="500" y="948" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="zh-Hant">繁體中文</text>
+  <text x="500" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#344c59">選擇一個入口</text>
+  <text x="800" y="948" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="ja">日本語</text>
+  <text x="800" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#344c59">入口を一つ選ぶ</text>
+  <text x="1100" y="948" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="ko">한국어</text>
+  <text x="1100" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#344c59">거점 하나 선택</text>
+  <text x="1400" y="948" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="th">ภาษาไทย</text>
+  <text x="1400" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#344c59">เลือกจุดเริ่มต้นหนึ่งแห่ง</text>
+  <text x="800" y="1009" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#647883">Schematic only · no route geography or service status is implied</text>
+</svg>
