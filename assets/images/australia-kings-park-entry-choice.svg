@@ -3,9 +3,9 @@
   <rect x="57" y="270" width="172" height="160" rx="25" fill="#e8ece9" stroke="#b6c4bd" stroke-width="4"/>
   <path d="M88 391v-80h31v80m20 0v-109h45v109" fill="none" stroke="#38565a" stroke-width="9" stroke-linejoin="round"/>
   <path d="M270 350h155m0 0 94-145m-94 145 94 145" fill="none" stroke="#38565a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="m404 188 23 17-27 16m0 271 27 17-27 16" fill="#38565a"/>
   <rect x="492" y="112" width="278" height="186" rx="28" fill="#fffaf1" stroke="#d5ccb9" stroke-width="4"/>
   <rect x="492" y="401" width="278" height="186" rx="28" fill="#fffaf1" stroke="#d5ccb9" stroke-width="4"/>
+  <path d="M492 247 489 269 474 259Z M492 453 474 441 489 431Z" fill="#38565a"/>
   <path d="M541 230h176" stroke="#d8cdb9" stroke-width="8" stroke-linecap="round"/>
   <path d="M558 226v-54l34-29 35 29v54m-51 0v-39h32v39" fill="none" stroke="#c8794f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M665 226v-42m0 12-23-19m23 26 25-22" fill="none" stroke="#496c54" stroke-width="8" stroke-linecap="round"/>

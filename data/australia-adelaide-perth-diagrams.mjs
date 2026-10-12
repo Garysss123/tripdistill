@@ -33,7 +33,7 @@ export const kangarooIslandDiagram = originalDiagram({
   alt: 'Planning diagram, not to scale: Cape Jervis ferry to Penneshaw, separate east, south and west island days, reposition near Penneshaw, then return by ferry.',
   caption: 'The island branches represent separate day choices, not a road map. Check ferry operation and park access before assigning a region to a date.',
 });
-kangarooIslandDiagram.localSha1 = 'ad8ce597d7f5404b97ce9448ab54449a2ada831f';
+kangarooIslandDiagram.localSha1 = 'a79c937470360a8144977935661b29ce52301a81';
 
 export const kingsParkDiagram = originalDiagram({
   filename: 'australia-kings-park-entry-choice.svg',
@@ -41,7 +41,7 @@ export const kingsParkDiagram = originalDiagram({
   alt: 'Planning diagram, not to scale: Perth transit or visitor parking leads to one chosen Botanic Garden or bushland path, then back to the same return node.',
   caption: 'Choose one named entrance and landscape loop. The branches show visitor choices rather than exact paths, stop locations or distances.',
 });
-kingsParkDiagram.localSha1 = '318826754dd7f99e9bb4ce3a110aa8cabd926ca5';
+kingsParkDiagram.localSha1 = '5a606ca608847293d3bb755a1021490a5f439c0b';
 
 export const perthCoastDiagram = originalDiagram({
   filename: 'australia-perth-coast-transit-choice.svg',

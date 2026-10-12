@@ -12,7 +12,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
 const followOnSprint = branch === 'codex/sprint-au-top-end-whitsundays-gaps-20261013';
 const canberraSprint = branch === 'codex/sprint-au-canberra-content-20261013';
-const base = followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
+const alpsMargaretSprint = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
+const base = alpsMargaretSprint ? '5f1205bbbee0ef636c34e883c399e6fceaa7b508' : followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -166,11 +167,55 @@ function assertSvgSafe(file, digest) {
       assert(number('cx') - rx >= 0 && number('cx') + rx <= 1200 && number('cy') - ry >= 0 && number('cy') + ry <= 700, `${file}: round geometry exceeds the SVG canvas.`);
     }
   }
+  const flowArrowGeometry = new Map([
+    ['australia-kangaroo-island-regional-days.svg', 'M250 337 270 345 250 353Z M485 332 510 345 485 358Z M697 337 713 345 697 353Z M876 337 892 345 876 353Z M1057 337 1075 345 1057 353Z'],
+    ['australia-kings-park-entry-choice.svg', 'M492 247 489 269 474 259Z M492 453 474 441 489 431Z']
+  ]).get(path.basename(file));
+  if (flowArrowGeometry) {
+    const flowArrows = tags.find((tag) => tag.local === 'path' && tag.attributes.d?.value === flowArrowGeometry);
+    assert(flowArrows, `${file}: route arrowheads match the reviewed gap/branch geometry.`);
+    if (path.basename(file) === 'australia-kangaroo-island-regional-days.svg') {
+      assert.equal(tags.at(-1), flowArrows, `${file}: all five arrowheads are painted above the route nodes.`);
+    } else {
+      const topCardIndex = tags.findIndex((tag) => tag.local === 'rect' && tag.attributes.x?.value === '492' && tag.attributes.y?.value === '112');
+      const bottomCardIndex = tags.findIndex((tag) => tag.local === 'rect' && tag.attributes.x?.value === '492' && tag.attributes.y?.value === '401');
+      assert(topCardIndex >= 0 && bottomCardIndex >= 0, `${file}: both destination cards are present.`);
+      assert(tags.indexOf(flowArrows) > Math.max(topCardIndex, bottomCardIndex), `${file}: diagonal arrows remain visible over both card edges.`);
+    }
+  }
 }
 
-assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013'].includes(branch), 'Source branch name.');
-const head = git(['rev-parse', 'HEAD']).trim();
-assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'The source branch must remain at the authorized base or its first direct child.');
+assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013', 'codex/sprint-au-alps-margaret-gaps-20261013'].includes(branch), 'Source branch name.');
+const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).split(/\r?\n/u);
+const allowedParentHops = alpsMargaretSprint ? 2 : 1;
+assert(firstParents.includes(base) && firstParents.indexOf(base) <= allowedParentHops, 'The source branch must descend from its authorized exact base through only the expected scope and correction commits.');
+
+if (alpsMargaretSprint) {
+  const targetRoutes = [
+    '/australia/canberra-australian-alps/namadgi-national-park/',
+    '/australia/canberra-australian-alps/snowy-mountains-kosciuszko/',
+    '/australia/margaret-river-southwest/',
+    '/australia/margaret-river-southwest/margaret-river-wine-food/'
+  ];
+  const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
+  assert.deepEqual(changedEnglish, targetRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized Canberra and Margaret River English routes may change.');
+  const correctionCommit = '31fc43817cd436e2f868058f4393ed59a800aec8';
+  const correctionFiles = [
+    'assets/images/australia-kangaroo-island-regional-days.svg',
+    'assets/images/australia-kings-park-entry-choice.svg',
+    'data/australia-adelaide-perth-diagrams.mjs',
+    'reports/adelaide-perth-gaps-refresh-2026-10-12.md'
+  ];
+  for (const file of correctionFiles) {
+    assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correctionCommit}:${file}`]), `${file}: parallel 31fc438 arrow correction is preserved byte-for-byte.`);
+  }
+  for (const [file, digest] of [
+    ['assets/images/australia-kangaroo-island-regional-days.svg', 'a79c937470360a8144977935661b29ce52301a81'],
+    ['assets/images/australia-kings-park-entry-choice.svg', '5a606ca608847293d3bb755a1021490a5f439c0b']
+  ]) assertSvgSafe(file, digest);
+  console.log('Australia arrow correction regression passed: the exact 31fc438 files and branch-aligned arrows remain in the 5f1205bb-based source branch; this checks SVG structure and geometry, not rendered pixels.');
+  process.exit(0);
+}
 
 if (followOnSprint) {
   const followOnRoutes = [
