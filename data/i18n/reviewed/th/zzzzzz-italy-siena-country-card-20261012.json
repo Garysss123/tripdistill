@@ -4,9 +4,7 @@
   "routes": [
     "/italy/"
   ],
-  "translations": {
-    "Siena is a bus-and-walking city whose rail station sits below the historic core; Val d’Orcia and Maremma depend on sparse buses, deliberate road routes or booked…": "เซียนาเป็นเมืองที่เที่ยวด้วยรถบัสและการเดิน โดยสถานีรถไฟอยู่ต่ำกว่าย่านเมืองเก่า ส่วน Val d’Orcia และ Maremma พึ่งรถบัสที่มีไม่บ่อย การเดินทางทางถนนที่วางแผนไว้ หรือรถที่จอง…"
-  },
+  "translations": {},
   "reviewProvenance": {
     "writer": "GPT-6.1 Codex",
     "reviewer": "GPT-6.1 Codex; single-model translation and self-review",

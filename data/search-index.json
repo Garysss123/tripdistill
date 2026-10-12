@@ -10373,7 +10373,7 @@
     "url": "/italy/milan/",
     "parent": "Italy",
     "type": "Regional guide",
-    "summary": "Milan rewards deliberate transitions rather than landmark accumulation. The cathedral complex, Brera, Santa Maria delle Grazie, the Castello, Porta Nuova and the Navigli sit in different operating zones, and the scarce reservation or exact museum entrance should determine the direction of the day rather than become one more pin in a cross-city loop.",
+    "summary": "Milan is easier to plan as three separate route days than as a list of famous names. The Duomo and Brera occupy the central northbound walk; Santa Maria delle Grazie and the Castello form a west-to-east sequence around a fixed Last Supper visit; Porta Nuova and the Navigli make a north-to-south day with one deliberate transit crossing. Choose the controlled interior first, then connect only the streets and stations that serve that district.",
     "keywords": [
       "Milan",
       "Lombardy",
@@ -10385,7 +10385,7 @@
     "url": "/italy/milan/duomo-brera/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Meet the exact Duomo or Brera entrance, read the cathedral square and Galleria as a civic threshold, then move north through one deliberate street line and finish near the station that serves the chosen collection.",
+    "summary": "Start at the booked Duomo or Brera door, cross the cathedral square and Galleria once, then walk past Piazza della Scala into Via Brera and finish near the station for your chosen collection.",
     "keywords": [
       "Duomo, Brera & the Historic Centre",
       "Milan",
@@ -10399,7 +10399,7 @@
     "url": "/italy/milan/last-supper-castello/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Arrive early at the Cenacolo entrance, keep the church and museum as separate thresholds, then follow one eastward line to the Castello and finish in its courtyards, museums or Parco Sempione.",
+    "summary": "Protect the named Cenacolo slot, treat the church as a separate visit, then walk east along Corso Magenta to the Castello and finish in one courtyard, museum or Parco Sempione.",
     "keywords": [
       "The Last Supper, Santa Maria delle Grazie & the Castello",
       "Milan",
@@ -10413,7 +10413,7 @@
     "url": "/italy/milan/navigli-porta-nuova-design/",
     "parent": "Milan",
     "type": "Local guide",
-    "summary": "Begin around Porta Garibaldi and Porta Nuova, use one verified design or public-space focus, pause before crossing the city, and reserve the canal district for the time of day it actually serves.",
+    "summary": "Read Porta Garibaldi, Piazza Gae Aulenti and Isola as one northern walk, then make one ATM transfer to Porta Genova for Darsena and a single Naviglio Grande bank.",
     "keywords": [
       "Navigli, Porta Nuova & Milan Design",
       "Milan",
