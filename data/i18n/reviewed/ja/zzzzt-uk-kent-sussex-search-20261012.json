@@ -1,0 +1,41 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.": "ブライトン、カンタベリー、ドーバー、セブン・シスターズを別々の鉄道・バス日程で計画します。ブライトン拠点と東ケント泊を比べ、坂道、崖、潮汐、帰路を確認してください。",
+    "Brighton": "ブライトン",
+    "Canterbury": "カンタベリー",
+    "Dover Castle": "ドーバー城",
+    "Seven Sisters": "セブン・シスターズ",
+    "Eastbourne": "イーストボーン",
+    "Seaford": "シーフォード",
+    "Southeastern": "Southeastern鉄道",
+    "South Downs": "サウス・ダウンズ",
+    "Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.": "ブライトン駅からノース・レイン、ロイヤル・パビリオン、海岸の片方向を巡る計画です。パビリオンの季節時間を確認し、バスか上り坂の徒歩で戻ります。",
+    "North Laine": "ノース・レイン",
+    "The Lanes": "歴史地区レインズ",
+    "Royal Pavilion": "ロイヤル・パビリオン",
+    "Brighton station": "ブライトン駅",
+    "Old Steine": "オールド・スタイン",
+    "seafront": "海岸遊歩道",
+    "Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.": "カンタベリー大聖堂かドーバー城を主目的地に選びます。列車に合わせて東駅／西駅を使い、城の坂道、時間指定入場、最終入場を見込みます。",
+    "Canterbury West": "カンタベリー・ウェスト駅",
+    "Canterbury East": "カンタベリー・イースト駅",
+    "Canterbury Cathedral": "カンタベリー大聖堂",
+    "Dover Priory": "ドーバー・プライオリー駅",
+    "Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.": "当日の運行を確認したエクシート行きバスで、ブライトン、シーフォード、イーストボーンからセブン・シスターズへ。歩く距離を選び、潮汐と崖の案内を確認して日没前に戻ります。",
+    "Exceat": "エクシート・ビジターセンター",
+    "Cuckmere Haven": "カックミア川河口",
+    "Coaster 12": "コーストライナー12系統",
+    "chalk cliffs": "チョークの崖",
+    "South Downs Way": "サウス・ダウンズ・ウェイ"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}
