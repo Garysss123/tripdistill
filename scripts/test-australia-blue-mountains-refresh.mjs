@@ -130,6 +130,37 @@ function svgNumber(tag, name, fallback = 0) {
   return value === undefined ? fallback : Number(value);
 }
 
+function cubicSegments(pathData) {
+  const tokens = pathData.match(/[A-Za-z]|[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?/g) || [];
+  let index = 0;
+  let command = '';
+  let current = null;
+  const segments = [];
+  const number = () => {
+    const token = tokens[index++];
+    assert(token !== undefined && !/^[A-Za-z]$/.test(token), `Malformed transfer path: ${pathData}`);
+    return Number(token);
+  };
+  while (index < tokens.length) {
+    if (/^[A-Za-z]$/.test(tokens[index])) command = tokens[index++];
+    if (command === 'M') {
+      current = [number(), number()];
+      command = '';
+    } else if (command === 'C') {
+      assert(current, `Transfer path must start with an absolute move: ${pathData}`);
+      const c1 = [number(), number()];
+      const c2 = [number(), number()];
+      const end = [number(), number()];
+      segments.push({ start: current, c1, c2, end });
+      current = end;
+      command = '';
+    } else {
+      assert.fail(`Unsupported or missing transfer-path command ${command || '(none)'}.`);
+    }
+  }
+  return segments;
+}
+
 const expectedEnglish = routes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia/blue-mountains-nsw-coast'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
@@ -253,6 +284,32 @@ for (const tag of svgTags) {
   }
 }
 assert(geometryCount >= 10, 'SVG requires bounded corridor and decision geometry.');
+const transferPaths = svgTags.filter((tag) => tag.local === 'path' && tag.attributes.class?.value === 'transfer');
+assert.equal(transferPaths.length, 3, 'Each station must have one dashed last-mile planning link.');
+const stationStarts = [[465, 389], [870, 390], [1240, 387]];
+const stationCaptionBoxes = [
+  { name: 'Wentworth Falls station area', left: 398, right: 538, top: 419, bottom: 456 },
+  { name: 'Katoomba station area', left: 813, right: 953, top: 419, bottom: 456 },
+  { name: 'Blackheath station area', left: 1188, right: 1328, top: 419, bottom: 456 }
+];
+for (const [pathIndex, tag] of transferPaths.entries()) {
+  const segments = cubicSegments(tag.attributes.d.value);
+  assert(segments.length >= 2, 'Each dashed link must route around its station-area caption.');
+  const [startX, startY] = segments[0].start;
+  const [stationX, stationY] = stationStarts[pathIndex];
+  assert(Math.hypot(startX - stationX, startY - stationY) <= 21, 'Each dashed link must visibly begin at its station marker.');
+  for (const segment of segments) {
+    for (let step = 0; step <= 100; step += 1) {
+      const t = step / 100;
+      const inverse = 1 - t;
+      const x = inverse ** 3 * segment.start[0] + 3 * inverse ** 2 * t * segment.c1[0] + 3 * inverse * t ** 2 * segment.c2[0] + t ** 3 * segment.end[0];
+      const y = inverse ** 3 * segment.start[1] + 3 * inverse ** 2 * t * segment.c1[1] + 3 * inverse * t ** 2 * segment.c2[1] + t ** 3 * segment.end[1];
+      for (const box of stationCaptionBoxes) {
+        assert(!(x >= box.left && x <= box.right && y >= box.top && y <= box.bottom), `Dashed link ${pathIndex + 1} crosses or crowds ${box.name}.`);
+      }
+    }
+  }
+}
 const legendRows = textRows.filter((row) => ['en', 'zh-Hant', 'ja', 'ko', 'th'].includes(row.lang));
 assert.deepEqual(legendRows.map((row) => row.lang).sort(), ['en', 'ja', 'ko', 'th', 'zh-Hant'].sort(), 'SVG legend must include exactly one row in each of five locales.');
 for (const [lang, term] of [['en', 'Solid: rail corridor'], ['zh-Hant', '實線'], ['ja', '実線'], ['ko', '실선'], ['th', 'เส้นทึบ']]) {
