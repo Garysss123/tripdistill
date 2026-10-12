@@ -258,7 +258,7 @@ export const italyImageManifest = {
   },
   "veneto-art-cities/verona-arena-river": {
     "src": "/assets/images/italy-veneto-art-cities-verona-arena-river.webp",
-    "alt": "The Roman Arena facing Piazza Bra in Verona",
+    "alt": "Piazza Bra’s arcaded façades viewed from the Verona Arena",
     "source": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
     "label": "Verona Italy Piazza Bra from arena DSC08039.JPG",
     "creator": "David Monniaux",

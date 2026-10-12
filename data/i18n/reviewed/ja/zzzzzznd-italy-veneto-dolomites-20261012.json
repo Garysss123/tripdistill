@@ -1,0 +1,43 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/veneto-art-cities/",
+    "/italy/veneto-art-cities/verona-arena-river/",
+    "/italy/veneto-art-cities/vicenza-palladian-city/",
+    "/italy/veneto-art-cities/padua-frescoes-basilica/",
+    "/italy/dolomites-trentino-south-tyrol/",
+    "/italy/dolomites-trentino-south-tyrol/bolzano-renon/",
+    "/italy/dolomites-trentino-south-tyrol/cortina-tre-cime/",
+    "/italy/dolomites-trentino-south-tyrol/trento-brenta-dolomites/"
+  ],
+  "translations": {
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit clock.…": "ヴェローナ、ヴィチェンツァ、パドヴァは東西の鉄道路線で結ばれますが、アレーナ、パッラーディオ建築、スクロヴェーニ礼拝堂の見学時間は異なります。",
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit clock. Three nights can support one base and two selective city days; four or five nights makes a Verona–Padua split practical without turning station moves into sightseeing. Choose one controlled door per day and check its official calendar before fixing the train.": "3泊なら1か所を拠点に2都市を選べます。4〜5泊ならヴェローナとパドヴァに分泊できます。1日に予約施設を1か所に絞り、列車を決める前に公式日程を確認しましょう。",
+    "For three nights, keep one base in Verona or Padua and take a single rail day to Vicenza. Four nights can split two-and-two between Verona and Padua; add a Vicenza overnight only if a villa or evening performance earns the move. Stay near the historic core for walking or near the station for early departures, then compare the actual door-to-platform route.": "3泊ならヴェローナかパドヴァを拠点にヴィチェンツァへ日帰り。4泊なら両都市に2泊ずつ。別荘や夜の公演が目的の場合だけヴィチェンツァにも宿泊します。旧市街か駅の近くを選び、宿からホームまでの経路を確認してください。",
+    "Use Trenitalia between Verona Porta Nuova, Vicenza and Padova, then finish locally: Verona city bus or walk from Porta Nuova; Vicenza station to Corso Palladio; Padova tram or walk toward Eremitani and the central squares. A Palladian villa, Arena event entrance and timed Scrovegni reporting point are separate last miles; check each on the date rather than quoting a generic interval.": "都市間はTrenitalia、到着後は市バスや徒歩を利用します。ヴェローナは駅から、ヴィチェンツァはコルソ・パッラーディオへ、パドヴァはトラムか徒歩でエレミターニ方面へ。別荘、アレーナの催事入口、礼拝堂の集合場所は最後の経路が異なるため、日付ごとに確認しましょう。",
+    "If a booked door or rural villa fails, keep the whole day in its city: Verona’s Piazza Bra–Castelvecchio–Adige line, Vicenza’s central Palladian walk, or Padua’s civic squares and one open collection. Do not rescue one closure by gambling on a second city’s same-day timetable.": "予約施設や郊外の別荘に入れない場合は、その都市で一日を完結させます。ヴェローナのブラ広場・カステルヴェッキオ・アディジェ川沿い、ヴィチェンツァ中心部のパッラーディオ建築、パドヴァの広場と開館中の美術館から選びましょう。休館を補うため別都市へ急がないでください。",
+    "Give Verona, Vicenza and Padua separate clocks, doors and returns.": "ヴェローナ、ヴィチェンツァ、パドヴァでは見学時間、入口、帰路を別々に考えます。",
+    "Arena performances and security can replace ordinary entry; Padua chapel slots are date-specific; civic museums and villas publish their own closing days. Summer heat lengthens the exposed river and villa walks, while rain favors a shorter, booked interior sequence. Recheck the 2026 venue notice, reporting instructions and the return train before purchase; no ticket or connection is assumed available.": "公演や保安検査によりアレーナの通常見学が変わる場合があります。礼拝堂枠や各施設の休館日は日付ごとに異なります。夏は川沿いや別荘の散策に時間がかかり、雨なら予約済みの屋内見学を短く組むのが適しています。購入前に2026年の告知、集合案内、帰りの列車を再確認してください。",
+    "Build the route around one booking and one return": "予約を1件、帰りの交通を1本決めて組み立てる",
+    "Set a base for the route": "この行程の拠点を決める",
+    "Walk it as one geographic line": "地理に沿って一続きに歩く",
+    "Porta Nuova → Piazza Bra and the Arena → Via Mazzini → Piazza delle Erbe → choose Castelvecchio and Ponte della Vittoria or the Roman theatre and Ponte Pietra → return toward the station. Treat this as a six-to-eight-hour city day, not a measured walking distance.": "ポルタ・ヌオーヴァ駅 → ブラ広場とアレーナ → マッツィーニ通り → エルベ広場 → カステルヴェッキオと勝利橋、またはローマ劇場とピエトラ橋 → 駅方面へ戻ります。主要施設を含む6〜8時間の市内行程で、歩行距離の実測ではありません。",
+    "Confirm this threshold first": "まず入場条件を確認する",
+    "Shift the plan with conditions": "条件に合わせて行程を調整する",
+    "Vicenza station → Corso Palladio → Piazza dei Signori and Basilica Palladiana → Teatro Olimpico or Palazzo Chiericati → Santa Corona → station. For La Rotonda, replace the final centre segment with its verified bus, taxi or walk approach.": "ヴィチェンツァ駅 → コルソ・パッラーディオ → シニョーリ広場とパッラーディアーナ聖堂 → オリンピコ劇場またはキエリカーティ宮殿 → サンタ・コローナ教会 → 駅。ラ・ロトンダへ行くなら、最後の区間を確認済みの交通経路に替えます。",
+    "Padova station → Eremitani and the chapel reporting point → Piazza delle Erbe and Piazza della Frutta around Palazzo della Ragione → choose the Basilica of Saint Anthony or Prato della Valle → tram or walk back north.": "パドヴァ駅 → エレミターニと礼拝堂の集合場所 → ラジョーネ宮周辺の広場 → 聖アントニオ大聖堂かプラート・デッラ・ヴァッレ → トラムか徒歩で北へ戻ります。",
+    "Bolzano, Trento, Dobbiaco and Calalzo are distinct rail gateways; Cortina and the Brenta valleys add bus or road legs, and lifts and trailheads keep separate…": "ボルツァーノ、トレント、ドッビアーコ、カラルツォは別々の鉄道拠点です。コルティーナやブレンタ渓谷はバスや道路移動が加わり、リフトと登山口にも個別の運行日程があります。",
+    "Bolzano, Trento, Dobbiaco and Calalzo are distinct rail gateways; Cortina and the Brenta valleys add bus or road legs, and lifts and trailheads keep separate operating calendars. Four nights in one valley can support two mountain days with one lower route; five to seven nights gives a weather reserve. Choose the valley before buying a lift or excursion, and keep the return on the same operating system.": "ひとつの渓谷に4泊すれば山の日を2日と低地の行程を組め、5〜7泊なら天候予備日も取れます。リフトやツアーを買う前に渓谷を選び、帰路も同じ交通系統で計画しましょう。",
+    "Three nights is a compact Bolzano or Trento city-and-valley stay; four or five nights supports one focused mountain corridor; six or seven nights can absorb a split between South Tyrol and Cortina or Trentino and Brenta. Do not change hotels each night to connect famous peaks. Select a base with the exact bus, rail or lift gateway your main route uses.": "3泊ならボルツァーノかトレントを拠点にします。4〜5泊は山岳エリアをひとつに絞り、6〜7泊なら南チロルとコルティーナ、またはトレンティーノとブレンタに分泊できます。宿を毎晩替えず、利用する交通の発着地に合わせて選びましょう。",
+    "Trenitalia reaches Bolzano and Trento; regional trains and buses serve other valley gateways. In Bolzano, the Renon cableway and narrow-gauge railway form a vertical link; Cortina and Tre Cime use date-specific bus or road access; Brenta routes begin from their own valley towns. Verify both the outward and last descent on South Tyrol or Trentino mobility sources.": "Trenitaliaはボルツァーノとトレントに乗り入れます。地域列車やバスは各渓谷へ。ボルツァーノではレノン・ロープウェイと狭軌鉄道、コルティーナとトレ・チーメは日付に応じた交通、ブレンタは渓谷ごとの出発地を使います。往路と最終下山便を確認しましょう。",
+    "Keep a complete low-altitude day in the same base: Bolzano’s museum and arcades, Trento’s MUSE and historic centre, or Cortina’s town and open lower paths. If the first lift, bus or trailhead is closed, use that plan instead of driving across a pass under the same weather system.": "同じ拠点で低地の一日を確保します。ボルツァーノなら博物館と回廊、トレントならMUSEと旧市街、コルティーナなら町と開通中の低地の道へ。交通や登山口が閉じたら切り替え、悪天候の中で峠を越えないでください。",
+    "Choose one valley, one vertical system and a weather reserve.": "渓谷をひとつ、高低差を結ぶ交通系統をひとつ選び、天候予備日を設けます。",
+    "Summer lift and trail dates do not match hotel opening dates, and shoulder-season snow or maintenance can close a high route. Afternoon storms, wind and short autumn daylight change safe turnarounds. Check the lift operator, park or refuge notice, local bus service and mountain forecast on the same day; never infer access from a clear valley forecast.": "夏の運行日は宿の営業日と一致せず、肩の季節は残雪や整備で高所の道が閉じる場合があります。雷雨、風、日没の早さで折り返し時刻が変わります。リフト、公園や山小屋、バス、山岳予報を同日に確認し、谷が晴れても高所の通行可能とは判断しないでください。",
+    "Bolzano station → South Tyrol Museum of Archaeology or Piazza Walther → arcades and Piazza delle Erbe → Bolzano cableway → Soprabolzano → Renon narrow-gauge railway or one signed plateau walk → return by the same vertical chain.": "ボルツァーノ駅 → 南チロル考古学博物館かヴァルター広場 → アーケードとエルベ広場 → ロープウェイ → ソプラボルツァーノ → レノン鉄道か標識のある高原歩道 → 同じ経路で戻ります。",
+    "Cortina centre → Corso Italia and the parish-square area → choose a signed lower walk or the verified Tre Cime gateway → follow only the open trail segment → return to the same bus stop, parking zone or town base.": "コルティーナ中心部 → コルソ・イタリアと教会前広場 → 標識のある低地の道か確認済みのトレ・チーメ入口 → 開通区間のみ歩く → 同じ交通拠点へ戻ります。",
+    "Trento station → Piazza Duomo and the historic centre → MUSE or Buonconsiglio as the booked interior → return to station or transfer to the selected Brenta gateway for a separate mountain day.": "トレント駅 → ドゥオーモ広場と旧市街 → 予約したMUSEまたはブオンコンシーリョ城 → 駅へ戻るか、別日の山行に向けてブレンタの拠点へ移動します。",
+    "Piazza Bra’s arcaded façades viewed from the Verona Arena · CC BY-SA 3.0": "ヴェローナのアレーナから望むブラ広場のアーケード街並み · CC BY-SA 3.0",
+    "Piazza Bra’s arcaded façades viewed from the Verona Arena": "ヴェローナのアレーナから望むブラ広場のアーケード街並み"
+  }
+}

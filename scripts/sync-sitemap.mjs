@@ -142,6 +142,7 @@ const unitedKingdomLondonEditedRoutes = [
   '/united-kingdom/london/tower-city-greenwich/'
 ];
 const italyLastmod = '2026-09-26';
+const italyIt12Lastmod = '2026-10-12';
 const romeLastmod = '2026-10-04';
 const italyPugliaLastmod = '2026-10-11';
 const italySienaLastmod = '2026-10-12';
@@ -150,6 +151,45 @@ const italyPugliaEditedRoutes = [
   '/italy/puglia/bari-trani-castel-del-monte/',
   '/italy/puglia/alberobello-itria-valley/',
   '/italy/puglia/lecce-otranto-gallipoli/'
+];
+const italyIt12EditedRoutes = [
+  '/italy/',
+  '/italy/veneto-art-cities/',
+  '/italy/veneto-art-cities/verona-arena-river/',
+  '/italy/veneto-art-cities/vicenza-palladian-city/',
+  '/italy/veneto-art-cities/padua-frescoes-basilica/',
+  '/italy/dolomites-trentino-south-tyrol/',
+  '/italy/dolomites-trentino-south-tyrol/bolzano-renon/',
+  '/italy/dolomites-trentino-south-tyrol/cortina-tre-cime/',
+  '/italy/dolomites-trentino-south-tyrol/trento-brenta-dolomites/',
+  '/italy/turin-piedmont/',
+  '/italy/turin-piedmont/royal-turin-egyptian-museum/',
+  '/italy/turin-piedmont/venaria-sacra-san-michele/',
+  '/italy/turin-piedmont/langhe-alba-asti/',
+  '/italy/genoa-liguria/',
+  '/italy/genoa-liguria/genoa-old-port-rolli/',
+  '/italy/genoa-liguria/cinque-terre-rail-trails/',
+  '/italy/genoa-liguria/camogli-portofino-san-fruttuoso/',
+  '/italy/marche-abruzzo/',
+  '/italy/marche-abruzzo/ancona-conero/',
+  '/italy/marche-abruzzo/urbino-pesaro/',
+  '/italy/marche-abruzzo/abruzzo-national-parks/',
+  '/italy/basilicata-calabria/',
+  '/italy/basilicata-calabria/matera-sassi-murgia/',
+  '/italy/basilicata-calabria/maratea-pollino/',
+  '/italy/basilicata-calabria/tropea-scilla-reggio/',
+  '/italy/western-sicily/',
+  '/italy/western-sicily/palermo-monreale-cefalu/',
+  '/italy/western-sicily/agrigento-selinunte/',
+  '/italy/western-sicily/trapani-erice-egadi/',
+  '/italy/eastern-sicily/',
+  '/italy/eastern-sicily/catania-etna/',
+  '/italy/eastern-sicily/taormina-naxos-aeolian-gateway/',
+  '/italy/eastern-sicily/syracuse-noto-ragusa/',
+  '/italy/sardinia/',
+  '/italy/sardinia/cagliari-su-nuraxi/',
+  '/italy/sardinia/la-maddalena-gallura/',
+  '/italy/sardinia/gulf-orosei-gennargentu/'
 ];
 const hokkaidoLastmod = '2026-10-06';
 const japanOverviewLastmod = '2026-10-06';
@@ -617,6 +657,11 @@ for (const route of italyPugliaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Italy Puglia route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: italyPugliaLastmod });
+}
+for (const route of italyIt12EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Italy IT12 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: italyIt12Lastmod });
 }
 for (const route of chinaEditedRoutes) {
   const record = records.get(route);

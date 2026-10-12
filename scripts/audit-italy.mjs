@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
+import { italyCountryIt12, italyClusters, italyGuides } from '../data/italy-guides.mjs';
 import { italyLayoutFamilies } from '../data/italy-guide-builder.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -10,6 +10,10 @@ const failures = [];
 const englishOnly = process.argv.includes('--english-only');
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const routes = ['/italy/', ...italyClusters.map((cluster) => `/italy/${cluster.slug}/`), ...italyGuides.map((guide) => guide.url)];
+const it12Slugs = new Set([
+  'veneto-art-cities', 'dolomites-trentino-south-tyrol', 'turin-piedmont', 'genoa-liguria',
+  'marche-abruzzo', 'basilicata-calabria', 'western-sicily', 'eastern-sicily', 'sardinia'
+]);
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
@@ -162,7 +166,27 @@ for (const cluster of italyClusters) {
     check(new Set(cluster.guides.map((guide) => guide.localPlan?.title)).size === 3, 'Siena/Val d’Orcia/Maremma: focused local-plan headings must be unique');
     check(new Set(allPlanCopy).size === allPlanCopy.length, 'Siena/Val d’Orcia/Maremma: local-plan copy must not be repeated across children');
   }
+  if (it12Slugs.has(cluster.slug)) {
+    check(cluster.reviewDate === '12 October 2026' && cluster.reviewIsoDate === '2026-10-12', `${cluster.slug}: IT12 review date metadata mismatch`);
+    check(cluster.publishedIsoDate === '2026-09-26', `${cluster.slug}: original publication date changed`);
+    const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
+    const walks = [];
+    for (const guide of cluster.guides) {
+      check(guide.localPlan && fields.every((field) => typeof guide.localPlan[field] === 'string' && guide.localPlan[field].trim()), `${guide.url}: IT12 route plan is incomplete`);
+      if (guide.localPlan) {
+        walks.push(guide.localPlan.walk);
+        check(guide.localPlan.intro === cluster.tagline && guide.localPlan.stay === cluster.stay
+          && guide.localPlan.booking === cluster.season && guide.localPlan.season === cluster.fallback,
+        `${guide.url}: shared planning guidance drifted from its reviewed hub source`);
+      }
+      check(guide.publishedIsoDate === undefined || guide.publishedIsoDate === '2026-09-26', `${guide.url}: original publication date changed`);
+    }
+    check(new Set(walks).size === 3, `${cluster.slug}: the three child walking sequences must remain distinct`);
+  }
 }
+
+check(italyCountryIt12.reviewDate === '12 October 2026' && italyCountryIt12.reviewIsoDate === '2026-10-12', 'Italy overview: IT12 review date metadata mismatch');
+check(italyCountryIt12.publishedIsoDate === '2026-09-26', 'Italy overview: original publication date changed');
 
 for (const guide of italyGuides) {
   check(guide.purpose.length >= 120, `${guide.url}: thin independent reader purpose`);
@@ -313,7 +337,8 @@ check(read('scripts/build-dist.mjs').includes("'italy'"), 'Italy absent from bui
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') || route === '/italy/umbria/' || route.startsWith('/italy/umbria/') || route === '/italy/sorrento-amalfi-capri/' || route.startsWith('/italy/sorrento-amalfi-capri/') ? '2026-10-12' : '2026-09-26';
+    const it12Route = route === '/italy/' || [...it12Slugs].some((slug) => route.startsWith(`/italy/${slug}/`));
+    const expectedLastmod = it12Route || route === '/italy/italian-lakes/' || route.startsWith('/italy/italian-lakes/') || route === '/italy/siena-southern-tuscany/' || route.startsWith('/italy/siena-southern-tuscany/') || route === '/italy/milan/' || route.startsWith('/italy/milan/') || route === '/italy/emilia-romagna/' || route.startsWith('/italy/emilia-romagna/') || route === '/italy/umbria/' || route.startsWith('/italy/umbria/') || route === '/italy/sorrento-amalfi-capri/' || route.startsWith('/italy/sorrento-amalfi-capri/') ? '2026-10-12' : route === '/italy/rome/' || route.startsWith('/italy/rome/') ? '2026-10-04' : route === '/italy/puglia/' || route.startsWith('/italy/puglia/') ? '2026-10-11' : '2026-09-26';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

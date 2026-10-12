@@ -30,13 +30,29 @@ assert.equal(cluster.reviewIsoDate, reviewDate);
 assert.equal(cluster.publishedIsoDate, publishedDate);
 const routes = [`/italy/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)];
 assert.equal(routes.length, 4);
+const it12Slugs = [
+  'veneto-art-cities',
+  'dolomites-trentino-south-tyrol',
+  'turin-piedmont',
+  'genoa-liguria',
+  'marche-abruzzo',
+  'basilicata-calabria',
+  'western-sicily',
+  'eastern-sicily',
+  'sardinia'
+];
+const it12Routes = [
+  '/italy/',
+  ...italyClusters.filter((item) => it12Slugs.includes(item.slug))
+    .flatMap((item) => [`/italy/${item.slug}/`, ...item.guides.map((guide) => guide.url)])
+];
 assert.equal(italyClusters.length + italyClusters.flatMap((item) => item.guides).length + 1, 81,
   'Italy source route set changed');
 
 const parseSitemap = (text) => new Map([...text.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, route, date]) => [route, date]));
 const baseline = parseSitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
-const expectedChanges = new Set(localeEditions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const expectedChanges = new Set(localeEditions.flatMap(({ prefix }) => [...routes, ...it12Routes].map((route) => prefix + route)));
 const fields = ['title', 'intro', 'stayTitle', 'stay', 'walkTitle', 'walk', 'bookingTitle', 'booking', 'seasonTitle', 'season'];
 const catalogs = Object.fromEntries(localeEditions.slice(1).map(({ locale }) => [
   locale,
@@ -51,9 +67,9 @@ for (const output of outputs) {
   assert.equal(entries.size, 4560, `${output}sitemap URL count changed`);
   assert.deepEqual([...entries.keys()].sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
   const changed = [...entries].filter(([route, date]) => baseline.get(route) !== date);
-  assert.equal(changed.length, 20, `${output}sitemap changed ${changed.length} lastmod values instead of 20`);
+  assert.equal(changed.length, 205, `${output}sitemap changed ${changed.length} lastmod values instead of 205`);
   assert.deepEqual(new Set(changed.map(([route]) => route)), expectedChanges,
-    `${output}sitemap lastmod changes escaped the four-route, five-language cluster`);
+    `${output}sitemap lastmod changes escaped the Sorrento and IT12 route sets`);
   for (const [route, date] of changed) {
     assert.equal(baseline.get(route), publishedDate, `${route}: source lastmod was not 26 September`);
     assert.equal(date, reviewDate, `${route}: refreshed lastmod is not 12 October`);
