@@ -24,6 +24,13 @@ const locales = [
   { code: 'ko', dir: 'ko', alt: '축척 없는 경로 안내도: 구시가지에서 통행이 확인된 말라카강 공공 강변길을 걷고, 공공 다리 통행을 확인한 뒤 캄풍 모르텐의 공공 도로로 들어갑니다. 확인된 길로 돌아오며, 맞은편 강변 구간은 개방된 경우에만 선택합니다.', creator: 'TripDistill 편집팀', nonScale: '축척 없음', reuse: '재사용 라이선스', terms: '이용 약관' },
   { code: 'th', dir: 'th', alt: 'แผนผังเส้นทางแบบไม่ตามมาตราส่วน: เดินจากย่านเมืองเก่าเลียบทางเดินสาธารณะริมแม่น้ำมะละกาที่ตรวจสอบแล้ว ตรวจว่าทางข้ามสาธารณะเปิดก่อนเข้าสู่ถนนสาธารณะใน Kampung Morten แล้วกลับทางที่ยืนยันแล้ว; เลือกช่วงฝั่งตรงข้ามเฉพาะเมื่อเปิดใช้ได้', creator: 'ทีมบรรณาธิการ TripDistill', nonScale: 'ไม่ตามมาตราส่วน', reuse: 'ใบอนุญาตให้ใช้ซ้ำ', terms: 'ข้อกำหนดการใช้งาน' }
 ];
+const legendCopy = {
+  en: { label: 'Melaka route diagram key', title: 'Read the numbered route', stages: ['Start at the historic-core public riverfront.', 'Follow one confirmed public riverbank path.', 'Cross one public bridge only after confirming it is open today.', 'Walk Kampung Morten’s public streets; homes and yards are private.'], solid: 'Solid route: return along the same confirmed public path.', dashed: 'Dashed route: optional return only if today’s bridge and opposite-bank public path are confirmed open.' },
+  'zh-Hant': { label: '馬六甲路線示意圖圖例', title: '路線編號說明', stages: ['從歷史城區一側的公共河岸出發。', '沿一段已確認可通行的公共河岸路段前進。', '只有確認公共橋梁今日開放後才過橋。', '只走甘榜摩登的公共街道；住宅與庭院屬私人空間。'], solid: '實線：沿已確認可通行的同一條公共路線原路返回。', dashed: '虛線：只有確認橋梁與對岸公共步道今日開放後，才選作回程。' },
+  ja: { label: 'マラッカのルート概念図の凡例', title: '番号付きルートの見方', stages: ['旧市街側の公共河岸から出発します。', '通行を確認した公共河岸の歩道を一続きに進みます。', '当日の開通を確認できた場合のみ、公共橋を1つ渡ります。', 'カンポン・モルテンの公道だけを歩き、住宅や庭には入りません。'], solid: '実線：通行を確認した同じ公共ルートで戻ります。', dashed: '破線：当日に橋と対岸の公共歩道の通行を確認できた場合のみ、任意の帰路として選べます。' },
+  ko: { label: '말라카 경로 안내도 범례', title: '번호별 경로 읽는 법', stages: ['구시가지 쪽 공공 강변길에서 시작합니다.', '통행이 확인된 하나의 연속된 공공 강변길을 따라갑니다.', '당일 개방이 확인된 경우에만 공공 다리 하나를 건넙니다.', '캄풍 모르텐의 공공 도로만 걷고, 주택과 마당에는 들어가지 않습니다.'], solid: '실선: 통행을 확인한 같은 공공 경로로 돌아옵니다.', dashed: '점선: 당일 다리와 맞은편 공공 강변길이 개방된 것을 확인한 경우에만 선택 귀로로 이용합니다.' },
+  th: { label: 'คำอธิบายสัญลักษณ์เส้นทางมะละกา', title: 'วิธีอ่านหมายเลขเส้นทาง', stages: ['เริ่มที่ทางเดินสาธารณะริมแม่น้ำฝั่งย่านเมืองเก่า', 'เดินตามทางเดินสาธารณะริมแม่น้ำที่ตรวจสอบแล้วและต่อเนื่อง', 'ข้ามสะพานสาธารณะหนึ่งแห่งเฉพาะเมื่อยืนยันว่าเปิดในวันนั้น', 'เดินเฉพาะถนนสาธารณะใน Kampung Morten; บ้านและลานบ้านเป็นพื้นที่ส่วนตัว'], solid: 'เส้นทึบ: กลับตามเส้นทางสาธารณะเดิมที่ยืนยันแล้ว', dashed: 'เส้นประ: เลือกเป็นทางกลับได้เฉพาะเมื่อยืนยันว่าสะพานและทางเดินสาธารณะฝั่งตรงข้ามเปิดในวันนั้น' }
+};
 const retiredCredit = 'Waiting for iftar at Kampung Morten';
 
 function walk(node, out = []) {
@@ -72,6 +79,25 @@ for (const locale of locales) {
     const diagramImages = images.filter((node) => attr(node, 'src') === diagramPath);
     const expectedImageUses = route === '/malaysia/melaka/' ? 2 : 1;
     assert.equal(diagramImages.length, expectedImageUses, `${locale.code} ${route} original diagram use count`);
+    const routeKey = nodes.find((node) => node.tagName === 'aside' && attr(node, 'class') === 'melaka-route-key');
+    assert.ok(routeKey, `${locale.code} ${route} must display a route legend`);
+    assert.equal(attr(routeKey, 'aria-label'), legendCopy[locale.code].label, `${locale.code} localized route-key label`);
+    const routeKeyText = text(routeKey);
+    assert.ok(routeKeyText.includes(legendCopy[locale.code].title), `${locale.code} localized route-key title`);
+    for (const stage of legendCopy[locale.code].stages) assert.ok(routeKeyText.includes(stage), `${locale.code} ${route} route key must explain stage ${stage}`);
+    assert.ok(routeKeyText.includes(legendCopy[locale.code].solid), `${locale.code} solid return meaning`);
+    assert.ok(routeKeyText.includes(legendCopy[locale.code].dashed), `${locale.code} conditional dashed return meaning`);
+    if (route === '/malaysia/melaka/') {
+      const living = nodes.find((node) => node.tagName === 'section' && attr(node, 'id') === 'living');
+      assert.ok(walk(living).includes(routeKey), `${locale.code} hub legend must sit beside the living-neighborhood diagram`);
+    } else if (route === '/malaysia/melaka/melaka-river-kampung-morten/') {
+      const hero = nodes.find((node) => node.tagName === 'section' && attr(node, 'class') === 'md-hero');
+      const decision = nodes.find((node) => node.tagName === 'section' && attr(node, 'class') === 'md-decision-strip');
+      assert.ok(nodes.indexOf(routeKey) > nodes.indexOf(hero) && nodes.indexOf(routeKey) < nodes.indexOf(decision), `${locale.code} Morten legend must follow its hero diagram`);
+    } else {
+      const related = nodes.find((node) => node.tagName === 'section' && attr(node, 'aria-labelledby') === 'related-title');
+      assert.ok(walk(related).includes(routeKey), `${locale.code} related-card legend must accompany the Melaka diagram thumbnail`);
+    }
     assert.ok(!html.includes(retiredPhotoPath), `${locale.code} ${route} must not load the retired photo`);
     assert.ok(!html.includes(retiredPhotoSource), `${locale.code} ${route} must not credit the retired photo as a live asset`);
     assert.ok(!html.includes(retiredCredit), `${locale.code} ${route} must not show the retired photo caption`);
@@ -112,4 +138,4 @@ for (const locale of locales) {
   assert.ok(sourceText.includes(locale.terms), `${locale.code} hub project terms link`);
 }
 
-console.log('Melaka original-schematic regression passed: six page uses, five locales, localized alt/caption/metadata, and retired-photo provenance retained without live references.');
+console.log('Melaka schematic regression passed: six uses, five localized route legends/alt/captions/metadata sets, and retired-photo provenance retained without live references.');
