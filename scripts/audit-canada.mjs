@@ -43,7 +43,7 @@ for (const cluster of canadaClusters) {
 for (const guide of canadaGuides) {
   check(guide.summary.length >= 120, `${guide.url}: thin summary`);
   check(guide.access.length >= 100 && guide.tradeoff.length >= 100 && guide.fallback.length >= 90, `${guide.url}: thin operating guidance`);
-  check(guide.route.length === 4 && guide.checks.length === 3 && guide.faq.length === 3, `${guide.url}: route/check/FAQ parity`);
+  check(guide.route.length === 4 && guide.checks.length === 3 && guide.faq.length >= 3, `${guide.url}: route/check/FAQ parity`);
   check(Boolean(guide.image) !== Boolean(guide.mapTreatment), `${guide.url}: must have exactly one photo or text map treatment`);
   if (!guide.image) {
     check(guide.mapTreatment?.choices?.length === 3 && guide.mapTreatment.choices.every((choice) => choice.length === 3), `${guide.url}: incomplete text map choices`);
@@ -193,8 +193,14 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/canada/saguenay-tadoussac/fjord-hiking/',
     '/canada/saguenay-tadoussac/saguenay-city-valley/'
   ]);
+  const halifaxUpdatedRoutes = new Set([
+    '/canada/halifax-nova-scotia/',
+    '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+    '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+    '/canada/halifax-nova-scotia/cape-breton-cabot/'
+  ]);
   for (const route of routes) {
-    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) || halifaxUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
   }
 }

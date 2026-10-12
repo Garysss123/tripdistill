@@ -35,6 +35,12 @@ const laterCa13Routes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const laterCa14Routes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -51,8 +57,8 @@ assert.equal(canadaSearch.length, 73, 'Canada search route count must remain 73.
 assert.equal(new Set(canadaRoutes).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canadaRoutes, previousCanadaRoutes, 'CA10 must retain the exact 73 Canada routes from CA09.');
 assert.deepEqual(
-  search.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
-  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url)),
+  search.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url)),
+  previousSearchRecords.filter((record) => !routes.includes(record.url) && !laterCa11Routes.includes(record.url) && !laterCa12Routes.includes(record.url) && !laterCa13Routes.includes(record.url) && !laterCa14Routes.includes(record.url)),
   'CA10 must leave all non-target and later-CA11/CA12/CA13 search records unchanged.'
 );
 for (const route of routes) {
@@ -71,7 +77,7 @@ const readSitemapDates = (contents) => new Map([...contents.matchAll(/<loc>https
 const previousSitemapDates = readSitemapDates(previousSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
 assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA10 must retain the exact CA09 sitemap URL set.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes].map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes].map((route) => locale + route)).sort();
 const actualDateChanges = [...sitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only CA10 and later CA11/CA12/CA13 article routes × five editions may have changed sitemap dates.');
 
@@ -112,4 +118,4 @@ for (const [key, alt] of Object.entries(expectedAlts)) assert.equal(canadaImageM
 
 const countryPage = fs.readFileSync(path.join(root, 'canada/index.html'), 'utf8');
 assert.ok(countryPage.includes('href="/canada/newfoundland-labrador/"'), 'The country page may show the updated regional card, but it does not count as a refreshed article.');
-console.log('CA10 route/date regression passed: exactly four existing Newfoundland articles; 73 Canada search routes and all non-target/non-later-CA11/CA12/CA13 search records unchanged; exact sitemap URL set with CA10 and later CA11/CA12/CA13 route dates changed across five editions; localized Article/canonical dates and diagram provenance; corrected photo alt text. The Canada overview card is ancillary and is not counted in the article increment.');
+console.log('CA10 route/date regression passed: exactly four existing Newfoundland articles; 73 Canada search routes and all non-target/later-CA11/CA12/CA13/CA14 search records unchanged; exact sitemap URL set with CA10 and later CA11/CA12/CA13/CA14 route dates changed across five editions; localized Article/canonical dates and diagram provenance; corrected photo alt text. The Canada overview card is ancillary and is not counted in the article increment.');

@@ -7475,57 +7475,6 @@
     ]
   },
   {
-    "title": "Halifax & Nova Scotia",
-    "url": "/canada/halifax-nova-scotia/",
-    "parent": "Canada",
-    "type": "Regional guide",
-    "summary": "Halifax is a walkable harbour city; Peggy’s Cove/Lunenburg and Cape Breton are separate road systems. Keep the city, South Shore and Cabot Trail as distinct days so ocean weather and driving time stay visible.",
-    "keywords": [
-      "Halifax & Nova Scotia",
-      "Nova Scotia",
-      "atlantic"
-    ]
-  },
-  {
-    "title": "Halifax Waterfront & Citadel",
-    "url": "/canada/halifax-nova-scotia/halifax-waterfront-citadel/",
-    "parent": "Halifax & Nova Scotia",
-    "type": "Local guide",
-    "summary": "Walk Halifax from harbour to Citadel Hill, using one museum or historic site as the anchor and the ferry as an optional second harbour perspective.",
-    "keywords": [
-      "Halifax Waterfront & Citadel",
-      "Halifax & Nova Scotia",
-      "Nova Scotia",
-      "harbour-ledger"
-    ]
-  },
-  {
-    "title": "Peggy’s Cove & Lunenburg",
-    "url": "/canada/halifax-nova-scotia/peggys-cove-lunenburg/",
-    "parent": "Halifax & Nova Scotia",
-    "type": "Local guide",
-    "summary": "Use Peggy’s Cove as a weather-sensitive coastal stop and Lunenburg as the slower heritage anchor; the road between them is part of the day, not empty transfer.",
-    "keywords": [
-      "Peggy’s Cove & Lunenburg",
-      "Halifax & Nova Scotia",
-      "Nova Scotia",
-      "roadbook"
-    ]
-  },
-  {
-    "title": "Cape Breton & Cabot Trail",
-    "url": "/canada/halifax-nova-scotia/cape-breton-cabot/",
-    "parent": "Halifax & Nova Scotia",
-    "type": "Local guide",
-    "summary": "Base on Cape Breton, then drive only the section of the Cabot Trail that fits weather, daylight and walking goals; a scenic road still needs a turnaround and recovery night.",
-    "keywords": [
-      "Cape Breton & Cabot Trail",
-      "Halifax & Nova Scotia",
-      "Nova Scotia",
-      "distance-ruler"
-    ]
-  },
-  {
     "title": "Prince Edward Island",
     "url": "/canada/prince-edward-island/",
     "parent": "Canada",
@@ -13189,6 +13138,57 @@
       "Saguenay Fjord & Tadoussac",
       "Quebec",
       "field-notebook"
+    ]
+  },
+  {
+    "title": "Halifax & Nova Scotia",
+    "url": "/canada/halifax-nova-scotia/",
+    "parent": "Canada",
+    "type": "Regional guide",
+    "summary": "Halifax is a walkable harbour city; Peggy’s Cove/Lunenburg and Cape Breton are separate road systems. Keep the city, South Shore and Cabot Trail as distinct days so ocean weather and driving time stay visible.",
+    "keywords": [
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "atlantic"
+    ]
+  },
+  {
+    "title": "Halifax Waterfront & Citadel",
+    "url": "/canada/halifax-nova-scotia/halifax-waterfront-citadel/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Walk from Halifax’s working harbourfront up to Citadel Hill, but choose one major indoor history stop on the way. The ferry to Alderney Landing is a separate Dartmouth loop; its live timetable should decide whether it fits.",
+    "keywords": [
+      "Halifax Waterfront & Citadel",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "harbour-ledger"
+    ]
+  },
+  {
+    "title": "Peggy’s Cove & Lunenburg",
+    "url": "/canada/halifax-nova-scotia/peggys-cove-lunenburg/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Make Peggy’s Cove the weather- and parking-sensitive stop, then give Old Town Lunenburg time for its harbour and surviving 1753 street grid. This is a substantial South Shore road day from Halifax; an overnight in Lunenburg is the calmer choice.",
+    "keywords": [
+      "Peggy’s Cove & Lunenburg",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "roadbook"
+    ]
+  },
+  {
+    "title": "Cape Breton & Cabot Trail",
+    "url": "/canada/halifax-nova-scotia/cape-breton-cabot/",
+    "parent": "Halifax & Nova Scotia",
+    "type": "Local guide",
+    "summary": "Give Cape Breton its own overnight base, then choose one side of the Cabot Trail for each clear-weather day. The nearly 300-kilometre loop and Halifax transfer are the trip’s structure, not empty time between viewpoints.",
+    "keywords": [
+      "Cape Breton & Cabot Trail",
+      "Halifax & Nova Scotia",
+      "Nova Scotia",
+      "distance-ruler"
     ]
   }
 ]

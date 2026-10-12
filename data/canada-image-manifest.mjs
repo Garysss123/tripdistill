@@ -356,7 +356,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/halifax-waterfront-citadel": {
     "src": "/assets/images/canada-halifax-nova-scotia-halifax-waterfront-citadel.webp",
-    "alt": "Halifax harbourfront and city in Nova Scotia",
+    "alt": "Halifax skyline from Alderney Landing across the harbour, with Citadel Hill just right of the towers",
     "source": "https://commons.wikimedia.org/wiki/File:TV-009-0290_(14193147898).jpg",
     "label": "TV-009-0290 (14193147898).jpg",
     "creator": "André Carrotflower",
@@ -366,7 +366,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/peggys-cove-lunenburg": {
     "src": "/assets/images/canada-halifax-nova-scotia-peggys-cove-lunenburg.webp",
-    "alt": "Granite Atlantic coastline and lighthouse landscape in Nova Scotia",
+    "alt": "Peggy’s Point Lighthouse above granite and the designated coastal viewing path at Peggy’s Cove",
     "source": "https://commons.wikimedia.org/wiki/File:Lighthouse_DSC01066_-_Peggy%27s_Cove_Lighthouse_(7612052968).jpg",
     "label": "Lighthouse DSC01066 - Peggy's Cove Lighthouse (7612052968).jpg",
     "creator": "Dennis G. Jarvis",
@@ -376,7 +376,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/cape-breton-cabot": {
     "src": "/assets/images/canada-halifax-nova-scotia-cape-breton-cabot.webp",
-    "alt": "Cabot Trail road and Atlantic highlands in Cape Breton",
+    "alt": "Cabot Trail winding through forested Cape Breton Highlands above the Atlantic coast",
     "source": "https://commons.wikimedia.org/wiki/File:Cabot_Trail_winding_through_Cape_Breton_Highlands_National_Park,_Nova_Scotia.jpg",
     "label": "Cabot Trail winding through Cape Breton Highlands National Park, Nova Scotia.jpg",
     "creator": "Elviroyage",

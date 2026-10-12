@@ -28,6 +28,12 @@ const laterCa13Routes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const laterCa14Routes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -44,8 +50,8 @@ assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.')
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must not change.');
 assert.deepEqual(
-  search.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url)),
-  previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url)),
+  search.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url)),
+  previousSearch.filter((item) => !targetSet.has(item.url) && !laterCa12Routes.includes(item.url) && !laterCa13Routes.includes(item.url) && !laterCa14Routes.includes(item.url)),
   'All non-target and later-CA12/CA13 search records must remain byte-equivalent in content and order.'
 );
 for (const route of routes) {
@@ -62,7 +68,7 @@ assert.equal(previousSitemapResult.status, 0, `Could not read the CA11 base site
 const dates = readDates(sitemap);
 const previousDates = readDates(previousSitemapResult.stdout);
 assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
-const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa12Routes, ...laterCa13Routes].map((route) => locale + route)).sort();
+const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four CA11 and later CA12/CA13 routes × five editions may have changed dates.');
 for (const route of expectedDateChanges) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
@@ -115,8 +121,8 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
   'Only the four CA11 and later CA12/CA13 route pages and ancillary Canada card may change under canada/.'
 );
 
-console.log(`CA11 route/date regression passed: exactly four existing body routes, a separate hub card, 73 unchanged Canada URLs, no non-target or later-CA12/CA13 search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);
+console.log(`CA11 route/date regression passed: exactly four existing body routes, a separate hub card, 73 unchanged Canada URLs, no non-target or later-CA12/CA13/CA14 search/page changes, exact five-edition sitemap set and dates, and ${englishOnly ? 'English' : 'all localized'} Article/canonical metadata.`);

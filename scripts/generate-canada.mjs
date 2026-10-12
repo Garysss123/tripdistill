@@ -14,12 +14,14 @@ const jasperCss = '/css/canada-jasper.css?v=20261012-1';
 const ottawaCss = '/css/canada-ottawa.css?v=20261012-1';
 const niagaraCss = '/css/canada-niagara.css?v=20261012-1';
 const saguenayCss = '/css/canada-saguenay.css?v=20261012-1';
+const halifaxCss = '/css/canada-halifax.css?v=20261012-1';
 const mainJs = '/js/main.js?v=20260911-1';
 const adsenseJs = '/js/adsense.js?v=20260826-9';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const pageReviewDate = (cluster) => cluster.reviewDate || reviewDate;
 const pageIsoDate = (cluster) => cluster.isoDate || isoDate;
 const regionCss = (cluster, guide = null) => {
+  if (cluster.slug === 'halifax-nova-scotia') return `<link rel="stylesheet" href="${halifaxCss}">`;
   if (cluster.slug === 'saguenay-tadoussac') return `<link rel="stylesheet" href="${saguenayCss}">`;
   if (cluster.slug === 'ottawa-gatineau') return `<link rel="stylesheet" href="${ottawaCss}">`;
   if (cluster.slug === 'niagara') return `<link rel="stylesheet" href="${niagaraCss}">`;
@@ -201,6 +203,14 @@ function guidePageLegacy(guide, cluster) {
   const description = metaDescription(`${guide.summary} ${guide.access}`);
   const route = guide.url;
   const reviewed = pageReviewDate(cluster);
+  const routeChoicesSection = guide.routeChoices
+    ? `<section class="ca-field-section ca-route-choices"><div class="ca-section-heading"><span>Choose the day’s anchor</span><h2>${escapeHtml(guide.routeChoices.heading)}</h2><p>${escapeHtml(guide.routeChoices.intro)}</p></div><div class="ca-route-choice-grid">${guide.routeChoices.options.map(([label, title, copy]) => `<article><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>`
+    : '';
+  const routeSourcesSection = guide.sources?.length
+    ? `<section class="ca-field-section ca-route-sources"><div class="ca-section-heading"><span>Primary references</span><h2>${escapeHtml(guide.routeSourcesHeading || 'Live checks for this route')}</h2><p>${escapeHtml(guide.routeSourcesNote || 'Use these pages to verify the route and current operating details before travel.')}</p></div><ul>${sourceList(guide.sources)}</ul></section>`
+    : '';
+  const routeEyebrow = guide.routeEyebrow || 'Four-stage route';
+  const routeHeading = guide.routeHeading || 'A sequence that protects the return.';
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>${sharedHead({ title: `${guide.name} Travel Guide | TripDistill Canada`, description, route, image: guide.image, extraCss: `<link rel="stylesheet" href="${fieldCss}">${regionCss(cluster, guide)}` })}<script src="${adsenseJs}" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide, cluster))}</script></head>
@@ -211,7 +221,9 @@ ${shellStart(`<main id="main-content" class="page-content ca-field" data-ca-fami
   <section class="ca-decision-grid" aria-label="Planning decisions">${guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('')}</section>
   ${ad}
   <section class="ca-orientation"><div><span class="ca-section-label">Orientation</span><h2>Make the operating decision before adding distance.</h2><p>${escapeHtml(guide.tradeoff)}</p><p>${escapeHtml(guide.duration)}</p></div><aside><small>Access</small><p>${escapeHtml(guide.access)}</p><small>Combine carefully</small><p>${escapeHtml(guide.combine)}</p></aside></section>
-${guide.routeDiagram?.src ? `\n  <figure class="${cluster.slug === 'niagara' ? 'ca-route-diagram ca-jasper-route-diagram' : 'ca-jasper-route-diagram'}"><img src="${escapeHtml(guide.routeDiagram.src)}" width="${cluster.slug === 'niagara' ? Number(guide.routeDiagram.width) || 1200 : 1200}" height="${cluster.slug === 'niagara' ? Number(guide.routeDiagram.height) || 700 : 700}" alt="${escapeHtml(guide.routeDiagram.alt)}" loading="lazy"><figcaption>Original planning diagram · not to scale · <a href="${escapeHtml(guide.routeDiagram.source)}" target="_blank" rel="noopener">SVG source and five-language legend</a> · <a href="${escapeHtml(guide.routeDiagram.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of Use</a>.</figcaption></figure>\n` : ''}  <section class="ca-field-section" id="route"><div class="ca-section-heading"><span>Four-stage route</span><h2>A sequence that protects the return.</h2><p>${escapeHtml(guide.verify)}</p></div><div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  ${routeChoicesSection}
+${guide.routeDiagram?.src ? `\n  <figure class="${cluster.slug === 'niagara' ? 'ca-route-diagram ca-jasper-route-diagram' : 'ca-jasper-route-diagram'}"><img src="${escapeHtml(guide.routeDiagram.src)}" width="${cluster.slug === 'niagara' ? Number(guide.routeDiagram.width) || 1200 : 1200}" height="${cluster.slug === 'niagara' ? Number(guide.routeDiagram.height) || 700 : 700}" alt="${escapeHtml(guide.routeDiagram.alt)}" loading="lazy"><figcaption>Original planning diagram · not to scale · <a href="${escapeHtml(guide.routeDiagram.source)}" target="_blank" rel="noopener">SVG source and five-language legend</a> · <a href="${escapeHtml(guide.routeDiagram.rightsStatusUrl)}" target="_blank" rel="noopener">Terms of Use</a>.</figcaption></figure>\n` : ''}  <section class="ca-field-section" id="route"><div class="ca-section-heading"><span>${escapeHtml(routeEyebrow)}</span><h2>${escapeHtml(routeHeading)}</h2><p>${escapeHtml(guide.verify)}</p></div><div class="ca-route-grid">${guide.route.map(([label, title, copy], index) => `<article class="ca-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(label)}</small><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
+  ${routeSourcesSection}
   <section class="ca-field-section ca-fallback-section"><div class="ca-section-heading"><span>Fallback logic</span><h2>The day still needs a useful shape when conditions change.</h2></div><div class="ca-fallback-card"><strong>Plan B</strong><p>${escapeHtml(guide.fallback)}</p><span>Recheck before leaving: ${escapeHtml(guide.verify)}</span></div></section>
   <section class="ca-field-section" id="checks"><div class="ca-section-heading"><span>Failure points</span><h2>Three reasons to change the plan.</h2></div><div class="ca-check-grid">${guide.checks.map(([title, copy], index) => `<article><span>0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(copy)}</p></article>`).join('')}</div></section>
   <section class="ca-field-section"><div class="ca-section-heading"><span>Same survey sheet</span><h2>Continue within ${escapeHtml(cluster.name)}.</h2></div><div class="ca-related-grid">${relatedCards(cluster, guide.slug)}</div><p class="ca-back"><a href="/canada/${cluster.slug}/">← Return to ${escapeHtml(cluster.name)}</a></p></section>
