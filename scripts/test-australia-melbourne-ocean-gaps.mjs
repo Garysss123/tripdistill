@@ -137,12 +137,9 @@ function readBase(relativePath) {
 }
 
 const mergeHead = spawnSync('git', ['rev-parse', '--verify', 'MERGE_HEAD'], { cwd: root, encoding: 'utf8' });
-if (mergeHead.status === 0) {
-  check(mergeHead.stdout.trim() === sourceTerminal, 'The exact pixel-corrected AU source terminal must be the merge source.');
-} else {
-  const sourceIsIntegrated = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root });
-  check(sourceIsIntegrated.status === 0, 'The exact pixel-corrected AU source terminal must be integrated.');
-}
+const sourceInHead = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root }).status === 0;
+const sourceInCurrentMerge = mergeHead.status === 0 && spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'MERGE_HEAD'], { cwd: root }).status === 0;
+check(sourceInHead || sourceInCurrentMerge, 'The exact pixel-corrected AU source terminal must be in the current integration history.');
 check(git(['merge-base', base, sourceTerminal]).trim() === base, 'AU gap source must descend from its exact authorized base.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia'])

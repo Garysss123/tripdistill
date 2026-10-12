@@ -752,6 +752,14 @@ const usaColoradoRoutes = [
   '/usa/colorado/mountain-towns/',
   '/usa/colorado/rocky-mountain/'
 ];
+const usaHawaiiLastmod = '2026-10-12';
+// These four existing Hawaii pages received a substantive editorial refresh.
+const usaHawaiiRoutes = [
+  '/usa/hawaii/',
+  '/usa/hawaii/oahu/',
+  '/usa/hawaii/maui/',
+  '/usa/hawaii/hawaii-island/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1146,6 +1154,11 @@ for (const route of usaColoradoRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot update missing sitemap route ${route}`);
   records.set(route, { ...record, lastmod: usaColoradoLastmod });
+}
+for (const route of usaHawaiiRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Hawaii route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaHawaiiLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

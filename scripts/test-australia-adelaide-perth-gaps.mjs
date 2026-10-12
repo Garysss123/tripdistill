@@ -183,11 +183,16 @@ function assertSvgSafe(file, digest) {
 }
 
 const mergeHead = spawnSync('git', ['rev-parse', '--verify', 'MERGE_HEAD'], { cwd: root, encoding: 'utf8' });
-const assetDiffBase = mergeHead.status === 0
+const sourceInHead = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root }).status === 0;
+const sourceInCurrentMerge = mergeHead.status === 0 && spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'MERGE_HEAD'], { cwd: root }).status === 0;
+const sourceMerge = git(['log', '--first-parent', '--merges', '--format=%H %P', 'HEAD'])
+  .split(/\r?\n/u).map((line) => line.trim().split(/\s+/u))
+  .find((parts) => parts.length > 2 && parts.slice(1).includes(sourceTerminal));
+const assetDiffBase = mergeHead.status === 0 && mergeHead.stdout.trim() === sourceTerminal
   ? 'HEAD'
+  : sourceMerge ? sourceMerge[1]
   : git(['rev-parse', 'HEAD']).trim() === sourceTerminal ? base : 'HEAD^1';
-if (mergeHead.status === 0) assert.equal(mergeHead.stdout.trim(), sourceTerminal, 'The exact pixel-corrected AU source terminal must be the merge source.');
-else assert.equal(spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root }).status, 0, 'The exact pixel-corrected AU source terminal must be integrated.');
+assert(sourceInHead || sourceInCurrentMerge, 'The exact pixel-corrected AU source terminal must be in the current integration history.');
 assert.equal(git(['merge-base', base, sourceTerminal]).trim(), base, 'The source branch must descend from the authorized exact base.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
