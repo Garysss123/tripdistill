@@ -22,7 +22,7 @@ The English pages and route search summaries update with the 12 October 2026 rev
 
 Official references in the Basel source data include Basel Tourism, BVB, Kunstmuseum Basel, Fondation Beyeler and the applicable city/venue sources. Exact fares, departures, opening hours and reservation availability remain date-dependent and are not promised.
 
-The existing Basel photos remain separately attributed under their recorded source licenses. No image or license manifest was changed and no new SVG was introduced. Protected Rigi and Zermatt SVG files are checked byte-for-byte by regression tests. This work does not claim independent image-rights-chain clearance or a browser-based UI review.
+The Basel photo assignments were checked in the local contact sheet alongside the other CH10 draft imagery; no subject mismatch was found. The existing photos remain separately attributed under their recorded source licenses. No image or license manifest was changed and no new SVG was introduced. Protected Rigi and Zermatt SVG files are checked byte-for-byte by regression tests. This work does not claim independent image-rights-chain clearance or a browser-based UI review.
 
 ## Environment and verification
 
