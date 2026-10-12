@@ -33,9 +33,6 @@
     "Start with landscape or garden, eat in town, select one producer or cultural stop and descend before…": "เริ่มด้วยภูมิทัศน์หรือสวน กินอาหารในเมือง เลือกผู้ผลิตหรือจุดแวะวัฒนธรรมหนึ่งแห่ง และลงจากที่สูงก่อน…",
     "Settle the arrival side, use one region per day, visit managed wildlife or parks through current rules…": "จัดการเรื่องการเดินทางไปถึงให้เรียบร้อย เที่ยววันละหนึ่งภูมิภาค เยี่ยมชมสัตว์ป่าหรืออุทยานตามกฎปัจจุบัน…",
     "Adelaide, Wine Country & Kangaroo Island FAQ": "คำถามที่พบบ่อยเกี่ยวกับ Adelaide แหล่งไวน์ และ Kangaroo Island",
-    "Tourism Australia — Adelaide": "Tourism Australia — Adelaide",
-    "South Australian Tourism Commission — official visitor guide": "South Australian Tourism Commission — คู่มือผู้มาเยือนอย่างเป็นทางการ",
-    "Adelaide Metro — public transport": "Adelaide Metro — ขนส่งสาธารณะ",
     "National Parks and Wildlife Service SA — Flinders Chase": "National Parks and Wildlife Service SA — Flinders Chase",
     "SeaLink — official Kangaroo Island ferry information": "SeaLink — ข้อมูลทางการของเรือเฟอร์รี Kangaroo Island",
     "Elder Park, the River Torrens and Adelaide skyline.jpg": "ภาพไฟล์ Elder Park, the River Torrens and Adelaide skyline.jpg",
@@ -54,8 +51,6 @@
     "Event closure": "การปิดเนื่องจากงานอีเวนต์",
     "Collection fatigue": "ความล้าจากคอลเลกชัน",
     "A ridge-and-town day that balances scenic roads, living communities, weather and a sober return rather than…": "วันระหว่างสันเขากับเมืองที่สร้างสมดุลระหว่างถนนชมวิว ชุมชนที่ผู้คนยังใช้ชีวิตจริง สภาพอากาศ และขากลับโดยคนขับไม่ดื่ม แทน…",
-    "A wine-region route designed around a sober driver, booked producers, food and landscape rather than maximum…": "เส้นทางแหล่งไวน์ที่วางแผนโดยมีคนขับไม่ดื่มเป็นหลัก พร้อมผู้ผลิตที่จองไว้ อาหาร และภูมิทัศน์ แทน…",
-    "A peninsula day choosing either coast-and-walk or wine-and-food as the primary clock, with a sober road plan…": "วันบนคาบสมุทรที่เลือกให้ชายฝั่งกับการเดิน หรือไวน์กับอาหารเป็นแกนหลักอย่างใดอย่างหนึ่ง พร้อมแผนขับรถโดยคนขับไม่ดื่ม…",
     "A multi-night island plan that protects ferry check-in, long road distances, wildlife speed and park closures…": "แผนเที่ยวเกาะหลายคืนที่คำนึงถึงเวลาเช็กอินเรือเฟอร์รี การขับรถระยะไกล การจำกัดความเร็วเมื่อมีสัตว์ป่า และการปิดอุทยาน…",
     "← Return to Adelaide, Wine Country & Kangaroo Island": "← กลับไปยัง Adelaide แหล่งไวน์ และ Kangaroo Island",
     "Adelaide Park Lands & North Terrace FAQ": "คำถามที่พบบ่อยเกี่ยวกับ Adelaide Park Lands และ North Terrace",
@@ -87,7 +82,6 @@
     "Ridge roads become difficult in poor visibility and at dusk.": "ถนนบนสันเขาขับยากเมื่อทัศนวิสัยไม่ดีและยามพลบค่ำ",
     "Bushfire weather": "อากาศเสี่ยงไฟป่า",
     "Extreme fire danger can close parks and alter routes.": "อันตรายจากไฟป่าระดับรุนแรงอาจปิดอุทยานและเปลี่ยนเส้นทาง",
-    "A compact city route using the parklands and North Terrace institutions as orientation rather than racing…": "เส้นทางเมืองกะทัดรัดที่ใช้สวนเมืองและสถาบันบน North Terrace เป็นจุดอ้างอิง แทนการเร่งเก็บ…",
     "Adelaide Hills & Hahndorf FAQ": "คำถามที่พบบ่อยเกี่ยวกับ Adelaide Hills และ Hahndorf",
     "Barossa Valley Travel Guide | TripDistill Australia": "คู่มือท่องเที่ยว Barossa Valley | TripDistill ออสเตรเลีย",
     "Barossa Valley — Australia field guide": "Barossa Valley — คู่มือเส้นทางออสเตรเลีย",
@@ -123,6 +117,12 @@
     "Drive slowly, especially dawn and dusk, and avoid night travel.": "ขับช้า ๆ โดยเฉพาะยามเช้ามืดและพลบค่ำ และหลีกเลี่ยงการเดินทางกลางคืน",
     "Wind and operational changes require flexible accommodation and onward bookings.": "ลมและการเปลี่ยนแปลงในการให้บริการทำให้ต้องจัดที่พักและการจองเดินทางต่อให้ยืดหยุ่น",
     "Fuel, food and mobile coverage are limited outside towns.": "นอกเมืองมีน้ำมัน อาหาร และสัญญาณมือถือจำกัด",
-    "Kangaroo Island FAQ": "คำถามที่พบบ่อยเกี่ยวกับ Kangaroo Island"
+    "Kangaroo Island FAQ": "คำถามที่พบบ่อยเกี่ยวกับ Kangaroo Island",
+    "A compact city route using the parklands and North Terrace institutions as orientation rather than racing…": "เส้นทางเมืองกะทัดรัดที่ใช้สวนเมืองและสถาบันบน North Terrace เป็นจุดอ้างอิง แทนการเร่งเก็บ…",
+    "A wine-region route designed around a sober driver, booked producers, food and landscape rather than maximum…": "เส้นทางแหล่งไวน์ที่วางแผนโดยมีคนขับไม่ดื่มเป็นหลัก พร้อมผู้ผลิตที่จองไว้ อาหาร และภูมิทัศน์ แทน…",
+    "A peninsula day choosing either coast-and-walk or wine-and-food as the primary clock, with a sober road plan…": "วันบนคาบสมุทรที่เลือกให้ชายฝั่งกับการเดิน หรือไวน์กับอาหารเป็นแกนหลักอย่างใดอย่างหนึ่ง พร้อมแผนขับรถโดยคนขับไม่ดื่ม…",
+    "Tourism Australia — Adelaide": "Tourism Australia — Adelaide",
+    "South Australian Tourism Commission — official visitor guide": "South Australian Tourism Commission — คู่มือผู้มาเยือนอย่างเป็นทางการ",
+    "Adelaide Metro — public transport": "Adelaide Metro — ขนส่งสาธารณะ"
   }
 }

@@ -44,7 +44,6 @@
     "Harbours, escarpments, river bends and surf corridors.": "港灣、峭壁、河灣與衝浪海岸走廊。",
     "Sydney, the Blue Mountains, Brisbane and the Gold Coast use public transport well—until the park, island or headland changes the contract.": "雪梨、藍山、布里斯本與黃金海岸善用大眾運輸；但一進入公園、島嶼或海角，交通進出安排就會改變。",
     "New South Wales · 5 field guides": "新南威爾斯州・5 篇實地路線指南",
-    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "把雪梨看成由水上穿越串成的網絡，比當成一張市中心景點清單更容易掌握。",
     "Open the regional atlas →": "開啟區域路線圖鑑 →",
     "The country beyond Sydney is not one interchangeable day trip.": "雪梨以外的區域，不是一趟可以任意替換的當日往返。",
     "Queensland · 5 field guides": "昆士蘭州・5 篇實地路線指南",
@@ -54,10 +53,8 @@
     "Tram grids, cliff roads, parklands and alpine axes.": "電車網格、懸崖公路、公園綠地與高山軸線。",
     "Melbourne, the Great Ocean Road, Adelaide and Canberra reward cultural attention, sober driving and weather-specific regional bases.": "墨爾本、大洋路、阿德雷德與坎培拉值得專注體驗文化、清醒駕駛，並依天候選擇區域基地。",
     "Victoria · 5 field guides": "維多利亞州・5 篇實地路線指南",
-    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "墨爾本以密集的市中心電車網格、文化機構、社區主要街道，以及遼闊得多的菲利普港灣海岸運作。",
     "Victoria’s southwest is a chain of surf coast, winding cliff road, wet forest, limestone stacks and Gariwerd mountain Country.": "維多利亞州西南部串起衝浪海岸、蜿蜒懸崖公路、濕森林、石灰岩柱與 Gariwerd 山地傳統領地。",
     "South Australia · 5 field guides": "南澳州・5 篇實地路線指南",
-    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "阿德雷德的公園綠地與文化軸線相當緊湊，但山區、Barossa、Fleurieu 與袋鼠島很快就會牽涉道路、飲酒與……",
     "Australian Capital Territory & New South Wales · 5 field guides": "澳洲首都領地與新南威爾斯州・5 篇實地路線指南",
     "Canberra’s designed lake and parliamentary axis reward slow institutional visits, while Namadgi and the Snowy Mountains demand road, fire and…": "坎培拉的人工規劃湖泊與國會軸線適合放慢腳步參訪機構，但 Namadgi 與 Snowy Mountains 需要道路、火災與……",
     "03 · tropics and interior": "03・熱帶與內陸",
@@ -70,7 +67,6 @@
     "Indian Ocean light, remote road and island weather.": "印度洋光線、偏遠公路與島嶼天候。",
     "Perth, the Southwest, the Kimberley and Tasmania turn ferry, fire, long-road and park access into the visible itinerary.": "伯斯、西南部、Kimberley 與塔斯馬尼亞，讓渡輪、火災、長途公路與公園進出成為行程中清楚可見的部分。",
     "Western Australia · 5 field guides": "西澳州・5 篇實地路線指南",
-    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "伯斯／Boorloo 延伸在 Swan–Canning 河系統與印度洋之間，而 Fremantle／Walyalup 與 Wadjemup／Rottnest 又各自帶來……",
     "Western Australia’s southwest combines long driving, powerful surf, working vineyards, caves and tall forest.": "西澳西南部結合長途駕車、強勁浪況、仍在運作的葡萄園、洞穴與高聳森林。",
     "Broome/Rubibi and the Kimberley operate at continental scale.": "Broome／Rubibi 與 Kimberley 的尺度是大陸級的。",
     "Tasmania · 5 field guides": "塔斯馬尼亞・5 篇實地路線指南",
@@ -122,6 +118,10 @@
     "Broome & the Kimberley fields": "Broome 與 Kimberley 實地路線",
     "Adelaide, Wine Country & Kangaroo Island fields": "阿德雷德、葡萄酒產區與袋鼠島實地路線",
     "Tasmania fields": "塔斯馬尼亞實地路線",
-    "Canberra & Australian Alps fields": "坎培拉與澳洲阿爾卑斯山實地路線"
+    "Canberra & Australian Alps fields": "坎培拉與澳洲阿爾卑斯山實地路線",
+    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "把雪梨看成由水上穿越串成的網絡，比當成一張市中心景點清單更容易掌握。",
+    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "墨爾本以密集的市中心電車網格、文化機構、社區主要街道，以及遼闊得多的菲利普港灣海岸運作。",
+    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "阿德雷德的公園綠地與文化軸線相當緊湊，但山區、Barossa、Fleurieu 與袋鼠島很快就會牽涉道路、飲酒與……",
+    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "伯斯／Boorloo 延伸在 Swan–Canning 河系統與印度洋之間，而 Fremantle／Walyalup 與 Wadjemup／Rottnest 又各自帶來……"
   }
 }

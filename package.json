@@ -35,6 +35,7 @@
     "test:malaysia-melaka-photo-schematic": "node scripts/test-malaysia-melaka-photo-schematic.mjs",
     "test:malaysia-taman-negara-refresh": "node scripts/test-malaysia-taman-negara-refresh.mjs",
     "test:australia-melbourne-refresh": "node scripts/test-australia-melbourne-refresh.mjs",
+    "test:australia-sydney-refresh": "node scripts/test-australia-sydney-refresh.mjs",
     "audit:france-sources": "node scripts/check-france-sources.mjs",
     "audit:united-kingdom": "node scripts/audit-united-kingdom.mjs",
     "audit:united-kingdom-sources": "node scripts/check-united-kingdom-sources.mjs",
@@ -83,7 +84,7 @@
     "test:uk-peak-district-dates": "node scripts/test-uk-peak-district-route-dates.mjs",
     "test:united-kingdom-lake-diagrams": "node scripts/test-united-kingdom-lake-diagrams.mjs",
     "test:united-kingdom-somerset-diagram": "node scripts/test-united-kingdom-somerset-diagram.mjs",
-    "audit": "npm run audit:i18n && npm run test:i18n-search-guards && npm run test:photo-license-guard && npm run test:site-image-provenance && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run test:france-date-sync && npm run audit:united-kingdom && npm run test:united-kingdom-route-dates && npm run test:uk-belfast-dates && npm run test:uk-belfast-search && npm run test:uk-kent-sussex-dates && npm run test:uk-kent-sussex-search && npm run test:uk-peak-district-dates && npm run audit:italy && npm run test:italy-puglia-date-sync && npm run audit:photo-license-inventory && npm run test:malaysia-cameron-route-dates && npm run test:malaysia-langkawi-route-dates && npm run test:malaysia-melaka-route-dates && npm run test:malaysia-melaka-photo-schematic && npm run test:malaysia-fourth-children-dates && npm run test:china-route-dates && npm run test:china-cn14b && npm run test:united-kingdom-lake-diagrams && npm run test:united-kingdom-somerset-diagram && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
+    "audit": "npm run audit:i18n && npm run test:i18n-search-guards && npm run test:photo-license-guard && npm run test:site-image-provenance && npm run localize:pages && npm run audit:vietnam && npm run audit:australia && npm run test:australia-sydney-refresh && npm run audit:usa && npm run audit:canada && npm run audit:switzerland && npm run audit:france && npm run test:france-date-sync && npm run audit:united-kingdom && npm run test:united-kingdom-route-dates && npm run test:uk-belfast-dates && npm run test:uk-belfast-search && npm run test:uk-kent-sussex-dates && npm run test:uk-kent-sussex-search && npm run test:uk-peak-district-dates && npm run audit:italy && npm run test:italy-puglia-date-sync && npm run audit:photo-license-inventory && npm run test:malaysia-cameron-route-dates && npm run test:malaysia-langkawi-route-dates && npm run test:malaysia-melaka-route-dates && npm run test:malaysia-melaka-photo-schematic && npm run test:malaysia-fourth-children-dates && npm run test:china-route-dates && npm run test:china-cn14b && npm run test:united-kingdom-lake-diagrams && npm run test:united-kingdom-somerset-diagram && npm run audit:nyc && npm run audit:usa-editorial && node scripts/audit-site.mjs",
     "build": "npm run localize && node scripts/build-dist.mjs",
     "build:tokyo-qa-harness": "node scripts/build-tokyo-qa-harness.mjs",
     "build:kyoto-qa-harness": "node scripts/build-kyoto-qa-harness.mjs",
@@ -128,6 +129,7 @@
     "node": ">=20.19.0"
   },
   "devDependencies": {
-    "parse5": "^8.0.1"
+    "parse5": "^8.0.1",
+    "saxes": "^6.0.0"
   }
 }

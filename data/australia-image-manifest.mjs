@@ -2,7 +2,7 @@
 export const australiaImageManifest = {
   "sydney-harbour-coast/circular-quay-rocks": {
     "src": "/assets/images/australia-sydney-harbour-coast-circular-quay-rocks.webp",
-    "alt": "Circular Quay and The Rocks beside Sydney Harbour",
+    "alt": "Sydney Harbour Bridge viewed across Sydney Cove from Circular Quay",
     "source": "https://commons.wikimedia.org/wiki/File:Photo_of_the_Sydney_Harbour_Bridge_from_Circular_Quay.jpg",
     "label": "Photo of the Sydney Harbour Bridge from Circular Quay.jpg",
     "creator": "JCL888",

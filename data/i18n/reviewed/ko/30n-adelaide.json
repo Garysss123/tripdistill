@@ -33,9 +33,6 @@
     "Start with landscape or garden, eat in town, select one producer or cultural stop and descend before…": "경관이나 정원에서 시작해 마을에서 식사하고 생산자나 문화 장소 하나를 고른 뒤… 전에 내려오세요.",
     "Settle the arrival side, use one region per day, visit managed wildlife or parks through current rules…": "도착 구간을 정리하고 하루에 한 지역만 이용하세요. 최신 규정에 따라 관리되는 야생동물이나 공원을 방문한 뒤…",
     "Adelaide, Wine Country & Kangaroo Island FAQ": "애들레이드, 와인 산지 & Kangaroo Island FAQ",
-    "Tourism Australia — Adelaide": "Tourism Australia — 애들레이드",
-    "South Australian Tourism Commission — official visitor guide": "South Australian Tourism Commission — 공식 방문자 가이드",
-    "Adelaide Metro — public transport": "Adelaide Metro — 대중교통",
     "National Parks and Wildlife Service SA — Flinders Chase": "National Parks and Wildlife Service SA — Flinders Chase",
     "SeaLink — official Kangaroo Island ferry information": "SeaLink — Kangaroo Island 공식 페리 정보",
     "Elder Park, the River Torrens and Adelaide skyline.jpg": "Elder Park, the River Torrens and Adelaide skyline.jpg · 이미지 파일명",
@@ -54,8 +51,6 @@
     "Event closure": "행사 폐쇄",
     "Collection fatigue": "컬렉션 피로",
     "A ridge-and-town day that balances scenic roads, living communities, weather and a sober return rather than…": "시음실을 줄줄이 잇기보다 경관 도로·살아 있는 공동체·날씨·음주 없는 귀환을 균형 있게 다루는 능선과 마을의 하루입니다…",
-    "A wine-region route designed around a sober driver, booked producers, food and landscape rather than maximum…": "셀러 도어 수를 최대화하지 않고 술을 마시지 않는 운전자·예약한 생산자·음식·경관을 중심으로 설계하는 와인 산지 동선입니다…",
-    "A peninsula day choosing either coast-and-walk or wine-and-food as the primary clock, with a sober road plan…": "해안과 산책, 와인과 음식 중 하나를 중심으로 고르고 음주 없는 운전 계획으로 연결하는 반도의 하루입니다…",
     "A multi-night island plan that protects ferry check-in, long road distances, wildlife speed and park closures…": "경관 명소보다 페리 체크인·긴 도로 거리·야생동물 주변 속도·공원 폐쇄를 먼저 지키는 여러 밤의 섬 계획입니다…",
     "← Return to Adelaide, Wine Country & Kangaroo Island": "← 애들레이드, 와인 산지 & Kangaroo Island로 돌아가기",
     "Adelaide Park Lands & North Terrace FAQ": "Adelaide Park Lands & North Terrace FAQ",
@@ -87,7 +82,6 @@
     "Ridge roads become difficult in poor visibility and at dusk.": "시야가 나쁘거나 해 질 무렵에는 능선 도로가 어려워집니다.",
     "Bushfire weather": "산불 날씨",
     "Extreme fire danger can close parks and alter routes.": "극심한 산불 위험으로 공원이 폐쇄되고 동선이 바뀔 수 있습니다.",
-    "A compact city route using the parklands and North Terrace institutions as orientation rather than racing…": "모든 컬렉션을 서두르지 않고 공원 지대와 North Terrace 기관을 방향 기준으로 삼는 아담한 도시 동선입니다…",
     "Adelaide Hills & Hahndorf FAQ": "Adelaide Hills & Hahndorf FAQ",
     "Barossa Valley Travel Guide | TripDistill Australia": "Barossa Valley 여행 가이드 | TripDistill 호주",
     "Barossa Valley — Australia field guide": "Barossa Valley — 호주 현장 가이드",
@@ -123,6 +117,12 @@
     "Drive slowly, especially dawn and dusk, and avoid night travel.": "특히 새벽과 해 질 무렵에는 천천히 운전하고 밤 이동을 피하세요.",
     "Wind and operational changes require flexible accommodation and onward bookings.": "바람과 운영 변경에 대비해 숙소와 이후 예약을 유연하게 잡으세요.",
     "Fuel, food and mobile coverage are limited outside towns.": "마을 밖에서는 연료·음식·휴대전화 통신이 제한됩니다.",
-    "Kangaroo Island FAQ": "Kangaroo Island FAQ"
+    "Kangaroo Island FAQ": "Kangaroo Island FAQ",
+    "A compact city route using the parklands and North Terrace institutions as orientation rather than racing…": "모든 컬렉션을 서두르지 않고 공원 지대와 North Terrace 기관을 방향 기준으로 삼는 아담한 도시 동선입니다…",
+    "A wine-region route designed around a sober driver, booked producers, food and landscape rather than maximum…": "셀러 도어 수를 최대화하지 않고 술을 마시지 않는 운전자·예약한 생산자·음식·경관을 중심으로 설계하는 와인 산지 동선입니다…",
+    "A peninsula day choosing either coast-and-walk or wine-and-food as the primary clock, with a sober road plan…": "해안과 산책, 와인과 음식 중 하나를 중심으로 고르고 음주 없는 운전 계획으로 연결하는 반도의 하루입니다…",
+    "Tourism Australia — Adelaide": "Tourism Australia — 애들레이드",
+    "South Australian Tourism Commission — official visitor guide": "South Australian Tourism Commission — 공식 방문자 가이드",
+    "Adelaide Metro — public transport": "Adelaide Metro — 대중교통"
   }
 }

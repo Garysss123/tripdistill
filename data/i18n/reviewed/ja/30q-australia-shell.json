@@ -44,7 +44,6 @@
     "Harbours, escarpments, river bends and surf corridors.": "港、断崖、川の曲がり、サーフィンの海岸線。",
     "Sydney, the Blue Mountains, Brisbane and the Gold Coast use public transport well—until the park, island or headland changes the contract.": "シドニー、ブルーマウンテンズ、ブリスベン、ゴールドコーストは公共交通が便利ですが、公園、島、岬に入ると移動の条件が変わります。",
     "New South Wales · 5 field guides": "ニューサウスウェールズ州 · 5つの現地ガイド",
-    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "シドニーは中心部のチェックリストではなく、水上の移動をつなぐネットワークとして捉えると分かりやすくなります。",
     "Open the regional atlas →": "地域アトラスを開く →",
     "The country beyond Sydney is not one interchangeable day trip.": "シドニーの外側は、どこでも置き換えられる日帰り旅行ではありません。",
     "Queensland · 5 field guides": "クイーンズランド州 · 5つの現地ガイド",
@@ -54,10 +53,8 @@
     "Tram grids, cliff roads, parklands and alpine axes.": "トラム網、崖沿いの道路、公園地帯、山岳の軸。",
     "Melbourne, the Great Ocean Road, Adelaide and Canberra reward cultural attention, sober driving and weather-specific regional bases.": "メルボルン、グレート・オーシャン・ロード、アデレード、キャンベラでは、文化への関心、飲酒しない運転、天候に合わせた地域拠点が役立ちます。",
     "Victoria · 5 field guides": "ビクトリア州 · 5つの現地ガイド",
-    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "メルボルンは、密度の高い中心部のトラム網、文化施設、近隣の目抜き通り、さらに広いポート・フィリップ湾岸を通して楽しみます。",
     "Victoria’s southwest is a chain of surf coast, winding cliff road, wet forest, limestone stacks and Gariwerd mountain Country.": "ビクトリア州南西部は、サーフコースト、曲がりくねった崖道、湿った森林、石灰岩の奇岩、Gariwerdの山岳Countryが連なる地域です。",
     "South Australia · 5 field guides": "南オーストラリア州 · 5つの現地ガイド",
-    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "アデレードの公園地帯と文化軸はコンパクトですが、ヒルズ、バロッサ、フルリュー、カンガルー島ではすぐに道路、飲酒、…の判断が必要になります。",
     "Australian Capital Territory & New South Wales · 5 field guides": "オーストラリア首都特別地域＆ニューサウスウェールズ州 · 5つの現地ガイド",
     "Canberra’s designed lake and parliamentary axis reward slow institutional visits, while Namadgi and the Snowy Mountains demand road, fire and…": "計画的に造られたキャンベラの湖と国会議事堂の軸は、文化施設をゆっくり訪れる旅に向いています。一方、ナマジとスノーウィー・マウンテンズには道路、火災、…の準備が必要です。",
     "03 · tropics and interior": "03 · 熱帯と内陸",
@@ -70,7 +67,6 @@
     "Indian Ocean light, remote road and island weather.": "インド洋の光、遠隔道路、島の天候。",
     "Perth, the Southwest, the Kimberley and Tasmania turn ferry, fire, long-road and park access into the visible itinerary.": "パース、サウスウェスト、キンバリー、タスマニアでは、フェリー、火災、長距離道路、公園へのアクセスが旅程の中心になります。",
     "Western Australia · 5 field guides": "西オーストラリア州 · 5つの現地ガイド",
-    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "パース／Boorlooはスワン・カニング川系とインド洋の間に広がり、フリーマントル／WalyalupとWadjemup／ロットネストにはそれぞれ独自の…があります。",
     "Western Australia’s southwest combines long driving, powerful surf, working vineyards, caves and tall forest.": "西オーストラリア州南西部には、長距離運転、力強い波、現役のブドウ畑、洞窟、高い森林があります。",
     "Broome/Rubibi and the Kimberley operate at continental scale.": "ブルーム／Rubibiとキンバリーの移動は大陸規模になります。",
     "Tasmania · 5 field guides": "タスマニア · 5つの現地ガイド",
@@ -122,6 +118,10 @@
     "Broome & the Kimberley fields": "ブルーム＆キンバリーのフィールド",
     "Adelaide, Wine Country & Kangaroo Island fields": "アデレード、ワインカントリー＆カンガルー島のフィールド",
     "Tasmania fields": "タスマニアのフィールド",
-    "Canberra & Australian Alps fields": "キャンベラ＆オーストラリア・アルプスのフィールド"
+    "Canberra & Australian Alps fields": "キャンベラ＆オーストラリア・アルプスのフィールド",
+    "Sydney is easier to understand as a network of water crossings than as one central checklist.": "シドニーは中心部のチェックリストではなく、水上の移動をつなぐネットワークとして捉えると分かりやすくなります。",
+    "Melbourne works through a dense central tram grid, cultural institutions, neighborhood high streets and the much larger Port Phillip edge.": "メルボルンは、密度の高い中心部のトラム網、文化施設、近隣の目抜き通り、さらに広いポート・フィリップ湾岸を通して楽しみます。",
+    "Adelaide’s parklands and cultural axis are compact, but the Hills, Barossa, Fleurieu and Kangaroo Island expand quickly into road, alcohol and…": "アデレードの公園地帯と文化軸はコンパクトですが、ヒルズ、バロッサ、フルリュー、カンガルー島ではすぐに道路、飲酒、…の判断が必要になります。",
+    "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own…": "パース／Boorlooはスワン・カニング川系とインド洋の間に広がり、フリーマントル／WalyalupとWadjemup／ロットネストにはそれぞれ独自の…があります。"
   }
 }

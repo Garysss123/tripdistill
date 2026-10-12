@@ -5684,7 +5684,7 @@
     "url": "/australia/sydney-harbour-coast/",
     "parent": "Australia · New South Wales",
     "type": "Complete regional hub with five field guides",
-    "summary": "Sydney is easier to understand as a network of water crossings than as one central checklist. Circular Quay, the civic harbour, western foreshore, eastern beaches and Manly each run on different walking, ferry and surf conditions. Five field chapters separate the city into routes with explicit return points and enough time to read living Country, public space and working transport.",
+    "summary": "Sydney works best as several linked transport-and-weather days, not one central checklist. The CBD and Circular Quay are the hinge; The Rocks and the Opera House sit on foot-linked harbour edges, while Bondi and Coogee need a separate coast day and Manly begins with a harbour crossing. Use this hub to choose a base, protect the return, and leave room for the living Country, civic uses and changing conditions that a map cannot schedule.",
     "keywords": [
       "sydney, harbour & coast",
       "sydney harbour coast",
@@ -5854,7 +5854,7 @@
     "url": "/australia/perth-fremantle-rottnest/",
     "parent": "Australia · Western Australia",
     "type": "Complete regional hub with five field guides",
-    "summary": "Perth/Boorloo stretches between the Swan–Canning river system and the Indian Ocean, while Fremantle/Walyalup and Wadjemup/Rottnest add their own histories and transport rules. Five chapters separate city park, port, beach, island and valley movement so sunset does not conceal the long return.",
+    "summary": "Perth / Boorloo, Fremantle / Walyalup and Wadjemup / Rottnest sit on one metropolitan map but make different days. The city centre links Perth Station, the Cultural Centre and Elizabeth Quay; the Fremantle Line reaches a port town whose prison, shipwreck museum and working harbour each deserve a choice; the island starts at a specific ferry terminal and ends at its boarding gate. Choose one system at a time, then give Kings Park or the Cottesloe / Scarborough coast its own day.",
     "keywords": [
       "perth, fremantle & rottnest",
       "perth fremantle rottnest",
@@ -5956,7 +5956,7 @@
     "url": "/australia/sydney-harbour-coast/circular-quay-rocks/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "A first-day harbour route linking ferry bearings, The Rocks lanes, public viewpoints and a return that does not depend on one crowded platform.",
+    "summary": "A walkable Circular Quay–The Rocks circuit that turns ferry wharves, the harbour ridge and public foreshore into one legible half-day, with a named rail or wharf return and room for a museum only when its entry is confirmed.",
     "keywords": [
       "circular quay & the rocks",
       "sydney, harbour & coast",
@@ -5970,7 +5970,7 @@
     "url": "/australia/sydney-harbour-coast/opera-house-botanic-garden/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "A booked cultural visit connected to the Botanic Garden and harbour edge, with performance security, opening hours and heat treated as route constraints.",
+    "summary": "A half-day pairing of the Sydney Opera House precinct with one Royal Botanic Garden section, organized around the actual venue booking, garden gate, shade and return connection rather than an assumed all-access loop.",
     "keywords": [
       "opera house & royal botanic garden",
       "sydney, harbour & coast",
@@ -5998,7 +5998,7 @@
     "url": "/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/",
     "parent": "Australia · Sydney, Harbour & Coast",
     "type": "Focused field and decision guide",
-    "summary": "An exposed coastal walk planned around surf conditions, heat, stairs and a bus return rather than treated as an automatic city stroll.",
+    "summary": "The signed Bondi–Tamarama–Bronte–Clovelly–Coogee coastal walk is about 6 km; plan roughly three to five hours with stops, an early turnaround option and a checked bus return rather than treating the exposed headlands as a flat city stroll.",
     "keywords": [
       "bondi to coogee coastal walk",
       "sydney, harbour & coast",
@@ -6143,7 +6143,7 @@
       "st kilda & foreshore",
       "melbourne & port phillip",
       "st kilda foreshore",
-      "tram-to-bay sunset",
+      "tram-to-bay day",
       "australia travel guide"
     ]
   },
@@ -6656,7 +6656,7 @@
     "url": "/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "A central Boorloo chapter linking station, river edge and one cultural interior while Whadjuk Noongar context and afternoon heat remain visible.",
+    "summary": "A self-guided central Boorloo day links Perth Station, the Perth Cultural Centre, St Georges Terrace and Elizabeth Quay while keeping Whadjuk Noongar Country and the Swan River in view.",
     "keywords": [
       "boorloo / perth city & elizabeth quay",
       "perth, fremantle & rottnest",
@@ -6684,7 +6684,7 @@
     "url": "/australia/perth-fremantle-rottnest/walyalup-fremantle/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "A port-city day connecting rail arrival, maritime and convict history, markets and working-harbour boundaries.",
+    "summary": "A Walyalup / Fremantle walking day follows the Fremantle Line from Perth, then chooses one major heritage interior before the West End and public harbour edge.",
     "keywords": [
       "walyalup / fremantle",
       "perth, fremantle & rottnest",
@@ -6698,7 +6698,7 @@
     "url": "/australia/perth-fremantle-rottnest/wadjemup-rottnest/",
     "parent": "Australia · Perth, Fremantle & Rottnest",
     "type": "Focused field and decision guide",
-    "summary": "An island visit where ferry terminal, bicycle ability, bus circuit, quokka welfare and Wadjemup history come before beach count.",
+    "summary": "Plan Wadjemup / Rottnest around the booked crossing, a realistic island sector where few cars are permitted, and time for its Whadjuk history—not a checklist of beaches or quokka photographs.",
     "keywords": [
       "wadjemup / rottnest island",
       "perth, fremantle & rottnest",
