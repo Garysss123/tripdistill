@@ -7,7 +7,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from '../data/switzerland-ch13-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml, localizeSearchIndex, loadCatalog } from './i18n-lib.mjs';
-import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '69d5db6a3ea0f7d9df100c698b0c854810726563';
@@ -56,7 +56,7 @@ assert.equal(cluster.guides.length, 3);
 assert.equal(switzerlandCh13ClusterRefresh.isoDate, '2026-10-12');
 assert.equal(Object.keys(switzerlandCh13GuideRefresh).length, 3);
 assert.equal(allRoutes.length, 65);
-for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
+for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item) && !switzerlandCh16Routes.includes(item))) {
   const file = `${route.slice(1)}index.html`;
   assert.deepEqual(fs.readFileSync(path.join(root, file)), execFileSync('git', ['show', `${base}:${file}`], { cwd: root }), `${route} differs from the exact base`);
 }
@@ -66,9 +66,9 @@ const after = sitemap(read('sitemap.xml'));
 assert.equal(before.size, 4560);
 assert.equal(after.size, before.size);
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no sitemap URL changed');
-const editions = new Set(prefixes.flatMap((prefix) => [...routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
+const editions = new Set(prefixes.flatMap((prefix) => [...routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const dateChanges = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(dateChanges.length, 55, 'cumulative CH13 pages, three downstream CH14 hubs and four CH15 guides receive dates; the country date already matched the CH13 base');
+assert.equal(dateChanges.length, 80, 'cumulative CH13 pages, three downstream CH14 hubs, four CH15 guides and five CH16 guides receive dates; the country date already matched the CH13 base');
 for (const [route, date] of dateChanges) {
   assert.ok(editions.has(route), `unexpected lastmod change: ${route}`);
   assert.equal(date, '2026-10-12');
@@ -78,7 +78,7 @@ const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-
 const search = JSON.parse(read('data/search-index.json'));
 const targetSearch = search.filter((item) => target.has(item.url));
 assert.equal(targetSearch.length, 4);
-for (const record of search.filter((item) => !target.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url))) {
+for (const record of search.filter((item) => !target.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search changed: ${record.url}`);
 }
 const perRouteFacts = {
@@ -160,16 +160,16 @@ for (const [index, prefix] of prefixes.entries()) {
   const earlierTranslations = previousTranslations(code);
   const localizedSearchFile = `${prefix.slice(1)}/data/search-index.json`;
   const localizedSearch = JSON.parse(read(localizedSearchFile));
-  const nonTargetBaseSearch = baseSearch.filter((item) => !target.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url));
+  const nonTargetBaseSearch = baseSearch.filter((item) => !target.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url));
   const baseLocalizedSearch = localizeSearchIndex(nonTargetBaseSearch, earlierTranslations, code);
-  for (const record of localizedSearch.filter((item) => !target.has(item.url.slice(prefix.length)) && !ch14Set.has(item.url.slice(prefix.length)) && !switzerlandCh15Routes.includes(item.url.slice(prefix.length))) ) {
+  for (const record of localizedSearch.filter((item) => !target.has(item.url.slice(prefix.length)) && !ch14Set.has(item.url.slice(prefix.length)) && !switzerlandCh15Routes.includes(item.url.slice(prefix.length)) && !switzerlandCh16Routes.includes(item.url.slice(prefix.length))) ) {
     assert.deepEqual(record, baseLocalizedSearch.find((item) => item.url === record.url), `${code} non-target search ${record.url} changed`);
   }
-  for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item))) {
+  for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has(item) && !switzerlandCh15AffectedRoutes.includes(item) && !switzerlandCh16Routes.includes(item))) {
     const baseHtml = execFileSync('git', ['show', `${base}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' });
     const previousOutput = localizeHtml(baseHtml, earlierTranslations, code, route);
     assert.equal(read(path.relative(root, localizedPath(prefix, route))), previousOutput, `${prefix}${route} changed outside this batch`);
   }
 }
 
-console.log(`CH13 regression passed: four existing Graubünden pages, ${totalWords} visible English main-body words, ${editions.size} cumulative dated edition URLs including CH14 and CH15, 4,560 sitemap URLs, no URL changes, five-language metadata and search, non-target pages/search preserved outside later edited routes, and supplemental SVG/retained-photo provenance checks.`);
+console.log(`CH13 regression passed: four existing Graubünden pages, ${totalWords} visible English main-body words, ${editions.size} cumulative dated edition URLs including CH14–CH16, 4,560 sitemap URLs, no URL changes, five-language metadata and search, non-target pages/search preserved outside later edited routes, and supplemental SVG/retained-photo provenance checks.`);

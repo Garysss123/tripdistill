@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from '../data/switzerland-ch15-refresh.mjs';
+import { switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { loadCatalog } from './i18n-lib.mjs';
 
@@ -107,17 +108,19 @@ assert.equal(baseSitemap.size, 4560, 'the base has 4,560 localized URLs');
 assert.equal(currentSitemap.size, baseSitemap.size, 'CH15 creates or removes no URL');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs are unchanged');
 const targetLocalized = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
+const targetAndLaterLocalized = new Set(locales.flatMap(({ prefix }) => [...targetRoutes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
+assert.equal(targetLocalized.size, 20, 'the CH15 four-route batch covers twenty edition paths');
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date);
-assert.equal(changedDates.length, targetLocalized.size, 'only the four target routes receive new sitemap dates in five locales');
+assert.equal(changedDates.length, targetAndLaterLocalized.size, 'only four CH15 and five later CH16 routes receive new sitemap dates in five locales');
 for (const [route, date] of changedDates) {
-  assert.ok(targetLocalized.has(route), `unexpected sitemap date change for ${route}`);
+  assert.ok(targetAndLaterLocalized.has(route), `unexpected sitemap date change for ${route}`);
   assert.equal(date, switzerlandCh15IsoDate);
 }
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
 assert.equal(currentSearch.length, baseSearch.length, 'the English search record count is unchanged');
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url))) {
+for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record changed: ${record.url}`);
 }
 
@@ -175,7 +178,7 @@ for (const route of targetRoutes) {
 }
 assert.ok(totalCurrentWords - totalBaseWords >= 1500, `CH15 adds at least 1,500 visible English body words (${totalCurrentWords - totalBaseWords})`);
 
-for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerlandCh16Routes.includes(item))) {
   const relative = `${route.slice(1)}index.html`;
   const before = execFileSync('git', ['show', `${base}:${relative}`], { cwd: root, encoding: 'utf8' });
   const current = read(relative);
@@ -199,5 +202,5 @@ for (const code of ['zh-Hant', 'ja', 'ko', 'th']) {
   assert.ok(batch.reviewProvenance.reviewer.includes('Same-model'), `${code} labels the self-review accurately`);
 }
 
-console.log(`CH15 regression passed: four existing routes, +${totalCurrentWords - totalBaseWords} English body words, five-language dates and search, no URL changes, and only derivative card updates outside the four substantive pages.`);
+console.log(`CH15 regression passed: four existing routes, +${totalCurrentWords - totalBaseWords} English body words, five-language dates and search, no URL changes, and only derivative card updates outside the CH15/CH16 substantive pages.`);
 console.log(`English <main> body word-count deltas against ${base}: ${perRouteWordDeltas.join('; ')}`);

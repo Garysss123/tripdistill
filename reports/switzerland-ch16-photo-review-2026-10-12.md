@@ -1,0 +1,13 @@
+# Switzerland CH16 photo check — 12 October 2026
+
+The five existing child-guide hero WebPs were opened locally at full display resolution and checked against the subject on each route. The image files and source/license fields were not changed. A reader-facing `displayTitle` was added for each guide because the prior generator otherwise printed the Commons filename as its caption. Two image descriptions were corrected to match the visible frame.
+
+| Guide | Pixel check and alt-text result | Source-page record |
+| --- | --- | --- |
+| Lugano Lakefront | Lake, passenger pier/boat, shoreline buildings and a Swiss flag are visible. The existing lakefront-and-mountains alt text is accurate. | [Lakefront Lugano 2017-05-29 13.15.22.jpg](https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg), Chris j wood, CC BY-SA 4.0 (manifest). |
+| San Salvatore and Morcote | The frame shows a flower-laden bicycle on a lakeside boardwalk, water and a steep mountain behind it. It is not a summit viewpoint. Alt text now describes the bicycle and Lake Lugano with San Salvatore behind it. | [Monte San Salvatore in Lugano.jpg](https://commons.wikimedia.org/wiki/File:Monte_San_Salvatore_in_Lugano.jpg), Jean Schmitt, CC BY-SA 4.0 (manifest). |
+| Locarno and Ascona | Elevated view over Lake Maggiore and lakeside settlements beneath a mountain ridge; the route-level alt describes the lakefront near both towns. | [Locarno, Ascona & Lago Maggiore von Brione sopra M.jpg](https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg), Glenn Steiger, CC BY 3.0 (manifest). |
+| Rhine Falls | Visitors stand on the central rock and stairs with turbulent water around them. The existing Rhine Falls alt text is accurate. | [Caught in turbulent waters at the Rhine Falls, Neuhausen - panoramio.jpg](https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg), More pics than views…, CC BY 3.0 (manifest). |
+| Schaffhausen Old Town | The frame shows the pedestrian Vordergasse and ornate street-front buildings; no Munot fortress appears. Alt text now identifies the street and facades, rather than the absent fortress. | [Schaffhausen Vordergasse 2008 2.jpg](https://commons.wikimedia.org/wiki/File:Schaffhausen_Vordergasse_2008_2.jpg), Andreas Praefcke, CC BY 3.0 (manifest). |
+
+The creator, source, license marker, visible page credit, image bytes and existing WebP conversion/crop provenance remain governed by `data/switzerland-image-manifest.mjs`. This pixel check verifies subject relevance and alt-text fit; it does not independently clear copyright or commercial reuse rights. No SVG or other new image asset was created.

@@ -19,3 +19,11 @@ export const switzerlandCh15CardRoutes = [
 ];
 
 export const switzerlandCh15AffectedRoutes = [...new Set([...switzerlandCh15Routes, ...switzerlandCh15CardRoutes])];
+
+export const switzerlandCh16Routes = [
+  '/switzerland/lugano-southern-ticino/lugano-lakefront/',
+  '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
+  '/switzerland/locarno-ascona-valleys/locarno-ascona/',
+  '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
+  '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/'
+];

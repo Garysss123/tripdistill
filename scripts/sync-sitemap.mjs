@@ -140,6 +140,14 @@ const switzerlandCh15EditedRoutes = [
   '/switzerland/locarno-ascona-valleys/verzasca-valley/',
   '/switzerland/schaffhausen-rhine-falls/stein-am-rhein/'
 ];
+const switzerlandCh16Lastmod = '2026-10-12';
+const switzerlandCh16EditedRoutes = [
+  '/switzerland/lugano-southern-ticino/lugano-lakefront/',
+  '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
+  '/switzerland/locarno-ascona-valleys/locarno-ascona/',
+  '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
+  '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/'
+];
 const genevaLastmod = '2026-10-12';
 const genevaEditedRoutes = [
   '/switzerland/',
@@ -1046,6 +1054,11 @@ for (const route of switzerlandCh15EditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Switzerland CH15 route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: switzerlandCh15Lastmod });
+}
+for (const route of switzerlandCh16EditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Switzerland CH16 route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: switzerlandCh16Lastmod });
 }
 
 for (const route of genevaEditedRoutes) {
