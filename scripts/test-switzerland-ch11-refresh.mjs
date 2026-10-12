@@ -8,6 +8,7 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../d
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from '../data/switzerland-ch11-refresh.mjs';
 import { localizeHtml } from './i18n-lib.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'a0da2c3b2d27276bc83993b19ae96521798c032b';
@@ -22,7 +23,7 @@ const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'grau
 const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14NewDateRoutes = ch14Routes.slice(1);
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...switzerlandCh15AffectedRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
@@ -63,7 +64,7 @@ for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item)
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains byte-identical to the verified CH10 source`);
 }
 
-const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes].map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(read('sitemap.xml'));
@@ -192,4 +193,4 @@ if (!englishOnly) {
   }
 }
 
-console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, 75 cumulative CH11/CH12/CH13/CH14 hub-date edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and non-target Swiss pages preserved outside CH14 routes.`);
+console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, ${expectedLocalizedRoutes.size} cumulative CH11–CH15 dated edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and non-target Swiss pages preserved outside later edited routes.`);

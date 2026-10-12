@@ -445,6 +445,7 @@ export const switzerlandImageManifest = {
   "lugano-southern-ticino/mendrisiotto-generoso": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-mendrisiotto-generoso.webp",
     "alt": "Monte Generoso landscape in southern Ticino",
+    "displayTitle": "Monte Generoso mountain railway trains at a station",
     "source": "https://commons.wikimedia.org/wiki/File:Trains_du_Monte_G%C3%A9n%C3%A9roso_(Suisse).jpg",
     "label": "Trains du Monte Généroso (Suisse).jpg",
     "creator": "trams aux fils.",
@@ -465,6 +466,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/verzasca-valley": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-verzasca-valley.webp",
     "alt": "Stone bridge and turquoise river in the Verzasca Valley",
+    "displayTitle": "Ponte dei Salti bridge and river at Lavertezzo",
     "source": "https://commons.wikimedia.org/wiki/File:Verzasca_Lavertezzo_Ponte_dei_Salti.jpg",
     "label": "Verzasca Lavertezzo Ponte dei Salti.jpg",
     "creator": "Maureliusz",
@@ -475,6 +477,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/maggia-centovalli": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-maggia-centovalli.webp",
     "alt": "Centovalli railway and green Ticino valley landscape",
+    "displayTitle": "Stone viaduct in the Centovalli valley",
     "source": "https://commons.wikimedia.org/wiki/File:Centovalli_cassinam_33.jpg",
     "label": "Centovalli cassinam 33.jpg",
     "creator": "Cassinam",
@@ -505,6 +508,7 @@ export const switzerlandImageManifest = {
   "schaffhausen-rhine-falls/stein-am-rhein": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-stein-am-rhein.webp",
     "alt": "Painted facades in Stein am Rhein old town",
+    "displayTitle": "Painted façade in Stein am Rhein old town",
     "source": "https://commons.wikimedia.org/wiki/File:Stein_am_Rhein_Altstadt_03.JPG",
     "label": "Stein am Rhein Altstadt 03.JPG",
     "creator": "Zairon",
