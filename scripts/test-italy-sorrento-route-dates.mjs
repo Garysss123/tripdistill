@@ -117,4 +117,4 @@ for (const output of outputs) {
   }
 }
 
-console.log(`Italy Sorrento/Amalfi/Capri date regression passed: ${checkedPages} source/dist pages across four existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 20 intended lastmod values changed, publication dates and localized search/local plans hold.`);
+console.log(`Italy Sorrento/Amalfi/Capri date regression passed: ${checkedPages} source/dist pages across four existing routes and five languages; exact 4,560-URL sitemap set retained, exactly 205 intended lastmod values changed (185 IT12 plus 20 Sorrento), publication dates and localized search/local plans hold.`);
