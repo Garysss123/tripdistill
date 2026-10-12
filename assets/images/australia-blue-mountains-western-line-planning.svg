@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1140" viewBox="0 0 1600 1140" role="img" aria-labelledby="title desc">
+  <title id="title">Blue Mountains rail gateway planning diagram</title>
+  <desc id="desc">A not-to-scale planning schematic: a Western rail corridor with Wentworth Falls, Katoomba and Blackheath station labels connects by dashed, separately planned last-mile legs to formal visitor gateways. The five-language legend explains the solid and dashed lines. It is not a map, timetable or service promise.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5ead4"/><stop offset="1" stop-color="#e2eee7"/></linearGradient>
+    <style>
+      .ink{fill:#193e45;font-family:Arial,Helvetica,sans-serif}.muted{fill:#536c68;font-family:Arial,Helvetica,sans-serif}.small{font-size:20px}.body{font-size:24px}.label{font-size:22px;font-weight:700;letter-spacing:1px}.title{font-size:44px;font-weight:700}.cardtitle{font-size:29px;font-weight:700}.cardcopy{font-size:21px}.legend{font-size:20px}.station{fill:#fffaf0;stroke:#173d46;stroke-width:5}.hub{fill:#d57b47;stroke:#8d472d;stroke-width:3}.card{fill:#fffdf7;stroke:#bdcbbf;stroke-width:2}.rail{fill:none;stroke:#173d46;stroke-width:10;stroke-linecap:round}.transfer{fill:none;stroke:#bb6039;stroke-width:5;stroke-dasharray:12 12;stroke-linecap:round}.rule{stroke:#bdcbbf;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1600" height="1140" rx="36" fill="url(#sky)"/>
+  <text class="muted label" x="92" y="82">FIELD ATLAS · NEW SOUTH WALES</text>
+  <text class="ink title" x="92" y="145">The railway is a gateway, not the walk.</text>
+  <text class="muted body" x="94" y="190">Pick one station-area, then confirm the local transfer, open paths and return for your date.</text>
+
+  <rect x="85" y="230" width="1430" height="352" rx="28" fill="#edf3ec" stroke="#c5d2c5" stroke-width="2"/>
+  <text class="ink label" x="125" y="280">WESTERN RAIL CORRIDOR · SCHEMATIC ORDER ONLY</text>
+  <path class="rail" d="M205 395 C430 360 600 430 810 395 S1190 365 1390 400"/>
+  <circle class="station" cx="465" cy="389" r="20"/><circle class="station" cx="870" cy="390" r="20"/><circle class="station" cx="1240" cy="387" r="20"/>
+  <text class="ink cardtitle" x="355" y="345">Wentworth Falls</text><text class="muted small" x="405" y="443">station area</text>
+  <text class="ink cardtitle" x="800" y="345">Katoomba</text><text class="muted small" x="820" y="443">station area</text>
+  <text class="ink cardtitle" x="1184" y="345">Blackheath</text><text class="muted small" x="1195" y="443">station area</text>
+  <path class="transfer" d="M445 389 C415 397 365 414 355 449 C347 477 353 499 345 522"/><path class="transfer" d="M890 390 C943 404 976 411 982 433 C989 460 870 489 765 522"/><path class="transfer" d="M1260 387 C1296 394 1341 411 1343 435 C1360 448 1330 475 1145 522"/>
+  <text class="muted small" x="127" y="549">Dashed links mean a separate last-mile plan; they do not identify a bus, distance or timetable.</text>
+
+  <g>
+    <rect class="card" x="88" y="620" width="448" height="205" rx="22"/><circle class="hub" cx="130" cy="671" r="15"/>
+    <text class="ink cardtitle" x="163" y="681">Katoomba · Echo Point</text><text class="muted cardcopy" x="124" y="730">Formal lookout first; choose only an</text><text class="muted cardcopy" x="124" y="762">open, ability-matched path afterwards.</text>
+    <rect class="card" x="576" y="620" width="448" height="205" rx="22"/><circle class="hub" cx="618" cy="671" r="15"/>
+    <text class="ink cardtitle" x="651" y="681">Wentworth Falls · Tableland</text><text class="muted cardcopy" x="612" y="730">Upper lookout is the short-plan fallback;</text><text class="muted cardcopy" x="612" y="762">descents require an open-track check.</text>
+    <rect class="card" x="1064" y="620" width="448" height="205" rx="22"/><circle class="hub" cx="1106" cy="671" r="15"/>
+    <text class="ink cardtitle" x="1139" y="681">Blackheath · Govetts Leap</text><text class="muted cardcopy" x="1100" y="730">Stay at the signed lookout unless a</text><text class="muted cardcopy" x="1100" y="762">specific longer track is open and prepared.</text>
+  </g>
+  <rect x="88" y="842" width="1424" height="278" rx="22" fill="#fffaf0" stroke="#d7c7a5" stroke-width="2"/>
+  <text class="ink label" x="124" y="884">FIVE-LANGUAGE LINE KEY</text>
+  <text class="ink legend" x="124" y="925" lang="en">EN · Solid: rail corridor. Dashed: plan the last mile separately; not a map or timetable.</text>
+  <text class="ink legend" x="124" y="960" lang="zh-Hant">繁中 · 實線：鐵路廊道。虛線：另行規劃末段接駁；本圖不是地圖或時刻表。</text>
+  <text class="ink legend" x="124" y="995" lang="ja">日本語 · 実線：鉄道路線。破線：最終区間は別途計画。本図は地図・時刻表ではありません。</text>
+  <text class="ink legend" x="124" y="1030" lang="ko">한국어 · 실선: 철도 구간. 점선: 마지막 이동은 별도 계획; 지도나 시간표가 아닙니다.</text>
+  <text class="ink legend" x="124" y="1065" lang="th">ไทย · เส้นทึบ: แนวรถไฟ เส้นประ: วางแผนช่วงสุดท้ายแยก; ไม่ใช่แผนที่หรือตารางเวลา</text>
+  <text class="muted small" x="124" y="1099">Not to geographic scale. Confirm each service, park alert, access route and return before departure.</text>
+</svg>

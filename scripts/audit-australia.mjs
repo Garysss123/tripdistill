@@ -37,6 +37,11 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
 
+function decodeHtmlAttribute(value) {
+  const entities = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" };
+  return String(value).replace(/&(amp|lt|gt|quot|#39);/g, (_, name) => entities[name]);
+}
+
 function routeFile(route, prefix = '') {
   return path.join(root, `${prefix}${route}`.replace(/^\//, ''), 'index.html');
 }
@@ -130,7 +135,8 @@ for (const route of expectedEnglishRoutes) {
   if (!fs.existsSync(file)) continue;
   const html = fs.readFileSync(file, 'utf8');
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim() || '';
-  const description = html.match(/<meta name="description" content="([^"]*)">/i)?.[1]?.trim() || '';
+  // Count the displayed description rather than its longer HTML-escaped form.
+  const description = decodeHtmlAttribute(html.match(/<meta name="description" content="([^"]*)">/i)?.[1] || '').trim();
   const normalizedBody = text(html).replace(/\b\d+\b/g, '#').toLowerCase();
   if (titles.has(title)) problems.push(`${route}: duplicate title also used by ${titles.get(title)}`); else titles.set(title, route);
   if (descriptions.has(description)) problems.push(`${route}: duplicate meta description also used by ${descriptions.get(description)}`); else descriptions.set(description, route);

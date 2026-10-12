@@ -178,6 +178,27 @@ const verifiedSourcePageDetails = new Map([
     }
   ],
   [
+    'https://commons.wikimedia.org/wiki/File:Three_Sisters,_Blue_Mountains_(1).jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Alicia Brogan (Ali b at English Wikipedia), the Three Sisters at Echo Point, and CC BY-SA 3.0 terms; the original is 2,304 × 1,728. The local WebP pixels show the Three Sisters above Jamison Valley from the Echo Point area. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Wentworth_Falls_from_Princes_Rock.jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Lschoen, the view of Wentworth Falls from Princes Rock, and CC BY-SA 4.0 terms; the original is 2,157 × 1,440. The local WebP pixels show the waterfall and escarpment, matching the route subject. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Govetts_Leap_-_Blue_Mountains_-_panoramio.jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Pavel Špindler, dates the photograph to 16 April 2005, and declares CC BY 3.0 terms; the original is 2,048 × 1,536. The local WebP pixels show the Govetts Leap lookout marker and Grose Valley view near Blackheath. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
     'https://commons.wikimedia.org/wiki/File:View_of_coloured_houses_on_Cumberland_Road_from_Bristol_Harbour_-_geograph.org.uk_-_7678327.jpg',
     {
       detail: 'Bristol photo review: exact Commons page identifies Robert Lamb, 17 September 2023, and CC BY-SA 2.0; attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels show coloured terraced houses above Cumberland Road rather than boats or a quay; the alt was corrected to match the image.',
@@ -1135,6 +1156,9 @@ const visuallyReviewedAssetPaths = new Set([
   '/assets/images/france-loire-valley-tours-villandry-azay.webp'
 ]);
 const visualReviewDateByAsset = new Map([
+  ['/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', '2026-10-12'],
+  ['/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', '2026-10-12'],
+  ['/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-falls-parkway.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-niagara-gorge.webp', '2026-10-12'],
   ['/assets/images/canada-niagara-niagara-on-the-lake.webp', '2026-10-12'],

@@ -15,6 +15,13 @@ const routes = [
   '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
   '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
 ];
+const subsequentRoutes = [
+  '/australia/blue-mountains-nsw-coast/',
+  '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
+  '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
+];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -172,9 +179,9 @@ function articleAndFaq(html) {
   return { article, faq, visibleFaq };
 }
 
-const expectedEnglishHtml = routes.map((route) => `${route.slice(1)}index.html`).sort();
+const expectedEnglishHtml = branchRefreshRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglishHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the four selected routes; found ${changedEnglishHtml.join(', ')}.`);
+assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the Brisbane and subsequent Blue Mountains routes; found ${changedEnglishHtml.join(', ')}.`);
 
 const expectedScripts = {
   'zh-Hant': /[\u3400-\u9fff]/u,
@@ -236,6 +243,8 @@ const newSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.
 const oldSearchByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newSearchByUrl = new Map(newSearch.map((record) => [record.url, record]));
 assertIssue(oldSearchByUrl.size === newSearchByUrl.size && [...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].sort().join('|'), 'Search-index URL set or count changed.');
+const changedSearch = [...newSearchByUrl.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
+assertIssue(changedSearch.join('|') === [...branchRefreshRoutes].sort().join('|'), `Only the Brisbane and subsequent Blue Mountains Australia search records may change; found ${changedSearch.join(', ')}.`);
 for (const route of routes) {
   const record = newSearchByUrl.get(route);
   assertIssue(JSON.stringify(record) !== JSON.stringify(oldSearchByUrl.get(route)), `${route}: the integration checkpoint search record was not refreshed.`);
@@ -247,7 +256,7 @@ for (const route of routes) {
 for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
   const pageBatch = JSON.parse(fs.readFileSync(path.join(root, `data/i18n/reviewed/${locale}/zzzzzc-australia-brisbane-pages-20261012.json`), 'utf8'));
   assertIssue(pageBatch.qualityStatus === 'reviewed' && pageBatch.routes.join('|') === routes.join('|'), `${locale}: page batch review status or route scope is wrong.`);
-  assertIssue(Object.keys(pageBatch.translations).length === 197 && Object.values(pageBatch.translations).every((value) => typeof value === 'string' && value.trim()), `${locale}: all 197 unique page strings must be translated; Terms of Use is owned by the earlier France batch.`);
+  assertIssue(Object.keys(pageBatch.translations).length === 197 && Object.values(pageBatch.translations).every((value) => typeof value === 'string' && value.trim()), `${locale}: all 197 unique page strings must be translated.`);
   assertIssue(!fs.existsSync(path.join(root, `data/i18n/reviewed/${locale}/zzzzzd-australia-brisbane-search-20261012.json`)), `${locale}: duplicate search batch should not shadow the same four page-summary keys.`);
 }
 
@@ -299,9 +308,9 @@ assertIssue(hubHtml.includes(`href="${svgPath}"`) && hubHtml.includes('href="/te
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assertIssue([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed; this task must not add or remove routes.');
-const expectedSitemapRoutes = routes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Exactly the 20 selected Australia route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane and subsequent Blue Mountains Australia route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -309,5 +318,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log('Brisbane refresh regression passed: four existing route bodies, all five editions, FAQ/schema/date parity, exact search and sitemap scope, reviewed translation coverage, and original SVG XML/legend/geometry/provenance checks.');
+  console.log('Brisbane and subsequent Blue Mountains refresh regressions passed: eight existing route bodies, all five editions, FAQ/schema/date parity, exact search and sitemap scope, reviewed translation coverage, and original SVG XML/legend/geometry/provenance checks.');
 }

@@ -23,6 +23,12 @@ const brisbaneRoutes = [
   '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
   '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
 ];
+const blueMountainsRoutes = [
+  '/australia/blue-mountains-nsw-coast/',
+  '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
+  '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const selectedGuideSlugs = ['circular-quay-rocks', 'opera-house-botanic-garden', 'bondi-coogee-coastal-walk'];
@@ -196,8 +202,8 @@ assertIssue(cluster.guides.filter((guide) => guide.reviewIsoDate).length === 3, 
 assertIssue(australiaGuides.length === 80, `Australia guide count changed: ${australiaGuides.length}.`);
 
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-const expectedHtml = [...routes, ...brisbaneRoutes].map((route) => `${route.slice(1)}index.html`).sort();
-assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to exactly the four Sydney and four Brisbane routes; found ${changedHtml.join(', ')}.`);
+const expectedHtml = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+assertIssue(changedHtml.join('|') === expectedHtml.join('|'), `English HTML diff must be limited to exactly the four Sydney, four Brisbane and four Blue Mountains routes; found ${changedHtml.join(', ')}.`);
 
 const indexByRoute = new Map(search.map((record) => [record.url, record]));
 for (const route of routes) {
@@ -350,10 +356,10 @@ assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap
 // The integration-sprint scope regression validates every non-target route and
 // date against the fixed global baseline. This test scopes its date assertion
 // to the Australia routes selected by the AU regressions below.
-const targetSitemapPaths = [...routes, ...brisbaneRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const targetSitemapPaths = [...routes, ...brisbaneRoutes, ...blueMountainsRoutes].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => new URL(`https://tripdistill.com${route}`).pathname.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 40 selected Sydney and Brisbane route/language lastmod values must change; found ${changedLastmod.length}.`);
+assertIssue(changedLastmod.join('|') === targetSitemapPaths.join('|'), `Exactly the 60 selected Sydney, Brisbane and Blue Mountains route/language lastmod values must change; found ${changedLastmod.length}.`);
 for (const route of targetSitemapPaths) assertIssue(currentSitemap.get(route) === isoDate, `${route}: sitemap lastmod is not ${isoDate}.`);
 
 if (issues.length) {
@@ -361,5 +367,5 @@ if (issues.length) {
   for (const issue of issues) console.error(`- ${issue}`);
   process.exitCode = 1;
 } else {
-  console.log(`Sydney refresh regression passed: ${routes.length} existing routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
+  console.log(`Sydney refresh regression passed: ${routes.length} existing routes, 4 substantive text deltas above 450 words, unchanged URL/photo source integrity, 5-language date/sitemap sync including the later Brisbane and Blue Mountains batches, original SVG XML/legend/geometry, and no out-of-scope English HTML diffs.`);
 }

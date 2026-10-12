@@ -27,6 +27,8 @@ const sydneyDiagramAssetPath = '/assets/images/australia-sydney-harbour-coast-ne
 const sydneyDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
 const brisbaneDiagramAssetPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
 const brisbaneDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-brisbane-bay-crossings.svg';
+const blueMountainsDiagramAssetPath = '/assets/images/australia-blue-mountains-western-line-planning.svg';
+const blueMountainsDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg';
 const graubuendenDiagramAssetPath = '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
 const graubuendenDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
 const frenchAlpsDiagramAssetPath = '/assets/images/france-grenoble-bastille-route-sequence.svg';
@@ -466,11 +468,28 @@ try {
   assert.equal(retiredSemporna.useCount, 0);
   assert.deepEqual(retiredSemporna.routes, []);
   assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
+  const blueMountainsPhotos = [
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Three_Sisters,_Blue_Mountains_(1).jpg', creator: 'Alicia Brogan ( Ali b at English Wikipedia )', license: 'CC BY-SA 3.0', visual: /pixels show the Three Sisters above Jamison Valley/i },
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wentworth_Falls_from_Princes_Rock.jpg', creator: 'Lschoen', license: 'CC BY-SA 4.0', visual: /pixels show the waterfall and escarpment/i },
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Govetts_Leap_-_Blue_Mountains_-_panoramio.jpg', creator: 'Pavel Špindler', license: 'CC BY 3.0', visual: /pixels show the Govetts Leap lookout marker and Grose Valley view/i }
+  ];
+  for (const photo of blueMountainsPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Blue Mountains inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.match(record.verificationDetail, photo.visual);
+    assert.match(record.verificationDetail, /no independent rights clearance is claimed/i);
+  }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 502, 'Ottawa–Gatineau, Sydney, Brisbane and Graubünden join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
-  assert.equal(report.counts.sourcePageChecked, 280, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia and Switzerland');
-  assert.equal(report.counts.assetsVisuallyReviewed, 201, 'the merged inventory records the supplied Banff, Jasper and Newfoundland SVG pixel checks along with prior photo reviews');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 500, 'Ottawa–Gatineau, Sydney, Brisbane and Graubünden join the original diagrams without an independent source-page check; unresolved photo claims remain unverified');
+  assert.equal(report.counts.sourcePageChecked, 283, 'the merged inventory retains the exact source-page checked count across UK, France, Italy, Canada, Malaysia, Switzerland and Australia');
+  assert.equal(report.counts.assetsVisuallyReviewed, 204, 'the merged inventory records the supplied Niagara and Blue Mountains photo checks, Banff/Jasper/Newfoundland SVG pixel checks and prior photo reviews');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -685,6 +704,23 @@ try {
   assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
   assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
   assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
+  const blueMountainsDiagram = photoRecords.find((item) => item.assetPath === blueMountainsDiagramAssetPath);
+  assert.ok(blueMountainsDiagram, 'inventory must retain the original Blue Mountains station gateway schematic');
+  assert.equal(blueMountainsDiagram.assetType, 'original-planning-diagram');
+  assert.equal(blueMountainsDiagram.sourceUrl, blueMountainsDiagramSourceUrl);
+  assert.equal(blueMountainsDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(blueMountainsDiagram.license, null, 'the Blue Mountains original SVG must not claim a public license');
+  assert.equal(blueMountainsDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(blueMountainsDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(blueMountainsDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(blueMountainsDiagram.inventoryStatus, 'used');
+  assert.equal(blueMountainsDiagram.useCount, 1);
+  assert.deepEqual(blueMountainsDiagram.routes, ['/australia/blue-mountains-nsw-coast/']);
+  assert.match(blueMountainsDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.equal(blueMountainsDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === blueMountainsDiagramAssetPath), false);
   const sydneyDiagram = photoRecords.find((item) => item.assetPath === sydneyDiagramAssetPath);
   assert.ok(sydneyDiagram, 'inventory must retain the original Sydney planning schematic');
   assert.equal(sydneyDiagram.assetType, 'original-planning-diagram');
@@ -805,8 +841,8 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 30, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
-  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 485, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 31, 'the merged inventory counts UK, France, Italy, Canada, Malaysia, Switzerland and Australia project-original diagrams plus existing artwork');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 482, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
   assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
@@ -945,7 +981,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 816, 'Ottawa–Gatineau, Sydney, Brisbane, Graubünden, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 817, 'Ottawa–Gatineau, Sydney, Brisbane, Blue Mountains, Graubünden, Newfoundland, Jasper, Banff and all other retained diagrams remain included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

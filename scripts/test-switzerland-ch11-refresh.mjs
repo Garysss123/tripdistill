@@ -49,7 +49,11 @@ const laterAustraliaRoutes = [
   '/australia/brisbane-moreton-bay/',
   '/australia/brisbane-moreton-bay/city-river-south-bank/',
   '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
-  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/'
+  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/',
+  '/australia/blue-mountains-nsw-coast/',
+  '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
+  '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
+  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/'
 ];
 const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/',
