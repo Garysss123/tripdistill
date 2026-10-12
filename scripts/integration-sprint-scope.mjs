@@ -211,7 +211,11 @@ export const integrationRouteGroups = Object.freeze({
     '/canada/saguenay-tadoussac/',
     '/canada/saguenay-tadoussac/tadoussac-marine/',
     '/canada/saguenay-tadoussac/fjord-hiking/',
-    '/canada/saguenay-tadoussac/saguenay-city-valley/'
+    '/canada/saguenay-tadoussac/saguenay-city-valley/',
+    '/canada/halifax-nova-scotia/',
+    '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+    '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+    '/canada/halifax-nova-scotia/cape-breton-cabot/'
   ]),
   malaysia: Object.freeze([
     '/malaysia/semporna-tun-sakaran/',
@@ -282,6 +286,7 @@ const integrationSearchOnlyRoutes = Object.freeze([
 export const integrationSearchRoutes = Object.freeze([
   ...integrationRoutes.filter((route) => ![
     '/canada/',
+    '/canada/halifax-nova-scotia/',
     '/france/french-alps/annecy-lake-old-town/',
     '/france/french-alps/chamonix-mountain-systems/',
     '/france/french-alps/grenoble-bastille-chartreuse/',

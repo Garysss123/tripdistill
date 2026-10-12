@@ -190,6 +190,13 @@ const saguenayEditedRoutes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const halifaxLastmod = '2026-10-12';
+const halifaxEditedRoutes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/'
+];
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
 const zurichLastmod = '2026-10-08';
@@ -1310,6 +1317,12 @@ for (const route of saguenayEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date Saguenay route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: saguenayLastmod });
+}
+
+for (const route of halifaxEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date Halifax route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: halifaxLastmod });
 }
 
 for (const route of zurichEditedRoutes) {

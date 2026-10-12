@@ -29,6 +29,12 @@ const laterCa13Routes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const laterCa14Routes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -128,7 +134,7 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', base, '--', 
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
+  ['canada/index.html', ...routes.map((route) => `${route.slice(1)}index.html`), ...laterCa12Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa13Routes.map((route) => `${route.slice(1)}index.html`), ...laterCa14Routes.map((route) => `${route.slice(1)}index.html`)].sort(),
   'Only the four CA11 and later CA12/CA13 route pages and ancillary Canada card may change under canada/.'
 );
 

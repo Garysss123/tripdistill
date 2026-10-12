@@ -5,21 +5,175 @@ const g = (definition) => canadaGuide(definition);
 export const canadaAtlanticNorthClusters = [
   defineCanadaCluster({
     slug: 'halifax-nova-scotia', name: 'Halifax & Nova Scotia', region: 'Nova Scotia', band: 'atlantic', family: 'atlantic-chart',
+    reviewDate: '12 October 2026', isoDate: '2026-10-12',
     label: 'Atlantic gateway · harbour, coves and highland road', tagline: 'the coast is several trips, not one loop.',
     hubIntro: 'Halifax is a walkable harbour city; Peggy’s Cove/Lunenburg and Cape Breton are separate road systems. Keep the city, South Shore and Cabot Trail as distinct days so ocean weather and driving time stay visible.',
-    stay: 'Three Halifax nights plus two or more road-trip nights gives the province room. Cape Breton is not a sensible same-day add-on from Halifax.',
-    transfer: 'Halifax Transit covers the urban core and harbour ferry. South Shore and Cape Breton itineraries generally need a car, tour or other explicit regional transport plan.',
-    season: 'Atlantic fog, wind and storms can affect coastal visibility year-round. Peak summer and autumn foliage periods increase lodging and road demand.',
-    fallback: 'Halifax museums, markets and harbourfront institutions are the natural coastal-weather backup; move exposed lighthouse or cliff stops when conditions are poor.',
+    stay: 'Three nights in Halifax gives the city two unhurried days plus one flexible choice nearby. Add at least one South Shore night if Lunenburg is a main stop. Give Cape Breton two or more nights and make the Halifax-to-park drive its own transfer day; Parks Canada currently estimates about five hours from Halifax to the Highlands park.',
+    transfer: 'Halifax is the urban, largely walkable base; confirm the current airport-to-city connection before booking lodging. Halifax Transit buses and the Halifax–Dartmouth ferry serve the city, but neither is a substitute for a confirmed car, tour or regional transfer on the South Shore and Cape Breton legs. Use Nova Scotia 511 for current road events and closures.',
+    season: 'Coastal visibility and footing can change with wind, fog and surf in any month. Checked 12 October 2026: Skyline Trail parking reservations are required through 25 October; trail closures, staffed services and daylight change by season. Recheck the exact Parks Canada and road notices rather than following a fixed provincial loop.',
+    fallback: 'If the coast is rough, keep a Halifax day in Halifax, move Peggy’s Cove viewing to the designated deck and spend the longer block in Lunenburg, or choose a sheltered Cape Breton community stop instead of exposed trail or lookout time. Do not turn a missed viewpoint into a late, rushed return drive.',
     sources: [
       ['https://www.halifax.ca/transportation/halifax-transit', 'Halifax Transit — bus and harbour ferry information'],
-      ['https://parks.canada.ca/lhn-nhs/ns/halifax', 'Parks Canada — Halifax Citadel National Historic Site'],
-      ['https://parks.canada.ca/pn-np/ns/cbreton', 'Parks Canada — Cape Breton Highlands National Park']
+      ['https://parks.canada.ca/lhn-nhs/ns/halifax/visit', 'Parks Canada — Halifax Citadel visit and access'],
+      ['https://511.novascotia.ca/', 'Nova Scotia 511 — current road and traffic notices'],
+      ['https://parks.canada.ca/pn-np/ns/cbreton/visit', 'Parks Canada — Cape Breton Highlands access and visitor information']
+    ],
+    firstVisitPlan: {
+      heading: 'Choose the trip shape by its longest drive',
+      intro: 'The options below are alternatives for different trip lengths, not three days to stack onto a single Halifax base. Keep the South Shore and Cape Breton as separate overnight branches.',
+      days: [
+        ['Two or three nights · Halifax base', 'Keep the city day for the waterfront, one maritime institution and Citadel Hill. Use the remaining full day for either an urban Dartmouth ferry loop or one nearby coast excursion; leave Lunenburg and Cape Breton for a longer trip.'],
+        ['Four or five nights · city plus South Shore', 'Start with two or three Halifax nights, then move to Lunenburg for the South Shore. Choose whether Peggy’s Cove is a first stop or its own shorter excursion; protect daylight for the return and check parking before setting out.'],
+        ['Six nights or more · add Cape Breton', 'Treat the drive to Cape Breton Highlands as a separate day, sleep on the island, then choose one park side at a time. Parks Canada places Chéticamp at the west entrance and Ingonish at the east; do not plan both as a rushed Halifax day trip.']
+      ]
+    },
+    faq: [
+      ['Can I explore Nova Scotia without a car?', 'Halifax’s centre and public ferry can support a city-focused stay. The selected South Shore and Cape Breton stops are dispersed; book a specific tour or regional connection with pickup, return and cancellation terms before relying on public transport.'],
+      ['Can I fit Peggy’s Cove, Lunenburg and Cape Breton into one day?', 'They do not belong to one sightseeing day. Peggy’s Cove and Lunenburg already make a substantial South Shore road day; Cape Breton Highlands is a separate island transfer, with Parks Canada estimating about five hours from Halifax to the park.'],
+      ['How should I use a short Halifax stay?', 'Choose one urban day and one coast or Dartmouth day. The harbour museums and Citadel have different stories, while a ferry crossing is its own small trip; avoid leaving Halifax for a long road leg on a day with a flight or rail departure.'],
+      ['What should I check on the day?', 'Review Halifax Transit for the exact bus or ferry service, Tourism Nova Scotia’s Peggy’s Cove parking and safety advice, Nova Scotia 511 for road notices, and Parks Canada for current Citadel, trail, reservation and facility status.']
     ],
     guides: [
-      g({ slug: 'halifax-waterfront-citadel', name: 'Halifax Waterfront & Citadel', instrument: 'harbour-to-hill section', layout: 'harbour-ledger', imageQuery: 'Halifax waterfront Citadel Nova Scotia Canada', imageAlt: 'Halifax harbourfront and city in Nova Scotia', summary: 'Walk Halifax from harbour to Citadel Hill, using one museum or historic site as the anchor and the ferry as an optional second harbour perspective.', access: 'Downtown is compact and served by Halifax Transit. The harbour ferry is public transit but uses its own terminal and schedule.', tradeoff: 'This route gives urban Atlantic history and waterfront life; it intentionally leaves lighthouse roads and Cape Breton for separate days.', fallback: 'Fog, wind or rain can move attention into the Maritime Museum, Pier 21 or the Citadel while preserving short harbour walks between them.', duration: 'One full day covers a strong first visit; two days allow multiple museums, Dartmouth ferry time and slower food stops.', combine: 'Pair with Dartmouth or a nearby evening, not a long South Shore road loop on the same day.', verify: 'Check Halifax Transit/ferry status, Parks Canada Citadel access, museum hours and waterfront construction or event notices.', stages: [['Harbour orientation', 'Start near the waterfront boardwalk and identify ferry, museum and uphill exits before committing to the climb.'], ['One maritime story', 'Choose one major museum or historic institution instead of sampling several quickly.'], ['Climb to the Citadel', 'Use the hill to connect military geography with the harbour below.'], ['Return by water or street grid', 'Finish by ferry to Dartmouth or a direct walk to dinner and the hotel.']], watch: [['Fog and wind', 'Harbour conditions can feel much colder than the forecast inland.'], ['Cruise surges', 'Ship calls can concentrate waterfront crowds and tour buses.'], ['Museum stacking', 'Three maritime institutions in a row is not automatically a richer day.']] }),
-      g({ slug: 'peggys-cove-lunenburg', name: 'Peggy’s Cove & Lunenburg', instrument: 'coastal road margin sheet', layout: 'roadbook', imageQuery: 'Peggy Cove Lunenburg Nova Scotia coast', imageAlt: 'Granite Atlantic coastline and lighthouse landscape in Nova Scotia', summary: 'Use Peggy’s Cove as a weather-sensitive coastal stop and Lunenburg as the slower heritage anchor; the road between them is part of the day, not empty transfer.', access: 'A car or organized tour is the usual practical approach from Halifax. Parking, narrow roads and seasonal crowding matter at the most photographed stops.', tradeoff: 'The South Shore gives fishing-community and maritime landscape context, but a fast photo loop can erase both. Spend more time in one town than at one lighthouse.', fallback: 'Dangerous surf, fog or storms should remove exposed granite time; use Lunenburg museums, streets and sheltered stops instead.', duration: 'Give a full day from Halifax. An overnight in Lunenburg creates a much calmer coast route.', combine: 'Do not add Cape Breton. Pair with Halifax before/after or extend into a dedicated South Shore stay.', verify: 'Check road/weather conditions, Peggy’s Cove safety notices, museum/heritage hours and any parking restrictions before departure.', stages: [['Check the ocean first', 'Read wind, fog and surf before deciding how long Peggy’s Cove deserves.'], ['Stay off black rocks', 'Use designated safe areas and treat wave-washed granite as a hazard, not a photo platform.'], ['Give Lunenburg the long block', 'Walk the town, harbour and one cultural institution with enough time to understand the working waterfront.'], ['Return before road fatigue', 'Leave the final rural road section in daylight when possible.']], watch: [['Wave hazard', 'Unexpected waves can reach far onto wet/dark coastal rock; follow posted safety guidance.'], ['Photo-stop congestion', 'Roadside and village parking pressure can create unsafe stopping behavior.'], ['Heritage as backdrop', 'Lunenburg is a living town; respect private property and working harbour operations.']] }),
-      g({ slug: 'cape-breton-cabot', name: 'Cape Breton & Cabot Trail', instrument: 'highland circuit clock', layout: 'distance-ruler', imageQuery: 'Cape Breton Cabot Trail Nova Scotia coast', imageAlt: 'Cabot Trail road and Atlantic highlands in Cape Breton', summary: 'Base on Cape Breton, then drive only the section of the Cabot Trail that fits weather, daylight and walking goals; a scenic road still needs a turnaround and recovery night.', access: 'Reach Cape Breton by road or regional flight plus car. The Cabot Trail is a long mountain/coastal drive with limited services between communities.', tradeoff: 'A full loop gives variety but can become vehicle-heavy; two nights and a partial-loop strategy creates more trail and community time.', fallback: 'Fog, wind or heavy rain can erase famous lookouts; shorten the highland drive and use lower coastal communities, music or interpretation.', duration: 'Use at least two nights on Cape Breton; three or four is better for hiking plus weather margin.', combine: 'Do not treat it as a Halifax day trip. Pair it with a broader Nova Scotia road trip and sleep before/after the longest driving day.', verify: 'Check Parks Canada trail/road notices, provincial road conditions, weather, fuel and seasonal services before entering the highlands.', stages: [['Choose a base side', 'Decide whether Ingonish, Chéticamp or another community best serves the trails and road section you value.'], ['Drive one major sector', 'Use the highland road as the route, stopping only where the view or trail adds something distinct.'], ['Walk one official trail', 'Select a trail by current status, elevation and weather rather than fame alone.'], ['Sleep before the next coast', 'End at the regional base instead of forcing the full island after sunset.']], watch: [['Fog on high roads', 'Visibility can collapse quickly on exposed highland sections.'], ['Moose and wildlife', 'Reduce speed and expect wildlife especially around dawn/dusk.'], ['Fuel/service gaps', 'Do not assume every scenic settlement has late fuel or food.']] })
+      g({
+        slug: 'halifax-waterfront-citadel', name: 'Halifax Waterfront & Citadel', instrument: 'harbour-to-hill section', layout: 'harbour-ledger',
+        imageQuery: 'Halifax waterfront Citadel Nova Scotia Canada', imageAlt: 'Halifax skyline from Alderney Landing across the harbour, with Citadel Hill just right of the towers',
+        summary: 'Walk from Halifax’s working harbourfront up to Citadel Hill, but choose one major indoor history stop on the way. The ferry to Alderney Landing is a separate Dartmouth loop; its live timetable should decide whether it fits.',
+        access: 'Downtown is walkable but the Citadel climb is uphill. Start around Lower Water Street, then use the signed city streets to reach the Parks Canada entrance at 5425 Sackville Street. Halifax Transit’s ferry links the city with Alderney Landing in Dartmouth, but check that departure and return service before treating it as part of the day.',
+        tradeoff: 'The harbour boardwalk, Maritime Museum of the Atlantic and Canadian Museum of Immigration at Pier 21 tell distinct maritime and migration stories; the Citadel adds the hilltop fort and military interpretation. Choose one museum plus the Citadel instead of trying to enter every institution.',
+        fallback: 'In rain or strong wind, spend the indoor block at one museum, take only a short waterfront segment and decide separately whether the Citadel grounds and interior program suit the conditions. Parks Canada keeps the site open year-round, but programs and services change by season.',
+        duration: 'Allow a full city day. Parks Canada asks first-time Citadel visitors to reserve at least two hours there; give the museum you choose its own block and include a slower downhill return.',
+        combine: 'Dartmouth works as the optional ferry loop after the Halifax route, especially if Alderney Landing is the actual destination. Do not attach Peggy’s Cove, Lunenburg or Cape Breton to this walking day.',
+        verify: 'Checked 12 October 2026: Parks Canada lists the Citadel as central, accessible on foot or by car, open year-round with seasonal programs, and recommends at least two hours for a first visit. Verify its access, easier-access guidance and Halifax Transit’s exact ferry timetable for your date.',
+        routeChoices: {
+          heading: 'Choose one history anchor before the hill',
+          intro: 'The waterfront institutions are not interchangeable stops. Pick the story that matters most, then protect enough energy for the uphill Citadel visit.',
+          options: [
+            ['Harbour', 'Maritime Museum of the Atlantic', 'Choose this for ships, the port and Nova Scotia’s seafaring history. It sits on the waterfront route; check the museum calendar before making it the day’s indoor anchor.'],
+            ['Migration', 'Canadian Museum of Immigration at Pier 21', 'Choose this for arrival, migration and family-history interpretation. It is farther along the south waterfront, so use it instead of doubling back between several museums.'],
+            ['Hilltop', 'Halifax Citadel National Historic Site', 'Make this the main visit when you want the fort and harbour outlook. The walk climbs from the waterfront; check seasonal programs and easier-access information before setting a pace.']
+          ]
+        },
+        routeEyebrow: 'Harbour-to-hill sequence', routeHeading: 'One waterfront museum, then Citadel Hill', routeStageLabels: ['Orient', 'Choose', 'Climb', 'Return'],
+        routeSourcesHeading: 'Live checks for this walking day',
+        routeSourcesNote: 'Parks Canada gives the Citadel location, first-visit time allowance, seasonal program limits and accessibility planning. Halifax Transit publishes bus and ferry service separately; the two schedules must match your chosen return.',
+        sources: [
+          ['https://parks.canada.ca/lhn-nhs/ns/halifax/visit', 'Parks Canada — Halifax Citadel visit, hours and access'],
+          ['https://parks.canada.ca/lhn-nhs/ns/halifax/visit/accessibilite-accessibility', 'Parks Canada — Citadel accessibility and easier-access visits'],
+          ['https://maritimemuseum.novascotia.ca/', 'Maritime Museum of the Atlantic — collections and current events'],
+          ['https://pier21.ca/visit/plan-your-visit', 'Canadian Museum of Immigration at Pier 21 — visit information']
+        ],
+        faq: [
+          ['How long should I spend at the Citadel?', 'Parks Canada recommends a minimum of two hours for a first visit. Allow more if you want the full interpretation; then add the steep walking time between the waterfront and hilltop.'],
+          ['Can I visit the Maritime Museum, Pier 21 and the Citadel in one day?', 'They can be combined only as a long day, and entering all three leaves little space for the waterfront itself. Choose either the Maritime Museum or Pier 21, then keep the Citadel as the main second stop.'],
+          ['Is the walk to Citadel Hill accessible?', 'The route rises from the harbour, so grade, weather and mobility needs matter. Parks Canada publishes easier-access and facility guidance for the site; read it before choosing the approach, and do not assume the same route suits every visitor.'],
+          ['Should I take the ferry to Dartmouth?', 'Use it as an optional loop to Alderney Landing when the live sailing schedule and your remaining daylight fit. It is a separate crossing with its own terminals, fare and return timing, not a shortcut to the Citadel.']
+        ],
+        stages: [
+          ['Begin on Lower Water Street', 'Use the Halifax Waterfront Boardwalk to orient yourself to the harbour and ferry terminal. Decide which museum you are entering before walking south; a waterfront stroll is the connecting path, not a substitute for the site you came to see.'],
+          ['Choose one indoor story', 'At the Maritime Museum of the Atlantic, focus on ship and port history; at Pier 21, follow the migration and arrival story. Check the chosen museum’s hours and last admission before leaving the hotel, since their calendars do not determine each other.'],
+          ['Climb to 5425 Sackville Street', 'Continue inland to the Citadel entrance and keep the hill as the day’s second anchor. Parks Canada recommends at least two hours for a first visit. Grounds remain open year-round, while programs and visitor services shift with the season.'],
+          ['Return by a route you can finish', 'Walk back down to the central grid for dinner, or cross to Alderney Landing only if the ferry’s remaining departures make a round trip practical. If wind, grade or time has reduced your margin, finish in Halifax and save Dartmouth for another visit.']
+        ],
+        watch: [
+          ['The hill changes the day', 'The Citadel sits above the waterfront. A short map distance still includes a climb, exposure to wind and a downhill return; pace the museum choice around that effort.'],
+          ['Programs have separate seasons', 'Parks Canada lists the site as year-round but notes that programs and services vary. Confirm what will actually be operating instead of assuming reenactments or all buildings are available.'],
+          ['Ferry is a timed branch', 'The Halifax–Dartmouth ferry is useful only when its terminal, current sailing and return align with the walking route. Recheck service notices before you cross.']
+        ]
+      }),
+      g({
+        slug: 'peggys-cove-lunenburg', name: 'Peggy’s Cove & Lunenburg', instrument: 'coastal road margin sheet', layout: 'roadbook',
+        imageQuery: 'Peggy Cove Lunenburg Nova Scotia coast', imageAlt: 'Peggy’s Point Lighthouse above granite and the designated coastal viewing path at Peggy’s Cove',
+        summary: 'Make Peggy’s Cove the weather- and parking-sensitive stop, then give Old Town Lunenburg time for its harbour and surviving 1753 street grid. This is a substantial South Shore road day from Halifax; an overnight in Lunenburg is the calmer choice.',
+        access: 'A car or a booked tour is the practical link for these dispersed stops. Tourism Nova Scotia directs Halifax drivers to Highway 333 from Highway 103; the same visitor page currently flags 11 a.m.–3 p.m. as a peak parking window. Confirm the route, tour pickup, parking rules and return before leaving.',
+        tradeoff: 'Peggy’s Cove is an active fishing village and exposed Atlantic landscape; the designated viewing deck gives a safer way to see the lighthouse than exploring wet rocks. Lunenburg is a different visit: UNESCO describes a planned 1753 town whose rectangular layout and wooden architecture remain visible in its lived streets.',
+        fallback: 'If surf, fog or strong wind makes the rocks a poor choice, skip exposed granite and use Peggy’s Cove’s designated viewing deck or leave the stop out. Keep the longer block for Lunenburg’s street grid and an open indoor institution; never divert onto private property or blocked road shoulders.',
+        duration: 'From Halifax, set aside a full day for Peggy’s Cove and Lunenburg with no Cape Breton add-on. One night in Lunenburg lets you walk the town before or after the busiest road period and protects a separate weather window.',
+        combine: 'Pair with a Halifax night before or after, or continue as a dedicated South Shore stay. Do not add Cape Breton or a fixed airport departure to the same sightseeing day.',
+        verify: 'Checked 12 October 2026: Tourism Nova Scotia lists Highway 333 access, limited peak-period parking guidance, an accessible viewing deck and ocean-safety warnings; UNESCO records Lunenburg’s 1753 planned grid. Recheck road and weather notices, parking, public-area access and the specific museum’s seasonal hours.',
+        routeChoices: {
+          heading: 'Decide how much coast belongs in the day',
+          intro: 'These choices trade a lighthouse stop against time in the historic town. There is no need to collect every South Shore pin on one Halifax round trip.',
+          options: [
+            ['Shorter', 'Peggy’s Cove and return', 'Choose this when the lighthouse and coast are the priority or when you have only half a day. Leave the second half in Halifax instead of starting another long drive late.'],
+            ['Full road day', 'Peggy’s Cove then Lunenburg', 'Start early, use Highway 333 to the cove and keep the town visit as the longer block. Check current roads and event traffic before assuming the map’s shortest line is fastest.'],
+            ['Slower', 'Sleep in Lunenburg', 'Choose this when the preserved town and harbour matter more than a quick photograph. Arrive with daylight, then give the street grid or an open museum its own unhurried visit.']
+          ]
+        },
+        routeEyebrow: 'South Shore road sequence', routeHeading: 'Peggy’s Cove to Lunenburg, with an honest return', routeStageLabels: ['Road', 'View', 'Walk', 'Return'],
+        routeSourcesHeading: 'Safety, road and heritage checks',
+        routeSourcesNote: 'Tourism Nova Scotia’s current visitor page carries the route, parking, accessibility and shoreline advice for Peggy’s Cove. UNESCO explains what is distinctive about Lunenburg’s planned town layout; use the linked town and museum notices for any interior visit.',
+        sources: [
+          ['https://novascotia.com/listing/peggys-cove-lighthouse-and-village/', 'Tourism Nova Scotia — Peggy’s Cove roads, parking, access and safety'],
+          ['https://visitpeggyscove.ca/visitor-information/', 'Peggy’s Cove — local visitor information and Mi’kma’ki acknowledgment'],
+          ['https://novascotia.ca/SAFEONSHORE/', 'Government of Nova Scotia — Safe on Shore'],
+          ['https://whc.unesco.org/en/list/741/', 'UNESCO World Heritage Centre — Old Town Lunenburg'],
+          ['https://511.novascotia.ca/', 'Nova Scotia 511 — current South Shore road notices']
+        ],
+        faq: [
+          ['Can I do Peggy’s Cove and Lunenburg in one day?', 'Yes as a dedicated South Shore road day with an early start and no Cape Breton detour. Keep Peggy’s Cove to a purposeful visit, then give Lunenburg the longer walking block; leave an overnight if you want time for interiors or weather flexibility.'],
+          ['Can I visit without renting a car?', 'A booked tour can connect the stops if its pickup, dwell time and return fit your plan. Do not infer that a bus reaches the lighthouse or returns from Lunenburg; verify the exact operator and service for your date.'],
+          ['Where can I safely view Peggy’s Cove Lighthouse?', 'Tourism Nova Scotia describes an accessible viewing deck with ramps, landings and handrails. Stay on designated paths and dry marked viewing areas; the same guidance warns that rogue waves can cross apparently calm, sunny rocks.'],
+          ['What should I look for in Lunenburg?', 'Start at the harbour, then walk the planned street grid rather than using the town as a fast meal stop. UNESCO identifies its 1753 founding, rectangular layout and retained wooden architecture; choose one museum or working-waterfront stop only after checking its current opening.']
+        ],
+        stages: [
+          ['Leave Halifax by the route you chose', 'For the Peggy’s Cove approach, Tourism Nova Scotia points drivers from Highway 103 onto Highway 333. Confirm construction, weather and parking before departure; if using a tour, confirm whether it continues to Lunenburg or returns directly to Halifax.'],
+          ['Use the village paths and viewing deck', 'Peggy’s Cove is a lived fishing community, not a theme park. Follow posted visitor routes, respect homes and working areas, and stay away from wet, dark rock where waves can arrive without warning. The lighthouse can be viewed from the designated deck.'],
+          ['Continue to Old Town Lunenburg', 'Walk from the harbour into the rectangular street grid and notice how the town plan organizes its slopes and wooden buildings. Give this living community more time than a single photo stop; choose an open museum or cultural visit rather than adding another distant lighthouse.'],
+          ['Return in daylight or stay overnight', 'Check Nova Scotia 511 and current road visibility before beginning the drive back. If you arrive late, reduce the number of stops rather than trying to make up time on unfamiliar coastal roads; a Lunenburg night removes that deadline.']
+        ],
+        watch: [
+          ['Rogue waves reach dry-looking days', 'The provincial visitor guidance warns that large waves can arrive on calm, sunny days. Do not walk out onto wet or dark granite for photographs or swim from the rocks.'],
+          ['Parking and narrow village roads', 'Tourism Nova Scotia flags 11 a.m.–3 p.m. as a current peak period and asks visitors not to park on private property or block roads. Arrive outside that window when possible, and obey signs even when the lot is full.'],
+          ['A heritage town is still home', 'Lunenburg’s historic grid contains private houses and active businesses. Stay on public streets, check interiors separately and keep the visit grounded in the town’s harbor and built fabric rather than treating homes as exhibits.']
+        ]
+      }),
+      g({
+        slug: 'cape-breton-cabot', name: 'Cape Breton & Cabot Trail', instrument: 'highland circuit clock', layout: 'distance-ruler',
+        imageQuery: 'Cape Breton Cabot Trail Nova Scotia coast', imageAlt: 'Cabot Trail winding through forested Cape Breton Highlands above the Atlantic coast',
+        summary: 'Give Cape Breton its own overnight base, then choose one side of the Cabot Trail for each clear-weather day. The nearly 300-kilometre loop and Halifax transfer are the trip’s structure, not empty time between viewpoints.',
+        access: 'Parks Canada locates the Highlands park between the Chéticamp entrance on the west and Ingonish entrance on the east, and estimates a five-hour drive from Halifax. A car or confirmed tour is needed for the dispersed park stops; a regional flight still needs a booked local vehicle and lodging plan.',
+        tradeoff: 'A full Cabot Trail circuit connects distinct coastal and highland scenery but puts long driving between walks. Choose a west-side base for a Chéticamp/Skyline day or an east-side base around Ingonish; cross to the other side only when a second night and the live trail/road conditions support it.',
+        fallback: 'Low cloud, heavy rain or wind can make an exposed summit trail or viewpoint a poor trade. Keep the day on the same side: choose an open community, a shorter signed path or a visitor-centre stop, and do not force the full loop to salvage one closed trail.',
+        duration: 'Two Cape Breton nights can support a transfer plus one focused park day; three or four give two different sectors and a movable weather day. Add a transfer night when the drive begins in Halifax or continues to another region.',
+        combine: 'Use Cape Breton as its own road-trip chapter. After reaching the island, sleep before the first full Cabot Trail day; after the park, keep enough daylight for the next base instead of stacking the five-hour Halifax approach with sightseeing.',
+        verify: 'Checked 12 October 2026: Parks Canada identifies the two park entrances, estimates about five hours from Halifax, describes the Cabot Trail as nearly 300 km and notes 106 km within park boundaries. Check the exact trail and parking reservation notice, Nova Scotia 511, fuel/service availability, weather and daylight for your route date.',
+        routeChoices: {
+          heading: 'Choose an entrance before choosing a trail',
+          intro: 'The west and east sides are separate access plans. A loop can work as a multi-day road trip, but a single base day should have one side and a named turnaround.',
+          options: [
+            ['West entrance', 'Chéticamp and Skyline sector', 'Choose this for the western park approach and the Skyline Trail when it is open and its current parking rules fit. Confirm trail status, reservation requirements, daylight and the walk back to the car.'],
+            ['East entrance', 'Ingonish and the eastern highlands', 'Choose this when your base is near Ingonish and select one currently open coastal or highland trail. Keep the east-side return rather than crossing the plateau to catch another trailhead late.'],
+            ['Full circuit', 'A two-day Cabot Trail loop', 'Only choose the loop with a Cape Breton overnight, daylight margin and a current road check. Parks Canada describes the scenic route as nearly 300 km; stops and trail time make a one-day drive a different, compressed trip.']
+          ]
+        },
+        routeEyebrow: 'Cape Breton multi-day sequence', routeHeading: 'Transfer, choose one side, then turn back', routeStageLabels: ['Transfer', 'Choose', 'Walk', 'Return'],
+        routeSourcesHeading: 'Park, trail and road checks',
+        routeSourcesNote: 'Parks Canada describes the two entrances, trail conditions, services and any date-bound parking rule. Nova Scotia 511 carries current road events; neither source can guarantee weather, wildlife sightings, open fuel or food stops.',
+        sources: [
+          ['https://parks.canada.ca/pn-np/ns/cbreton/visit', 'Parks Canada — Cape Breton Highlands access and route geography'],
+          ['https://parks.canada.ca/pn-np/ns/cbreton/activ/randonnee-hiking', 'Parks Canada — Cape Breton Highlands hiking and current trail notices'],
+          ['https://parks.canada.ca/pn-np/ns/cbreton/activ/randonnee-hiking/skyline', 'Parks Canada — Skyline Trail route and 2026 parking reservations'],
+          ['https://parks.canada.ca/pn-np/ns/cbreton/securite-safety', 'Parks Canada — Cape Breton Highlands visitor safety'],
+          ['https://511.novascotia.ca/', 'Nova Scotia 511 — current road, closure and visibility notices']
+        ],
+        faq: [
+          ['How many nights should I spend on Cape Breton?', 'Two nights allows a transfer and one full park day. Three or four nights is more useful when you want both sides of the park, a trail and a weather alternative; choose the number around your drive and lodging locations.'],
+          ['Can I drive the Cabot Trail from Halifax in a day?', 'Parks Canada estimates about five hours from Halifax to Cape Breton Highlands, before stops or a trail. Treat the island as a separate overnight chapter; do not add a full loop to the Halifax approach.'],
+          ['Should I drive clockwise or counterclockwise?', 'Choose direction around your overnight base, preferred entrance and weather, then follow current road notices. The day plan here does not assume a universally better direction or a fixed amount of road time.'],
+          ['Do I need a reservation for Skyline Trail parking?', 'Parks Canada says a confirmed parking reservation is required for everyone from 26 June through 25 October 2026, except the enhanced Sunset Hike. The notice asks visitors to arrive from 10 minutes before to one hour after their booked time; roadside parking and drop-offs are not allowed. I checked this on 12 October 2026, so recheck the official notice for dates outside that window or a later season. Save the confirmation offline because cell service is unreliable.']
+        ],
+        stages: [
+          ['Make the Halifax transfer its own day', 'Parks Canada estimates about five hours from Halifax to the Highlands park, before stops. Choose whether to sleep near Chéticamp or Ingonish, confirm the lodging arrival time and do not place a major hike after the transfer.'],
+          ['Select one entrance and sector', 'Use Chéticamp for the western approach or Ingonish for the eastern approach. Pick a trail on that side after reading the exact park conditions; the other entrance is a separate driving decision, not a quick hop. On the hiking page checked 12 October 2026, Parks Canada listed MacIntosh Brook, Lone Shieling and nearby pull-offs as temporarily closed for wildlife; do not detour into a closed area.'],
+          ['Match a walk to current access', 'For Skyline, the 2026 notice lists a 6.5 km out-and-back at about two hours or an 8.2 km loop at 2.5–3 hours; from 26 June through 25 October the confirmed parking reservation and arrival window are part of the route. On the east side, Parks Canada lists Middle Head as 5.3 km and about 1.5 hours. Check current opening, trail condition, time and daylight before choosing either walk.'],
+          ['Return to the same base', 'Finish on the side where you began, check fuel and road notices before departure, and leave an honest margin for wildlife and slower scenic driving. Cross to the other side or continue off-island on a separate day.']
+        ],
+        watch: [
+          ['Skyline has date-specific rules', 'The notice checked 12 October 2026 requires a confirmed reservation from 26 June through 25 October, with an arrival window. Save the confirmation and map offline: cell coverage is unreliable. Recheck the official page for your visit date.'],
+          ['Trail notices can close nearby stops', 'Parks Canada’s hiking list checked 12 October 2026 showed temporary wildlife closures at MacIntosh Brook, Lone Shieling and surrounding pull-offs. Respect closure signs and recheck before driving; a notice can change after this page’s review.'],
+          ['Weather and services vary by sector', 'Cape Breton weather can change quickly across the plateau and coast. Do not assume late fuel, food or staffed facilities at every scenic stop; check current service hours, road notices, daylight and trail status before leaving either gateway community.']
+        ]
+      })
     ]
   }),
 

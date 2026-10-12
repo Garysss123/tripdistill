@@ -33,6 +33,12 @@ const laterGoldCoastRoutes = [
   '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
   '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
 ];
+const laterCa14Routes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/'
+];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14NewDateRoutes = ch14Routes.slice(1);
 const laterCa11Routes = [
@@ -79,7 +85,7 @@ const laterAustraliaSearchOnlyRoutes = [
   '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
   '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

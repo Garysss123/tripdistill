@@ -18,6 +18,12 @@ const routes = [
   '/canada/saguenay-tadoussac/fjord-hiking/',
   '/canada/saguenay-tadoussac/saguenay-city-valley/'
 ];
+const laterCa14Routes = [
+  '/canada/halifax-nova-scotia/',
+  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+  '/canada/halifax-nova-scotia/cape-breton-cabot/'
+];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
 assert.equal(cluster.reviewDate, '12 October 2026');
@@ -38,9 +44,9 @@ assert.equal(canada.length, 73, 'Canada search must retain 73 existing routes.')
 assert.equal(new Set(canada.map((item) => item.url)).size, 73, 'Canada search URLs must remain unique.');
 assert.deepEqual(canada.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'The 73-route Canada URL set must remain exact.');
 assert.deepEqual(
-  canada.filter((item) => !targetSet.has(item.url)),
-  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url)),
-  'Non-target Canada search records must remain byte-for-byte unchanged from the pre-CA13 integration checkpoint and in order.'
+  canada.filter((item) => !targetSet.has(item.url) && !laterCa14Routes.includes(item.url)),
+  integrationSearch.filter((item) => item.url.startsWith('/canada/') && !targetSet.has(item.url) && !laterCa14Routes.includes(item.url)),
+  'Only exact later CA14 Canada records may differ outside the CA13 target from the pre-CA13 integration checkpoint.'
 );
 for (const route of routes) {
   const record = canada.find((item) => item.url === route);
@@ -113,8 +119,8 @@ const changedCanadaPages = spawnSync('git', ['diff', '--name-only', integrationB
 assert.equal(changedCanadaPages.status, 0, `Could not inspect Canada page diff: ${changedCanadaPages.stderr}`);
 assert.deepEqual(
   changedCanadaPages.stdout.trim().split('\n').filter(Boolean).sort(),
-  routes.map((route) => `${route.slice(1)}index.html`).sort(),
-  'Only the four target route pages may change under canada/. The country card is outside this pass.'
+  [...routes, ...laterCa14Routes].map((route) => `${route.slice(1)}index.html`).sort(),
+  'Only the four target and four later-CA14 route pages may change under canada/. The country card is outside this pass.'
 );
 
-console.log(`CA13 route/date regression passed: four existing routes, no added Canada URLs, 73 unchanged Canada search records, exact five-edition sitemap date set, and ${englishOnly ? 'English' : 'all localized'} canonical/article metadata.`);
+console.log(`CA13 route/date regression passed: four existing routes, no added Canada URLs, 73 unchanged Canada search URLs, exact five-edition sitemap date set including later CA14, and ${englishOnly ? 'English' : 'all localized'} canonical/article metadata.`);
