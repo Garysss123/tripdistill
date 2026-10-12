@@ -64,6 +64,13 @@ const franceBrittanyEditedRoutes = [
   '/france/brittany-coasts/quimper-crozon/'
 ];
 const unitedKingdomLastmod = '2026-09-20';
+const unitedKingdomLondonLastmod = '2026-10-11';
+const unitedKingdomLondonEditedRoutes = [
+  '/united-kingdom/london/',
+  '/united-kingdom/london/westminster-south-bank/',
+  '/united-kingdom/london/bloomsbury-covent-garden/',
+  '/united-kingdom/london/tower-city-greenwich/'
+];
 const italyLastmod = '2026-09-26';
 const romeLastmod = '2026-10-04';
 const italyPugliaLastmod = '2026-10-11';
@@ -577,6 +584,11 @@ for (const route of unitedKingdomBathEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited UK Bath/Bristol/Somerset route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: unitedKingdomBathLastmod });
+}
+for (const route of unitedKingdomLondonEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited London route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: unitedKingdomLondonLastmod });
 }
 for (const route of unitedKingdomLakeEditedRoutes) {
   const record = records.get(route);
