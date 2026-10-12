@@ -31,6 +31,20 @@ const sempornaRoutes = [
   '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
   '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
 ];
+const perhentianRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/'
+];
+const kotaKinabaluRoutes = [
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
 const locales = [
   { prefix: '', date: 'Editorial review: 12 October 2026', hubDate: 'Editorial review: 12 October 2026' },
   { prefix: '/zh', date: '編輯審閱：2026 年 10 月 12 日', hubDate: '編輯檢視：2026 年 10 月 12 日' },
@@ -99,8 +113,10 @@ assert.deepEqual(new Set(sitemap.keys()), new Set(baselineSitemap.keys()), 'refr
 const expectedTargets = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
 const currentSiblingTargets = new Set(locales.flatMap(({ prefix }) => kuchingRoutes.map((route) => `${prefix}${route}`)));
 const nextSiblingTargets = new Set(locales.flatMap(({ prefix }) => sempornaRoutes.map((route) => `${prefix}${route}`)));
+const perhentianTargets = new Set(locales.flatMap(({ prefix }) => perhentianRoutes.map((route) => `${prefix}${route}`)));
+const kotaKinabaluTargets = new Set(locales.flatMap(({ prefix }) => kotaKinabaluRoutes.map((route) => `${prefix}${route}`)));
 const actualDateChanges = [...sitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(actualDateChanges), new Set([...expectedTargets, ...currentSiblingTargets, ...nextSiblingTargets]), 'only the separately reviewed Sandakan, Kuching and Semporna batches receive new lastmod values');
+assert.deepEqual(new Set(actualDateChanges), new Set([...expectedTargets, ...currentSiblingTargets, ...nextSiblingTargets, ...perhentianTargets, ...kotaKinabaluTargets]), 'only the five separately reviewed Sabah and east-coast Malaysia batches receive new lastmod values');
 for (const url of expectedTargets) assert.equal(sitemap.get(url), reviewedDate, `${url}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));
@@ -109,7 +125,7 @@ const baselineSearchByUrl = new Map(baseSearch.map((record) => [record.url, reco
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baselineSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchUrls = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchUrls), new Set([...selectedRoutes, ...kuchingRoutes, ...sempornaRoutes]), 'only the separately reviewed Sandakan, Kuching and Semporna English search records changed');
+assert.deepEqual(new Set(changedSearchUrls), new Set([...selectedRoutes, ...kuchingRoutes, ...sempornaRoutes, ...perhentianRoutes, ...kotaKinabaluRoutes]), 'only the five separately reviewed Sabah and east-coast Malaysia English search batches changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five selected English search records exist');
 
 const imageBySource = new Map();

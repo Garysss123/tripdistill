@@ -123,9 +123,9 @@ try {
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
   const kotaKinabaluPhotos = [
-    { assetPath: '/assets/images/malaysia-kota-kinabalu.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', creator: 'Garysawjuntiek', license: 'CC BY-SA 4.0', sourceDate: '2018-08-25', originalSize: '4,160 × 3,120' },
-    { assetPath: '/assets/images/malaysia-kota-kinabalu-jetty.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', sourceDate: '2012-01-01', originalSize: '1,200 × 729' },
-    { assetPath: '/assets/images/malaysia-kota-kinabalu-islands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', creator: 'Thien Zie Yung', license: 'CC BY 2.0', sourceDate: '2008-12-16', originalSize: '3,648 × 2,736' }
+    { assetPath: '/assets/images/malaysia-kota-kinabalu.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', creator: 'Garysawjuntiek', license: 'CC BY-SA 4.0', sourceDate: '2018-08-25', localSha1: '3b436ef0bbeb3f5f78ab7ff2d955983af73b4706', originalSize: '4,160 × 3,120' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-jetty.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', sourceDate: '2012-01-01', localSha1: 'f7233f4fb25f8bc1040d5815db79735fdbcb77dc', originalSize: '1,200 × 729' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-islands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', creator: 'Thien Zie Yung', license: 'CC BY 2.0', sourceDate: '2008-12-16', localSha1: 'b5aed8c3d2d0c835ccdb29914147d5a89f5be97c', originalSize: '3,648 × 2,736' }
   ];
   const allPhotoRecords = report.entries.flatMap((group) => group.sourceRecords);
   for (const image of kotaKinabaluPhotos) {
@@ -134,6 +134,7 @@ try {
     assert.equal(record.sourceUrl, image.sourceUrl);
     assert.equal(record.creator, image.creator);
     assert.equal(record.license, image.license);
+    assert.equal(record.localSha1, image.localSha1, 'inventory must bind the review to the exact local WebP bytes');
     assert.equal(record.sourcePhotoDate, image.sourceDate);
     assert.equal(record.verificationStatus, 'source_page_checked');
     assert.equal(record.verificationDate, '2026-10-12');
@@ -183,7 +184,7 @@ try {
     assert.equal(record.verificationStatus, 'source_page_checked');
     assert.equal(record.verificationDate, '2026-10-12');
     assert.match(record.verificationDetail, photo.visual);
-    assert.match(record.verificationDetail, /not independent rights clearance|not independent .*rights clearance/i);
+    assert.match(record.verificationDetail, /not independent .*?(?:rights|legal) clearance|without asserting uploader authority or independent rights clearance/i);
     assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator) && credit.includes(photo.license)));
   }
   const similan = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/thailand-andaman-similan.webp');

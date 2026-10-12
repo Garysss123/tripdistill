@@ -17,6 +17,18 @@ const routes = [
   '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
   '/malaysia/semporna-tun-sakaran/sipadan-permit-day/'
 ];
+const newlyIntegratedRoutes = [
+  '/malaysia/perhentian-redang/',
+  '/malaysia/perhentian-redang/kuala-besut-transfer/',
+  '/malaysia/perhentian-redang/perhentian-kecil/',
+  '/malaysia/perhentian-redang/perhentian-besar/',
+  '/malaysia/perhentian-redang/redang-merang-transfer/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+  '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/'
+];
 const locales = [
   { prefix: '', searchPrefix: '', dateNeedle: '12 October 2026' },
   { prefix: '/zh', searchPrefix: '/zh', dateNeedle: '2026 年 10 月 12 日' },
@@ -81,8 +93,9 @@ const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https
 assert.equal(sourceSitemap.size, 4560, 'source sitemap stays at 4,560 URLs');
 assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URL');
 const expectedLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const newlyIntegratedLocalizedRoutes = new Set(locales.flatMap(({ prefix }) => newlyIntegratedRoutes.map((route) => `${prefix}${route}`)));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the five routes × five locales receive a new lastmod');
+assert.deepEqual(new Set(changedSitemapRoutes), new Set([...expectedLocalizedRoutes, ...newlyIntegratedLocalizedRoutes]), 'only Semporna and the two newly integrated Malaysia cohorts receive updated lastmod values');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(gitBytes(`${baselineCommit}:data/search-index.json`).toString('utf8'));
@@ -91,7 +104,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedEnglishSearch = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedEnglishSearch), selectedRoutes, 'only the five existing English search records changed');
+assert.deepEqual(new Set(changedEnglishSearch), new Set([...selectedRoutes, ...newlyIntegratedRoutes]), 'only Semporna and the two newly integrated Malaysia search cohorts changed');
 
 const localSearchByPrefix = new Map();
 for (const { prefix } of locales.filter(({ prefix }) => prefix)) {
@@ -194,6 +207,10 @@ for (const route of routes) {
 }
 
 const englishMainText = (route, outputRoot = root) => collectText(findNode(parse(fs.readFileSync(pagePath('', route, outputRoot), 'utf8')), 'main')).replace(/\s+/g, ' ');
+const explicitlyUnlinkedUnavailableSources = new Set([
+  // The source record says direct retrieval was blocked; the reviewed page does not present it as checked evidence.
+  'https://sabahparks.org.my/index.php/services/diving-sipadan'
+]);
 for (const [route, phrases] of [
   [routes[1], ['Tawau Airport (TWU)', 'named jetty', 'same contracted provider owns the return handoff', 'no current duration or departure is guaranteed']],
   [routes[2], ['700 m uphill', 'covered shoes', 'same authorized path', 'If trail, sea or park staff stand down']],
@@ -202,7 +219,9 @@ for (const [route, phrases] of [
 ]) {
   const text = englishMainText(route).toLowerCase();
   for (const phrase of phrases) assert.ok(text.includes(phrase.toLowerCase()), `${route}: verified chapter detail (${phrase})`);
-  for (const [source] of guideByUrl.get(route).sources || []) assert.ok(fs.readFileSync(pagePath('', route), 'utf8').includes(source), `${route}: official source ${source}`);
+  for (const [source] of guideByUrl.get(route).sources || []) {
+    if (!explicitlyUnlinkedUnavailableSources.has(source)) assert.ok(fs.readFileSync(pagePath('', route), 'utf8').includes(source), `${route}: official source ${source}`);
+  }
 }
 
 if (process.argv.includes('--dist')) {

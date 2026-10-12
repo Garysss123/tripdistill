@@ -1244,15 +1244,15 @@ verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_o
   checkedOn: '2026-10-12'
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Perhentian_Kecil_Island,_Malaysia,_Beach.jpg', {
-  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Vyacheslav Argenberg and CC BY 4.0. Local 1,440 × 960 WebP pixels were inspected and show a palm-lined Perhentian beach with clear water and a small shoreline; the subject matches the route image description. The source-page declaration and visible credit are recorded without asserting uploader authority or independent rights clearance.',
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Vyacheslav Argenberg and CC BY 4.0. Local 1,440 × 960 WebP pixels were inspected and show a palm-lined Perhentian beach with clear water and a small shoreline; the subject matches the route image description. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
   checkedOn: '2026-10-12'
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Coral_Bay,_Perhentian_Kecil.JPG', {
-  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit DTravel AU and CC BY-SA 3.0. Local 1,440 × 960 WebP pixels were inspected and show Coral Bay shoreline, boats and a palm-lined coast; the subject matches the route image description. The selected CC BY-SA 3.0 version is credited and its adaptation remains under that version. This records the page declaration and local pixels, not independent rights or chain-of-title clearance.',
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit DTravel AU and CC BY-SA 3.0. Local 1,440 × 960 WebP pixels were inspected and show Coral Bay shoreline, boats and a palm-lined coast; the subject matches the route image description. The selected CC BY-SA 3.0 version is credited and its adaptation remains under that version. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
   checkedOn: '2026-10-12'
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Pulau_Redang_-_White_sandy_beach.jpg', {
-  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Azreey and CC BY-SA 4.0. Local 1,440 × 960 WebP pixels were inspected and show the white-sand Redang shore, turquoise water and a rocky headland; the subject matches the route image description. The selected CC BY-SA 4.0 version is credited and its adaptation remains under that version. This records the page declaration and local pixels, not independent rights or chain-of-title clearance.',
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Azreey and CC BY-SA 4.0. Local 1,440 × 960 WebP pixels were inspected and show the white-sand Redang shore, turquoise water and a rocky headland; the subject matches the route image description. The selected CC BY-SA 4.0 version is credited and its adaptation remains under that version. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
   checkedOn: '2026-10-12'
 });
 verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', {
