@@ -16,6 +16,12 @@ const routes = [
   '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
   '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
 ];
+const followingRoutes = [
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -115,7 +121,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Phong Nha route bodies may change under vietnam/.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...followingRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Phong Nha and four following Phu Quoc route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -128,18 +134,18 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching Phong Nha search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...followingRoutes].sort(), 'Only the four matching Phong Nha and four following Phu Quoc search records may change.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four new routes in five editions may receive a new sitemap date from the requested base.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four Phong Nha and four following Phu Quoc routes in five editions may receive a new sitemap date from the Phong Nha base.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
 
 for (const route of routes) {
@@ -194,6 +200,6 @@ const historicalExclusion = {
 assert.notEqual(historicalExclusion.initialMainTextSha256, historicalExclusion.baseMainTextSha256, 'Previously refreshed Paradise/Tien Son route must remain a historical exclusion.');
 assert.equal(historicalExclusion.currentMainTextSha256, historicalExclusion.baseMainTextSha256, 'Previously refreshed Paradise/Tien Son route must remain unchanged in this sprint.');
 
-console.log('Phong Nha refresh regression passed: four bodies were unchanged at exact base cc6de926 and each gained at least 350 visible words; historically refreshed Paradise/Tien Son was excluded and untouched; search records match the English summaries; five-language canonical, hreflang, dates, and exactly 4,560 sitemap URLs are intact.');
+console.log('Phong Nha refresh regression passed: four bodies were unchanged at exact base cc6de926 and each gained at least 350 visible words; historically refreshed Paradise/Tien Son was excluded and untouched; later Phu Quoc scope is exact; search records match the English summaries; five-language canonical, hreflang, dates, and exactly 4,560 sitemap URLs are intact.');
 console.log(JSON.stringify(bodyChecks, null, 2));
 console.log(JSON.stringify({ excludedHistoricalRoutes: [historicalExclusion] }, null, 2));

@@ -34,7 +34,11 @@ const followingRoutes = [
   '/vietnam/phong-nha-ke-bang/',
   '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/',
   '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
-  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/',
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
 ];
 const editions = [
   { code: 'en', prefix: '' },
@@ -159,7 +163,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/') || route.startsWith('/vietnam/phong-nha-ke-bang/')).sort(), 'Only the four following Mui Ne and four Phong Nha summaries may change after the HCMC body-only refresh.');
+assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/') || route.startsWith('/vietnam/phong-nha-ke-bang/') || route.startsWith('/vietnam/phu-quoc-southern-islands/')).sort(), 'Only the four following Mui Ne, four Phong Nha and four Phu Quoc summaries may change after the HCMC body-only refresh.');
 
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
@@ -171,7 +175,7 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong, Da Lat, Mui Ne and Phong Nha routes in five editions may receive new sitemap dates.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong, Da Lat, Mui Ne, Phong Nha and Phu Quoc routes in five editions may receive new sitemap dates.');
 const followOnDatePaths = new Set(editions.flatMap(({ prefix }) => followingRoutes.map((route) => `${prefix}${route}`)));
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), followOnDatePaths.has(pagePath) ? '2026-10-13' : baseDate, `${pagePath}: sitemap date`);
 

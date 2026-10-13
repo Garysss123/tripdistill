@@ -119,7 +119,13 @@ const laterVietnamPhongNhaRoutes = [
   '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
   '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes]);
+const laterVietnamPhuQuocRoutes = [
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+];
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

@@ -388,10 +388,19 @@ export const followingVietnamPhongNhaRoutes = Object.freeze([
   '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
 ]);
 
+// This follow-on source sprint refreshes the Phu Quoc hub and three route pages.
+export const followingVietnamPhuQuocRoutes = Object.freeze([
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+]);
+
 export const currentSourceBranchSearchRoutes = Object.freeze([
   ...integrationSearchRoutes,
   ...followingVietnamMuiNeRoutes,
-  ...followingVietnamPhongNhaRoutes
+  ...followingVietnamPhongNhaRoutes,
+  ...followingVietnamPhuQuocRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
@@ -399,5 +408,5 @@ export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes].map((route) => `${prefix}${route}`))
 );
