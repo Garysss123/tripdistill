@@ -521,6 +521,13 @@ export const postIntegrationMargaretRemainingRoutes = Object.freeze([
   '/australia/margaret-river-southwest/albany-torndirrup/'
 ]);
 
+export const postIntegrationBroomeRoutes = Object.freeze([
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -549,6 +556,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of followingVietnamDaLatRoutes) routes.add(`${prefix}${route}`);
     for (const route of postNewEnglandIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationBroomeRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

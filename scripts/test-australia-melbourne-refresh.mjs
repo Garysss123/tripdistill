@@ -4,7 +4,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { australiaSouthClusters } from '../data/australia-south-guides.mjs';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseline = 'a014412eceb30efae51894be3b6167debaa96ca3';
@@ -150,13 +150,13 @@ const laterAustraliaGapRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 320, 'sixty-four exact Australia route dates across five language editions, including the four remaining Margaret River guides');
+assert.equal(editedUrls.size, 340, 'sixty-eight exact Australia route dates across five language editions, including the four remaining Margaret River and Broome guides');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
   if (!pathname.includes('/australia/')) continue;
-  const isAlpsMargaretRoute = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes].some((route) => pathname.endsWith(route));
+  const isAlpsMargaretRoute = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes].some((route) => pathname.endsWith(route));
   const expectedDate = isAlpsMargaretRoute ? '2026-10-13' : editedUrls.has(pathname) ? '2026-10-12' : originalDate;
   assert.equal(currentEntries.get(url), expectedDate, `only the exact 60 selected Australia route dates change: ${url}`);
 }

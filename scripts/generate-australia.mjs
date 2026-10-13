@@ -136,7 +136,7 @@ function hubFaqs(cluster) {
 function hubSchema(cluster) {
   const route = `/australia/${cluster.slug}/`;
   const faqs = hubFaqs(cluster);
-  const pageReviewIsoDate = cluster.reviewIsoDate || isoDate;
+  const pageReviewIsoDate = cluster.hubReviewIsoDate || cluster.reviewIsoDate || isoDate;
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -154,7 +154,7 @@ function hubCards(cluster) {
 function hubPage(cluster, index) {
   const route = `/australia/${cluster.slug}/`;
   const hero = cluster.guides[0].image;
-  const pageReviewDate = cluster.reviewDate || reviewDate;
+  const pageReviewDate = cluster.hubReviewDate || cluster.reviewDate || reviewDate;
   const description = ensureMetaDescription(`${cluster.hubIntro} ${cluster.transfer}`);
   const faqs = hubFaqs(cluster);
   return `<!doctype html>
@@ -177,7 +177,7 @@ function hubPage(cluster, index) {
       ${cluster.diagram ? `<section class="au-hub-section" aria-labelledby="${escapeHtml(cluster.diagram.sectionId || 'au-sydney-diagram-title')}"><div class="au-hub-heading"><span>${escapeHtml(cluster.diagram.sectionEyebrow || 'Transport shape · five-language key')}</span><h2 id="${escapeHtml(cluster.diagram.sectionId || 'au-sydney-diagram-title')}">${escapeHtml(cluster.diagram.sectionTitle || 'Separate the harbour crossing from the coast day.')}</h2><p>${escapeHtml(cluster.diagram.sectionIntro || 'Use the schematic to choose a mode and an operating day. Check the live route, access and conditions with the responsible operator before leaving.')}</p></div><figure style="margin:0;padding:clamp(.5rem,2vw,1rem);background:#f3eee3;border:1px solid #c9c1b2;border-radius:1rem"><img src="${escapeHtml(cluster.diagram.src)}" width="${escapeHtml(cluster.diagram.width || 1600)}" height="${escapeHtml(cluster.diagram.height || 1000)}" alt="${escapeHtml(cluster.diagramAlt || cluster.diagram.alt)}" loading="lazy" style="display:block;width:100%;height:auto;max-width:100%"><figcaption style="padding:.8rem .4rem;color:#465e5b;font-size:.85rem">${escapeHtml(cluster.diagramCaption || cluster.diagram.caption)}</figcaption></figure></section>` : ''}
       ${cluster.tripShapes?.length ? `<section class="au-hub-section" id="trip-shapes" aria-labelledby="trip-shapes-title"><div class="au-hub-heading"><span>Choose a trip shape</span><h2 id="trip-shapes-title">A useful route depends on the number of days and the operating system.</h2><p>These examples group real places and protect the return. Check live services, openings, access and weather before fixing the order.</p></div><div class="au-contract-grid">${cluster.tripShapes.map((shape) => `<article><small>${escapeHtml(shape.title)}</small><h3>${escapeHtml(shape.title.split('·').at(-1).trim())}</h3><p>${escapeHtml(shape.copy)}</p></article>`).join('')}</div></section>` : ''}
       <section class="au-hub-section" aria-labelledby="au-hub-faq-title"><div class="au-hub-heading"><span>Planning answers</span><h2 id="au-hub-faq-title">${escapeHtml(cluster.name)} FAQ</h2></div><div class="faq-list">${faqs.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('')}</div></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${escapeHtml(pageReviewDate)}. Recheck transport, park, fire, weather, marine and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${cluster.diagram ? imageCredit(cluster.diagram) : ''}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${escapeHtml(pageReviewDate)}. Recheck transport, park, fire, weather, marine and operator conditions before travel.</p><ul>${sourceList(cluster.hubSources?.length ? cluster.hubSources : cluster.sources)}${cluster.diagram ? imageCredit(cluster.diagram) : ''}${cluster.guides.map((guide) => imageCredit(guide.image)).join('')}</ul><span class="review-note">Editorial review: ${escapeHtml(pageReviewDate)} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>

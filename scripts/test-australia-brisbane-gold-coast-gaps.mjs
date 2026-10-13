@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaGuides } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const requestedParent = '6aa9321ff72077cf5143516f466add5ca2a830cc';
@@ -126,7 +126,7 @@ const laterAustraliaBodyRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/',
   ...postIntegrationAustraliaRoutes,
-  ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes
+  ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes
 ];
 assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
 
@@ -144,7 +144,7 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const expectedDatePaths = [...routes, ...laterAustraliaBodyRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDatePaths = expectedDatePaths.filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedDatePaths, expectedDatePaths, 'Only the selected Brisbane/Gold Coast and exact later AU route/language sitemap dates may change from the source task base.');
-for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate, `${route}: sitemap lastmod.`);
+for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate, `${route}: sitemap lastmod.`);
 
 const work = new Map(collectTranslationWork().map((record) => [record.route, record]));
 const requiredPageKeys = new Set(routes.flatMap((route) => work.get(route).units));

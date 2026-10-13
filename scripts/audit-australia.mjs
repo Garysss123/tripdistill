@@ -12,8 +12,8 @@ const lastmod = '2026-09-04';
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
-    .filter((cluster) => cluster.reviewIsoDate)
-    .map((cluster) => [`/australia/${cluster.slug}/`, cluster.reviewIsoDate]),
+    .filter((cluster) => cluster.hubReviewIsoDate || cluster.reviewIsoDate)
+    .map((cluster) => [`/australia/${cluster.slug}/`, cluster.hubReviewIsoDate || cluster.reviewIsoDate]),
   ...australiaGuides
     .filter((guide) => guide.reviewIsoDate)
     .map((guide) => [guide.url, guide.reviewIsoDate])
