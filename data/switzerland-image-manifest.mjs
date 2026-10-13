@@ -425,6 +425,7 @@ export const switzerlandImageManifest = {
   "lugano-southern-ticino/lugano-lakefront": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp",
     "alt": "Lugano lakefront and mountains in Ticino",
+    "displayTitle": "Lugano waterfront and boat pier",
     "source": "https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg",
     "label": "Lakefront Lugano 2017-05-29 13.15.22.jpg",
     "creator": "Chris j wood",
@@ -434,7 +435,8 @@ export const switzerlandImageManifest = {
   },
   "lugano-southern-ticino/san-salvatore-morcote": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-san-salvatore-morcote.webp",
-    "alt": "Lake Lugano and mountains from Monte San Salvatore area",
+    "alt": "Flower-laden bicycle beside Lake Lugano with Monte San Salvatore behind",
+    "displayTitle": "A flower-laden bicycle beside Lake Lugano",
     "source": "https://commons.wikimedia.org/wiki/File:Monte_San_Salvatore_in_Lugano.jpg",
     "label": "Monte San Salvatore in Lugano.jpg",
     "creator": "Jean Schmitt",
@@ -456,6 +458,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/locarno-ascona": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp",
     "alt": "Lake Maggiore waterfront near Ascona and Locarno",
+    "displayTitle": "Locarno and Ascona on Lake Maggiore",
     "source": "https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg",
     "label": "Locarno, Ascona & Lago Maggiore von Brione sopra M.jpg",
     "creator": "Glenn Steiger (Switzerland)",
@@ -488,6 +491,7 @@ export const switzerlandImageManifest = {
   "schaffhausen-rhine-falls/rhine-falls": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp",
     "alt": "Rhine Falls on the Rhine near Schaffhausen",
+    "displayTitle": "Visitors on a rock viewpoint amid the Rhine Falls",
     "source": "https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg",
     "label": "Caught in turbulent waters at the Rhine Falls, Neuhausen - panoramio.jpg",
     "creator": "More pics than views…",
@@ -497,7 +501,8 @@ export const switzerlandImageManifest = {
   },
   "schaffhausen-rhine-falls/schaffhausen-old-town": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-schaffhausen-old-town.webp",
-    "alt": "Schaffhausen old town and Munot fortress",
+    "alt": "Pedestrian Vordergasse in Schaffhausen with ornate old-town facades",
+    "displayTitle": "Painted facades along Schaffhausen's Vordergasse",
     "source": "https://commons.wikimedia.org/wiki/File:Schaffhausen_Vordergasse_2008_2.jpg",
     "label": "Schaffhausen Vordergasse 2008 2.jpg",
     "creator": "Photo: Andreas Praefcke",

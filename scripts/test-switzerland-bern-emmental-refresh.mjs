@@ -6,11 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
-import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
+import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '1d6da4bf2fff506f290b2132b093f124d4252289';
-const dateBaseCommit = 'bc1c7ddf96820b3455986efa202588ffc0d2ae6b';
 const routes = [
   '/switzerland/bern-emmental/',
   '/switzerland/bern-emmental/old-city-aare/',
@@ -73,7 +72,7 @@ function mainWordCount(html) {
   return text(main).trim().split(/\s+/).filter(Boolean).length;
 }
 
-const baseSitemap = execFileSync('git', ['show', `${dateBaseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
+const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
@@ -104,16 +103,14 @@ const graubuendenRoutes = [
   '/switzerland/graubunden-corridors/davos-parsenn/',
   '/switzerland/graubunden-corridors/arosa-line/'
 ];
-const ch14NewDateRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
-const expectedNewDateChanges = new Set(locales.flatMap((locale) => [...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const retainedDateRoutes = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => new URL(url).pathname.includes('/switzerland/') && baseRecords.get(url) !== date);
-assert.equal(dateChanges.length, expectedNewDateChanges.size, 'only CH11, CH12, CH13, CH14 and CH15 add dates relative to the exact pre-Switzerland integration checkpoint');
+const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
+const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14HubRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
+const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
+assert.equal(dateChanges.length, 160, 'the cumulative Bern/Emmental, Basel and CH11–CH16 routes receive only their expected edition dates');
 for (const [url, date] of dateChanges) {
-  assert.ok(expectedNewDateChanges.has(url), `unexpected Swiss sitemap date change: ${url}`);
-  assert.equal(date, '2026-10-12', `Swiss review date for ${url}`);
+  assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
+  assert.equal(date, '2026-10-12', `Bern/Emmental review date for ${url}`);
 }
-for (const url of retainedDateRoutes) assert.equal(currentRecords.get(url), '2026-10-12', `earlier Bern/Basel date remains: ${url}`);
 
 const englishBodies = new Map();
 for (const locale of locales) {
@@ -212,11 +209,7 @@ assert.deepEqual(retired.sourceDeclaredLicenses, ['CC BY-SA 4.0'], 'source decla
 assert.equal(retired.localSha1, 'cec21b3831e0d8421e32b36a142f973a64f55f47');
 
 for (const relative of protectedImages) {
-  // Keep the Lucerne and Zermatt diagrams at their separately pixel-validated integration revisions.
-  const imageBaseline = relative.includes('switzerland-lucerne-lake-mountains-rigi-route-choice.svg') || relative.includes('tripdistill-zermatt-glacier-route-choice.svg')
-    ? dateBaseCommit
-    : baseCommit;
-  const previous = execFileSync('git', ['show', `${imageBaseline}:${relative}`], { cwd: root });
+  const previous = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected or archived image bytes stay unchanged: ${relative}`);
 }
 
@@ -274,4 +267,4 @@ print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts)
 `;
 const xmlResult = spawnSync('python3', ['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
 assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
-console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative Swiss sitemap dates including CH11–CH15, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);
+console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11–CH16, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);

@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { collectTranslationWork, localeConfigs } from './i18n-lib.mjs';
-import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
+import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '063b1d71d0ead0908cc96b8fdc9e32242d07f01b';
@@ -149,27 +149,28 @@ const stMoritzRoutes = [
   '/switzerland/st-moritz-engadin/bernina-pontresina/',
   '/switzerland/st-moritz-engadin/muottas-diavolezza/'
 ];
-const stMoritzLocs = new Set(stMoritzRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
+const stMoritzLocs = new Set(stMoritzRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const stGallenRoutes = [
   '/switzerland/st-gallen-appenzell/',
   '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
   '/switzerland/st-gallen-appenzell/appenzell-village/',
   '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/'
 ];
-const stGallenLocs = new Set(stGallenRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
+const stGallenLocs = new Set(stGallenRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const graubuendenRoutes = [
   '/switzerland/graubunden-corridors/',
   '/switzerland/graubunden-corridors/chur-rhine-gorge/',
   '/switzerland/graubunden-corridors/davos-parsenn/',
   '/switzerland/graubunden-corridors/arosa-line/'
 ];
-const graubuendenLocs = new Set(graubuendenRoutes.flatMap((route) => locales.map((locale) => 'https://tripdistill.com' + locale.prefix + route)));
+const graubuendenLocs = new Set(graubuendenRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14HubLocs = new Set(ch14HubRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
-const ch15Locs = new Set(switzerlandCh15Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
-const changedDates = new Set([...currentMap].filter(([loc, date]) => loc.includes('/switzerland/') && baseMap.get(loc) !== date).map(([loc]) => loc));
-assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs, ...ch14HubLocs, ...ch15Locs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
+const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
+const ch15Locs = new Set(switzerlandCh15Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+const ch16Locs = new Set(switzerlandCh16Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
+assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs, ...ch14HubLocs, ...ch15Locs, ...ch16Locs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
 
 // Retain the mismatched photo record and original bytes without asserting an independent license or title chain.
 const oldPhoto = switzerlandRetiredImageRecords.montreuxRochersTrainMismatch;
@@ -231,15 +232,14 @@ const stations = diagram.items.filter((item) => item.tag === 'circle' && item.at
 assert.equal(stations.length, 4, 'four named route points are drawn');
 assert.ok(stations.every((station, index) => index === 0 || (Number(station.attrs.cx) > Number(stations[index - 1].attrs.cx) && Number(station.attrs.cy) < Number(stations[index - 1].attrs.cy))), 'the symbolic climb advances up and to the right');
 
-// Preserve the two separately pixel-reviewed diagram corrections from their exact source commits.
-const protectedDiagramSources = {
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '20c0023e15bd8178f6d89e7837ce774c3522620c',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '2566e88965470810f8ae997d2a69f501aa7e3a35'
-};
-for (const [asset, sourceCommit] of Object.entries(protectedDiagramSources)) {
+// Protect the separate Rigi and Zermatt diagrams that the user asked to leave alone.
+for (const asset of [
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg'
+]) {
   const current = fs.readFileSync(path.join(root, asset));
-  const reviewedFix = execFileSync('git', ['show', `${sourceCommit}:${asset}`], { cwd: root });
-  assert.deepEqual(current, reviewedFix, `${asset} preserves its pixel-reviewed correction`);
+  const base = execFileSync('git', ['show', `${baseCommit}:${asset}`], { cwd: root });
+  assert.equal(sha1(current), sha1(base), `${asset} bytes are unchanged from the requested base`);
 }
 
 console.log(`Montreux refresh regression passed: ${routes.length} existing routes × ${locales.length} editions; canonical/hreflang/search/schema/date checks; unchanged sitemap URL set; retired-photo byte preservation; parsed SVG/XML geometry and five-language legend; Rigi/Zermatt assets protected.`);

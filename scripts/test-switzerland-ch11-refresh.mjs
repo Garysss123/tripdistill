@@ -8,12 +8,10 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../d
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from '../data/switzerland-ch11-refresh.mjs';
 import { localizeHtml } from './i18n-lib.mjs';
-import { postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
-import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
+import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'a0da2c3b2d27276bc83993b19ae96521798c032b';
-const integrationBaseCommit = 'bc1c7ddf96820b3455986efa202588ffc0d2ae6b';
 const englishOnly = process.argv.includes('--english-only');
 const locales = ['', '/zh', '/ja', '/ko', '/th'];
 const localeCodes = ['en', 'zh-Hant', 'ja', 'ko', 'th'];
@@ -23,121 +21,14 @@ const ch12Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'st-g
 const ch12Routes = [`/switzerland/${ch12Cluster.slug}/`, ...ch12Cluster.guides.map((guide) => guide.url)];
 const ch13Cluster = switzerlandClusters.find((cluster) => cluster.slug === 'graubunden-corridors');
 const ch13Routes = [`/switzerland/${ch13Cluster.slug}/`, ...ch13Cluster.guides.map((guide) => guide.url)];
-const laterCa13Routes = [
-  '/canada/saguenay-tadoussac/',
-  '/canada/saguenay-tadoussac/tadoussac-marine/',
-  '/canada/saguenay-tadoussac/fjord-hiking/',
-  '/canada/saguenay-tadoussac/saguenay-city-valley/'
-];
-const laterGoldCoastRoutes = [
-  '/australia/gold-coast-scenic-rim/',
-  '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
-  '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
-  '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/'
-];
-const laterCairnsRoutes = [
-  '/australia/cairns-wet-tropics/',
-  '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
-  '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
-  '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
-];
-const laterAustraliaGapRoutes = [
-  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
-  '/australia/sydney-harbour-coast/manly-north-head/',
-  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
-  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
-  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
-  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
-  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
-  '/australia/gold-coast-scenic-rim/lamington-national-park/',
-  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
-  '/australia/melbourne-port-phillip/phillip-island/',
-  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
-  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
-  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
-  '/australia/adelaide-wine-island/kangaroo-island/',
-  '/australia/perth-fremantle-rottnest/kings-park/',
-  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
-];
-const laterCa14Routes = [
-  '/canada/halifax-nova-scotia/',
-  '/canada/halifax-nova-scotia/cape-breton-cabot/',
-  '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
-  '/canada/halifax-nova-scotia/peggys-cove-lunenburg/'
-];
-const laterCa15Routes = [
-  '/canada/prince-edward-island/',
-  '/canada/prince-edward-island/charlottetown/',
-  '/canada/prince-edward-island/cavendish-north-shore/',
-  '/canada/prince-edward-island/coastal-drives/'
-];
-const laterCa16Ca18Routes = [
-  '/canada/',
-  '/canada/winnipeg-churchill/',
-  '/canada/winnipeg-churchill/forks-exchange/',
-  '/canada/winnipeg-churchill/human-rights-assiniboine/',
-  '/canada/winnipeg-churchill/churchill-hudson-bay/',
-  '/canada/whitehorse-kluane/',
-  '/canada/whitehorse-kluane/whitehorse-river/',
-  '/canada/whitehorse-kluane/kluane-haines-junction/',
-  '/canada/whitehorse-kluane/miles-canyon-aurora/',
-  '/canada/yellowknife-great-slave/',
-  '/canada/yellowknife-great-slave/old-town-great-slave/',
-  '/canada/yellowknife-great-slave/aurora-dark-sky/',
-  '/canada/yellowknife-great-slave/ingraham-trail/'
-];
 const ch14Routes = ['/switzerland/', '/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14NewDateRoutes = ch14Routes.slice(1);
-const laterCa11Routes = [
-  '/canada/ottawa-gatineau/',
-  '/canada/ottawa-gatineau/parliament-rideau/',
-  '/canada/ottawa-gatineau/national-museums/',
-  '/canada/ottawa-gatineau/gatineau-park/'
-];
-const laterCa12Routes = [
-  '/canada/niagara/',
-  '/canada/niagara/falls-parkway/',
-  '/canada/niagara/niagara-gorge/',
-  '/canada/niagara/niagara-on-the-lake/'
-];
-const laterAustraliaRoutes = [
-  '/australia/melbourne-port-phillip/',
-  '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
-  '/australia/melbourne-port-phillip/federation-square-southbank/',
-  '/australia/melbourne-port-phillip/st-kilda-foreshore/',
-  '/australia/adelaide-wine-island/',
-  '/australia/adelaide-wine-island/city-parklands-north-terrace/',
-  '/australia/adelaide-wine-island/barossa-valley/',
-  '/australia/adelaide-wine-island/fleurieu-mclaren-vale/',
-  '/australia/sydney-harbour-coast/',
-  '/australia/sydney-harbour-coast/circular-quay-rocks/',
-  '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
-  '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
-  '/australia/brisbane-moreton-bay/',
-  '/australia/brisbane-moreton-bay/city-river-south-bank/',
-  '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
-  '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/',
-  '/australia/blue-mountains-nsw-coast/',
-  '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
-  '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
-  '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/',
-  '/australia/great-ocean-road-gariwerd/',
-  '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
-  '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
-  '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/'
-];
-const laterAustraliaSearchOnlyRoutes = [
-  '/australia/perth-fremantle-rottnest/',
-  '/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/',
-  '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
-  '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
-];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterCa15Routes, ...laterCa16Ca18Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterAustraliaGapRoutes, ...switzerlandCh15AffectedRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...switzerlandCh15AffectedRoutes, ...switzerlandCh16Routes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '671a60852805748c8bf7ea4f5fc362305dc8f8c932fbd58fd661a8921794d366'
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': 'c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8'
 };
 
 function read(relative) { return fs.readFileSync(path.join(root, relative), 'utf8'); }
@@ -173,15 +64,15 @@ for (const route of allRoutes.filter((item) => !preservedOrLaterRoutes.has(item)
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), baseline, `${route} remains byte-identical to the verified CH10 source`);
 }
 
-const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes].map((route) => `${prefix}${route}`)));
+const expectedLocalizedRoutes = new Set(locales.flatMap((prefix) => [...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(read('sitemap.xml'));
 assert.equal(before.size, 4560, 'verified CH10 sitemap contains 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'CH11 adds or removes no sitemap route');
-const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
-assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only the exact CH11–CH15 route list across five editions receives new dates');
+const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
+assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'CH11 and downstream CH12, CH13 and CH14 hubs receive new dates across five editions');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalizedRoutes.has(route), `unexpected changed date: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 date for ${route}`);
@@ -195,7 +86,7 @@ for (const [asset, sha256] of Object.entries(protectedAssets)) {
 
 const targetSet = new Set(expectedRoutes);
 const englishSearch = JSON.parse(read('data/search-index.json'));
-const baseEnglishSearch = JSON.parse(execFileSync('git', ['show', `${integrationBaseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
+const baseEnglishSearch = JSON.parse(execFileSync('git', ['show', `${baseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentTargetSearch = englishSearch.filter((record) => targetSet.has(record.url));
 assert.equal(currentTargetSearch.length, 4, 'each CH11 English route appears once in search');
 for (const record of englishSearch.filter((item) => !preservedOrLaterRoutes.has(item.url))) {
@@ -290,7 +181,7 @@ if (!englishOnly) {
     const ch11Batch = fs.readdirSync(batchDirectory).find((name) => name.includes('-ch11-st-moritz-pages-20261012.json'));
     assert.ok(ch11Batch, `${code} has the CH11 page translation batch`);
     const oldTranslations = {};
-    for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && name !== ch11Batch && !name.endsWith('-ch12-st-gallen-pages-20261012.json') && !name.endsWith('-ch12-st-gallen-search-20261012.json') && !name.endsWith('-switzerland-ch15-pages-20261012.json')).sort()) {
+    for (const filename of fs.readdirSync(batchDirectory).filter((name) => name.endsWith('.json') && name !== ch11Batch && !name.endsWith('-ch12-st-gallen-pages-20261012.json') && !name.endsWith('-ch12-st-gallen-search-20261012.json')).sort()) {
       const batch = JSON.parse(fs.readFileSync(path.join(batchDirectory, filename), 'utf8'));
       if (batch.qualityStatus === 'reviewed') Object.assign(oldTranslations, batch.translations || {});
     }
@@ -302,4 +193,4 @@ if (!englishOnly) {
   }
 }
 
-console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, ${expectedLocalizedRoutes.size} cumulative CH11–CH15 dated edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and all non-target Swiss pages preserved outside exact later routes.`);
+console.log(`CH11 ${englishOnly ? 'English-source' : 'five-language'} regression passed: four St Moritz/Upper Engadin routes, ${expectedLocalizedRoutes.size} cumulative CH11–CH16 dated edition URLs, 4,560 sitemap URLs, search/Article agreement, ${englishOnly ? 'hreflang targets' : 'localized search summaries and source/photo-credit prose'}, inactive drafts and non-target Swiss pages preserved outside later edited routes.`);

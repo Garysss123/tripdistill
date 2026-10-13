@@ -5,6 +5,7 @@ import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandCh14CountryRefresh, switzerlandCh14HubRefresh, switzerlandCh14IsoDate } from '../data/switzerland-ch14-refresh.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate } from '../data/switzerland-ch15-refresh.mjs';
+import { switzerlandCh16GuideRefresh, switzerlandCh16IsoDate } from '../data/switzerland-ch16-refresh.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const failures = [];
@@ -72,11 +73,14 @@ const ch14Routes = new Set(['/switzerland/', ...Object.keys(switzerlandCh14HubRe
 const ch14Lastmod = switzerlandCh14IsoDate;
 const ch15Routes = new Set(switzerlandGuides.filter((guide) => Object.hasOwn(switzerlandCh15GuideRefresh, guide.slug)).map((guide) => guide.url));
 const ch15Lastmod = switzerlandCh15IsoDate;
+const ch16Routes = new Set(switzerlandGuides.filter((guide) => Object.hasOwn(switzerlandCh16GuideRefresh, guide.slug)).map((guide) => guide.url));
+const ch16Lastmod = switzerlandCh16IsoDate;
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const escape = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 check(ch14Routes.size === 4 && switzerlandCh14CountryRefresh.isoDate === ch14Lastmod, 'CH14 must date exactly the country overview and three existing hubs');
 check(ch15Routes.size === 4, 'CH15 must date exactly four existing Switzerland guide routes');
+check(ch16Routes.size === 5, 'CH16 must date exactly five existing Switzerland guide routes');
 
 function nodes(html) {
   const out = [];
@@ -287,7 +291,7 @@ check(read('scripts/build-dist.mjs').includes("'switzerland'"), 'Switzerland abs
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
   for (const route of routes) {
-    const expectedLastmod = ch15Routes.has(route) ? ch15Lastmod : ch14Routes.has(route) ? ch14Lastmod : ch13Routes.includes(route) ? ch13Lastmod : ch12Routes.includes(route) ? ch12Lastmod : ch11Routes.has(route) ? ch11Lastmod : baselRoutes.includes(route) ? baselLastmod : genevaSitemapRoutes.includes(route) ? genevaLastmod : montreuxRoutes.includes(route) ? montreuxLastmod : bernEmmentalRoutes.includes(route) ? bernEmmentalLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
+    const expectedLastmod = ch16Routes.has(route) ? ch16Lastmod : ch15Routes.has(route) ? ch15Lastmod : ch14Routes.has(route) ? ch14Lastmod : ch13Routes.includes(route) ? ch13Lastmod : ch12Routes.includes(route) ? ch12Lastmod : ch11Routes.has(route) ? ch11Lastmod : baselRoutes.includes(route) ? baselLastmod : genevaSitemapRoutes.includes(route) ? genevaLastmod : montreuxRoutes.includes(route) ? montreuxLastmod : bernEmmentalRoutes.includes(route) ? bernEmmentalLastmod : zurichRoutes.includes(route) ? zurichLastmod : lucerneRoutes.includes(route) ? lucerneLastmod : jungfrauRoutes.includes(route) ? jungfrauLastmod : zermattRoutes.includes(route) ? zermattLastmod : interlakenRoutes.includes(route) ? interlakenLastmod : lausanneRoutes.includes(route) ? lausanneLastmod : '2026-09-12';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${route}: sitemap missing or stale`);
     for (const [language, prefix] of locales) check(sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`), `${prefix}${route}: localized sitemap date missing or stale`);
   }

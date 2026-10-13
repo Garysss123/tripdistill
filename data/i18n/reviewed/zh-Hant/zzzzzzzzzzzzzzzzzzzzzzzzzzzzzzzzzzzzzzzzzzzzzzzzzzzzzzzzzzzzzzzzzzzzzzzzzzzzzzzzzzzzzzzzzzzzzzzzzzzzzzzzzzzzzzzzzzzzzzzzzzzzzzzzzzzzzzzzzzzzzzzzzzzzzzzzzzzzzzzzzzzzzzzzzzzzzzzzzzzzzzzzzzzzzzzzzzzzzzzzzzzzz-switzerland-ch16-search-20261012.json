@@ -1,0 +1,42 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Lugano station": "盧加諾車站",
+    "Piazza Cioccaro": "Piazza Cioccaro（喬卡羅廣場）",
+    "Via Nassa": "Via Nassa（納薩街）",
+    "Parco Ciani": "Parco Ciani（奇亞尼公園）",
+    "Lugano lake promenade": "盧加諾湖畔步道",
+    "TPL funicular": "TPL 纜車",
+    "Monte San Salvatore": "Monte San Salvatore（聖薩爾瓦托雷山）",
+    "Paradiso funicular": "Paradiso 纜車",
+    "Morcote": "Morcote（莫爾科特）",
+    "lake navigation": "湖上航運",
+    "Lugano mountain and village": "盧加諾山區與湖畔村落",
+    "Locarno": "Locarno（洛迦諾）",
+    "Ascona": "Ascona（阿斯科納）",
+    "Locarno-Muralto station": "Locarno-Muralto 車站",
+    "FART bus": "FART 巴士",
+    "Lake Maggiore promenade": "馬焦雷湖畔步道",
+    "Rhine Falls": "萊茵瀑布",
+    "Neuhausen Rheinfall station": "Neuhausen Rheinfall 車站",
+    "Schloss Laufen": "Schloss Laufen（勞芬城堡）",
+    "north bank": "北岸",
+    "south bank": "南岸",
+    "Rhyfall Mändli boats": "Rhyfall Mändli 遊船",
+    "Schaffhausen old town": "Schaffhausen（沙夫豪森）舊城",
+    "Munot": "Munot（穆諾特堡壘）",
+    "Vordergasse": "Vordergasse（前街）",
+    "Schaffhausen station": "Schaffhausen 車站",
+    "Allerheiligen museum": "Museum zu Allerheiligen（諸聖博物館）"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna was requested for translation; the runtime model identifier is not independently verifiable.",
+    "reviewer": "Same-session self-review and editorial sampling; no independent second-model or human review.",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-12"
+  }
+}

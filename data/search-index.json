@@ -8274,12 +8274,18 @@
     "url": "/switzerland/lugano-southern-ticino/lugano-lakefront/",
     "parent": "Lugano & Southern Ticino",
     "type": "Local guide",
-    "summary": "Connect Lugano station, historic center, Parco Ciani and lakefront in one downhill city sequence, then use transit for the return climb instead of retracing it.",
+    "summary": "Plan Lugano as a station-to-lake descent: use the TPL funicular to Piazza Cioccaro, continue through the centre to the waterfront, and decide in advance whether the uphill return is by funicular or local bus.",
     "keywords": [
       "Lugano Center & Lakefront",
       "Lugano & Southern Ticino",
       "arcade-to-lake promenade card",
-      "promenade-card"
+      "promenade-card",
+      "Lugano station",
+      "Piazza Cioccaro",
+      "Via Nassa",
+      "Parco Ciani",
+      "Lugano lake promenade",
+      "TPL funicular"
     ]
   },
   {
@@ -8287,12 +8293,17 @@
     "url": "/switzerland/lugano-southern-ticino/san-salvatore-morcote/",
     "parent": "Lugano & Southern Ticino",
     "type": "Local guide",
-    "summary": "Use Monte San Salvatore for the overhead lake view, then choose Morcote as a separate village chapter reached by public transport rather than an improvised long ridge traverse.",
+    "summary": "Choose between Monte San Salvatore’s timed summit funicular and Morcote’s lakeside village visit; combine them only when both dated services leave a comfortable return window.",
     "keywords": [
       "Monte San Salvatore & Morcote",
       "Lugano & Southern Ticino",
       "summit-to-village descent plan",
-      "descent-plan"
+      "descent-plan",
+      "Monte San Salvatore",
+      "Paradiso funicular",
+      "Morcote",
+      "lake navigation",
+      "Lugano mountain and village"
     ]
   },
   {
@@ -8325,12 +8336,17 @@
     "url": "/switzerland/locarno-ascona-valleys/locarno-ascona/",
     "parent": "Locarno, Ascona & Ticino Valleys",
     "type": "Local guide",
-    "summary": "Treat Locarno and Ascona as complementary lake towns linked by bus or boat, giving each a different role instead of walking the suburban gap simply because they share the basin.",
+    "summary": "Treat Locarno and Ascona as two linked but distinct town visits: anchor at Locarno-Muralto station, then use a checked FART bus or seasonal lake sailing for Ascona.",
     "keywords": [
       "Locarno & Ascona Lakefront",
       "Locarno, Ascona & Ticino Valleys",
       "paired-town lake card",
-      "paired-town"
+      "paired-town",
+      "Locarno",
+      "Ascona",
+      "Locarno-Muralto station",
+      "FART bus",
+      "Lake Maggiore promenade"
     ]
   },
   {
@@ -8376,12 +8392,18 @@
     "url": "/switzerland/schaffhausen-rhine-falls/rhine-falls/",
     "parent": "Schaffhausen & Rhine Falls",
     "type": "Local guide",
-    "summary": "Plan Rhine Falls by bank, rail stop and desired viewpoint, then cross or transfer only when the second side adds something meaningful.",
+    "summary": "Choose a Rhine Falls bank before travelling: the north side gives free basin access and the Neuhausen Rheinfall station lift, while Schloss Laufen on the south side charges for its viewing platforms and has different access limits.",
     "keywords": [
       "Rhine Falls: Choose the Right Bank",
       "Schaffhausen & Rhine Falls",
       "two-bank waterfall gate",
-      "two-bank-gate"
+      "two-bank-gate",
+      "Rhine Falls",
+      "Neuhausen Rheinfall station",
+      "Schloss Laufen",
+      "north bank",
+      "south bank",
+      "Rhyfall Mändli boats"
     ]
   },
   {
@@ -8389,12 +8411,17 @@
     "url": "/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/",
     "parent": "Schaffhausen & Rhine Falls",
     "type": "Local guide",
-    "summary": "Give Schaffhausen its own compact loop through painted facades, arcades and Munot, rather than using the city only as a rail interchange for Rhine Falls.",
+    "summary": "Make Schaffhausen a deliberate town visit: walk from the station into the painted old centre, decide whether the uphill Munot ramparts suit the group, then save the Rhine Falls or Stein am Rhein for a separate transfer block.",
     "keywords": [
       "Schaffhausen Old Town & Munot",
       "Schaffhausen & Rhine Falls",
       "fortress-roofline loop",
-      "roofline-loop"
+      "roofline-loop",
+      "Schaffhausen old town",
+      "Munot",
+      "Vordergasse",
+      "Schaffhausen station",
+      "Allerheiligen museum"
     ]
   },
   {

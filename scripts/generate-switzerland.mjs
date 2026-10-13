@@ -329,7 +329,7 @@ function updateSearch(selectedClusters = switzerlandClusters, includeCountry = t
   ] : [];
   for (const cluster of selectedClusters) {
     records.push({ title: cluster.name, url: `/switzerland/${cluster.slug}/`, parent: 'Switzerland', type: 'Regional guide', summary: cluster.hubIntro, keywords: [cluster.name, cluster.region, cluster.band] });
-    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [guide.name, cluster.name, guide.instrument, guide.layout] });
+    for (const guide of cluster.guides) records.push({ title: guide.name, url: guide.url, parent: cluster.name, type: 'Local guide', summary: guide.summary, keywords: [...new Set([guide.name, cluster.name, guide.instrument, guide.layout, ...(guide.searchKeywords || [])])] });
   }
   const replacements = new Map(records.map((record) => [record.url, record]));
   const updated = existing.map((record) => {
@@ -370,6 +370,17 @@ function updateHubSearchRecord(cluster) {
     type: 'Regional guide',
     summary: cluster.hubOnly.description,
     keywords: [cluster.name, cluster.region, cluster.band]
+  });
+}
+
+function updateGuideSearchRecord(guide, cluster) {
+  updateSingleSearchRecord({
+    title: guide.name,
+    url: guide.url,
+    parent: cluster.name,
+    type: 'Local guide',
+    summary: guide.summary,
+    keywords: [...new Set([guide.name, cluster.name, guide.instrument, guide.layout, ...(guide.searchKeywords || [])])]
   });
 }
 
@@ -415,9 +426,10 @@ function updateAbout() {
 
 const selectedSlug = process.argv.find((value) => value.startsWith('--cluster='))?.slice('--cluster='.length);
 const selectedHubSlug = process.argv.find((value) => value.startsWith('--hub-only='))?.slice('--hub-only='.length);
+const selectedGuideSlugs = process.argv.find((value) => value.startsWith('--guide-only='))?.slice('--guide-only='.length).split(',').map((slug) => slug.trim()).filter(Boolean);
 const countryOnly = process.argv.includes('--country-only');
-if ([selectedSlug, selectedHubSlug, countryOnly ? 'country' : null].filter(Boolean).length > 1) {
-  throw new Error('Use only one of --cluster, --hub-only or --country-only.');
+if ([selectedSlug, selectedHubSlug, selectedGuideSlugs?.length ? 'guides' : null, countryOnly ? 'country' : null].filter(Boolean).length > 1) {
+  throw new Error('Use only one of --cluster, --hub-only, --guide-only or --country-only.');
 }
 if (selectedSlug && !switzerlandClusters.some((cluster) => cluster.slug === selectedSlug)) {
   throw new Error(`Unknown Switzerland cluster: ${selectedSlug}`);
@@ -425,10 +437,18 @@ if (selectedSlug && !switzerlandClusters.some((cluster) => cluster.slug === sele
 if (selectedHubSlug && !switzerlandClusters.some((cluster) => cluster.slug === selectedHubSlug && cluster.hubOnly)) {
   throw new Error(`Unknown CH14 hub-only refresh: ${selectedHubSlug}`);
 }
+if (selectedGuideSlugs) {
+  if (new Set(selectedGuideSlugs).size !== selectedGuideSlugs.length) throw new Error('--guide-only contains duplicate slugs.');
+  const knownGuideSlugs = new Set(switzerlandGuides.map((guide) => guide.slug));
+  const unknown = selectedGuideSlugs.filter((slug) => !knownGuideSlugs.has(slug));
+  if (unknown.length) throw new Error(`Unknown Switzerland guide slug(s): ${unknown.join(', ')}`);
+}
 const selectedClusters = selectedSlug
   ? switzerlandClusters.filter((cluster) => cluster.slug === selectedSlug)
-  : selectedHubSlug || countryOnly ? [] : switzerlandClusters;
-const selectedGuides = selectedClusters.flatMap((cluster) => cluster.guides);
+  : selectedHubSlug || selectedGuideSlugs || countryOnly ? [] : switzerlandClusters;
+const selectedGuides = selectedGuideSlugs
+  ? selectedGuideSlugs.map((slug) => switzerlandGuides.find((guide) => guide.slug === slug))
+  : selectedClusters.flatMap((cluster) => cluster.guides);
 
 for (const cluster of selectedClusters) {
   const clusterIndex = switzerlandClusters.indexOf(cluster);
@@ -456,6 +476,12 @@ if (selectedHubSlug) {
   fs.writeFileSync(countryFile, countryPage());
   updateCountrySearchRecord();
   console.log('Generated only the existing Switzerland country page; hubs, children and shared site surfaces were not rewritten.');
+} else if (selectedGuideSlugs) {
+  for (const guide of selectedGuides) {
+    const cluster = switzerlandClusters.find((item) => item.slug === guide.hubSlug);
+    updateGuideSearchRecord(guide, cluster);
+  }
+  console.log(`Generated only ${selectedGuides.length} selected existing Switzerland guide routes and their search records; hubs, siblings and shared site surfaces were not rewritten.`);
 } else if (selectedSlug) {
   updateSearch(selectedClusters, false);
   console.log(`Generated Switzerland cluster ${selectedSlug}: one existing hub and ${selectedGuides.length} existing focused routes; shared site surfaces were not rewritten.`);

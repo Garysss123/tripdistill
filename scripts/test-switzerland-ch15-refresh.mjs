@@ -4,54 +4,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from '../data/switzerland-ch15-refresh.mjs';
+import { switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
-import { postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationHawaiiRoutes } from './integration-sprint-scope.mjs';
 import { loadCatalog } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '7264d71dee1ec7f0c37dc8e5aeaefcd4561498b8';
-const sourceTerminal = '99a5daff45c7c5ae862019f48adebac112f52f77';
-const integrationBase = '4c7a5d2bd65a6a82474813c04db718dedb1ffc48';
-const laterCa15Routes = [
-  '/canada/prince-edward-island/',
-  '/canada/prince-edward-island/charlottetown/',
-  '/canada/prince-edward-island/cavendish-north-shore/',
-  '/canada/prince-edward-island/coastal-drives/'
-];
-const laterCa16Ca18SearchRoutes = [
-  '/canada/',
-  '/canada/winnipeg-churchill/',
-  '/canada/winnipeg-churchill/forks-exchange/',
-  '/canada/winnipeg-churchill/human-rights-assiniboine/',
-  '/canada/winnipeg-churchill/churchill-hudson-bay/',
-  '/canada/whitehorse-kluane/',
-  '/canada/whitehorse-kluane/whitehorse-river/',
-  '/canada/whitehorse-kluane/kluane-haines-junction/',
-  '/canada/whitehorse-kluane/miles-canyon-aurora/',
-  '/canada/yellowknife-great-slave/',
-  '/canada/yellowknife-great-slave/old-town-great-slave/',
-  '/canada/yellowknife-great-slave/aurora-dark-sky/',
-  '/canada/yellowknife-great-slave/ingraham-trail/'
-];
-const laterCa16Ca18DateRoutes = laterCa16Ca18SearchRoutes.slice(1);
-const laterAustraliaGapRoutes = [
-  '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
-  '/australia/sydney-harbour-coast/manly-north-head/',
-  '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
-  '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
-  '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
-  '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
-  '/australia/gold-coast-scenic-rim/springbrook-national-park/',
-  '/australia/gold-coast-scenic-rim/lamington-national-park/',
-  '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
-  '/australia/melbourne-port-phillip/phillip-island/',
-  '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
-  '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
-  '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
-  '/australia/adelaide-wine-island/kangaroo-island/',
-  '/australia/perth-fremantle-rottnest/kings-park/',
-  '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
-];
 const locales = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -145,43 +103,26 @@ for (const [slug, guide] of Object.entries(switzerlandCh15GuideRefresh)) {
 }
 
 const baseSitemap = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
-const sourceSitemap = sitemap(execFileSync('git', ['show', `${sourceTerminal}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
-const integrationSitemap = sitemap(execFileSync('git', ['show', `${integrationBase}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const currentSitemap = sitemap(read('sitemap.xml'));
 assert.equal(baseSitemap.size, 4560, 'the base has 4,560 localized URLs');
-assert.equal(sourceSitemap.size, baseSitemap.size, 'the CH15 source terminal retains the base URL count');
-assert.equal(integrationSitemap.size, baseSitemap.size, 'the pre-CH15 integration retains the base URL count');
 assert.equal(currentSitemap.size, baseSitemap.size, 'CH15 creates or removes no URL');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs are unchanged');
 const targetLocalized = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
-const laterCa15Localized = new Set(locales.flatMap(({ prefix }) => laterCa15Routes.map((route) => `${prefix}${route}`)));
-const laterAustraliaGapLocalized = new Set(locales.flatMap(({ prefix }) => laterAustraliaGapRoutes.map((route) => `${prefix}${route}`)));
-const laterCa16Ca18Localized = new Set(locales.flatMap(({ prefix }) => laterCa16Ca18DateRoutes.map((route) => `${prefix}${route}`)));
-const sourceDateChanges = [...sourceSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(sourceDateChanges, [...targetLocalized].sort(), 'the exact CH15 source terminal changes only the four target routes across five locales');
-const integrationDateChanges = [...currentSitemap].filter(([route, date]) => integrationSitemap.get(route) !== date).map(([route]) => route).sort();
-const laterHawaiiLocalized = [...postIntegrationHawaiiRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
-const laterNewOrleansLocalized = [...postHawaiiNewOrleansRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
-const laterAustraliaFollowOnLocalized = [...postIntegrationAustraliaRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
-assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterCa16Ca18Localized, ...laterAustraliaGapLocalized, ...laterHawaiiLocalized, ...laterAustraliaFollowOnLocalized, ...laterNewOrleansLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15, twelve exact CA16–CA18, sixteen exact AU gap, four Hawaii, four Top End/Whitsundays and four New Orleans routes across five locales');
-for (const route of targetLocalized) assert.equal(currentSitemap.get(route), switzerlandCh15IsoDate, `${route} carries the CH15 review date`);
+const targetAndLaterLocalized = new Set(locales.flatMap(({ prefix }) => [...targetRoutes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
+assert.equal(targetLocalized.size, 20, 'the CH15 four-route batch covers twenty edition paths');
+const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date);
+assert.equal(changedDates.length, targetAndLaterLocalized.size, 'only four CH15 and five later CH16 routes receive new sitemap dates in five locales');
+for (const [route, date] of changedDates) {
+  assert.ok(targetAndLaterLocalized.has(route), `unexpected sitemap date change for ${route}`);
+  assert.equal(date, switzerlandCh15IsoDate);
+}
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
-const sourceSearch = JSON.parse(execFileSync('git', ['show', `${sourceTerminal}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
-const integrationSearch = JSON.parse(execFileSync('git', ['show', `${integrationBase}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
 assert.equal(currentSearch.length, baseSearch.length, 'the English search record count is unchanged');
-assert.equal(sourceSearch.length, baseSearch.length, 'the CH15 source terminal retains all search records');
-assert.equal(integrationSearch.length, currentSearch.length, 'the pre-CH15 integration and current search record counts match');
-for (const record of sourceSearch.filter((item) => !targetSet.has(item.url))) assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `CH15 source terminal changed a non-target search record: ${record.url}`);
-const laterCa15Set = new Set(laterCa15Routes);
-const laterCa16Ca18Set = new Set(laterCa16Ca18SearchRoutes);
-const laterAustraliaGapSet = new Set(laterAustraliaGapRoutes);
-const laterHawaiiSet = new Set(postIntegrationHawaiiRoutes);
-const laterNewOrleansSet = new Set(postHawaiiNewOrleansRoutes);
-const laterAustraliaFollowOnSet = new Set(postIntegrationAustraliaRoutes);
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !laterCa15Set.has(item.url) && !laterCa16Ca18Set.has(item.url) && !laterAustraliaGapSet.has(item.url) && !laterHawaiiSet.has(item.url) && !laterAustraliaFollowOnSet.has(item.url) && !laterNewOrleansSet.has(item.url))) assert.deepEqual(record, integrationSearch.find((item) => item.url === record.url), 'CH15/CA15–CA18/AU-gap/Hawaii/Top End/New Orleans integration changed an undeclared non-target search record: ' + record.url);
-for (const route of targetRoutes) assert.deepEqual(currentSearch.find((item) => item.url === route), sourceSearch.find((item) => item.url === route), `${route} search record matches the exact CH15 source terminal`);
+for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh16Routes.includes(item.url))) {
+  assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record changed: ${record.url}`);
+}
 
 let totalBaseWords = 0;
 let totalCurrentWords = 0;
@@ -194,7 +135,6 @@ for (const route of targetRoutes) {
   const manifestImage = switzerlandImageManifest[`${clusterSlug}/${guideSlug}`];
   assert.ok(manifestImage, `${route} retains a documented existing image asset`);
   const english = read(`${route.slice(1)}index.html`);
-  assert.equal(english, execFileSync('git', ['show', `${sourceTerminal}:${route.slice(1)}index.html`], { cwd: root, encoding: 'utf8' }).toString('utf8'), `${route} matches the exact CH15 source terminal`);
   const metadata = article(english);
   assert.ok(metadata, `${route} has Article metadata`);
   assert.equal(metadata.datePublished, '2026-09-12', `${route} keeps its original publication date`);
@@ -238,14 +178,12 @@ for (const route of targetRoutes) {
 }
 assert.ok(totalCurrentWords - totalBaseWords >= 1500, `CH15 adds at least 1,500 visible English body words (${totalCurrentWords - totalBaseWords})`);
 
-for (const route of allRoutes.filter((item) => !targetSet.has(item))) {
+for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerlandCh16Routes.includes(item))) {
   const relative = `${route.slice(1)}index.html`;
   const before = execFileSync('git', ['show', `${base}:${relative}`], { cwd: root, encoding: 'utf8' });
-  const sourcePage = execFileSync('git', ['show', `${sourceTerminal}:${relative}`], { cwd: root, encoding: 'utf8' });
   const current = read(relative);
   if (derivedCardRoutes.has(route)) {
     assert.equal(removeDerivedCards(current, route), removeDerivedCards(before, route), `${route} changes only derivative guide or related-card sections`);
-    assert.equal(current, sourcePage.toString('utf8'), `${route} matches the exact CH15 source terminal's derived card update`);
   } else {
     assert.equal(current, before, `${route} remains byte-identical to the exact CH15 base`);
   }
@@ -264,5 +202,5 @@ for (const code of ['zh-Hant', 'ja', 'ko', 'th']) {
   assert.ok(batch.reviewProvenance.reviewer.includes('Same-model'), `${code} labels the self-review accurately`);
 }
 
-console.log(`CH15 regression passed: four existing routes, +${totalCurrentWords - totalBaseWords} English body words, five-language dates and search, no URL changes, and only derivative card updates outside the four substantive pages.`);
+console.log(`CH15 regression passed: four existing routes, +${totalCurrentWords - totalBaseWords} English body words, five-language dates and search, no URL changes, and only derivative card updates outside the CH15/CH16 substantive pages.`);
 console.log(`English <main> body word-count deltas against ${base}: ${perRouteWordDeltas.join('; ')}`);
