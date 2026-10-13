@@ -788,6 +788,13 @@ const usaLosAngelesRoutes = [
   '/usa/los-angeles/hollywood-griffith/',
   '/usa/los-angeles/santa-monica-venice/'
 ];
+const usaSanDiegoLastmod = '2026-10-13';
+const usaSanDiegoRoutes = [
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1222,6 +1229,11 @@ for (const route of usaLosAngelesRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Los Angeles route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaLosAngelesLastmod });
+}
+for (const route of usaSanDiegoRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited San Diego route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaSanDiegoLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

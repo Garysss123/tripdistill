@@ -36,8 +36,14 @@ const laterLosAngelesRoutes = [
   '/usa/los-angeles/hollywood-griffith/',
   '/usa/los-angeles/santa-monica-venice/'
 ];
+const laterSanDiegoRoutes = [
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+];
 const routes = [...floridaRoutes, ...chicagoRoutes];
-const scopedRoutes = [...routes, ...laterNewEnglandRoutes, ...laterArizonaRoutes, ...laterLosAngelesRoutes];
+const scopedRoutes = [...routes, ...laterNewEnglandRoutes, ...laterArizonaRoutes, ...laterLosAngelesRoutes, ...laterSanDiegoRoutes];
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -107,7 +113,12 @@ for (const relativePath of basePaths) {
   if (targetSet.has(relativePath)) {
     assert.notEqual(after, before, `${relativePath} must have a substantive body change`);
     assert.equal(articleDate(afterHtml), '2026-10-13', `${relativePath} Article dateModified`);
-    assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
+    if (laterSanDiegoRoutes.some((route) => htmlPath(route) === relativePath)) {
+      assert.match(afterHtml, /data-editorial-revision="san-diego-20261013"/, `${relativePath} San Diego revision marker`);
+      assert.match(afterHtml, /Official access and transit pages were checked on 13 October 2026\./, `${relativePath} dated source note`);
+    } else {
+      assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
+    }
   }
 }
 for (const route of floridaRoutes) {
@@ -127,7 +138,12 @@ for (const route of laterLosAngelesRoutes) {
   assert.equal(normalizedMain(gitShow(exactBase, relativePath)), normalizedMain(gitShow(september, relativePath)),
     `${relativePath} must match its 11 September source body at the exact Los Angeles task base`);
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four Florida, four Chicago, four later New England, four Arizona and four later Los Angeles English U.S. bodies changed');
+for (const route of laterSanDiegoRoutes) {
+  const relativePath = htmlPath(route);
+  const exactBase = 'b7d32c7e1585d5af3cf3d4291dd323e5d2da30eb';
+  assert.equal(normalizedMain(gitShow(exactBase, relativePath)), normalizedMain(gitShow(september, relativePath)), `${relativePath} must match its 11 September source body at the exact San Diego task base`);
+}
+assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the selected Florida, Chicago, New England, Arizona, Los Angeles and San Diego English U.S. bodies changed');
 assert.equal(normalizedMain(fs.readFileSync(path.join(root, newYorkAcceptancePath), 'utf8')),
   normalizedMain(gitShow(base, newYorkAcceptancePath)), 'New York acceptance sample body remains unchanged');
 
@@ -149,7 +165,7 @@ assert.equal(newSearch.length, 955, 'English search record count remains 955');
 const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()].filter((url) => JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...scopedRoutes].sort(), 'only the Florida, Chicago, later New England, Arizona and Los Angeles target English search summaries changed');
+assert.deepEqual(changedSearch, [...scopedRoutes].sort(), 'only the Florida, Chicago, New England, Arizona, Los Angeles and San Diego target English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -165,7 +181,7 @@ const newDates = new Map(newSitemap);
 assert.deepEqual([...newDates.keys()].sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
 const expectedDatedUrls = scopedRoutes.flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
 const changedDates = [...newDates.keys()].filter((url) => oldDates.get(url) !== newDates.get(url)).sort();
-assert.deepEqual(changedDates, expectedDatedUrls, 'only the scoped Florida, Chicago, New England, Arizona and Los Angeles routes x five editions have changed sitemap dates');
+assert.deepEqual(changedDates, expectedDatedUrls, 'only the scoped Florida, Chicago, New England, Arizona, Los Angeles and San Diego routes x five editions have changed sitemap dates');
 for (const url of expectedDatedUrls) assert.equal(newDates.get(url), '2026-10-13', `${url} lastmod`);
 
 for (const route of scopedRoutes) {
@@ -183,4 +199,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of scopedRoutes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source refresh regression passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago, ${laterNewEnglandRoutes.length} New England, ${laterArizonaRoutes.length} Arizona and ${laterLosAngelesRoutes.length} Los Angeles bodies; ${scopedRoutes.length} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source refresh regression passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago, ${laterNewEnglandRoutes.length} New England, ${laterArizonaRoutes.length} Arizona, ${laterLosAngelesRoutes.length} Los Angeles and ${laterSanDiegoRoutes.length} San Diego bodies; ${scopedRoutes.length} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
