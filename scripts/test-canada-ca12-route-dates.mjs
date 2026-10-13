@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { currentBranchVietnamRoutes, followingVietnamMekongRoutes, followingVietnamDaLatRoutes, followingVietnamMuiNeRoutes, followingVietnamPhongNhaRoutes, followingVietnamNhaTrangRoutes } from './integration-sprint-scope.mjs';
+import { currentBranchVietnamRoutes, followingVietnamMekongRoutes, followingVietnamDaLatRoutes, followingVietnamMuiNeRoutes, followingVietnamPhongNhaRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
@@ -62,6 +62,7 @@ const checkpointContinuationRoutes = [
   ...followingVietnamMuiNeRoutes,
   ...followingVietnamPhongNhaRoutes,
   ...followingVietnamNhaTrangRoutes,
+  ...followingVietnamAfterNhaTrangRoutes,
   '/vietnam/phu-quoc-southern-islands/',
   '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
   '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
@@ -126,7 +127,7 @@ for (const route of locales.flatMap((locale) => routes.map((target) => locale + 
 for (const route of expectedLaterDateChanges) {
   const pathname = new URL(`https://tripdistill.com${route}`).pathname;
   const englishPath = pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '');
-  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamNhaTrangRoutes, '/vietnam/phu-quoc-southern-islands/', '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/', '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/', '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'].includes(englishPath) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, '/vietnam/phu-quoc-southern-islands/', '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/', '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/', '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'].includes(englishPath) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must match its reviewed batch.`);
 }
 

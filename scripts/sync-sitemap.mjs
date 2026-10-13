@@ -150,6 +150,13 @@ const vietnamPhuQuocEditedHubRoutes = ['/vietnam/phu-quoc-southern-islands/'];
 const vietnamNhaTrangLastmod = '2026-10-13';
 const vietnamNhaTrangEditedRoutes = vietnamGuides.filter((guide) => guide.hubSlug === 'nha-trang-khanh-hoa' && guide.isoDate === vietnamNhaTrangLastmod).map((guide) => guide.url);
 const vietnamNhaTrangEditedHubRoutes = ['/vietnam/nha-trang-khanh-hoa/'];
+const vietnamAfterNhaTrangLastmod = '2026-10-13';
+const vietnamAfterNhaTrangEditedRoutes = [
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+];
 const australiaLastmod = '2026-09-04';
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
@@ -1551,6 +1558,12 @@ for (const route of vietnamNhaTrangEditedHubRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Nha Trang field hub absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamNhaTrangLastmod });
+}
+
+for (const route of vietnamAfterNhaTrangEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited post-Nha Trang Vietnam route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamAfterNhaTrangLastmod });
 }
 
 for (const route of australiaGreatOceanEditedRoutes) {

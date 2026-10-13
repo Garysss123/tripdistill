@@ -16,6 +16,7 @@ import {
   followingVietnamPhongNhaRoutes,
   followingVietnamPhuQuocRoutes,
   followingVietnamNhaTrangRoutes,
+  followingVietnamAfterNhaTrangRoutes,
   integrationSprintBaseline,
   localizedSourceBranchSitemapRoutes
 } from './integration-sprint-scope.mjs';
@@ -43,8 +44,9 @@ const changedFiles = git([
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.equal(new Set([...integrationRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes]).size, integrationRoutes.length + currentBranchVietnamRoutes.length + followingVietnamMekongRoutes.length + followingVietnamDaLatRoutes.length + followingVietnamMuiNeRoutes.length + followingVietnamPhongNhaRoutes.length + followingVietnamPhuQuocRoutes.length + followingVietnamNhaTrangRoutes.length, 'branch-specific Vietnam routes must remain separate from the integrated route set');
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes]), 'only integrated routes and the explicit HCMC, Mekong, Da Lat, Mui Ne, Phong Nha, Phu Quoc and Nha Trang source-branch bodies may change');
+const sourceBranchRoutes = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes];
+assert.equal(new Set([...integrationRoutes, ...sourceBranchRoutes]).size, integrationRoutes.length + sourceBranchRoutes.length, 'branch-specific Vietnam routes must remain separate from the integrated route set');
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...sourceBranchRoutes]), 'only integrated routes and the explicit HCMC, Mekong, Da Lat, Mui Ne, Phong Nha, Phu Quoc, Nha Trang, Dray Nur/Yok Don and Ha Long/Cat Ba source-branch bodies may change');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -61,15 +63,15 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedSourceBranchSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1440);
+assert.equal(changedSitemapUrls.length, 1460);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the integrated dates and this source branch’s 108 HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang edition dates may change'
+  'only the integrated dates and this source branch’s 112 HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang/Dray Nur/Yok Don/Ha Long/Cat Ba edition dates may change'
 );
 for (const url of changedSitemapUrls) {
   const pathname = new URL(url).pathname;
-  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes].some((route) => pathname.endsWith(route)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = sourceBranchRoutes.some((route) => pathname.endsWith(route)) ? '2026-10-13' : '2026-10-12';
   assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
 }
 
@@ -84,7 +86,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 245);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes]), 'only the exact integrated, Mui Ne, Phong Nha, Phu Quoc and Nha Trang English search records changed');
+assert.equal(changedSearchRoutes.length, 249);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes]), 'only the exact integrated, Mui Ne, Phong Nha, Phu Quoc, Nha Trang and Da Lat/Ha Long/Cat Ba English search records changed');
 
-console.log('Integration scope regression passed: 261 integrated English bodies plus twenty-eight explicit source-branch HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang bodies, 1,440 date changes across 288 routes × five editions, 245 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 261 integrated English bodies plus thirty-two explicit source-branch Vietnam bodies, 1,460 date changes across 292 routes × five editions, 249 English search changes, and the unchanged 4,560-URL set.');

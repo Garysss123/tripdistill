@@ -16,6 +16,12 @@ const routes = [
   '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ];
+const afterNhaTrangRoutes = [
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -115,7 +121,7 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedEnglishVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Nha Trang route bodies may change under vietnam/.');
+assert.deepEqual(changedEnglishVietnamFiles, [...routes, ...afterNhaTrangRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected Nha Trang and four post-Nha-Trang English route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -128,14 +134,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...afterNhaTrangRoutes].sort(), 'Only the four matching Nha Trang and four post-Nha-Trang English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...afterNhaTrangRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -218,19 +224,20 @@ for (const route of previousRefresh) {
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
-assert.equal(ledger.sourceBaseCommit, baselineCommit);
-assert.equal(ledger.totals.englishRoutes, 99);
-assert.equal(ledger.totals.previousSubstantiveRoutes, 71);
-assert.equal(ledger.totals.previousSprintNewSubstantiveRoutes, 4);
-assert.equal(ledger.totals.newSubstantiveRoutes, 4);
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 79);
-assert.equal(ledger.totals.remainingRoutes, 20);
-assert.deepEqual(ledger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
-assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phu-quoc-southern-islands/'));
-assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'));
-assert.equal(ledger.remainingRoutesAfterSprint.length, 20);
-assert.deepEqual(ledger.remainingRoutesAfterSprint, [...ledger.remainingRoutesAfterSprint].sort());
+const previousSprint = ledger.previousActiveSprint;
+assert.equal(previousSprint.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
+assert.equal(previousSprint.sourceBaseCommit, baselineCommit);
+assert.equal(previousSprint.totals.englishRoutes, 99);
+assert.equal(previousSprint.totals.previousSubstantiveRoutes, 71);
+assert.equal(previousSprint.totals.previousSprintNewSubstantiveRoutes, 4);
+assert.equal(previousSprint.totals.newSubstantiveRoutes, 4);
+assert.equal(previousSprint.totals.afterSprintSubstantiveRoutes, 79);
+assert.equal(previousSprint.totals.remainingRoutes, 20);
+assert.deepEqual(previousSprint.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
+assert(previousSprint.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phu-quoc-southern-islands/'));
+assert(previousSprint.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'));
+assert.equal(previousSprint.remainingRoutesAfterSprint.length, 20);
+assert.deepEqual(previousSprint.remainingRoutesAfterSprint, [...previousSprint.remainingRoutesAfterSprint].sort());
 assert.equal(ledger.previousTopLevelSprint.branch, 'codex/sprint-vn-after-phong-nha-20261013');
 assert.equal(ledger.previousTopLevelSprint.sourceBaseCommit, '01144e03bf6173f468cb836d0899163e1a98c4ea');
 assert.equal(ledger.previousTopLevelSprint.totals.afterSprintSubstantiveRoutes, 75);

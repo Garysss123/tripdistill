@@ -46,6 +46,12 @@ const followingNhaTrangRoutes = [
   '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ];
+const afterNhaTrangRoutes = [
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -150,7 +156,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Da Lat, four preceding Mekong, four Mui Ne, four Phong Nha, four Phu Quoc and four Nha Trang English Vietnam paths may change.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes, ...afterNhaTrangRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Da Lat, four preceding Mekong, four Mui Ne, four Phong Nha, four Phu Quoc and four Nha Trang English Vietnam paths may change.');
 
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -164,9 +170,9 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, [...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes].sort(), 'Only the four following Mui Ne, four Phong Nha, four Phu Quoc and four Nha Trang English summaries may change.');
+assert.deepEqual(changedSearchRoutes, [...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes, ...afterNhaTrangRoutes].sort(), 'Only the later Mui Ne, Phong Nha, Phu Quoc, Nha Trang and post-Nha-Trang English summaries may change.');
 
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes, ...followingPhongNhaRoutes, ...followingPhuQuocRoutes, ...followingNhaTrangRoutes, ...afterNhaTrangRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
