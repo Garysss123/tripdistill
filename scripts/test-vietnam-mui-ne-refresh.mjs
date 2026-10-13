@@ -5,7 +5,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postIntegrationPhongNhaRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '1c54448e4548004d6d012fd12682c33d69fbd25f';
@@ -125,7 +125,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, [...routes, ...postIntegrationPhongNhaRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact Mui Ne and following Phong Nha English Vietnam route bodies may change under vietnam/.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact Mui Ne, following Phong Nha and Phu Quoc English Vietnam route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -138,7 +138,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => url.includes('/vietnam/') && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...postIntegrationPhongNhaRoutes].sort(), 'Only the exact Mui Ne and Phong Nha search summaries changed after this source base.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes].sort(), 'Only the exact Mui Ne, Phong Nha and Phu Quoc search summaries changed after this source base.');
 const terminalSearchByUrl = byUrl(JSON.parse(readAt(sourceTerminal, 'data/search-index.json')));
 for (const route of routes) {
   assert.equal(fs.readFileSync(fileForRoute(route), 'utf8'), readAt(sourceTerminal, `${route.slice(1)}index.html`), `${route}: integrated English body matches exact Mui Ne source terminal.`);
@@ -150,11 +150,11 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...postIntegrationPhongNhaRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => url.includes('/vietnam/') && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes].some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the exact Mui Ne and Phong Nha route groups in five editions changed dates after this source base.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the exact Mui Ne, Phong Nha and Phu Quoc route groups in five editions changed dates after this source base.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
 
 for (const route of routes) {

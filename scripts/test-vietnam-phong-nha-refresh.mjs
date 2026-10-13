@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationPhuQuocRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = 'cc6de926e49c81324d09cb02590366fefbd8a4eb';
@@ -124,7 +125,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Phong Nha route bodies may change under vietnam/.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...postIntegrationPhuQuocRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Phong Nha and four following Phu Quoc route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -137,6 +138,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
+assert.deepEqual(changedSearchRoutes.filter((route) => route.startsWith('/vietnam/')), [...routes, ...postIntegrationPhuQuocRoutes].sort(), 'Only the four Phong Nha and four following Phu Quoc Vietnam search records may change after this source base.');
 const sourceSearch = JSON.parse(readAt(sourceTerminal, 'data/search-index.json'));
 const sourceBaseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const sourceSearchByUrl = byUrl(sourceSearch);

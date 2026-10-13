@@ -341,6 +341,13 @@ export const australiaFinalContentNewSubstantiveRoutes = Object.freeze([
   '/australia/tasmania/port-arthur-tasman-peninsula/'
 ]);
 
+export const vietnamPhuQuocNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -380,5 +387,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Broome & Tasmania', count: 845 }),
   Object.freeze({ label: '26-route historical coverage correction', count: 871 }),
   Object.freeze({ label: 'USA overview and Juneau historical correction', count: 873 }),
-  Object.freeze({ label: 'Australia final-content batch', count: 878 })
+  Object.freeze({ label: 'Australia final-content batch', count: 878 }),
+  Object.freeze({ label: 'Phu Quoc', count: 882 })
 ]);

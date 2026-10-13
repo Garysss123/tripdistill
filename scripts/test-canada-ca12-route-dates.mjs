@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postAustraliaFinalRoutes, postBostonOverviewJuneauRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, postAustraliaFinalRoutes, postBostonOverviewJuneauRoutes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
@@ -95,6 +95,7 @@ const checkpointContinuationRoutes = [
   ...postIntegrationBroomeTasmaniaRoutes,
   ...postIntegrationMuiNeRoutes,
   ...postIntegrationPhongNhaRoutes,
+  ...postIntegrationPhuQuocRoutes,
   ...postAustraliaFinalRoutes
 ];
 assert.equal(cluster.guides.length, 3);
@@ -151,10 +152,10 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Australia, CH14–CH16, Vietnam through Da Lat, Hawaii, New Orleans, Atlanta, Florida, Chicago, New England and Arizona routes may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Australia, CH14–CH16, Vietnam through Phu Quoc, Hawaii, New Orleans, Atlanta, Florida, Chicago, New England and Arizona routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must be current.`);
 }
 

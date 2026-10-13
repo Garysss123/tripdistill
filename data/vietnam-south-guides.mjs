@@ -5,6 +5,16 @@ const muiNeSources = [
   ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — inland, marine and hazard bulletins (checked 13 October 2026)']
 ];
 
+const phuQuocSources = [
+  ['https://vietnam.travel/places-to-go/mekong-delta/phu-quoc', 'Vietnam Tourism — Phu Quoc season and arrival overview (checked 13 October 2026)'],
+  ['https://vietnam.travel/things-to-do/phu-quoc-nature', 'Vietnam Tourism — Phu Quoc nature, Ham Ninh and An Thoi context (checked 13 October 2026)'],
+  ['https://phuquocexpress.com/en/calendar', 'Phu Quoc Express — dated ferry calendar and operating notices (checked 13 October 2026)'],
+  ['https://phuquocexpress.com/en/ha-tien-phu-quoc-train-schedule-2024', 'Phu Quoc Express — Ha Tien–Phu Quoc October 2026 schedule details (checked 13 October 2026)'],
+  ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — Gulf of Thailand marine bulletin, 13 October 2026 (dated regional snapshot)'],
+  ['https://vqgpq.angiang.gov.vn/tong-quan-vuon-quoc-gia-phu-quoc', 'Phu Quoc National Park — official overview; current visitor access not stated (checked 13 October 2026)'],
+  ['https://www.unesco.org/en/mab/kien-giang?hub=66369', 'UNESCO — Kien Giang Biosphere Reserve context (checked 13 October 2026)']
+];
+
 export const vietnamSouthClusters = [
   defineVietnamCluster({
     slug: 'mui-ne-binh-thuan',
@@ -886,15 +896,33 @@ export const vietnamSouthClusters = [
     family: 'island-tide',
     label: 'Island South',
     tagline: 'A tide-led island atlas where reef, forest, fishing and protected shores set the pace.',
-    hubIntro: 'Phu Quoc is not one beach. Dương Đông and Long Beach, the An Thới archipelago, Gành Dầu and Bãi Thơm, Phú Quốc National Park, Hàm Ninh and the separate Côn Đảo archipelago each demand different transport, weather and conservation choices. Use this hub to match a shore or island to the season and the kind of care it requires.',
-    stay: 'Base in Dương Đông or the south only when that matches the day’s piers; choose the north or east side for forest and fishing chapters, and give Côn Đảo its own stay.',
-    transfer: 'Use the island airport or verified mainland ferry connection for Phu Quoc, then treat every boat, reef outing and Côn Đảo crossing as a weather-dependent transfer.',
+    isoDate: '2026-10-13',
+    reviewDate: '13 October 2026',
+    hubCss: '/css/vietnam-phu-quoc.css?v=20261013-1',
+    hubIntro: 'Phu Quoc is a connected island with separate west-town, south-boat and east-village days. First choose two, three or four nights and the actual arrival: Phu Quoc International Airport, or a dated mainland ferry to Bai Vong from Ha Tien or Rach Gia. Vietnam Tourism describes November–April as drier and May–October as the wetter, rougher-sea season; that broad pattern is context, not a forecast for your date. Dương Đông and Long Beach, An Thới, Hàm Ninh, the forest and the separate Côn Đảo archipelago each demand a different last mile and access check.',
+    stay: 'Use Dương Đông as one base when the west coast, food and a flexible island pickup are your priorities. Choose a southern bed only after your exact boat operator confirms its departure point and return transfer. An east or north base fits that side’s purpose only when lodging, road pickup, food and return are verified; it can add a long cross-island leg. Two nights give one usable day, three nights allow two separate outings, and four nights protect a weather reserve. Splitting beds trades location for extra checkout and road transfers.',
+    transfer: 'For an arrival by air, confirm the road pickup from Phu Quoc International Airport to the named accommodation. For a mainland ferry, use the exact-date Phu Quoc Express calendar, match the issued ticket to Ha Tien or Rach Gia and Bai Vong, arrive at the port 45 minutes early as the operator directs, then pre-arrange a separate road pickup from Bai Vong. The operator warns schedules can change with weather and operations. No island bus, taxi fare, drive time, An Thoi pier, tour pickup, public beach gate or same-day flight connection is promised here; confirm each leg with the responsible provider before paying.',
+    nightPlan: {
+      kicker: 'Nights, bases and weather slack',
+      title: 'Count full days after the ferry or flight',
+      intro: 'An arrival and departure day are transfer days. Choose one base first, then assign one purpose to each full day. Keep boat plans conditional on the forecast and operator decision.',
+      options: [
+        ['2 nights', 'One base, one outing', 'Stay in Dương Đông if its actual road pickup and your west-coast plan fit. Use the one full day for a verified public west-shore visit, or replace it with a confirmed mainland arrival-and-rest plan. Do not squeeze An Thoi or Ham Ninh between the arrival and departure legs.'],
+        ['3 nights', 'Separate west and south days', 'Keep the same bed for both full days. Use one for a daytime Dương Đông/Long Beach plan with access confirmed; use the other for an An Thoi boat only if the operator, named departure point, route, return and travel-date sea decision are all clear. A cancelled or unclear boat becomes a town day or a reschedule, not a search for an unverified replacement.'],
+        ['4 nights', 'Add an unbooked weather day', 'Three full days can hold two separate outings plus one reserve. A third outing to Ham Ninh or forest should be chosen only after its current public access and road return are confirmed. Move the boat into the reserve only after the operator re-confirms it; never route around a closure or unanswered access question.']
+      ],
+      footerTitle: 'Split the stay only to solve a verified transfer',
+      footer: 'A south-side room is useful only when the real boat departure and ride back are confirmed. An east-side overnight is useful only when the village visit has a clear public welcome and a safe road return. Otherwise keep one Dương Đông base and accept the extra drive only after a driver confirms it both ways. Côn Đảo is a separate island trip with its own transport and nights, not a Phu Quoc day trip.'
+    },
+    routeModelHeading: 'Keep the island branches on different days.',
+    routeModelLead: 'Arrival → confirmed base → one verified local shore or town day. An Thoi needs its own full sea day and a named operator pickup; Ham Ninh needs a separately confirmed road and public approach. Add a reserve between the boat plan and any fixed departure. When access or a closure is unknown, do not test another gate, pier, island or operator; return to the confirmed base or reschedule.',
     sources: [
-      ['https://www.vietnam.travel/places-to-go/southern-vietnam/phu-quoc', 'Vietnam Tourism — Phu Quoc'],
-      ['https://vietnam.travel/things-to-do/phu-quoc-nature', 'Vietnam Tourism — Phu Quoc for Nature Lovers'],
-      ['https://www.unesco.org/en/mab/kien-giang?hub=66369', 'UNESCO — Kien Giang Biosphere Reserve'],
-      ['https://vqgpq.angiang.gov.vn/tong-quan-vuon-quoc-gia-phu-quoc', 'Phu Quoc National Park — Official overview'],
-      ['https://www.condaopark.com.vn/en/', 'Con Dao National Park — Official visitor information']
+      ...phuQuocSources,
+      ['https://www.condaopark.com.vn/en/', 'Con Dao National Park — separate archipelago visitor information']
+    ],
+    sources: [
+      ...phuQuocSources,
+      ['https://www.condaopark.com.vn/en/', 'Con Dao National Park — separate archipelago visitor information']
     ],
     guides: [
       {
@@ -902,6 +930,9 @@ export const vietnamSouthClusters = [
         name: 'Duong Dong & Long Beach Sunset Coast',
         motif: 'west-shore arrival ribbon',
         instrument: 'ribbon',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [phuQuocSources[0], phuQuocSources[2], phuQuocSources[3], phuQuocSources[4]],
         image: image({
           src: '/assets/images/vietnam-phu-quoc-long-beach.webp',
           alt: 'Sunset over Long Beach on Phu Quoc Island',
@@ -910,32 +941,35 @@ export const vietnamSouthClusters = [
           creator: 'Alexey Komarov',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'A practical west-coast arrival chapter linking Dương Đông, Long Beach, the harbor edge and sunset without assuming every resort frontage is public.',
-        lead: 'The west coast is Phu Quoc’s easiest starting point, but it combines a working town, a long resort shoreline and heavy sunset demand. A good route distinguishes public access, hotel facilities, fishing activity and safe swimming.',
-        orientation: 'Choose a town, food or sunset question first. The island’s western road can look close on a map while traffic, construction and beach access add time.',
-        arrival: 'Use the airport or ferry transfer to a named town base, then confirm the public beach entry and return route before dusk.',
-        sequence: 'Dương Đông market, harbor reading, one public shore and a low-pressure sunset finish make the arrival chapter useful.',
-        boundary: 'Do not cross resort barriers, photograph working fishers without consent or swim outside a current designated safe area.',
+        summary: 'Build a first west-coast day around the confirmed airport or Bai Vong arrival, a named Dương Đông base and a verified public shore entry; resort frontage does not establish public access.',
+        lead: 'Dương Đông is a practical first base, not proof that the whole western strand is open to walk-in visitors. Treat the town, harbor and resort-backed beach as different places with different access rules. Use the arrival day to settle into a named bed, learn the road pickup plan and find an explicitly public, currently open entry before planning a beach walk. Vietnam Tourism gives seasonal context, but neither a broad tourism page nor a hotel view establishes today’s gate, public path, swimming supervision or sunset return.',
+        orientation: 'Choose one low-pressure question—town food, a public waterfront or a verified beach visit—and keep the rest optional. The airport and Bai Vong ferry port are separate arrival points, and each needs a confirmed road transfer to your lodging. A western map pin does not prove a continuous public path or a safe walk between properties. Leave daylight and pickup margin for traffic, rain and the return from the shore.',
+        arrival: 'Before departure, write down your flight terminal or ferry port, lodging address, pickup contact and agreed arrival handoff. Phu Quoc Express lists Bai Vong for its mainland ferries and directs passengers to arrive 45 minutes before the scheduled sailing; its calendar is dated and can change with weather and operations. From Bai Vong, arrange a separate road ride to Dương Đông. Confirm Long Beach’s exact public entry and exit with a current responsible local source; if the answer is unclear, keep the outing in town and do not enter a resort or closed access lane.',
+        sequence: 'Airport or Bai Vong → pre-arranged road pickup → Dương Đông base → market or harbor only from public edges → one locally confirmed public shore entrance → return by the pickup agreed before dusk. If any access point is not confirmed, shorten the day to town rather than trying a neighboring resort gate.',
+        boundary: 'A beach visible from a resort is not proof of public access. Do not pass a gate, barrier or “private” sign; do not treat a hotel service or beach chair as available to non-guests. Do not photograph working fishers without consent, or enter water unless local authorities or a lifeguard identify the place as currently safe for swimming.',
         stages: [
-          ['Settle', 'Use the town to exchange money, buy essentials and understand the day’s road or taxi options.'],
-          ['Harbor', 'Read fishing boats and waterfront commerce from public edges without blocking loading work.'],
-          ['Shore', 'Choose a legal beach access and check surf, flags and lifeguard coverage before entering the water.'],
-          ['Sunset', 'Leave a clear road or walking plan for the return; sunset crowds can slow every pickup.']
+          ['Arrive and anchor', 'Confirm the actual airport or Bai Vong pickup, lodging address, payment arrangement and return contact before leaving the terminal. Do not assume a ferry port taxi queue or a hotel transfer will be available without an agreement.'],
+          ['Read the town', 'Use Dương Đông market or the harbor only from public visitor edges. Ask before photographing fishers, leave loading lanes clear and use the stop to settle food, water and the next day’s verified road option.'],
+          ['Choose one shore', 'Ask a current local authority or host to identify the public Long Beach entrance, exit and any closed stretch. If they cannot name it, skip the beach frontage. A resort hotel’s access, facilities and lifeguard service do not transfer to public visitors.'],
+          ['Return before dark', 'Agree your pickup point before walking, check rain and sea conditions locally and leave time for sunset traffic. If the route back or safe swimming status is unresolved, return to town on the confirmed ride and finish there.']
         ],
         risks: [
-          ['Access ambiguity', 'A beach beside a resort is not necessarily a public facility with open services.'],
-          ['Sea conditions', 'Calm-looking water can still contain currents, rocks or boat traffic.'],
-          ['Evening congestion', 'West-coast roads and popular viewing spots fill quickly at sunset.']
+          ['Public entry', 'No specific Long Beach public gate, continuous public path, opening time or lifeguard service was verified on 13 October 2026. Confirm it on the visit date; never cross a resort barrier to find the shore.'],
+          ['Water and weather', 'No site-level swim flag, current or surf report was verified. A calm view is not a safety signal; use the local authority or lifeguard decision and stay out when it is absent or unclear.'],
+          ['Arrival and evening return', 'The airport and Bai Vong port are separate road arrivals, and sunset traffic can affect pickup. Save the exact contact, pickup point and return before you leave the town base.']
         ],
-        duration: 'Use a half day or first evening; extend only when the town and beach each have a clear purpose.',
-        combine: 'It pairs with a fish-sauce or market chapter, while An Thoi needs a separate full marine day.',
-        verify: 'Check airport or ferry arrival, current beach access, swim flags, sunset weather, road traffic and return transport.'
+        duration: 'Treat arrival day as a transfer day. With two nights, use one full day for either the town/market or a beach only after its public entrance and return are confirmed; with three or four nights, keep the sunset coast as a separate short outing instead of joining it to a late ferry arrival.',
+        combine: 'The market and public harbor edge can fit around the same west-coast base if both remain open and public. An Thoi is a separate full boat day, and Ham Ninh is a separate east-road outing. Do not place either between a ferry arrival and a fixed departure.',
+        verify: 'Check the issued arrival ticket and exact port, the separate road pickup, the public Long Beach entrance and exit, signs or closure notices, water safety/lifeguard status, same-day rain and sea conditions, sunset traffic, and a confirmed return contact. If an access or safety answer is missing, stay in town.'
       },
       {
         slug: 'an-thoi-marine-park',
         name: 'An Thoi Archipelago Marine Park',
         motif: 'reef-permit chart',
         instrument: 'chart',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [phuQuocSources[1], phuQuocSources[2], phuQuocSources[4], phuQuocSources[6]],
         image: image({
           src: '/assets/images/vietnam-phu-quoc-an-thoi.webp',
           alt: 'An Thoi Archipelago islands south of Phu Quoc',
@@ -944,26 +978,26 @@ export const vietnamSouthClusters = [
           creator: 'Tuderna',
           license: 'CC BY 3.0'
         }),
-        summary: 'Plan An Thoi as a marine-protection day with an authorized operator, reef-safe behavior and a realistic sea-state fallback.',
-        lead: 'The islands south of Phu Quoc are beautiful because reef, seagrass and fishing systems remain connected. A snorkeling itinerary should therefore begin with park and operator conduct, not a promise of a particular coral patch or starfish beach.',
-        orientation: 'Choose a small, conservation-minded program and understand which islands, reefs and landing beaches it actually visits. A cable car, speedboat and snorkeling tour solve different problems.',
-        arrival: 'Reach the current An Thoi departure point with a confirmed operator, passenger list, life jacket and weather plan. Do not assume a mainland ticket guarantees a marine-park route.',
-        sequence: 'Briefing, open-water transfer, one reef focus, low-impact landing and early return make the chapter manageable.',
-        boundary: 'Never stand on coral, touch wildlife, collect shells or handle starfish for a photograph. Leave the reef exactly as you found it.',
+        summary: 'Keep An Thoi as a conditional full sea day: verify the named pier, boat operator, exact reef and landing, access authority, flotation, cancellation terms and return; the “Marine Park” page title does not confirm a legal boundary or permit.',
+        lead: 'The An Thoi islands sit within a wider Kien Giang biosphere and marine-conservation story, but broad reserve information does not tell a visitor which reef, beach or islet is legally designated, open to landing or covered by a particular tour permit. Treat “marine park” in a package name as marketing until the responsible authority confirms the actual place and operator authorization. An island day begins with the specific departure point and return, then the sea decision; a cable-car ticket, a speedboat and a snorkeling tour are separate products, not interchangeable transfer legs.',
+        orientation: 'Ask the named operator to identify every intended reef and landing in writing, who is legally responsible for the boat, what permits or site rules apply, and what happens if weather cancels the trip. Check whether the departure is actually in An Thoi and where the road pickup meets you; do not assume a resort pickup, cable-car terminal or a ticket seller is the boat pier. If the route, authority or cancellation answer is vague, choose a land day. No specific site boundary or access authorization was verifiable on 13 October 2026.',
+        arrival: 'Start from your confirmed base and book a separate dated road ride to the operator’s named meeting point. Match the passenger list, ticket, boat name/contact and return arrangements before leaving. At the briefing, confirm suitable flotation, crew instructions, the exact reef/landing route, no-touch rules and the operator’s same-day go/no-go; the boat captain and relevant authority control operating decisions. A mainland ferry ticket, cable-car booking or a seller’s “park” label does not establish boat access, reef permits or a safe sea crossing.',
+        sequence: 'Dương Đông or confirmed south-side bed → dated road pickup → named operator meeting point → briefing and sea decision → only the verified reef or landing → same operator back to the agreed pickup. Keep the whole day open and leave a separate buffer before a flight or mainland ferry. If the operator cancels, return to the confirmed base or reschedule; do not hunt for another pier, boat or island with unverified access.',
+        boundary: 'Never stand on coral, touch or chase wildlife, collect shells or handle starfish for a photograph. Do not enter an island, reef or landing without the responsible authority’s permission. A UNESCO biosphere reference describes a large regional designation; it does not prove that a tour’s individual stop is open, licensed or outside a stricter protected zone.',
         stages: [
-          ['Brief', 'Confirm route, flotation, reef rules, weather cancellation and who is responsible for the boat.'],
-          ['Cross', 'Stay seated, secure dry bags and follow crew direction through wake and open-water movement.'],
-          ['Float', 'Use neutral buoyancy, keep fins clear of coral and observe without chasing marine life.'],
-          ['Return', 'Rinse gear where allowed, remove all waste and keep a shore-side backup if the sea turns rough.']
+          ['Confirm the contract', 'Read the named operator, boat and actual meet point, route, landing, flotation, passenger limit, permits/authority contact, cancellation/refund terms and a working shore contact. If these cannot be answered, do not board.'],
+          ['Take the sea decision', 'Use the operator’s and captain’s current go/no-go after the dated marine forecast is checked. The 13 October 2026 Gulf of Thailand bulletin is a historical regional snapshot only; its showers, storms and wave notes are not a forecast for your later visit or for one reef.'],
+          ['Observe without contact', 'Stay with the crew, use suitable flotation and neutral buoyancy, keep fins off coral and leave wildlife alone. Do not step onto a reef or beach unless the responsible authority and operator confirm that landing is permitted.'],
+          ['Return with margin', 'Take all waste back, confirm the boat reaches the same named meeting point and keep a road pickup to your base. Do not connect this weather-sensitive outing to a same-day ferry or flight. A cancelled trip stays cancelled unless the responsible operator confirms a lawful, safe alternative.']
         ],
         risks: [
-          ['Sea state', 'Wind, rain and swell can cancel or shorten an island route.'],
-          ['Reef injury', 'Standing on coral harms habitat and can injure visitors on sharp or unstable surfaces.'],
-          ['Operator quality', 'A colorful package does not prove legal permits, adequate flotation or conservation practice.']
+          ['Sea state and dated forecast', 'The National Centre’s 13 October 2026 Gulf bulletin was regional and date-limited; it mentioned showers or thunderstorms and higher waves during storms. It cannot decide another day’s or one reef’s safety. Recheck the travel-date bulletin and accept the captain/operator cancellation.'],
+          ['Boundary and landing', 'UNESCO identifies Kien Giang as a biosphere reserve but does not establish each An Thoi excursion’s boundary, public landing or permit. No exact route authorization was confirmed here; do not treat a tour label as proof.'],
+          ['Operator and fallback', 'A package photo does not prove an accountable boat, working flotation, capacity, insurance, site permissions, weather cancellation or a return pickup. If any remain unanswered, keep the day on land rather than trying an unverified substitute.']
         ],
-        duration: 'Reserve a full day with no tightly timed onward flight or ferry connection.',
-        combine: 'A sunset town walk can follow only after a conservative return; do not stack another open-water excursion.',
-        verify: 'Check current marine-park rules, operator credentials, route, weather, tide, equipment and passenger capacity.'
+        duration: 'Reserve a full day plus a separate travel buffer. Do not put a flight, mainland ferry, airport transfer or second boat trip on the same day. Four nights make it possible to leave a genuinely unbooked reserve; they do not guarantee that a cancelled boat can move to a new slot.',
+        combine: 'Only a light meal near the confirmed base can follow an early, completed return. Keep Ham Ninh, forest walks and all other boat routes on separate days. If the trip is cancelled or returns late, take the agreed road back and let the remaining plan move or end.',
+        verify: 'Check the actual trip-date NCHMF marine bulletin, same-day operator/captain go-no-go, route and each reef/landing, permit or responsible authority, named departure and return point, passenger list/capacity, flotation and safety briefing, cancellation/refund terms, road pickup both ways, and a buffer before any fixed ticket. If the legal access or safe return is unknown, do not board or route around the restriction.'
       },
       {
         slug: 'ganh-dau-bai-thom',
@@ -1038,6 +1072,9 @@ export const vietnamSouthClusters = [
         name: 'Ham Ninh Fishing Village & Island Pantry',
         motif: 'east-coast pantry',
         instrument: 'field',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [phuQuocSources[1], phuQuocSources[2], phuQuocSources[4]],
         image: image({
           src: '/assets/images/vietnam-phu-quoc-ham-ninh.webp',
           alt: 'Long public pier extending from Ham Ninh into the coastal water of Phu Quoc',
@@ -1046,26 +1083,26 @@ export const vietnamSouthClusters = [
           creator: 'trungydang',
           license: 'CC BY 3.0'
         }),
-        summary: 'Read Ham Ninh through fishing, seafood, pepper and fish-sauce culture while keeping a clear distinction between a village and a staged seafood stop.',
-        lead: 'Hàm Ninh is an eastern working coast where seafood supply, tides and tourism meet. Its value lies in observing the village’s relationship with the water and buying responsibly, not in handling live animals for a photograph.',
-        orientation: 'Choose a public pier, market or locally run meal and allow the tide to shape the shoreline view. Confirm what is genuinely open before promising a floating restaurant.',
-        arrival: 'Use a safe road connection from Dương Đông or the airport, then park or disembark where local signs permit. Carry cash and a plan for the return.',
-        sequence: 'Village edge, fish landing, market or pantry ingredient and a calm east-coast finish define the field visit.',
-        boundary: 'Ask before photographing fishers, boats and homes; do not enter working piers or touch marine animals without explicit permission.',
+        summary: 'Treat Ham Ninh as a short, daylight working-village visit only after a current road pickup and public approach are confirmed; a pictured pier is not proof that visitors may enter it.',
+        lead: 'Hàm Ninh is an east-coast fishing village where shoreline work, seafood and tourism meet. Vietnam Tourism includes it in Phu Quoc’s nature context, but the available official page does not confirm a visitor pier, public path, opening hours, tide table or particular seafood business. Build the visit around what residents actually welcome: a marked public edge, a meal with a clear price or a conversation with a consenting host. Do not turn a working landing into a viewing platform or assume that a long pier in a photograph is an open attraction.',
+        orientation: 'Before leaving your base, ask a named host or local authority to confirm the exact public approach, current opening/access and a road pickup both ways. The island’s east road, a village parking place and a pier are separate legs; no public bus, taxi price or reliable travel time was verified. A tide can change the shore view and footing, but this review did not confirm a current local tide table or identify a safe pier surface. If access is not explicitly clear, choose a town meal or return to the base rather than entering a work area.',
+        arrival: 'From Dương Đông, the airport or Bai Vong, pre-arrange a road ride to a named, publicly welcomed village entrance and agree the exact return point and time before setting out. Do not use a guessed map pin, unlabeled pier or private driveway as an entrance. Carry only what you need, keep cash as a convenience rather than an assumed requirement, and arrive in daylight. Ask permission before photos; follow signs and resident direction if work, weather or a closure changes the approach.',
+        sequence: 'Confirmed road pickup → named public village edge → observe the shoreline only where residents allow → choose a clearly priced and hygienic meal if a business is open → check the agreed return while there is daylight. Skip the pier and seafood stop if no public invitation or safe access is confirmed; do not walk around a barrier to make the itinerary work.',
+        boundary: 'Hàm Ninh is a living work and home area. Do not enter a working pier, landing site, home, boat or restaurant prep space without explicit permission; do not photograph people or handle live animals without consent. A Vietnam Tourism mention is destination context, not a current operating permit or public-access notice.',
         stages: [
-          ['Approach', 'Reach the village in daylight and read public access before walking toward the pier.'],
-          ['Observe', 'Watch landing and preparation from a respectful distance, leaving work routes open.'],
-          ['Taste', 'Choose a clearly priced, hygienic meal and learn the ingredient story without demanding a performance.'],
-          ['Leave', 'Take waste with you and return before the coastal road becomes dark or rain-soaked.']
+          ['Confirm the approach', 'Have the host or local contact name a public entrance and pickup point before the road ride. The National Park overview is not a village visitor timetable, and the tourism article does not publish a public pier map or hours.'],
+          ['Read the working shore', 'Stay on the signed, permitted edge and leave boat loading, nets, residents and road space clear. Ask before making a photograph and accept “no” without following someone into the work area.'],
+          ['Choose a meal, not a performance', 'If a restaurant is open, check the displayed price and safe food handling, then eat as an ordinary guest. Do not request live-animal posing or assume a particular market, menu or product is available that day.'],
+          ['Return in daylight', 'Check rain, road condition and the pickup time with your driver before you leave the village. There is no verified local tide or pier-safety bulletin here. If the route, weather, access or return is unclear, leave by the agreed road rather than seeking a second pier.']
         ],
         risks: [
-          ['Tide and pier', 'Water level, slippery planks and boat movement can change the safe edge.'],
-          ['Food uncertainty', 'Live seafood, heat and unclear pricing require sensible selection and confirmation.'],
-          ['Community privacy', 'A small fishing village cannot absorb unlimited intrusive photography.']
+          ['Unknown public access', 'No current official source verified a public Ham Ninh pier, opening time, visitor route, local tide table or a right to enter a working landing. Ask for the permitted route; a closure or unanswered question is a reason to stop.'],
+          ['Road, weather and food', 'A road pickup, return and same-day weather plan need direct confirmation. Restaurant opening, menu, hygiene, price and local product availability are not established by a tourism mention.'],
+          ['Privacy and work', 'Homes, boats and unloading are not scenery. Obtain consent before photographing, keep working passages clear and leave when residents indicate the area is closed or busy.']
         ],
-        duration: 'Allow a half day, or build it into an east-coast overnight rather than rushing back after dinner.',
-        combine: 'It can complement the National Park chapter because both use the island’s east side, but keep the food and forest purposes distinct.',
-        verify: 'Check public pier access, tide, weather, restaurant pricing, road conditions and the availability of local products.'
+        duration: 'Allow a daylight half day only after the road ride, public entrance and return are agreed. Do not plan an evening meal at a remote village as a transport assumption. An overnight on the east side makes sense only when lodging, food and a return ride are individually confirmed.',
+        combine: 'A forest or stream visit may also use the island interior or east side, but its park entrance and guide conditions are separate; do not assume the same driver, road or gate serves both. Keep this village visit and a remote trail as different day plans unless the local providers confirm the transfers and hours.',
+        verify: 'Check the exact public entrance and whether the village welcomes visitors that day, any signs/closure, daylight road ride and pickup both directions, current rain and local road advice, whether the selected meal is open with a clear price, photo consent, and a safe return. No pier hours or current tide information is verified here. If access is unknown or denied, do not enter or try another pier.'
       },
       {
         slug: 'con-dao-national-park',
