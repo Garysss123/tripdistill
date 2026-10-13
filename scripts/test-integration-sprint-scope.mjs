@@ -17,6 +17,7 @@ import {
   postFloridaChicagoRoutes,
   postChicagoNewEnglandRoutes,
   postNewEnglandArizonaRoutes,
+  postArizonaLosAngelesRoutes,
   postOctober13Routes,
   localizedIntegrationSitemapRoutes
 } from './integration-sprint-scope.mjs';
@@ -83,6 +84,9 @@ const arizonaHtml = git(['diff', '--name-only', arizonaBase, '--', 'usa/arizona'
 assert.deepEqual(arizonaHtml, postNewEnglandArizonaRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'the source branch adds exactly the four selected Arizona English body paths after the exact New England source base');
 assert.deepEqual(git(['diff', '--name-only', arizonaBase, '--', 'usa/new-england']).toString('utf8').trim(), '', 'the completed New England pages remain unchanged after the exact source base');
 assert.deepEqual(git(['diff', '--name-only', arizonaBase, '--', 'usa/new-york', 'usa/index.html']).toString('utf8').trim(), '', 'New York and the U.S. overview remain unchanged after the exact source base');
+const losAngelesHtml = git(['diff', '--name-only', arizonaBase, '--', 'usa/los-angeles'])
+  .toString('utf8').trim().split('\n').filter((file) => file.endsWith('.html')).sort();
+assert.deepEqual(losAngelesHtml, postArizonaLosAngelesRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'the source branch adds exactly the four selected Los Angeles English body paths after the exact Arizona source base');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -105,11 +109,12 @@ for (const prefix of prefixes) for (const route of postAtlantaFloridaRoutes) exp
 for (const prefix of prefixes) for (const route of postFloridaChicagoRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
 for (const prefix of prefixes) for (const route of postChicagoNewEnglandRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
 for (const prefix of prefixes) for (const route of postNewEnglandArizonaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
-assert.equal(changedSitemapUrls.length, 1420);
+for (const prefix of prefixes) for (const route of postArizonaLosAngelesRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+assert.equal(changedSitemapUrls.length, 1440);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact historical integration and twenty-four scoped U.S. refresh route dates across five editions have updated sitemap dates'
+  'only the exact historical integration and twenty-eight scoped U.S. refresh route dates across five editions have updated sitemap dates'
 );
 for (const url of changedSitemapUrls) {
   const route = new URL(url).pathname;
@@ -138,7 +143,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 253);
+assert.equal(changedSearchRoutes.length, 257);
 assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes]), 'only the exact 225 historical and 28 later source-refresh English search records changed');
 
-console.log('Integration scope regression passed: 262 historical integration English bodies plus 28 scoped U.S. refresh paths, 1,420 date changes over 284 routes × five editions, 253 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 262 historical integration English bodies plus 32 scoped U.S. refresh paths, 1,440 date changes over 288 routes × five editions, 257 English search changes, and the unchanged 4,560-URL set.');

@@ -83,6 +83,9 @@ const newEnglandRefreshRoutes = new Set([
 const arizonaRefreshRoutes = new Set([
  '/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/'
 ]);
+const losAngelesRefreshRoutes = new Set([
+ '/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/'
+]);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
  '/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/',
@@ -98,7 +101,7 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=arizonaRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }
