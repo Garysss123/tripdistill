@@ -473,6 +473,16 @@ export const postLosAngelesSanDiegoRoutes = Object.freeze([
   '/usa/san-diego/la-jolla/'
 ]);
 
+// Australia final-content source batch: the overview plus four Tasmania
+// guides; the Tasmania hub itself remains unchanged at the exact source base.
+export const postAustraliaFinalRoutes = Object.freeze([
+  '/australia/',
+  '/australia/tasmania/cradle-freycinet/',
+  '/australia/tasmania/kunanyi-mount-wellington/',
+  '/australia/tasmania/launceston-tamar-valley/',
+  '/australia/tasmania/port-arthur-tasman-peninsula/'
+]);
+
 // Later source follow-up: both existing bodies and dates changed, but only
 // Juneau's English search summary changed.
 export const postBostonOverviewJuneauRoutes = Object.freeze([
@@ -484,6 +494,7 @@ export const postBostonOverviewJuneauSearchRoutes = Object.freeze([
 ]);
 
 export const postOctober13Routes = Object.freeze([
+  ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
   ...postChicagoNewEnglandRoutes,

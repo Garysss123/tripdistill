@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { postIntegrationBroomeTasmaniaRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
@@ -119,9 +119,10 @@ if (sourceBranch) {
   assert(sourceInHead || sourceInMerge, 'The exact Broome source terminal is in integration history.');
 }
 
-const expectedHtml = [...routes, ...(integrationBranch ? postIntegrationBroomeTasmaniaRoutes : [])].map((route) => `${route.slice(1)}index.html`).sort();
+const integrationFollowups = integrationBranch ? [...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : [];
+const expectedHtml = [...routes, ...integrationFollowups].map((route) => `${route.slice(1)}index.html`).sort();
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four Broome source routes and the separately registered four-route Broome/Tasmania follow-up may change.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four Broome source routes and exact registered integration follow-ups may change.');
 if (sourceBranch) for (const route of untouchedRoutes) git(['diff', '--quiet', base, '--', route]);
 
 for (let index = 0; index < routes.length; index += 1) {
@@ -154,7 +155,7 @@ assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.')
 assert.equal(currentSearch.size, 955, 'Current English search index keeps 955 records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'Search URL set is unchanged.');
 const changedSearch = [...currentSearch.keys()].filter((url) => (sourceBranch || url.startsWith('/australia/')) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...(integrationBranch ? postIntegrationBroomeTasmaniaRoutes : [])].sort(), 'Only the four Broome search records and the separately registered four-route Broome/Tasmania follow-up changed in the relevant scope.');
+assert.deepEqual(changedSearch, [...routes, ...integrationFollowups].sort(), 'Only the four Broome search records and exact registered integration follow-ups changed in the relevant scope.');
 const terminalSearch = searchMap(git(['show', `8baea8a720ebd88ff6834e60235e29c03343c4c4:data/search-index.json`]));
 for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalSearch.get(route), `${route}: integrated search record matches the exact Broome source terminal.`);
 
@@ -163,9 +164,9 @@ const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml')
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const datedRoutes = [...routes, ...(integrationBranch ? postIntegrationBroomeTasmaniaRoutes : [])].flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
+const datedRoutes = [...routes, ...integrationFollowups].flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap.keys()].filter((url) => (sourceBranch || new URL(url, 'https://tripdistill.com').pathname.includes('/australia/')) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
-assert.deepEqual(changedDates, datedRoutes, 'Only four routes × five language editions received new lastmod dates in the relevant source scope.');
+assert.deepEqual(changedDates, datedRoutes, 'Only the exact requested routes × five language editions received new lastmod dates in the relevant source scope.');
 for (const route of datedRoutes) assert.equal(currentSitemap.get(route), isoDate, `${route}: sitemap lastmod.`);
 
 for (const locale of locales) {

@@ -14,6 +14,7 @@ import {
   australiaAlpsMargaretNewSubstantiveRoutes,
   australiaMargaretRemainingNewSubstantiveRoutes,
   australiaBroomeNewSubstantiveRoutes,
+  australiaFinalContentNewSubstantiveRoutes,
   correctedCoverageCheckpoints,
   correctedSubstantiveBaseline,
   reportedSubstantiveBaseline,
@@ -156,7 +157,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -188,6 +189,16 @@ assert.equal(australiaBroomeNewSubstantiveRoutes.length, 4, 'Broome & Kimberley 
 assert.equal(new Set(australiaBroomeNewSubstantiveRoutes).size, 4, 'Broome routes must be unique.');
 assert(australiaBroomeNewSubstantiveRoutes.every((route) => !australiaNewSubstantiveRoutes.includes(route) && !australiaCanberraNewSubstantiveRoutes.includes(route) && !australiaAlpsMargaretNewSubstantiveRoutes.includes(route) && !australiaMargaretRemainingNewSubstantiveRoutes.includes(route)), 'Broome routes are disjoint from earlier Australia ledger groups.');
 for (const route of australiaBroomeNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Broome ledger path is missing: ${route}`);
+assert.deepEqual(australiaFinalContentNewSubstantiveRoutes, [
+  '/australia/',
+  '/australia/tasmania/cradle-freycinet/',
+  '/australia/tasmania/kunanyi-mount-wellington/',
+  '/australia/tasmania/launceston-tamar-valley/',
+  '/australia/tasmania/port-arthur-tasman-peninsula/'
+], 'The final Australia batch contains the overview and four Tasmania guides, not the unchanged Tasmania hub.');
+assert.equal(new Set(australiaFinalContentNewSubstantiveRoutes).size, 5, 'Australia final-content routes are unique.');
+assert(australiaFinalContentNewSubstantiveRoutes.every((route) => !australiaNewSubstantiveRoutes.includes(route) && !australiaCanberraNewSubstantiveRoutes.includes(route) && !australiaAlpsMargaretNewSubstantiveRoutes.includes(route) && !australiaMargaretRemainingNewSubstantiveRoutes.includes(route) && !australiaBroomeNewSubstantiveRoutes.includes(route) && !australiaBroomeTasmaniaNewSubstantiveRoutes.includes(route)), 'Final Australia content routes are disjoint from every previously counted Australia route group.');
+for (const route of australiaFinalContentNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Australia final-content ledger path is missing: ${route}`);
 assert.equal(new Set(australiaNewSubstantiveRoutes).size, 12, 'Australia additions must be unique.');
 for (const route of australiaNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Australia ledger path is missing: ${route}`);
@@ -404,4 +415,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne and Phong Nha improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome and four Broome/Tasmania improvements; corrected coverage reaches 873/907.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne and Phong Nha improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome, four Broome/Tasmania and five final-content improvements; corrected coverage reaches 878/907.');

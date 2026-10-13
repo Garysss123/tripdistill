@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { followingVietnamDaLatRoutes, postFloridaChicagoRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
+import { followingVietnamDaLatRoutes, postFloridaChicagoRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-margaret-remaining-20261013';
@@ -118,7 +118,7 @@ if (sourceBranch) {
 }
 
 const changedEnglish = git(['diff', '--name-only', comparisonBase, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, (integrationBranch ? [...routes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes] : routes).map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English child pages and exact integrated Broome follow-on changed.');
+assert.deepEqual(changedEnglish, (integrationBranch ? [...routes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : routes).map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English child pages and exact integrated Broome follow-on changed.');
 for (const untouched of [
   'australia/margaret-river-southwest/index.html',
   'australia/margaret-river-southwest/margaret-river-wine-food/index.html'
@@ -151,7 +151,7 @@ const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-ind
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.');
 assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
-const expectedSearchRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postBostonOverviewJuneauSearchRoutes] : [])].sort();
+const expectedSearchRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postBostonOverviewJuneauSearchRoutes] : [])].sort();
 assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), expectedSearchRoutes, 'Only the selected Margaret, Chicago, Arizona, Los Angeles, Boston, Broome, Mui Ne and separately scoped Juneau search records changed from the exact selected checkpoint.');
 if (integrationBranch) {
   const terminalBodies = new Map(routes.map((route) => [route, git([`show`, `${sourceTerminal}:${route.slice(1)}index.html`])]));
@@ -163,7 +163,7 @@ const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml')
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postBostonOverviewJuneauRoutes] : [])];
+const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postBostonOverviewJuneauRoutes] : [])];
 const changedDates = datedRoutes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
 assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the selected Margaret, Chicago, Arizona, Da Lat, Los Angeles, Boston, Broome and Mui Ne routes × five locale lastmod values changed.');
 for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);

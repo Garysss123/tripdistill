@@ -7,8 +7,9 @@ import { parse } from 'parse5';
 import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const branch = 'codex/sprint-au-final-content-20261013';
 const base = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
+const sourceTerminal = '70fbc1aa3706f2f33ee7b6b62e66aaee6c18962d';
+const sourceTree = '11b7937f472389104a3a3b61700e41e534dd039b';
 const baseParent = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
 const date = '2026-10-13';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
@@ -116,11 +117,11 @@ function sitemapMap(raw) {
 }
 function toCsv(value) { return `"${String(value).replaceAll('"', '""')}"`; }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Exact delivery branch.');
-const firstParents = git(['rev-list', '--first-parent', '--max-count=2', 'HEAD']).trim().split(/\r?\n/u);
-assert(firstParents[0] === base || firstParents[1] === base, 'The branch begins at or is a direct child of the exact authorized checkpoint.');
 git(['merge-base', '--is-ancestor', base, 'HEAD']);
 assert.equal(git(['rev-parse', `${base}^`]).trim(), baseParent, 'The authorized checkpoint has the expected parent.');
+assert.equal(git(['rev-parse', `${sourceTerminal}^1`]).trim(), base, 'The exact AU source terminal has the authorized source base as parent.');
+assert.equal(git(['rev-parse', `${sourceTerminal}^{tree}`]).trim(), sourceTree, 'The AU source terminal tree matches the reviewed source.');
+git(['merge-base', '--is-ancestor', sourceTerminal, 'HEAD']);
 
 const inventory = ['/australia/', ...australiaClusters.map((cluster) => `/australia/${cluster.slug}/`), ...australiaGuides.map((guide) => guide.url)];
 assert.equal(australiaClusters.length, 16, 'Australia hub inventory.');
@@ -142,6 +143,7 @@ for (const route of inventory) {
     assert.deepEqual(actualEnglish.get(route), { current: expected.current, base: expected.base, delta: expected.delta }, `${route}: exact-body word evidence, with country cards/sources/ads excluded.`);
     assert(actualEnglish.get(route).current > expected.floor, `${route}: same-level Japan body floor.`);
     for (const phrase of requiredBodyText.get(route)) assert(current.toLowerCase().includes(phrase.toLowerCase()), `${route}: required route detail ${phrase}.`);
+    assert.equal(fs.readFileSync(routeFile(route), 'utf8'), git(['show', `${sourceTerminal}:${route.slice(1)}index.html`]), `${route}: integrated English body matches the exact AU source terminal.`);
   } else {
     assert.equal(current, previous, `${route}: no non-target body may be double-counted or changed in this batch.`);
   }
@@ -173,20 +175,29 @@ for (const route of routes) {
 }
 
 const baseSearch = searchMap(git(['show', `${base}:data/search-index.json`]));
+const sourceSearch = searchMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(currentSearch.size, 955, 'English search inventory remains 955 records.');
 assert.equal(new Set(currentSearch.keys()).size, 955, 'English search URLs are unique.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL inventory is unchanged.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'Only the five selected search records changed.');
+assert.deepEqual([...sourceSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'The AU source preserves the English search URL inventory.');
+assert.deepEqual([...sourceSearch.keys()].filter((url) => JSON.stringify(sourceSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'The AU source changes only the five selected search records.');
+for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: integrated search record matches the exact AU source terminal.`);
 
 const baseSitemap = sitemapMap(git(['show', `${base}:sitemap.xml`]));
+const sourceSitemap = sitemapMap(git(['show', `${sourceTerminal}:sitemap.xml`]));
 const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Exact-base sitemap has 4,560 URLs.');
+assert.equal(sourceSitemap.size, 4560, 'AU source retains 4,560 sitemap URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap retains 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL inventory is unchanged.');
+assert.deepEqual([...sourceSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'AU source leaves the exact sitemap URL inventory unchanged.');
 const datedUrls = routes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'Exactly five routes × five editions have a changed sitemap date.');
-for (const url of datedUrls) assert.equal(currentSitemap.get(url), date, `${url}: sitemap lastmod.`);
+assert.deepEqual([...sourceSitemap.keys()].filter((url) => sourceSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'The AU source changes exactly five routes × five sitemap dates.');
+for (const url of datedUrls) {
+  assert.equal(sourceSitemap.get(url), date, `${url}: source sitemap lastmod.`);
+  assert.equal(currentSitemap.get(url), date, `${url}: integrated sitemap lastmod.`);
+}
 
 for (const locale of locales) {
   const directory = path.join(root, 'data/i18n/reviewed', locale.code);
@@ -245,7 +256,7 @@ for (const row of ledger.slice(1)) {
 for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg', 'assets/images/australia-kings-park-entry-choice.svg']) {
   assert.equal(fs.readFileSync(path.join(root, asset), 'utf8'), git(['show', `${correction}:${asset}`]), `${asset}: earlier parallel arrow fix is byte-identical.`);
 }
-assert.equal(git(['diff', '--name-only', base, '--', 'assets/images']).trim(), '', 'No image or SVG changed in this task.');
+assert.equal(git(['diff', '--name-only', base, sourceTerminal, '--', 'assets/images']).trim(), '', 'No image or SVG changed in the exact AU source batch.');
 assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No untracked image or SVG exists.');
 
-console.log('Australia final-content regression passed: exact base/branch, five substantive bodies, 97 unique ledger routes, Japan content floors, official source links, FAQ/schema parity, 4,560 unchanged sitemap URLs with 25 dated entries, 955 search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');
+console.log('Australia final-content regression passed: exact source ancestry/tree, five substantive bodies, 97 unique ledger routes, Japan content floors, official source links, FAQ/schema parity, 4,560 unchanged sitemap URLs with 25 dated entries, 955 search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');
