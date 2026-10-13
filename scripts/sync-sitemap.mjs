@@ -847,6 +847,8 @@ const usaBostonRoutes = [
   '/usa/boston/cambridge-harvard/',
   '/usa/boston/harbor-islands/'
 ];
+const usaOverviewJuneauLastmod = '2026-10-13';
+const usaOverviewJuneauRoutes = ['/usa/', '/usa/alaska/juneau-southeast/'];
 const usaSanDiegoLastmod = '2026-10-13';
 const usaSanDiegoRoutes = [
   '/usa/san-diego/',
@@ -1312,6 +1314,11 @@ for (const route of usaBostonRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Boston route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaBostonLastmod });
+}
+for (const route of usaOverviewJuneauRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date reviewed U.S. overview/Juneau route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaOverviewJuneauLastmod });
 }
 for (const route of usaSanDiegoRoutes) {
   const record = records.get(route);

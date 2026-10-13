@@ -50,7 +50,6 @@
     "Read change and cancellation terms": "อ่านเงื่อนไขการเปลี่ยนแปลงและยกเลิก",
     "Distinguish a weather cancellation from a personal change of plan and read the provider’s actual conditions. Keep the flexible parts of the itinerary around the fixed ones, rather than assuming that every ticket can be moved after a delay.": "แยกการยกเลิกเพราะสภาพอากาศออกจากการเปลี่ยนแผนส่วนตัว และอ่านเงื่อนไขจริงของผู้ให้บริการ จัดส่วนที่ยืดหยุ่นไว้รอบส่วนที่กำหนดตายตัว อย่าคิดว่าบัตรทุกใบเปลี่ยนได้หลังเกิดความล่าช้า",
     "For national parks, use the current NPS pass and fee information for the traveler’s eligibility and the specific park. An entrance pass is not a blanket reservation for a campsite, timed entry or an operator’s tour. Do not reuse an old pass-price comparison without checking the current terms.": "สำหรับอุทยานแห่งชาติ ใช้ข้อมูลพาสและค่าธรรมเนียม NPS ล่าสุดให้ตรงกับคุณสมบัติของผู้เดินทางและอุทยานนั้น พาสเข้าอุทยานไม่ใช่การจองครอบจักรวาลสำหรับพื้นที่กางเต็นท์ การเข้าตามเวลา หรือทัวร์ของผู้ให้บริการ อย่านำการเปรียบเทียบราคาพาสเก่ากลับมาใช้โดยไม่เช็กเงื่อนไขปัจจุบัน",
-    "National Park Service: current passes, eligibility and fee conditions": "National Park Service: พาส คุณสมบัติ และเงื่อนไขค่าธรรมเนียมปัจจุบัน",
     "Choose a regional season and a workable alternative": "เลือกฤดูกาลของภูมิภาคและทางเลือกที่ทำได้จริง",
     "City days": "วันเที่ยวเมือง",
     "A major museum or cultural institution can be the purpose of a day, not just a rain backup. Keep its actual opening and admission in the plan. In a shorter stay, choose one substantial interior rather than racing between several lobbies.": "พิพิธภัณฑ์ใหญ่หรือสถาบันวัฒนธรรมอาจเป็นจุดหมายของวัน ไม่ใช่แค่แผนสำรองเวลา ฝนตก ใส่เวลาเปิดและค่าเข้าจริงไว้ในแผน หากพักสั้น ให้เลือกสถานที่ในร่มที่มีเนื้อหาเต็มหนึ่งแห่ง แทนการรีบวิ่งระหว่างโถงหลายแห่ง",
@@ -73,10 +72,8 @@
     "Choose by the actual route. Central urban portions may work with transit and walking, while a park or dispersed regional portion needs a vehicle or confirmed operator. Collection, return and parking are part of the comparison.": "เลือกตามเส้นทางจริง ย่านใจกลางเมืองอาจใช้ขนส่งสาธารณะและเดินได้ ส่วนอุทยานหรือภูมิภาคที่สถานที่กระจายกันต้องใช้รถหรือผู้ให้บริการที่ยืนยันแล้ว การรับรถ คืนรถ และที่จอดรถเป็นส่วนหนึ่งของการเปรียบเทียบ",
     "Is every American destination covered here?": "ที่นี่ครอบคลุมทุกจุดหมายในอเมริกาหรือไม่",
     "No. These 24 regional hubs and 72 local chapters are a selective starting library. Each guide is intended to resolve a particular stay or visit, not to stand in for every destination in its state.": "ไม่ คู่มือเริ่มต้นที่คัดสรรนี้มีศูนย์กลางภูมิภาค 24 แห่งและบทท้องถิ่น 72 บท แต่ละคู่มือมีไว้ช่วยแก้โจทย์การพักหรือการเยือนเฉพาะ ไม่ได้ใช้แทนทุกจุดหมายในรัฐนั้น",
-    "Source information checked on 11 September 2026. Trip shapes, comparisons and suggested pacing are TripDistill editorial judgments, not official tour itineraries.": "ตรวจสอบข้อมูลต้นทางเมื่อ 11 กันยายน 2026 รูปแบบทริป การเปรียบเทียบ และจังหวะที่แนะนำเป็นดุลยพินิจของกองบรรณาธิการ TripDistill ไม่ใช่กำหนดการทัวร์อย่างเป็นทางการ",
     "Amtrak: Northeast Regional": "Amtrak: เส้นทาง Northeast Regional",
     "U.S. Department of State: entry guidance": "U.S. Department of State: คำแนะนำการเข้าประเทศ",
-    "NPS: current passes and fee conditions": "NPS: พาสและเงื่อนไขค่าธรรมเนียมปัจจุบัน",
     "National Weather Service: hazard guidance": "National Weather Service: คำแนะนำอันตราย"
   }
 }

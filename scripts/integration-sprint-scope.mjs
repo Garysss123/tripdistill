@@ -473,6 +473,16 @@ export const postLosAngelesSanDiegoRoutes = Object.freeze([
   '/usa/san-diego/la-jolla/'
 ]);
 
+// Later source follow-up: both existing bodies and dates changed, but only
+// Juneau's English search summary changed.
+export const postBostonOverviewJuneauRoutes = Object.freeze([
+  '/usa/',
+  '/usa/alaska/juneau-southeast/'
+]);
+export const postBostonOverviewJuneauSearchRoutes = Object.freeze([
+  '/usa/alaska/juneau-southeast/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
@@ -480,14 +490,24 @@ export const postOctober13Routes = Object.freeze([
   ...postNewEnglandArizonaRoutes,
   ...postArizonaLosAngelesRoutes,
   ...postLosAngelesBostonRoutes,
-  ...postLosAngelesSanDiegoRoutes
+  ...postLosAngelesSanDiegoRoutes,
+  ...postBostonOverviewJuneauRoutes
+]);
+
+export const postOctober13SearchRoutes = Object.freeze([
+  ...postOctober13Routes.filter((route) => !postBostonOverviewJuneauRoutes.includes(route)),
+  ...postBostonOverviewJuneauSearchRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
   ...postIntegrationHawaiiRoutes,
   ...postHawaiiNewOrleansRoutes,
   ...postNewOrleansAtlantaRoutes,
-  ...postOctober13Routes
+  ...postOctober13SearchRoutes
+]);
+
+export const postIntegrationSitemapRefreshRoutes = Object.freeze([
+  ...new Set([...postIntegrationSourceRefreshRoutes, ...postBostonOverviewJuneauRoutes])
 ]);
 
 export const postIntegrationAustraliaRoutes = Object.freeze([
@@ -583,13 +603,13 @@ export const localizedPostIntegrationAustraliaSitemapRoutes = (prefixes) => new 
 );
 
 export const localizedPostIntegrationSourceRefreshSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => postIntegrationSourceRefreshRoutes.map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => postIntegrationSitemapRefreshRoutes.map((route) => `${prefix}${route}`))
 );
 
 export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
   const routes = localizedIntegrationSitemapRoutes(prefixes);
   for (const prefix of prefixes) {
-    for (const route of postIntegrationSourceRefreshRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationSitemapRefreshRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationCanberraRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAlpsMargaretRoutes) routes.add(`${prefix}${route}`);

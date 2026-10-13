@@ -138,6 +138,13 @@ export const usaOtherHistoricalCoverageCorrectionRoutes = Object.freeze([
   '/usa/utah-parks/zion/'
 ]);
 
+// The overview and Juneau already had substantive source bodies before this
+// dated follow-up. Keep these historical omissions separate from current work.
+export const usaOverviewJuneauHistoricalCoverageCorrectionRoutes = Object.freeze([
+  '/usa/',
+  '/usa/alaska/juneau-southeast/'
+]);
+
 export const usaSanDiegoNewSubstantiveRoutes = Object.freeze([
   '/usa/san-diego/',
   '/usa/san-diego/balboa-park/',
@@ -363,5 +370,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'San Diego', count: 837 }),
   Object.freeze({ label: 'Phong Nha & Ke Bang', count: 841 }),
   Object.freeze({ label: 'Broome & Tasmania', count: 845 }),
-  Object.freeze({ label: '26-route historical coverage correction', count: 871 })
+  Object.freeze({ label: '26-route historical coverage correction', count: 871 }),
+  Object.freeze({ label: 'USA overview and Juneau historical correction', count: 873 })
 ]);

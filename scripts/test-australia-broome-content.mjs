@@ -9,7 +9,7 @@ import { postIntegrationBroomeTasmaniaRoutes } from './integration-sprint-scope.
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-broome-content-20261013';
-const integrationBranch = branch === 'codex/integration-sprint-20261011';
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight'].includes(branch);
 const base = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
 const sourceTerminal = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';

@@ -35,7 +35,8 @@ const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scotts
 const losAngelesRefreshRoutes=new Set(['/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/']);
 const bostonRefreshRoutes=new Set(['/usa/boston/','/usa/boston/freedom-trail/','/usa/boston/cambridge-harvard/','/usa/boston/harbor-islands/']);
 const sanDiegoRefreshRoutes=new Set(['/usa/san-diego/','/usa/san-diego/balboa-park/','/usa/san-diego/harbor-coronado/','/usa/san-diego/la-jolla/']);
-const october13RefreshRoutes=new Set([...losAngelesRefreshRoutes,...arizonaRefreshRoutes,...floridaNeighborhoodRefreshRoutes,...chicagoRefreshRoutes,...newEnglandRefreshRoutes,...bostonRefreshRoutes,...sanDiegoRefreshRoutes]);
+const overviewJuneauRefreshRoutes=new Set(['/usa/','/usa/alaska/juneau-southeast/']);
+const october13RefreshRoutes=new Set([...losAngelesRefreshRoutes,...arizonaRefreshRoutes,...floridaNeighborhoodRefreshRoutes,...chicagoRefreshRoutes,...newEnglandRefreshRoutes,...bostonRefreshRoutes,...sanDiegoRefreshRoutes,...overviewJuneauRefreshRoutes]);
 const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];
@@ -89,7 +90,8 @@ for(const [slug,sections] of Object.entries(plans)){
  for(const [i,route] of routes.entries()){
   const html=fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8'),dom=flatten(parse(html));
   const markerDate=october13RefreshRoutes.has(route)?'20261013':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'20261012':sprintUsRoutes.has(route)?'20261010':dateExceptions.has(route)?'20261009':'20260911';
-  check(html.includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),route+': missing editorial marker');
+  const expectedMarker=route==='/usa/alaska/juneau-southeast/'?'alaska-juneau-20261013':`${assetSlug}-${markerDate}`;
+  check(html.includes(`data-editorial-revision="${expectedMarker}"`),route+': missing editorial marker');
   check(html.includes(`/css/${assetSlug}-editorial.css?v=20260911-1`),route+': missing editorial stylesheet');
   check(!html.includes('A practical visit plan')&&!html.includes('Fit this visit into your trip'),route+': generic body returned');
   check(dom.filter(n=>n.tagName==='h1').length===1,route+': H1 count');
@@ -103,12 +105,12 @@ for(const [slug,sections] of Object.entries(plans)){
   }
   if(!process.argv.includes('--english-only'))for(const locale of ['zh','ja','ko','th']){
    const file=path.join(root,locale,route.slice(1),'index.html');
-   check(fs.existsSync(file)&&fs.readFileSync(file,'utf8').includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),locale+route+': rewritten locale missing');
+   check(fs.existsSync(file)&&fs.readFileSync(file,'utf8').includes(`data-editorial-revision="${expectedMarker}"`),locale+route+': rewritten locale missing');
   }
  }
 }
 const countryHtml=fs.readFileSync(path.join(root,'usa/index.html'),'utf8'),countryDom=flatten(parse(countryHtml));
-check(countryHtml.includes('data-editorial-revision="usa-country-20260911"'),'Country editorial marker missing');
+check(countryHtml.includes('data-editorial-revision="usa-country-20261013"'),'Country editorial marker missing');
 check(countryHtml.includes('/css/usa-country-editorial.css?v=20260911-1'),'Country editorial stylesheet missing');
 check(countryDom.filter(n=>n.tagName==='h1').length===1,'Country H1 count');
 const countryIds=countryDom.map(n=>attr(n,'id')).filter(Boolean);
@@ -120,5 +122,5 @@ check(countryIds.length===new Set(countryIds).size,'Country duplicate IDs');
 for(const id of ['choose','time','directory','cost','season','entry','questions'])check(countryIds.includes(id),'Country section missing '+id);
 for(const n of countryDom.filter(n=>n.tagName==='a'&&attr(n,'href')?.startsWith('#')))check(countryIds.includes(attr(n,'href').slice(1)),'Country broken anchor '+attr(n,'href'));
 for(const h of usaHubs)check(countryDom.some(n=>n.tagName==='a'&&attr(n,'href')===`/usa/${h.slug}/`),'Country hub link missing '+h.slug);
-if(!process.argv.includes('--english-only'))for(const locale of ['zh','ja','ko','th'])check(fs.readFileSync(path.join(root,locale,'usa/index.html'),'utf8').includes('data-editorial-revision="usa-country-20260911"'),locale+' country rewrite missing');
+if(!process.argv.includes('--english-only'))for(const locale of ['zh','ja','ko','th'])check(fs.readFileSync(path.join(root,locale,'usa/index.html'),'utf8').includes('data-editorial-revision="usa-country-20261013"'),locale+' country rewrite missing');
 if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log(`${Object.keys(plans).length} rewritten U.S. clusters and country passed structural regression checks; NYC has its own audit. Not an editorial acceptance or AdSense verdict.`);

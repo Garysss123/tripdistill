@@ -50,7 +50,6 @@
     "Read change and cancellation terms": "変更とキャンセル条件を読む",
     "Distinguish a weather cancellation from a personal change of plan and read the provider’s actual conditions. Keep the flexible parts of the itinerary around the fixed ones, rather than assuming that every ticket can be moved after a delay.": "天候によるキャンセルと個人的な予定変更を区別し、提供者の実際の条件を読みましょう。すべてのチケットを遅延後に変更できると思わず、固定した予定の周りに柔軟な部分を置いてください。",
     "For national parks, use the current NPS pass and fee information for the traveler’s eligibility and the specific park. An entrance pass is not a blanket reservation for a campsite, timed entry or an operator’s tour. Do not reuse an old pass-price comparison without checking the current terms.": "国立公園では、旅行者の資格と特定の公園に対応するNPSの最新パス・料金情報を使いましょう。入場パスは、キャンプサイト、時間指定入場、運営者のツアーすべてに使える一括予約ではありません。現在の条件を確認せず、古いパス料金比較を再利用しないでください。",
-    "National Park Service: current passes, eligibility and fee conditions": "National Park Service: 最新のパス、資格、料金条件",
     "Choose a regional season and a workable alternative": "地域のシーズンと、実際に使える代案を選ぶ",
     "City days": "都市の日",
     "A major museum or cultural institution can be the purpose of a day, not just a rain backup. Keep its actual opening and admission in the plan. In a shorter stay, choose one substantial interior rather than racing between several lobbies.": "大きな博物館や文化施設は、雨天時の予備ではなく一日の目的になります。実際の開館と入場を計画に入れましょう。短い滞在なら、いくつものロビーを駆け回らず、充実した屋内施設を一つ選びます。",
@@ -73,10 +72,8 @@
     "Choose by the actual route. Central urban portions may work with transit and walking, while a park or dispersed regional portion needs a vehicle or confirmed operator. Collection, return and parking are part of the comparison.": "実際のルートに基づいて選びましょう。都市中心部は公共交通と徒歩で回れる場合がありますが、公園や広域の地域訪問には車または確認済みの運営者が必要です。受け取り、返却、駐車も比較に含めてください。",
     "Is every American destination covered here?": "ここでアメリカのすべての目的地を扱っていますか？",
     "No. These 24 regional hubs and 72 local chapters are a selective starting library. Each guide is intended to resolve a particular stay or visit, not to stand in for every destination in its state.": "いいえ。この24の地域拠点と72の現地章は、出発点として選んだガイド集です。各ガイドは、州内のすべての目的地を代わりに案内するものではなく、特定の滞在や訪問を解決するためのものです。",
-    "Source information checked on 11 September 2026. Trip shapes, comparisons and suggested pacing are TripDistill editorial judgments, not official tour itineraries.": "情報確認日：2026年9月11日。旅の形、比較、提案するペースはTripDistillの編集判断であり、公式ツアーの行程ではありません。",
     "Amtrak: Northeast Regional": "Amtrak: Northeast Regional",
     "U.S. Department of State: entry guidance": "U.S. Department of State: 入国案内",
-    "NPS: current passes and fee conditions": "NPS: 最新のパスと料金条件",
     "National Weather Service: hazard guidance": "National Weather Service: 気象災害の案内"
   }
 }

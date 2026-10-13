@@ -30,6 +30,9 @@ const arizonaRoutes = postNewEnglandArizonaRoutes;
 const losAngelesRoutes = postArizonaLosAngelesRoutes;
 const bostonRoutes = postLosAngelesBostonRoutes;
 const sanDiegoRoutes = postLosAngelesSanDiegoRoutes;
+const overviewJuneauRoutes = ['/usa/', '/usa/alaska/juneau-southeast/'];
+const juneauSearchRoutes = ['/usa/alaska/juneau-southeast/'];
+const scopedSearchRoutes = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...juneauSearchRoutes];
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -82,7 +85,7 @@ function htmlPath(route) {
   return `${route.slice(1)}index.html`;
 }
 
-const targetSet = new Set([...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes].map(htmlPath));
+const targetSet = new Set([...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...overviewJuneauRoutes].map(htmlPath));
 const newYorkAcceptancePath = 'usa/new-york/index.html';
 const basePaths = execFileSync('git', ['ls-tree', '-r', '--name-only', base, '--', 'usa'], { cwd: root, encoding: 'utf8' })
   .trim().split('\n').filter((file) => file.endsWith('/index.html') || file === 'usa/index.html');
@@ -101,7 +104,11 @@ for (const relativePath of basePaths) {
     assert.equal(normalizedMain(gitShow(september, relativePath)), before,
       `${relativePath} must match its 11 September source body at the exact task base`);
     assert.equal(articleDate(afterHtml), '2026-10-13', `${relativePath} Article dateModified`);
-    assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
+    if (overviewJuneauRoutes.some((route) => htmlPath(route) === relativePath)) {
+      assert.match(afterHtml, relativePath === 'usa/index.html' ? /Source information checked on 13 October 2026\./ : /Juneau transit and seasonal visitor information were checked on 13 October 2026\./, `${relativePath} visible source date`);
+    } else {
+      assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
+    }
   }
 }
 assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles, San Diego and Boston English U.S. bodies changed');
@@ -127,7 +134,7 @@ const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()]
   .filter((url) => url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes].sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles, San Diego and Boston English search summaries changed');
+assert.deepEqual(changedSearch, scopedSearchRoutes.sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles, San Diego, Boston and Juneau search summaries changed; the USA overview summary remains unchanged');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -141,7 +148,7 @@ assert.equal(newSitemap.length, 4560, 'sitemap keeps 4,560 URLs');
 const oldDates = new Map(oldSitemap);
 const newDates = new Map(newSitemap);
 assert.deepEqual([...newDates.keys()].sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
-const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
+const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...overviewJuneauRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
 const changedDates = [...newDates.keys()]
   .filter((url) => {
     const route = new URL(url).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '');
@@ -150,7 +157,7 @@ const changedDates = [...newDates.keys()]
 assert.deepEqual(changedDates, expectedDatedUrls, 'only the exact twenty separately counted USA routes across five editions have changed sitemap dates');
 for (const url of expectedDatedUrls) assert.equal(newDates.get(url), '2026-10-13', `${url} lastmod`);
 
-for (const route of [...routes, ...postNewEnglandRoutes, ...arizonaRoutes]) {
+for (const route of [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...overviewJuneauRoutes]) {
   for (const prefix of localePrefixes) {
     const localizedPath = path.join(root, `${prefix}${route}index.html`);
     assert.ok(fs.existsSync(localizedPath), `localized route exists: ${prefix}${route}`);
@@ -162,7 +169,7 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   const searchPath = path.join(root, prefix, 'data/search-index.json');
   const records = JSON.parse(fs.readFileSync(searchPath, 'utf8'));
   assert.equal(records.length, 955, `${prefix} search record count`);
-  for (const route of routes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
+  for (const route of [...routes, ...juneauSearchRoutes]) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source-refresh scope passed: Florida, Chicago, New England, Arizona, Los Angeles, San Diego and Boston scopes total ${targetSet.size} English bodies; ${targetSet.size} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source-refresh scope passed: Florida, Chicago, New England, Arizona, Los Angeles, San Diego and Boston scopes plus two separately accounted overview/Juneau bodies total ${targetSet.size} English bodies; Juneau alone adds a search change; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);

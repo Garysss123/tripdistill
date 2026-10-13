@@ -38,8 +38,8 @@ const walk = (node, visit) => {
 };
 
 const branch = git(['branch', '--show-current']).trim();
-assert(['codex/sprint-vn-after-dalat-20261013', 'codex/integration-sprint-20261011'].includes(branch), 'Selected Mui Ne source or named integration branch.');
-if (branch === 'codex/integration-sprint-20261011') {
+assert(['codex/sprint-vn-after-dalat-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight'].includes(branch), 'Selected Mui Ne source or isolated integration branch.');
+if (branch === 'codex/integration-sprint-20261011' || branch === 'codex/integration-sprint-20261011-preflight') {
   const sourceInHead = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root }).status === 0;
   const sourceInMerge = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'MERGE_HEAD'], { cwd: root }).status === 0;
   assert(sourceInHead || sourceInMerge, 'The exact Mui Ne source terminal is in integration history.');

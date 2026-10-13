@@ -55,7 +55,7 @@ function guidePage(g,h){
  return shell(g.url,g.name+' Travel Guide',description,body,h,g);
 }
 function hubPage(h){const body=hero(h.name,h.intro,h.guides[0],h.region)+`<section class="us-facts" id="visit-plan"><div><span>Time and accommodation</span><p>${e(h.stay)}</p></div><div><span>Choose your next stop</span><p>Start with one focused visit, then add another when the journey and opening hours fit.</p></div></section><section class="us-section"><h2>Explore ${e(h.name)}</h2><div class="us-cards us-hub-cards">${h.guides.map(g=>card(g)).join('')}</div></section>${ad}<section class="us-section"><p class="us-kicker">Build a trip that works</p><h2>Three visits, three different days</h2><div class="us-day-list">${h.guides.map((g,i)=>`<article><span>0${i+1}</span><div><h3><a href="${g.url}">${e(g.name)}</a></h3><p>${e(g.time)}</p><p>${e(g.practical)}</p></div></article>`).join('')}</div></section>`+faq([['Where should I stay?',h.stay],['What should I book first?','Choose the visit with the least flexible entry or departure time. Check its official source, then arrange accommodation and transport around it.']])+`<section class="section sources"><h2>Official sources and photo credits</h2><ul>${source(h.source,h.name+' tourism information')}${h.guides.map(g=>source(g.source,g.name+' visitor information')).join('')}${h.guides.map(credit).join('')}</ul></section>`;return shell(`/usa/${h.slug}/`,h.name+' Travel Guide',`Explore ${h.name} through three focused guides, with practical routes, time and accommodation advice, current official links and credited photography.`,body,h);}
-function countryPage(){const groups=[...new Set(usaHubs.map(h=>h.region))];const body=hero('United States','City blocks, open roads and time to stay a little longer. Choose a region first, then explore the neighborhoods and landscapes that make it worth the journey.',usaGuides[0],'North America / Travel collection')+`<section class="us-facts" id="visit-plan"><div><span>24</span><p>City and regional guides</p></div><div><span>72</span><p>Focused visits and local routes</p></div><div><span>5</span><p>Language editions</p></div></section><nav class="us-index" aria-label="United States regions">${groups.map((n,i)=>`<a href="#region-${i}">${e(n)}</a>`).join('')}</nav>${groups.map((n,i)=>`<section class="us-section" id="region-${i}"><p class="us-kicker">${String(i+1).padStart(2,'0')} / United States</p><h2>${e(n)}</h2><div class="us-cards us-country-cards">${usaHubs.filter(h=>h.region===n).map(h=>card(h.guides[0],`/usa/${h.slug}/`,h.name,h.intro)).join('')}</div></section>`).join('')}${ad}<section class="us-section"><h2>Before you choose the first hotel</h2><div class="us-basics"><article><h3>Entry and documents</h3><p>Check the official U.S. entry guidance for your nationality and travel purpose. Visa or ESTA eligibility depends on individual circumstances; travel authorization does not guarantee admission. Use government channels and confirm passport requirements before booking.</p></article><article><h3>Distances and connections</h3><p>Choose a regional trip instead of assuming the country fits into one road loop. Northeast rail corridors, western park drives, Alaska connections and Hawaiian interisland flights need different plans. Leave time for airport transfers, baggage and time-zone changes.</p></article><article><h3>Tickets and total costs</h3><p>Compare the final price before payment, including applicable taxes, parking, resort charges and optional extras. Park entrance passes, timed entry, campsites and activity permits can be separate products. Use each operator’s current terms.</p></article><article><h3>Seasons and local conditions</h3><p>There is no single best season for the whole country. Check the forecast for the actual city, trail or coastline, together with park and road alerts. Keep flexible time for smoke, snow, storms or boat cancellations.</p></article><article><h3>People and places</h3><p>Tribal lands, sacred places, memorials and residential neighborhoods have distinct access and photography expectations. Follow the relevant community’s guidance. Public access to a viewpoint does not imply permission to enter adjacent land.</p></article><article><h3>Practical preparation</h3><p>Save essential routes and bookings offline, confirm accessibility with each venue, and plan how to obtain help if needed. Review suitable travel coverage and carry the information required for any personal medical needs.</p></article></div></section>`+faq([['How much can I see in two weeks?','Choose two or three connected bases and keep transfer days light. A city-and-region trip usually leaves more time for actual visits than a coast-to-coast checklist.'],['Do I need a rental car?','Many central city stays work with public transport and walking. Parks, rural areas and some suburban attractions need a vehicle or confirmed operator. Rent only for the portion that benefits from it.'],['Are all U.S. destinations covered here?','This collection covers 24 major city and regional starting points with 72 focused guides. It is a practical starting library, not an exhaustive inventory of every state, town or attraction.']])+`<section class="section sources"><h2>Official sources and photo credits</h2><ul>${source('https://www.visittheusa.com/','Visit the USA')}${source('https://www.cbp.gov/travel/international-visitors','U.S. Customs and Border Protection — international visitors')}${source('https://www.nps.gov/planyourvisit/index.htm','National Park Service — plan your visit')}${source('https://www.weather.gov/','National Weather Service')}${usaHubs.map(h=>credit(h.guides[0])).join('')}</ul></section>`;return shell('/usa/','United States Travel Guide','Explore 24 United States cities and regions through 72 focused guides, from East Coast neighborhoods to western parks, Alaska and Hawaii.',body);}
+function countryPage(){const body=renderUsaCountryEditorial({hubs:usaHubs,photo,credit,card,source,ad});return shell('/usa/','United States Travel Guide',usaCountryDescription,body,undefined,undefined,'2026-10-13').replace('</head>','<link rel="stylesheet" href="/css/usa-country-editorial.css?v=20260911-1"></head>');}
 function write(route,html){const p=path.join(root,route,'index.html');fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,html);}
 function nycPage(h,g){const i=g?h.guides.indexOf(g)+1:0;const route=g?.url||'/usa/new-york/';return shell(route,(g?.name||h.name)+' Travel Guide',nycDescriptions[i],renderNycEditorial({h,g,photo,credit,card,source,ad}),h,g).replace('</head>','<link rel="stylesheet" href="/css/nyc-editorial.css?v=20260911-2"></head>');}
 function bostonPage(h,g){const i=g?h.guides.indexOf(g)+1:0;return shell(g?.url||'/usa/boston/',(g?.name||h.name)+' Travel Guide',bostonDescriptions[i],renderBostonEditorial({h,g,photo,credit,card,source,ad,reviewDate:'2026-10-13'}),h,g,'2026-10-13').replace('</head>','<link rel="stylesheet" href="/css/boston-editorial.css?v=20260911-1"></head>');}
@@ -89,6 +89,7 @@ const losAngelesRefreshRoutes = new Set([
 const sanDiegoRefreshRoutes = new Set([
  '/usa/san-diego/','/usa/san-diego/balboa-park/','/usa/san-diego/harbor-coronado/','/usa/san-diego/la-jolla/'
 ]);
+const alaskaJuneauRefreshRoutes = new Set(['/usa/alaska/juneau-southeast/']);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
  '/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/',
@@ -104,13 +105,57 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=sanDiegoRefreshRoutes.has(route)||losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=alaskaJuneauRefreshRoutes.has(route)||sanDiegoRefreshRoutes.has(route)||losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }
 Object.assign(regionalEditorials,{miami:{render:renderMiamiEditorial,descriptions:miamiDescriptions},orlando:{render:renderOrlandoEditorial,descriptions:orlandoDescriptions},alaska:{render:renderAlaskaEditorial,descriptions:alaskaDescriptions},hawaii:{render:renderHawaiiEditorial,descriptions:hawaiiDescriptions}});
 const customPages={'new-york':nycPage,boston:bostonPage,philadelphia:philadelphiaPage,'washington-dc':dcPage,...Object.fromEntries(Object.keys(regionalEditorials).map(slug=>[slug,regionalEditorialPage]))};
-write('usa',shell('/usa/','United States Travel Guide',usaCountryDescription,renderUsaCountryEditorial({hubs:usaHubs,photo,credit,card,source,ad})).replace('</head>','<link rel="stylesheet" href="/css/usa-country-editorial.css?v=20260911-1"></head>'));for(const h of usaHubs){const custom=customPages[h.slug];if(!custom)throw Error('Missing independent editorial renderer '+h.slug);write('usa/'+h.slug,custom(h));for(const g of h.guides)write('usa/'+h.slug+'/'+g.slug,custom(h,g));}
+const allUsaRoutes = ['/usa/', ...usaHubs.flatMap(h => [`/usa/${h.slug}/`, ...h.guides.map(g => g.url)])];
+const routeScopeArgument = process.argv.find(argument => argument.startsWith('--routes='));
+const scopedRoutes = routeScopeArgument ? routeScopeArgument.slice('--routes='.length).split(',').map(route => route.trim()).filter(Boolean) : null;
+if (scopedRoutes) {
+ if (!scopedRoutes.length || new Set(scopedRoutes).size !== scopedRoutes.length) throw Error('--routes must contain a non-empty list of unique USA routes.');
+ const unknown = scopedRoutes.filter(route => !allUsaRoutes.includes(route));
+ if (unknown.length) throw Error('Unknown USA route in --routes: ' + unknown.join(', '));
+ const summaries = new Map();
+ for (const route of scopedRoutes) {
+  if (route === '/usa/') {
+   write('usa', countryPage());
+   summaries.set(route, usaCountryDescription);
+   continue;
+  }
+  const [country, slug, child] = route.slice(1).split('/').filter(Boolean);
+  if (country !== 'usa') throw Error('Unsupported USA route ' + route);
+  const h = usaHubs.find(item => item.slug === slug);
+  const g = child ? h?.guides.find(item => item.slug === child) : undefined;
+  if (!h || (child && !g)) throw Error('Could not resolve USA route ' + route);
+  const custom = customPages[slug];
+  if (!custom) throw Error('Missing independent editorial renderer ' + slug);
+  write(route.replace(/^\//, '').replace(/\/$/, ''), custom(h, g));
+  const directDescriptions = {'new-york':nycDescriptions,boston:bostonDescriptions,philadelphia:philadelphiaDescriptions,'washington-dc':dcDescriptions};
+  const routeDescriptions = regionalEditorials[slug]?.descriptions || directDescriptions[slug];
+  const descriptionIndex = g ? h.guides.indexOf(g) + 1 : 0;
+  summaries.set(route, routeDescriptions?.[descriptionIndex] || h.intro);
+ }
+ const searchFile = path.join(root, 'data/search-index.json');
+ const search = JSON.parse(fs.readFileSync(searchFile, 'utf8'));
+ for (const [route, summary] of summaries) {
+  const record = search.find(item => item.url === route);
+  if (!record) throw Error('Missing USA search record ' + route);
+  record.summary = summary;
+ }
+ fs.writeFileSync(searchFile, JSON.stringify(search, null, 2) + '\n');
+ console.log(`Generated ${scopedRoutes.length} scoped USA page(s), updated only their search summaries, and left shared navigation/home integration untouched.`);
+} else {
+ write('usa', countryPage());
+ for (const h of usaHubs) {
+  const custom = customPages[h.slug];
+  if (!custom) throw Error('Missing independent editorial renderer ' + h.slug);
+  write('usa/' + h.slug, custom(h));
+  for (const g of h.guides) write('usa/' + h.slug + '/' + g.slug, custom(h, g));
+ }
+
 function marked(file,key,html,anchor){const p=path.join(root,file);let s=fs.readFileSync(p,'utf8');const a=`<!-- ${key}_START -->`,b=`<!-- ${key}_END -->`;let preservedCanada='';if(file==='components/sidebar.html'&&key==='USA_NAV'&&s.includes(a)&&s.includes(b)){const start=s.indexOf(a),end=s.indexOf(b,start),current=s.slice(start,end);const canadaStart='<!-- CANADA_NAV_START -->',canadaEnd='<!-- CANADA_NAV_END -->',canadaAt=current.indexOf(canadaStart),canadaEndAt=current.indexOf(canadaEnd,canadaAt);if(canadaAt>=0&&canadaEndAt>=0)preservedCanada=current.slice(canadaAt,canadaEndAt+canadaEnd.length);}if(preservedCanada){const outerClose=html.lastIndexOf('</div></details>');if(outerClose<0)throw Error('Missing North America closing markup');html=html.slice(0,outerClose)+preservedCanada+html.slice(outerClose);}const block=a+'\n'+html+'\n'+b;if(s.includes(a)){s=s.slice(0,s.indexOf(a))+block+s.slice(s.indexOf(b)+b.length);}else {if(!s.includes(anchor))throw Error('Missing integration anchor '+file);s=s.replace(anchor,anchor+'\n'+block);}fs.writeFileSync(p,s);}
 marked('components/header.html','USA_HEADER','<a class="nav-link" href="/usa/" data-nav-key="usa">USA</a>','<!-- AUSTRALIA_HEADER_END -->');
 const cityNavigation=h=>`<details name="usa-city-chapters" class="sidebar-accordion sidebar-chapters" data-sidebar-id="chapters-us-${h.slug}"><summary><span class="sidebar-summary-main">${e(h.name)}</span><span class="sidebar-summary-meta">3</span></summary><div class="sidebar-links sidebar-accordion-body"><a class="sidebar-link" href="/usa/${h.slug}/" data-nav-key="us-${h.slug}">${e(h.name)}</a>${h.guides.map(g=>`<a class="sidebar-link" href="${g.url}" data-nav-key="us-${h.slug}-${g.slug}">${e(g.name)}</a>`).join('')}</div></details>`;
@@ -131,3 +176,4 @@ const newOrleansSearchTerms={'/usa/new-orleans/':['MSY Route 202','Jefferson Tra
 for(const [route,terms] of Object.entries(newOrleansSearchTerms)){const record=search.find(r=>r.url===route);if(!record)throw Error('Missing New Orleans search route '+route);record.keywords=[...new Set([record.title,'New Orleans',...terms])];}
 fs.writeFileSync(searchFile,JSON.stringify(search,null,2)+'\n');
 console.log('Generated 97 USA routes and integrated country, neighborhood, search and navigation links.');
+}

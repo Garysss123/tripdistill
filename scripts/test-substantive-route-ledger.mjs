@@ -29,6 +29,7 @@ import {
   usaBostonNewSubstantiveRoutes,
   usaNewYorkHistoricalCoverageCorrectionRoutes,
   usaOtherHistoricalCoverageCorrectionRoutes,
+  usaOverviewJuneauHistoricalCoverageCorrectionRoutes,
   usaSanDiegoNewSubstantiveRoutes,
   vietnamPhongNhaNewSubstantiveRoutes,
   australiaBroomeTasmaniaNewSubstantiveRoutes,
@@ -155,7 +156,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -265,12 +266,33 @@ for (const route of usaNewYorkHistoricalCoverageCorrectionRoutes) {
 }
 assert.equal(usaOtherHistoricalCoverageCorrectionRoutes.length, 26, 'The additional historical coverage correction contains exactly 26 already-rewritten U.S. paths.');
 assert.equal(new Set(usaOtherHistoricalCoverageCorrectionRoutes).size, 26, 'The 26 historical U.S. paths are unique.');
+assert.deepEqual(usaOverviewJuneauHistoricalCoverageCorrectionRoutes, [
+  '/usa/',
+  '/usa/alaska/juneau-southeast/'
+], 'The overview and Juneau are the exact two separately classified historical routes.');
+assert.equal(new Set(usaOverviewJuneauHistoricalCoverageCorrectionRoutes).size, 2, 'The overview and Juneau historical paths are unique.');
 const allExplicitUsaRouteGroups = [
   ...usaRecordedSourceWorkRoutes,
   ...usaNewYorkHistoricalCoverageCorrectionRoutes,
-  ...usaOtherHistoricalCoverageCorrectionRoutes
+  ...usaOtherHistoricalCoverageCorrectionRoutes,
+  ...usaOverviewJuneauHistoricalCoverageCorrectionRoutes
 ];
 assert.equal(new Set(allExplicitUsaRouteGroups).size, allExplicitUsaRouteGroups.length, 'Historical coverage corrections do not overlap the prior source-work sets or each other.');
+
+const overviewJuneauSourceBase = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
+const overviewJuneauHistoricalSource = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const overviewJuneauFollowupTerminal = '73bcb05ae123fe3e4b70f057fa4dc7fc88979693';
+assert.equal(git(['show', '-s', '--format=%P', overviewJuneauFollowupTerminal]).trim(), overviewJuneauSourceBase, 'The dated overview/Juneau follow-up has its exact authorized source base.');
+for (const route of usaOverviewJuneauHistoricalCoverageCorrectionRoutes) {
+  const file = `${route.slice(1)}index.html`;
+  const historical = normalizedMainText(git(['show', `${overviewJuneauHistoricalSource}:${file}`]));
+  const historicalParent = normalizedMainText(git(['show', `${overviewJuneauHistoricalSource}^:${file}`]));
+  const taskBaseBody = normalizedMainText(git(['show', `${overviewJuneauSourceBase}:${file}`]));
+  const current = normalizedMainText(fs.readFileSync(path.join(root, file), 'utf8'));
+  assert.notEqual(historical, historicalParent, `${route}: historical September source contains a substantive body change.`);
+  assert.equal(taskBaseBody, historical, `${route}: exact source task base already contained the historical substantive body.`);
+  assert.notEqual(current, taskBaseBody, `${route}: October source follow-up is a distinct dated update, not the historical work itself.`);
+}
 
 const historicalUsaSources = [
   {
@@ -370,7 +392,7 @@ assert.equal(vietnamPhongNhaNewSubstantiveRoutes.length, 4, 'Phong Nha adds four
 assert(!vietnamPhongNhaNewSubstantiveRoutes.includes('/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'), 'Paradise/Tien Son is not counted a second time.');
 assert.equal(australiaBroomeTasmaniaNewSubstantiveRoutes.length, 4, 'Broome/Tasmania adds four newly integrated body routes.');
 assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
-for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes, ...usaChicagoNewSubstantiveRoutes, ...usaArizonaNewSubstantiveRoutes, ...usaLosAngelesNewSubstantiveRoutes, ...usaBostonNewSubstantiveRoutes, ...usaSanDiegoNewSubstantiveRoutes, ...usaNewYorkHistoricalCoverageCorrectionRoutes, ...usaOtherHistoricalCoverageCorrectionRoutes]) {
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes, ...usaChicagoNewSubstantiveRoutes, ...usaArizonaNewSubstantiveRoutes, ...usaLosAngelesNewSubstantiveRoutes, ...usaBostonNewSubstantiveRoutes, ...usaSanDiegoNewSubstantiveRoutes, ...usaNewYorkHistoricalCoverageCorrectionRoutes, ...usaOtherHistoricalCoverageCorrectionRoutes, ...usaOverviewJuneauHistoricalCoverageCorrectionRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
@@ -382,4 +404,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne and Phong Nha improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; New York’s four historical routes and 26 other historical U.S. routes are separately accounted with body and reviewed five-language evidence retained; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome and four Broome/Tasmania improvements; corrected coverage reaches 871/907 after the 26-route historical correction.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne and Phong Nha improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome and four Broome/Tasmania improvements; corrected coverage reaches 873/907.');

@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'f2a2aa1d9aaab0151a6bd75dfc31c907c63afb28';
@@ -30,11 +30,13 @@ const arizonaRoutes = postNewEnglandArizonaRoutes;
 const losAngelesRoutes = postArizonaLosAngelesRoutes;
 const bostonRoutes = postLosAngelesBostonRoutes;
 const sanDiegoRoutes = postLosAngelesSanDiegoRoutes;
+const overviewJuneauBase = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
+const overviewJuneauTerminal = '73bcb05ae123fe3e4b70f057fa4dc7fc88979693';
 const sanDiegoTerminal = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
 const bostonTerminal = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
 const arizonaTerminal = 'd5f7d1689b784b4930cd9f7d4496ab3148929162';
 const losAngelesTerminal = 'b7d32c7e1585d5af3cf3d4291dd323e5d2da30eb';
-const targets = new Set([...routes, ...chicagoRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes].map((route) => route.slice(1) + 'index.html'));
+const targets = new Set([...routes, ...chicagoRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes].map((route) => route.slice(1) + 'index.html'));
 const pathFor = (prefix, route) => path.join(root, `${prefix}${route}`, 'index.html');
 const gitText = (revision, file) => execFileSync('git', ['show', `${revision}:${file}`], { cwd: root, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
 const gitBytes = (revision, file) => execFileSync('git', ['show', `${revision}:${file}`], { cwd: root, maxBuffer: 32 * 1024 * 1024 });
@@ -95,13 +97,19 @@ for (const relativePath of basePaths) {
   const afterHtml = fs.readFileSync(currentPath, 'utf8');
   const after = mainText(afterHtml);
   if (before !== after) changedBodyPaths.push(relativePath);
-  if (!targets.has(relativePath)) {
+  const route = `/${relativePath.slice(0, -'index.html'.length)}`;
+  if (postBostonOverviewJuneauRoutes.includes(route)) {
+    assert.equal(mainText(gitText(overviewJuneauBase, relativePath)), mainText(gitText(september, relativePath)), `${route}: exact follow-up base retains September historical body`);
+    assert.notEqual(after, mainText(gitText(overviewJuneauBase, relativePath)), `${route}: dated follow-up changes the body`);
+    assert.equal(after, mainText(gitText(overviewJuneauTerminal, relativePath)), `${route}: body matches the exact follow-up terminal`);
+    assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${route}: Article dateModified`);
+    assert.match(afterHtml, route === '/usa/' ? /data-editorial-revision="usa-country-20261013"/ : /data-editorial-revision="alaska-juneau-20261013"/, `${route}: exact follow-up marker`);
+  } else if (!targets.has(relativePath)) {
     assert.equal(after, before, `${relativePath}: English main body remains unchanged outside the four selected paths`);
   } else if (chicagoRoutes.some((route) => relativePath === `${route.slice(1)}index.html`)) {
     assert.notEqual(after, before, `${relativePath}: Chicago body changed in its separately scoped batch`);
     assert.equal(after, mainText(gitText(chicagoTerminal, relativePath)), `${relativePath}: Chicago body matches the exact Chicago source terminal`);
   } else {
-    const route = `/${relativePath.slice(0, -'index.html'.length)}`;
     assert.notEqual(after, before, `${relativePath}: substantive body differs from its exact batch base`);
     if (arizonaRoutes.includes(route)) {
       assert.equal(after, mainText(gitText(arizonaTerminal, relativePath)), `${relativePath}: later Arizona body matches the exact source terminal`);
@@ -138,7 +146,7 @@ for (const relativePath of basePaths) {
 }
 assert.deepEqual(changedBodyPaths.sort(), [...targets].sort(), 'exactly four New England, Chicago, Arizona, Los Angeles, San Diego and Boston English U.S. bodies changed');
 assert.deepEqual(gitBytes(base, 'usa/new-york/index.html'), fs.readFileSync(path.join(root, 'usa/new-york/index.html')), 'New York acceptance sample remains byte-for-byte unchanged');
-assert.deepEqual(gitBytes(base, 'usa/index.html'), fs.readFileSync(path.join(root, 'usa/index.html')), 'U.S. index remains byte-for-byte unchanged');
+assert.equal(mainText(gitText(base, 'usa/index.html')), mainText(gitText(overviewJuneauBase, 'usa/index.html')), 'the U.S. overview at the exact New England base matches the follow-up source base body');
 
 const expectedCopy = new Map([
   ['/usa/new-england/', ['Three or four nights', 'Five nights', 'Seven nights', 'two real transfer days', 'Portland Transportation Center', 'New England 511']],
@@ -169,14 +177,14 @@ assert.equal(baseSearch.size, 955, 'integration-base English search index has 95
 assert.equal(currentSearch.size, 955, 'English search index retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...sanDiegoRoutes, ...bostonRoutes].sort(), 'only the selected New England, Chicago, Margaret, Arizona, Los Angeles, Broome/Tasmania, Mui Ne, Phong Nha, San Diego and Boston search summaries changed');
+assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'only the selected route summaries changed; Juneau adds one search change and the USA overview summary remains unchanged');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set is unchanged');
-const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...sanDiegoRoutes, ...bostonRoutes];
+const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes];
 const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(changedDates, datedPaths, 'only the selected New England, Chicago, Margaret, Da Lat, Arizona, Los Angeles, Broome/Tasmania, Mui Ne, Phong Nha, San Diego and Boston routes across five editions receive changed sitemap dates');
@@ -198,12 +206,12 @@ for (const locale of locales.slice(1)) {
   assert.ok(fs.existsSync(recordsPath), `${locale.code} localized search index exists`);
   const records = JSON.parse(fs.readFileSync(recordsPath, 'utf8'));
   assert.equal(records.length, 955, `${locale.code} search index retains 955 records`);
-  for (const route of routes) {
+  for (const route of [...routes, ...postBostonOverviewJuneauSearchRoutes]) {
     const entry = records.find((record) => record.url === `${locale.prefix}${route}`);
     assert.ok(entry?.summary, `${locale.code} localized search summary exists: ${route}`);
     assert.ok(locale.script.test(entry.summary), `${locale.code} search summary is translated: ${route}`);
   }
 }
 
-console.log('USA New England refresh regression passed: four substantive New England routes plus exact Chicago, Margaret, Da Lat, Arizona and Los Angeles follow-on scopes; New York and /usa/ unchanged; exact search/date changes and the 4,560-URL sitemap preserved.');
+console.log(`USA New England refresh regression passed: four substantive New England routes plus exact later scopes; New York unchanged; overview/Juneau are separate historical follow-ups, Juneau alone changes search, ${datedPaths.length} dates and 4,560 sitemap URLs preserved.`);
 console.log(JSON.stringify(bodyStats, null, 2));

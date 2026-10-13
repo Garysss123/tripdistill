@@ -87,7 +87,8 @@ const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scotts
 const losAngelesRefreshRoutes=new Set(['/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/']);
 const bostonRefreshRoutes=new Set(['/usa/boston/','/usa/boston/freedom-trail/','/usa/boston/cambridge-harvard/','/usa/boston/harbor-islands/']);
 const sanDiegoRefreshRoutes=new Set(['/usa/san-diego/','/usa/san-diego/balboa-park/','/usa/san-diego/harbor-coronado/','/usa/san-diego/la-jolla/']);
-for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=sanDiegoRefreshRoutes.has(route)||losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||bostonRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
+const overviewJuneauRefreshRoutes=new Set(['/usa/','/usa/alaska/juneau-southeast/']);
+for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=sanDiegoRefreshRoutes.has(route)||losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||bostonRefreshRoutes.has(route)||overviewJuneauRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');
 for(const r of usaRoutes)check(records.some(x=>x.url===r),`${r}: missing search entry`);
@@ -131,7 +132,8 @@ const expectedEditorialSearch=new Map([
  ['/usa/san-diego/',sanDiegoDescriptions[0]],
  ['/usa/san-diego/balboa-park/',sanDiegoDescriptions[1]],
  ['/usa/san-diego/la-jolla/',sanDiegoDescriptions[2]],
- ['/usa/san-diego/harbor-coronado/',sanDiegoDescriptions[3]]
+ ['/usa/san-diego/harbor-coronado/',sanDiegoDescriptions[3]],
+ ['/usa/alaska/juneau-southeast/','Choose Juneau with a one-night downtown plan or a 2–3-night single-base stay, and map the full airport, Auke Bay and Mendenhall transfers before choosing each day.']
 ]);
 for(const [route,summary] of expectedEditorialSearch)check(records.find(x=>x.url===route)?.summary===summary,`${route}: search summary is stale`);
 check(read('scripts/build-dist.mjs').includes("'usa'"),'USA absent from build allowlist');

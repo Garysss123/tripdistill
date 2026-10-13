@@ -1,6 +1,6 @@
 # U.S. historical coverage correction — 13 October 2026
 
-This report corrects the substantive-route ledger for 30 existing U.S. routes whose body rewrites were already present in source history but omitted from the previous count. It records historical work; these paths are not new body changes in the current batch and do not establish U.S.-wide content quality or rendered UI acceptance.
+This report corrects the substantive-route ledger for 32 existing U.S. routes whose substantive body work was already present in source history but omitted from the previous count. It records historical work; these paths do not establish U.S.-wide content quality or rendered UI acceptance.
 
 ## New York sample: 4 routes
 
@@ -69,6 +69,13 @@ Reviewed batches per locale: `39a-las-vegas-editorial.json` (186 keys) and `39b-
 - `/usa/las-vegas/strip/`
 - `/usa/utah-parks/zion/`
 
+### USA overview & Juneau — 2 historical routes
+
+At source base `b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda`, both normalized English `<main>` bodies matched historical commit `71def01cd4d489552b9f5d67ca1a202becaa0435e` and differed from its parent `5ef5073b3beb5e06ffcc8cba58359dd09ee70b4b`. The 13 October source follow-up `73bcb05ae123fe3e4b70f057fa4dc7fc88979693` adds dated operating detail to these existing pages; it is not their first substantive rewrite. The exact two-page regression checks the historical comparison and the distinct current follow-up. Four-language historical translations were present in reviewed batches before the current source follow-up; the new follow-up is documented separately in the [USA overview and Juneau source report](reports/usa-overview-juneau-source-follow-up-2026-10-13.md).
+
+- `/usa/`
+- `/usa/alaska/juneau-southeast/`
+
 ## Ledger arithmetic
 
-The integration ledger was 829/907 after Boston & Cambridge. The four New York historical paths had already been corrected separately to 833/907. The current three-source batch contributes 12 newly integrated existing-body routes (San Diego, Phong Nha, Broome/Tasmania), bringing the ledger to 845/907. Adding the 26 additional historical routes yields 871/907. The New York four plus these 26 are a 30-route historical accounting correction; they are not counted as current source work. No root or Juneau draft is included.
+The integration ledger was 829/907 after Boston & Cambridge. The four New York historical paths corrected that count to 833/907; 26 other historical routes brought it to 859/907. The three-country content batch contributes 12 newly integrated existing-body routes (San Diego, Phong Nha, Broome/Tasmania), bringing the ledger to 871/907. The two-route USA overview/Juneau follow-up verifies historical work that predates it and brings the corrected total to 873/907. These 32 historical routes (4 New York, 26 other paths, 2 overview/Juneau) are listed separately from the 12 current body refreshes. They do not increase the disclosed 65/97 U.S. source-work subtotal. No route is added or removed.

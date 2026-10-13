@@ -1,0 +1,39 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/",
+    "/usa/alaska/juneau-southeast/"
+  ],
+  "translations": {
+    "The NPS passes page, last updated 9 October 2026, lists the year’s fee-free days and says the 2026 free-entry offer is limited to U.S. citizens and residents; nonresidents pay regular entrance fees and any applicable nonresident fees. Check the actual park’s current fee, timed-entry and reservation rules before relying on a pass or free day.": "NPS通行證頁面於2026年10月9日最後更新，列出當年度免入園費日期，並說明2026年免費入園僅適用美國公民與居民；非居民須支付一般入園費及適用的非居民附加費。依賴通行證或免費入園日之前，請確認實際公園目前的費用、預約入園時段與預約規則。",
+    "National Park Service: 2026 free-entry dates, passes and fee conditions": "美國國家公園管理局：2026年免費入園日期、通行證與費用條件",
+    "Source information checked on 13 October 2026. Trip shapes, comparisons and suggested pacing are TripDistill editorial judgments, not official tour itineraries.": "來源資訊於2026年10月13日查核。旅程型態、比較與建議節奏為TripDistill編輯判斷，並非官方套裝行程。",
+    "NPS: 2026 free-entry dates, passes and fee conditions": "NPS：2026年免費入園日期、通行證與費用條件",
+    "Choose Juneau with a one-night downtown plan or a 2–3-night single-base stay, and map the full airport, Auke Bay and Mendenhall transfers before choosing each day.": "規劃Juneau時，可選一晚住市中心，或安排2–3晚住同一基地；決定每日行程前，先確認往返機場、Auke Bay及Mendenhall的完整交通。",
+    "One night or two to three": "一晚或兩至三晚",
+    "The Alaska Marine Highway locates its Juneau terminal at Auke Bay on Glacier Highway, 13 miles from town. It is a separate arrival from the downtown cruise docks. Check the actual sailing and terminal connection rather than treating a Juneau ferry ticket as a downtown arrival.": "Alaska Marine Highway將Juneau渡輪碼頭列於Auke Bay的Glacier Highway，距鎮上市區13英里。這與市中心郵輪碼頭是不同抵達點。請查明實際船班及碼頭接駁，不要因船票目的地寫著Juneau，就把它當成抵達市中心。",
+    "Alaska Marine Highway: official Juneau terminal location": "Alaska Marine Highway：Juneau碼頭官方位置",
+    "An airport arrival and a cruise arrival have different locations and procedures again. At its 13 October 2026 check, Capital Transit reported the Route 6 Airport Connector suspended until further notice; its listed Routes 3 and 4 alternative stops near Wells Fargo or Nuvision and requires a 0.4-mile walk to or from the airport. Check the live service alert, exact hotel location and operator instructions before relying on this transit option.": "機場與郵輪抵達的地點及流程不同。查核至2026年10月13日時，Capital Transit通報Route 6 Airport Connector停駛，恢復時間未定；其替代方案Routes 3和4的上下車點位於Wells Fargo或Nuvision附近，往返機場仍須步行0.4英里。依靠這項公共交通前，請確認即時服務公告、飯店確切位置及業者指示。",
+    "Capital Transit: Mendenhall bus route, last mile and live service alerts": "Capital Transit：前往Mendenhall的巴士路線、末段步行與即時服務公告",
+    "Count the nights around one usable base": "按可用晚數選擇一處實用住宿基地",
+    "One night · Match the room to the arrival and departure": "一晚 · 依抵達與離開交通選住宿",
+    "Choose a downtown base when the available visit is a cruise call or a short downtown cultural stay. Choose only one main activity and confirm its full round trip before committing; an arrival or departure day is not a full sightseeing day. If the next leg leaves from Auke Bay, include the 13-mile terminal transfer in the room and return decision.": "若行程只有郵輪停靠或短暫市區文化行程，選擇市中心住宿。一次只安排一項主要活動，並先確認全程往返；抵達或離開日不能當成完整觀光日。若下一段旅程從Auke Bay出發，也要把13英里的碼頭接駁納入住宿與返程取捨。",
+    "Two nights · Keep one base and separate the main visits": "兩晚 · 固定一處住宿，分開安排主要行程",
+    "A single downtown base can support a real museum or Sealaska Heritage visit on one day and a separately planned Mendenhall day on another. Compare that convenience with the exact door-to-door transport from any valley-side lodging; “in the valley” does not mean a bus stops at the visitor center.": "固定住在市中心，可用一天好好參觀博物館或Sealaska Heritage，另一天再規劃Mendenhall。比較這項便利性時，也要查清谷地住宿的實際門到門交通；住在「谷地」不代表巴士會停在遊客中心。",
+    "Three nights · Add weather or onward-travel margin": "三晚 · 留出天候或後續交通的彈性",
+    "Keep the same base while setting aside a flexible day for weather, access notices or a ferry connection. Check the actual Alaska Marine Highway sailing before assigning a departure date; an additional night is useful only if it protects a real visit or connection. Do not split hotels just to place every activity on a map.": "維持同一住宿基地，同時留一天彈性以應對天候、出入公告或渡輪接駁。訂下離開日期前，先查實際Alaska Marine Highway船班；多一晚只有在能保障一項實際行程或交通銜接時才有用。不要只為了在地圖上接近各景點而換飯店。",
+    "These are planning shapes, not minimum stays or a promise that a particular ferry, hotel shuttle or visitor facility operates. Choose the base after checking the actual arrival, Mendenhall return and next departure together.": "這些是規劃選項，不是最低住宿晚數，也不保證任何渡輪、飯店接駁車或遊客設施會營運。請同時確認實際抵達、Mendenhall返程與下一段離開交通，再選住宿基地。",
+    "Travel Juneau identifies the Forest Service visitor center in the Mendenhall Valley and publishes current seasonal information. At the 13 October 2026 check, its listing said the visitor center opens intermittently in April and October; call 907-789-0097 to confirm the actual day, hours and access. The listing says the surrounding grounds are open 6 a.m. to midnight year-round, which does not establish that a particular building, trail or route is open.": "Travel Juneau指出，Forest Service遊客中心位於Mendenhall Valley。查核至2026年10月13日時，其頁面表示遊客中心在4月與10月間歇開放；請致電907-789-0097確認實際日期、時間與出入方式。該頁亦表示周邊場地全年每日早上6時至午夜開放，但這不代表特定建築、步道或路線均開放。",
+    "Capital Transit says no bus stops at the visitor center. The closest Dredge Lake Road stop is 1.5 miles (2.4 km) away; downtown-to-center public transit can take up to 1.5 hours one way, including a roughly 30-minute walk. At the 13 October 2026 check, fall Route 8 Express service was weekday-only, with some trips suspended; Routes 3 and 4 were slower alternatives to the same distant stop. Some downtown cruise terminals are up to another 1.5 miles from the transit center. Check the actual departure-day alert, route, cruise dock and return before treating this as a port-call option. If the full walk and return do not fit the group, use a separately confirmed door-to-door arrangement or choose the downtown cultural day; do not assume an unverified shuttle or boat.": "Capital Transit表示沒有巴士停靠遊客中心。最近的Dredge Lake Road站距中心1.5英里（2.4公里）；從Juneau市中心搭公共交通到中心，單程最久可達1.5小時，其中約30分鐘為步行。查核至2026年10月13日時，秋季Route 8 Express僅於平日行駛，且部分班次暫停；較慢的Routes 3和4也只到同一個遠處站點。部分市中心郵輪碼頭距轉運中心還有最多1.5英里。若要把Mendenhall排入郵輪停靠日，請確認當日公告、路線、郵輪碼頭及完整返程。若全程步行與返程不適合同行者，改用已確認的門到門交通，或選市區文化行程；不要假定有尚未核實的接駁車或船班。",
+    "Follow current staff guidance and closures, and keep wildlife observation respectful. Check the National Weather Service Juneau forecast together with the current Forest Service access notice. If poor weather or a closure makes the glacier visit unsuitable, move the downtown museum or Sealaska Heritage visit into that day; if it does not fit the available hours, shorten the plan or leave Juneau for another visit. Do not improvise a route beyond designated access or substitute an unverified boat.": "遵循現場人員的最新指示及封閉公告，並尊重野生動物。請一併查看Juneau的國家氣象局預報與Forest Service最新出入公告。若天候不佳或封閉公告使冰河行程不適合，將市區博物館或Sealaska Heritage行程移至該日；若當日開放時間仍無法配合，就縮短安排或留待下次到Juneau再訪。不要繞行或自行進入指定範圍以外，也不要改搭未核實的船。",
+    "National Weather Service Juneau: forecast and active alerts": "國家氣象局Juneau辦公室：預報與現行警報",
+    "Juneau transit and seasonal visitor information were checked on 13 October 2026. Schedules, alerts, weather and access can change; check the actual visit date.": "Juneau交通與季節性遊客資訊於2026年10月13日查核。班次、警報、天候與出入情況可能變動；請依實際出遊日期確認。",
+    "U.S. Forest Service: Mendenhall Glacier Visitor Center": "美國林務局：Mendenhall Glacier Visitor Center"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 runtime; exact runtime variant unavailable",
+    "reviewer": "GPT-6 runtime; same-model self-review; exact runtime variant unavailable",
+    "independentSecondModel": false
+  }
+}
