@@ -50,7 +50,6 @@
     "Read change and cancellation terms": "변경 및 취소 조건 읽기",
     "Distinguish a weather cancellation from a personal change of plan and read the provider’s actual conditions. Keep the flexible parts of the itinerary around the fixed ones, rather than assuming that every ticket can be moved after a delay.": "날씨로 인한 취소와 개인 사정에 따른 계획 변경을 구분하고 제공자의 실제 조건을 읽으세요. 모든 티켓을 지연 후 옮길 수 있다고 가정하지 말고, 고정된 일정 주변에 유연한 부분을 배치하세요.",
     "For national parks, use the current NPS pass and fee information for the traveler’s eligibility and the specific park. An entrance pass is not a blanket reservation for a campsite, timed entry or an operator’s tour. Do not reuse an old pass-price comparison without checking the current terms.": "국립공원에서는 여행자의 자격과 해당 공원에 맞는 최신 NPS 패스 및 요금 정보를 사용하세요. 입장 패스가 캠핑장, 시간 지정 입장, 운영자 투어를 일괄 예약해 주는 것은 아닙니다. 현재 조건을 확인하지 않고 오래된 패스 가격 비교를 재사용하지 마세요.",
-    "National Park Service: current passes, eligibility and fee conditions": "National Park Service: 현재 패스, 자격 및 요금 조건",
     "Choose a regional season and a workable alternative": "지역별 계절과 실행 가능한 대안 선택하기",
     "City days": "도시 일정",
     "A major museum or cultural institution can be the purpose of a day, not just a rain backup. Keep its actual opening and admission in the plan. In a shorter stay, choose one substantial interior rather than racing between several lobbies.": "주요 박물관이나 문화 기관은 비가 올 때의 대안이 아니라 하루의 목적이 될 수 있습니다. 실제 개장 시간과 입장을 계획에 넣으세요. 체류가 짧다면 여러 로비를 서둘러 돌기보다 실내 명소 하나에 충실한 시간을 주세요.",
@@ -73,10 +72,8 @@
     "Choose by the actual route. Central urban portions may work with transit and walking, while a park or dispersed regional portion needs a vehicle or confirmed operator. Collection, return and parking are part of the comparison.": "실제 경로로 선택하세요. 도심 구간은 대중교통과 도보로 가능할 수 있지만, 공원이나 넓게 흩어진 지역은 차량이나 확인된 운영자가 필요합니다. 차량 수령, 반납, 주차도 비교 대상입니다.",
     "Is every American destination covered here?": "여기 모든 미국 목적지를 다루나요?",
     "No. These 24 regional hubs and 72 local chapters are a selective starting library. Each guide is intended to resolve a particular stay or visit, not to stand in for every destination in its state.": "아닙니다. 이 24개 지역 허브와 72개 현지 챕터는 선별한 출발 라이브러리입니다. 각 가이드는 모든 주의 모든 목적지를 대신하는 것이 아니라 특정 체류나 방문의 결정을 해결하도록 만들어졌습니다.",
-    "Source information checked on 11 September 2026. Trip shapes, comparisons and suggested pacing are TripDistill editorial judgments, not official tour itineraries.": "출처 정보는 2026년 9월 11일에 확인했습니다. 여행 형태, 비교, 권장 속도는 TripDistill의 편집 판단이며 공식 투어 일정이 아닙니다.",
     "Amtrak: Northeast Regional": "Amtrak: Northeast Regional",
     "U.S. Department of State: entry guidance": "미국 국무부: 입국 안내",
-    "NPS: current passes and fee conditions": "NPS: 현재 패스 및 요금 조건",
     "National Weather Service: hazard guidance": "미국 국립기상청: 기상 위험 안내"
   }
 }

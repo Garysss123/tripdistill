@@ -802,6 +802,8 @@ const usaBostonRoutes = [
   '/usa/boston/cambridge-harvard/',
   '/usa/boston/harbor-islands/'
 ];
+const usaOverviewJuneauLastmod = '2026-10-13';
+const usaOverviewJuneauRoutes = ['/usa/', '/usa/alaska/juneau-southeast/'];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1246,6 +1248,11 @@ for (const route of usaBostonRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Boston route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaBostonLastmod });
+}
+for (const route of usaOverviewJuneauRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited U.S. overview/Juneau route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaOverviewJuneauLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

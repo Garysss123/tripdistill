@@ -5,7 +5,7 @@ import path from 'node:path';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from '../data/switzerland-ch15-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
-import { postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes, postIntegrationSitemapRefreshRoutes } from './integration-sprint-scope.mjs';
 import { loadCatalog } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -124,8 +124,8 @@ const laterCa15Localized = new Set(locales.flatMap(({ prefix }) => laterCa15Rout
 const sourceDateChanges = [...sourceSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(sourceDateChanges, [...targetLocalized].sort(), 'the exact CH15 source terminal changes only the four target routes across five locales');
 const integrationDateChanges = [...currentSitemap].filter(([route, date]) => integrationSitemap.get(route) !== date).map(([route]) => route).sort();
-const laterSourceRefreshLocalized = [...postIntegrationSourceRefreshRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
-assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterSourceRefreshLocalized].sort(), 'the cumulative integration changes only the four CH15, four later CA15, and four Hawaii and four New Orleans source-refresh routes across five locales');
+const laterSourceRefreshLocalized = [...postIntegrationSitemapRefreshRoutes].flatMap((route) => locales.map(({ prefix }) => prefix + route));
+assert.deepEqual(integrationDateChanges, [...targetLocalized, ...laterCa15Localized, ...laterSourceRefreshLocalized].sort(), 'the cumulative integration date set also includes later source-refresh routes and the USA overview/Juneau follow-up across five locales');
 for (const route of targetLocalized) assert.equal(currentSitemap.get(route), switzerlandCh15IsoDate, `${route} carries the CH15 review date`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));

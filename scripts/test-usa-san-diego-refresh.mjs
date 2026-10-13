@@ -21,6 +21,8 @@ const laterBostonRoutes = [
   '/usa/boston/cambridge-harvard/',
   '/usa/boston/harbor-islands/'
 ];
+const laterOverviewJuneauRoutes = ['/usa/', '/usa/alaska/juneau-southeast/'];
+const laterJuneauSearchRoutes = ['/usa/alaska/juneau-southeast/'];
 const translatedRoutes = [
   '/usa/san-diego/',
   '/usa/san-diego/balboa-park/',
@@ -119,6 +121,12 @@ for (const file of baseUsaPages) {
       assert.equal(mainText(gitText(bostonBase, file)), mainText(gitText(september, file)), `${file}: Boston exact source base still matches its 11 September body`);
       assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: Boston Article dateModified`);
       assert.match(afterHtml, /data-editorial-revision="boston-20261013"/, `${file}: Boston editorial marker`);
+    } else if (laterOverviewJuneauRoutes.some((route) => relative(route) === file)) {
+      const overviewJuneauBase = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
+      assert.notEqual(mainText(afterHtml), mainText(gitText(overviewJuneauBase, file)), `${file}: later overview/Juneau follow-up changes after its exact task base`);
+      assert.equal(mainText(gitText(overviewJuneauBase, file)), mainText(gitText(september, file)), `${file}: exact task-base body matches the September historical body`);
+      assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: overview/Juneau Article date`);
+      assert.match(afterHtml, file === 'usa/index.html' ? /data-editorial-revision="usa-country-20261013"/ : /data-editorial-revision="alaska-juneau-20261013"/, `${file}: overview/Juneau marker`);
     } else {
       assert.equal(mainText(afterHtml), before, `${file}: English main content remains unchanged outside the four selected pages and later Boston batch`);
     }
@@ -132,7 +140,6 @@ for (const file of baseUsaPages) {
 }
 
 const unchangedFiles = [
-  'usa/index.html',
   ...git(['ls-tree', '-r', '--name-only', base, '--', 'usa/new-york']).toString('utf8')
     .trim().split('\n').filter((file) => file.endsWith('/index.html'))
 ];
@@ -167,14 +174,14 @@ const baseSearchFromGit = new Map(JSON.parse(gitText(base, 'data/search-index.js
 assert.equal(baseSearchFromGit.size, 955, 'base English search index has 955 entries');
 assert.equal(currentSearch.size, 955, 'current English search index has 955 entries');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
-assert.deepEqual([...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes, ...laterBostonRoutes].sort(), 'only four San Diego and four later Boston search summaries changed');
+assert.deepEqual([...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes, ...laterBostonRoutes, ...laterJuneauSearchRoutes].sort(), 'only San Diego, Boston and Juneau search summaries changed; the country overview summary remains unchanged');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'base sitemap has exactly 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap has exactly 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
-const datedPaths = [...routes, ...laterBostonRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datedPaths = [...routes, ...laterBostonRoutes, ...laterOverviewJuneauRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 assert.deepEqual([...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only the four San Diego and four later Boston routes across five editions receive new sitemap dates');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: lastmod`);
 
@@ -210,4 +217,4 @@ for (const locale of locales.slice(1)) {
 
 assert.equal(git(['diff', '--name-only', base, '--', 'assets']).toString('utf8').trim(), '', 'no image asset bytes or records changed');
 assert.equal(git(['diff', '--name-only', base, '--', '*.svg']).toString('utf8').trim(), '', 'no SVG was added or changed');
-console.log('San Diego source regression passed: four deduplicated routes plus the later Boston batch, exact-base scope, translated page/search content, 40 dates, 4,560 URLs, New York unchanged, and no asset/SVG changes.');
+console.log(`San Diego source regression passed: four deduplicated routes plus later Boston, U.S. overview and Juneau paths; Juneau alone adds a search change; ${datedPaths.length} dates, 4,560 URLs, New York unchanged, and no asset/SVG changes.`);

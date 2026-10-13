@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postHawaiiNewOrleansRoutes, postNewOrleansAtlantaRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
+import { postHawaiiNewOrleansRoutes, postNewOrleansAtlantaRoutes, postOctober13Routes, postOctober13SearchRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
@@ -206,7 +206,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].sort(), 'From the exact source-task base, only the scoped New Orleans, Atlanta, Florida, Chicago and New England search records changed.');
+assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13SearchRoutes].sort(), 'From the exact source-task base, only the scoped U.S. refresh search records changed.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])

@@ -9,7 +9,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationSourceRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes, postIntegrationSitemapRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '18b6789bdc780c5425dff77d7d027d4078b4f32a';
@@ -272,7 +272,7 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...switzerlandCh15Routes, ...postIntegrationSitemapRefreshRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Great Ocean Road, later CA13/CA14, Gold Coast, Cairns, CH14/CH15 and scoped U.S. refresh routes whose dates differ from the prior checkpoint may receive a new lastmod.');

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { postIntegrationSourceRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
+import { postIntegrationSitemapRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -53,7 +53,7 @@ const checkpointContinuationRoutes = [
   '/switzerland/locarno-ascona-valleys/',
   '/switzerland/schaffhausen-rhine-falls/',
   ...switzerlandCh15Routes,
-  ...postIntegrationSourceRefreshRoutes
+  ...postIntegrationSitemapRefreshRoutes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
