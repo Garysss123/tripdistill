@@ -20,6 +20,7 @@ import {
   usaNewOrleansNewSubstantiveRoutes,
   usaAtlantaNewSubstantiveRoutes,
   usaFloridaNewSubstantiveRoutes,
+  usaNewEnglandNewSubstantiveRoutes,
   vietnamCompletedRoutes,
   vietnamHistoricalExclusions,
   vietnamNewSubstantiveRoutes,
@@ -108,7 +109,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -149,8 +150,11 @@ assert.equal(new Set(usaNewOrleansNewSubstantiveRoutes).size, 4, 'New Orleans ad
 assert.equal(usaFloridaNewSubstantiveRoutes.length, 4, 'Florida adds four exact existing-route improvements.');
 assert.equal(new Set(usaFloridaNewSubstantiveRoutes).size, 4, 'Florida additions must be unique.');
 assert(usaFloridaNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route) && !usaNewOrleansNewSubstantiveRoutes.includes(route) && !usaAtlantaNewSubstantiveRoutes.includes(route)), 'Florida routes are disjoint from the historical 25 and Hawaii, New Orleans and Atlanta additions.');
+assert.equal(usaNewEnglandNewSubstantiveRoutes.length, 4, 'New England adds four exact existing-route improvements.');
+assert.equal(new Set(usaNewEnglandNewSubstantiveRoutes).size, 4, 'New England additions must be unique.');
+assert(usaNewEnglandNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route) && !usaNewOrleansNewSubstantiveRoutes.includes(route) && !usaAtlantaNewSubstantiveRoutes.includes(route) && !usaFloridaNewSubstantiveRoutes.includes(route)), 'New England routes are disjoint from prior USA ledger improvements.');
 assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
-for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes]) {
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
@@ -162,4 +166,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta and four Florida improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 793.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta, four Florida and four New England improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 797.');

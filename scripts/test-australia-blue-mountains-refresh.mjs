@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
-import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postNewEnglandIntegrationRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'd38eb8b13e90eaa121d4696a7d7a34b84e481b98';
@@ -316,7 +316,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...switzerlandCh16Routes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes].sort(), 'Only the selected Blue Mountains and exact later country, Vietnam, Hawaii, Australia and New Orleans search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...switzerlandCh16Routes, ...laterSydneyGapRoutes, ...laterNswGapRoutes, ...laterBrisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postNewEnglandIntegrationRoutes].sort(), 'Only the selected Blue Mountains and exact later country, Vietnam, Hawaii, Australia, New Orleans and New England search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);

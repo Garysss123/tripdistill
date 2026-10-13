@@ -61,6 +61,13 @@ export const usaFloridaNewSubstantiveRoutes = Object.freeze([
   '/usa/orlando/winter-park/'
 ]);
 
+export const usaNewEnglandNewSubstantiveRoutes = Object.freeze([
+  '/usa/new-england/',
+  '/usa/new-england/portland-maine/',
+  '/usa/new-england/acadia/',
+  '/usa/new-england/white-mountains-vermont/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -223,5 +230,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Australian Alps & Margaret River', count: 781 }),
   Object.freeze({ label: 'Florida', count: 785 }),
   Object.freeze({ label: 'Ho Chi Minh City', count: 789 }),
-  Object.freeze({ label: 'Mekong Delta', count: 793 })
+  Object.freeze({ label: 'Mekong Delta', count: 793 }),
+  Object.freeze({ label: 'New England', count: 797 })
 ]);

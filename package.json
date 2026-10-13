@@ -196,7 +196,8 @@
     "test:australia-melbourne-ocean-gaps": "node scripts/test-australia-melbourne-ocean-gaps.mjs",
     "test:australia-adelaide-perth-gaps": "node scripts/test-australia-adelaide-perth-gaps.mjs",
     "test:australia-alps-margaret-gaps": "node scripts/test-australia-alps-margaret-gaps.mjs",
-    "test:australia-canberra-gaps": "node scripts/test-australia-canberra-gaps.mjs"
+    "test:australia-canberra-gaps": "node scripts/test-australia-canberra-gaps.mjs",
+    "test:usa-new-england-refresh": "node scripts/test-usa-new-england-refresh.mjs"
   },
   "engines": {
     "node": ">=20.19.0"
