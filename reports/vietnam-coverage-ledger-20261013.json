@@ -9391,5 +9391,66 @@
       "routes": "currentSprintRoutes",
       "priorRemainingRoutes": "previousTopLevelSprint.remainingRoutesAfterSprint"
     }
+  },
+  "integratedCheckpoint": {
+    "recordedOn": "2026-10-13",
+    "repository": "Garysss123/tripdistill",
+    "branch": "codex/integration-sprint-20261011",
+    "fetchedIntegrationBaseCommit": "efdfa902ed6c7241750379a860cad97ef3a9962a",
+    "cumulativeAuditBaseline": "a014412eceb30efae51894be3b6167debaa96ca3",
+    "sourceTerminalCommit": "5e945277ca36e11a26ce8744ca9c6abb9970139d",
+    "sourceParentCommit": "d779848fbc247042561cfaa34773257122aa38d0",
+    "sourceTree": "e7c08a81d0ee8829656d1862a54ad783230239f5",
+    "integrationCommit": "68707bc780b58a141746b749551f42093a9e4ef4",
+    "integrationParentCommit": "efdfa902ed6c7241750379a860cad97ef3a9962a",
+    "integrationTree": "751b800428fe2e236eefe229a45cca119dc03ba5",
+    "substantiveRouteCoverage": {
+      "before": 902,
+      "after": 906,
+      "total": 907
+    },
+    "vietnamCoverage": {
+      "before": 91,
+      "after": 95,
+      "total": 99
+    },
+    "routes": [
+      "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+      "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+      "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+      "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/"
+    ],
+    "cumulativeIntegrationScope": {
+      "changedEnglishBodies": 421,
+      "sourceWorkBodies": 419,
+      "separatelyAccountedUsHistoricalBodies": 2,
+      "sitemapLastmodChanges": 2100,
+      "routesWithLastmodChanges": 420,
+      "editions": 5,
+      "changedEnglishSearchRecords": 377,
+      "sitemapUrls": 4560
+    },
+    "localizedEditions": {
+      "localeCount": 4,
+      "requiredStringsPerLocale": 61718,
+      "pagesPerLocale": 912,
+      "searchRecordsPerLocale": 955
+    },
+    "audit": "passed",
+    "build": {
+      "status": "passed",
+      "files": 5501,
+      "htmlFiles": 4577,
+      "imageFiles": 825,
+      "sizeMiB": 329.5,
+      "sitemapRoutesVerified": 4560,
+      "cloudflarePagesFileHeadroom": 14499
+    },
+    "reviewLimitations": {
+      "independentTranslationReviewer": false,
+      "renderedDesktopMobileAcceptance": "not performed",
+      "mainUpdated": false,
+      "deployed": false
+    }
   }
 }
