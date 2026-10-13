@@ -1169,11 +1169,25 @@ const daLatCentralHighlands = defineVietnamCluster({
   family: 'pine-greenhouse',
   label: 'Pine, coffee and highland forest · Central Vietnam',
   tagline: 'Climb from cool city to living forest.',
+  reviewDate: '13 October 2026',
+  isoDate: '2026-10-13',
   hubIntro: 'Da Lat is a gateway to a larger highland story: lakes and railway, coffee and farm work, Langbiang and K’Ho landscapes, Bidoup forest, Buon Ma Thuot waterfalls and Yok Don dry forest. Distances, elevation and seasonal rain should shape the order.',
-  stay: 'Use Da Lat as the comfortable highland base for city, lake, railway, farm and nearby mountain days; move to Buon Ma Thuot or a park-side stay only when the longer ecology and transfer deserve it.',
-  transfer: 'Protect altitude and road time. Da Lat airport, sleeper buses and regional roads serve different purposes, while Bidoup and Yok Don require confirmed guides, vehicles, permits and daylight.',
+  stay: 'Keep one central Da Lat base for the city and nearby day routes; add a park-side night only after the park confirms the exact lodging and return plan.',
+  transfer: 'Use a confirmed arrival and local vehicle, then protect daylight on the rural roads. The official tourism profile checked 13 October 2026 gives broad orientation, not a live timetable.',
+  hubSources: [
+    ['https://vietnam.travel/places-to-go/south-central-coast-central-highlands/dalat', 'Vietnam Tourism — Da Lat climate, Lien Khuong access and city activities (checked 13 October 2026; not a live timetable or forecast)'],
+    ['https://bidoupnuiba.gov.vn/', 'Bidoup–Nui Ba National Park — official route and visitor-service listings (checked 13 October 2026; listings do not confirm a date-specific booking)'],
+    ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check the actual travel-date forecast and warnings (checked 13 October 2026)']
+  ],
+  planner: [
+    ['2 nights · one Da Lat base', 'Choose the city or one excursion', 'Arrival and departure are partial days, leaving one full day. Stay near the central lake and market if the railway-and-city walk is the priority; choose either a confirmed farm visit or a park route instead if that is the main reason for coming. Do not stack both on the same day.'],
+    ['3–4 nights · keep separate route days', 'Let weather set the order', 'Use Da Lat as the base for the walkable core and one named day route. Add a second full day only when the host or park confirms access, pickup, return and route length. Keep a spare day or a flexible final night so rain or a closure can move the outdoor plan without breaking an onward ticket.'],
+    ['5+ nights · move the base once', 'Treat distant highlands as another stay', 'If the trip continues to Buon Ma Thuot or another remote chapter, plan a separate daylight transfer and local overnight rather than an out-and-back from Da Lat. Confirm the actual road or scheduled transport before booking; current journey times and services are unknown in this review.']
+  ],
+  routeModelHeading: 'Count daylight days before adding another ridge.',
+  routeModelLead: 'This is a base-and-weather sequence, not a claim that every farm, trail or train is operating today. Keep the city route complete on its own and move remote chapters only after the exact host or park confirms access.',
   sources: [
-    ['https://www.vietnam.travel/places-to-go/central-vietnam/dalat', 'Vietnam Tourism — Da Lat city, railway, coffee, weather and transport'],
+    ['https://www.vietnam.travel/places-to-go/south-central-coast-central-highlands/dalat', 'Vietnam Tourism — Da Lat city, railway, coffee, weather and transport'],
     ['https://bidoupnuiba.gov.vn/', 'Bidoup–Nui Ba National Park — official ecological routes and visitor information'],
     ['https://www.unesco.org/en/mab/langbiang', 'UNESCO Man and the Biosphere — Langbiang Biosphere Reserve'],
     ['https://tour.yokdonnationalpark.vn/EN/yokdon-national-park.html', 'Yok Don National Park — official English visitor and ecology information'],
@@ -1241,6 +1255,12 @@ const daLatCentralHighlands = defineVietnamCluster({
       name: 'Cau Dat Coffee & Farm Belt',
       motif: 'From red soil to cup',
       instrument: 'ledger',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://vietnam.travel/places-to-go/south-central-coast-central-highlands/dalat', 'Vietnam Tourism — Da Lat coffee and farm-tour context (checked 13 October 2026; it does not verify a Cau Dat property, opening or booking)'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check the road-area forecast and warnings for the actual date (checked 13 October 2026)']
+      ],
       image: image({
         src: '/assets/images/vietnam-da-lat-coffee.webp',
         alt: 'Coffee plantation near Da Lat in Vietnam',
@@ -1250,11 +1270,35 @@ const daLatCentralHighlands = defineVietnamCluster({
         license: 'CC BY 4.0'
       }),
       summary: 'Follow Da Lat’s farm belt through coffee, tea, flowers, processing and community livelihoods with a pre-booked, low-impact visit.',
-      lead: 'The highland farm story is about labor, altitude, processing and land—not only a scenic café. A good route makes the production chain visible and leaves the farm working after the visitor departs.',
-      orientation: 'Choose one farm or cooperative experience with clear permission and interpretation. More stops do not automatically make the agricultural story richer.',
-      arrival: 'Cau Dat and surrounding farms sit outside the city core on winding roads; use a pre-arranged driver or verified tour and expect fog, rain and slower travel.',
-      sequence: 'Confirm the host, walk only permitted paths, learn how coffee or tea is grown and processed, then return before visibility and road conditions deteriorate.',
-      boundary: 'Protect crops and communities: ask before entering fields or photographing workers, do not pick plants, and do not use “sustainable” claims without the operator’s evidence.',
+      lead: 'Treat Cầu Đất as a working farm landscape, not a guaranteed attraction with a single public gate. The official Vietnam Tourism profile checked 13 October 2026 describes coffee on Da Lat’s surrounding slopes and names a K’Ho Coffee farm tour, but it does not establish that any Cầu Đất property is open, accepts walk-ins or shares that tour’s access. Select one host who confirms a visit in writing, then build the road day around that exact meeting point and return. If nobody confirms, stay in Da Lat rather than arriving at a private farm unannounced.',
+      orientation: 'The useful choice is not “how many farms fit?” but “which one confirmed host can explain cultivation, processing and local work without interrupting it?” Keep central Da Lat as the hotel base for two or three nights. With only two nights, this farm day competes with the central walk; with three, keep them on separate days. A fourth night gives room to move the road trip when fog or rain reduces visibility. Do not change hotels for a visit whose current access has not been confirmed.',
+      arrival: 'No current public bus, visitor entrance, route time or Cau Dat farm schedule was verified in the official material available for this review. Ask the host to name the gate or pickup point, expected visit length, road approach, return vehicle and weather cancellation rule. Use a named driver or a confirmed tour from Da Lat; do not assume a café, plantation sign or map pin grants access to a working property.',
+      sequence: 'Confirm one host and the exact arrival point the day before; leave Da Lat with a daylight return agreed; follow only the host-approved path through the farm or processing area; ask before photography or handling crops; then return to the same base without adding a second rural stop.',
+      boundary: 'Farm rows, drying beds and machinery are workspaces. Ask before entering or photographing, keep off planted ground, do not touch tools or pick produce, and treat any sustainability or origin claim as the host’s explanation rather than an independently audited certification.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'One confirmed host makes the farm day real.',
+        intro: 'The official tourism profile gives general Da Lat coffee context, not a current Cầu Đất access notice. Do not leave town until the host and return are specific.',
+        steps: [
+          ['Base', 'Sleep in central Da Lat', 'Keep the same hotel for the market, lake and farm day; a second base adds friction without proving access.'],
+          ['Confirm', 'Name the host and gate', 'Ask about visitor permission, interpretation, pickup, timing and the exact route through working areas.'],
+          ['Visit', 'Follow one farm story', 'Stay on permitted paths and let the host set boundaries around crops, processing and photographs.'],
+          ['Return', 'Protect daylight', 'Use the agreed vehicle back to Da Lat; if fog or heavy rain changes the plan, cancel the farm visit rather than improvise at another property.']
+        ],
+        fallbackTitle: 'If the host or road is not confirmed',
+        fallback: 'Keep the day in central Da Lat for the lake, market and a café whose current access you verify. The farm visit can move to a later date; no unverified property is presented as an open substitute.'
+      },
+      stages: [
+        ['Book one host', 'Ask who will receive you, where the vehicle should stop, which parts of the farm are visitor-accessible, whether interpretation is available and how rain affects the visit. Save the answer and a return contact.'],
+        ['Read the production', 'Let the host explain the crops and processing sequence on permitted ground. Harvest, drying, roasting and sales may occur at different places or seasons; do not promise that each will be visible on one visit.'],
+        ['Leave the work intact', 'Keep groups small around active work, avoid blocking deliveries, ask before portraits and buy directly only if the host offers it. Do not turn an ordinary farm into a staged demonstration.'],
+        ['Return before weather', 'Check the forecast again before departure and keep the driver for the return. If cloud, rain or poor road visibility develops, end early and return to Da Lat rather than pushing toward another rural stop.']
+      ],
+      risks: [
+        ['Access is unknown', 'The official tourism profile checked 13 October 2026 describes Da Lat coffee tours but does not confirm any named Cầu Đất farm’s current opening, booking or walk-in policy. Contact the actual host directly.'],
+        ['Road and visibility', 'The same official profile describes a cool highland climate and rain from May through October; this is broad seasonal context, not today’s weather. Check the national forecast and cancel a foggy or unsafe road day.'],
+        ['Workplace boundaries', 'A public-looking entrance does not authorize field access. Stay with the host, protect crops and equipment, and do not photograph workers or residents without consent.']
+      ],
       stages: [
         ['Book the host', 'Confirm the farm’s current opening, permission, language, transport and weather policy instead of arriving unannounced at a working property.'],
         ['Read the crop', 'Observe shade, soil, slope, harvest and processing from permitted areas; let the host define what can be touched or tasted.'],
@@ -1266,15 +1310,22 @@ const daLatCentralHighlands = defineVietnamCluster({
         ['Unannounced access', 'Farms are workplaces and private land; a missing reservation can create safety, privacy and community problems.'],
         ['Crop damage', 'Do not enter rows, pick cherries, handle equipment or move drying materials without explicit permission.']
       ],
-      duration: 'Use a half or full day for one substantive farm experience, including transport and a slow conversation with the host.',
-      combine: 'Combine with Da Lat city only when the return road is comfortable; avoid adding Langbiang or a park trek to the same farm-heavy day.',
-      verify: 'Confirm the current farm host, road weather, reservation, transport, visitor boundaries and any claimed certification before publishing or booking.'
+      duration: 'Reserve one full daylight block for a single host, including the unverified round-trip road time and a slower visit. This is a planning buffer, not a published farm schedule. Two Da Lat nights leave only one full day, so choose the city or farm; three nights make separate days possible.',
+      combine: 'Pair this with a light Da Lat evening only if the driver returns comfortably. Keep Langbiang, Bidoup and the central walk on different days; they are not add-on stops after a farm day. A fourth Da Lat night is more useful as weather slack than as a second unconfirmed farm.',
+      verify: 'Confirm the host’s legal visitor access, exact gate, reservation, language, allowed path, transport, return, rain cancellation and any certification evidence directly. The accessible official source does not establish current Cầu Đất openings; that status remains unknown until the host confirms.'
     },
     {
       slug: 'langbiang-kho-highlands',
       name: 'Langbiang & K’Ho Highlands',
       motif: 'The mountain and its people',
       instrument: 'contour',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://bidoupnuiba.gov.vn/dich-vu/tour-tuyen-du-lich-sinh-thai/tuyen-langbiang-1-ngay/', 'Bidoup–Nui Ba National Park — Langbiang one-day route listing (checked 13 October 2026; confirm current departures because the page repeats unrelated route text)'],
+        ['https://vietnam.travel/places-to-go/south-central-coast-central-highlands/dalat', 'Vietnam Tourism — Da Lat highland climate and guided mountain context (checked 13 October 2026; seasonal overview, not a day forecast)'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — current-date forecast and warnings (checked 13 October 2026)']
+      ],
       image: image({
         src: '/assets/images/vietnam-langbiang.webp',
         alt: 'Large LANGBIANG sign on a grassy highland slope under blue sky',
@@ -1284,11 +1335,35 @@ const daLatCentralHighlands = defineVietnamCluster({
         license: 'Public domain'
       }),
       summary: 'Plan Langbiang as a mountain, plateau and K’Ho cultural landscape with weather, ability and consent kept visible at every elevation.',
-      lead: 'Langbiang is both a recognizable summit and part of a larger biosphere reserve landscape. The page should make elevation, forest, community and visitor behavior equally legible.',
-      orientation: 'Choose a managed viewpoint, a permitted trail or a community-led cultural experience; do not promise a summit simply because the mountain appears close to Da Lat.',
-      arrival: 'Use a verified vehicle to the current trailhead or visitor area. Cloud, rain, road condition and local access rules can change the sensible route.',
-      sequence: 'Check the mountain and reserve notice, acclimatize to the climb, follow marked or guided routes, and return before cloud, rain or darkness removes the road margin.',
-      boundary: 'Protect reserve and community boundaries: no plant collection, off-trail shortcuts, loud music, trespass or unconsented cultural photography.',
+      lead: 'Use the park’s named Langbiang route as a booking question, not a summit guarantee. Its official page lists a one-day route and gives an orientation point about 36 km from Da Lat, but the page’s detail repeats text for a different Thiên Thai route and the related-tour panel shows inconsistent duration. I do not treat those fields as a live timetable or verified route grade. Ask the park which route, entry point, transport and return are actually operating on your date; then decide whether the group wants a guided forest day or a shorter confirmed viewpoint.',
+      orientation: 'Stay in Da Lat for at least three nights if this is one of two planned full days: arrival and departure are partial, and the mountain day should not be squeezed between them. Keep the city core as the rain plan and make Langbiang the movable day. A fourth night buys a rescheduling margin; it does not make an unconfirmed trail safer. K’Ho communities are living neighbors, not an attraction, so choose only an experience the community or park explicitly welcomes.',
+      arrival: 'The park page checked 13 October 2026 names a Langbiang one-day route, lists a location about 36 km from Da Lat and says transport should be registered with its Ecotourism and Environmental Education Center. Because the same page contains mismatched route copy, confirm the exact trailhead, road pickup, departure, finish, guide and current access directly with the park. No road travel time or walk-in permission is verified here.',
+      sequence: 'Keep one Da Lat hotel base → contact the park and select a confirmed route → agree on meeting point, driver and return before setting out → follow the guide’s weather and turn-back decision → return to town before darkness. Do not add a second mountain, farm or distant transfer to this day.',
+      boundary: 'Stay on the route the park authorizes, do not collect plants or take shortcuts, and do not enter village, sacred or private spaces without invitation. Ask before photographing people, homes, ceremonies or craft work; stop when the community or guide sets a boundary.',
+      routeDiagram: {
+        kind: 'compare',
+        title: 'Choose the park route only after the park confirms it.',
+        intro: 'The official listing is useful for contacting the park, but its duplicated description and conflicting duration are not a current itinerary.',
+        steps: [
+          ['Sleep', 'Keep Da Lat as the base', 'Plan three nights for a city day plus one mountain day; use a fourth night if the route needs a weather move.'],
+          ['Ask', 'Confirm route and transport', 'Request the exact trailhead, guide, start and finish, vehicle, access conditions and same-day return.'],
+          ['Decide', 'Use ability and forecast', 'Take only a route whose length and difficulty the park confirms for the group; let the guide cancel or shorten it.'],
+          ['Return', 'Leave the evening open', 'Come back to the same base with daylight. Do not connect this hike to a flight, bus or second rural visit.']
+        ],
+        fallbackTitle: 'If the trail closes or weather turns',
+        fallback: 'Do not substitute an unverified summit road or local path. Move the hike to a clear day; use the Da Lat lake, market and station walk as the complete bad-weather alternative.'
+      },
+      stages: [
+        ['Call before booking', 'The park’s official page provides a route and booking link, but its visible descriptions conflict. Ask for the current route name, difficulty, guide, registration, exact visitor center and whether the day’s transport is included.'],
+        ['Set one trail day', 'Choose a route the group can finish with margin. Confirm footwear, food, water, rain layer, meeting point and return vehicle; do not use the approximate map distance as a travel-time promise.'],
+        ['Follow the guide', 'Stay together, use marked or guided ground, protect plants and streams, and accept a turn-back call if cloud, rain, footing or fatigue changes. A viewpoint is optional; a safe descent is not.'],
+        ['Return to Da Lat', 'Keep the same hotel and an uncommitted evening. If the park cancels or the weather closes the route, shift to the central lake, market and station chapter or rest—do not chase another trail.']
+      ],
+      risks: [
+        ['Conflicting route page', 'The official Langbiang page lists a one-day route but also repeats unrelated Thiên Thai narrative and inconsistent duration elsewhere. Verify the current program with the park rather than repeating the page as a live schedule.'],
+        ['Mountain weather', 'Vietnam Tourism’s 13 October 2026 profile describes rain from May to October and cool highland nights; it is not a local forecast for your date. Check NCHMF close to departure and move or cancel for poor visibility, heavy rain or unsafe footing.'],
+        ['Return after a closure', 'A blocked trail can also delay the vehicle plan. Agree on a safe pickup and fallback with the park; never improvise a downhill shortcut, unregistered ride or after-dark road return.']
+      ],
       stages: [
         ['Choose the elevation', 'Match route length and altitude to the group, then check the current trailhead, transport and weather before leaving Da Lat.'],
         ['Climb by contour', 'Move slowly through pine and open highland terrain, watching cloud, footing and the return time rather than chasing a summit label.'],
@@ -1300,15 +1375,22 @@ const daLatCentralHighlands = defineVietnamCluster({
         ['Altitude and footing', 'Even modest highland climbs can expose fatigue, cold, wet rock and uneven ground; carry layers and water.'],
         ['Cultural consent', 'K’Ho communities are not scenery; use permission-based, community-led experiences and avoid sacred or private areas.']
       ],
-      duration: 'Use a half day for a managed nearby route or a full day for a more demanding hike with a guide and weather buffer.',
-      combine: 'Combine with Da Lat city only after the mountain return; keep Bidoup as a separate protected-area commitment.',
-      verify: 'Check UNESCO reserve context, local park or trail notices, current access, guide needs, weather and the group’s ability before climbing.'
+      duration: 'Reserve one full daylight day plus a Da Lat night before and after if the route starts early or returns late. The park page’s one-day label is not a departure guarantee. With three nights, keep one full city day and one confirmed route day; four nights provide a weather reschedule.',
+      combine: 'Use the same Da Lat base for the city core and one Langbiang day. Keep Bidoup and Cầu Đất on separate days, and do not chain a trail to the airport or an intercity bus. If the park cannot confirm access, the central city walk remains a complete alternative.',
+      verify: 'Confirm the route, trailhead, current access, guide, transport, start/finish, return pickup, cancellation policy and group ability directly with Bidoup–Nui Ba. Check the NCHMF forecast for the date; present opening and weather conditions remain unknown until checked.'
     },
     {
       slug: 'bidoup-nui-ba-national-park',
       name: 'Bidoup–Nui Ba National Park',
       motif: 'A forest that needs a guide',
       instrument: 'transect',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://bidoupnuiba.gov.vn/', 'Bidoup–Nui Ba National Park — official route, transport, lodging and visitor-service menu (checked 13 October 2026; menu does not prove live availability)'],
+        ['https://bidoupnuiba.gov.vn/dich-vu/tour-tuyen-du-lich-sinh-thai/tuyen-sinh-thai-bidoup-17-km/', 'Bidoup–Nui Ba National Park — “BIDOUP 17 Km” route page (checked 13 October 2026; duplicated route text means length and timing need direct confirmation)'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check forecast and warnings for the actual route date (checked 13 October 2026)']
+      ],
       image: image({
         src: '/assets/images/vietnam-bidoup.webp',
         alt: 'Hon Giao landscape in Bidoup Nui Ba National Park',
@@ -1318,11 +1400,35 @@ const daLatCentralHighlands = defineVietnamCluster({
         license: 'CC BY-SA 4.0'
       }),
       summary: 'Treat Bidoup–Nui Ba as a real protected-area expedition with guide, permit, route, accommodation and weather decisions—not a casual Da Lat detour.',
-      lead: 'Bidoup–Nui Ba holds highland forests, rare species and K’Ho cultural landscapes that cannot be responsibly reduced to a viewpoint. The official route contract comes before the photo.',
-      orientation: 'Select a park-approved ecology route by duration and ability, and understand that a two-day forest trip has different preparation from a city-side nature walk.',
-      arrival: 'Arrange park contact, guide, permit, transport, food and lodging ahead of time. Roads, streams, signal and rescue response are limited compared with Da Lat.',
-      sequence: 'Register, brief the group, enter with the guide, move by the approved transect, camp or stay only where authorized, then exit with a clear route and daylight margin.',
-      boundary: 'Protect the national park: stay on permitted routes, do not collect orchids or other plants, feed animals, light unauthorized fires or leave plastic.',
+      lead: 'Bidoup–Nui Ba is a reservation-led forest visit, not a casual extension of Da Lat sightseeing. The park’s official site checked 13 October 2026 lists guided ecological routes, visitor interpretation, transport, lodging and camping services, and names a “BIDOUP 17 Km” route. The route page repeats unrelated Thiên Thai text and its visible duration fields are inconsistent, so its title is not enough to plan a day or overnight. Contact the park for the route that is actually available, the total walking distance, guide, vehicle, meals, permitted stay and emergency plan before reserving a base.',
+      orientation: 'For a first visit, keep Da Lat as the hotel base before and after a confirmed day route. Two nights in Da Lat allow one full park day only if the arrival and next departure leave daylight on both sides; three nights create a recovery or weather move. An overnight in the park can reduce road pressure only when the park confirms lodging, meal and exit arrangements in writing. Do not use a general “two days, one night” card as evidence that your selected route is currently operating.',
+      arrival: 'The park site lists its headquarters in Lạc Dương and a Da Lat representative office, plus transport and accommodation service categories; it does not establish a public bus departure or same-day seat for your date. Ask the Ecotourism and Environmental Education Center to name the meeting point, transfer provider, road plan, registration requirements and return vehicle. The exact access point, travel time, permits and current route status remain unknown until the park replies.',
+      sequence: 'Da Lat arrival night → park-confirmed meeting and transfer → guide briefing and approved forest route → authorized meal or overnight only if explicitly booked → signed return or exit point → Da Lat recovery night. If the park offers only a day route, return to the same base; never invent a campsite or leave the guide’s route.',
+      boundary: 'The forest is protected habitat and K’Ho cultural landscape. Stay on the approved route, leave orchids and wildlife untouched, keep noise low, carry out all waste, and join cultural interpretation only when it is offered with local consent.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'Park approval comes before the road and the night.',
+        intro: 'The public site lists routes and visitor services, but current availability and route details need direct confirmation.',
+        steps: [
+          ['Base', 'Reserve Da Lat nights', 'Keep a Da Lat arrival and recovery night; add a park night only after lodging and meals are explicitly confirmed.'],
+          ['Register', 'Choose the actual route', 'Ask the park for total distance, difficulty, guide, access, required permit and date-specific availability.'],
+          ['Transfer', 'Set the exact handoff', 'Confirm pickup, park entrance, return vehicle, food, signal limits and emergency protocol before leaving town.'],
+          ['Exit', 'Follow the guide’s call', 'Finish at the authorized endpoint and return before darkness or worsening weather; do not add a second attraction.']
+        ],
+        fallbackTitle: 'If a route is closed or not confirmed',
+        fallback: 'Do not use the route title as permission to enter. Keep the day in Da Lat, or reschedule the park visit after the center confirms another official option.'
+      },
+      stages: [
+        ['Get a written plan', 'Ask the park to confirm the named route, walking distance, duration, difficulty, guide, registration or permit, exact meeting point, vehicle, meal and overnight arrangements. The current web listing alone does not settle these details.'],
+        ['Match the base', 'Use central Da Lat before and after a day route. If the official itinerary requires an overnight inside or near the park, confirm the actual room, food and morning exit before paying; do not assume a remote lodge can be booked on arrival.'],
+        ['Enter with the guide', 'Follow the registered transect and briefing. Let the guide set pace, water crossings and turn-back time; no rare plant, bird or viewpoint is worth stepping off route or extending after weather worsens.'],
+        ['Account for the return', 'Check the entire group and return to the agreed vehicle or authorized accommodation. Leave the evening and next morning flexible; keep onward tickets away from an uncertain park exit.']
+      ],
+      risks: [
+        ['Route details conflict', 'The official “BIDOUP 17 Km” page displays duplicated Thiên Thai narrative and generic duration details. Do not infer the current route length, schedule or overnight offering from that page title; ask the park directly.'],
+        ['Rain and streams', 'The national forecasting center publishes current forecasts and warnings, but conditions at a specific trail crossing can change. Check the actual date and let the park guide cancel or turn back; no current weather is asserted here.'],
+        ['Remote return', 'The park’s site lists transport and lodging services but no public timetable for this plan. Confirm the driver, radio or contact procedure, food, emergency response and return point before entering.']
+      ],
       stages: [
         ['Secure the permit', 'Use the park’s current visitor contact to confirm guide, route, permit, accommodation, food and emergency procedure.'],
         ['Enter the forest', 'Brief the group on pace, water, weather and conduct, then keep the guide’s route and the forest’s quiet intact.'],
@@ -1334,9 +1440,9 @@ const daLatCentralHighlands = defineVietnamCluster({
         ['Rain and stream', 'Highland rain can turn trails and crossings dangerous; the guide’s turn-back call overrides the planned itinerary.'],
         ['Biodiversity pressure', 'Rare plants and wildlife are easily damaged by collecting, noise, baiting or off-trail movement; observe without taking.']
       ],
-      duration: 'Reserve one to two days for an official route, depending on the park’s current offerings and the group’s ability.',
-      combine: 'Combine with Da Lat only as the base before and after the expedition; do not add a city sightseeing checklist between forest stages.',
-      verify: 'Check the Bidoup–Nui Ba official site, current permit and guide requirements, weather, road, accommodation and emergency contact before departure.'
+      duration: 'Block one full day only after the park confirms a day route. For an approved overnight, reserve two route days and the exact authorized lodging; that is a different plan, not an assumption based on the menu. Keep at least two Da Lat nights around the visit unless the park confirms a safer transfer and stay arrangement.',
+      combine: 'Use Da Lat as the recovery base and keep the park as its own chapter. Do not add Langbiang, Cầu Đất, a waterfall road or an onward flight on the same day. A three-night Da Lat stay permits one park day plus a city day; extra nights are weather and transfer slack, not filler.',
+      verify: 'Contact Bidoup–Nui Ba directly for current route, guide, permit, transport, meal, lodging, payment, cancellation, signal and emergency arrangements. Check NCHMF close to departure and ask who makes the closure decision. Current access, availability and local conditions are unknown until confirmed.'
     },
     {
       slug: 'buon-ma-thuot-dray-nur',

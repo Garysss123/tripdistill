@@ -364,10 +364,18 @@ export const followingVietnamMekongRoutes = Object.freeze([
   '/vietnam/mekong-delta/ben-tre-coconut-islets/'
 ]);
 
+// This follow-on source sprint refreshes four Da Lat and Central Highlands bodies.
+export const followingVietnamDaLatRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/',
+  '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
+  '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes].map((route) => `${prefix}${route}`))
 );

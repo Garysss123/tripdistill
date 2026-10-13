@@ -11,6 +11,7 @@ import {
   integrationSitemapRoutes,
   currentBranchVietnamRoutes,
   followingVietnamMekongRoutes,
+  followingVietnamDaLatRoutes,
   integrationSprintBaseline,
   localizedSourceBranchSitemapRoutes
 } from './integration-sprint-scope.mjs';
@@ -39,7 +40,7 @@ const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
 assert.equal(new Set([...integrationRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes]).size, integrationRoutes.length + currentBranchVietnamRoutes.length + followingVietnamMekongRoutes.length, 'branch-specific Vietnam routes must remain separate from the integrated route set');
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes]), 'only the integrated route bodies and this source branch’s HCMC and Mekong bodies may change');
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes]), 'only integrated routes and the explicit HCMC, Mekong and Da Lat source-branch bodies may change');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -56,15 +57,15 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedSourceBranchSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1340);
+assert.equal(changedSitemapUrls.length, 1360);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the integrated dates and this source branch’s 40 HCMC/Mekong edition dates may change'
+  'only the integrated dates and this source branch’s 60 HCMC/Mekong/Da Lat edition dates may change'
 );
 for (const url of changedSitemapUrls) {
   const pathname = new URL(url).pathname;
-  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes].some((route) => pathname.endsWith(route)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes].some((route) => pathname.endsWith(route)) ? '2026-10-13' : '2026-10-12';
   assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
 }
 
@@ -82,4 +83,4 @@ const changedSearchRoutes = [...currentSearchByUrl]
 assert.equal(changedSearchRoutes.length, 229);
 assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 225 expected English search records changed');
 
-console.log('Integration scope regression passed: 261 integrated English bodies plus eight explicit source-branch HCMC/Mekong bodies, 1,340 date changes across 268 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 261 integrated English bodies plus twelve explicit source-branch HCMC/Mekong/Da Lat bodies, 1,360 date changes across 272 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');

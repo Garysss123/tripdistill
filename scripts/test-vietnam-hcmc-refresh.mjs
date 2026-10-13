@@ -22,7 +22,11 @@ const followingRoutes = [
   '/vietnam/mekong-delta/',
   '/vietnam/mekong-delta/can-tho-cai-rang/',
   '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
-  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/',
+  '/vietnam/da-lat-central-highlands/',
+  '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
+  '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
 ];
 const editions = [
   { code: 'en', prefix: '' },
@@ -159,7 +163,7 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC and following Mekong routes in five editions may receive new sitemap dates.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong and Da Lat routes in five editions may receive new sitemap dates.');
 const followOnDatePaths = new Set(editions.flatMap(({ prefix }) => followingRoutes.map((route) => `${prefix}${route}`)));
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), followOnDatePaths.has(pagePath) ? '2026-10-13' : baseDate, `${pagePath}: sitemap date`);
 
@@ -201,5 +205,5 @@ for (const edition of editions.slice(1)) {
   }
 }
 
-console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, four stable and five-language-covered search records, 20 localized date/canonical/hreflang paths, and the unchanged 4,560-URL sitemap.`);
+console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, stable search records, and exact five-language date/canonical/hreflang coverage across the accumulated Vietnam sprints; the 4,560-URL sitemap is unchanged.`);
 console.log(JSON.stringify(bodyChecks, null, 2));
