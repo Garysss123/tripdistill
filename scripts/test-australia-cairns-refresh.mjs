@@ -190,7 +190,11 @@ const afterNhaTrangVietnamRoutes = [
   '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
   '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
-  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/',
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
 ];
 const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();

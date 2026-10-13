@@ -1,0 +1,38 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Po Sah Inu tower current opening": "뽀사이누 탑 현재 개방 여부",
+    "Pô Sah Inư Cham heritage Phan Thiet": "판티엣 뽀사이누 참족 유적",
+    "Phan Thiet public fishing harbor access": "판티엣 어항의 일반 방문 가능 구역",
+    "Phan Thiet town or Mui Ne base": "판티엣 시내와 무이네 숙박 거점 비교",
+    "Phan Thiet local transfer return": "판티엣 현지 이동과 귀환",
+    "Ta Cu Mountain current cableway and trail": "따꾸산 케이블카와 등산로 현재 운영",
+    "Ke Ga lighthouse boat landing permission": "께가 등대 보트와 상륙 허가",
+    "Ke Ga tide and sea condition": "께가 조수와 해상 상태",
+    "Phan Thiet base Ta Cu return driver": "판티엣 거점 따꾸산 귀환 차량",
+    "Mui Ne to Ta Cu transport": "무이네에서 따꾸산 가는 교통",
+    "Phu Quy ferry exact date from Phan Thiet": "판티엣 출발 푸꾸이섬 지정일 페리",
+    "Phu Quy island nights mainland buffer": "푸꾸이섬 숙박일과 본토 완충 숙박",
+    "Superdong Phu Quy ticket portal": "Superdong 푸꾸이섬 공식 티켓 포털",
+    "Phu Quy island host transport": "푸꾸이섬 숙소 픽업과 이동",
+    "Phu Quy Cao Cat Linh Son access": "푸꾸이섬 까오깟·린선 접근",
+    "Phu Quy ferry cancellation plan": "푸꾸이섬 페리 취소 시 대안 계획",
+    "U Minh Ha National Park visitor access": "까마우성 우민하 국립공원 현재 방문 가능 여부",
+    "Ca Mau City to Dat Mui route and lodging": "까마우시에서 덧무이곶 가는 길과 숙소",
+    "Cape Ca Mau return transfer": "까마우곶 귀환 이동편",
+    "Ca Mau forest and mangrove nights": "까마우 숲과 맹그로브 여행 숙박일",
+    "Ca Mau park permit and local guide": "까마우 공원 허가와 현지 가이드",
+    "U Minh Ha Dat Mui separate days": "우민하와 덧무이곶을 다른 날에 방문"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Self-review checked place-name consistency, search intent, transport and access wording. It is not independent model or human review."
+  }
+}

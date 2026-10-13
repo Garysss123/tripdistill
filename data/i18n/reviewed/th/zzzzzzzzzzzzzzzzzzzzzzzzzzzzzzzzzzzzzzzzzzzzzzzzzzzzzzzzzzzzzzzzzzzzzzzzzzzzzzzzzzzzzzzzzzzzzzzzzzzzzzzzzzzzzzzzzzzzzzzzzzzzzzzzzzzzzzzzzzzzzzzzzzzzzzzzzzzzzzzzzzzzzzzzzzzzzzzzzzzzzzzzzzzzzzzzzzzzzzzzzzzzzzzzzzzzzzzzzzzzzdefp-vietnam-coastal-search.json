@@ -1,0 +1,38 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Po Sah Inu tower current opening": "สถานะการเปิดหอคอย Pô Sah Inư ปัจจุบัน",
+    "Pô Sah Inư Cham heritage Phan Thiet": "แหล่งมรดกชาวจาม Pô Sah Inư ใน Phan Thiết",
+    "Phan Thiet public fishing harbor access": "พื้นที่ท่าเรือประมง Phan Thiết ที่เปิดให้ผู้เข้าชม",
+    "Phan Thiet town or Mui Ne base": "เปรียบเทียบฐานพักในเมือง Phan Thiết กับ Mũi Né",
+    "Phan Thiet local transfer return": "รถรับส่งใน Phan Thiết และการเดินทางกลับ",
+    "Ta Cu Mountain current cableway and trail": "สถานะกระเช้าและเส้นทางเดินเขา Tà Cú ปัจจุบัน",
+    "Ke Ga lighthouse boat landing permission": "เรือไปประภาคาร Kê Gà และใบอนุญาตขึ้นฝั่ง",
+    "Ke Ga tide and sea condition": "น้ำขึ้นน้ำลงและสภาพทะเลที่ Kê Gà",
+    "Phan Thiet base Ta Cu return driver": "รถขากลับจากเขา Tà Cú เมื่อพักใน Phan Thiết",
+    "Mui Ne to Ta Cu transport": "การเดินทางจาก Mũi Né ไปเขา Tà Cú",
+    "Phu Quy ferry exact date from Phan Thiet": "เรือ Phú Quý จาก Phan Thiết ตามวันที่กำหนด",
+    "Phu Quy island nights mainland buffer": "จำนวนคืนบนเกาะ Phú Quý และคืนสำรองบนฝั่ง",
+    "Superdong Phu Quy ticket portal": "พอร์ทัลตั๋ว Phú Quý อย่างเป็นทางการของ Superdong",
+    "Phu Quy island host transport": "รถรับจากที่พักบนเกาะ Phú Quý",
+    "Phu Quy Cao Cat Linh Son access": "การเข้าถึง Cao Cát และ Linh Sơn บนเกาะ Phú Quý",
+    "Phu Quy ferry cancellation plan": "แผนสำรองเมื่อเรือ Phú Quý ยกเลิก",
+    "U Minh Ha National Park visitor access": "การเข้าชมอุทยานแห่งชาติ U Minh Hạ ใน Cà Mau ปัจจุบัน",
+    "Ca Mau City to Dat Mui route and lodging": "เส้นทางและที่พักจากเมือง Cà Mau ไปแหลม Đất Mũi",
+    "Cape Ca Mau return transfer": "รถรับส่งขากลับจากแหลม Cà Mau",
+    "Ca Mau forest and mangrove nights": "จำนวนคืนสำหรับเที่ยวป่าและป่าชายเลนใน Cà Mau",
+    "Ca Mau park permit and local guide": "ใบอนุญาตอุทยาน Cà Mau และไกด์ท้องถิ่น",
+    "U Minh Ha Dat Mui separate days": "แยกวันเที่ยว U Minh Hạ กับ Đất Mũi"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Self-review checked place-name consistency, search intent, transport and access wording. It is not independent model or human review."
+  }
+}

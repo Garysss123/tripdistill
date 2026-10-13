@@ -208,6 +208,8 @@ export const vietnamSouthClusters = [
       {
         slug: 'phan-thiet-poshanu-heritage',
         name: 'Phan Thiet Fishing Coast & Po Sah Inu Heritage',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
         motif: 'harbour-to-tower seam',
         instrument: 'docket',
         image: image({
@@ -218,30 +220,51 @@ export const vietnamSouthClusters = [
           creator: 'Dongson*vmvn at Vietnamese Wikipedia',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'Connect Phan Thiet’s working fishing coast with Po Sah Inu’s Cham architecture through a respectful heritage route with two distinct visitor contracts.',
-        lead: 'The fishing village and the Cham towers should not be flattened into a generic sightseeing loop. One is a working coastal livelihood; the other is a sacred archaeological landscape whose meaning extends beyond its masonry.',
-        orientation: 'Begin by deciding whether the morning belongs to harbor life or heritage interpretation. Keep the two settings separate enough that neither becomes background decoration for the other.',
-        arrival: 'Use a named pier, market or tower entrance and confirm local access before setting out. Carry modest clothing for the towers and avoid entering working areas without invitation.',
-        sequence: 'Harbor observation, transition through Phan Thiet, tower reading and a quiet meal complete the cultural chapter.',
-        boundary: 'Do not photograph people, prayer or restricted structures as if they were staged exhibits; the route is strongest when visitors leave room for local life.',
+        summary: 'Plan Phan Thiet’s working waterfront and Pô Sah Inư Cham towers as separate stops from a city base, with a confirmed public edge and respectful heritage access.',
+        lead: 'A fishing port is a workplace, not an open market by default, and Pô Sah Inư is a Cham heritage place with living religious meaning. Make the waterfront optional until a public visitor edge is identified; do not use a map pin as permission to enter a landing or loading area.',
+        orientation: 'Phan Thiet town is the simpler base when this heritage day and a confirmed road or rail arrival are the anchors. Mũi Né can suit a longer beach stay, but it adds an out-and-back road handoff for the tower and any town-side coast stop. Keep the two cultural settings distinct rather than narrating the towers as a backdrop to port work.',
+        arrival: 'Reserve one night in Phan Thiet if you have one full daylight block for the tower and a clearly public harbor edge. Choose three nights if you need two full days for a separate coast visit and an access or weather buffer. A Mũi Né bed is reasonable only when lodging confirms a named driver, both drop-offs and the return; current local bus, taxi and coach details were not verified. Confirm the tower’s opening and entrance directly before making it the day’s anchor.',
+        sequence: 'From one Phan Thiet base, confirm the waterfront’s public boundary first → visit only that marked edge and leave working lanes clear → transfer by an agreed ride to Pô Sah Inư → follow current site and worship guidance → return to the same base. If the harbor has no public visitor area, start with the tower only after its date-specific opening is confirmed; otherwise keep the day in town or reschedule.',
+        boundary: 'Do not cross a barrier, enter a loading area or photograph worship, people or restricted structures without permission. Dress respectfully at the Cham site and follow staff guidance; if access is unclear, leave the location out of the route.',
+        nightPlan: {
+          kicker: 'Nights and one reliable base',
+          title: 'Keep the heritage day close to its return ride',
+          intro: 'Count nights around the full daylight day, not the arrival leg. Current local transfers and opening times were not confirmed, so book the bed and both rides with the responsible provider.',
+          options: [
+            ['1 night', 'Phan Thiet town for one anchor', 'Arrive and settle before the visit day. Use the tower as the main stop only after confirming it is open; add a harbor edge only if the public boundary and local access are explicit. Return to the same town bed before continuing by a separately confirmed road or rail leg.'],
+            ['2 nights', 'One full day, one city base', 'Keep both nights in Phan Thiet. Use the single full day for the tower and only a clearly public waterfront edge; leave a separate coast outing for another trip. Do not move to Mũi Né merely to sleep between two distant transfers.'],
+            ['Mui Ne base', 'Pay for the extra handoff deliberately', 'A resort bed may suit a wider beach itinerary. Ask the property to name the driver, departure point, wait arrangement and return pickup for Phan Thiet; if no round trip is confirmed, switch the base to town or skip this chapter.']
+          ],
+          footerTitle: 'A harbor pin is not public access',
+          footer: 'Keep the harbor optional unless the responsible authority or business identifies a visitor edge. A confirmed tower visit alone is a coherent shorter day.'
+        },
         stages: [
-          ['Harbor', 'Observe from public edges, buy only through clear transactions and keep loading paths open.'],
-          ['Transition', 'Use the city transfer to reset the context instead of narrating the tower as an extension of the market.'],
-          ['Heritage', 'Read Po Sah Inu through its Cham history, architecture and living religious meaning.'],
-          ['Close', 'Choose a locally rooted meal or museum stop, then return before a late coastal transfer becomes rushed.']
+          ['Confirm the edge', 'Ask which waterfront area is openly accessible to visitors today. If the answer is vague or points through a work zone, do not enter.'],
+          ['Keep the first stop short', 'Use only the named public viewing edge; keep clear of boats, nets, crates and workers, and leave without photographing anyone who has not agreed.'],
+          ['Transfer to heritage', 'Use the ride you arranged in advance to Pô Sah Inư. Check the entrance and current visitor guidance before leaving town; follow restrictions around worship.'],
+          ['Return to the base', 'Finish in Phan Thiet and leave the onward connection separate. If either site is closed or unconfirmed, keep the other only if its access is verified.']
         ],
         risks: [
-          ['Working shoreline', 'Boats, crates and motorbikes move for livelihood rather than visitor convenience.'],
-          ['Sacred threshold', 'Dress, photography and access rules can change around prayer or ceremonies.'],
-          ['Heat gap', 'The exposed route between harbor and tower has little shade at the wrong hour.']
+          ['No public pier confirmed', 'The official pages reviewed describe the coast and tower but do not establish a public harbor walk, market entry or current local ride.'],
+          ['Living heritage', 'The current tower opening, ceremony notice, photography rule and any restricted area were not confirmed for a travel date.'],
+          ['Extra coast transfer', 'A Mũi Né base adds a road leg in each direction. No local fare, timetable or drive time is promised; confirm the complete return before leaving.']
         ],
-        duration: 'Allow a half to full day, with extra time if a local festival or heritage program is active.',
-        combine: 'It pairs well with one dune chapter, but adding the remote Phu Quy transfer would dilute the cultural route.',
-        verify: 'Check tower access, ceremony notices, harbor conditions, transport, weather and current heritage guidance.'
+        duration: 'Use one full daylight block after sleeping in Phan Thiet. The tower plus a confirmed public waterfront edge can fit one cultural day; two nights are useful when a separate coast outing or access buffer matters. No current tower hours or waterfront visitor timetable was verified.',
+        combine: 'Pair this with one nearby chapter on another day from the same base. Do not add a remote dune drive, Tà Cú or the Phú Quý ferry to the same day; each needs its own transfer and return margin.',
+        verify: 'The official Vietnam Tourism page describes Pô Sah Inư and the former Bình Thuận coast, now part of Lâm Đồng. It does not publish current opening hours, admission, a public harbor edge or local transport. Confirm those details directly; if the waterfront boundary or return ride remains unknown, skip that stop.',
+        sourceReviewText: 'Planning facts were reviewed on 13 October 2026. Existing image credits are retained and were not re-reviewed in this batch. Current local access and operating details remain unverified.',
+        sources: [
+          ['https://vietnam.travel/places-to-go/south-central-coast-central-highlands/binh-thuan', 'Vietnam Tourism — former Bình Thuận coast, now part of Lâm Đồng; broad access and Pô Sah Inư heritage context (checked 13 October 2026; not current opening or transit information)'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — regional weather and marine bulletins; check date-specific conditions (not harbor access guidance)']
+        ],
+        searchKeywords: ['Po Sah Inu tower current opening', 'Pô Sah Inư Cham heritage Phan Thiet', 'Phan Thiet public fishing harbor access', 'Phan Thiet town or Mui Ne base', 'Phan Thiet local transfer return']
       },
       {
         slug: 'ta-cu-ke-ga-coast',
         name: 'Ta Cu Mountain & Ke Ga Coast',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sourceReviewText: 'Planning facts were reviewed on 13 October 2026. Existing image credits are retained and were not re-reviewed in this batch. Current site operations, landing permissions and sea conditions remain unverified.',
         motif: 'forest-to-lighthouse rise',
         instrument: 'contour',
         image: image({
@@ -252,30 +275,52 @@ export const vietnamSouthClusters = [
           creator: 'Bùi Thụy Đào Nguyên',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'A mainland-to-coast chapter that separates Ta Cu’s forested religious ascent from the tide-dependent Kê Gà lighthouse landing.',
-        lead: 'Ta Cu and Kê Gà share a southern Binh Thuan direction but not the same physical problem. One asks for walking or a managed mountain ascent; the other depends on rocky shore, boat access and sea state.',
-        orientation: 'Choose the mountain or lighthouse as the day’s anchor, then make the second stop conditional. A clear-looking sea does not guarantee a safe landing on Hòn Bà.',
-        arrival: 'Confirm the current Ta Cu entrance and cable-car or trail options, then ask the Kê Gà operator about tide, landing and lighthouse access before committing.',
-        sequence: 'Forest elevation, a deliberate recovery, coastal approach and a tide-aware return keep the geography legible.',
-        boundary: 'Never turn a closed trail, lighthouse or rocky landing into a challenge; a changed viewpoint is better than an avoidable rescue.',
+        summary: 'Separate Tà Cú’s mountain visit from Kê Gà’s conditional offshore landing, choosing a Phan Thiet base and confirming every return leg before travel.',
+        lead: 'Tà Cú and Kê Gà sit in the same broad coastal region but require different access decisions. A mountain entrance, cableway or trail is an operating question; a Kê Gà landing depends on an authorized boat, sea and tide conditions, and permission to go ashore. Do not combine them into a single fixed day.',
+        orientation: 'Phan Thiet town is the practical base when you are arriving by a confirmed road or rail connection or combining a separate heritage day. Mũi Né suits a beach stay only if a named return driver is arranged for the southbound mountain and coast legs. Keep one bed for three nights rather than losing time to a split stay if you want two full outing days. Current Tà Cú operating status and Kê Gà landing permissions were not verified.',
+        arrival: 'For two full outings, reserve three nights from one base and arrange the Tà Cú round trip before setting out. Ask the responsible site or operator to confirm today’s entrance, any cableway or trail actually running, access limits and the return pickup. Treat Kê Gà as a second-day option only after an authorized operator confirms the exact landing, tide and sea plan, lighthouse access and return. There is no verified public walk across the reef or live boat timetable in this guide.',
+        sequence: 'Sleep in Phan Thiet or a Mũi Né property with a confirmed return driver → use day one for Tà Cú only after current mountain access is verified → return to the same base → use day two for Kê Gà only when landing permission, an authorized boat, forecast, tide and same-day return are all confirmed. Otherwise keep the second day onshore at a public place whose access is independently verified, or rest in town.',
+        boundary: 'Do not enter a closed mountain trail, cross a reef on foot or board an unverified boat. A lighthouse photograph does not grant entry to the island, structure or restricted shore; respect worship and local directions at Tà Cú.',
+        nightPlan: {
+          kicker: 'Choose the base and separate the outings',
+          title: 'Set nights by confirmed access',
+          intro: 'Arrival, mountain access and an offshore landing are separate dependencies. Keep the same bed while you find out which one is actually available.',
+          options: [
+            ['1 night', 'Choose one confirmed anchor', 'Stay in Phan Thiet if Tà Cú is the priority and its entrance and return ride are confirmed. If only the coast is confirmed, do not assume a lighthouse landing; choose one public mainland plan with verified access. Leave the other chapter for a longer stay.'],
+            ['3 nights', 'Two full days, one bed', 'Keep all three nights in one Phan Thiet base. Use the first full day for the mountain. Use the second for Kê Gà only after the boat operator confirms authorized landing and same-day return; otherwise use a verified mainland alternative or rest.'],
+            ['Mui Ne base', 'Only with a named return car', 'A Mũi Né resort can fit a wider coast trip, but the southbound round trip adds a handoff. Ask the property to confirm the driver, pickup time, both locations and return to the same door before keeping this base.']
+          ],
+          footerTitle: 'Keep the lighthouse optional',
+          footer: 'There is no safe substitute in an unverified reef crossing. If no authorized landing and return are confirmed, stay on the mainland and do not seek an improvised boat.'
+        },
         stages: [
-          ['Climb', 'Use the official mountain access and match the route to fitness, heat and footwear.'],
-          ['Reset', 'Recover in shade before driving toward the exposed Kê Gà coast.'],
-          ['Land', 'Board only through a current authorized arrangement and follow the landing crew.'],
-          ['Return', 'Leave the rocks and road with enough daylight, tide and sea margin for the mainland journey.']
+          ['Verify Tà Cú', 'Ask the site authority whether the entrance, cableway and walking route are operating today; choose only a route it confirms.'],
+          ['Return to the base', 'Finish the mountain outing with the driver you arranged. Do not continue south on a tight connection or without water, shade and daylight margin.'],
+          ['Recheck Kê Gà', 'On a separate day, require an authorized operator to confirm the landing point, tide, sea conditions, lighthouse entry and return. A forecast alone does not approve a launch.'],
+          ['Use the mainland fallback', 'If any marine detail is missing, cancel the landing. Choose only a mainland viewpoint with verified public access, or keep the day local; never wade across the reef.']
         ],
         risks: [
-          ['Steep footing', 'Forest steps, wet rock and heat can exceed the apparent distance.'],
-          ['Tide and surf', 'Kê Gà access is a marine decision, not a guaranteed walk across the water.'],
-          ['Closure drift', 'Cable cars, trails and lighthouse interiors may be unavailable during works or weather.']
+          ['Mountain status unknown', 'Current Tà Cú cableway, trail, entrance and visitor hours were not verified; older descriptions do not establish today’s operations.'],
+          ['Landing status unknown', 'No current Kê Gà authorized boat, tide window, landing rule or lighthouse visitor permission was confirmed.'],
+          ['Base-to-coast handoff', 'No local timetable, fare or road duration is promised. Confirm a named driver and complete return before leaving either base.']
         ],
-        duration: 'Plan a full mainland day and keep an additional buffer if the lighthouse landing is important.',
-        combine: 'A Phan Thiet heritage stop can replace the lighthouse when the sea is unsuitable; do not stack every coastal chapter.',
-        verify: 'Check Ta Cu operations, trail status, Kê Gà landing rules, tide, sea forecast and return transport.'
+        duration: 'Plan one full daylight day for Tà Cú and a second for Kê Gà only if its boat and landing are approved; allow three nights if you need two full outings between arrival and departure days. One night is enough only when you choose one independently confirmed anchor; do not compress both into a connection day.',
+        combine: 'Use a separate Phan Thiet heritage day as an onshore alternative only if its own public access is confirmed. Do not stack Pô Sah Inư, Tà Cú and an offshore lighthouse visit in one day.',
+        verify: 'The official tourism page provides broad regional context, not live Tà Cú cableway/trail status or Kê Gà boat and lighthouse admission. Check the responsible site and operator, marine forecast, tide, authorized landing and return ride on your exact date. If an answer is missing, skip the landing.',
+        sources: [
+          ['https://vietnam.travel/places-to-go/south-central-coast-central-highlands/binh-thuan', 'Vietnam Tourism — former Bình Thuận coast, now part of Lâm Đồng; broad regional access and Tà Cú context (checked 13 October 2026; not live operations)'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — marine and hazard bulletins; a regional forecast is not a landing authorization'],
+          ['https://vietnamtourism.gov.vn/en/post/4617', 'Viet Nam National Authority of Tourism — Tà Cú context; page content was not readable in this review and does not verify current access'],
+          ['https://vietnamtourism.gov.vn/en/post/1308', 'Viet Nam National Authority of Tourism — Kê Gà context; page content was not readable in this review and does not verify current landing or lighthouse entry']
+        ],
+        searchKeywords: ['Ta Cu Mountain current cableway and trail', 'Ke Ga lighthouse boat landing permission', 'Ke Ga tide and sea condition', 'Phan Thiet base Ta Cu return driver', 'Mui Ne to Ta Cu transport']
       },
       {
         slug: 'phu-quy-island',
         name: 'Phu Quy Island: A Remote Island Rhythm',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sourceReviewText: 'Planning facts were reviewed on 13 October 2026. Existing image credits are retained and were not re-reviewed in this batch. Vessel availability, island access and current local transport remain date-specific and unverified here.',
         motif: 'island departure file',
         instrument: 'expedition',
         image: image({
@@ -286,26 +331,45 @@ export const vietnamSouthClusters = [
           creator: 'Thái Nhi',
           license: 'Public domain'
         }),
-        summary: 'Treat Phu Quy as a remote island stay with its own sea crossing, local shrines, fishing life and limited-service buffer rather than a quick mainland excursion.',
-        lead: 'Phu Quy rewards slow movement, but the island’s appeal is inseparable from the crossing that reaches it. Ferry availability, rough seas, harbor procedures and the return date all need to be solved before choosing viewpoints.',
-        orientation: 'Plan around one island loop and a few respectful stops: coast, fishing community, shrine and a quiet landscape. Leave room for weather to rewrite the order.',
-        arrival: 'Book through a current authorized operator, carry identification and protect against seasickness. Keep one uncommitted day in the wider itinerary in case the crossing moves.',
-        sequence: 'Mainland port, sea crossing, island road loop, cultural pause and return buffer define the chapter.',
-        boundary: 'The island is a working community and a strategic maritime place; do not trespass, photograph restricted facilities or treat residents as scenery.',
+        summary: 'Make Phú Quý a multi-night island stay from Phan Thiet, with mainland buffer nights, a date-specific ferry booking and local access confirmed by your host.',
+        lead: 'Phú Quý begins at the departure port, not at an island viewpoint. The crossing is the itinerary’s critical handoff: an advertised general sailing duration is not a dated timetable, a confirmed ticket or a promise of a safe return. Keep the crossing day clear and protect the mainland connection on both sides.',
+        orientation: 'Use Phan Thiet for the mainland nights because Vietnam Tourism identifies it as the route to the island and says there is no island airport. On Phú Quý, stay in one host-confirmed settlement rather than changing beds to chase a loop. The official overview names Tam Thanh, Ngũ Phụng and Long Hải, plus Cao Cát, Linh Sơn, Van An Thanh and coastal locations; current access, local transport and safe swimming conditions were not confirmed.',
+        arrival: 'A workable mainland-to-mainland plan needs one Phan Thiet night before sailing, at least three island nights and one Phan Thiet night after the return: five nights total. Ask the official operator for your exact date, named port, check-in deadline, baggage rules, cancellation terms and return sailing before paying for fixed onward transport. Superdong’s official ticket portal was available, but it did not show a chosen-date Phú Quý departure in this review. Confirm the island host, pickup point and licensed local ride before leaving the port; no current island bus or vehicle service was verified.',
+        sequence: 'Stay near the confirmed Phan Thiet departure point → verify the issued ticket and port instructions → cross and settle into one host-confirmed island base → use one low-movement day for a publicly accessible settlement or cultural stop → consider a separate coast day only if the specific site is open and access and conditions are confirmed → return on the ticketed sailing → sleep again in Phan Thiet before a fixed road or rail connection.',
+        boundary: 'Phú Quý is a lived-in maritime community. Follow host and site restrictions, ask before photographing people or religious places, and stay out of port, security and work zones. Do not treat a beach description as swimming clearance or a map pin as access permission.',
+        nightPlan: {
+          kicker: 'Crossing nights and weather slack',
+          title: 'Count the mainland handoffs too',
+          intro: 'The boat is not a day trip. Protect both sides of the crossing, keep one island base, and avoid onward tickets that assume the sea will follow a fixed timetable.',
+          options: [
+            ['1–2 island nights', 'A fragile plan for fixed connections', 'The crossing can consume much of an arrival or return day. Do not use a short visit before a flight, onward coach or non-refundable booking; if only one or two nights are available, choose a mainland coast plan instead.'],
+            ['5 nights total', 'One before, three on-island, one after', 'Sleep in Phan Thiet before departure, keep three nights in one confirmed island settlement, then return to a Phan Thiet bed. This gives two full on-island days while keeping the next mainland connection separate. It is a planning shape, not a guarantee the vessel will operate.'],
+            ['6 nights total', 'Add one island weather reserve', 'Use four island nights when the island matters more than a tight onward itinerary. The extra night can absorb a moved outing or slow day, but cannot guarantee a sailing; retain the mainland night after return.']
+          ],
+          footerTitle: 'If the vessel is cancelled, keep the plan simple',
+          footer: 'If departure is cancelled, stay on the mainland and contact the operator and lodging. If return is cancelled, extend the island stay and update the next mainland bed; do not improvise a boat or gamble a fixed connection.'
+        },
         stages: [
-          ['Prepare', 'Confirm vessel, port, check-in, baggage rules and a backup plan before reaching Phan Thiet.'],
-          ['Cross', 'Follow crew instructions, use the supplied safety equipment and keep belongings secured on the vessel.'],
-          ['Settle', 'Explore by legal road access, visit shrines and fishing edges with consent, and buy from local businesses.'],
-          ['Return', 'Protect the final mainland connection with a generous sea and road buffer.']
+          ['Book the exact sailing', 'Match the operator, date, port, check-in and return ticket to the actual departure. The general 2.5–3.5-hour range on Vietnam Tourism is not a current schedule.'],
+          ['Stay near the port', 'Sleep in Phan Thiet before the crossing and leave the day clear for check-in and sailing. If it is cancelled, use a confirmed mainland town or heritage visit only after checking its access.'],
+          ['Use one island base', 'Ask the host to confirm a lawful pickup, current road access and return to the same settlement. Choose a village or cultural stop first; add a coastal site only if it is open and suitable that day.'],
+          ['Return with a spare night', 'Take the ticketed sailing back and keep a Phan Thiet night before any fixed onward leg. If the return moves, contact the operator and extend lodging rather than improvising.']
         ],
         risks: [
-          ['Sea state', 'Wind and waves can delay or cancel a crossing with little value in arguing against the forecast.'],
-          ['Limited support', 'Remote island services, fuel, medicine and accommodation capacity are narrower than on the mainland.'],
-          ['Maritime privacy', 'Ports, vessels and security facilities may have photography or access restrictions.']
+          ['No dated sailing verified', 'The official tourism overview provides access context and a general crossing range. The operator portal did not display chosen-date Phú Quý availability in this review.'],
+          ['Island last mile unknown', 'Current legal road transport, host pickups, fuel, pharmacy hours and site access were not verified. Confirm the named ride before leaving the port.'],
+          ['Return buffer required', 'A cancelled or moved sailing can disrupt the next mainland connection. Keep a post-crossing bed and avoid same-day fixed travel.']
         ],
-        duration: 'Give the island several nights when possible, plus an unused buffer before any flight or fixed mainland commitment.',
-        combine: 'Combine with a mainland heritage or coast chapter only before departure or after return, never as a same-day ferry add-on.',
-        verify: 'Check the operator’s current schedule, port instructions, weather, accommodation, local transport and island notices.'
+        duration: 'Allow at least five nights for a conservative mainland-to-mainland shape: one night in Phan Thiet, three on Phú Quý and one back on the mainland. Four island nights create more weather slack. Fewer than three island nights make little room for a moved crossing and should not sit next to a fixed connection.',
+        combine: 'Use Pô Sah Inư or another verified Phan Thiet visit before sailing or after returning, on a separate daylight block. Do not treat Phú Quý as a same-day ferry add-on or connect a return boat directly to a non-refundable train, coach or flight.',
+        verify: 'Vietnam Tourism says the route begins in Phan Thiet, there is no island airport, and general boats take about 2.5–3.5 hours. That is not an exact-date timetable. Check the operator’s current ticket, port, check-in, baggage, cancellation and weather notices; confirm host pickup and site access. Safe swimming, current operators and island transport remain unverified in this guide.',
+        sources: [
+          ['https://vietnam.travel/things-to-do/phu-quy-vietnam-island-destination', 'Vietnam Tourism — Phú Quý access from Phan Thiet, general crossing range and named island locations (checked 13 October 2026; not a live sailing schedule)'],
+          ['https://online.superdong.com.vn/', 'Superdong official ticket portal — ticket search and Phan Thiet / Phú Quý office information; no selected-date sailing was verified'],
+          ['https://phuquy.binhthuan.gov.vn/du-lich', 'Phú Quý local government tourism portal — timed out in this review; current local visitor access and transport remain unverified'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check dated marine bulletins; these do not replace the operator’s sailing decision']
+        ],
+        searchKeywords: ['Phu Quy ferry exact date from Phan Thiet', 'Phu Quy island nights mainland buffer', 'Superdong Phu Quy ticket portal', 'Phu Quy island host transport', 'Phu Quy Cao Cat Linh Son access', 'Phu Quy ferry cancellation plan']
       }
     ]
   }),
@@ -890,6 +954,9 @@ export const vietnamSouthClusters = [
       {
         slug: 'ca-mau-u-minh-ha-cape',
         name: 'Ca Mau: U Minh Ha to Cape Ca Mau',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sourceReviewText: 'Planning facts were reviewed on 13 October 2026. Existing image credits are retained and were not re-reviewed in this batch. Park access, the southern road or boat leg and current local lodging remain unverified.',
         motif: 'freshwater-to-mangrove file',
         instrument: 'expedition',
         image: image({
@@ -900,26 +967,44 @@ export const vietnamSouthClusters = [
           creator: 'Ctvn wikiviet',
           license: 'Public domain'
         }),
-        summary: 'A deliberate far-south expedition from U Minh Ha peat-swamp forest to the mangrove coast and Cape Ca Mau, with fire, water and transport buffers.',
-        lead: 'Cà Mau makes the freshwater-to-saltwater transition visible. U Minh Hạ’s peat forest, community waterways and the Cape’s mangrove coast require different guides, road legs and conservation rules.',
-        orientation: 'Treat the route as a two-day landscape argument, not a one-day trophy run to the southern marker. The park and the cape each deserve daylight and interpretation.',
-        arrival: 'Travel by road or a currently operating flight connection to Cà Mau, then arrange official park access and the onward boat or road leg before departure.',
-        sequence: 'City reset, peat forest, protected waterway, mangrove coast and a safe return make the expedition coherent.',
-        boundary: 'Stay on marked routes, obey park fire rules and never collect peat, plants, shells or wildlife from the protected landscape.',
+        summary: 'Separate U Minh Hạ’s peat forest from the far-south mangrove coast, using Cà Mau City as the first base and staying near Đất Mũi only if access is confirmed.',
+        lead: 'U Minh Hạ and Đất Mũi are different field days linked by a long southern transfer. The peat forest and mangrove coast deserve daylight and their own access decisions; trying to visit both between uncertain road or boat legs turns the landscape into a rushed marker hunt.',
+        orientation: 'Start from a Cà Mau City bed, where you can confirm the next day’s driver and keep the return leg visible. Do not assume a current flight, public bus, visitor boat, park route, park hours or remote lodging: the local government park page timed out in this review, and the national tourism page exposed no readable article. If a date-specific permit, guide, transport or return cannot be verified, choose one landscape and leave the other for another trip.',
+        arrival: 'For both landscapes, use a conservative three-night shape: night one in Cà Mau City, night two back in the city after U Minh Hạ, and night three near Đất Mũi only if a property explicitly confirms it accepts visitors and the outward and return transport is operating. Arrange a named driver or authorized boat through the responsible provider before leaving town; confirm pickup, drop-off, waiting time, daylight return and what happens if weather changes. No public timetable, current park visitor route or local fare was verified.',
+        sequence: 'Arrive overland or by a separately confirmed operating connection → sleep in Cà Mau City → use day two for U Minh Hạ only after entry and a local guide or visitor route are confirmed, then return to the same city bed → move south on day three only with a confirmed road or authorized boat and a verified place to sleep → visit the coast in daylight → return by a confirmed route with margin before the next fixed connection. If the remote night or return cannot be arranged, do not run the cape as a same-day add-on; keep the forest day or skip both.',
+        boundary: 'Follow the current park authority and guide, stay on confirmed public or visitor routes, and leave peat, mangroves, shells, plants and wildlife undisturbed. A southern marker, closed road or guessed water route is not worth entering a protected or working area.',
+        nightPlan: {
+          kicker: 'Base choice and remote-night test',
+          title: 'Give forest and cape separate daylight',
+          intro: 'The suggested nights are a cautious route shape, not proof that either site or a remote property is currently open. Confirm every bed and transfer before committing.',
+          options: [
+            ['2 nights', 'Choose one landscape', 'Sleep both nights in Cà Mau City and select U Minh Hạ or the cape only after its access and round-trip transport are confirmed. This is a better short trip than attempting both in one day; do not promise an onward connection from a late return.'],
+            ['3 nights', 'City, city, then conditional coast', 'Use the first city night to arrive, the second after the forest day, and the third near Đất Mũi only if the host confirms guest access, meals or essential needs, exact pickup and a return route. If no suitable remote bed exists, keep a second city night and choose one landscape.'],
+            ['4 nights', 'Add one mainland buffer', 'Keep an extra night in the city before a fixed onward road or rail connection. A spare bed can absorb delay; it does not guarantee a boat, park entry or remote transfer will operate.']
+          ],
+          footerTitle: 'No verified remote bed, no forced cape leg',
+          footer: 'If lodging, route or return is unanswered, stop in Cà Mau City and make the forest or town your complete trip. Do not drive south late to preserve a checklist.'
+        },
         stages: [
-          ['Reach', 'Build an overnight base and confirm park, road and boat arrangements before entering remote areas.'],
-          ['Forest', 'Follow the U Minh Hạ guide or designated route and read the peat ecosystem without disturbing it.'],
-          ['Coast', 'Move toward Cape Ca Mau through authorized transport, keeping tide and weather margin.'],
-          ['Return', 'Leave with fuel, water and daylight buffer; do not let the marker dictate an unsafe late transfer.']
+          ['Reach the city base', 'Confirm your actual road or flight arrival, the lodging address and a named local pickup. Sleep in Cà Mau City before attempting a remote site.'],
+          ['Visit the forest', 'Before departure, confirm U Minh Hạ entry, visitor route, guide, transport and return. If the park cannot confirm visitor access, keep the day in town instead.'],
+          ['Rebook the southern handoff', 'After returning to the city, confirm the next road or authorized boat, arrival time, remote guest room and daylight return. Move only if all links are named and available.'],
+          ['Return with margin', 'Keep fuel, water and daylight margin, then protect the next fixed connection with an extra city night. If no remote bed or return ride is confirmed, skip the cape leg.']
         ],
         risks: [
-          ['Remote services', 'Medical, fuel, cash and accommodation options thin out outside Cà Mau city.'],
-          ['Fire and water', 'Peat forest fire risk, high heat, rain and boat conditions all affect access.'],
-          ['Long-distance fatigue', 'The southern endpoint is far enough that rushed driving creates its own hazard.']
+          ['Park access not confirmed', 'The Cà Mau government park page timed out; a readable current visitor-route, permit or hours notice was not available in this review.'],
+          ['Coastal transport unknown', 'No dated public boat, road service or verified remote guest lodging for the cape was confirmed. The regional marine bulletin is not a route or go/no-go clearance.'],
+          ['Return after dark', 'Trying to fit forest, a southern transfer and the cape into one day leaves little resilience if a driver, road or weather plan changes.']
         ],
-        duration: 'Reserve at least two days and one flexible buffer for the full U Minh Hạ-to-cape sequence.',
-        combine: 'It can continue toward community wetland experiences only after the national-park and coastal legs are secured.',
-        verify: 'Check the current Cà Mau government park notices, access permits, boat or road route, tide, fire risk and forecast.'
+        duration: 'Use two full landscape days plus separate arrival and transfer time. Three nights is a conditional shape for the city arrival, a forest day, and a confirmed remote coast night; the cape visit and return still depend on a provider confirming a safe, daylight route. Add another night if the return cannot fit; if access or lodging is unknown, see only one landscape.',
+        combine: 'Do not combine this with a same-day Delta transfer to another city. Keep U Minh Hạ and Đất Mũi separate, and add another wetland only after the local operator confirms its entrance, travel time and return.',
+        verify: 'The Cà Mau government U Minh Hạ page timed out and the VNAT Cà Mau page had no readable article on 13 October 2026. No current park opening, visitor route, flight, bus, boat, public road timetable or Đất Mũi lodging was verified. Confirm the responsible local authority, guide, exact pickup and return, host, weather and any access limits directly; if unanswered, skip that leg.',
+        sources: [
+          ['https://english.camau.gov.vn/destinations/u-minh-ha-national-park-287845', 'Cà Mau Government — U Minh Hạ National Park page timed out in this review; no live access facts could be checked'],
+          ['https://vietnamtourism.gov.vn/en/post/20634', 'Viet Nam National Authority of Tourism — Cà Mau article returned no readable content in this review'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — regional Lâm Đồng to Cà Mau marine and hazard bulletins; not a park or route clearance']
+        ],
+        searchKeywords: ['U Minh Ha National Park visitor access', 'Ca Mau City to Dat Mui route and lodging', 'Cape Ca Mau return transfer', 'Ca Mau forest and mangrove nights', 'Ca Mau park permit and local guide', 'U Minh Ha Dat Mui separate days']
       }
     ]
   }),

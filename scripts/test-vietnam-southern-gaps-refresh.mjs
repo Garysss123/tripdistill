@@ -17,6 +17,12 @@ const routes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
+const coastalRoutes = [
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+];
 const hubs = [
   'vietnam/ho-chi-minh-city/index.html',
   'vietnam/mekong-delta/index.html'
@@ -130,8 +136,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain only four target guides and their two updated hub excerpts.');
+const expectedEnglishVietnamFiles = [...routes, ...coastalRoutes].map((route) => route.slice(1) + 'index.html').concat(hubs).sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the southern and coastal guides plus the two southern hub excerpts.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -144,18 +150,18 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...coastalRoutes].sort(), 'Only the eight southern and coastal English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...coastalRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four selected routes in five editions may receive a new sitemap date.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the eight selected routes in five editions may receive a new sitemap date.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, pagePath + ': sitemap date');
 
 for (const route of routes) {
@@ -237,31 +243,35 @@ const reviewedDiffs = [...new Set([
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
 ])].sort();
 const expectedReviewedDiffs = manifest.files.map((file) => file.sourcePath);
+const coastalManifest = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-coastal-gaps/2026-10-13/manifest.json'), 'utf8'));
+assert.equal(coastalManifest.sourceBaseCommit, 'd779848fbc247042561cfaa34773257122aa38d0');
+expectedReviewedDiffs.push(...coastalManifest.files.map((file) => file.sourcePath));
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
-  for (const suffix of ['defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json']) {
+  for (const suffix of ['defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json', 'defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
     const name = fs.readdirSync(directory).find((file) => file.endsWith(suffix));
     assert(name, edition.code + ': missing ' + suffix);
     expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
   }
 }
-assert.deepEqual(reviewedDiffs, expectedReviewedDiffs.sort(), 'Only the eight southern-gaps batches and eight archived reviewed batches may change; drafts and parallel translations must stay untouched.');
+assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only explicitly archived stale translation files and the southern/coastal reviewed batches may change; unrelated batches must stay untouched.');
 
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.branch, 'codex/sprint-vn-southern-gaps-20261013');
-assert.equal(ledger.sourceBaseCommit, baselineCommit);
-assert.equal(ledger.totals.englishRoutes, 99);
-assert.equal(ledger.totals.previousSubstantiveRoutes, 79);
-assert.equal(ledger.totals.previousSprintNewSubstantiveRoutes, 4);
-assert.equal(ledger.totals.newSubstantiveRoutes, 4);
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 87);
-assert.equal(ledger.totals.remainingRoutes, 12);
-assert.deepEqual(ledger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
+const southernLedger = ledger.branch === 'codex/sprint-vn-southern-gaps-20261013' ? ledger : ledger.previousCheckpoint;
+assert.equal(southernLedger.branch, 'codex/sprint-vn-southern-gaps-20261013');
+assert.equal(southernLedger.sourceBaseCommit, baselineCommit);
+assert.equal(southernLedger.totals.englishRoutes, 99);
+assert.equal(southernLedger.totals.previousSubstantiveRoutes, 79);
+assert.equal(southernLedger.totals.previousSprintNewSubstantiveRoutes, 4);
+assert.equal(southernLedger.totals.newSubstantiveRoutes, 4);
+assert.equal(southernLedger.totals.afterSprintSubstantiveRoutes, 87);
+assert.equal(southernLedger.totals.remainingRoutes, 12);
+assert.deepEqual(southernLedger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
 for (const check of bodyChecks) {
-  const entry = ledger.currentSprintRoutes.find((route) => route.url === check.url);
+  const entry = southernLedger.currentSprintRoutes.find((route) => route.url === check.url);
   assert.equal(entry.baseWords, check.baseWords, check.url + ': ledger base words');
   assert.equal(entry.currentWords, check.currentWords, check.url + ': ledger current words');
   assert.equal(entry.currentMainTextSha256, check.currentMainTextSha256, check.url + ': ledger current body hash');
@@ -280,14 +290,14 @@ const expectedRemaining = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
   '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
-assert.deepEqual(ledger.remainingRoutesAfterSprint, expectedRemaining);
-assert.equal(ledger.previousSouthernGapsCheckpoint.totals.afterSprintSubstantiveRoutes, 83);
-assert.equal(ledger.previousSouthernGapsCheckpoint.totals.remainingRoutes, 16);
+assert.deepEqual(southernLedger.remainingRoutesAfterSprint, expectedRemaining);
+assert.equal(southernLedger.previousSouthernGapsCheckpoint.totals.afterSprintSubstantiveRoutes, 83);
+assert.equal(southernLedger.previousSouthernGapsCheckpoint.totals.remainingRoutes, 16);
 assert.deepEqual(
-  ledger.previousSouthernGapsCheckpoint.remainingRoutesAfterSprint.filter((route) => routes.includes(route)).sort(),
+  southernLedger.previousSouthernGapsCheckpoint.remainingRoutesAfterSprint.filter((route) => routes.includes(route)).sort(),
   [...routes].sort(),
   'The four targets must have been unfinished in the previous coverage checkpoint.'
 );
 
-console.log('Southern Vietnam scope regression passed: four exact-base untouched bodies gained at least 350 visible words; four search records, five-edition metadata and exactly 20 dates match; 4,560 sitemap URLs are preserved; eight reviewed locale files are hash-archived before stale-key pruning; 87/99 substantive routes leave the exact 12-route remainder.');
+console.log('Southern Vietnam checkpoint regression passed: all four historical bodies and their 87/99 coverage record remain intact; combined southern/coastal page, search, metadata and translation scope preserves the exact 4,560 sitemap URLs.');
 console.log(JSON.stringify(bodyChecks, null, 2));

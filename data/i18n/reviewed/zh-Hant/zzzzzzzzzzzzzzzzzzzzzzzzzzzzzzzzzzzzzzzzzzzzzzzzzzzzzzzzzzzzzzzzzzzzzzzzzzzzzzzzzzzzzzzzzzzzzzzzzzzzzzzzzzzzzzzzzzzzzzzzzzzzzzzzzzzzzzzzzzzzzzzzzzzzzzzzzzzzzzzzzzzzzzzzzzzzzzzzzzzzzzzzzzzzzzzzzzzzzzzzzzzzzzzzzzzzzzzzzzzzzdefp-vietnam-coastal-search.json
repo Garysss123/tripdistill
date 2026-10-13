@@ -1,0 +1,38 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Po Sah Inu tower current opening": "波沙印塔目前開放情況",
+    "Pô Sah Inư Cham heritage Phan Thiet": "潘切波沙印烏占族文化遺址",
+    "Phan Thiet public fishing harbor access": "潘切漁港訪客公共區域",
+    "Phan Thiet town or Mui Ne base": "潘切市區或美奈作為住宿基地",
+    "Phan Thiet local transfer return": "潘切當地接駁與返程",
+    "Ta Cu Mountain current cableway and trail": "塔古山纜車與步道目前狀態",
+    "Ke Ga lighthouse boat landing permission": "格嘎燈塔乘船登島許可",
+    "Ke Ga tide and sea condition": "格嘎潮汐與海況",
+    "Phan Thiet base Ta Cu return driver": "潘切住宿基地與塔古山返程司機",
+    "Mui Ne to Ta Cu transport": "美奈至塔古山交通",
+    "Phu Quy ferry exact date from Phan Thiet": "潘切出發的富貴島指定日期船班",
+    "Phu Quy island nights mainland buffer": "富貴島住宿晚數與本島緩衝夜",
+    "Superdong Phu Quy ticket portal": "Superdong 富貴島船票官方入口",
+    "Phu Quy island host transport": "富貴島島上住宿接駁",
+    "Phu Quy Cao Cat Linh Son access": "富貴島高吉、靈山景點進入方式",
+    "Phu Quy ferry cancellation plan": "富貴島船班取消備案",
+    "U Minh Ha National Park visitor access": "金甌省優明下國家公園訪客通行",
+    "Ca Mau City to Dat Mui route and lodging": "金甌市至土珠角路線與住宿",
+    "Cape Ca Mau return transfer": "金甌角返程接駁",
+    "Ca Mau forest and mangrove nights": "金甌森林與紅樹林住宿夜數",
+    "Ca Mau park permit and local guide": "金甌公園許可與當地導覽",
+    "U Minh Ha Dat Mui separate days": "優明下與土珠角分日安排"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Self-review checked place-name consistency, search intent, transport and access wording. It is not independent model or human review."
+  }
+}

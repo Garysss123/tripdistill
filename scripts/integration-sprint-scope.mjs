@@ -420,6 +420,14 @@ export const followingVietnamSouthernGapsRoutes = Object.freeze([
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ]);
 
+// This coastal follow-on refreshes four previously untouched southern Vietnam guides.
+export const followingVietnamCoastalGapsRoutes = Object.freeze([
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+]);
+
 export const currentSourceBranchSearchRoutes = Object.freeze([
   ...integrationSearchRoutes,
   ...followingVietnamMuiNeRoutes,
@@ -427,7 +435,8 @@ export const currentSourceBranchSearchRoutes = Object.freeze([
   ...followingVietnamPhuQuocRoutes,
   ...followingVietnamNhaTrangRoutes,
   ...followingVietnamAfterNhaTrangRoutes,
-  ...followingVietnamSouthernGapsRoutes
+  ...followingVietnamSouthernGapsRoutes,
+  ...followingVietnamCoastalGapsRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
@@ -435,5 +444,5 @@ export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamCoastalGapsRoutes].map((route) => `${prefix}${route}`))
 );

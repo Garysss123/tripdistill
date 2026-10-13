@@ -8,7 +8,7 @@ import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from '../d
 import { switzerlandCh10CountryPageDraft } from '../data/switzerland-ch10-country-draft.mjs';
 import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from '../data/switzerland-ch11-refresh.mjs';
 import { localizeHtml } from './i18n-lib.mjs';
-import { followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes } from './integration-sprint-scope.mjs';
+import { followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamCoastalGapsRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'a0da2c3b2d27276bc83993b19ae96521798c032b';
@@ -132,7 +132,7 @@ const laterVietnamNhaTrangRoutes = [
   '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes]);
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamCoastalGapsRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
