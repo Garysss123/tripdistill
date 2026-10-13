@@ -1,0 +1,42 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Busselton for the foreshore and a timed Jetty visit or Dunsborough for the Cape Naturaliste start. Match Transwa SW1 stops to a booked last-mile ride, and check Jetty ticket, luggage, accessibility and marine-weather rules before fixing the day.": "เลือก Busselton สำหรับทางเดินริมน้ำและเที่ยวท่าเทียบเรือที่จองเวลา หรือเลือก Dunsborough เพื่อเริ่มไป Cape Naturaliste จัดรถต่อช่วงสุดท้ายให้ตรงกับป้าย Transwa SW1 และตรวจตั๋วท่าเทียบเรือ สัมภาระ การเข้าถึง และสภาพทะเลก่อนกำหนดวัน",
+    "busselton jetty train underwater observatory booking": "จองรถไฟ Busselton Jetty และหอดูใต้น้ำ",
+    "busselton dunsborough base choice nights": "เลือกฐานพักและจำนวนคืน Busselton–Dunsborough",
+    "transwa sw1 busselton dunsborough stop": "ป้าย Transwa SW1 ที่ Busselton และ Dunsborough",
+    "busselton foreshore luggage storage jetty": "ทางเดินริมน้ำ Busselton ที่ฝากกระเป๋า ท่าเทียบเรือ",
+    "dunsborough cape naturaliste transfer": "รถรับส่งจาก Dunsborough ไป Cape Naturaliste",
+    "busselton jetty weather wind access": "สภาพอากาศ ลม และการเข้าถึง Busselton Jetty",
+    "Plan Cape Naturaliste by choosing the lighthouse, a short marked walk or the 3.4 km one-way Sugarloaf section. The return is about 6.8 km on foot without a confirmed pickup; check current track, fire, wind, lighthouse and road access.": "วางแผน Cape Naturaliste โดยเลือกระหว่างประภาคาร ทางเดินสั้นที่มีป้าย หรือช่วง Sugarloaf เที่ยวเดียว 3.4 กม. หากไม่มีรถรับที่ยืนยันแล้ว ระยะไปกลับคือประมาณ 6.8 กม. ตรวจเส้นทาง ไฟป่า ลม ประภาคาร และถนนล่าสุดก่อนออก",
+    "cape naturaliste sugarloaf rock walk 3.4 km one way": "ทางเดิน Cape Naturaliste ไป Sugarloaf Rock เที่ยวเดียว 3.4 กม.",
+    "cape naturaliste lighthouse 59 steps visitor access": "ประภาคาร Cape Naturaliste 59 ขั้น การเข้าถึงผู้เยี่ยมชม",
+    "cape naturaliste trail return shuttle dunsborough": "รถรับกลับเส้นทาง Cape Naturaliste จาก Dunsborough",
+    "leeuwin-naturaliste coast wind fire trail status": "สภาพลม ไฟป่า และเส้นทางชายฝั่ง Leeuwin–Naturaliste",
+    "cape to cape track day section return plan": "วางแผนเส้นทางรายวันและจุดกลับบน Cape to Cape Track",
+    "cape naturaliste whale lookout walk trail": "ทางเดินจุดชมวาฬ Cape Naturaliste",
+    "Anchor the Augusta day on one booked Jewel Cave tour, then add only the cave-site karri walk or one open Boranup forest stop. Ngilgi is a separate northern route with 350 steps; verify cave access, fire notices, road and daylight before leaving.": "กำหนดวัน Augusta โดยยึดทัวร์ Jewel Cave ที่จองแล้วหนึ่งรอบ จากนั้นเพิ่มเพียงทางเดินต้นคารีใกล้ถ้ำหรือจุดพักในป่า Boranup ที่เปิด Ngilgi เป็นเส้นทางเหนือแยกต่างหาก มีบันได 350 ขั้น ตรวจการเข้าถ้ำ ประกาศไฟป่า ถนน และเวลาแสงกลางวันก่อนออก",
+    "jewel cave augusta one-hour guided tour booking": "จองทัวร์ Jewel Cave พร้อมไกด์หนึ่งชั่วโมงที่ Augusta",
+    "boranup forest park road fire access": "การเข้าถึงถนนป่าและไฟป่าที่ Boranup",
+    "margaret river to augusta jewel cave transport": "การเดินทางจาก Margaret River ไป Jewel Cave ที่ Augusta",
+    "ngilgi cave 350 steps accessibility ancient lands": "Ngilgi Cave บันได 350 ขั้น Ancient Lands การเข้าถึง",
+    "augusta cape leeuwin overnight base": "ฐานพัก Augusta และ Cape Leeuwin",
+    "southwest wa cave booking and road closures": "การจองถ้ำและถนนปิดในตะวันตกเฉียงใต้ WA",
+    "Treat Albany as a separate far-south region: use two nights minimum or three to separate the transfer, National Anzac Centre and Torndirrup. Choose the Gap platforms, Stony Hill short loop or Bald Head hike by effort and conditions; arrange a local park ride if arriving by coach.": "วาง Albany เป็นภูมิภาคใต้สุดแยกต่างหาก: พักอย่างน้อยสองคืน หรือสามคืนเพื่อแยกวันเดินทาง National Anzac Centre และ Torndirrup เลือกแท่นชม The Gap วงสั้น Stony Hill หรือเดิน Bald Head ตามกำลังและสภาพอากาศ หากมาด้วยรถโค้ชให้จองรถไปอุทยานในพื้นที่",
+    "albany torndirrup two or three nights base": "ฐานพัก Albany–Torndirrup สองหรือสามคืน",
+    "transwa gs1 gs2 gs3 albany coach route": "รถโค้ช Transwa GS1 GS2 GS3 ไป Albany",
+    "albany national anzac centre access visit": "การเข้าถึงและเข้าชม National Anzac Centre ที่ Albany",
+    "torndirrup the gap natural bridge stony hill bald head": "Torndirrup The Gap Natural Bridge Stony Hill Bald Head",
+    "albany coach transfer to torndirrup park": "รถรับจาก Albany ไปอุทยาน Torndirrup หลังลงรถโค้ช",
+    "albany coast wind swell fire park alerts": "ลม คลื่น ไฟป่า และประกาศเตือนชายฝั่ง Albany"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

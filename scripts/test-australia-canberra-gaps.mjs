@@ -102,6 +102,14 @@ if (branch === 'codex/sprint-au-alps-margaret-gaps-20261013') {
   process.exit(0);
 }
 
+if (branch === 'codex/sprint-au-margaret-remaining-20261013') {
+  const priorSourceBase = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
+  const priorCanberraPaths = routes.map((route) => `${route.slice(1)}index.html`);
+  assert.equal(git(['diff', '--name-only', priorSourceBase, '--', ...priorCanberraPaths]).trim(), '', 'The previously refreshed Canberra city routes remain unchanged on the Margaret follow-up branch.');
+  console.log('Canberra prior-route protection passed: all four city pages are unchanged from the exact a99fbe9 source base.');
+  process.exit(0);
+}
+
 assert.equal(branch, 'codex/sprint-au-canberra-content-20261013', 'Selected source branch name.');
 const head = git(['rev-parse', 'HEAD']).trim();
 assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'Branch must remain at the authorized base or its direct child.');

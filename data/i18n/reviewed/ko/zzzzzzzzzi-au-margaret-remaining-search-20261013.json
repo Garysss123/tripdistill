@@ -1,0 +1,42 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Busselton for the foreshore and a timed Jetty visit or Dunsborough for the Cape Naturaliste start. Match Transwa SW1 stops to a booked last-mile ride, and check Jetty ticket, luggage, accessibility and marine-weather rules before fixing the day.": "해변과 시간 지정 제티 방문은 버셀턴, Cape Naturaliste 시작점은 던스버러를 선택하세요. Transwa SW1 정류장에 맞춘 마지막 구간 이동을 예약하고 제티 티켓, 짐, 접근성, 해양 날씨 규정을 확인한 뒤 일정을 정하세요.",
+    "busselton jetty train underwater observatory booking": "버셀턴 제티 열차·수중 전망대 예약",
+    "busselton dunsborough base choice nights": "버셀턴·던스버러 숙박 거점과 숙박 일수",
+    "transwa sw1 busselton dunsborough stop": "Transwa SW1 버셀턴·던스버러 정류장",
+    "busselton foreshore luggage storage jetty": "버셀턴 해변·짐 보관·제티",
+    "dunsborough cape naturaliste transfer": "던스버러에서 Cape Naturaliste 이동편",
+    "busselton jetty weather wind access": "버셀턴 제티 날씨·바람·접근",
+    "Plan Cape Naturaliste by choosing the lighthouse, a short marked walk or the 3.4 km one-way Sugarloaf section. The return is about 6.8 km on foot without a confirmed pickup; check current track, fire, wind, lighthouse and road access.": "Cape Naturaliste에서는 등대, 짧은 표지 산책로, 편도 3.4km Sugarloaf 구간 중 고르세요. 확정 픽업 없이 걸어서 돌아오면 약 6.8km입니다. 출발 전 현재 트레일, 화재, 바람, 등대, 도로 접근을 확인하세요.",
+    "cape naturaliste sugarloaf rock walk 3.4 km one way": "Cape Naturaliste Sugarloaf Rock 산책 편도 3.4km",
+    "cape naturaliste lighthouse 59 steps visitor access": "Cape Naturaliste 등대 59계단 방문자 접근",
+    "cape naturaliste trail return shuttle dunsborough": "Cape Naturaliste 트레일 귀환 셔틀 던스버러",
+    "leeuwin-naturaliste coast wind fire trail status": "리윈-내추럴리스트 해안 바람·화재·트레일 상태",
+    "cape to cape track day section return plan": "Cape to Cape Track 당일 구간과 반환 계획",
+    "cape naturaliste whale lookout walk trail": "Cape Naturaliste 고래 전망 산책로",
+    "Anchor the Augusta day on one booked Jewel Cave tour, then add only the cave-site karri walk or one open Boranup forest stop. Ngilgi is a separate northern route with 350 steps; verify cave access, fire notices, road and daylight before leaving.": "오거스타 일정은 예약한 Jewel Cave 투어 하나를 기준으로 하고 동굴 현장의 카리 산책로 또는 열린 Boranup 숲 한 곳만 더하세요. Ngilgi는 계단 350개가 있는 별도의 북부 일정입니다. 출발 전 동굴 접근, 화재 공지, 도로, 낮 시간을 확인하세요.",
+    "jewel cave augusta one-hour guided tour booking": "Jewel Cave 오거스타 1시간 가이드 투어 예약",
+    "boranup forest park road fire access": "Boranup 숲 공원 도로 화재 접근",
+    "margaret river to augusta jewel cave transport": "마가렛 리버에서 오거스타 Jewel Cave 이동",
+    "ngilgi cave 350 steps accessibility ancient lands": "Ngilgi Cave 계단 350개 접근 Ancient Lands",
+    "augusta cape leeuwin overnight base": "오거스타 Cape Leeuwin 숙박 거점",
+    "southwest wa cave booking and road closures": "서호주 남서부 동굴 예약과 도로 폐쇄",
+    "Treat Albany as a separate far-south region: use two nights minimum or three to separate the transfer, National Anzac Centre and Torndirrup. Choose the Gap platforms, Stony Hill short loop or Bald Head hike by effort and conditions; arrange a local park ride if arriving by coach.": "올버니를 남쪽 끝의 별도 지역으로 계획하세요. 이동, National Anzac Centre, 토르디럽을 나누려면 최소 2박, 가능하면 3박입니다. 체력과 조건에 따라 The Gap 전망대, Stony Hill 짧은 순환로, Bald Head 하이킹을 고르고 코치로 도착하면 공원 이동을 따로 예약하세요.",
+    "albany torndirrup two or three nights base": "올버니 토르디럽 2박 또는 3박 숙소 거점",
+    "transwa gs1 gs2 gs3 albany coach route": "Transwa GS1 GS2 GS3 올버니 코치 노선",
+    "albany national anzac centre access visit": "올버니 National Anzac Centre 접근과 방문",
+    "torndirrup the gap natural bridge stony hill bald head": "토르디럽 The Gap Natural Bridge Stony Hill Bald Head",
+    "albany coach transfer to torndirrup park": "올버니 코치에서 토르디럽 공원 환승",
+    "albany coast wind swell fire park alerts": "올버니 해안 바람 너울 화재 공원 경보"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

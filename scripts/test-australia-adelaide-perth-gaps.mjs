@@ -13,7 +13,8 @@ const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, en
 const followOnSprint = branch === 'codex/sprint-au-top-end-whitsundays-gaps-20261013';
 const canberraSprint = branch === 'codex/sprint-au-canberra-content-20261013';
 const alpsMargaretSprint = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
-const base = alpsMargaretSprint ? '5f1205bbbee0ef636c34e883c399e6fceaa7b508' : followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
+const margaretRemainingSprint = branch === 'codex/sprint-au-margaret-remaining-20261013';
+const base = margaretRemainingSprint ? 'a99fbe9fe996ccedbac42b1b9386447a11403854' : alpsMargaretSprint ? '5f1205bbbee0ef636c34e883c399e6fceaa7b508' : followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -185,10 +186,24 @@ function assertSvgSafe(file, digest) {
   }
 }
 
-assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013', 'codex/sprint-au-alps-margaret-gaps-20261013'].includes(branch), 'Source branch name.');
+assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013', 'codex/sprint-au-alps-margaret-gaps-20261013', 'codex/sprint-au-margaret-remaining-20261013'].includes(branch), 'Source branch name.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).split(/\r?\n/u);
-const allowedParentHops = alpsMargaretSprint ? 2 : 1;
+const allowedParentHops = alpsMargaretSprint || margaretRemainingSprint ? 2 : 1;
 assert(firstParents.includes(base) && firstParents.indexOf(base) <= allowedParentHops, 'The source branch must descend from its authorized exact base through only the expected scope and correction commits.');
+
+if (margaretRemainingSprint) {
+  const priorAdelaidePaths = routes.map((route) => `${route.slice(1)}index.html`);
+  assert.equal(git(['diff', '--name-only', base, '--', ...priorAdelaidePaths]).trim(), '', 'Adelaide and Perth route pages remain unchanged from the requested Margaret follow-up base.');
+  const correctionCommit = '768151d3f42378358c122a1cde55100fcec9eafa';
+  for (const file of [
+    'assets/images/australia-kangaroo-island-regional-days.svg',
+    'assets/images/australia-kings-park-entry-choice.svg',
+    'data/australia-adelaide-perth-diagrams.mjs',
+    'reports/adelaide-perth-gaps-refresh-2026-10-12.md'
+  ]) assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correctionCommit}:${file}`]), `${file}: parallel Adelaide/Perth arrow correction is preserved.`);
+  console.log('Adelaide/Perth protection passed: previous route pages and the 768151d3 arrow correction remain intact.');
+  process.exit(0);
+}
 
 if (alpsMargaretSprint) {
   const targetRoutes = [
@@ -199,7 +214,7 @@ if (alpsMargaretSprint) {
   ];
   const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
   assert.deepEqual(changedEnglish, targetRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized Canberra and Margaret River English routes may change.');
-  const correctionCommit = '31fc43817cd436e2f868058f4393ed59a800aec8';
+  const correctionCommit = '768151d3f42378358c122a1cde55100fcec9eafa';
   const correctionFiles = [
     'assets/images/australia-kangaroo-island-regional-days.svg',
     'assets/images/australia-kings-park-entry-choice.svg',
@@ -207,13 +222,13 @@ if (alpsMargaretSprint) {
     'reports/adelaide-perth-gaps-refresh-2026-10-12.md'
   ];
   for (const file of correctionFiles) {
-    assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correctionCommit}:${file}`]), `${file}: parallel 31fc438 arrow correction is preserved byte-for-byte.`);
+    assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correctionCommit}:${file}`]), `${file}: parallel 768151d3 arrow correction is preserved byte-for-byte.`);
   }
   for (const [file, digest] of [
     ['assets/images/australia-kangaroo-island-regional-days.svg', 'a79c937470360a8144977935661b29ce52301a81'],
     ['assets/images/australia-kings-park-entry-choice.svg', '5a606ca608847293d3bb755a1021490a5f439c0b']
   ]) assertSvgSafe(file, digest);
-  console.log('Australia arrow correction regression passed: the exact 31fc438 files and branch-aligned arrows remain in the 5f1205bb-based source branch; this checks SVG structure and geometry, not rendered pixels.');
+  console.log('Australia arrow correction regression passed: the exact 768151d3 files and branch-aligned arrows remain in the 5f1205bb-based source branch; this checks SVG structure and geometry, not rendered pixels.');
   process.exit(0);
 }
 
@@ -252,8 +267,8 @@ if (canberraSprint) {
     'data/australia-adelaide-perth-diagrams.mjs',
     'reports/adelaide-perth-gaps-refresh-2026-10-12.md'
   ];
-  assert.equal(git(['diff', '--name-only', base, '--', ...siblingArrowFixPaths]).trim(), '', 'The parallel 31fc438 arrow-correction files remain untouched for the integration writer.');
-  console.log('Canberra branch protection passed: exact 448f6cd5 base; prior Adelaide/Perth content and parallel 31fc438 arrow-correction files are untouched.');
+  assert.equal(git(['diff', '--name-only', base, '--', ...siblingArrowFixPaths]).trim(), '', 'The parallel 768151d3 arrow-correction files remain untouched for the integration writer.');
+  console.log('Canberra branch protection passed: exact 448f6cd5 base; prior Adelaide/Perth content and parallel 768151d3 arrow-correction files are untouched.');
   process.exit(0);
 }
 

@@ -7,9 +7,13 @@ import { parse } from 'parse5';
 import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const branch = 'codex/sprint-au-alps-margaret-gaps-20261013';
+const branches = new Set([
+  'codex/sprint-au-alps-margaret-gaps-20261013',
+  'codex/sprint-au-margaret-remaining-20261013'
+]);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
-const correction = '31fc43817cd436e2f868058f4393ed59a800aec8';
+const followupCheckpoint = '55e3b9710c24b45975bdaea5769ab3e4a39ffc44';
+const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
 const isoDate = '2026-10-13';
 const routes = [
   '/australia/canberra-australian-alps/namadgi-national-park/',
@@ -17,6 +21,13 @@ const routes = [
   '/australia/margaret-river-southwest/',
   '/australia/margaret-river-southwest/margaret-river-wine-food/'
 ];
+const remainingRoutes = [
+  '/australia/margaret-river-southwest/busselton-dunsborough/',
+  '/australia/margaret-river-southwest/cape-naturaliste-coast/',
+  '/australia/margaret-river-southwest/boranup-caves-augusta/',
+  '/australia/margaret-river-southwest/albany-torndirrup/'
+];
+const allChangedRoutes = [...routes, ...remainingRoutes];
 const locales = [
   { code: 'en', prefix: '', date: 'reviewed 13 October 2026', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', date: '2026 年 10 月 13 日', script: /[\u3400-\u9fff]/u },
@@ -110,9 +121,11 @@ function urlRecords(xml) {
 }
 function searchMap(text) { return new Map(JSON.parse(text).map((entry) => [entry.url, entry])); }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Selected source branch.');
+const currentBranch = git(['branch', '--show-current']).trim();
+assert(branches.has(currentBranch), 'Selected source branch is one of the authorized Australia follow-up branches.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).trim().split(/\r?\n/u);
-assert(firstParents.includes(base) && firstParents.indexOf(base) <= 2, 'The source branch descends from the exact base through the expected correction commit.');
+const expectedCheckpoint = currentBranch === 'codex/sprint-au-margaret-remaining-20261013' ? followupCheckpoint : base;
+assert(firstParents.includes(expectedCheckpoint) && firstParents.indexOf(expectedCheckpoint) <= 2, 'The source branch descends from the exact base or its recorded follow-up checkpoint.');
 const correctionFiles = [
   'assets/images/australia-kangaroo-island-regional-days.svg',
   'assets/images/australia-kings-park-entry-choice.svg',
@@ -124,7 +137,7 @@ for (const file of correctionFiles) {
 }
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies changed.');
+assert.deepEqual(changedEnglish, allChangedRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the two prior and four current authorized English route bodies changed.');
 
 const referenceHub = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/index.html'), 'utf8')));
 const referenceGuide = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/otaru-shakotan/index.html'), 'utf8')));
@@ -159,15 +172,15 @@ assert.equal(baseSearch.size, 955, 'Base English search index has 955 site-wide 
 assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 site-wide records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
 const changedSearch = [...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'Only the four authorized English search records changed.');
+assert.deepEqual(changedSearch, [...allChangedRoutes].sort(), 'Only the two prior and four current authorized English search records changed.');
 
 const baseSitemap = urlRecords(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const changedDates = routes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the four routes × five locale lastmod values changed.');
+const changedDates = allChangedRoutes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the two prior and four current routes × five locale lastmod values changed.');
 for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);
 
 const pages = collectTranslationWork();
@@ -211,4 +224,4 @@ for (const locale of locales.slice(1)) {
 assert.deepEqual(git(['diff', '--name-only', base, '--', 'assets/images']).trim().split(/\r?\n/u).sort(), correctionFiles.filter((file) => file.endsWith('.svg')).sort(), 'Only the two SVGs from the preserved parallel correction differ from the exact base.');
 assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No untracked image or SVG asset exists.');
 
-console.log('Australia Alps/Margaret River regression passed: exact base and four route scope; Hokkaido/Otaru content floors and substantive route decisions; translated pages, dates and search; 4,560 unchanged sitemap URLs; 31fc438 arrow correction preserved byte-for-byte. This is a source/markup and data check, not a rendered UI or pixel review.');
+console.log('Australia Alps/Margaret River regression passed: exact base and four route scope; Hokkaido/Otaru content floors and substantive route decisions; translated pages, dates and search; 4,560 unchanged sitemap URLs; 768151d3 arrow correction preserved byte-for-byte. This is a source/markup and data check, not a rendered UI or pixel review.');

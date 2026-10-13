@@ -80,8 +80,14 @@ const currentAlpsMargaretRoutes = [
   '/australia/margaret-river-southwest/',
   '/australia/margaret-river-southwest/margaret-river-wine-food/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes];
-const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes];
+const currentMargaretRemainingRoutes = [
+  '/australia/margaret-river-southwest/busselton-dunsborough/',
+  '/australia/margaret-river-southwest/cape-naturaliste-coast/',
+  '/australia/margaret-river-southwest/boranup-caves-augusta/',
+  '/australia/margaret-river-southwest/albany-torndirrup/'
+];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes];
+const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -396,7 +402,7 @@ const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only existing Australia refresh and current regional and Alps/Margaret gap route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) {
-  const expectedDate = currentAlpsMargaretRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
+  const expectedDate = [...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
   assertIssue(currentSitemap.get(route) === expectedDate, `${route}: sitemap lastmod is not ${expectedDate}.`);
 }
 
