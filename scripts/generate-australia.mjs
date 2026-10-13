@@ -288,14 +288,15 @@ function updateFooter() {
   fs.writeFileSync(file, html);
 }
 
-function updateSearch() {
+function updateSearch(selectedUrls = null) {
   const file = path.join(root, 'data', 'search-index.json');
   const current = JSON.parse(fs.readFileSync(file, "utf8"));
   const records = [];
   const country = { title: 'Australia Travel Guide', url: '/australia/', parent: 'Oceania', type: 'Continental field atlas', summary: 'Sixteen complete regional hubs and eighty focused guides across Australian cities, coasts, reef, rainforest, desert, west and island systems.', keywords: ['australia', 'australian travel', 'sydney', 'melbourne', 'great barrier reef', 'uluru', 'perth', 'tasmania'] };
-  const hubs = australiaClusters.map((cluster) => ({ title: `${cluster.name} Travel Guide`, url: `/australia/${cluster.slug}/`, parent: `Australia · ${cluster.region}`, type: 'Complete regional hub with five field guides', summary: cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name.toLowerCase(), cluster.slug.replaceAll('-', ' '), cluster.region.toLowerCase(), ...cluster.guides.map((guide) => guide.name.toLowerCase())] }));
+  const hubs = australiaClusters.map((cluster) => ({ title: `${cluster.name} Travel Guide`, url: `/australia/${cluster.slug}/`, parent: `Australia · ${cluster.region}`, type: 'Complete regional hub with five field guides', summary: cluster.searchSummary || cluster.hubIntro, keywords: [cluster.name.toLowerCase(), cluster.slug.replaceAll('-', ' '), cluster.region.toLowerCase(), ...cluster.guides.map((guide) => guide.name.toLowerCase()), ...(cluster.searchKeywords || []).map((keyword) => keyword.toLowerCase())] }));
   const guides = australiaGuides.map((guide) => ({ title: `${guide.name} Guide`, url: guide.url, parent: `Australia · ${guide.hubName}`, type: 'Focused field and decision guide', summary: guide.searchSummary || guide.summary, keywords: [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'australia travel guide', ...(guide.searchKeywords || []).map((keyword) => keyword.toLowerCase())] }));
-  const updates = new Map([country, ...hubs, ...guides].map((item) => [item.url, item]));
+  const recordsToUpdate = [country, ...hubs, ...guides].filter((item) => !selectedUrls || selectedUrls.has(item.url));
+  const updates = new Map(recordsToUpdate.map((item) => [item.url, item]));
   const merged = current.map((item) => { const replacement = updates.get(item.url); if (!replacement) return item; updates.delete(item.url); return replacement; });
   merged.push(...updates.values());
   fs.writeFileSync(file, JSON.stringify(merged, null, 2) + "\n");
@@ -367,20 +368,21 @@ for (const [index, cluster] of australiaClusters.entries()) {
   if (selectedRoutes && !selectedRoutes.has(`/australia/${cluster.slug}/`)) continue;
   const file = routeFile(`/australia/${cluster.slug}/`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, hubPage(cluster, index));
+  fs.writeFileSync(file, hubPage(cluster, index).replace(/[ \t]+$/gm, ''));
 }
 for (const guide of australiaGuides) {
   if (selectedRoutes && !selectedRoutes.has(guide.url)) continue;
   const cluster = australiaClusters.find((item) => item.slug === guide.hubSlug);
   const file = routeFile(guide.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, guidePage(guide, cluster));
+  fs.writeFileSync(file, guidePage(guide, cluster).replace(/[ \t]+$/gm, ''));
 }
 if (selectedRoutes) {
   const validRoutes = new Set(australiaClusters.flatMap((cluster) => [`/australia/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]));
   const invalid = [...selectedRoutes].filter((route) => !validRoutes.has(route));
   if (invalid.length) throw new Error(`Unknown Australia route(s): ${invalid.join(', ')}`);
-  console.log(`Generated only ${selectedRoutes.size} selected Australia route(s); shared shell, search, sitemap, locale and image files were not changed.`);
+  if (process.env.AUSTRALIA_GENERATE_SEARCH === '1') updateSearch(selectedRoutes);
+  console.log(`Generated only ${selectedRoutes.size} selected Australia route(s); shared shell, sitemap, locale and image files were not changed${process.env.AUSTRALIA_GENERATE_SEARCH === '1' ? ', and the Australia search records were refreshed' : ''}.`);
 } else {
 const countryFile = routeFile('/australia/');
 fs.mkdirSync(path.dirname(countryFile), { recursive: true });

@@ -5979,7 +5979,7 @@
     "url": "/australia/canberra-australian-alps/",
     "parent": "Australia · Australian Capital Territory & New South Wales",
     "type": "Complete regional hub with five field guides",
-    "summary": "Canberra’s designed lake and parliamentary axis reward slow institutional visits, while Namadgi and the Snowy Mountains demand road, fire and alpine preparation. Five chapters separate civic memory, living Ngunnawal Country and high-country weather. A museum day should not be diluted by a late mountain dash, and an alpine route should never inherit city assumptions.",
+    "summary": "Plan Canberra’s civic institutions as separate city days, then move to Jindabyne or another alpine gateway for the Snowy Mountains. Check city buses, bridge detours, booked coaches, park access and weather before fixing the sequence.",
     "keywords": [
       "canberra & australian alps",
       "canberra australian alps",
@@ -5988,7 +5988,11 @@
       "lake burley griffin & national museum",
       "australian war memorial & mount ainslie",
       "namadgi national park",
-      "snowy mountains & kosciuszko"
+      "snowy mountains & kosciuszko",
+      "canberra city itinerary",
+      "canberra bus routes 53 54 57 58",
+      "canberra to jindabyne coach 775",
+      "snowy mountains seasonal shuttle"
     ]
   },
   {
@@ -7085,13 +7089,17 @@
     "url": "/australia/canberra-australian-alps/parliamentary-triangle/",
     "parent": "Australia · Canberra & Australian Alps",
     "type": "Focused field and decision guide",
-    "summary": "A civic-axis day connecting Parliament House and one national institution with security, opening hours and long walking distances visible.",
+    "summary": "Pair Parliament House with one inner-south institution, not a checklist of museums. Check sitting hours, screening, Routes 57/58 and current Commonwealth Avenue Bridge detours before choosing the walk.",
     "keywords": [
       "parliamentary triangle",
       "canberra & australian alps",
       "parliamentary triangle",
       "institutional ground plan",
-      "australia travel guide"
+      "australia travel guide",
+      "parliament house canberra opening hours",
+      "bus 57 58 parliament house",
+      "federation mall canberra walking route",
+      "commonwealth avenue bridge shared path detour"
     ]
   },
   {
@@ -7099,13 +7107,17 @@
     "url": "/australia/canberra-australian-alps/lake-burley-griffin-national-museum/",
     "parent": "Australia · Canberra & Australian Alps",
     "type": "Focused field and decision guide",
-    "summary": "A western lake chapter balancing one museum visit with a short shoreline circuit rather than attempting the entire lake.",
+    "summary": "Route 53 serves the National Museum on Acton Peninsula. Plan one museum block and a short shoreline out-and-back; check Commonwealth Avenue Bridge paths and site-specific lake water notices before extending.",
     "keywords": [
       "lake burley griffin & national museum",
       "canberra & australian alps",
       "lake burley griffin national museum",
       "lake-loop collection day",
-      "australia travel guide"
+      "australia travel guide",
+      "national museum of australia bus 53",
+      "acton peninsula west basin walk",
+      "lake burley griffin bridge to bridge walk",
+      "lake burley griffin water-quality closure"
     ]
   },
   {
@@ -7113,13 +7125,18 @@
     "url": "/australia/canberra-australian-alps/war-memorial-mount-ainslie/",
     "parent": "Australia · Canberra & Australian Alps",
     "type": "Focused field and decision guide",
-    "summary": "A solemn collection and landscape sightline treated with appropriate time, ceremony awareness and a safe Mount Ainslie route.",
+    "summary": "R54 serves the Australian War Memorial stop. Allow time for the collection and 4:30pm Last Post Ceremony; add the 4.5km return Mount Ainslie walk only when track status, daylight, fire risk and fitness fit.",
     "keywords": [
       "australian war memorial & mount ainslie",
       "canberra & australian alps",
       "war memorial mount ainslie",
       "memory and sightline",
-      "australia travel guide"
+      "australia travel guide",
+      "canberra r54 war memorial",
+      "last post ceremony time",
+      "mount ainslie summit walk 4.5 km",
+      "kokoda track canberra fire closure",
+      "mount ainslie drive lookout"
     ]
   },
   {

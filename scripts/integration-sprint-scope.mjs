@@ -410,6 +410,13 @@ export const postIntegrationAustraliaRoutes = Object.freeze([
   '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
 ]);
 
+export const postIntegrationCanberraRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/',
+  '/australia/canberra-australian-alps/parliamentary-triangle/',
+  '/australia/canberra-australian-alps/lake-burley-griffin-national-museum/',
+  '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );

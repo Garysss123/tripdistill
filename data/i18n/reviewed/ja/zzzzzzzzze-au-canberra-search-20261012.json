@@ -1,0 +1,35 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Canberra’s civic institutions as separate city days, then move to Jindabyne or another alpine gateway for the Snowy Mountains. Check city buses, bridge detours, booked coaches, park access and weather before fixing the sequence.": "キャンベラの行政機関は地区ごとに日を分けて訪れ、その後スノーウィー山脈の玄関口となるジンダバインなどへ移動しましょう。行程を確定する前に、市内バス、橋の迂回、予約制バス、公園へのアクセス、天候を確認してください。",
+    "canberra city itinerary": "キャンベラ市内観光モデルコース",
+    "canberra bus routes 53 54 57 58": "キャンベラのバス路線 53 54 57 58",
+    "canberra to jindabyne coach 775": "キャンベラからジンダバイン行きのバス Route 775",
+    "snowy mountains seasonal shuttle": "スノーウィー山脈の季節運行シャトル",
+    "Pair Parliament House with one inner-south institution, not a checklist of museums. Check sitting hours, screening, Routes 57/58 and current Commonwealth Avenue Bridge detours before choosing the walk.": "国会議事堂と南部中心地区の施設一つを組み合わせ、博物館を次々に回る行程にはしないでください。歩く経路を決める前に、議会開会日の時間、保安検査、Routes 57/58、コモンウェルス・アベニュー橋の最新迂回案内を確認しましょう。",
+    "parliament house canberra opening hours": "キャンベラ国会議事堂の開館時間",
+    "bus 57 58 parliament house": "国会議事堂行きバス 57 58",
+    "federation mall canberra walking route": "キャンベラのフェデレーション・モール散策ルート",
+    "commonwealth avenue bridge shared path detour": "コモンウェルス・アベニュー橋の共用遊歩道迂回",
+    "Route 53 serves the National Museum on Acton Peninsula. Plan one museum block and a short shoreline out-and-back; check Commonwealth Avenue Bridge paths and site-specific lake water notices before extending.": "Route 53はアクトン半島の国立博物館方面に運行します。博物館の見学と湖岸の短い往復散策を一つのまとまりとして計画し、延長する前にコモンウェルス・アベニュー橋の遊歩道と、湖の場所ごとの水質情報を確認してください。",
+    "national museum of australia bus 53": "オーストラリア国立博物館行きバス 53",
+    "acton peninsula west basin walk": "アクトン半島とウェスト・ベイスンの散策",
+    "lake burley griffin bridge to bridge walk": "バーリー・グリフィン湖のブリッジ・トゥ・ブリッジ・ウォーク",
+    "lake burley griffin water-quality closure": "バーリー・グリフィン湖の水質による閉鎖情報",
+    "R54 serves the Australian War Memorial stop. Allow time for the collection and 4:30pm Last Post Ceremony; add the 4.5km return Mount Ainslie walk only when track status, daylight, fire risk and fitness fit.": "R54はオーストラリア戦争記念館の停留所に運行します。収蔵品の見学と午後4時30分のラスト・ポスト式典に時間を確保し、エインズリー山の往復4.5kmの散策は、トラックの状況、日照時間、火災の危険、体力が条件に合う場合に限り加えてください。",
+    "canberra r54 war memorial": "キャンベラ R54 戦争記念館",
+    "last post ceremony time": "ラスト・ポスト式典の時刻",
+    "mount ainslie summit walk 4.5 km": "エインズリー山頂ウォーク 往復4.5km",
+    "kokoda track canberra fire closure": "キャンベラ ココダ・トラック 火災閉鎖",
+    "mount ainslie drive lookout": "エインズリー山ドライブの展望地"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant and locale workers; GPT-6 Codex execution family, exact runtime model ID unverified; no Luna runtime exposed in the selected environment",
+    "reviewer": "Same task/model-family review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

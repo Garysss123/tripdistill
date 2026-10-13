@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaGuides } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationAustraliaRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const requestedParent = '6aa9321ff72077cf5143516f466add5ca2a830cc';
@@ -125,7 +125,8 @@ const laterAustraliaBodyRoutes = [
   '/australia/adelaide-wine-island/kangaroo-island/',
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/',
-  ...postIntegrationAustraliaRoutes
+  ...postIntegrationAustraliaRoutes,
+  ...postIntegrationCanberraRoutes
 ];
 assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
 
