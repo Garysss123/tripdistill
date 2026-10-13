@@ -371,9 +371,19 @@ export const postHawaiiNewOrleansRoutes = Object.freeze([
   '/usa/new-orleans/river-wetlands/'
 ]);
 
+// Atlanta source refresh after the New Orleans checkpoint; four more existing
+// English bodies extend the current-tree date/search scope.
+export const postNewOrleansAtlantaRoutes = Object.freeze([
+  '/usa/atlanta/',
+  '/usa/atlanta/king-historic-district/',
+  '/usa/atlanta/midtown-museums/',
+  '/usa/atlanta/beltline/'
+]);
+
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
   ...postIntegrationHawaiiRoutes,
-  ...postHawaiiNewOrleansRoutes
+  ...postHawaiiNewOrleansRoutes,
+  ...postNewOrleansAtlantaRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(

@@ -746,6 +746,13 @@ const usaNewOrleansRoutes = [
   '/usa/new-orleans/garden-district/',
   '/usa/new-orleans/river-wetlands/'
 ];
+const usaAtlantaRoutes = [
+  '/usa/atlanta/',
+  '/usa/atlanta/king-historic-district/',
+  '/usa/atlanta/midtown-museums/',
+  '/usa/atlanta/beltline/'
+];
+const usaAtlantaLastmod = '2026-10-12';
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1150,6 +1157,11 @@ for (const route of usaNewOrleansRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited New Orleans route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaNewOrleansLastmod });
+}
+for (const route of usaAtlantaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Atlanta route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaAtlantaLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

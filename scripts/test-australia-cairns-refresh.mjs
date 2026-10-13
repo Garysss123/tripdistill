@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postHawaiiNewOrleansRoutes } from './integration-sprint-scope.mjs';
+import { postHawaiiNewOrleansRoutes, postNewOrleansAtlantaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
@@ -129,9 +129,9 @@ function sitemapEntries(xml) {
   return new Map(rows.map(({ loc, lastmod }) => [new URL(loc).pathname, lastmod]));
 }
 
-const expectedHtml = postHawaiiNewOrleansRoutes.map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', taskBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans English pages changed.');
+assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans and four selected Atlanta English pages changed.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -206,7 +206,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes].sort(), 'From the exact source-task base, only the four New Orleans search records changed.');
+assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes].sort(), 'From the exact source-task base, only the four New Orleans and four selected Atlanta search records changed.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -225,9 +225,9 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${taskBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...postHawaiiNewOrleansRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans routes across five editions receive new lastmod dates.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans and four selected Atlanta routes across five editions receive new lastmod dates.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap date.');
 for (const route of routes) for (const [, prefix] of locales) assert.equal(currentSitemap.get(prefix + route), reviewIsoDate, prefix + route + ': Cairns date remains current.');
 
