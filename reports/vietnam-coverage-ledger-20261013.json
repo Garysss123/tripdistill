@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "auditedOn": "2026-10-13",
-  "branch": "codex/sprint-vn-after-ha-long-20261013",
-  "sourceBaseCommit": "92996ef6631fb3775f1bf4f996292059b4aeca83",
+  "branch": "codex/sprint-vn-after-hcmc-20261013",
+  "sourceBaseCommit": "75c8caf79053a67cf645a53bed215a72eff07baf",
   "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
-  "verificationStatus": "full npm run audit and npm run build passed; source-only branch, no merge or deployment",
-  "method": "For this sprint, scripts/test-vietnam-hcmc-refresh.mjs compares Parse5-visible #main-content text at the initial atlas, exact source base, and current tree; it excludes nav/script/style/SVG/noscript, ads, .sources, and visible review-date phrases and splits words on whitespace. This ensures a body-history difference, not file existence/date-only changes, determines completion. The previous sprint method and records are retained under previousSprint.",
+  "verificationStatus": "npm run audit and npm run build passed; source-only branch, no merge or deployment",
+  "method": "This Mekong sprint uses scripts/test-vietnam-mekong-refresh.mjs to compare Parse5-visible #main-content text at the initial atlas, exact source base and current tree; it excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It also checks five-edition canonical/hreflang/Article dates, 955-record search-index parity, exact sitemap URL set and changed-date paths. Prior sprint methods and records remain preserved under previousSprint and priorCurrentSprint.",
   "totals": {
     "englishRoutes": 99,
-    "previousSubstantiveRoutes": 51,
+    "previousSubstantiveRoutes": 55,
     "previousSprintNewSubstantiveRoutes": 4,
     "newSubstantiveRoutes": 4,
-    "afterSprintSubstantiveRoutes": 55,
-    "remainingRoutes": 44
+    "afterSprintSubstantiveRoutes": 59,
+    "remainingRoutes": 40
   },
   "historicalGroups": {
     "Hanoi": 6,
@@ -24,44 +24,44 @@
   },
   "currentSprintRoutes": [
     {
-      "url": "/vietnam/ho-chi-minh-city/",
-      "initialWords": 1113,
-      "baseWords": 1113,
-      "currentWords": 1701,
-      "wordDelta": 588,
-      "initialMainTextSha256": "6583e3e1a6d0fdff5215d21b3fd4d44b2dd291f03a521b950f473d180f852584",
-      "baseMainTextSha256": "6583e3e1a6d0fdff5215d21b3fd4d44b2dd291f03a521b950f473d180f852584",
-      "currentMainTextSha256": "8fb3cb900dc34c123d0b508602a78e525ca22bd870687c0eefb15698d1366b2c"
+      "url": "/vietnam/mekong-delta/",
+      "initialWords": 1124,
+      "baseWords": 1124,
+      "currentWords": 1886,
+      "wordDelta": 762,
+      "initialMainTextSha256": "d174a1db7e67da2a9531f875b2805b1fab388cca3d6a34946611141e3243f3ac",
+      "baseMainTextSha256": "d174a1db7e67da2a9531f875b2805b1fab388cca3d6a34946611141e3243f3ac",
+      "currentMainTextSha256": "7d29008f12fa8ac8613c1d5f41fc3deb57d29ccf375bf236d7fc816e6b357baa"
     },
     {
-      "url": "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
-      "initialWords": 582,
-      "baseWords": 582,
-      "currentWords": 1174,
-      "wordDelta": 592,
-      "initialMainTextSha256": "7bb0acc7f7abfcbdd5aadca69f6b61e79105e4ff166862c3101e5c7f67834d49",
-      "baseMainTextSha256": "7bb0acc7f7abfcbdd5aadca69f6b61e79105e4ff166862c3101e5c7f67834d49",
-      "currentMainTextSha256": "47bc22e6ba05c8322f9143934dfb43fbedd21bcd1f86a1055fe046c68bafcce4"
+      "url": "/vietnam/mekong-delta/can-tho-cai-rang/",
+      "initialWords": 563,
+      "baseWords": 563,
+      "currentWords": 1020,
+      "wordDelta": 457,
+      "initialMainTextSha256": "5d13497f3a4a59816368647bb50e886611f566b0d828ba705d55724c6b0bcccc",
+      "baseMainTextSha256": "5d13497f3a4a59816368647bb50e886611f566b0d828ba705d55724c6b0bcccc",
+      "currentMainTextSha256": "75bd132cfe9c91977920b0f1195c02c2171d86c8b6a9bbe938fe59c7ba4ea210"
     },
     {
-      "url": "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
-      "initialWords": 555,
-      "baseWords": 555,
-      "currentWords": 1142,
-      "wordDelta": 587,
-      "initialMainTextSha256": "8e327983f5cf68a21264c9be1d59720745f62015364e133e1212167a484365cc",
-      "baseMainTextSha256": "8e327983f5cf68a21264c9be1d59720745f62015364e133e1212167a484365cc",
-      "currentMainTextSha256": "a697bec1b769473a48dfd9d9cd0dd275bba99748a63d6a65c1f4767987026a8a"
+      "url": "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
+      "initialWords": 568,
+      "baseWords": 568,
+      "currentWords": 1120,
+      "wordDelta": 552,
+      "initialMainTextSha256": "d30792a8e0fda506678400ca1f6f2cb912b8370e1f108992b21b48a79b16e6d3",
+      "baseMainTextSha256": "d30792a8e0fda506678400ca1f6f2cb912b8370e1f108992b21b48a79b16e6d3",
+      "currentMainTextSha256": "aa79d086e51874fe0251d10dee12c41b8a3f6445bbe1c1ca8d588f8b6c77522f"
     },
     {
-      "url": "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
-      "initialWords": 580,
-      "baseWords": 580,
-      "currentWords": 1167,
-      "wordDelta": 587,
-      "initialMainTextSha256": "d071382cbbf43bc6bd198dda94d89c101b3d42c3345ef1d94ea7538c33fd19d4",
-      "baseMainTextSha256": "d071382cbbf43bc6bd198dda94d89c101b3d42c3345ef1d94ea7538c33fd19d4",
-      "currentMainTextSha256": "1c9c83ab46ce39d97c7dfc3551ecc63d13b1ae107094179a48ea381b355b6819"
+      "url": "/vietnam/mekong-delta/ben-tre-coconut-islets/",
+      "initialWords": 561,
+      "baseWords": 561,
+      "currentWords": 1078,
+      "wordDelta": 517,
+      "initialMainTextSha256": "2c49bac87719d6b8e831eb4552e70876f61cabc3739772a5bf795979c56f6faf",
+      "baseMainTextSha256": "2c49bac87719d6b8e831eb4552e70876f61cabc3739772a5bf795979c56f6faf",
+      "currentMainTextSha256": "894aa38f673baf17cabe073dbdb139392a6a2ac876445ba501a26819fbfd6835"
     }
   ],
   "excludedHistoricalRoutes": [],
@@ -76,11 +76,7 @@
     "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
     "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
     "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
-    "/vietnam/mekong-delta/ben-tre-coconut-islets/",
     "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
-    "/vietnam/mekong-delta/can-tho-cai-rang/",
-    "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
-    "/vietnam/mekong-delta/",
     "/vietnam/mekong-delta/my-tho-thoi-son-island/",
     "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
     "/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/",
@@ -113,12 +109,12 @@
   ],
   "followUpSprint": {
     "reviewedOn": "2026-10-13",
-    "branch": "codex/sprint-vn-after-ha-long-20261013",
-    "sourceBaseCommit": "92996ef6631fb3775f1bf4f996292059b4aeca83",
+    "branch": "codex/sprint-vn-after-hcmc-20261013",
+    "sourceBaseCommit": "75c8caf79053a67cf645a53bed215a72eff07baf",
     "substantiveRouteCount": 4,
-    "bodyWordDeltaTotal": 2354,
+    "bodyWordDeltaTotal": 2288,
     "routes": "currentSprintRoutes",
-    "priorRemainingRoutes": "previousSprint.remainingRoutesAfterSprint"
+    "priorRemainingRoutes": "priorCurrentSprint.remainingRoutesAfterSprint"
   },
   "previousSprint": {
     "schemaVersion": 1,
@@ -885,5 +881,100 @@
         "priorRemainingRoutes": "previousCheckpoint.remainingRoutesAfterSprint"
       }
     }
+  },
+  "priorCurrentSprint": {
+    "reviewedOn": "2026-10-13",
+    "branch": "codex/sprint-vn-after-ha-long-20261013",
+    "sourceBaseCommit": "92996ef6631fb3775f1bf4f996292059b4aeca83",
+    "routes": [
+      {
+        "url": "/vietnam/ho-chi-minh-city/",
+        "initialWords": 1113,
+        "baseWords": 1113,
+        "currentWords": 1701,
+        "wordDelta": 588,
+        "initialMainTextSha256": "6583e3e1a6d0fdff5215d21b3fd4d44b2dd291f03a521b950f473d180f852584",
+        "baseMainTextSha256": "6583e3e1a6d0fdff5215d21b3fd4d44b2dd291f03a521b950f473d180f852584",
+        "currentMainTextSha256": "8fb3cb900dc34c123d0b508602a78e525ca22bd870687c0eefb15698d1366b2c"
+      },
+      {
+        "url": "/vietnam/ho-chi-minh-city/district-1-colonial-core/",
+        "initialWords": 582,
+        "baseWords": 582,
+        "currentWords": 1174,
+        "wordDelta": 592,
+        "initialMainTextSha256": "7bb0acc7f7abfcbdd5aadca69f6b61e79105e4ff166862c3101e5c7f67834d49",
+        "baseMainTextSha256": "7bb0acc7f7abfcbdd5aadca69f6b61e79105e4ff166862c3101e5c7f67834d49",
+        "currentMainTextSha256": "47bc22e6ba05c8322f9143934dfb43fbedd21bcd1f86a1055fe046c68bafcce4"
+      },
+      {
+        "url": "/vietnam/ho-chi-minh-city/cho-lon-binh-tay/",
+        "initialWords": 555,
+        "baseWords": 555,
+        "currentWords": 1142,
+        "wordDelta": 587,
+        "initialMainTextSha256": "8e327983f5cf68a21264c9be1d59720745f62015364e133e1212167a484365cc",
+        "baseMainTextSha256": "8e327983f5cf68a21264c9be1d59720745f62015364e133e1212167a484365cc",
+        "currentMainTextSha256": "a697bec1b769473a48dfd9d9cd0dd275bba99748a63d6a65c1f4767987026a8a"
+      },
+      {
+        "url": "/vietnam/ho-chi-minh-city/cu-chi-tunnels/",
+        "initialWords": 580,
+        "baseWords": 580,
+        "currentWords": 1167,
+        "wordDelta": 587,
+        "initialMainTextSha256": "d071382cbbf43bc6bd198dda94d89c101b3d42c3345ef1d94ea7538c33fd19d4",
+        "baseMainTextSha256": "d071382cbbf43bc6bd198dda94d89c101b3d42c3345ef1d94ea7538c33fd19d4",
+        "currentMainTextSha256": "1c9c83ab46ce39d97c7dfc3551ecc63d13b1ae107094179a48ea381b355b6819"
+      }
+    ],
+    "remainingRoutesAfterSprint": [
+      "/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/",
+      "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+      "/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/",
+      "/vietnam/da-lat-central-highlands/",
+      "/vietnam/da-lat-central-highlands/langbiang-kho-highlands/",
+      "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+      "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+      "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+      "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+      "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+      "/vietnam/mekong-delta/ben-tre-coconut-islets/",
+      "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+      "/vietnam/mekong-delta/can-tho-cai-rang/",
+      "/vietnam/mekong-delta/chau-doc-sam-tra-su/",
+      "/vietnam/mekong-delta/",
+      "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+      "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+      "/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/",
+      "/vietnam/mui-ne-binh-thuan/",
+      "/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/",
+      "/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/",
+      "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+      "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+      "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+      "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+      "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+      "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+      "/vietnam/nha-trang-khanh-hoa/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+      "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+      "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+      "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+      "/vietnam/phong-nha-ke-bang/",
+      "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+      "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+      "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+      "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+      "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+      "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+      "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+      "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+      "/vietnam/phu-quoc-southern-islands/",
+      "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+    ],
+    "substantiveRouteCount": 4,
+    "bodyWordDeltaTotal": 2354
   }
 }

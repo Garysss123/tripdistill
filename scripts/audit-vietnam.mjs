@@ -135,8 +135,8 @@ for (const record of routes) {
     if (!html.includes(`hreflang="${locale}" href="https://tripdistill.com${prefix}${record.route}"`)) problems.push(`${record.route}: missing ${locale} hreflang`);
   }
   if (!html.includes(`hreflang="x-default" href="https://tripdistill.com${record.route}"`)) problems.push(`${record.route}: missing x-default hreflang`);
-  const requiredFieldCss = (record.kind === 'guide' && record.guide.routeDiagram)
-    || (record.kind === 'hub' && ['/vietnam/ha-long-cat-ba/', '/vietnam/ho-chi-minh-city/'].includes(record.route))
+  const requiredFieldCss = (record.kind === 'guide' && (record.guide.routeDiagram || record.guide.isoDate === '2026-10-13'))
+    || (record.kind === 'hub' && (['/vietnam/ha-long-cat-ba/', '/vietnam/ho-chi-minh-city/'].includes(record.route) || record.cluster.isoDate === '2026-10-13'))
     ? diagramFieldCss
     : expectedFieldCss;
   if (record.kind !== 'country' && !html.includes(requiredFieldCss)) problems.push(`${record.route}: missing Vietnam field stylesheet ${requiredFieldCss}`);
@@ -204,10 +204,8 @@ for (const record of routes) {
       ? '2026-10-12'
       : record.route.startsWith('/vietnam/hue/')
         ? '2026-10-08'
-        : record.kind === 'hub' && record.route === '/vietnam/ha-long-cat-ba/'
-          ? '2026-10-12'
-          : record.kind === 'hub' && record.route === '/vietnam/ho-chi-minh-city/'
-            ? '2026-10-13'
+        : record.kind === 'hub' && ['2026-10-12', '2026-10-13'].includes(record.cluster.isoDate)
+          ? record.cluster.isoDate
             : record.kind === 'guide' && ['2026-10-12', '2026-10-13'].includes(record.guide.isoDate)
               ? record.guide.isoDate
               : '2026-08-31';

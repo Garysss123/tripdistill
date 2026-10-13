@@ -355,10 +355,19 @@ export const currentBranchVietnamRoutes = Object.freeze([
   '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
 ]);
 
+// Follow-on source sprint updates four existing Mekong Delta bodies and dates;
+// their English search records remain unchanged.
+export const followingVietnamMekongRoutes = Object.freeze([
+  '/vietnam/mekong-delta/',
+  '/vietnam/mekong-delta/can-tho-cai-rang/',
+  '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes].map((route) => `${prefix}${route}`))
 );

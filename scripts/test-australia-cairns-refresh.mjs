@@ -148,11 +148,15 @@ const currentBranchVietnamRoutes = [
   '/vietnam/ho-chi-minh-city/',
   '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
   '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
-  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/',
+  '/vietnam/mekong-delta/',
+  '/vietnam/mekong-delta/can-tho-cai-rang/',
+  '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
 ];
 const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns, known Vietnam documents and four explicit source-branch HCMC documents may change.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns, known Vietnam documents, four explicit HCMC documents and four following Mekong pages may change.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -248,7 +252,7 @@ const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.x
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const expectedLastmod = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four selected Cairns, known Vietnam routes and 20 explicit source-branch HCMC edition paths may receive new lastmod dates.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four selected Cairns, known Vietnam routes and 40 explicit HCMC/Mekong source-branch edition paths may receive new lastmod dates.');
 for (const route of expectedLastmod) {
   const expectedDate = currentBranchVietnamRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
   assert.equal(currentSitemap.get(route), expectedDate, route + ': sitemap date.');

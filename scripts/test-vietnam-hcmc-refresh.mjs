@@ -16,6 +16,14 @@ const routes = [
   '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
   '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
 ];
+// The source-base workstream has since updated these four additional routes; keep
+// the HCMC date-history assertion aware of the following sprint without weakening it.
+const followingRoutes = [
+  '/vietnam/mekong-delta/',
+  '/vietnam/mekong-delta/can-tho-cai-rang/',
+  '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -141,7 +149,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .sort();
 assert.deepEqual(changedSearchRoutes, [], 'The existing four search records should remain stable for this body-only refresh.');
 
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
@@ -151,8 +159,9 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four routes in five editions may receive new sitemap dates.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), baseDate, `${pagePath}: sitemap date`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC and following Mekong routes in five editions may receive new sitemap dates.');
+const followOnDatePaths = new Set(editions.flatMap(({ prefix }) => followingRoutes.map((route) => `${prefix}${route}`)));
+for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), followOnDatePaths.has(pagePath) ? '2026-10-13' : baseDate, `${pagePath}: sitemap date`);
 
 for (const route of routes) {
   const englishHtml = fs.readFileSync(fileForRoute(route), 'utf8');
