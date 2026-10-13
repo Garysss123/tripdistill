@@ -8,6 +8,8 @@ import { parse } from 'parse5';
 const root = path.resolve(import.meta.dirname, '..');
 const branch = 'codex/sprint-au-broome-content-20261013';
 const base = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
+const laterBranch = 'codex/sprint-au-broome-tasmania-gaps-20261013';
+const laterBase = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
 const isoDate = '2026-10-13';
 const routes = [
@@ -103,7 +105,17 @@ function sitemapMap(xml) {
   return map;
 }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Selected source branch.');
+const currentBranch = git(['branch', '--show-current']).trim();
+if (currentBranch === laterBranch) {
+  git(['merge-base', '--is-ancestor', laterBase, 'HEAD']);
+  for (const route of routes) git(['diff', '--quiet', laterBase, '--', route.slice(1) + 'index.html']);
+  for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg', 'assets/images/australia-kings-park-entry-choice.svg']) {
+    assert.equal(fs.readFileSync(path.join(path.resolve(import.meta.dirname, '..'), asset), 'utf8'), git(['show', `${correction}:${asset}`]), `${asset}: parallel arrow correction remains intact.`);
+  }
+  console.log('Prior Broome content protection passed: the previous four Broome routes remain unchanged from the exact 8baea8a checkpoint; the arrow correction remains byte-for-byte intact.');
+  process.exit(0);
+}
+assert.equal(currentBranch, branch, 'Selected source branch.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=2', 'HEAD']).trim().split(/\r?\n/u);
 assert.equal(firstParents[1], base, 'Broome source branch is based directly on the exact requested checkpoint.');
 git(['merge-base', '--is-ancestor', base, 'HEAD']);

@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 
 const root = path.resolve(import.meta.dirname, '..');
-const branches = new Set(['codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013']);
+const branches = new Set(['codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013', 'codex/sprint-au-broome-tasmania-gaps-20261013']);
 const base = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
 const isoDate = '2026-10-13';
@@ -15,6 +15,12 @@ const broomeRoutes = [
   '/australia/broome-kimberley/rubibi-broome-cable-beach/',
   '/australia/broome-kimberley/dampier-peninsula/',
   '/australia/broome-kimberley/gibb-river-road/'
+];
+const broomeTasmaniaRoutes = [
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
 ];
 const routes = [
   '/australia/margaret-river-southwest/busselton-dunsborough/',
@@ -107,12 +113,16 @@ function urlRecords(xml) {
 function searchMap(text) { return new Map(JSON.parse(text).map((entry) => [entry.url, entry])); }
 
 const currentBranch = git(['branch', '--show-current']).trim();
-assert(branches.has(currentBranch), 'Selected source branch is Margaret remaining or its Broome follow-up.');
+assert(branches.has(currentBranch), 'Selected source branch is Margaret remaining or a later authorized Broome follow-up.');
 git(['merge-base', '--is-ancestor', base, 'HEAD']);
 const parent = git(['rev-list', '--first-parent', '--max-count=3', 'HEAD']).trim().split(/\r?\n/u);
-const expectedBase = currentBranch === 'codex/sprint-au-broome-content-20261013' ? '5578d6da740ca9d7ec07fca6c7eed65cc67868e8' : base;
-const branchRoutes = [...routes, ...(currentBranch === 'codex/sprint-au-broome-content-20261013' ? broomeRoutes : [])];
-assert(parent.includes(expectedBase), 'The branch descends from the exact requested Margaret checkpoint, directly or through the Broome follow-up checkpoint.');
+const expectedBase = currentBranch === 'codex/sprint-au-broome-tasmania-gaps-20261013' ? '8baea8a720ebd88ff6834e60235e29c03343c4c4' : currentBranch === 'codex/sprint-au-broome-content-20261013' ? '5578d6da740ca9d7ec07fca6c7eed65cc67868e8' : base;
+const branchRoutes = [
+  ...routes,
+  ...(currentBranch === 'codex/sprint-au-broome-content-20261013' || currentBranch === 'codex/sprint-au-broome-tasmania-gaps-20261013' ? broomeRoutes : []),
+  ...(currentBranch === 'codex/sprint-au-broome-tasmania-gaps-20261013' ? broomeTasmaniaRoutes : [])
+];
+assert(parent.includes(expectedBase), 'The branch descends from the exact requested Margaret checkpoint or its recorded Broome follow-up checkpoint.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
 assert.deepEqual(changedEnglish, branchRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Margaret routes and, on the later Broome branch, its four routes changed.');

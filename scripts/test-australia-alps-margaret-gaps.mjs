@@ -10,7 +10,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const branches = new Set([
   'codex/sprint-au-alps-margaret-gaps-20261013',
   'codex/sprint-au-margaret-remaining-20261013',
-  'codex/sprint-au-broome-content-20261013'
+  'codex/sprint-au-broome-content-20261013',
+  'codex/sprint-au-broome-tasmania-gaps-20261013'
 ]);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const followupCheckpoint = '55e3b9710c24b45975bdaea5769ab3e4a39ffc44';
@@ -35,7 +36,13 @@ const broomeRoutes = [
   '/australia/broome-kimberley/dampier-peninsula/',
   '/australia/broome-kimberley/gibb-river-road/'
 ];
-const allChangedRoutes = [...routes, ...remainingRoutes, ...broomeRoutes];
+const broomeTasmaniaRoutes = [
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
+];
+const allChangedRoutes = [...routes, ...remainingRoutes, ...broomeRoutes, ...broomeTasmaniaRoutes];
 const locales = [
   { code: 'en', prefix: '', date: 'reviewed 13 October 2026', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', date: '2026 年 10 月 13 日', script: /[\u3400-\u9fff]/u },
@@ -134,6 +141,7 @@ assert(branches.has(currentBranch), 'Selected source branch is one of the author
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).trim().split(/\r?\n/u);
 const expectedCheckpoint = currentBranch === 'codex/sprint-au-broome-content-20261013'
   ? broomeCheckpoint
+  : currentBranch === 'codex/sprint-au-broome-tasmania-gaps-20261013' ? '8baea8a720ebd88ff6834e60235e29c03343c4c4'
   : currentBranch === 'codex/sprint-au-margaret-remaining-20261013' ? followupCheckpoint : base;
 assert(firstParents.includes(expectedCheckpoint) && firstParents.indexOf(expectedCheckpoint) <= 2, 'The source branch descends from the exact base or its recorded follow-up checkpoint.');
 const correctionFiles = [

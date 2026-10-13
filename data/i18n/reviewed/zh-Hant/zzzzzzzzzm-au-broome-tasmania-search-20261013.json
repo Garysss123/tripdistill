@@ -1,0 +1,46 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Tasmania by gateway and nights: use Hobart for the south, Launceston for the north, and separate beds for the Tasman Peninsula, Cradle Mountain and Freycinet. A three-night visit should choose one area; a broad island circuit needs about two weeks plus weather and road buffers.": "依入口城鎮和住宿晚數規劃塔斯馬尼亞：南部以霍巴特為基地、北部以朗塞斯頓為基地，塔斯曼半島、搖籃山和菲欣納分開住宿。三晚行程應專注一區；較完整的環島約需兩週，另留天候與道路緩衝。",
+    "tasmania itinerary how many nights bases": "塔斯馬尼亞行程：幾晚、基地選擇",
+    "hobart launceston cradle mountain freycinet route order": "霍巴特、朗塞斯頓、搖籃山、菲欣納的路線順序",
+    "tasmania hire car versus coach park last mile": "塔斯馬尼亞租車或客運：公園末段交通",
+    "spirit of tasmania devonport ferry vehicle booking": "Spirit of Tasmania 德文港渡輪與車輛預訂",
+    "tasmania road closures alpine weather fire park alerts": "塔斯馬尼亞封路、高山天候、火災及公園警示",
+    "tasmania trip rain alternative extra night": "塔斯馬尼亞雨天替代行程與加住一晚",
+    "nipaluna hobart tasmania regional guide": "nipaluna 霍巴特塔斯馬尼亞區域指南",
+    "Plan three Kununurra nights around one town orientation, a booked Ord River or Lake Argyle experience and a weather buffer. Confirm the actual pickup, marina, road, return and water advice; Purnululu is a separate multi-night park trip, not a day detour.": "以庫努納拉三晚為基礎，安排一次鎮上熟悉行程、一項預訂好的奧德河或阿蓋爾湖體驗，以及天候緩衝。確認實際接送、碼頭、道路、回程與水域資訊；普努盧盧是需另住數晚的公園行程，不是當日順遊。",
+    "kununurra lake argyle how many nights": "庫努納拉與阿蓋爾湖：應住幾晚",
+    "kununurra to lake argyle drive and cruise transfer": "庫努納拉到阿蓋爾湖的車程、遊船與接駁",
+    "ord river cruise from kununurra operator pickup": "從庫努納拉參加奧德河遊船：業者接送",
+    "kununurra purnululu separate overnight road trip": "庫努納拉到普努盧盧：另住一晚以上的公路行程",
+    "mirima national park kununurra heat and access": "庫努納拉 Mirima National Park 高溫與通行資訊",
+    "lake argyle crocodile swimming advice": "阿蓋爾湖鱷魚與游泳安全指引",
+    "kununurra remote travel fuel weather road conditions": "庫努納拉偏遠旅行：燃油、天候、道路狀況",
+    "Plan at least two nights at Purnululu, with a confirmed Kununurra or Halls Creek gateway. DBCA lists a 53 km unsealed high-clearance 4WD access track taking 1.5–3 hours, no park fuel and 47 km between the north and south ends; check live park and road alerts before leaving.": "普努盧盧至少住兩晚，並確認從庫努納拉或 Halls Creek 出發的入口基地。DBCA 列出 53 km 未鋪設、高底盤 4WD 才能通行的路段，需時 1.5–3 小時；園內無燃油，南北兩端相距 47 km。出發前查詢即時公園與道路警示。",
+    "purnululu how many nights two campgrounds": "普努盧盧需要幾晚與兩處營地",
+    "bungle bungle spring creek track 53 km 4wd": "Bungle Bungle Spring Creek Track：53 km、4WD",
+    "purnululu from kununurra not day trip 304 km": "從庫努納拉到普努盧盧不是一日遊：304 km",
+    "purnululu north echidna chasm south cathedral gorge": "普努盧盧北區 Echidna Chasm、南區 Cathedral Gorge",
+    "purnululu park alerts seasonal opening road weather": "普努盧盧公園警示、季節開放、道路與天候",
+    "purnululu high clearance vehicle fuel mobile phone": "普努盧盧高底盤車輛、燃油與手機訊號",
+    "bungle bungle flight landing versus walking access": "Bungle Bungle 觀光飛行降落或步行遊覽",
+    "Plan one or two Hobart nights around TMAG, Constitution Dock and Salamanca Place. Check the current Saturday market calendar, TMAG opening and access, Metro Tasmania return and harbour forecast; use the flat lower-city route if Kelly’s Steps, wind or walking distance do not suit.": "在霍巴特住一至兩晚，安排 TMAG、憲法碼頭和 Salamanca Place。查看當期週六市集日曆、TMAG 開放與無障礙資訊、Metro Tasmania 回程及港灣預報；若 Kelly’s Steps、強風或步行距離不適合，就走較平坦的下層市區路線。",
+    "hobart itinerary one day salamanca place route": "霍巴特一日行程：Salamanca Place 步行路線",
+    "nipaluna hobart base cbd versus battery point": "nipaluna 霍巴特住宿基地：CBD 或 Battery Point",
+    "salamanca market saturday current dates hours": "Salamanca Market：週六市集最新日期與時間",
+    "tmag hobart opening accessibility visitor information": "霍巴特 TMAG 開放時間、參觀與無障礙資訊",
+    "hobart airport to city confirmed transfer metro timetable": "霍巴特機場至市區接駁與 Metro 班次",
+    "hobart salamanca rain wind accessible alternative": "霍巴特 Salamanca 雨天、強風與無障礙替代方案",
+    "kellys steps battery point hobart return walk": "Kelly’s Steps、Battery Point 霍巴特回程步行"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}
