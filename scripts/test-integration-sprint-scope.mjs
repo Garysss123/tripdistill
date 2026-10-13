@@ -17,6 +17,7 @@ import {
   followingVietnamPhuQuocRoutes,
   followingVietnamNhaTrangRoutes,
   followingVietnamAfterNhaTrangRoutes,
+  followingVietnamSouthernGapsRoutes,
   integrationSprintBaseline,
   localizedSourceBranchSitemapRoutes
 } from './integration-sprint-scope.mjs';
@@ -44,7 +45,7 @@ const changedFiles = git([
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-const sourceBranchRoutes = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes];
+const sourceBranchRoutes = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes];
 assert.equal(new Set([...integrationRoutes, ...sourceBranchRoutes]).size, integrationRoutes.length + sourceBranchRoutes.length, 'branch-specific Vietnam routes must remain separate from the integrated route set');
 assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...sourceBranchRoutes]), 'only integrated routes and the explicit HCMC, Mekong, Da Lat, Mui Ne, Phong Nha, Phu Quoc, Nha Trang, Dray Nur/Yok Don and Ha Long/Cat Ba source-branch bodies may change');
 
@@ -63,11 +64,11 @@ const changedSitemapUrls = [...currentSitemap]
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const expectedChangedSitemapPaths = localizedSourceBranchSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1460);
+assert.equal(changedSitemapUrls.length, 1480);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the integrated dates and this source branch’s 112 HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang/Dray Nur/Yok Don/Ha Long/Cat Ba edition dates may change'
+  'only integrated dates and this source branch’s 112 existing HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang/Dray Nur/Yok Don/Ha Long/Cat Ba/Southern Vietnam edition dates may change'
 );
 for (const url of changedSitemapUrls) {
   const pathname = new URL(url).pathname;
@@ -86,7 +87,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 249);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes]), 'only the exact integrated, Mui Ne, Phong Nha, Phu Quoc, Nha Trang and Da Lat/Ha Long/Cat Ba English search records changed');
+assert.equal(changedSearchRoutes.length, 253);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes]), 'only the exact integrated and explicitly reviewed Vietnam source-branch English search records changed');
 
-console.log('Integration scope regression passed: 261 integrated English bodies plus thirty-two explicit source-branch Vietnam bodies, 1,460 date changes across 292 routes × five editions, 249 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 261 integrated English bodies plus thirty-six explicit source-branch Vietnam bodies, 1,480 date changes across 296 routes × five editions, 253 English search changes, and the unchanged 4,560-URL set.');

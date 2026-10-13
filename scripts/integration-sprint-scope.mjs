@@ -412,13 +412,22 @@ export const followingVietnamAfterNhaTrangRoutes = Object.freeze([
   '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
 ]);
 
+// This source sprint refreshes four existing southern Ho Chi Minh City and Mekong guides.
+export const followingVietnamSouthernGapsRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
+  '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
+  '/vietnam/mekong-delta/my-tho-thoi-son-island/',
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
+]);
+
 export const currentSourceBranchSearchRoutes = Object.freeze([
   ...integrationSearchRoutes,
   ...followingVietnamMuiNeRoutes,
   ...followingVietnamPhongNhaRoutes,
   ...followingVietnamPhuQuocRoutes,
   ...followingVietnamNhaTrangRoutes,
-  ...followingVietnamAfterNhaTrangRoutes
+  ...followingVietnamAfterNhaTrangRoutes,
+  ...followingVietnamSouthernGapsRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
@@ -426,5 +435,5 @@ export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].map((route) => `${prefix}${route}`))
 );

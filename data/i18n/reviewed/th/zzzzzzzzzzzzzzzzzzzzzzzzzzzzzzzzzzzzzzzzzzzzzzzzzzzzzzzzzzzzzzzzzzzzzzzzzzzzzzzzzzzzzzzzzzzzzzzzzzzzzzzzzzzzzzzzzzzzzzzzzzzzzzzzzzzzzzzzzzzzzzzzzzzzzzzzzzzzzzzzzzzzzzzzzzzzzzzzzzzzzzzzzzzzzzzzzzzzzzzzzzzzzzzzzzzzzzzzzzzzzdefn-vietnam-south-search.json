@@ -1,0 +1,40 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Saigon Waterbus Thu Thiem pier": "ท่าเรือเถื่อมเถียม เรือโดยสารไซ่ง่อน",
+    "Thao Dien pier": "ท่าเรือท่าวดี๋ยน",
+    "Bach Dang waterbus one-way ticket": "ตั๋วเรือเที่ยวเดียว ท่าเรือบั๊กดัง",
+    "Thu Thiem riverfront access": "การเข้าถึงทางเดินริมน้ำเถื่อมเถียม",
+    "Ho Chi Minh City water bus return": "เรือโดยสารโฮจิมินห์ เที่ยวกลับ",
+    "Thao Dien neighborhood route": "เส้นทางย่านท่าวดี๋ยน",
+    "Can Gio mangrove reserve day trip": "ทริปวันเดียวป่าชายเลนเกิ่นเส่อ",
+    "Binh Khanh ferry Cần Giờ": "เรือข้ามฟากบิ่ญคั้ญ เกิ่นเส่อ",
+    "Vam Sat visitor access": "การเข้าชมวันสาต",
+    "Rung Sac mangrove forest": "ป่าชายเลนหยุงสัก",
+    "Can Gio boat and boardwalk": "ล่องเรือและทางเดินไม้เกิ่นเส่อ",
+    "Ho Chi Minh City wetland route": "เส้นทางพื้นที่ชุ่มน้ำโฮจิมินห์",
+    "My Tho Thoi Son island boat": "เรือไปเกาะเถ่ยเซิน มี่โถ",
+    "Thoi Son pier operator": "ผู้ให้บริการเรือท่าเรือเถ่ยเซิน",
+    "My Tho island tour return": "ทัวร์เกาะมี่โถ เที่ยวกลับ",
+    "My Tho to Can Tho coach transfer": "รถโค้ชมี่โถไปเกิ่นเธอ",
+    "Mekong Delta Thoi Son garden": "สวนเกาะเถ่ยเซิน สามเหลี่ยมปากแม่น้ำโขง",
+    "My Tho one night itinerary": "แผนเที่ยวมี่โถ 1 คืน",
+    "Sa Dec flower village gardens": "สวนหมู่บ้านดอกไม้ซาแด๊ก",
+    "Sa Dec Huynh Thuy Le house opening": "เวลาเปิดบ้านหวิ่ญถวีเล ซาแด๊ก",
+    "Sa Dec market route": "เส้นทางตลาดซาแด๊ก",
+    "Dong Thap flower village transfer": "รถไปหมู่บ้านดอกไม้ด่งท้าป",
+    "Sa Dec one night itinerary": "แผนเที่ยวซาแด๊ก 1 คืน",
+    "Sa Dec to Can Tho coach": "รถโค้ชจากซาแด๊กไปเกิ่นเธอ"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Self-review checked Vietnamese place-name identity, Thai query readability, return-transfer and one-night terms, and retained route names where useful. This is not independent model or human review."
+  }
+}

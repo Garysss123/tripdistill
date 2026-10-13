@@ -96,7 +96,11 @@ const afterNhaTrangVietnamRoutes = [
   '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
   '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
   '/vietnam/ha-long-cat-ba/sung-sot-titov/',
-  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/',
+  '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
+  '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
+  '/vietnam/mekong-delta/my-tho-thoi-son-island/',
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';

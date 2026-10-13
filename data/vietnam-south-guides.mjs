@@ -461,26 +461,36 @@ export const vietnamSouthClusters = [
           creator: 'ekkun',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'Compare Thu Thiem’s developing riverfront with Thao Dien’s established neighborhood life through a two-bank route that respects construction and resident space.',
-        lead: 'The east side of the Saigon River is a city in transition. New parks and skyline views sit beside active construction, while Thao Dien combines transport, apartments, small businesses and river-facing streets.',
-        orientation: 'Choose a water, skyline or neighborhood question before leaving District 1. This route is about urban change, not collecting every new building.',
-        arrival: 'Use a current metro, waterbus or road connection and check the exact exit. The final walk may cross unfinished sidewalks, bridges or construction diversions.',
-        sequence: 'One bank, a safe crossing, one neighborhood pocket and a sunset-ready exit provide enough contrast.',
-        boundary: 'Construction fences and residential courtyards are boundaries, not scenic shortcuts. Keep cameras away from private balconies and active work.',
+        summary: 'Plan Thu Thiem and Thao Dien as separate one-way waterbus outings from a central base, with a confirmed riverfront entrance and road return.',
+        lead: 'Thu Thiem and Thao Dien reward a slow look at how Ho Chi Minh City is changing, but they are not one continuous waterfront promenade. The official Saigon Waterbus booking page lists Bạch Đằng–Thủ Thiêm and Bạch Đằng–Thảo Điền legs; those are separate one-way choices, not a promise that you can walk between the neighborhoods or board any boat back. It says to check the exact date and departure, book the return separately, arrive at least 15 minutes early, and note that paid online tickets are not refundable or exchangeable. Plan the pier and return before choosing a riverfront walk.',
+        orientation: 'Keep one hotel in central District 1 or another base with a confirmed route to Bạch Đằng. Two HCMC nights usually leave one full day: choose either a verified Thu Thiem public-space visit or a Thao Dien neighborhood walk. Three nights can hold both on separate blocks, with a third day or flexible evening left for weather or service changes. A Thao Dien overnight makes sense only when local dining and neighborhood time are the purpose and you have checked the actual lodging-to-pier or station transfer; changing hotels just to see the river adds luggage and another pickup.',
+        arrival: 'Before paying, open the operator’s date-specific departure board, select the exact origin and destination pier, and buy the return as its own leg. The page reviewed on 13 October 2026 gave example travel times from Bạch Đằng, including five minutes to Thủ Thiêm and 20 minutes to Thảo Điền; those examples are not a substitute for the chosen sailing’s live listing. Reach the named pier at least 15 minutes before departure. The metro authority page timed out during this review, so no Line 1 fare, interval, transfer or station access is promised here.',
+        sequence: 'On the first outing, take a confirmed Bạch Đằng–Thủ Thiêm sailing, leave the pier only for a currently open public route, and return on a separately booked boat or confirmed road pickup. On a different half day, use a listed Bạch Đằng–Thảo Điền sailing for one compact neighborhood walk and return from the same named pier. Do not treat a development site, fenced bank or private residential lane as a shortcut between them.',
+        boundary: 'The official city planning video describes riverfront projects; it does not establish that a particular park, path or construction edge is open to visitors. Confirm the exact public entrance before buying a boat leg. Stay out of work zones and residential courtyards, keep cameras away from private balconies, and leave any route that is fenced or signed for authorized users.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
         stages: [
-          ['Choose', 'Confirm the day’s river crossing and one destination on each bank before setting out.'],
-          ['Observe', 'Read the skyline, flood edge and public-space design from marked routes.'],
-          ['Settle', 'Use one Thao Dien street or market pocket for food and neighborhood texture.'],
-          ['Exit', 'Return through a known station, pier or pickup point before evening traffic peaks.']
+          ['Check the two clocks', 'Choose the day’s target first, then match it to a live waterbus sailing and a separate return. The booking page reviewed on 13 October 2026 described one-way, non-refundable or non-exchangeable online tickets; verify the terms again before paying.'],
+          ['Reach the named pier', 'Start at Bạch Đằng only if the date-specific board shows the intended leg. Arrive at least 15 minutes before departure, and save the pier name and road pickup point offline.'],
+          ['Walk one public pocket', 'For Thu Thiem, follow only an open public entrance confirmed that day. For Thao Dien, select one street or market pocket near the confirmed landing; leave private courtyards and active work sites alone. Do these as separate outings when that protects the return.'],
+          ['Return on a real booking', 'Use the ticketed return or a driver who has agreed the exact meeting point. If weather, capacity or access breaks the plan, shorten it to the central riverfront rather than improvising another pier.']
         ],
         risks: [
-          ['Construction drift', 'Sidewalks, station approaches and river parks can change faster than guide maps.'],
-          ['Crossing dependency', 'A missed boat or crowded road connection can erase the return buffer.'],
-          ['Resident privacy', 'Popular streets still contain homes, schools and ordinary work.']
+          ['One-way ticket trap', 'The online ticket page says each booking covers one direction and paid tickets cannot be exchanged or refunded. Check both legs and the travel date before payment.'],
+          ['Construction and access', 'A waterfront shown in a city plan is not proof of an open visitor path. If the entrance cannot be confirmed, skip that bank instead of walking through a work zone.'],
+          ['Return gap', 'A missed sailing can strand the neighborhood plan on the wrong side of the river. Keep enough time and funds for a road pickup, or choose a central-bank route that does not require a crossing.']
         ],
-        duration: 'Plan a half day to full day depending on whether the crossing is by road or water.',
-        combine: 'Pair with the Saigon River Waterbus chapter only when the boat schedule is verified; keep District 1 heritage separate.',
-        verify: 'Check current metro or waterbus operation, construction diversions, weather and the chosen riverfront opening.'
+        duration: 'No extra hotel move is needed for a half-day river outing. Two HCMC nights suit one of the two areas; three nights allow Thu Thiem and Thao Dien on separate days while keeping the same central base. Add a fourth only if the rest of the city itinerary needs a weather or service buffer.',
+        combine: 'Choose one neighborhood for a short stay. With two or more full days, place Thu Thiem and Thao Dien on different days; keep District 1 heritage and Chợ Lớn as separate routes. Do not promise a through-walk or rely on an unconfirmed same-day boat connection.',
+        verify: 'Check the live Saigon Waterbus departure board, exact pier names, one-way ticket and refund terms, return leg, weather, public-space gate and construction notice. MAUR’s official page timed out on 13 October 2026; metro service details remain unverified in this review.',
+        sources: [
+          ['https://saigonwaterbus.com/water-bus', 'Saigon Waterbus — Route 1 and named stops; checked 13 October 2026'],
+          ['https://saigonwaterbus.com/dat-ve-truc-tuyen', 'Saigon Waterbus — date-specific one-way tickets, example legs, 15-minute boarding margin and non-refundable terms; checked 13 October 2026'],
+          ['https://saigonwaterbus.com/lich-khoi-hanh', 'Saigon Waterbus — departure information; check the live date before booking'],
+          ['https://hdnd.hochiminhcity.gov.vn/videos/c/tp-ho-chi-minh-khoi-dong-quy-hoach-duong-ven-song', 'Ho Chi Minh City People’s Council — riverfront planning context only; it does not confirm current visitor access'],
+          ['https://maur.hochiminhcity.gov.vn/', 'Ho Chi Minh City Urban Railway Management Board — page timed out on 13 October 2026; no current metro service claim is based on it']
+        ],
+        searchKeywords: ['Saigon Waterbus Thu Thiem pier', 'Thao Dien pier', 'Bach Dang waterbus one-way ticket', 'Thu Thiem riverfront access', 'Ho Chi Minh City water bus return', 'Thao Dien neighborhood route']
       },
       {
         slug: 'cu-chi-tunnels',
@@ -548,26 +558,35 @@ export const vietnamSouthClusters = [
           creator: 'Tho nau',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'Use Can Gio to move from metropolitan edge to mangrove, wetland and coastal habitat through a low-impact nature day with tide and weather awareness.',
-        lead: 'Can Gio is a UNESCO biosphere reserve south-east of the city, where mangrove, mudflat, seagrass and working communities meet. The point is not to chase a single animal but to understand the estuary that protects the city.',
-        orientation: 'Choose an authorized forest, boardwalk or boat experience and learn which zone you are entering. Keep the journey slow enough to notice salinity, roots, birds and tidal change.',
-        arrival: 'Leave central Ho Chi Minh City with a full road and ferry buffer. Confirm the current route to the selected reserve or Vam Sat facility before departure.',
-        sequence: 'Mainland edge, mangrove interpretation, quiet wildlife observation and an early return make the day resilient.',
-        boundary: 'Core and buffer habitats are not open playgrounds. Stay on marked routes, do not feed wildlife and take all waste back out.',
+        summary: 'Make Cần Giờ a full-day mangrove trip from HCMC only after confirming the crossing, visitor zone and same-day return.',
+        lead: 'Cần Giờ is not a quick park stop on a central-city day. The road leg and the Bình Khánh river crossing consume a meaningful part of the day, and a mangrove boardwalk or boat is useful only if the exact visitor site is open and the return is secured. The UNESCO Man and the Biosphere Programme describes reserves as places where nature and communities are managed together; that general framework does not grant access to every forest channel or working shore. During this review, Vàm Sát’s site returned a 502 and the exact UNESCO Cần Giờ listing page returned 404. Current visitor zones, boats, admission and operating hours therefore remain unknown until the responsible authority or operator confirms them directly.',
+        orientation: 'Keep your lodging in central Ho Chi Minh City for a one-day visit. Two city nights give one full day outside the center; three nights can protect a second city day if rain or ferry disruption cancels it. A Cần Giờ overnight is a separate choice: book it only after confirming the exact lodging, meal, road transfer and next-day return, since the visitor facilities and local services were not verified here. Do not move hotels just to save an assumed drive time.',
+        arrival: 'First ask the chosen visitor site to identify its exact entrance, public pier or road drop-off, opening, activity, last return and cancellation policy. Then confirm the day’s route from your HCMC base: whether the Bình Khánh vehicle ferry is operating, where the vehicle queues, how the crossing and onward road are arranged, and who brings you back. No current ferry interval, bridge alternative, bus number, road time or Vàm Sát departure was verified on 13 October 2026. If those handoffs cannot be confirmed together, keep the day in Ho Chi Minh City.',
+        sequence: 'Leave early only after a named road vehicle and crossing plan are confirmed; reach one visitor entrance; follow one authorized mangrove, boardwalk or boat circuit with a guide if required; then return by the same named road/ferry chain before dark. Do not add a second distant stop such as a beach or market unless the operator confirms time, access and a separate return. The day is about tidal forest and local livelihoods, not collecting wildlife sightings.',
+        boundary: 'Treat channels, mudflats, forest cores, shore work areas and private aquaculture plots as restricted until a local authority or site guide identifies a public route. Stay on marked paths, never feed or approach wildlife, do not collect shells or plants, and ask before photographing workers or residents. A biosphere-reserve label is not permission to enter a core or buffer zone.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
         stages: [
-          ['Cross', 'Treat the road and any ferry as part of the coastal transition, with water and sun protection ready.'],
-          ['Learn', 'Read the reserve’s zonation and let the guide explain how mangroves support fisheries and storm protection.'],
-          ['Observe', 'Watch from the boat or boardwalk without calling animals closer or disturbing nests.'],
-          ['Return', 'Leave before weather or late traffic turns the outer-district journey into a night transfer.']
+          ['Secure the whole chain', 'Before booking a hotel night or tour, obtain the visitor site’s exact entrance, current opening, activity, price, guide requirement and return point. Separately confirm the road vehicle and whether the Bình Khánh ferry operates on that date.'],
+          ['Cross with daylight', 'Depart from the city on the confirmed road/ferry sequence. Carry water, sun and rain protection, and do not interpret an old map, bridge announcement or tourism page as a current departure notice.'],
+          ['Visit one zone', 'Stay on a marked path or booked boat route and let the authorized guide identify which area is open. Keep wildlife observation quiet, leave working channels clear and do not add a second facility without a separate confirmed transfer.'],
+          ['Return before slack disappears', 'Use the same named vehicle and crossing plan back to the city. If weather, tide, queue or site closure removes the return margin, cancel or shorten the nature visit rather than taking an informal boat or driving after a long day.']
         ],
         risks: [
-          ['Tide and rain', 'Water level and thunderstorms can alter boat routes, boardwalks and visibility.'],
-          ['Wildlife contact', 'Monkeys, crocodiles and birds should never be fed, teased or approached.'],
-          ['Distance', 'Medical, fuel and transport support are thinner outside the urban core.']
+          ['Access is not verified', 'Vàm Sát’s official site returned 502 during review and the exact UNESCO listing page returned 404. Current park gates, boats, hours, fees and permitted zones are unknown.'],
+          ['Crossing and return', 'The Bình Khánh ferry’s current operation, queue and vehicle terms were not confirmed. Do not buy a separate tour or lodging night until the outbound and return handoffs are both named.'],
+          ['Tide, rain and heat', 'Water level, storms and exposed road time affect a low-lying wetland day. Check the official forecast close to travel; if the guide or operator suspends the route, stay in the city rather than approaching restricted habitat.']
         ],
-        duration: 'Use a full day with a deliberate return buffer; the reserve is not a quick city-side park.',
-        combine: 'Pair with a single coastal market or local meal only if the official transport sequence remains intact.',
-        verify: 'Check UNESCO-area visitor rules, current reserve access, boat conditions, tide, rain and return transport.'
+        duration: 'Reserve one full daylight day and two nights in Ho Chi Minh City as the practical minimum: one arrival night before the outing and one night after it. Three city nights make room for a separate weather/closure day. A Cần Giờ overnight is optional only when local lodging and the next-day pickup are individually confirmed.',
+        combine: 'Keep Cần Giờ separate from Củ Chi, central HCMC and the Mekong Delta. Do not join it to a flight, intercity coach or a second coast stop on the same day. If the crossing is suspended, use a confirmed city plan and reschedule the forest visit.',
+        verify: 'Confirm the exact site and authorized zone, access/fees, current ferry or bridge arrangement, operator and guide, tide/weather notice, vehicle pickup, last crossing and return. UNESCO MAB’s general programme page is context only; the exact site listing was unavailable, and no local operating detail is inferred from it.',
+        sources: [
+          ['https://www.unesco.org/en/mab', 'UNESCO Man and the Biosphere Programme — general reserve framework, not a Cần Giờ access listing'],
+          ['https://vamsat.com.vn/', 'Vàm Sát Ecotourism — returned 502 on 13 October 2026; current access and activities remain unverified'],
+          ['https://vietnam.travel/places-to-go/southeastern-vietnam/ho-chi-minh-city', 'Vietnam Tourism — Ho Chi Minh City regional context; not a Cần Giờ ferry or park notice'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — daily weather, marine and hydrology information; checked 13 October 2026']
+        ],
+        searchKeywords: ['Can Gio mangrove reserve day trip', 'Binh Khanh ferry Cần Giờ', 'Vam Sat visitor access', 'Rung Sac mangrove forest', 'Can Gio boat and boardwalk', 'Ho Chi Minh City wetland route']
       },
       {
         slug: 'saigon-river-waterbus',
@@ -756,26 +775,34 @@ export const vietnamSouthClusters = [
           creator: 'Trainghiemdi',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'A lower-Mekong gateway route for Thới Sơn’s gardens, canals and craft culture, designed to remain distinct from Bến Tre’s longer coconut-islet stay.',
-        lead: 'Mỹ Tho is often sold as a fast Delta introduction. The more useful version explains the pier-to-islet transition, chooses one garden or craft story and leaves enough time for the return rather than stacking packaged stops.',
-        orientation: 'Use the river port as the entry point, then decide whether the day’s focus is orchard ecology, small-boat movement or local craft.',
-        arrival: 'Confirm the departure pier, boat operator and group size. Road traffic from Ho Chi Minh City can shift the usable island window.',
-        sequence: 'Mainland port, large-boat crossing, quiet sampan or garden segment and a deliberate mainland exit form the route.',
-        boundary: 'Do not pressure performers, handle animals for photographs or enter garden and home spaces without invitation.',
+        summary: 'Base in Mỹ Tho for one operator-confirmed Thới Sơn loop, with the pier return and onward coach booked as separate legs.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        lead: 'Mỹ Tho works best as a lower-river introduction when the boat handoff is planned as carefully as the island visit. Do not assume a tour includes the same pier, small boat, garden, meal or return transfer as another package. Before paying, get one written sequence: the mainland meeting point, named operator, boat type, included stops, last return to town and the road pickup or coach terminal you need afterward. The national tourism authority’s Mekong overview is regional orientation, not a current Mỹ Tho departure board; local pier, admission, departure and fare details were not verifiable in this review.',
+        orientation: 'For the least rushed version, sleep one night in central Mỹ Tho near a lodging that can confirm the operator pickup, then use the next daylight block for one island circuit and leave by road later. Two nights are useful when you want a full town afternoon, a morning boat and a flexible second block; one night can work if you arrive early enough the previous day and keep the return coach unhurried. A same-day trip from Ho Chi Minh City is a long road-and-water day: use it only with a confirmed private or packaged return and no flight, fixed coach or second Delta town attached. Do not move to Bến Tre just to “continue” the island tour; that is another road transfer and a separate plan.',
+        arrival: 'From Ho Chi Minh City or Cần Thơ, confirm the actual coach company, departure terminal, drop-off point, baggage allowance and arrival time before reserving the local boat. At the Mỹ Tho end, ask the accommodation or operator for the exact pier entrance, who meets you, and whether they return you to the hotel, coach office or another named place. Public boat frequencies, local bus links, taxi availability, current road duration and tour prices were not confirmed here. If the operator cannot name both the outbound meeting point and the final return, stay in town and postpone the island loop rather than trying to negotiate from an unfamiliar landing.',
+        sequence: 'Arrive and settle in town → confirm the next morning’s weather and operator message → meet at the named pier with enough time to check the boat and included return → cross only on the operator’s assigned vessel → choose one host-approved garden, canal or craft stop → return to the same agreed pier → take a separate road ride back to the lodging or onward terminal. A larger passenger boat and a small sampan are different legs; confirm where passengers change boats and who is responsible for the connection. Keep the afternoon open for a slow meal or town-side river walk, not another unscheduled island.',
+        boundary: 'A garden, orchard, home, workshop and working landing belong to their hosts. Stay on the route they invite visitors to use, agree any activity or fee before entering, do not pick fruit or flowers, and ask before photographing residents, performers or work. Wear the operator’s life jacket as instructed and do not board an overloaded or unassigned small boat.',
         stages: [
-          ['Port', 'Arrive with enough road margin to understand the boat assignment rather than boarding in a rush.'],
-          ['Cross', 'Use the larger boat as orientation, keeping life jackets and belongings secure.'],
-          ['Islet', 'Select one garden, workshop or canal section and let the host set the pace.'],
-          ['Exit', 'Return before the group’s final transfer becomes a road gamble back to the city.']
+          ['Before the road trip', 'Book one room in central Mỹ Tho and confirm whether the coach drops you at the terminal you expect. Ask the boat operator for its exact pier, meeting contact, one-way and return inclusions, and the final time back on the mainland.'],
+          ['At the landing', 'Arrive with a road buffer and check that the boat crew, assigned vessel and group size match the booking. Ask where a small sampan transfer occurs and how the group reconnects if it is delayed. Keep identification, water and sun/rain cover with you.'],
+          ['On Thới Sơn', 'Pick one host-approved garden, canal or craft stop. If the route includes a demonstration or tasting, agree what is included and what costs extra before it starts; do not add another village just because a seller offers it.'],
+          ['Back in town', 'Return to the same named pier, then take the confirmed ride to your lodging or road terminal. If the trip is delayed, drop the next stop or onward coach and rebook; do not sprint between boats and buses.']
         ],
         risks: [
-          ['Package congestion', 'Multiple groups can converge on the same pier, workshop or canal.'],
-          ['Water safety', 'Small sampans have low freeboard and require calm, attentive movement.'],
-          ['Visitor fatigue', 'Too many staged stops leave no time to understand the landscape.']
+          ['Package mismatch', 'Different tours may use different piers and include different boat legs. A brochure or national tourism route does not prove today’s operator, inclusions, return time or price.'],
+          ['Water and weather', 'Lightning, heavy rain, high water or a crew’s safety call can cancel a small-boat leg. Do not bargain for an unlisted boat; keep a town-side fallback and flexible departure.'],
+          ['Tight road handoff', 'A late return to Mỹ Tho can miss a coach or leave no time to transfer to another Delta town. Keep the coach on a separate block and retain one night in town when the island visit matters.']
         ],
-        duration: 'Reserve a full day from Ho Chi Minh City, or stay near Mỹ Tho to make the river morning less hurried.',
-        combine: 'It pairs with a separate My Tho food or waterfront walk; Bến Tre should be treated as a different overnight chapter.',
-        verify: 'Check pier, operator, boat capacity, weather, road traffic and the exact inclusions of any packaged tour.'
+        duration: 'One night in Mỹ Tho is the useful minimum: arrive by road, sleep near a confirmed pickup, and use the next daylight block for a single island loop before an unhurried onward transfer. Two nights are better for a town afternoon, a slower morning or weather flexibility. A day trip from Ho Chi Minh City can work only when the operator confirms both road and water legs and the return leaves no flight or fixed coach at risk.',
+        combine: 'Use one Mỹ Tho night as its own lower-river chapter. Bến Tre is a separate overnight with different hosts and crossings; Cần Thơ is a farther road leg, not a same-day island add-on. If continuing by coach, book the onward leg after the expected return with a generous margin or sleep another night.',
+        verify: 'Confirm the actual coach terminal and drop-off, accommodation pickup, named pier and operator, assigned boat types, life jackets, stop inclusions and fees, weather cancellation, return landing and onward road connection. The Vietnam Tourism Mekong itinerary provides broad regional context only; no live Mỹ Tho timetable, fare, venue opening or boat service is asserted.',
+        sources: [
+          ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — regional Mekong route context; not a live Mỹ Tho boat or coach schedule'],
+          ['https://dulichtiengiang.gov.vn/', 'Tiền Giang tourism portal — unavailable to this review; current pier and visitor details remain unverified'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check current weather and hydrology before travel']
+        ],
+        searchKeywords: ['My Tho Thoi Son island boat', 'Thoi Son pier operator', 'My Tho island tour return', 'My Tho to Can Tho coach transfer', 'Mekong Delta Thoi Son garden', 'My Tho one night itinerary']
       },
       {
         slug: 'chau-doc-sam-tra-su',
@@ -831,26 +858,34 @@ export const vietnamSouthClusters = [
           creator: 'Jean-Pierre Dalbéra',
           license: 'CC BY 2.0'
         }),
-        summary: 'Plan Sa Đéc through its century-old flower village, river town, market and Huỳnh Thủy Lê house with a seasonal horticulture lens.',
-        lead: 'Sa Đéc is more than a literary reference. Its flower growers, riverbank trade, old homes and market form a living town whose rhythm changes around the Lunar New Year flower season.',
-        orientation: 'Let the flower village and literary house answer different questions: one is a working horticultural landscape, the other a preserved domestic and architectural memory.',
-        arrival: 'Use a road connection from Cần Thơ or Ho Chi Minh City and confirm each site’s current entrance and photography policy before setting out.',
-        sequence: 'Garden lanes, market texture, river edge and heritage house make a compact but varied small-town route.',
-        boundary: 'Do not pick flowers, enter growing beds or photograph residents at work without consent. Treat the heritage house as a protected interior.',
+        summary: 'Stay in central Sa Đéc for working flower gardens, the market and Huỳnh Thủy Lê house if current entry is confirmed.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        lead: 'Sa Đéc has two different kinds of visit: a working horticultural district where growers move plants and orders, and a historic house whose interior access depends on its current visitor rules. The flower gardens are not a single ticketed park and the town’s literary association does not guarantee that a particular house or garden is open. On 13 October 2026 the Dong Thap tourism portal could not be read, so no current opening hours, entry price, local shuttle, bus departure or garden access is claimed here. Ask the accommodation or local tourism office to verify the exact places and transfers before you set the day’s order.',
+        orientation: 'Stay one night in central Sa Đéc near the market and a lodging that can arrange a named local driver or confirm a public pickup. One night is enough for a full day if you arrive the previous afternoon; two nights suit a slower garden visit, an early market walk and a rain or closure buffer. A same-day pass between Cần Thơ and Ho Chi Minh City is only a transport stop unless your coach arrival, local ride, site access and onward departure are separately confirmed with generous daylight margin. Do not sleep at a garden just because it looks close on a map; choose an outer-area homestay only if its host confirms meals, the road pickup and a return to town or the next coach.',
+        arrival: 'Book the intercity coach or car as its own leg: verify the exact departure terminal, Sa Đéc drop-off, arrival window, baggage and onward pickup. From the town base, arrange a round-trip driver or ask the host to name the garden entrance and agreed meeting point; do not rely on a casual ride appearing at a nursery lane. If you visit Huỳnh Thủy Lê house, confirm that it admits visitors that day, how tickets are handled, what rooms are open and whether photography is allowed. The official Dong Thap tourism portal was unavailable in this review, so current local transit, coach times, admission and venue hours remain unknown.',
+        sequence: 'Arrive by road and settle in central town → on a fresh morning, take a confirmed ride to one garden cluster and walk only the public lane or host-approved path → return to town for the market and a rest → visit Huỳnh Thủy Lê house only if same-day access is confirmed → finish at a public riverfront or meal and return to the same base. Reverse the house and garden order only if their confirmed hours require it. Keep garden lanes and a house visit as separate stops; do not ask one transfer to cover several distant nurseries without the driver agreeing the order and waiting time.',
+        boundary: 'A nursery is a workplace, not an open-air display. Do not step into beds, touch stock plants, block loading paths or photograph growers without permission. At the heritage house, follow the attendant’s room and photography rules, speak quietly and do not treat residents or staff as characters from a novel. Buy flowers only where the grower or seller invites a retail purchase; do not bargain over plants prepared for an order.',
         stages: [
-          ['Garden', 'Walk the village edges and learn how growers move plants, water and orders through narrow lanes.'],
-          ['Market', 'Buy directly where practical and keep trade passages open.'],
-          ['Memory', 'Read Huynh Thuy Le House through its architecture and documented history, not only its literary mythology.'],
-          ['River', 'End beside the water with a quiet meal or walk rather than another crowded attraction.']
+          ['Set the base', 'Reserve one night in central Sa Đéc and ask the lodging to name the coach drop-off, local driver and return point. Keep two nights if the visit matters enough that a rain or closure should not end it.'],
+          ['Ask the growers', 'Before leaving town, confirm the exact garden cluster, public lane, appropriate visiting time and whether a host is required. Agree the driver’s wait and return meeting point before walking among narrow working roads.'],
+          ['Return for town time', 'Come back for the market and a meal before the heat builds. Check Huỳnh Thủy Lê house access, interior rules and photography directly; if staff cannot confirm a visit, do not drive there on the assumption that the literary site is open.'],
+          ['Protect the road onward', 'Return to the same base, collect luggage and take a separately confirmed coach or car. Do not connect a garden visit to a tight same-day departure from an unverified terminal.']
         ],
         risks: [
-          ['Seasonal crowding', 'Flower demand around Tet changes road access, prices and accommodation pressure.'],
-          ['Working gardens', 'Visitors can damage plants or interrupt orders by stepping beyond public lanes.'],
-          ['Opening drift', 'Small museums and houses may close or change entry conditions.']
+          ['Season and working hours', 'Flower demand and nursery work change through the year, especially around Tết. A seasonal description is not a promise of blooms, public access or low congestion.'],
+          ['Private lanes', 'Some garden roads serve growers and homes. If no host identifies a visitor route, stay on the town side rather than following map pins into private plots.'],
+          ['House opening', 'The current entry, room access, fee and photography policy for Huỳnh Thủy Lê house were not confirmed. Keep it optional and do not make the coach schedule depend on entry.']
         ],
-        duration: 'Use one full day or an overnight; the town’s value increases when the garden and heritage stops are not rushed.',
-        combine: 'It can connect naturally to Cần Thơ or the upper Delta, but Sa Đéc deserves its own chapter rather than a lunch stop.',
-        verify: 'Check the Dong Thap tourism portal, flower season, garden access, house opening, road conditions and current weather.'
+        duration: 'One night in central Sa Đéc is the practical minimum: arrive before the visit day, spend one unhurried daylight block on a confirmed garden cluster and town stops, then continue by road. Two nights allow a slower garden morning and a weather or closure retry. A one-day road stop between Cần Thơ and Ho Chi Minh City is fragile unless luggage, local transfer and both coach terminals are arranged in advance.',
+        combine: 'Pair Sa Đéc with one onward Delta base by a separate road leg. The useful two-night shape is one Sa Đéc night plus a separately planned Cần Thơ or Bến Tre stay; do not assume a direct local transfer or make the flower village a rushed lunch stop. If the heritage house is closed, the market and public riverfront are enough for a coherent shorter town chapter.',
+        verify: 'Confirm the coach operator, terminal and drop-off; lodging pickup; named nursery cluster, public path and host permission; driver wait and return; market access; Huỳnh Thủy Lê house opening, fee and photography rules; forecast; and onward road seat. The Dong Thap tourism portal was unavailable on 13 October 2026, so local schedules and venue operations remain unverified.',
+        sources: [
+          ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — broad Mekong route context; not a live Sa Đéc coach timetable or site notice'],
+          ['https://dulich.dongthap.gov.vn/en/', 'Dong Thap Tourism — unavailable to this review; verify current gardens, local transport and heritage-house access directly'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check current weather and hydrology before travel']
+        ],
+        searchKeywords: ['Sa Dec flower village gardens', 'Sa Dec Huynh Thuy Le house opening', 'Sa Dec market route', 'Dong Thap flower village transfer', 'Sa Dec one night itinerary', 'Sa Dec to Can Tho coach']
       },
       {
         slug: 'ca-mau-u-minh-ha-cape',
