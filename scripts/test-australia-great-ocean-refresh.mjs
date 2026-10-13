@@ -9,7 +9,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '18b6789bdc780c5425dff77d7d027d4078b4f32a';
@@ -256,7 +256,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].sort(), 'Only selected Great Ocean Road, later CA13, CA14/CA15, Gold Coast, Cairns, CH14/CH15 and Hawaii, New Orleans and Atlanta source-refresh search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].sort(), 'Only selected Great Ocean Road, later CA13, CA14/CA15, Gold Coast, Cairns, CH14/CH15 and Hawaii, New Orleans, Atlanta and Florida source-refresh search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -275,8 +275,8 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Great Ocean Road, later CA13/CA14, Gold Coast, Cairns, CH14/CH15 and Hawaii/New Orleans/Atlanta routes whose dates differ from the prior checkpoint may receive a new lastmod.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Great Ocean Road, later CA13/CA14, Gold Coast, Cairns, CH14/CH15 and scoped U.S. refresh routes whose dates differ from the prior checkpoint may receive a new lastmod.');
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);
 const svg = fs.readFileSync(svgFile, 'utf8');

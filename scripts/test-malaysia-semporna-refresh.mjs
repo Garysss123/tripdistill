@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { imageCredits, malaysiaDepthClusters, malaysiaDepthGuides, retiredMalaysiaImageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '022870fcc645493460430fe6399027ea4a9b391a';
@@ -137,8 +137,11 @@ assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()),
 const expectedLocalizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the historical integration routes and four Hawaii and four New Orleans source-refresh routes × five locales receive a new lastmod');
-for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
+assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the historical integration routes and sixteen scoped U.S. source-refresh routes × five locales receive a new lastmod');
+for (const route of expectedLocalizedRoutes) {
+  const expectedDate = postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewedDate;
+  assert.equal(sourceSitemap.get(route), expectedDate, `${route}: sitemap lastmod`);
+}
 
 const baseSearch = JSON.parse(gitBytes(`${integrationScopeBaseline}:data/search-index.json`).toString('utf8'));
 const englishSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));

@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { malaysiaDepthGuides, imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postIntegrationSourceRefreshRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -104,7 +104,10 @@ const selectedLocalizedPaths = localizedCurrentSitemapDateChangeRoutes(locales.m
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => new URL(url).pathname);
 assert.equal(integrationRoutes.length, 262, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 262 existing English pages');
 assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the historical integration and the later Hawaii and New Orleans source-refresh routes changed lastmod');
-for (const route of selectedLocalizedPaths) assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), reviewDate, `${route}: sitemap date`);
+for (const route of selectedLocalizedPaths) {
+  const expectedDate = postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewDate;
+  assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), expectedDate, `${route}: sitemap date`);
+}
 
 const sourceSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
 const baseSourceSearch = readJsonFromGit(`${integrationSprintBaseline}:data/search-index.json`);
