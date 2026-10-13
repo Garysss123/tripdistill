@@ -141,10 +141,11 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain only four target guides and their two updated hub excerpts.');
+const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...bayGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four Southern guides, four separately recorded Bay-gaps guides and their two updated hub excerpts.');
 const sourceEnglishVietnamFiles = git(['diff', '--name-only', `${baselineCommit}..${sourceTerminal}`, '--', 'vietnam']).trim().split('\n').filter((repoPath) => repoPath.endsWith('.html')).sort();
-assert.deepEqual(sourceEnglishVietnamFiles, expectedEnglishVietnamFiles, 'the exact southern source terminal changes only the four guides and two hub excerpts under vietnam/.');
+const expectedSourceEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
+assert.deepEqual(sourceEnglishVietnamFiles, expectedSourceEnglishVietnamFiles, 'the exact southern source terminal changes only the four guides and two hub excerpts under vietnam/.');
 for (const repoPath of hubs) assert.equal(fs.readFileSync(path.join(root, repoPath), 'utf8'), readAt(sourceTerminal, repoPath), repoPath + ': integrated hub excerpt must match the exact southern source terminal.');
 
 const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.json'));
@@ -159,7 +160,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes].sort(), 'Only the four Southern and four separately recorded Bay-gaps English search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), route + ': English search record must match the exact southern source terminal.');
 
@@ -175,7 +176,7 @@ const changedDatePaths = [...currentSitemap]
   .map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four selected routes in five editions may receive a new sitemap date.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, pagePath + ': sitemap date');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), sourceSitemap.get(pagePath), pagePath + ': sitemap date matches the exact southern source terminal.');
+for (const pagePath of editions.flatMap(({ prefix }) => routes.map((route) => prefix + route))) assert.equal(currentSitemap.get(pagePath), sourceSitemap.get(pagePath), pagePath + ': southern-route sitemap date matches the exact southern source terminal.');
 
 for (const route of routes) {
   const sourceSearch = currentSearchByUrl.get(route);

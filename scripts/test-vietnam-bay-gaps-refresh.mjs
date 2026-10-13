@@ -9,6 +9,9 @@ import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = 'd779848fbc247042561cfaa34773257122aa38d0';
+const integrationBaseCommit = '354d17a057cf73c344fd06e84cf43939ff635630';
+const sourceTerminal = '8f0a1e526f48203df5fb2471f3b8fb1121e0559e';
+const sourceTree = 'f2ac7c972b1900172695c6e28ce09d988abcf9a5';
 const origin = 'https://tripdistill.com';
 const branch = 'codex/sprint-vn-bay-gaps-20261013';
 const routes = [
@@ -85,9 +88,12 @@ function articleDate(html, pagePath) {
   return null;
 }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Checked out branch does not match the isolated bay-gaps branch.');
 assert.equal(git(['rev-parse', `${baseCommit}^{commit}`]).trim(), baseCommit, 'Exact requested base commit is unavailable.');
-git(['merge-base', '--is-ancestor', baseCommit, 'HEAD']);
+assert.equal(git(['rev-parse', `${sourceTerminal}^`]).trim(), baseCommit, 'Bay-gaps source has the exact authorized parent.');
+assert.equal(git(['rev-parse', `${sourceTerminal}^{tree}`]).trim(), sourceTree, 'Bay-gaps source tree matches the verified terminal.');
+assert.equal(git(['merge-base', baseCommit, sourceTerminal]).trim(), baseCommit, 'Bay-gaps source descends from the exact task base.');
+assert.equal(git(['rev-parse', `${integrationBaseCommit}^{commit}`]).trim(), integrationBaseCommit, 'Exact current integration checkpoint is available.');
+git(['merge-base', '--is-ancestor', integrationBaseCommit, 'HEAD']);
 
 const bodyChecks = [];
 for (const route of routes) {
@@ -98,13 +104,16 @@ for (const route of routes) {
   const baseWords = base.split(/\s+/).filter(Boolean).length;
   const currentWords = current.split(/\s+/).filter(Boolean).length;
   assert.notEqual(sha256(current), sha256(base), `${route}: visible page body did not change from the exact base.`);
+  assert.equal(currentHtml, readAt(sourceTerminal, repoPath), `${route}: integrated English body matches the exact bay-gaps source terminal.`);
   assert.ok(currentWords - baseWords >= 350, `${route}: expected at least 350 additional visible words; saw ${currentWords - baseWords}.`);
   bodyChecks.push({ url: route, baseWords, currentWords, wordDelta: currentWords - baseWords, baseMainTextSha256: sha256(base), currentMainTextSha256: sha256(current) });
 }
 
-const changedVietnamFiles = git(['diff', '--name-only', baseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
+const changedVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
 assert.deepEqual(changedVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English guide bodies may change under vietnam/.');
-const baseSearch = JSON.parse(readAt(baseCommit, 'data/search-index.json'));
+const sourceVietnamFiles = git(['diff', '--name-only', `${baseCommit}..${sourceTerminal}`, '--', 'vietnam']).trim().split('\n').filter((file) => file.endsWith('.html')).sort();
+assert.deepEqual(sourceVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'The exact bay-gaps source changes only the four requested English guide bodies under vietnam/.');
+const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.length, 955);
 assert.equal(currentSearch.length, 955);
@@ -115,7 +124,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four requested English search records may change.');
 
-const baseSitemap = parseSitemap(readAt(baseCommit, 'sitemap.xml'));
+const baseSitemap = parseSitemap(readAt(integrationBaseCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
@@ -200,7 +209,7 @@ for (const edition of editions.slice(1)) {
   }
 }
 const reviewedDiffs = [...new Set([
-  ...git(['diff', '--name-only', baseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
+  ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
 ])].sort();
 assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only the four bay-gaps batches and the archived reviewed snapshots may change.');

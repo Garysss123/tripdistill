@@ -45,7 +45,8 @@ import {
   vietnamPhuQuocNewSubstantiveRoutes,
   vietnamNhaTrangNewSubstantiveRoutes,
   vietnamAfterNhaTrangNewSubstantiveRoutes,
-  vietnamSouthernGapsNewSubstantiveRoutes
+  vietnamSouthernGapsNewSubstantiveRoutes,
+  vietnamBayGapsNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -173,11 +174,15 @@ assert.equal(vietnamSouthernGapsNewSubstantiveRoutes.length, 4, 'Southern Vietna
 assert.equal(new Set(vietnamSouthernGapsNewSubstantiveRoutes).size, 4, 'Southern Vietnam routes must be unique.');
 assert(vietnamSouthernGapsNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route) && !vietnamHcmcNewSubstantiveRoutes.includes(route) && !vietnamMekongNewSubstantiveRoutes.includes(route) && !vietnamDaLatNewSubstantiveRoutes.includes(route) && !vietnamMuiNeNewSubstantiveRoutes.includes(route) && !vietnamPhongNhaNewSubstantiveRoutes.includes(route) && !vietnamPhuQuocNewSubstantiveRoutes.includes(route) && !vietnamNhaTrangNewSubstantiveRoutes.includes(route) && !vietnamAfterNhaTrangNewSubstantiveRoutes.includes(route)), 'Southern Vietnam routes are disjoint from all earlier Vietnam ledger groups.');
 for (const route of vietnamSouthernGapsNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Southern Vietnam route is missing: ${route}`);
+assert.equal(vietnamBayGapsNewSubstantiveRoutes.length, 4, 'Vietnam bay and Con Dao adds four exact substantive routes.');
+assert.equal(new Set(vietnamBayGapsNewSubstantiveRoutes).size, 4, 'Bay and Con Dao routes must be unique.');
+assert(vietnamBayGapsNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route) && !vietnamHcmcNewSubstantiveRoutes.includes(route) && !vietnamMekongNewSubstantiveRoutes.includes(route) && !vietnamDaLatNewSubstantiveRoutes.includes(route) && !vietnamMuiNeNewSubstantiveRoutes.includes(route) && !vietnamPhongNhaNewSubstantiveRoutes.includes(route) && !vietnamPhuQuocNewSubstantiveRoutes.includes(route) && !vietnamNhaTrangNewSubstantiveRoutes.includes(route) && !vietnamAfterNhaTrangNewSubstantiveRoutes.includes(route) && !vietnamSouthernGapsNewSubstantiveRoutes.includes(route)), 'Bay and Con Dao routes are disjoint from all earlier Vietnam ledger groups.');
+for (const route of vietnamBayGapsNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam bay and Con Dao route is missing: ${route}`);
 for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878, 882, 886, 890, 894]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878, 882, 886, 890, 894, 898]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -415,7 +420,7 @@ for (const group of historicalUsaSources) {
     }
   }
 }
-for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes]) {
+for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...vietnamBayGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Newly integrated route is missing: ${route}`);
 }
 assert.equal(usaSanDiegoNewSubstantiveRoutes.length, 4, 'San Diego adds four newly integrated body routes.');
@@ -425,6 +430,7 @@ assert.equal(vietnamPhuQuocNewSubstantiveRoutes.length, 4, 'Phu Quoc adds four d
 assert.equal(vietnamNhaTrangNewSubstantiveRoutes.length, 4, 'Nha Trang adds four distinct route improvements.');
 assert.equal(vietnamAfterNhaTrangNewSubstantiveRoutes.length, 4, 'Da Lat and Ha Long follow-on adds four distinct route improvements.');
 assert.equal(vietnamSouthernGapsNewSubstantiveRoutes.length, 4, 'Southern Vietnam adds four distinct route improvements.');
+assert.equal(vietnamBayGapsNewSubstantiveRoutes.length, 4, 'Bay and Con Dao adds four distinct route improvements.');
 assert.equal(australiaBroomeTasmaniaNewSubstantiveRoutes.length, 4, 'Broome/Tasmania adds four newly integrated body routes.');
 assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
 for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes, ...usaChicagoNewSubstantiveRoutes, ...usaArizonaNewSubstantiveRoutes, ...usaLosAngelesNewSubstantiveRoutes, ...usaBostonNewSubstantiveRoutes, ...usaSanDiegoNewSubstantiveRoutes, ...usaNewYorkHistoricalCoverageCorrectionRoutes, ...usaOtherHistoricalCoverageCorrectionRoutes, ...usaOverviewJuneauHistoricalCoverageCorrectionRoutes]) {
@@ -439,4 +445,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne, Phong Nha, Phu Quoc and Nha Trang improvements, then four additional Da Lat/Ha Long and four Southern Vietnam routes (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome, four Broome/Tasmania and five final-content improvements; corrected coverage reaches 894/907.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne, Phong Nha, Phu Quoc and Nha Trang improvements, then four additional Da Lat/Ha Long, Southern Vietnam and Bay/Con Dao routes (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome, four Broome/Tasmania and five final-content improvements; corrected coverage reaches 898/907.');

@@ -137,8 +137,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'Only the two reviewed four-guide batches and their two updated hub excerpts may change under vietnam/.');
+const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...bayGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'Only the historical guide batches, their two hub excerpts and the separately recorded Bay-gaps overlay may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -152,7 +152,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes].sort(), 'Only the two reviewed four-guide batches may change English search records.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes, ...bayGapsRoutes].sort(), 'Only the historical guide batches and the separately recorded Bay-gaps overlay may change English search records.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), `${route}: English search record must match the exact source terminal.`);
 
@@ -256,8 +256,8 @@ const baseReviewedPaths = git(['ls-tree', '-r', '--name-only', integrationBaseCo
 const expectedReviewedDiffs = [];
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
-  const newNames = fs.readdirSync(directory).filter((name) => ['defk-vn-pages-20261013.json', 'defl-vn-search-20261013.json', 'defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json'].some((suffix) => name.endsWith(suffix)));
-  assert.equal(newNames.length, 4, `${edition.code}: expected exactly four reviewed page/search batches across the two sprints.`);
+  const newNames = fs.readdirSync(directory).filter((name) => ['defk-vn-pages-20261013.json', 'defl-vn-search-20261013.json', 'defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json', 'defo-bay-gaps-pages-20261013.json', 'defo-bay-gaps-search-20261013.json'].some((suffix) => name.endsWith(suffix)));
+  assert.equal(newNames.length, 6, `${edition.code}: expected exactly six reviewed page/search batches across these three sprints.`);
   expectedReviewedDiffs.push(...newNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
 }
 for (const repoPath of baseReviewedPaths) {
@@ -274,7 +274,7 @@ for (const repoPath of baseReviewedPaths) {
 expectedReviewedDiffs.sort();
 assert.deepEqual(reviewedDiffs, expectedReviewedDiffs, 'Draft and parallel-work files must remain untouched; existing reviewed batches may only lose keys absent from the current source set.');
 const nonReviewedI18nDiffs = git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n']).trim().split('\n').filter(Boolean)
-  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
+  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-bay-gaps/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
 assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or other localization files may change in this sprint.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));

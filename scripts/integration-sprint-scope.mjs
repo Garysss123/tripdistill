@@ -524,6 +524,14 @@ export const followingVietnamSouthernGapsRoutes = Object.freeze([
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ]);
 
+// Bay and island follow-up: four existing Nha Trang and Con Dao bodies.
+export const followingVietnamBayGapsRoutes = Object.freeze([
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -537,6 +545,7 @@ export const postOctober13Routes = Object.freeze([
   ...followingVietnamNhaTrangRoutes,
   ...followingVietnamAfterNhaTrangRoutes,
   ...followingVietnamSouthernGapsRoutes,
+  ...followingVietnamBayGapsRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 
