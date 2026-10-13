@@ -265,10 +265,63 @@ export const australiaWestIslandClusters = [
       g({
         slug: 'busselton-dunsborough', name: 'Busselton & Dunsborough', motif: 'bay gateway and jetty', instrument: 'bay-register', imageQuery: 'Busselton Jetty Western Australia Geographe Bay', imageAlt: 'Busselton Jetty extending into Geographe Bay',
         summary: 'A northern gateway chapter balancing the long jetty, sheltered bay and Dunsborough base without assuming coast access is uniform.',
-        orientation: 'use Busselton foreshore and Dunsborough as different service nodes.', access: 'Arrive by road or regional coach and confirm jetty train, tour or walking access directly.', sequence: 'Use the booked jetty activity first, pause on the bay, move once to Dunsborough and prepare the cape road.', boundary: 'The jetty is working heritage over water; follow wind, train, fishing and access controls.',
-        stages: [['Confirm the jetty product', 'Distinguish walking, train and underwater observatory booking.'], ['Read the bay conditions', 'Choose safe managed recreation.'], ['Shift to one second base', 'Avoid repeated town hopping.'], ['Prepare the cape', 'Fuel and check weather before the next road.']],
-        risks: [['Wind over water', 'Jetty access can change in severe conditions.'], ['Long exposure', 'The walk has little shade.'], ['Booking cutoff', 'Tours and trains require timely check-in.']],
-        duration: 'Use one full day or two nights as the regional arrival.', combine: 'Pair with Cape Naturaliste on another day.', verify: 'Check jetty operator, bay weather, fire, road, coach and accommodation.'
+        orientationTitle: 'Choose the bay base before you book the jetty.',
+        orientation: 'Treat Busselton and Dunsborough as two separate arrival nodes, not interchangeable labels for one walkable resort. Busselton suits a stay built around the foreshore and a timed Busselton Jetty activity; Dunsborough is the more useful launch for Cape Naturaliste and its coastal approaches. A two-night stay at one address gives you an arrival block plus one full day without packing between every stop. With only one night, choose the town that matches your first fixed booking and leave the other node for a later trip. The SW1 coach has named stops in both towns, but the stop is not a local shuttle to a hotel, beach, trailhead or jetty check-in.',
+        access: 'A car makes the separate foreshore, Dunsborough and cape road legs flexible. If using Transwa SW1, match the exact service day, stop and arrival time to your accommodation before paying; then book a named pickup or local transfer for any activity beyond the town stop. The coach corridor connects towns, not every bay or trail. Busselton Jetty’s operator separates jetty access, the train and the Underwater Observatory, each with its own admission and operating conditions. Read its date-specific visitor and accessibility notes before choosing a ticket. The operator warns that train and observatory visitors cannot take luggage beyond its stated size, and there is no luggage storage at the foreshore; arrive after checking in or arranging storage elsewhere.',
+        sequence: 'Use the arrival day to reach the named stop, collect keys and confirm the next day’s operator check-in rather than stacking the jetty onto a late coach arrival. On the full day, start with the preselected jetty option: a walk on the structure, the train, or the Observatory are different experiences, not an automatic bundle. Allow the early arrival the operator requests, keep the ticket and luggage rules in view, then take a meal or rest break on the foreshore. Move once to Dunsborough only if the remaining daylight and a confirmed return make sense; otherwise stay local and use the second day for the cape. On departure morning, check the booked coach or road leg first and avoid adding an unreserved coastal detour.',
+        boundary: 'Busselton Jetty is a working structure over open water, not a protected indoor attraction. Wind, swell, maintenance and operator direction can change access. Stay inside marked public areas, follow fishing and train separation rules, and do not step onto wet rocks or closed shore sections for a photograph. The foreshore and jetty are on Wadandi Country; read local interpretation with care and do not treat a visitor route as permission to enter private or culturally restricted places.',
+        decisions: [
+          ['Busselton base · jetty first', 'Choose Busselton if the Jetty, foreshore and nearby services are the main reason for the stop. It reduces the morning transfer to a timed ticket, but leaves the Cape Naturaliste drive for another day.'],
+          ['Dunsborough base · cape first', 'Choose Dunsborough when the headland and coastal walks lead the plan. It avoids starting the cape day in Busselton, but the Jetty becomes a separate town-to-town leg; confirm the ride back before booking a nonrefundable activity.'],
+          ['Coach corridor · last mile required', 'SW1 lists Busselton, Dunsborough, Yallingup and Margaret River stops on its timetable, with services varying by date. It is useful between towns, not a hop-on sightseeing service. If the lodge or coast needs another ride, book it before the coach ticket.']
+        ],
+        fieldLens: {
+          label: 'The ticket is a route choice',
+          title: 'Separate the foreshore from the jetty product.',
+          copy: 'Plan the fixed admission around the operator’s current terms. The shoreline promenade can remain the low-commitment part of the day; a train or underwater visit adds a timed check-in, ticket and weather dependency.',
+          notes: [
+            ['Walking', 'Choose a jetty walk if the group wants the structure and can handle its exposed, uneven walking surface. Use the operator’s current access and wind notice; do not infer that every visitor product remains available.'],
+            ['Train', 'Choose the train to reduce the long walk, especially when the observatory is the destination. Confirm the date, boarding point, accessibility request and current carriage rules directly.'],
+            ['Observatory', 'Choose the underwater visit for a booked marine-viewing experience. Allow the posted check-in margin and follow the no-luggage/no-pram rules that apply to the train and observatory.']
+          ]
+        },
+        stages: [
+          ['Fix the base and last mile', 'Pick Busselton for the foreshore or Dunsborough for the cape. If travelling by SW1, confirm the exact town stop and a separate ride to the accommodation.'],
+          ['Reserve one jetty experience', 'Choose walking, train or observatory access from the operator’s date-specific menu. Check the weather note, required arrival margin, baggage and mobility conditions before buying.'],
+          ['Build a quiet shore break', 'Keep the foreshore meal or rest near the Jetty precinct. Add Dunsborough only if its transfer is real and the group has daylight left; do not improvise a long roadside walk.'],
+          ['Return to the named stop', 'Check the coach or car plan before leaving the foreshore. The return town and the next day’s Cape Naturaliste departure must match your base, not a map midpoint.']
+        ],
+        risks: [
+          ['Wind or marine conditions', 'The operator states that opening hours are approximate and depend on weather, wind and ocean conditions. Recheck the exact activity on the day; if it is suspended, use the foreshore and a confirmed town meal rather than waiting at the pier.'],
+          ['Coach stop mistaken for a shuttle', 'SW1 serves named regional stops on selected services. It does not solve the final ride to a hotel, beach or headland, and a missed onward connection can consume the daylight plan.'],
+          ['Luggage at the check-in', 'The Jetty operator says large bags and prams are not permitted on the train or in the observatory and that there is no luggage storage there. Check in or arrange storage before the timed ticket.']
+        ],
+        duration: 'Use two nights for a measured gateway stop: arrive and settle, devote one day to the Jetty/foreshore, then continue to the next base in daylight. A one-night stop works only when the coach or car arrival leaves a real activity window; choose either the Jetty or the cape, not both. A third night is useful if you want a separate Dunsborough coastal day or weather reserve.',
+        combine: 'Keep the Jetty visit separate from Cape Naturaliste if it has a timed observatory or train booking. The two attractions sit in different town nodes and each has its own parking, check-in and weather decision. A short foreshore meal can fit around the Jetty; a cellar-door route belongs on another day with a confirmed sober ride.',
+        verify: 'Check the Transwa SW1 service for your travel date and direction; the correct town stop, accommodation transfer and luggage plan; Busselton Jetty admission, accessibility, check-in and marine-weather notice; local foreshore signs; and Main Roads conditions before the next drive. The timetable and operator products are changeable; the source list was checked 13 October 2026.',
+        searchSummary: 'Choose Busselton for the foreshore and a timed Jetty visit or Dunsborough for the Cape Naturaliste start. Match Transwa SW1 stops to a booked last-mile ride, and check Jetty ticket, luggage, accessibility and marine-weather rules before fixing the day.',
+        searchKeywords: ['Busselton Jetty train underwater observatory booking', 'Busselton Dunsborough base choice nights', 'Transwa SW1 Busselton Dunsborough stop', 'Busselton foreshore luggage storage Jetty', 'Dunsborough Cape Naturaliste transfer', 'Busselton Jetty weather wind access'],
+        faq: [
+          ['Should I sleep in Busselton or Dunsborough?', 'Stay in Busselton when the Jetty and foreshore are the first priority; stay in Dunsborough when the cape is the first priority. A two-night single base avoids moving bags for one regional activity. Choose by the first fixed booking and the next morning’s route, not by the midpoint on a map.'],
+          ['Can I ride the SW1 coach straight to the Jetty or a trailhead?', 'The official timetable lists town stops, including Busselton and Dunsborough, but it does not operate as a local attraction shuttle. Check the service day, exact stop and onward pickup separately before assuming you can reach the Jetty, accommodation or coastal trail on foot.'],
+          ['Do I need to book the Jetty train or Observatory?', 'Check the Jetty operator’s live admission menu for your date. The train and Observatory are separate visitor products with current check-in, ticket and access conditions; do not rely on a generic opening time or assume a walk ticket includes both.'],
+          ['Can I bring a suitcase to the Jetty train?', 'The operator’s visitor information says large luggage is not allowed on the train or in the Observatory and that there is no luggage storage at the foreshore. Arrange accommodation storage before the booked visit, and recheck the live baggage limits.'],
+          ['Can the Jetty and Cape Naturaliste fit into one day?', 'Only if you have a car or named transfers, a short Jetty visit with a confirmed ticket and enough daylight for the headland. The safer plan gives the Jetty day and the cape day separate blocks; drop the cape first if a ticket is fixed.'],
+          ['What replaces the Jetty if wind closes an activity?', 'Use the foreshore only where the operator and local signs allow, then choose a confirmed town-based meal or indoor visit. Do not wait on the pier for conditions to improve or treat the beach as automatically safe for swimming.']
+        ],
+        nearbySources: [
+          ['https://busseltonjetty.com.au/visitor-information/', 'Busselton Jetty — visitor, baggage and weather notes'],
+          ['https://transwa.wa.gov.au/plan-your-journey/coach-lines/sw1', 'Transwa — SW1 named stops and date-specific services'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — Western Australia forecasts']
+        ],
+        sources: [
+          ['https://busseltonjetty.com.au/visitor-information/', 'Busselton Jetty — visitor information, check-in and foreshore access'],
+          ['https://busseltonjetty.com.au/admission/', 'Busselton Jetty — admission, tickets and accessibility conditions'],
+          ['https://transwa.wa.gov.au/plan-your-journey/coach-lines/sw1', 'Transwa — SW1 route, named stops and current timetable'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — town, wind and coastal forecasts'],
+          ['https://www.mainroads.wa.gov.au/travel-information/', 'Main Roads Western Australia — road conditions and closures']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       }),
       g({
         slug: 'margaret-river-wine-food', name: 'Margaret River Wine & Food', motif: 'producer route with sober return', instrument: 'producer-ledger', imageQuery: 'Margaret River vineyards Western Australia', imageAlt: 'Vineyards in the Margaret River region',
@@ -336,26 +389,192 @@ export const australiaWestIslandClusters = [
       g({
         slug: 'cape-naturaliste-coast', name: 'Cape Naturaliste & Leeuwin-Naturaliste Coast', motif: 'lighthouse and surf edge', instrument: 'cape-compass', imageQuery: 'Cape Naturaliste lighthouse coast Western Australia', imageAlt: 'Cape Naturaliste lighthouse and coastal landscape',
         summary: 'A headland day choosing lighthouse, short coast walk or whale-season viewpoint according to wind, fire and track condition.',
-        orientation: 'use the lighthouse precinct as the compass and select one open section of the cape.', access: 'Drive to the official visitor area or use a booked tour; confirm any lighthouse entry.', sequence: 'Take the exposed viewpoint early, walk one graded section, observe wildlife without pursuit and return before wind or darkness.', boundary: 'Cliffs, dunes and whale habitat require formal tracks and distance. Do not enter closed beaches or fly drones against rules.',
-        stages: [['Read the cape weather', 'Check wind, swell and fire.'], ['Confirm lighthouse access', 'Book or verify the official tour.'], ['Walk one coast section', 'Stay on formed paths.'], ['Return before exposure builds', 'Leave with daylight and road reserve.']],
-        risks: [['Cliffs and swell', 'Stay behind barriers and off rock platforms.'], ['Wind', 'Strong gusts affect walking and tours.'], ['Wildlife disturbance', 'Keep legal distance and follow seasonal guidance.']],
-        duration: 'A full day from Dunsborough or Margaret River.', combine: 'Pair with one bay stop, not Cape Leeuwin.', verify: 'Check lighthouse, park alerts, wind, swell, fire, track and whale-season rules.'
+        orientationTitle: 'Choose a walk length, not a cape-to-cape fantasy.',
+        orientation: 'Cape Naturaliste is a headland outing, while the full Cape to Cape Track is a 130 km Class 4 journey between the two lighthouses. Do not use the long-distance track marker as proof that a one-day loop, shuttle or water refill exists. Start at the Cape Naturaliste visitor precinct and decide between the lighthouse/Lightkeepers’ Museum, a short headland trail, or a longer out-and-back toward Sugarloaf Rock. The DBCA page describes the first 3.4 km to Sugarloaf as one-way, Class 2, with boardwalk sections and a separate drop-off point; returning to the same car makes that roughly 6.8 km before any side paths. Set the turnaround and transport before walking.',
+        access: 'The lighthouse precinct is reached by road from Dunsborough; Margaret River is a longer southern base. Transwa SW1 lists a Dunsborough town stop, not an assured Cape Naturaliste trail transfer. If travelling without a car, book a tour that names both the trailhead and the return pickup; never depend on an unscheduled lift or road-shoulder walk. DBCA says the lighthouse grounds have a boardwalk around the base, while tower access is guided and the Capes Foundation lists 59 steps. The coast paths are free to access, but tower entry has separate terms. Ask the operator about mobility, weather and current tour availability before building the day around it.',
+        sequence: 'Leave the accommodation with water, sun protection and a confirmed way back to the same town. At the visitor area, use the boardwalk or museum first if the group needs a lower-exertion start, then choose one marked path by its live condition and the day’s wind. For a Sugarloaf out-and-back, set a turn time before setting off; do not add a second distant beach because the far-end car park is visible on the map. If you have booked the lighthouse climb, keep its check-in distinct from the walk start and allow the return drive before dusk. Finish at the same base with a planned meal, not a late transfer to Margaret River or Cape Leeuwin.',
+        boundary: 'The headland combines sheer limestone edges, exposed boardwalk, beaches and wildlife habitat. Walk only open marked tracks, stay behind barriers and do not descend to rock platforms or enter closed beach access. Whale-season viewing is an opportunity, not a guaranteed sighting; keep the distance required by wildlife guidance and do not use drones where prohibited. Cape Naturaliste is on Wadandi Noongar Country. Read the local interpretation, avoid collecting natural or cultural material and treat a public trail as a route with limits rather than permission to roam.',
+        decisions: [
+          ['Lighthouse · history and a guided climb', 'Choose the tower and Lightkeepers’ Museum if maritime history is the goal. The climb has 59 steps and a separate check-in; it is not an all-access substitute for the surrounding boardwalk.'],
+          ['Headland · short marked walk', 'Choose a short Cape Naturaliste loop or lookout when you want the coast without committing to a long traverse. Keep the route inside the open precinct and turn back if wind or track conditions worsen.'],
+          ['Sugarloaf · 3.4 km one way', 'Choose the Class 2 first section of the Cape to Cape Track for a longer coast walk. It is 3.4 km from the lighthouse to Sugarloaf Rock; plan about 6.8 km if walking back to the same car, or arrange an actual return transfer first.']
+        ],
+        fieldLens: {
+          label: 'The route is measured from the return',
+          title: 'A one-way coast segment needs a second vehicle plan.',
+          copy: 'The trail begins at a lighthouse car park and reaches a different access point at Sugarloaf Rock. That map connection does not create a shuttle. Decide which end you will finish at before you count the walk as an easy family outing.',
+          notes: [
+            ['Same-car walk', 'Use the lighthouse-to-Sugarloaf segment as an out-and-back. The official 3.4 km one-way distance makes the return about 6.8 km, before any lighthouse tour or extra lookout.'],
+            ['Two-end walk', 'Use a one-way version only when a named driver or booked operator will meet you at the other trail access. Agree the pickup time and where the car will be; do not assume a bus or taxi will arrive.'],
+            ['Mobility choice', 'DBCA calls the first section Class 2 and says it is suitable for assisted wheelchairs and prams, with boardwalk and benches. Check the current surface and the visitor’s own support needs before treating that description as a guarantee.']
+          ]
+        },
+        stages: [
+          ['Read wind, fire and track status', 'Check BOM, DBCA alerts and road notices for the exact headland. Cancel the exposed section if officials close it or the conditions exceed your group’s comfort.'],
+          ['Set the route and return', 'Choose tower, short trail or the 3.4 km one-way Sugarloaf segment. For the long option, decide whether you will return on foot or use a named pickup at the other end.'],
+          ['Use one coastal section', 'Stay on the marked track, carry water and turn around at the time you set. Whale viewing and calm sea are not promised; do not add an unplanned beach descent.'],
+          ['Return to the base in daylight', 'Allow the complete drive or confirmed transfer back to Dunsborough or Margaret River. If the path or lighthouse closes, shift to a confirmed town meal or indoor booking; do not drive on to Cape Leeuwin to rescue the day.']
+        ],
+        risks: [
+          ['One-way distance mistaken for a loop', 'Sugarloaf Rock is a separate access point from the lighthouse. Without a pre-arranged return driver, the 3.4 km segment becomes an out-and-back, not a point-to-point stroll.'],
+          ['Wind, swell or fire closure', 'The exposed coast is not a good backup when conditions worsen. Use only an official open access route; if the park or road closes, remain outside and switch to a booked indoor activity or town plan.'],
+          ['Wildlife and edge behavior', 'A lookout is not permission to approach a whale, cross a barrier or walk on a wave-washed platform. Keep to the trail and follow posted wildlife and drone restrictions.']
+        ],
+        duration: 'Allow one full daylight day from Dunsborough; choose three nights in the north if you want a separate Jetty day, cape day and weather reserve without packing daily. A Margaret River base can work for this single outing, but it adds road time at both ends. The walk estimate here is a planning allowance, not a measured visitor duration or a track-service promise.',
+        combine: 'Pair a short foreshore stop only when it sits on the same confirmed return route. Do not combine the Cape Naturaliste section with Cape Leeuwin, a tasting circuit or the full Cape to Cape Track; each needs a different transport, time and weather plan. The regional walk is a separate day from the Margaret River Wine & Food guide.',
+        verify: 'Check the DBCA Cape Naturaliste visitor page and live alerts, the Capes Foundation tower booking and access guide, the selected trail condition, BOM wind and coastal forecast, fire notices, the Main Roads map and your exact return pickup. Source information was reviewed 13 October 2026; track and operator status must be checked again on the trip date.',
+        searchSummary: 'Plan Cape Naturaliste by choosing the lighthouse, a short marked walk or the 3.4 km one-way Sugarloaf section. The return is about 6.8 km on foot without a confirmed pickup; check current track, fire, wind, lighthouse and road access.',
+        searchKeywords: ['Cape Naturaliste Sugarloaf Rock walk 3.4 km one way', 'Cape Naturaliste lighthouse 59 steps visitor access', 'Cape Naturaliste trail return shuttle Dunsborough', 'Leeuwin-Naturaliste coast wind fire trail status', 'Cape to Cape Track day section return plan', 'Cape Naturaliste Whale Lookout Walk Trail'],
+        faq: [
+          ['Is Cape Naturaliste a short part of the Cape to Cape Track?', 'The 130 km Class 4 Cape to Cape Track starts at the Cape Naturaliste car park. The first 3.4 km to Sugarloaf Rock is a Class 2 one-way section. If your car stays at the lighthouse, plan roughly 6.8 km for the out-and-back; the track does not supply your return ride.'],
+          ['Can I take a wheelchair or pram on the coast path?', 'DBCA describes the first section to Sugarloaf as suitable for assisted wheelchairs and prams and notes boardwalk and benches. Conditions, surfaces and individual mobility needs still matter. Check the current access note and choose the lighthouse-base boardwalk if the longer path does not fit.'],
+          ['Does the lighthouse visit include the tower?', 'Capes Foundation lists guided tower tours, a 59-step climb and a Lightkeepers’ Museum. Confirm current tour times, access needs and entry terms before departure; the surrounding walk trails are a separate activity.'],
+          ['Can I walk from Dunsborough after arriving by coach?', 'The SW1 stop is in Dunsborough town and does not guarantee a transfer to the lighthouse or a coastal trailhead. Arrange a car, named tour or return pickup before booking the walk. Do not walk along a rural road shoulder to bridge the gap.'],
+          ['What is the weather fallback?', 'If wind, fire or a closure removes the exposed coast section, do not descend to an unprotected beach. Use the lighthouse only if it remains open and the visit suits the conditions, or move to a confirmed town meal or indoor booking. Recheck the official access notice before driving.'],
+          ['Can I count on seeing whales?', 'No. Seasonal whale viewing varies by date, sea conditions and animal movement. Choose the lookout for the coastline and use binoculars from the marked path; never approach, pursue or fly a drone toward wildlife.']
+        ],
+        nearbySources: [
+          ['https://exploreparks.dbca.wa.gov.au/site/cape-naturaliste-lighthouse', 'Explore Parks WA — headland tracks and visitor access'],
+          ['https://www.capesfoundation.org.au/visit-experiences/cape-naturaliste-lighthouse/', 'Capes Foundation — tower tour, museum and access'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — wind and coastal forecasts']
+        ],
+        sources: [
+          ['https://exploreparks.dbca.wa.gov.au/site/cape-naturaliste-lighthouse', 'Explore Parks WA — Cape Naturaliste trails, access and safety'],
+          ['https://www.capesfoundation.org.au/visit-experiences/cape-naturaliste-lighthouse/', 'Capes Foundation — lighthouse tours, museum and access guide'],
+          ['https://transwa.wa.gov.au/plan-your-journey/coach-lines/sw1', 'Transwa — SW1 Dunsborough stop and date-specific timetable'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — wind, town and coastal forecasts'],
+          ['https://www.mainroads.wa.gov.au/travel-information/roadworks-closures/', 'Main Roads Western Australia — roadworks, fire and road closures'],
+          ['https://exploreparks.dbca.wa.gov.au/plan-your-activity', 'Explore Parks WA — current track, fire and park-alert checks']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       }),
       g({
         slug: 'boranup-caves-augusta', name: 'Boranup Forest, Caves & Augusta', motif: 'karri-to-cave depth line', instrument: 'forest-cave-section', imageQuery: 'Boranup karri forest Margaret River Western Australia', imageAlt: 'Tall karri trees in Boranup Forest',
         summary: 'A south-region chapter connecting one booked show cave, karri forest and Augusta without stacking underground fatigue and a long drive.',
-        orientation: 'choose the cave first, then one forest road or boardwalk and use Augusta as the service or overnight base.', access: 'Book the exact cave product and check stairs, self-guided requirements, road and fire status.', sequence: 'Enter the cave at the booked time, rest above ground, take a short forest route and reach Augusta before dusk.', boundary: 'Caves and karri forest are fragile. Touch only permitted surfaces, clean footwear and stay out of closed fire areas.',
-        stages: [['Audit the cave booking', 'Match entry, mobility and equipment.'], ['Complete the underground visit', 'Follow guide and lighting rules.'], ['Reset above ground', 'Rest before driving or walking.'], ['Reach Augusta safely', 'Avoid a late wildlife road.']],
-        risks: [['Cave mobility', 'Stairs, darkness and confined space require honest disclosure.'], ['Fire and treefall', 'Forest access can close.'], ['Driver fatigue', 'Underground visits and winding roads compound tiredness.']],
-        duration: 'Use a full day and an Augusta or Margaret River overnight.', combine: 'Pair with Cape Leeuwin only if nearby and conditions permit.', verify: 'Check cave booking, accessibility, forest and road closure, fire, weather and accommodation.'
+        orientationTitle: 'Let the cave booking set the southern road.',
+        orientation: 'This is the south-of-Margaret-River day, not a list of every cave in the region. Jewel Cave is about 45 km south of Margaret River by Bussell Highway and Caves Road; DBCA describes a one-hour guided visit through three chambers, plus a separate 30-minute self-guided walk beneath karri trees. That gives the day a fixed underground anchor and a modest forest add-on, not room for a second cave, a long hike and a late town transfer. Ngilgi Cave is a different northern choice: its self-guided route includes 350 steps, so it belongs on a Yallingup/Cape Naturaliste day rather than being tacked onto Augusta.',
+        access: 'A car is the straightforward way to join Jewel Cave, a forest access point and Augusta because each lies on a different leg. Transwa SW1 lists an Augusta town stop on selected services, but does not take visitors to the cave or provide a last-mile park shuttle. If not driving, book an operator that names the cave, forest stop and return pickup before purchasing admission. Jewel Cave bookings are made through Capes Foundation; its current listing describes a fully guided one-hour tour with bookings essential. Ask about steps, darkness, standing time and mobility directly rather than inferring access from a general park listing. Keep the road leg in daylight and make the cave reservation cancellable or movable if your arrival is delayed.',
+        sequence: 'On the prior evening, confirm the cave time, road status, fuel, accommodation check-in and the forest option that remains open. Leave from Margaret River with enough slack to reach Jewel Cave without turning the scenic drive into a race. Complete the booked cave visit, then pause above ground; the DBCA listing identifies a separate short karri walk and café at the cave site, so use that rather than adding a distant forest detour by default. Continue to Augusta only if the check-in and remaining daylight still work. If overnighting in Augusta, leave Cape Leeuwin for its own access and weather check; otherwise return north before the drive becomes an evening wildlife risk.',
+        boundary: 'Karri forest, cave formations and visitor infrastructure are fragile. Stay on marked routes, do not touch cave surfaces, leave no food or waste, and follow any footwear-cleaning or biosecurity instructions. Boranup forest access may be restricted by fire or maintenance; never enter a closed road through another gate. These sites are on Wardandi Country. Use the park’s own cultural interpretation, keep noise low and do not remove plants, rocks or cultural material.',
+        decisions: [
+          ['Jewel Cave · booked guided visit', 'Choose Jewel when you want a defined underground experience near Augusta. The official listing gives a one-hour, fully guided tour and says bookings are essential; its three chambers create a fixed appointment that should anchor the day.'],
+          ['Forest first · no cave booking', 'Choose the karri landscape and a short open park walk if the cave is sold out, does not suit the group or has an access mismatch. A forest road stop is still subject to fire, maintenance and road notices.'],
+          ['Ngilgi · a separate northern day', 'Ngilgi Cave is self-guided and includes 350 steps; the above-ground Ancient Lands Experience is a different, wheelchair-accessible option. It is a northern Yallingup choice, not a sensible add-on to an Augusta cave reservation.']
+        ],
+        fieldLens: {
+          label: 'One cave, one forest stop',
+          title: 'Underground time is only half of the movement.',
+          copy: 'A cave appointment fixes the route and creates a fatigue break before driving. Add only the nearby forest walk that is open and fits the group; the second cave belongs to a different day and a different geographic cluster.',
+          notes: [
+            ['Jewel Cave', 'DBCA places its entry about 45 km south of Margaret River via Bussell Highway and Caves Road. Capes Foundation describes a fully guided one-hour tour with bookings essential. Check the exact time and access guide directly.'],
+            ['Boranup', 'Use one signed forest stop after the cave, not a full forest circuit. Look for the official park notice at the destination and follow the road surface and fire signs; do not assume a map line means the track is open.'],
+            ['Augusta', 'Keep Augusta as the overnight or service point after the cave, not another attraction race. If the check-in, road or weather no longer fits, return to the confirmed base and move the lighthouse to another day.']
+          ]
+        },
+        stages: [
+          ['Book the actual cave', 'Choose Jewel for the Augusta corridor and confirm the guided slot, mobility conditions, fees and cancellation terms. Do not plan around an unconfirmed walk-in opening.'],
+          ['Check the southern roads', 'Review Main Roads, BOM, park alerts and fire information for the exact route. Set fuel, accommodation and last-light limits before leaving Margaret River.'],
+          ['Rest above ground', 'After the cave, take the listed karri walk or café break if open. Add one signed forest stop only when its access and fire status are clear.'],
+          ['Reach Augusta or return in daylight', 'Use Augusta as a separate overnight if the day’s cave and road legs leave a narrow margin. If a closure or delay removes the plan, cancel the detour and use a confirmed town meal or indoor booking.']
+        ],
+        risks: [
+          ['Booking and mobility mismatch', 'A guided cave tour is a timed product; stairs, darkness, standing and group pace may not suit everyone. Confirm directly with Capes Foundation and do not substitute the accessible above-ground Ancient Lands experience for cave access.'],
+          ['Fire or road closure', 'A forest road or park can close at short notice. Obey the official closure and signs; do not search for an alternate informal entry. Replace the day with a confirmed town plan, not another remote drive.'],
+          ['Cave plus road fatigue', 'The guided visit, post-cave adjustment and winding southern roads use attention. Keep the forest stop short, protect a meal and check-in buffer, and do not extend the route for sunset or another cave.']
+        ],
+        duration: 'Reserve a full daylight day and preferably an Augusta or Margaret River overnight. An Augusta night suits a confirmed Jewel booking and a separate Cape Leeuwin visit; staying in Margaret River is simpler for one base but means a longer return road. The overnight recommendation is an editorial planning allowance, not a measured drive-time guarantee.',
+        combine: 'Pair Jewel Cave with only the short cave-site karri walk or one nearby signed forest stop. Do not combine it with Ngilgi, Cape Naturaliste, a cellar-door tasting circuit or the full Cape Leeuwin visit on the same schedule. Move the base in daylight and avoid checking in between fixed appointments.',
+        verify: 'Confirm Jewel Cave’s exact date, tour and mobility information with Capes Foundation; check Explore Parks WA alerts and the listed cave/forest access; read BOM forecasts, Emergency WA fire warnings and Main Roads road closures; then confirm fuel, lodging and check-in. Ngilgi’s stair count and above-ground access are a separate source check. The official source list was checked 13 October 2026.',
+        searchSummary: 'Anchor the Augusta day on one booked Jewel Cave tour, then add only the cave-site karri walk or one open Boranup forest stop. Ngilgi is a separate northern route with 350 steps; verify cave access, fire notices, road and daylight before leaving.',
+        searchKeywords: ['Jewel Cave Augusta one-hour guided tour booking', 'Boranup Forest park road fire access', 'Margaret River to Augusta Jewel Cave transport', 'Ngilgi Cave 350 steps accessibility Ancient Lands', 'Augusta Cape Leeuwin overnight base', 'Southwest WA cave booking and road closures'],
+        faq: [
+          ['Which cave fits an Augusta day?', 'Jewel Cave is the south-region choice described by DBCA as a one-hour guided visit through three chambers; Capes Foundation says bookings are essential. Ngilgi is a self-guided northern cave with 350 steps. Choose one geographic cluster and confirm its date-specific access.'],
+          ['Can I visit Jewel Cave without a car?', 'The Transwa SW1 timetable lists an Augusta town stop, but not a cave shuttle. Book a tour or transfer that confirms the cave pickup and return, or arrange a vehicle; do not assume a coach stop is the last mile.'],
+          ['Can I add Boranup Forest after the cave?', 'Yes as a short, separately verified stop. DBCA lists a 30-minute self-guided walk beneath karri at Jewel Cave, which is the lowest-transfer add-on. Any other forest road or path must be open and safe for the fire and weather conditions.'],
+          ['Is the Ngilgi Cave path accessible?', 'Capes Foundation describes the underground self-guided route as 350 steps. The above-ground Ancient Lands Experience is a distinct wheelchair-accessible option, not a guarantee that the cave itself is accessible. Contact the operator about the actual visitor’s needs.'],
+          ['What if the cave or forest closes?', 'Do not enter through another gate or replace a closure with an unverified road. Move the appointment only after checking the operator, use a confirmed town meal or indoor visit, and preserve the same base until the official notice changes.'],
+          ['Should I sleep in Augusta or Margaret River?', 'Choose Augusta when a confirmed southern cave or lighthouse day and check-in work better from there. Choose Margaret River for one central base and accept the longer daylight return. If either choice forces driving after dark, add a night or remove a stop.']
+        ],
+        nearbySources: [
+          ['https://exploreparks.dbca.wa.gov.au/site/jewel-cave', 'Explore Parks WA — Jewel Cave tour and access'],
+          ['https://www.capesfoundation.org.au/visit-experiences/jewel-cave/', 'Capes Foundation — Jewel Cave bookings and visitor access'],
+          ['https://www.mainroads.wa.gov.au/travel-information/roadworks-closures/', 'Main Roads Western Australia — road and fire closures']
+        ],
+        sources: [
+          ['https://exploreparks.dbca.wa.gov.au/site/jewel-cave', 'Explore Parks WA — Jewel Cave tour, karri walk and road access'],
+          ['https://www.capesfoundation.org.au/visit-experiences/jewel-cave/', 'Capes Foundation — Jewel Cave bookings and current visitor conditions'],
+          ['https://exploreparks.dbca.wa.gov.au/site/ngilgi-cave', 'Explore Parks WA — Ngilgi Cave and Wardanup Trail information'],
+          ['https://www.capesfoundation.org.au/visit-experiences/ngilgi-cave/', 'Capes Foundation — Ngilgi Cave steps and Ancient Lands access'],
+          ['https://exploreparks.dbca.wa.gov.au/plan-your-activity', 'Explore Parks WA — park alerts, track and fire planning'],
+          ['https://transwa.wa.gov.au/plan-your-journey/coach-lines/sw1', 'Transwa — SW1 regional stops and date-specific timetable'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — Western Australia forecasts'],
+          ['https://www.mainroads.wa.gov.au/travel-information/roadworks-closures/', 'Main Roads Western Australia — roadworks and closures'],
+          ['https://www.emergency.wa.gov.au/', 'Emergency WA — current bushfire warnings and incidents']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       }),
       g({
         slug: 'albany-torndirrup', name: 'Albany & Torndirrup', motif: 'southern ocean edge', instrument: 'ocean-aperture', imageQuery: 'Torndirrup National Park Albany Western Australia coast', imageAlt: 'Granite coast and Southern Ocean in Torndirrup National Park',
         summary: 'A far-south destination linking Albany history to Torndirrup’s exposed granite coast, not a detour from Margaret River.',
-        orientation: 'base in Albany and choose one historical interior plus one formal Torndirrup viewpoint.', access: 'Allow the full regional drive or fly, then use a local vehicle or tour for the national park.', sequence: 'Start with cultural or historical context, use the coast only in safe wind and swell, and return before darkness.', boundary: 'Menang Noongar Country, memorial spaces and dangerous ocean cliffs require respectful interpretation and strict barriers.',
-        stages: [['Make Albany the base', 'Do not hide the long southwest distance.'], ['Choose one history layer', 'Give the institution meaningful time.'], ['Use a formal coast platform', 'Stay behind barriers.'], ['Return before the weather closes', 'Keep the road short and clear.']],
-        risks: [['Southern Ocean swell', 'Cliff and rock edges are extremely hazardous.'], ['Wind and cold', 'Exposure can become severe quickly.'], ['Long-distance fatigue', 'Margaret River and Perth are not casual returns.']],
-        duration: 'Stay at least two nights in Albany.', combine: 'Treat it as the final separate southwest leg.', verify: 'Check park, wind, swell, road, fire, venue hours and accommodation.'
+        orientationTitle: 'Put Albany on the calendar as its own region.',
+        orientation: 'Albany is the far-south leg, not the last stop on a Margaret River day. The traveler’s first decision is how to cross the region: drive from the southwest with a daylight transfer plan, or use a date-specific Transwa GS coach from Perth and separately solve the local leg. The GS services have different routes and timetables; a coach ticket to Albany does not deliver you to Torndirrup or the heritage park. Sleep in Albany town for services and a clear morning departure. Two nights are a minimum for one arrival, one full city/park day and a departure; three nights make it possible to separate history, coast and weather without turning the Gap into a drive-by.',
+        access: 'With a car, keep the Margaret River-to-Albany transfer in a dedicated daylight block and do not put a cave booking, tasting or headland walk on that same move. Check fuel, roadworks, weather and lodging check-in before leaving. Without a car, compare the Transwa GS1/GS2/GS3 date-specific routes, then arrange a named Albany transfer or guided coastal tour in advance; local TransAlbany routes are not proof of service to each Torndirrup viewpoint. The National Anzac Centre is inside Princess Royal Fortress on Mount Clarence and offers its own visitor and access information. Reserve that visit separately from the park road rather than relying on a last-minute ride.',
+        sequence: 'Arrive in Albany and settle before choosing a remote coast departure. Use one block for the National Anzac Centre and the Princess Royal Fortress grounds if that history is a priority; its official access page describes step-free interior access, while some heritage buildings and the steep Convoy Walk require a different mobility decision. On a separate daylight block, drive or take your confirmed tour to Torndirrup. Choose the Gap/Natural Bridge platforms for a concentrated coast visit, Stony Hill for the short loop and all-access walkway, or Bald Head only as the day’s strenuous hike. Return to town before darkness and keep an indoor or town-based reserve if wind, swell, fire or an alert removes the coast.',
+        boundary: 'Albany and Torndirrup are on Menang Noongar Country. Treat the National Anzac Centre as a specific memorial and historical institution, not a complete account of local history. Read DBCA interpretation about Menang Country, follow closures and barriers, and do not collect objects or enter a closed headland. Southern Ocean viewpoints are exposed places; a platform over the sea does not make the water or rock shelf safe. Stay on the formed paths even when conditions look calm.',
+        decisions: [
+          ['Two nights · minimum transfer plan', 'Use two nights only if arrival leaves one complete daylight block for the selected city or coast plan. If arriving late by road or coach, do not count that evening as a visit day; add a night or remove the distant park.'],
+          ['Three nights · separate the layers', 'Use three nights for a transfer day, a deliberate Albany/heritage block and a separate Torndirrup weather window. This is the better choice if you want both National Anzac Centre and a coastal walk without rushing.'],
+          ['Town, coach or tour', 'The Albany town base keeps food, lodging and the regional coach stop in one service area. A car adds freedom at Torndirrup; a booked local tour can replace driving if it confirms both pickup and return. Neither a coach ticket nor a town bus automatically reaches every park viewpoint.']
+        ],
+        fieldLens: {
+          label: 'Select the coast effort before the road',
+          title: 'Torndirrup has a lookout, a short loop and a full hike.',
+          copy: 'The park is not one uniform walking day. Choose the route whose physical demand and exposure match the forecast, then leave room to retreat to Albany without adding another headland.',
+          notes: [
+            ['The Gap and Natural Bridge', 'Use the formal viewing platforms for a short, concentrated look at the Southern Ocean. DBCA notes the sea and wind change the experience; closures and barriers still control access.'],
+            ['Stony Hill', 'DBCA describes a 500-metre loop and a separate 72-metre all-access walkway. This is the short-view choice, subject to the current road, weather and park notice.'],
+            ['Bald Head', 'Treat the challenging peninsula trail as a dedicated hike with its own fitness, weather and return check. Do not add it after a museum visit or assume the park’s short viewpoints are its turnaround point.']
+          ]
+        },
+        stages: [
+          ['Choose the regional transfer', 'Book the daylight road leg or check the exact Transwa GS service. Confirm the Albany arrival, luggage, overnight address and the next day’s local ride before leaving Margaret River or Perth.'],
+          ['Use Albany as a real base', 'Check in and keep the first evening in town. Choose the National Anzac Centre only if its history and visit format fit; read the access guide and reserve a substantial museum block rather than tagging it onto sunset.'],
+          ['Select one Torndirrup route', 'Check the park notice, forecast and entry conditions, then choose The Gap/Natural Bridge, Stony Hill or a full Bald Head hike. Do not combine a strenuous trail with the museum and multiple coast stops.'],
+          ['Keep the coast day reversible', 'Return to Albany with daylight and a meal plan. If wind, swell, fire or closure removes the park, use the museum if still open or a confirmed town visit; never look for an unofficial cliff or beach entrance.']
+        ],
+        risks: [
+          ['Coach arrival without a park transfer', 'Transwa GS coaches serve Albany from Perth by several route patterns, but a regional arrival does not supply a ride to Torndirrup. Confirm local pickup, accessible transport and the return before choosing the no-car itinerary.'],
+          ['Southern Ocean exposure', 'Swell and wind can make cliffs, rock shelves and beaches unsafe even when the town looks calm. Stay behind barriers, obey the park notice and shorten the visit at the first sign that conditions have changed.'],
+          ['Too much on a transfer day', 'The long drive, museum, coast and sunset do not belong in one sequence. A late arrival or road delay consumes the coast window; keep the base and move the outing to the next day instead of driving in the dark.']
+        ],
+        duration: 'Allow at least two Albany nights, with three recommended when you want both the heritage centre and a distinct Torndirrup day. Add another night if the coast is the trip’s main purpose or the transfer schedule leaves little daylight. These are editorial planning estimates; no drive time, coach departure or museum duration is guaranteed here.',
+        combine: 'Keep Albany separate from Margaret River and Augusta in the route plan. The transfer is its own stage; National Anzac Centre and Torndirrup also deserve separate blocks. If weather compresses the trip, keep the Albany base and choose the indoor history or the officially open coast option rather than attempting both on a departure day.',
+        verify: 'Check Transwa GS1/GS2/GS3 for the exact coach day and route, or Main Roads before a long drive; arrange the Albany lodging and local ride to Torndirrup; confirm National Anzac Centre access; read DBCA Torndirrup alerts, park fees and trail conditions; and check BOM coastal forecasts, Emergency WA warnings and fire restrictions. DBCA lists The Gap/Natural Bridge as reopened in its current park information, but recheck the live notice before travel. Sources were reviewed 13 October 2026.',
+        searchSummary: 'Treat Albany as a separate far-south region: use two nights minimum or three to separate the transfer, National Anzac Centre and Torndirrup. Choose the Gap platforms, Stony Hill short loop or Bald Head hike by effort and conditions; arrange a local park ride if arriving by coach.',
+        searchKeywords: ['Albany Torndirrup two or three nights base', 'Transwa GS1 GS2 GS3 Albany coach route', 'Albany National Anzac Centre access visit', 'Torndirrup The Gap Natural Bridge Stony Hill Bald Head', 'Albany coach transfer to Torndirrup park', 'Albany coast wind swell fire park alerts'],
+        faq: [
+          ['Can I visit Albany from Margaret River in a day?', 'Do not plan it as a same-day extension. The transfer needs its own daylight block; the regional base then needs a separate visit window for Albany or Torndirrup. Stay at least two nights and add a third if you want both history and coast.'],
+          ['What is the no-car route to Torndirrup?', 'Use a Transwa GS coach only for the date-specific Perth-to-Albany route, then arrange a named local tour or transfer to the park and a confirmed return. Do not assume a coach or TransAlbany town service runs to the Gap, Stony Hill or Bald Head.'],
+          ['Which Torndirrup walk fits a short visit?', 'The Gap and Natural Bridge have formal viewing platforms. DBCA describes Stony Hill as a 500-metre loop with a separate 72-metre all-access walkway. Bald Head is the strenuous full hike and should be the day’s main activity, not an add-on after the museum.'],
+          ['Is the National Anzac Centre an indoor weather backup?', 'It is a distinct museum visit at Princess Royal Fortress, and the official access page describes step-free entrance and interior access. Check its current opening and ticket information; heritage buildings and the steep Convoy Walk have different access conditions.'],
+          ['What if The Gap or the coastal track is closed?', 'Respect the closure and do not use another cliff or beach entry. If the National Anzac Centre is open and fits the group, use its indoor history visit; otherwise stay in Albany town and move the coast to a verified open window.'],
+          ['Can I choose Bald Head and The Gap on the same day?', 'Only if the exact trail, fitness, daylight and transfer support that plan; for most trips, choose one. DBCA describes Bald Head as a challenging long walk. Pair it with neither the museum block nor a chain of separate viewpoints.']
+        ],
+        nearbySources: [
+          ['https://exploreparks.dbca.wa.gov.au/park/torndirrup-national-park', 'Explore Parks WA — Torndirrup trails, park fees and alerts'],
+          ['https://www.nationalanzaccentre.com.au/visit', 'National Anzac Centre — visit and access information'],
+          ['https://www.transwa.wa.gov.au/plan-your-journey/coach-lines/gs1', 'Transwa — Perth–Albany GS coach routes']
+        ],
+        sources: [
+          ['https://exploreparks.dbca.wa.gov.au/park/torndirrup-national-park', 'Explore Parks WA — Torndirrup access, trails, fees and current park information'],
+          ['https://www.nationalanzaccentre.com.au/visit', 'National Anzac Centre — visitor, heritage and access information'],
+          ['https://www.transwa.wa.gov.au/plan-your-journey/coach-lines/gs1', 'Transwa — GS1/GS2/GS3 Perth–Albany coach routes and date-specific timetable'],
+          ['https://www.transregional.wa.gov.au/Timetables/TransAlbany', 'Transregional — TransAlbany local routes and timetables'],
+          ['https://www.bom.gov.au/wa/forecasts/', 'Bureau of Meteorology — Albany, wind and coastal forecasts'],
+          ['https://www.mainroads.wa.gov.au/travel-information/roadworks-closures/', 'Main Roads Western Australia — roadworks and closures'],
+          ['https://www.emergency.wa.gov.au/', 'Emergency WA — current bushfire warnings and incidents']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       })
     ]
   }),

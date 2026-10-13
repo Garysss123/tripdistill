@@ -1,0 +1,42 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Busselton for the foreshore and a timed Jetty visit or Dunsborough for the Cape Naturaliste start. Match Transwa SW1 stops to a booked last-mile ride, and check Jetty ticket, luggage, accessibility and marine-weather rules before fixing the day.": "海濱及有時段的長堤行程選巴瑟爾頓，前往納圖瑞斯特角則選丹斯伯勒。SW1 客運站點要配合已預約的末段接送；定下日期前，查明長堤票券、行李、無障礙與海象規定。",
+    "busselton jetty train underwater observatory booking": "巴瑟爾頓長堤列車、水下觀景站預約",
+    "busselton dunsborough base choice nights": "巴瑟爾頓、丹斯伯勒住宿基地與晚數選擇",
+    "transwa sw1 busselton dunsborough stop": "Transwa SW1 巴瑟爾頓、丹斯伯勒站點",
+    "busselton foreshore luggage storage jetty": "巴瑟爾頓海濱、行李寄存、長堤",
+    "dunsborough cape naturaliste transfer": "丹斯伯勒、納圖瑞斯特角接送",
+    "busselton jetty weather wind access": "巴瑟爾頓長堤天氣、風勢與通行",
+    "Plan Cape Naturaliste by choosing the lighthouse, a short marked walk or the 3.4 km one-way Sugarloaf section. The return is about 6.8 km on foot without a confirmed pickup; check current track, fire, wind, lighthouse and road access.": "規劃納圖瑞斯特角時，可選燈塔、短程標示步道，或單程 3.4 公里的 Sugarloaf 路段。沒有確定接送時，步行往返約 6.8 公里；出發前查看當前步道、火災、風況、燈塔與道路通行。",
+    "cape naturaliste sugarloaf rock walk 3.4 km one way": "納圖瑞斯特角、Sugarloaf Rock 步道單程 3.4 公里",
+    "cape naturaliste lighthouse 59 steps visitor access": "納圖瑞斯特角燈塔、59 級階梯、訪客通行",
+    "cape naturaliste trail return shuttle dunsborough": "納圖瑞斯特角步道、回程接駁、丹斯伯勒",
+    "leeuwin-naturaliste coast wind fire trail status": "利文—納圖瑞斯特海岸風勢、火災、步道狀況",
+    "cape to cape track day section return plan": "Cape to Cape Track 單日路段與折返規劃",
+    "cape naturaliste whale lookout walk trail": "納圖瑞斯特角賞鯨觀景步道",
+    "Anchor the Augusta day on one booked Jewel Cave tour, then add only the cave-site karri walk or one open Boranup forest stop. Ngilgi is a separate northern route with 350 steps; verify cave access, fire notices, road and daylight before leaving.": "奧古斯塔一日以預約的 Jewel Cave 導覽為主，再加上洞穴旁卡利樹步道，或一處已開放的波拉納普森林停留。Ngilgi 位於北部，另有 350 級階梯；出發前核實洞穴通行、火災公告、道路與日照。",
+    "jewel cave augusta one-hour guided tour booking": "Jewel Cave、奧古斯塔、一小時導覽預約",
+    "boranup forest park road fire access": "波拉納普森林、公園道路、火災通行",
+    "margaret river to augusta jewel cave transport": "瑪格麗特河至奧古斯塔、Jewel Cave 交通",
+    "ngilgi cave 350 steps accessibility ancient lands": "Ngilgi Cave、350 級階梯、Ancient Lands 無障礙",
+    "augusta cape leeuwin overnight base": "奧古斯塔、Cape Leeuwin 過夜基地",
+    "southwest wa cave booking and road closures": "西南西澳洞穴預約與道路封閉",
+    "Treat Albany as a separate far-south region: use two nights minimum or three to separate the transfer, National Anzac Centre and Torndirrup. Choose the Gap platforms, Stony Hill short loop or Bald Head hike by effort and conditions; arrange a local park ride if arriving by coach.": "把奧班尼視為遠南的獨立區域：至少住兩晚，或住三晚以分開跨區交通、National Anzac Centre 與托恩迪勒普。依體力和狀況選 The Gap 平台、Stony Hill 短環線或 Bald Head 健行；搭客運抵達時，另約前往公園的接送。",
+    "albany torndirrup two or three nights base": "奧班尼、托恩迪勒普、兩晚或三晚住宿基地",
+    "transwa gs1 gs2 gs3 albany coach route": "Transwa GS1、GS2、GS3 奧班尼客運路線",
+    "albany national anzac centre access visit": "奧班尼 National Anzac Centre 通行與參觀",
+    "torndirrup the gap natural bridge stony hill bald head": "托恩迪勒普 The Gap、Natural Bridge、Stony Hill、Bald Head",
+    "albany coach transfer to torndirrup park": "奧班尼客運、托恩迪勒普公園接送",
+    "albany coast wind swell fire park alerts": "奧班尼海岸風勢、湧浪、火災、公園警示"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

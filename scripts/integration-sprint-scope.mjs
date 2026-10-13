@@ -469,6 +469,13 @@ export const postNewEnglandIntegrationRoutes = Object.freeze([
   '/usa/new-england/white-mountains-vermont/'
 ]);
 
+export const postIntegrationMargaretRemainingRoutes = Object.freeze([
+  '/australia/margaret-river-southwest/busselton-dunsborough/',
+  '/australia/margaret-river-southwest/cape-naturaliste-coast/',
+  '/australia/margaret-river-southwest/boranup-caves-augusta/',
+  '/australia/margaret-river-southwest/albany-torndirrup/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -495,6 +502,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postHaLongHCMCIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postMekongDeltaIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postNewEnglandIntegrationRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

@@ -6,7 +6,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a9c6bd648d64054c981f57e4696c43a5a49251a4';
@@ -66,7 +66,7 @@ const laterAdelaidePerthGapRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...sydneyGapRoutes, ...nswGapRoutes, ...brisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...sydneyGapRoutes, ...nswGapRoutes, ...brisbaneGoldCoastGapRoutes, ...laterMelbourneOceanGapRoutes, ...laterAdelaidePerthGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -357,7 +357,7 @@ const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns Australia route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) {
-  const expectedDate = postIntegrationAlpsMargaretRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
+  const expectedDate = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
   assertIssue(currentSitemap.get(route) === expectedDate, `${route}: sitemap lastmod is not ${expectedDate}.`);
 }
 

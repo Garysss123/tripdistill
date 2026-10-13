@@ -5,12 +5,14 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { collectTranslationWork } from './i18n-lib.mjs';
+import { postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
 const integrationBranch = branch === 'codex/integration-sprint-20261011';
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
+const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const contentCommit = '55e3b9710c24b45975bdaea5769ab3e4a39ffc44';
 const correction = '31fc43817cd436e2f868058f4393ed59a800aec8';
@@ -143,8 +145,10 @@ for (const file of correctionFiles) {
   assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correction}:${file}`]), `${file}: parallel arrow correction stays byte-for-byte intact.`);
 }
 
-const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies changed.');
+const comparisonBase = integrationBranch ? integrationBase : base;
+const changedEnglish = git(['diff', '--name-only', comparisonBase, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
+const expectedChangedEnglish = integrationBranch ? postIntegrationMargaretRemainingRoutes : routes;
+assert.deepEqual(changedEnglish, expectedChangedEnglish.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact source batch or subsequent four Margaret guides changed in the selected checkpoint.');
 
 const referenceHub = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/index.html'), 'utf8')));
 const referenceGuide = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/otaru-shakotan/index.html'), 'utf8')));
@@ -173,26 +177,26 @@ for (const [index, route] of routes.entries()) {
   assert.deepEqual(faq.mainEntity.map((item) => ({ question: item.name, answer: item.acceptedAnswer?.text })), visibleFaq, `${route}: visible FAQ and schema match.`);
 }
 
-const baseSearch = searchMap(git(['show', `${base}:data/search-index.json`]));
+const baseSearch = searchMap(git(['show', `${comparisonBase}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 site-wide records.');
 assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 site-wide records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
 const changedSearch = [...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 const changedAustraliaSearch = changedSearch.filter((url) => url.startsWith('/australia/'));
-assert.deepEqual(sourceBranch ? changedSearch : changedAustraliaSearch, [...routes].sort(), 'Only the exact four Alps/Margaret English search records changed in their route scope.');
+assert.deepEqual(sourceBranch ? changedSearch : changedAustraliaSearch, [...expectedChangedEnglish].sort(), 'Only the exact source batch or subsequent four Margaret search records changed in the selected checkpoint.');
 const terminalSearch = searchMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
 for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalSearch.get(route), `${route}: integrated search record matches the exact source terminal.`);
 
-const baseSitemap = urlRecords(git(['show', `${base}:sitemap.xml`]));
+const baseSitemap = urlRecords(git(['show', `${comparisonBase}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const changedDates = routes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+const changedDates = expectedChangedEnglish.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const actualChangedDates = [...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url));
-const changedAustraliaDates = actualChangedDates.filter((url) => routes.some((route) => new URL(url, 'https://tripdistill.com').pathname.endsWith(route)));
-assert.deepEqual(sourceBranch ? actualChangedDates.sort() : changedAustraliaDates.sort(), changedDates, 'Only the four routes × five locale lastmod values changed in their route scope.');
+const changedAustraliaDates = actualChangedDates.filter((url) => expectedChangedEnglish.some((route) => new URL(url, 'https://tripdistill.com').pathname.endsWith(route)));
+assert.deepEqual(sourceBranch ? actualChangedDates.sort() : changedAustraliaDates.sort(), changedDates, 'Only the exact selected four routes × five locale lastmod values changed in the checkpoint.');
 for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);
 
 const pages = collectTranslationWork();

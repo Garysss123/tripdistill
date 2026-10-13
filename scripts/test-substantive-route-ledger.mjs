@@ -12,6 +12,7 @@ import {
   australiaNewSubstantiveRoutes,
   australiaCanberraNewSubstantiveRoutes,
   australiaAlpsMargaretNewSubstantiveRoutes,
+  australiaMargaretRemainingNewSubstantiveRoutes,
   correctedCoverageCheckpoints,
   correctedSubstantiveBaseline,
   reportedSubstantiveBaseline,
@@ -109,7 +110,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -133,6 +134,10 @@ assert.equal(australiaAlpsMargaretNewSubstantiveRoutes.length, 4, 'The Alps/Marg
 assert.equal(new Set(australiaAlpsMargaretNewSubstantiveRoutes).size, 4, 'Alps/Margaret additions must be unique.');
 assert(australiaAlpsMargaretNewSubstantiveRoutes.every((route) => !australiaNewSubstantiveRoutes.includes(route) && !australiaCanberraNewSubstantiveRoutes.includes(route)), 'Alps/Margaret routes are disjoint from earlier Australia gap improvements and the first Canberra batch.');
 for (const route of australiaAlpsMargaretNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Alps/Margaret ledger path is missing: ${route}`);
+assert.equal(australiaMargaretRemainingNewSubstantiveRoutes.length, 4, 'The remaining Margaret River batch adds four exact existing Australia bodies.');
+assert.equal(new Set(australiaMargaretRemainingNewSubstantiveRoutes).size, 4, 'The remaining Margaret River routes must be unique.');
+assert(australiaMargaretRemainingNewSubstantiveRoutes.every((route) => !australiaNewSubstantiveRoutes.includes(route) && !australiaCanberraNewSubstantiveRoutes.includes(route) && !australiaAlpsMargaretNewSubstantiveRoutes.includes(route)), 'Remaining Margaret guides are disjoint from prior Australia route improvements.');
+for (const route of australiaMargaretRemainingNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Remaining Margaret ledger path is missing: ${route}`);
 assert.equal(new Set(australiaNewSubstantiveRoutes).size, 12, 'Australia additions must be unique.');
 for (const route of australiaNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Australia ledger path is missing: ${route}`);
@@ -166,4 +171,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta, four Florida and four New England improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 797.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta, four Florida and four New England improvements; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret and four remaining Margaret improvements; corrected checkpoints through 801.');

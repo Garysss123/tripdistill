@@ -207,6 +207,13 @@ export const australiaAlpsMargaretNewSubstantiveRoutes = Object.freeze([
   '/australia/margaret-river-southwest/margaret-river-wine-food/'
 ]);
 
+export const australiaMargaretRemainingNewSubstantiveRoutes = Object.freeze([
+  '/australia/margaret-river-southwest/busselton-dunsborough/',
+  '/australia/margaret-river-southwest/cape-naturaliste-coast/',
+  '/australia/margaret-river-southwest/boranup-caves-augusta/',
+  '/australia/margaret-river-southwest/albany-torndirrup/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -231,5 +238,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Florida', count: 785 }),
   Object.freeze({ label: 'Ho Chi Minh City', count: 789 }),
   Object.freeze({ label: 'Mekong Delta', count: 793 }),
-  Object.freeze({ label: 'New England', count: 797 })
+  Object.freeze({ label: 'New England', count: 797 }),
+  Object.freeze({ label: 'Margaret River remaining guides', count: 801 })
 ]);
