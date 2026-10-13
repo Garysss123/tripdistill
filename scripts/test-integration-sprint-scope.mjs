@@ -9,15 +9,15 @@ import {
   integrationRouteGroups,
   integrationSearchRoutes,
   integrationSitemapRoutes,
+  currentBranchVietnamRoutes,
   integrationSprintBaseline,
-  localizedIntegrationSitemapRoutes
+  localizedSourceBranchSitemapRoutes
 } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const git = (args) => execFileSync('git', args, { cwd: root });
 const readFromGit = (spec) => git(['show', spec]);
 const sorted = (values) => [...values].sort();
-
 assert.equal(integrationRouteGroups.unitedKingdom.length, 9);
 assert.equal(integrationRouteGroups.australia.length, 32);
 assert.equal(integrationRouteGroups.france.length, 17);
@@ -37,7 +37,8 @@ const changedFiles = git([
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.deepEqual(sorted(changedBodyRoutes), sorted(integrationRoutes), 'the exact 257 English route bodies changed across UK, Australia, France, Switzerland, Italy, Canada, Malaysia and Vietnam');
+assert.equal(new Set([...integrationRoutes, ...currentBranchVietnamRoutes]).size, integrationRoutes.length + currentBranchVietnamRoutes.length, 'branch-specific Vietnam routes must remain separate from the integrated route set');
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...currentBranchVietnamRoutes]), 'only the integrated route bodies and this source branch’s four HCMC bodies may change');
 
 function parseSitemap(xml) {
   return new Map([...xml.matchAll(/<url><loc>(.*?)<\/loc><lastmod>(.*?)<\/lastmod>.*?<\/url>/gs)]
@@ -53,14 +54,18 @@ const changedSitemapUrls = [...currentSitemap]
   .filter(([url, date]) => baselineSitemap.get(url) !== date)
   .map(([url]) => url);
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
-const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
-assert.equal(changedSitemapUrls.length, 1300);
+const expectedChangedSitemapPaths = localizedSourceBranchSitemapRoutes(prefixes);
+assert.equal(changedSitemapUrls.length, 1320);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact 256 routes across five editions have updated sitemap dates'
+  'only the integrated dates and this source branch’s 20 HCMC edition dates may change'
 );
-for (const url of changedSitemapUrls) assert.equal(currentSitemap.get(url), '2026-10-12', `${url}: current sitemap date`);
+for (const url of changedSitemapUrls) {
+  const pathname = new URL(url).pathname;
+  const expectedDate = currentBranchVietnamRoutes.some((route) => pathname.endsWith(route)) ? '2026-10-13' : '2026-10-12';
+  assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
+}
 
 const baselineSearch = JSON.parse(readFromGit(`${integrationSprintBaseline}:data/search-index.json`).toString('utf8'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -76,4 +81,4 @@ const changedSearchRoutes = [...currentSearchByUrl]
 assert.equal(changedSearchRoutes.length, 229);
 assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact 225 expected English search records changed');
 
-console.log('Integration scope regression passed: 261 exact English bodies, 1,300 date changes over 260 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 261 integrated English bodies plus four explicit source-branch HCMC bodies, 1,320 date changes across 264 routes × five editions, 229 English search changes, and the unchanged 4,560-URL set.');

@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = integrationSprintBaseline;
@@ -123,9 +123,10 @@ const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https
 assert.equal(sourceSitemap.size, 4560, 'source sitemap remains at 4,560 URLs');
 assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
 const expectedLocalizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
+const expectedChangedRoutes = localizedSourceBranchSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 261, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus twelve Vietnam pages');
-assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Vietnam routes × five locales receive a new lastmod');
+assert.deepEqual(new Set(changedSitemapRoutes), expectedChangedRoutes, 'only the exact integrated routes and this source branch’s HCMC routes × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) assert.equal(sourceSitemap.get(route), reviewedDate, `${route}: sitemap lastmod`);
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:data/search-index.json`], { encoding: 'utf8' }));

@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -82,7 +82,7 @@ const currentSitemap = readSitemap(fs.readFileSync(path.join(outputRoot, 'sitema
 const baseSitemap = readSitemap(gitBytes(`${integrationSprintBaseline}:sitemap.xml`).toString('utf8'));
 assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
-const localizedRoutes = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
+const localizedRoutes = localizedSourceBranchSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 261, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus twelve Vietnam pages');
 assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Vietnam routes changed lastmod');

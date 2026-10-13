@@ -344,6 +344,21 @@ export const integrationSearchRoutes = Object.freeze([
   ...integrationSearchOnlyRoutes
 ]);
 
+// A source branch may carry a separate explicitly reviewed batch while the
+// integration baseline remains unchanged. Include those known current-branch
+// date updates in exact lastmod regressions without changing historical
+// integration route/search counts.
+export const currentBranchVietnamRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes].map((route) => `${prefix}${route}`))
 );

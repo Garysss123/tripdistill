@@ -65,6 +65,12 @@ const currentVietnamRoutes = [
   '/vietnam/ha-long-cat-ba/lan-ha-town/',
   '/vietnam/ha-long-cat-ba/national-park/'
 ];
+const currentBranchVietnamRoutes = [
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+];
 const laterSwitzerlandCh14DateRoutes = laterSwitzerlandCh14Routes.slice(1);
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
@@ -280,11 +286,14 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road, exact later CA13/CA14, Gold Coast, Cairns, CH14 and Vietnam routes across five editions may receive a new lastmod since the prior integration checkpoint.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
+for (const route of expectedLastmod) {
+  const expectedDate = currentBranchVietnamRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
+  assert.equal(currentSitemap.get(route), expectedDate, route + ': sitemap lastmod.');
+}
 
 const svgFile = path.join(root, svgPath);
 const svg = fs.readFileSync(svgFile, 'utf8');

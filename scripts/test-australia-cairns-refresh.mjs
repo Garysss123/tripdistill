@@ -144,9 +144,15 @@ const currentVietnamRoutes = [
   '/vietnam/ha-long-cat-ba/lan-ha-town/',
   '/vietnam/ha-long-cat-ba/national-park/'
 ];
-const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const currentBranchVietnamRoutes = [
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+];
+const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns and four current Vietnam route documents may change.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns, known Vietnam documents and four explicit source-branch HCMC documents may change.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -240,10 +246,13 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...vietnamRoutes, ...currentVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four selected Cairns and four current Vietnam routes across five language editions may receive new lastmod dates.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap date.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four selected Cairns, known Vietnam routes and 20 explicit source-branch HCMC edition paths may receive new lastmod dates.');
+for (const route of expectedLastmod) {
+  const expectedDate = currentBranchVietnamRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
+  assert.equal(currentSitemap.get(route), expectedDate, route + ': sitemap date.');
+}
 
 for (const file of photoPaths) assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${base}:${file}`], true), file + ': existing photo bytes must be unchanged.');
 const imageManifest = fs.readFileSync(path.join(root, 'data/australia-image-manifest.mjs'), 'utf8');

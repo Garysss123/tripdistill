@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { malaysiaDepthGuides, imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -101,9 +101,10 @@ const baseSitemap = sitemapRows(gitBytes(`${integrationSprintBaseline}:sitemap.x
 assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no URL was added or removed');
 const selectedLocalizedPaths = localizedIntegrationSitemapRoutes(locales.map(({ prefix }) => prefix));
+const expectedChangedPaths = localizedSourceBranchSitemapRoutes(locales.map(({ prefix }) => prefix));
 const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => new URL(url).pathname);
 assert.equal(integrationRoutes.length, 261, 'the exact integrated route scope includes 249 UK, Australia, France, Italy, Switzerland, Canada and Malaysia pages plus twelve Vietnam pages');
-assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the exact integrated UK, France, Italy, Switzerland, Canada, Malaysia and Vietnam routes changed lastmod');
+assert.deepEqual(new Set(changedDates), expectedChangedPaths, 'only the exact integrated routes and this source branch’s HCMC routes changed lastmod');
 for (const route of selectedLocalizedPaths) assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), reviewDate, `${route}: sitemap date`);
 
 const sourceSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
