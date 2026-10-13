@@ -61,6 +61,12 @@ const currentCanberraRoutes = [
   '/australia/canberra-australian-alps/lake-burley-griffin-national-museum/',
   '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
 ];
+const currentAlpsMargaretRoutes = [
+  '/australia/canberra-australian-alps/namadgi-national-park/',
+  '/australia/canberra-australian-alps/snowy-mountains-kosciuszko/',
+  '/australia/margaret-river-southwest/',
+  '/australia/margaret-river-southwest/margaret-river-wine-food/'
+];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
@@ -189,7 +195,7 @@ const localizedReviewDate = {
   th: '12 ตุลาคม 2026'
 };
 
-const expectedHtml = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes, ...currentAlpsMargaretRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', base, '--'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 assert.deepEqual(changedHtml, expectedHtml, 'Only the Gold Coast, later Cairns, Sydney/NSW, Brisbane/Gold Coast, Melbourne/Ocean, Adelaide/Perth, Top End/Whitsundays, and Canberra gap routes may change from the requested base.');
@@ -249,7 +255,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes].sort(), 'Only Gold Coast, later Cairns, Sydney/NSW, Brisbane/Gold Coast, Melbourne/Ocean, Adelaide/Perth, Top End/Whitsundays, and Canberra gap search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes, ...currentAlpsMargaretRoutes].sort(), 'Only Gold Coast, later Cairns and regional gap search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match page copy.');
@@ -265,11 +271,11 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraRoutes, ...currentAlpsMargaretRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only Gold Coast, later Cairns, Sydney/NSW, Brisbane/Gold Coast, Melbourne/Ocean, Adelaide/Perth, Top End/Whitsundays, and Canberra gap routes across five editions may receive a new lastmod.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), reviewIsoDate, route + ': sitemap lastmod.');
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), currentAlpsMargaretRoutes.some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
 
 const svg = fs.readFileSync(path.join(root, svgPath), 'utf8');
 assert(!/<script\b|\son[a-z]+\s*=|<foreignObject\b|\s(?:href|xlink:href)\s*=\s*["']https?:\/\//i.test(svg), 'SVG has no scripts, handlers, foreign objects or external references.');

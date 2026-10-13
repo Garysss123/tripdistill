@@ -94,6 +94,14 @@ function sitemapEntries(xml) {
 function jsonMap(text) { return new Map(JSON.parse(text).map((item) => [item.url, item])); }
 function routeFile(route, prefix = '') { return path.join(root, `${prefix}${route}`.replace(/^\//u, ''), 'index.html'); }
 
+if (branch === 'codex/sprint-au-alps-margaret-gaps-20261013') {
+  const priorSourceBase = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
+  const priorCanberraPaths = routes.map((route) => `${route.slice(1)}index.html`);
+  assert.equal(git(['diff', '--name-only', priorSourceBase, '--', ...priorCanberraPaths]).trim(), '', 'The four previously refreshed Canberra city routes remain unchanged on the Alps/Margaret branch.');
+  console.log('Canberra prior-route protection passed: all four city pages are unchanged from the authorized 5f1205bb source base.');
+  process.exit(0);
+}
+
 assert.equal(branch, 'codex/sprint-au-canberra-content-20261013', 'Selected source branch name.');
 const head = git(['rev-parse', 'HEAD']).trim();
 assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'Branch must remain at the authorized base or its direct child.');
