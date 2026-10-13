@@ -3,6 +3,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postNewEnglandArizonaRoutes } from './integration-sprint-scope.mjs';
 
 const base = '55147104cc93f80b6c9ec7f0b01436b01661e435';
 const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
@@ -25,6 +26,7 @@ const postNewEnglandRoutes = [
   '/usa/new-england/acadia/',
   '/usa/new-england/white-mountains-vermont/'
 ];
+const arizonaRoutes = postNewEnglandArizonaRoutes;
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -77,7 +79,7 @@ function htmlPath(route) {
   return `${route.slice(1)}index.html`;
 }
 
-const targetSet = new Set([...routes, ...postNewEnglandRoutes].map(htmlPath));
+const targetSet = new Set([...routes, ...postNewEnglandRoutes, ...arizonaRoutes].map(htmlPath));
 const newYorkAcceptancePath = 'usa/new-york/index.html';
 const basePaths = execFileSync('git', ['ls-tree', '-r', '--name-only', base, '--', 'usa'], { cwd: root, encoding: 'utf8' })
   .trim().split('\n').filter((file) => file.endsWith('/index.html') || file === 'usa/index.html');
@@ -99,7 +101,7 @@ for (const relativePath of basePaths) {
     assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
   }
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four assigned English U.S. bodies changed');
+assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the exact Florida, Chicago, New England and later Arizona English U.S. bodies changed');
 assert.equal(normalizedMain(fs.readFileSync(path.join(root, newYorkAcceptancePath), 'utf8')),
   normalizedMain(gitShow(base, newYorkAcceptancePath)), 'New York acceptance sample body remains unchanged');
 
@@ -122,7 +124,7 @@ const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()]
   .filter((url) => url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes].sort(), 'only the four Florida, four Chicago and four already-integrated New England English search summaries changed');
+assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes, ...arizonaRoutes].sort(), 'only the four Florida, four Chicago, four already-integrated New England and four later Arizona English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -136,16 +138,16 @@ assert.equal(newSitemap.length, 4560, 'sitemap keeps 4,560 URLs');
 const oldDates = new Map(oldSitemap);
 const newDates = new Map(newSitemap);
 assert.deepEqual([...newDates.keys()].sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
-const expectedDatedUrls = [...routes, ...postNewEnglandRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
+const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
 const changedDates = [...newDates.keys()]
   .filter((url) => {
     const route = new URL(url).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '');
     return route.startsWith('/usa/') && oldDates.get(url) !== newDates.get(url);
   }).sort();
-assert.deepEqual(changedDates, expectedDatedUrls, 'only four routes x five editions have a changed sitemap date');
+assert.deepEqual(changedDates, expectedDatedUrls, 'only the exact sixteen separately counted USA routes across five editions have changed sitemap dates');
 for (const url of expectedDatedUrls) assert.equal(newDates.get(url), '2026-10-13', `${url} lastmod`);
 
-for (const route of [...routes, ...postNewEnglandRoutes]) {
+for (const route of [...routes, ...postNewEnglandRoutes, ...arizonaRoutes]) {
   for (const prefix of localePrefixes) {
     const localizedPath = path.join(root, `${prefix}${route}index.html`);
     assert.ok(fs.existsSync(localizedPath), `localized route exists: ${prefix}${route}`);
@@ -160,4 +162,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of routes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source-refresh scope passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago and ${postNewEnglandRoutes.length} already-integrated New England English bodies; twelve English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source-refresh scope passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago and ${postNewEnglandRoutes.length} New England plus ${arizonaRoutes.length} separate Arizona English bodies; sixteen English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { followingVietnamDaLatRoutes, postFloridaChicagoRoutes, postNewEnglandArizonaRoutes } from './integration-sprint-scope.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-margaret-remaining-20261013';
@@ -150,8 +151,8 @@ const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-ind
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.');
 assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
-const expectedSearchRoutes = [...routes].sort();
-assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), expectedSearchRoutes, 'Only the four requested Margaret search records changed from the exact selected checkpoint.');
+const expectedSearchRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes].sort();
+assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), expectedSearchRoutes, 'Only the four requested Margaret, four separately integrated Chicago, and four Arizona search records changed from the exact selected checkpoint.');
 if (integrationBranch) {
   const terminalBodies = new Map(routes.map((route) => [route, git([`show`, `${sourceTerminal}:${route.slice(1)}index.html`])]));
   for (const route of routes) assert.equal(fs.readFileSync(fileFor(route), 'utf8'), terminalBodies.get(route), `${route}: integrated body matches the exact Margaret source terminal.`);
@@ -162,9 +163,9 @@ const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml')
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const datedRoutes = [...routes];
+const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes];
 const changedDates = datedRoutes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the four selected Margaret routes × five locale lastmod values changed.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the four selected Margaret, four separately integrated Chicago, four Arizona and four Da Lat routes × five locale lastmod values changed.');
 for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);
 
 for (const locale of locales) {

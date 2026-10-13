@@ -75,6 +75,13 @@ export const usaChicagoNewSubstantiveRoutes = Object.freeze([
   '/usa/chicago/neighborhoods/'
 ]);
 
+export const usaArizonaNewSubstantiveRoutes = Object.freeze([
+  '/usa/arizona/',
+  '/usa/arizona/phoenix-scottsdale/',
+  '/usa/arizona/grand-canyon/',
+  '/usa/arizona/sedona/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -255,5 +262,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'New England', count: 797 }),
   Object.freeze({ label: 'Margaret River remaining guides', count: 801 }),
   Object.freeze({ label: 'Chicago', count: 805 }),
-  Object.freeze({ label: 'Da Lat & Central Highlands', count: 809 })
+  Object.freeze({ label: 'Da Lat & Central Highlands', count: 809 }),
+  Object.freeze({ label: 'Arizona', count: 813 })
 ]);

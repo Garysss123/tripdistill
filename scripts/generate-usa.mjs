@@ -74,11 +74,14 @@ const atlantaRefreshRoutes = new Set([
 const floridaNeighborhoodRefreshRoutes = new Set([
  '/usa/miami/south-beach/','/usa/miami/little-havana-wynwood/','/usa/orlando/theme-parks/','/usa/orlando/winter-park/'
 ]);
+const chicagoRefreshRoutes = new Set([
+ '/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/'
+]);
 const newEnglandRefreshRoutes = new Set([
  '/usa/new-england/','/usa/new-england/portland-maine/','/usa/new-england/acadia/','/usa/new-england/white-mountains-vermont/'
 ]);
-const chicagoRefreshRoutes = new Set([
- '/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/'
+const arizonaRefreshRoutes = new Set([
+ '/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/'
 ]);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
@@ -95,7 +98,7 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=arizonaRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }
@@ -110,10 +113,9 @@ marked('components/sidebar.html','USA_CHAPTERS','', '<!-- AUSTRALIA_CHAPTERS_END
 marked('components/footer.html','USA_FOOTER','<a href="/usa/">United States</a>','<!-- AUSTRALIA_FOOTER_END -->');
 marked('index.html','USA_HOME',`<a class="destination-card featured" href="/usa/">${photo(usaGuides[0],true)}<div class="destination-copy"><small>North America</small><h3>United States</h3><p>Explore 24 city and regional starting points, from East Coast neighborhoods to western parks, Alaska and Hawaii.</p><span class="card-arrow">Explore the United States →</span></div></a>`,'<div class="destination-grid">');
 marked('index.html','USA_HOME_CREDIT','<ul>'+credit(usaGuides[0])+'</ul>','<!-- AUSTRALIA_HOME_CREDIT_END -->');
-const searchFile=path.join(root,'data/search-index.json');const search=JSON.parse(fs.readFileSync(searchFile,'utf8'));const searchIndexByUrl=new Map(search.map((record,index)=>[record.url,index]));
-function setSearchRecord(record){const existingIndex=searchIndexByUrl.get(record.url);if(existingIndex===undefined){searchIndexByUrl.set(record.url,search.length);search.push(record);}else search[existingIndex]=record;}
-setSearchRecord({title:'United States Travel Guide',url:'/usa/',parent:'North America',type:'Country',summary:usaCountryDescription,keywords:['USA','United States','America']});
-for(const h of usaHubs){setSearchRecord({title:h.name,url:`/usa/${h.slug}/`,parent:'United States',type:'Regional guide',summary:h.intro,keywords:[h.name,h.region]});for(const g of h.guides)setSearchRecord({title:g.name,url:g.url,parent:h.name,type:'Local guide',summary:g.intro,keywords:[g.name,h.name]});}
+const searchFile=path.join(root,'data/search-index.json');const search=JSON.parse(fs.readFileSync(searchFile,'utf8')).filter(x=>!x.url.startsWith('/usa/'));
+search.push({title:'United States Travel Guide',url:'/usa/',parent:'North America',type:'Country',summary:usaCountryDescription,keywords:['USA','United States','America']});
+for(const h of usaHubs){search.push({title:h.name,url:`/usa/${h.slug}/`,parent:'United States',type:'Regional guide',summary:h.intro,keywords:[h.name,h.region]});for(const g of h.guides)search.push({title:g.name,url:g.url,parent:h.name,type:'Local guide',summary:g.intro,keywords:[g.name,h.name]});}
 for(const [i,route] of ['/usa/new-york/',...usaHubs[0].guides.map(g=>g.url)].entries()){const record=search.find(r=>r.url===route);record.summary=nycDescriptions[i];}
 for(const [i,route] of ['/usa/boston/',...usaHubs.find(h=>h.slug==='boston').guides.map(g=>g.url)].entries()){search.find(r=>r.url===route).summary=bostonDescriptions[i];}
 for(const [i,route] of ['/usa/philadelphia/',...usaHubs.find(h=>h.slug==='philadelphia').guides.map(g=>g.url)].entries()){search.find(r=>r.url===route).summary=philadelphiaDescriptions[i];}
