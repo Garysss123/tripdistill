@@ -38,7 +38,11 @@ const followingRoutes = [
   '/vietnam/phu-quoc-southern-islands/',
   '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
   '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
-  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/',
+  '/vietnam/nha-trang-khanh-hoa/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/',
+  '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
+  '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ];
 const editions = [
   { code: 'en', prefix: '' },
@@ -163,7 +167,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/') || route.startsWith('/vietnam/phong-nha-ke-bang/') || route.startsWith('/vietnam/phu-quoc-southern-islands/')).sort(), 'Only the four following Mui Ne, four Phong Nha and four Phu Quoc summaries may change after the HCMC body-only refresh.');
+assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/') || route.startsWith('/vietnam/phong-nha-ke-bang/') || route.startsWith('/vietnam/phu-quoc-southern-islands/') || route.startsWith('/vietnam/nha-trang-khanh-hoa/')).sort(), 'Only the four following Mui Ne, four Phong Nha, four Phu Quoc and four Nha Trang summaries may change after the HCMC body-only refresh.');
 
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));

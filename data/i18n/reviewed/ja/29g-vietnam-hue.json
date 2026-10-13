@@ -12,7 +12,6 @@
   ],
   "translations": {
     "Hue Guide | TripDistill": "フエガイド｜TripDistill",
-    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "フエは、記念物のチェックリストではなく、つながりのある景観を順に訪ねると魅力が分かります。城塞を歩いて巡る起点にし、川、王陵、村の路地、山の森、潟湖の海岸には、それぞれの時間と天候悪化に備える余裕を持たせましょう。",
     "Hue Travel Guide": "フエ旅行ガイド",
     "How much time should Imperial City & Citadel receive?": "皇城と城塞にはどのくらい必要？",
     "How much time should Royal Tombs of Minh Mang, Tu Duc & Khai Dinh receive?": "明命帝、嗣徳帝、啓定帝の王陵にはどのくらい必要？",
@@ -22,12 +21,9 @@
     "How much time should Lang Co & Lap An Lagoon receive?": "ランコーとラップアン潟湖にはどのくらい必要？",
     "Meridian Gate, Hue Imperial City · CC BY 4.0": "Meridian Gate, Hue Imperial City・CC BY 4.0",
     "Imperial City & Citadel": "皇城と城塞",
-    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "午門、宮廷の中庭、残る宮殿の層を、城壁に守られたフエの王都を無理なく巡れる順番で歩きます。",
     "Royal Tombs of Minh Mang, Tu Duc & Khai Dinh": "明命帝・嗣徳帝・啓定帝の王陵",
-    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "三つの阮朝陵墓を、一般的な記念物周回に急いで入れるのではなく、軸線、庭、丘、素材で比べます。",
     "Thien Mu Temple and Pagoda beside the Perfume River in Hue": "フエのフォン川沿いにある天姥寺",
     "Thien Mu & Perfume River": "天姥寺とフォン川",
-    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "フォン川から天姥寺へ向かい、礼拝の場、日陰のある中庭、水辺の移動を落ち着いて巡るフエ旅行ガイド。訪問情報も確認できます。",
     "Thanh Toan tiled bridge near the rural waterways of Hue": "フエの農村水路近くにある清水橋",
     "The working village edge": "村の暮らしが続く境界",
     "Thanh Toan Rural & Canal Loop": "清水農村と水路ループ",
@@ -97,6 +93,10 @@
     "Combine with Bach Ma only when the park exit and coastal road are both confirmed; otherwise keep the lagoon as the main destination.": "公園の退出と海岸道路の両方が確認できる場合だけ、バックマーと組み合わせます。それ以外は潟湖を主な目的地にします。",
     "Where the road meets the lagoon.": "道路が潟湖に出会う場所。",
     "Lang Co and Lap An Lagoon · CC BY 4.0": "Lang Co and Lap An Lagoon・CC BY 4.0",
-    "Tide and weather": "潮汐と天候"
+    "Tide and weather": "潮汐と天候",
+    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "フエは、記念物のチェックリストではなく、つながりのある景観を順に訪ねると魅力が分かります。城塞を歩いて巡る起点にし、川、王陵、村の路地、山の森、潟湖の海岸には、それぞれの時間と天候悪化に備える余裕を持たせましょう。",
+    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "午門、宮廷の中庭、残る宮殿の層を、城壁に守られたフエの王都を無理なく巡れる順番で歩きます。",
+    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "三つの阮朝陵墓を、一般的な記念物周回に急いで入れるのではなく、軸線、庭、丘、素材で比べます。",
+    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "フォン川から天姥寺へ向かい、礼拝の場、日陰のある中庭、水辺の移動を落ち着いて巡るフエ旅行ガイド。訪問情報も確認できます。"
   }
 }

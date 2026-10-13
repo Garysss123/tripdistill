@@ -8,6 +8,7 @@ import { parse } from 'parse5';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '01144e03bf6173f468cb836d0899163e1a98c4ea';
+const historicalSprintCommit = 'a639c760ec728d90a0c271e512cbb7af2fa8bfa4';
 const initialAtlasCommit = '8a1ada3b4021d077fd468c9c318d91823177c0cb';
 const origin = 'https://tripdistill.com';
 const routes = [
@@ -114,11 +115,11 @@ for (const route of routes) {
   bodyChecks.push({ url: route, baseWords, currentWords, wordDelta: currentWords - baseWords, initialMainTextSha256: initialHash, baseMainTextSha256: baseHash, currentMainTextSha256: currentHash });
 }
 
-const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
+const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, historicalSprintCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
 assert.deepEqual(changedEnglishVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Phu Quoc route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
-const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
+const currentSearch = JSON.parse(readAt(historicalSprintCommit, 'data/search-index.json'));
 assert.equal(baseSearch.length, 955);
 assert.equal(currentSearch.length, 955);
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
@@ -131,7 +132,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
 assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
-const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
+const currentSitemap = parseSitemap(readAt(historicalSprintCommit, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
@@ -214,15 +215,15 @@ for (const route of previousRefresh) {
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.branch, 'codex/sprint-vn-after-phong-nha-20261013');
-assert.equal(ledger.sourceBaseCommit, baselineCommit);
+assert.equal(ledger.previousTopLevelSprint.branch, 'codex/sprint-vn-after-phong-nha-20261013');
+assert.equal(ledger.previousTopLevelSprint.sourceBaseCommit, baselineCommit);
 assert.equal(ledger.totals.englishRoutes, 99);
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 75);
-assert.equal(ledger.totals.remainingRoutes, 24);
-assert.deepEqual(ledger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
+assert.equal(ledger.previousTopLevelSprint.totals.afterSprintSubstantiveRoutes, 75);
+assert.equal(ledger.previousTopLevelSprint.totals.remainingRoutes, 24);
+assert.deepEqual(ledger.previousTopLevelSprint.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
 assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'));
-assert.equal(ledger.remainingRoutesAfterSprint.length, 24);
-assert.deepEqual(ledger.remainingRoutesAfterSprint, [...ledger.remainingRoutesAfterSprint].sort());
+assert.equal(ledger.previousTopLevelSprint.remainingRoutesAfterSprint.length, 24);
+assert.deepEqual(ledger.previousTopLevelSprint.remainingRoutesAfterSprint, [...ledger.previousTopLevelSprint.remainingRoutesAfterSprint].sort());
 
 console.log('Phu Quoc refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; the seven non-selected Phu Quoc/Phong Nha pages remain untouched; exactly 20 existing sitemap dates changed; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; no SVG changed.');
 console.log(JSON.stringify(bodyChecks, null, 2));

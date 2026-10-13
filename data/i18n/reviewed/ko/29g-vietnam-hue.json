@@ -12,7 +12,6 @@
   ],
   "translations": {
     "Hue Guide | TripDistill": "후에 가이드 | TripDistill",
-    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "후에는 서로 이어지는 풍경의 순서로 둘러볼 때 가장 좋습니다. 황성을 걸을 수 있는 기준점으로 삼고, 강·왕릉·마을길·산악 숲·석호 해안에 각각 시간과 날씨 변수에 대비한 여유를 배정하세요.",
     "Hue Travel Guide": "후에 여행 가이드",
     "How much time should Imperial City & Citadel receive?": "황성과 성채에는 어느 정도 시간을 잡아야 할까요?",
     "How much time should Royal Tombs of Minh Mang, Tu Duc & Khai Dinh receive?": "민망·뜨득·카이딘 왕릉에는 어느 정도 시간을 잡아야 할까요?",
@@ -22,12 +21,9 @@
     "How much time should Lang Co & Lap An Lagoon receive?": "랑꼬와 랩안 석호에는 어느 정도 시간을 잡아야 할까요?",
     "Meridian Gate, Hue Imperial City · CC BY 4.0": "후에 황성 응오몬문 · CC BY 4.0",
     "Imperial City & Citadel": "황성과 성채",
-    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "후에 황성의 응오몬문과 황실 정원, 남은 궁전 유적을 역사적 순서에 따라 걷는 여행 가이드입니다. 관람 동선도 안내합니다.",
     "Royal Tombs of Minh Mang, Tu Duc & Khai Dinh": "민망·뜨득·카이딘 왕릉",
-    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "민망·뜨득·카이딘 응우옌 왕릉 세 곳의 정원과 언덕, 건축 재료를 비교하며 무리 없이 둘러보는 후에 여행 가이드입니다.",
     "Thien Mu Temple and Pagoda beside the Perfume River in Hue": "후에 향강가의 티엔무 사원과 탑",
     "Thien Mu & Perfume River": "티엔무 사원과 향강",
-    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "향강을 따라 티엔무 사원과 서쪽 강변의 종교 풍경을 둘러보세요. 예배·그늘·물의 리듬에 맞춰 속도를 조절합니다.",
     "Thanh Toan tiled bridge near the rural waterways of Hue": "후에 시골 수로의 타인또안 기와다리",
     "The working village edge": "생활 마을의 경계",
     "Thanh Toan Rural & Canal Loop": "타인또안 시골·운하 순환로",
@@ -97,6 +93,10 @@
     "Combine with Bach Ma only when the park exit and coastal road are both confirmed; otherwise keep the lagoon as the main destination.": "공원 출구와 해안 도로가 모두 확인될 때만 박마와 묶으세요. 그렇지 않다면 석호를 주목적지로 남겨 두세요.",
     "Where the road meets the lagoon.": "도로가 석호와 만나는 곳.",
     "Lang Co and Lap An Lagoon · CC BY 4.0": "랑꼬와 랩안 석호 · CC BY 4.0",
-    "Tide and weather": "조석과 날씨"
+    "Tide and weather": "조석과 날씨",
+    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "후에는 서로 이어지는 풍경의 순서로 둘러볼 때 가장 좋습니다. 황성을 걸을 수 있는 기준점으로 삼고, 강·왕릉·마을길·산악 숲·석호 해안에 각각 시간과 날씨 변수에 대비한 여유를 배정하세요.",
+    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "후에 황성의 응오몬문과 황실 정원, 남은 궁전 유적을 역사적 순서에 따라 걷는 여행 가이드입니다. 관람 동선도 안내합니다.",
+    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "민망·뜨득·카이딘 응우옌 왕릉 세 곳의 정원과 언덕, 건축 재료를 비교하며 무리 없이 둘러보는 후에 여행 가이드입니다.",
+    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "향강을 따라 티엔무 사원과 서쪽 강변의 종교 풍경을 둘러보세요. 예배·그늘·물의 리듬에 맞춰 속도를 조절합니다."
   }
 }

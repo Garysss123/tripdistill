@@ -174,13 +174,7 @@
     "Trail access, ticket, guide and cave hours can change. The park’s live visitor details were not independently accessible during this review; confirm direct with management and the driver.": "숲길, 입장권, 가이드, 동굴 시간은 바뀝니다. 공원 실시간 방문 정보가 독립적으로 확인되지 않았으므로 관리부와 기사에게 직접 문의하세요.",
     "Cat Ba National Park — official park information; check directly for current entry and trail status": "깟바 국립공원 — 현재 입장·숲길 상태는 직접 확인",
     "Sun World Cat Ba — current island road and attraction sequence context": "선월드 깟바 — 섬 도로와 명소 순서 안내",
-    "ha long bay": "하롱베이",
     "ao tien port van don": "번돈 아오띠엔항",
-    "cat ba ferry dong bai cai vieng": "깟바섬 동바이–까이비엥 페리",
-    "cat ba town": "깟바 타운",
-    "ben beo lan ha pier": "벤베오 란하베이 부두",
-    "lan ha bay": "란하베이",
-    "vietnam maritime karst route": "베트남 해상 카르스트 경로",
     "bai tu long bay route": "바이뜨롱베이 항로",
     "bai tu long national park boat route": "바이뜨롱 국립공원 배",
     "tra ngo lon cai lim mang ha": "짜응오롱·까이림·망하 순서",
@@ -197,7 +191,13 @@
     "cat ba national park official visitor information": "깟바 국립공원 공식 방문 정보",
     "Walk one park-confirmed marked trail": "공원이 통행 가능하다고 확인한 표지 탐방로 걷기",
     "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and…": "깟바 타운에서 육로로 당일 일정을 계획하세요. 출발 전에 공원에 탐방로 통행 여부를 확인하고, 동굴이 열려 있고 일광 여유가 있을 때만 꽌이 동굴과 쭝짱 동굴을 추가하세요…",
-    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "깟바 타운에서 육로로 다녀오는 일정으로 계획하세요. 출발 전에 공원에 탐방로 통행 가능 여부를 확인하고, 동굴 개방 시간과 일광 여유가 있을 때만 꽌이 동굴과 쭝짱 동굴을 추가하세요."
+    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "깟바 타운에서 육로로 다녀오는 일정으로 계획하세요. 출발 전에 공원에 탐방로 통행 가능 여부를 확인하고, 동굴 개방 시간과 일광 여유가 있을 때만 꽌이 동굴과 쭝짱 동굴을 추가하세요.",
+    "ha long bay": "하롱베이",
+    "cat ba ferry dong bai cai vieng": "깟바섬 동바이–까이비엥 페리",
+    "cat ba town": "깟바 타운",
+    "ben beo lan ha pier": "벤베오 란하베이 부두",
+    "lan ha bay": "란하베이",
+    "vietnam maritime karst route": "베트남 해상 카르스트 경로"
   },
   "reviewProvenance": {
     "writer": "Runtime model identity was not exposed; translations authored in this session",

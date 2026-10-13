@@ -13,7 +13,6 @@
   "translations": {
     "Mekong Delta Guide | TripDistill": "คู่มือเที่ยวสามเหลี่ยมปากแม่น้ำโขง | TripDistill",
     "Mekong Delta — A living ledger of markets, islands, farms, wetlands and river crossings.": "สามเหลี่ยมปากแม่น้ำโขง — บันทึกชีวิตจริงของตลาด เกาะ ฟาร์ม พื้นที่ชุ่มน้ำ และการข้ามแม่น้ำ",
-    "The Mekong Delta is best planned as a chain of working water landscapes rather than one interchangeable boat tour. Cần Thơ’s dawn commerce, Bến Tre’s coconut islets, Mỹ Tho’s lower-river gateway, Châu Đốc’s border culture, Sa Đéc’s flower and literary memory, and Cà Mau’s freshwater-to-mangrove edge each justify a different stay and transfer.": "ควรวางแผนสามเหลี่ยมปากแม่น้ำโขงเป็นชุดภูมิทัศน์สายน้ำที่ผู้คนยังทำมาหากินจริง ไม่ใช่ทัวร์เรือแบบเดียวกันทุกแห่ง ตลาดเช้าที่ Cần Thơ เกาะมะพร้าว Bến Tre ประตูแม่น้ำตอนล่าง Mỹ Tho วัฒนธรรมชายแดน Châu Đốc ดอกไม้และความทรงจำวรรณกรรมที่ Sa Đéc ตลอดจนรอยต่อน้ำจืดกับป่าชายเลน Cà Mau ต่างต้องใช้เวลาพักและการเดินทางที่ต่างกัน",
     "Mekong Delta Travel Guide": "คู่มือท่องเที่ยวสามเหลี่ยมปากแม่น้ำโขง",
     "How much time should Can Tho Dawn Market & River Islets receive?": "ควรเผื่อเวลาให้ตลาด Can Tho Dawn และเกาะแม่น้ำเท่าไร?",
     "How much time should Ben Tre Coconut Islets & Canal Life receive?": "ควรเผื่อเวลาให้เกาะมะพร้าว Ben Tre และ Canal Lifeเท่าไร?",
@@ -28,11 +27,9 @@
     "Floating market in Can Tho · CC BY 4.0": "ตลาดน้ำในเกิ่นเทอ · CC BY 4.0",
     "working-water ledger": "บันทึกวิถีสายน้ำที่ยังดำเนินอยู่",
     "Can Tho Dawn Market & River Islets": "ตลาดรุ่งอรุณ Can Tho และเกาะเล็ก ๆ ในแม่น้ำ",
-    "Plan Cần Thơ around the market’s working hours, a safe boat choice and one quieter islet or garden rather than a dawn photo sprint.": "วางแผน Cần Thơ ตามเวลาค้าขายจริงของตลาด เลือกเรือที่ปลอดภัย และแวะเกาะเล็กหรือสวนเงียบ ๆ เพียงแห่งเดียว แทนการรีบเก็บภาพยามเช้า",
     "The Ben Tre River viewed from Ben Tre Bridge": "แม่น้ำเบ๊นแจ มองจากสะพานเบ็นเตร",
     "coconut-and-canal field": "ทุ่งมะพร้าวและคลอง",
     "Ben Tre Coconut Islets & Canal Life": "เกาะมะพร้าว Ben Tre และชีวิตริมคลอง",
-    "Use Bến Tre’s coconut groves, small ferries, cycling lanes and family workshops to plan a slower Delta stay with real local participation.": "ใช้สวนมะพร้าวของ Bến Tre เรือเฟอร์รี่ขนาดเล็ก เส้นทางจักรยาน และเวิร์กช็อปสำหรับครอบครัว เพื่อวางแผนการเข้าพักในสามเหลี่ยมปากแม่น้ำให้ช้าลงโดยมีส่วนร่วมในท้องถิ่นอย่างแท้จริง",
     "Thoi Son Island in the Mekong Delta near My Tho": "เกาะท้ายสนในสามเหลี่ยมปากแม่น้ำโขงใกล้หมีทอ",
     "lower-river entry ribbon": "ทางเข้าสู่แม่น้ำตอนล่าง",
     "My Tho–Thoi Son Islets": "เกาะเล็ก My Tho–Thoi Son",
@@ -40,7 +37,6 @@
     "Floating village on the Hau River near Chau Doc": "หมู่บ้านลอยน้ำริมแม่น้ำ Hau ใกล้ Chau Doc",
     "border-wetland atlas": "แผนที่พื้นที่ชุ่มน้ำชายแดน",
     "Chau Doc Border River, Sam Mountain & Tra Su": "แม่น้ำชายแดน Chau Doc, เขา Sam และ Tra Su",
-    "Connect Châu Đốc’s floating homes, Cham communities, Sam Mountain temples and Trà Sư wetland through a two-night-friendly borderland route.": "เชื่อมบ้านลอยน้ำของ Châu Đốc ชุมชน Cham วัดบนภูเขา Sam และพื้นที่ชุ่มน้ำ Trà Sư ผ่านเส้นทางชายแดนที่เหมาะกับการพักสองคืน",
     "Mekong River bank and riverside life in Sa Dec": "ริมฝั่งแม่น้ำโขงและชีวิตริมแม่น้ำใน Sa Đéc",
     "garden-and-memory spread": "เรื่องราวสวนกับความทรงจำ",
     "Sa Dec Flower Village & Huynh Thuy Le House": "หมู่บ้านดอกไม้ Sa Dec และบ้าน Huynh Thuy Le",
@@ -168,6 +164,10 @@
     "Peat forest fire risk, high heat, rain and boat conditions all affect access.": "ความเสี่ยงจากไฟป่าพรุ ความร้อนสูง ฝน และสภาพเรือ ล้วนส่งผลต่อการเข้าถึง",
     "Long-distance fatigue": "ความเมื่อยล้าทางไกล",
     "The southern endpoint is far enough that rushed driving creates its own hazard.": "จุดสิ้นสุดทางใต้อยู่ไกลพอที่จะทำให้เกิดอันตรายในตัวเองได้",
-    "Ca Mau: U Minh Ha to Cape Ca Mau FAQ": "Ca Mau: U Minh Ha ถึง Cape Ca Mau คำถามที่พบบ่อย"
+    "Ca Mau: U Minh Ha to Cape Ca Mau FAQ": "Ca Mau: U Minh Ha ถึง Cape Ca Mau คำถามที่พบบ่อย",
+    "The Mekong Delta is best planned as a chain of working water landscapes rather than one interchangeable boat tour. Cần Thơ’s dawn commerce, Bến Tre’s coconut islets, Mỹ Tho’s lower-river gateway, Châu Đốc’s border culture, Sa Đéc’s flower and literary memory, and Cà Mau’s freshwater-to-mangrove edge each justify a different stay and transfer.": "ควรวางแผนสามเหลี่ยมปากแม่น้ำโขงเป็นชุดภูมิทัศน์สายน้ำที่ผู้คนยังทำมาหากินจริง ไม่ใช่ทัวร์เรือแบบเดียวกันทุกแห่ง ตลาดเช้าที่ Cần Thơ เกาะมะพร้าว Bến Tre ประตูแม่น้ำตอนล่าง Mỹ Tho วัฒนธรรมชายแดน Châu Đốc ดอกไม้และความทรงจำวรรณกรรมที่ Sa Đéc ตลอดจนรอยต่อน้ำจืดกับป่าชายเลน Cà Mau ต่างต้องใช้เวลาพักและการเดินทางที่ต่างกัน",
+    "Plan Cần Thơ around the market’s working hours, a safe boat choice and one quieter islet or garden rather than a dawn photo sprint.": "วางแผน Cần Thơ ตามเวลาค้าขายจริงของตลาด เลือกเรือที่ปลอดภัย และแวะเกาะเล็กหรือสวนเงียบ ๆ เพียงแห่งเดียว แทนการรีบเก็บภาพยามเช้า",
+    "Use Bến Tre’s coconut groves, small ferries, cycling lanes and family workshops to plan a slower Delta stay with real local participation.": "ใช้สวนมะพร้าวของ Bến Tre เรือเฟอร์รี่ขนาดเล็ก เส้นทางจักรยาน และเวิร์กช็อปสำหรับครอบครัว เพื่อวางแผนการเข้าพักในสามเหลี่ยมปากแม่น้ำให้ช้าลงโดยมีส่วนร่วมในท้องถิ่นอย่างแท้จริง",
+    "Connect Châu Đốc’s floating homes, Cham communities, Sam Mountain temples and Trà Sư wetland through a two-night-friendly borderland route.": "เชื่อมบ้านลอยน้ำของ Châu Đốc ชุมชน Cham วัดบนภูเขา Sam และพื้นที่ชุ่มน้ำ Trà Sư ผ่านเส้นทางชายแดนที่เหมาะกับการพักสองคืน"
   }
 }

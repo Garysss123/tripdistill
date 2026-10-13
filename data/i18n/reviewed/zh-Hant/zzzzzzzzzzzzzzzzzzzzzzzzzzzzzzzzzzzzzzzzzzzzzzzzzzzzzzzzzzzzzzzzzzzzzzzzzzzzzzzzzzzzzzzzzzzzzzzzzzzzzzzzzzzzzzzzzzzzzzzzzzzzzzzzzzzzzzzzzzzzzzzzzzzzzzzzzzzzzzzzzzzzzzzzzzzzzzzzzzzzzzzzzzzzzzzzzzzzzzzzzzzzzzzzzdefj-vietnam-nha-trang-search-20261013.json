@@ -1,0 +1,28 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "tran phu beach public access": "陳富海灘公共入口",
+    "nha trang beach swimming flags": "芽莊海灘游泳警示旗",
+    "cam ranh airport transfer": "金蘭機場接駁",
+    "nha trang train station": "芽莊火車站",
+    "po nagar opening hours": "婆那加開放時間",
+    "po nagar cham shrine": "婆那加占婆信仰聖地",
+    "cu lao hill cai river": "Cù Lao Hill 與 Cái River",
+    "hon chong viewpoint public access": "Hon Chong 觀景處公共通行",
+    "hon mun reserve access": "Hon Mun 保護區准入",
+    "nha trang bay coral permit": "芽莊灣珊瑚礁活動許可",
+    "hon mun boat pier": "Hon Mun 出船碼頭",
+    "nha trang marine forecast": "芽莊海象預報"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search delta translated from the exact English search strings and checked for numbers, place names, access terminology and source scope. Same-model review is not independent or human review."
+  }
+}

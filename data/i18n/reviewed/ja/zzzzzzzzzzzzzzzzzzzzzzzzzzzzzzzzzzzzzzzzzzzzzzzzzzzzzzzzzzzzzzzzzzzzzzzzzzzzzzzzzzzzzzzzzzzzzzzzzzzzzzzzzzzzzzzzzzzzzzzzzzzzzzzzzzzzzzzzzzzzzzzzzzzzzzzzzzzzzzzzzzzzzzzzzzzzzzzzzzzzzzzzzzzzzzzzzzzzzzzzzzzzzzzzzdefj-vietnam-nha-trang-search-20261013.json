@@ -1,0 +1,28 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "tran phu beach public access": "チャンフー海岸の一般向け入口",
+    "nha trang beach swimming flags": "ニャチャン海岸の遊泳旗",
+    "cam ranh airport transfer": "カムラン空港への送迎",
+    "nha trang train station": "ニャチャン駅",
+    "po nagar opening hours": "ポーナガルの開館時間",
+    "po nagar cham shrine": "ポーナガルのチャム信仰の聖地",
+    "cu lao hill cai river": "クーラオ丘とカイ川",
+    "hon chong viewpoint public access": "ホンチョン展望地の一般利用",
+    "hon mun reserve access": "ホンムン保護区への立ち入り",
+    "nha trang bay coral permit": "ニャチャン湾のサンゴ礁活動許可",
+    "hon mun boat pier": "ホンムン行き船の桟橋",
+    "nha trang marine forecast": "ニャチャンの海上予報"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search delta translated from the exact English search strings and checked for numbers, place names, access terminology and source scope. Same-model review is not independent or human review."
+  }
+}

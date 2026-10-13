@@ -147,6 +147,9 @@ const vietnamPhongNhaEditedHubRoutes = ['/vietnam/phong-nha-ke-bang/'];
 const vietnamPhuQuocLastmod = '2026-10-13';
 const vietnamPhuQuocEditedRoutes = vietnamGuides.filter((guide) => guide.hubSlug === 'phu-quoc-southern-islands' && guide.isoDate === vietnamPhuQuocLastmod).map((guide) => guide.url);
 const vietnamPhuQuocEditedHubRoutes = ['/vietnam/phu-quoc-southern-islands/'];
+const vietnamNhaTrangLastmod = '2026-10-13';
+const vietnamNhaTrangEditedRoutes = vietnamGuides.filter((guide) => guide.hubSlug === 'nha-trang-khanh-hoa' && guide.isoDate === vietnamNhaTrangLastmod).map((guide) => guide.url);
+const vietnamNhaTrangEditedHubRoutes = ['/vietnam/nha-trang-khanh-hoa/'];
 const australiaLastmod = '2026-09-04';
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
@@ -1537,6 +1540,17 @@ for (const route of vietnamPhuQuocEditedHubRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Phu Quoc field hub absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamPhuQuocLastmod });
+}
+
+for (const route of vietnamNhaTrangEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Nha Trang field guide absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamNhaTrangLastmod });
+}
+for (const route of vietnamNhaTrangEditedHubRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Nha Trang field hub absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamNhaTrangLastmod });
 }
 
 for (const route of australiaGreatOceanEditedRoutes) {
