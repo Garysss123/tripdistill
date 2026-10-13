@@ -174,13 +174,7 @@
     "Trail access, ticket, guide and cave hours can change. The park’s live visitor details were not independently accessible during this review; confirm direct with management and the driver.": "步道、票券、導覽與洞穴時間可能變動。本次無法獨立查閱公園即時遊客資訊；請直接向管理單位及司機確認。",
     "Cat Ba National Park — official park information; check directly for current entry and trail status": "吉婆島國家公園 — 官方資訊；直接確認現行入場及步道狀況",
     "Sun World Cat Ba — current island road and attraction sequence context": "Sun World Cat Ba — 吉婆島道路與景點順序資訊",
-    "ha long bay": "下龍灣",
     "ao tien port van don": "雲屯 Ao Tiên 港",
-    "cat ba ferry dong bai cai vieng": "吉婆島 Đồng Bài–Cái Viềng 渡輪",
-    "cat ba town": "吉婆鎮",
-    "ben beo lan ha pier": "Bến Bèo Lan Ha 碼頭",
-    "lan ha bay": "Lan Ha 灣",
-    "vietnam maritime karst route": "越南海上喀斯特路線",
     "bai tu long bay route": "白子龍灣航線",
     "bai tu long national park boat route": "白子龍灣國家公園船班",
     "tra ngo lon cai lim mang ha": "Trà Ngọ Lớn、Cái Lim、Máng Hà 航線",
@@ -197,7 +191,13 @@
     "cat ba national park official visitor information": "吉婆島國家公園官方遊客資訊",
     "Walk one park-confirmed marked trail": "走公園確認可通行的標記步道",
     "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and…": "從吉婆鎮安排陸路日程，出發前先向公園確認步道通行狀況；只有洞穴開放且日照充足時才加入 Quan Y 洞和 Trung Trang 洞……",
-    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "從吉婆鎮安排陸路日程：出發前先由公園確認步道通行狀況；只有在開放時間與日照充足時才加上 Quan Y 洞和 Trung Trang 洞。"
+    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "從吉婆鎮安排陸路日程：出發前先由公園確認步道通行狀況；只有在開放時間與日照充足時才加上 Quan Y 洞和 Trung Trang 洞。",
+    "ha long bay": "下龍灣",
+    "cat ba ferry dong bai cai vieng": "吉婆島 Đồng Bài–Cái Viềng 渡輪",
+    "cat ba town": "吉婆鎮",
+    "ben beo lan ha pier": "Bến Bèo Lan Ha 碼頭",
+    "lan ha bay": "Lan Ha 灣",
+    "vietnam maritime karst route": "越南海上喀斯特路線"
   },
   "reviewProvenance": {
     "writer": "Runtime model identity was not exposed; translations authored in this session",

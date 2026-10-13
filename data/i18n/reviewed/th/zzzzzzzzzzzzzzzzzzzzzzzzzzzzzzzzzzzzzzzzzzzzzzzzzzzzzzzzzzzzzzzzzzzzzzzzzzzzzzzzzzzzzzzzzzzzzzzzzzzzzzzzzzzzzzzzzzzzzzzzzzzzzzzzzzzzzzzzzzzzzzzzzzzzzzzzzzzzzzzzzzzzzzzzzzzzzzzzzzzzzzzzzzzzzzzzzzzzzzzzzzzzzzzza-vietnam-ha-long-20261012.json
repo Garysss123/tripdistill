@@ -174,13 +174,7 @@
     "Trail access, ticket, guide and cave hours can change. The park’s live visitor details were not independently accessible during this review; confirm direct with management and the driver.": "การเปิดทางเดิน ตั๋ว ไกด์ และเวลาถ้ำอาจเปลี่ยน ข้อมูลผู้เยี่ยมชมสดของอุทยานตรวจสอบแยกไม่ได้ครั้งนี้ ให้ยืนยันกับผู้จัดการและคนขับโดยตรง",
     "Cat Ba National Park — official park information; check directly for current entry and trail status": "อุทยานแห่งชาติกั๊ตบา — ตรวจทางเข้าและสถานะเส้นทางปัจจุบันโดยตรง",
     "Sun World Cat Ba — current island road and attraction sequence context": "ซันเวิลด์กั๊ตบา — บริบทถนนเกาะและลำดับสถานที่ท่องเที่ยว",
-    "ha long bay": "ฮาลองเบย์",
     "ao tien port van don": "ท่าเรืออ่าวเตียน วันดอน",
-    "cat ba ferry dong bai cai vieng": "เฟอร์รีด่งบ่าย–ก๊ายเวี่ยง เกาะกั๊ตบา",
-    "cat ba town": "เมืองกั๊ตบา",
-    "ben beo lan ha pier": "ท่าเบ๊นแบว อ่าวลานฮา",
-    "lan ha bay": "อ่าวลานฮา",
-    "vietnam maritime karst route": "เส้นทางคาสต์ทางทะเลเวียดนาม",
     "bai tu long bay route": "เส้นทางอ่าวไบ๋ตื๋อลอง",
     "bai tu long national park boat route": "เรืออุทยานแห่งชาติไบ๋ตื๋อลอง",
     "tra ngo lon cai lim mang ha": "จ่าโง่ลอง ก๊ายลิม ม่างฮา ตามลำดับ",
@@ -197,7 +191,13 @@
     "cat ba national park official visitor information": "ข้อมูลผู้เยี่ยมชมทางการอุทยานแห่งชาติกั๊ตบา",
     "Walk one park-confirmed marked trail": "เดินตามเส้นทางที่มีป้ายซึ่งอุทยานยืนยันว่าเปิดให้เดิน",
     "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and…": "วางแผนเที่ยวทางบกแบบไปเช้าเย็นกลับจากเมืองกั๊ตบา โดยยืนยันกับอุทยานก่อนว่าเส้นทางใดเดินได้ และเพิ่มถ้ำกวนอีกับถ้ำจุงจางเฉพาะเมื่อถ้ำเปิดและยังมีเวลากลางวันเพียงพอ…",
-    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "วางแผนเที่ยวทางบกจากเมืองกั๊ตบา โดยยืนยันกับอุทยานก่อนว่าเส้นทางใดเปิดให้เดิน และเพิ่มถ้ำกวนอีหรือถ้ำจุงจางเฉพาะเมื่อถ้ำเปิดและยังมีเวลากลางวันเพียงพอ"
+    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "วางแผนเที่ยวทางบกจากเมืองกั๊ตบา โดยยืนยันกับอุทยานก่อนว่าเส้นทางใดเปิดให้เดิน และเพิ่มถ้ำกวนอีหรือถ้ำจุงจางเฉพาะเมื่อถ้ำเปิดและยังมีเวลากลางวันเพียงพอ",
+    "ha long bay": "ฮาลองเบย์",
+    "cat ba ferry dong bai cai vieng": "เฟอร์รีด่งบ่าย–ก๊ายเวี่ยง เกาะกั๊ตบา",
+    "cat ba town": "เมืองกั๊ตบา",
+    "ben beo lan ha pier": "ท่าเบ๊นแบว อ่าวลานฮา",
+    "lan ha bay": "อ่าวลานฮา",
+    "vietnam maritime karst route": "เส้นทางคาสต์ทางทะเลเวียดนาม"
   },
   "reviewProvenance": {
     "writer": "Runtime model identity was not exposed; translations authored in this session",

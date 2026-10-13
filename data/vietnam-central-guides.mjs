@@ -944,15 +944,30 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
   family: 'reef-compass',
   label: 'Bay, reef and long-coast transfers · South-Central Vietnam',
   tagline: 'Plan the sea only after the forecast agrees.',
-  hubIntro: 'Nha Trang and Khanh Hoa combine a walkable beach city, Cham worship, island operators, a protected bay, airport-linked Cam Ranh and inland waterfalls. The useful route is a compass: city, culture, sea, transfer, land and conservation each need a different decision.',
-  stay: 'Stay in central Nha Trang for transport, services and a walkable beach base; choose Cam Ranh–Bai Dai only when a quieter airport-side coast is the purpose rather than a substitute for city access.',
-  transfer: 'Use flights, trains and road transfers to reach the coast, then name the exact pier, operator, return buffer and marine forecast for every island day. Do not schedule a boat directly before a flight.',
+  reviewDate: '13 October 2026',
+  isoDate: '2026-10-13',
+  hubIntro: 'Nha Trang is a useful sea-and-city base only when the trip separates the public-facing central shoreline, the active Po Nagar shrine, the northern Hon Chong lookout and a conditional Hon Mun boat day. Count full days after arrival, choose one bed before adding a distant coast, and treat protected-water access as a permission to verify rather than a tour promise.',
+  stay: 'Keep one central Nha Trang base for beach, food, Po Nagar and city transport. Two nights allow one full city day; three can add a separate culture or sea day; four leave one movable weather day. Choose Cam Ranh–Bai Dai only for a confirmed airport-side resort stay with its own road pickup, not as a walkable substitute for Nha Trang.',
+  transfer: 'Vietnam Tourism lists Cam Ranh International Airport about 30 km south and the train station in the city centre. Confirm your actual airport or rail pickup with the lodging provider. Name the boat operator, departure pier, allowed route and return before choosing Hon Mun; never put a boat directly before a flight or train.',
+  nightPlan: {
+    kicker: 'Nights, bases and sea-weather slack',
+    title: 'Count full days after the road transfer',
+    intro: 'Arrival and departure days are connection days, not sightseeing days. Central Nha Trang keeps the short city and culture routes together; a Bai Dai bed trades that access for a quieter, airport-side coast.',
+    options: [
+      ['2 nights', 'One base, one complete city day', 'Sleep in central Nha Trang and use the full day for the public-facing Tran Phu shore, a shaded meal and one city choice. Keep Po Nagar or Hon Chong as a short, separately confirmed addition; do not make a boat or inland waterfall essential to this stay.'],
+      ['3 nights', 'Separate the city and culture days', 'Keep the same central bed. Give one day to the beach-city loop and another to Po Nagar plus Hon Chong, with road transfers between distinct areas. A Hon Mun day can replace one of those choices only after the bay authority, named operator, departure pier, route, weather decision and return are all confirmed.'],
+      ['4 nights', 'Hold one day open for weather', 'Use two full days for the city and north-coast culture, one conditional marine day, and one unbooked reserve. Move the boat only when the responsible operator reconfirms; if access or weather remains unresolved, keep the spare day on land or reschedule.']
+    ],
+    footerTitle: 'Change bases only to solve a confirmed last mile',
+    footer: 'A Cam Ranh–Bai Dai stay is for travelers prioritizing that coast and a hotel-confirmed airport transfer; it adds a road leg to central Nha Trang. Central Nha Trang is the simpler base for the station, city beach and Po Nagar. A second hotel adds check-out and transfer friction, so consider a split only with four or more nights and a booked onward vehicle. Do not use an unconfirmed island boat to connect to a fixed departure.'
+  },
+  routeModelHeading: 'Put the city first and the bay on its own day.',
+  routeModelLead: 'Arrival → one central base → Tran Phu city route → Po Nagar and Hon Chong by a separate road hop → Hon Mun only as a confirmed full-day boat → departure with a land-side buffer. Two nights mean one full day; three nights allow a second purpose; four nights make a weather reserve possible. If the bay authority, operator, pier, access or forecast does not support the outing, keep the day in town or reschedule; do not shop for another unverified boat.',
   sources: [
-    ['https://vietnam.travel/node/220', 'Vietnam Tourism — Nha Trang city, beaches, islands and transport'],
-    ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Digital Travel Platform — Nha Trang Bay'],
-    ['https://dulichso.khanhhoa.gov.vn/en/article/po-nagar-cham-towers-a-millennium-old-heritage-7f7', 'Khanh Hoa Digital Travel Platform — Po Nagar Cham Towers'],
-    ['https://nbca.gov.vn/khu-du-tru-thien-nhien-vinh-nha-trang-khanh-hoa/', 'National Biodiversity Conservation — Nha Trang Bay Nature Reserve'],
-    ['https://ninhhoa.khanhhoa.gov.vn/vi/diem-den-du-lich-36/khu-du-lich-sinh-thai-ba-ho', 'Ninh Hoa Government — Ba Ho Ecotourism Area']
+    ['https://vietnam.travel/node/220', 'Vietnam Tourism — Nha Trang, Cam Ranh airport, central train station and broad seasonal context (checked 13 October 2026; not a live transfer or sea forecast)'],
+    ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — Nha Trang Bay and its coastal arcs (checked 13 October 2026; not an access permit or boat schedule)'],
+    ['https://nbca.gov.vn/khu-du-tru-thien-nhien-vinh-nha-trang-khanh-hoa/', 'National Biodiversity Conservation — Nha Trang Bay Nature Reserve (page updated 16 June 2026; reserve status does not establish visitor access)'],
+    ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — 24-hour marine bulletin for 13 October 2026 (dated regional snapshot, not a future forecast or Hon Mun go/no-go)']
   ],
   guides: [
     {
@@ -960,6 +975,13 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
       name: 'Nha Trang City & Tran Phu Beach',
       motif: 'The public shoreline',
       instrument: 'docket',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://vietnam.travel/node/220', 'Vietnam Tourism — Cam Ranh airport, city train station, Nha Trang Beach and broad wet-season context (checked 13 October 2026; no live pickup or lifeguard status)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — Tran Phu coastal arc and public shoreline context (checked 13 October 2026)'],
+        ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — dated 13 October 2026 marine bulletin; check the forecast issued for your own visit date']
+      ],
       image: image({
         src: '/assets/images/vietnam-nha-trang-beach.webp',
         alt: 'Nha Trang city beach on Vietnam’s south-central coast',
@@ -968,32 +990,53 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: 'Bruce Tuten',
         license: 'CC BY 2.0'
       }),
-      summary: 'Use Nha Trang’s central beach, promenade, seafood and city services as a practical base chapter with real swimming and heat checks.',
-      lead: 'Nha Trang’s coast is public everyday space, resort frontage, exercise ground and working shoreline at once. A useful city page shows where those uses meet and where a visitor should slow down.',
-      orientation: 'Build the day around a short coastal walk, one swim decision and one inland recovery window instead of continuous sun exposure.',
-      arrival: 'Flights, trains and buses reach the city, while taxis and local rides handle the short urban moves. Airport transfer time, traffic and beach crowding still need a margin.',
-      sequence: 'Start with a morning shoreline read, check the current swimming conditions, move inland for food and shade, then return to the promenade only if weather and crowd levels remain comfortable.',
-      boundary: 'Protect the public coast: swim only in permitted areas, obey lifeguards and flags, keep clear of fishing gear and leave no plastic or food waste on the beach.',
+      searchKeywords: ['tran phu beach public access', 'nha trang beach swimming flags', 'cam ranh airport transfer', 'nha trang train station'],
+      summary: 'Make a central Nha Trang day from the Tran Phu shoreline, a current swim decision and a shaded city break; do not assume a resort frontage is a public entry.',
+      lead: 'The city beach is not a single guaranteed swim zone. Tran Phu faces Nha Trang Bay, but the route still depends on which shore sections are publicly approachable, whether staff or flags identify a safe swim area, and how much sun the group can handle. Keep the walk useful even when the water is not.',
+      orientation: 'Stay centrally when the goal is a beach-and-city day: the official Vietnam Tourism profile places the rail station in the centre and Cam Ranh Airport about 30 km south, while listing airport shuttles, taxis and ride-hailing as options. That profile gives general orientation, not your hotel’s pickup, a current fare or a live beach-safety notice. Confirm the airport road leg with your lodging before booking a first or last night.',
+      arrival: 'Start from a named central hotel and use its confirmed road or station pickup. At the shore, remain on public promenade or clearly signed public access; a hotel pool or resort frontage is a separate facility and does not establish a public path through it. No current lifeguard roster, flag status or swim boundary was verified for this review.',
+      sequence: 'Use the cooler part of the day for a Tran Phu promenade walk, then choose one clearly public shore section to assess. Check the day’s local warning flag, lifeguard presence, wave and rain conditions before anyone enters. Leave the shoreline for a meal and shade, then return only if the public path remains open and the group still wants another short look.',
+      boundary: 'Separate public promenade, public beach, paid resort facilities and working shore uses. Follow flags, lifeguards and posted access signs; keep clear of fishing gear and service vehicles, and do not cross a hotel boundary because the sand appears continuous.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'Keep the city route complete if swimming is off.',
+        intro: 'The official city profile supports a central rail anchor and airport-side road transfer, but it does not publish live swim flags, public gates or lifeguard coverage. Start with access that you can confirm on the day.',
+        steps: [
+          ['Base', 'Confirm one central bed', 'Ask the accommodation to name its airport or station pickup and the nearest public-facing shore access; do not plan around a private resort entrance.'],
+          ['Shore', 'Walk the open Tran Phu edge', 'Stay on signed public paths and note where promenades, facilities and working activity meet before selecting a beach section.'],
+          ['Water call', 'Use today’s local signal', 'Enter only if the current flag, lifeguard or responsible staff and sea conditions support it. If no clear signal is present, treat the swim as cancelled.'],
+          ['Reset', 'Return inland for shade', 'Use a meal, café or cultural stop whose current access you confirm; keep the beach walk as a valid half-day even without a swim.']
+        ],
+        fallbackTitle: 'If access or swim status is unclear',
+        fallback: 'Do not search along resort fences or enter from an unmarked lane. Stay on the confirmed public promenade, take the planned shade break and keep a separate city visit for another date.'
+      },
       stages: [
-        ['Choose the base', 'Confirm hotel-to-beach access, arrival transfer and a shaded recovery option before turning the city into an all-day outdoor plan.'],
-        ['Read the shore', 'Observe exercise, families, fishermen, vendors and public facilities without blocking paths or treating ordinary life as a staged scene.'],
-        ['Make the water call', 'Check flags, lifeguards, tide, wind and marine forecast; a swim is optional and should never be forced by the itinerary.'],
-        ['Close in the city', 'Use food, museum or café time to recover from sun, then keep any evening shoreline walk on well-lit public routes.']
+        ['Fix the base leg', 'Keep central Nha Trang as the walkable city base, but confirm the airport or rail pickup with the lodging; Cam Ranh Airport is a separate road transfer.'],
+        ['Walk before choosing', 'Follow the public Tran Phu edge and read the shore signs, facilities and working activity instead of assuming every stretch works as one beach entrance.'],
+        ['Decide whether to swim', 'Check the live flag, lifeguard or staff instruction, wave and rain. An unclear boundary means no swim, even if the water looks calm.'],
+        ['Finish in shade', 'Take a confirmed meal or indoor rest, then return to the promenade only if access, light and weather still suit the group.']
       ],
       risks: [
-        ['Swimming status', 'Lifeguard coverage, warning flags, currents and waves change; never rely on yesterday’s beach conditions.'],
-        ['Sun and heat', 'South-central sun can exhaust visitors quickly; schedule shade, water and a shorter exposure window.'],
-        ['Urban traffic', 'Coastal roads and scooters remain active beside the promenade; use marked crossings and keep belongings secure.']
+        ['No live swim signal', 'No date-specific lifeguard roster or flag status was verified in the official material checked 13 October 2026. Use the responsible local signal on the day; if absent, do not swim.'],
+        ['Heat and rain', 'Nha Trang Tourism’s broad profile describes a wet season from September to December, but this is not a visit-day forecast. Carry water, build in shade and check the current warning before setting out.'],
+        ['Crossing the coast road', 'Scooters and coastal traffic can separate the promenade from the sand. Use marked crossings and do not treat a map pin on the opposite side as a safe entry.']
       ],
-      duration: 'A half day covers the beach and city base; a full day should deliberately include a shaded cultural or food interval.',
-      combine: 'Combine with Po Nagar and Hon Chong for a north-city culture day, but keep island departures and Ba Ho as separate transfer contracts.',
-      verify: 'Check local beach flags, lifeguard availability, marine forecast, traffic and current city access notices before swimming.'
+      duration: 'Treat the shore walk and a shaded meal as a half-day plan; add time only for a confirmed cultural stop or a swim that is safe on the day. These are planning allowances, not measured visit times.',
+      combine: 'Po Nagar and Hon Chong make a separate north-city route with road transfers. Keep Hon Mun, Ba Ho and the airport-side coast off this short city loop.',
+      verify: 'Check today’s public access signs, swim flags or lifeguard instruction, weather and the hotel’s arrival/departure transfer. The 13 October 2026 NCHMF bulletin is a dated example only, not a forecast for later travel.'
     },
     {
       slug: 'po-nagar-hon-chong',
       name: 'Po Nagar Cham Towers & Hon Chong',
       motif: 'Mother of the land, stone of the bay',
       instrument: 'compass',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://dulichso.khanhhoa.gov.vn/en/article/po-nagar-cham-towers-a-millennium-old-heritage-7f7', 'Khanh Hoa Department of Culture, Sports and Tourism — Po Nagar Cham Towers, cultural meaning, access and posted hours (checked 13 October 2026; reconfirm current entry at the site)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — Hon Chong and the northern Nha Trang Bay arc (checked 13 October 2026; no separate viewpoint opening notice)'],
+        ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — 13 October 2026 coastal bulletin; use the latest issue for the visit date']
+      ],
       image: image({
         src: '/assets/images/vietnam-po-nagar.webp',
         alt: 'Po Nagar Cham Towers in Nha Trang',
@@ -1002,32 +1045,54 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: 'wileypics',
         license: 'CC BY 2.0'
       }),
-      summary: 'Pair Po Nagar’s living Cham and Mother Goddess traditions with Hon Chong’s layered coastal geology for a compact north-city chapter.',
-      lead: 'This route connects two different kinds of memory: Po Nagar is a sacred, active religious complex, while Hon Chong is a geological and civic lookout over the bay. They should be linked by respect, not flattened into one photo stop.',
-      orientation: 'Give the tower complex the quieter and more attentive visit, then let Hon Chong open the frame toward sea, island and city.',
-      arrival: 'Both sites are reachable by local ride from central Nha Trang, but Po Nagar’s stairs and Hon Chong’s uneven rock require slower movement and weather awareness.',
-      sequence: 'Visit Po Nagar before the day becomes crowded, move north or along the coast by safe road, then read Hon Chong from permitted ground without climbing unstable formations.',
-      boundary: 'Protect worship, sculpture and rock: dress modestly, ask before photographing rituals, do not touch carvings and stay off fragile or wet boulders.',
+      searchKeywords: ['po nagar opening hours', 'po nagar cham shrine', 'cu lao hill cai river', 'hon chong viewpoint public access'],
+      summary: 'Read Po Nagar as a living Cham and Mother Goddess shrine, then take a separate road hop to the public-facing Hon Chong bay view if access and rock conditions allow.',
+      lead: 'Po Nagar is not a backdrop to the beach: the Khánh Hòa tourism platform describes a sacred shared space shaped by Cham worship of Po Nagar and local Kinh Mother Goddess practice. Hon Chong then changes the scale from tower and river mouth to the bay’s northern coast. The route connects them by interpretation and a confirmed transfer, not by assuming one continuous walk.',
+      orientation: 'The provincial platform places Po Nagar on Cù Lao Hill beside the Cái River and dates its towers from the mid-8th to the 13th century. It lists 06:00–17:30 as the site’s posted hours when checked on 13 October 2026; treat that as a dated lookup, reconfirm before travelling, and expect ritual activity or staff direction to shape what is open. Its description notes a steep stair to the upper precinct and a southern visitor stair; ask which path is currently available and whether it suits your group.',
+      arrival: 'From a confirmed central Nha Trang base, arrange a road ride to the listed Tháp Bà Ponagar address on 2 Tháng 4 Street in Vĩnh Phước. Do not infer a walkable, step-free link from the map. After the shrine, set a second road pickup for Hon Chong; the exact roadside stop and currently open public viewpoint were not verified in this review.',
+      sequence: 'Visit Po Nagar first while the posted hours leave time for an unhurried shrine visit. Read the public interpretation, follow staff directions on which visitor stair is open, and stay clear of any closed approach; then ride to Hon Chong only if its public viewpoint is open and the rocks are dry enough for safe footing. Look from stable public ground toward the bay, Cái River mouth and city; do not climb boulders or descend toward waves.',
+      boundary: 'At Po Nagar, dress and behave respectfully, keep worship routes clear, ask before photographing people and do not touch offerings, sculptures or restricted rooms. At Hon Chong, keep to permitted public paths, leave fragile rock in place and do not make a sea-edge climb part of the itinerary.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'Shrine first, then a confirmed north-coast transfer.',
+        intro: 'The official platform gives Po Nagar’s cultural context and a dated posted-hours snapshot. It does not establish a guaranteed transfer, live ceremony schedule or Hon Chong access status.',
+        steps: [
+          ['Base', 'Set the road pickup', 'Confirm the Po Nagar drop-off and a separate return/pickup after the shrine; keep enough time to reach the second stop without rushing worship.'],
+          ['Shrine', 'Read the public precinct', 'Use only the approach the site staff currently permit. The upper approach has steep steps; choose the southern visitor stair only if it is open and workable for your group.'],
+          ['Transfer', 'Ride to Hon Chong', 'Confirm the public entry and stopping point before leaving the shrine; do not assume the headland is a continuous public footpath.'],
+          ['View', 'Stay on stable ground', 'Read the northern bay arc from an open public viewpoint, then return by the agreed road pickup before rain, rough rock or fading light.']
+        ],
+        fallbackTitle: 'If the shrine or viewpoint is closed',
+        fallback: 'Respect the closure and keep the rest of the day in a confirmed central-city area. Do not substitute a restricted worship space, climb around a gate or treat a closed rock edge as a viewpoint.'
+      },
       stages: [
-        ['Set the meaning', 'Read the official Po Nagar context before entering, and explain to the group that the site remains a place of devotion.'],
-        ['Cross the shrine', 'Move quietly through public areas, keep stairs clear and follow staff instructions around offerings, worship and photography.'],
-        ['Open the compass', 'Transfer to Hon Chong with a safe stopping plan, then identify bay, island and mountain relationships from stable public viewpoints.'],
-        ['Leave no trace', 'Keep the route compact, carry water and waste, and avoid adding an unplanned water activity after rain or high wind.']
+        ['Confirm the two stops', 'Check Po Nagar’s currently posted access and arrange the separate road transfer to an open Hon Chong viewpoint before setting the order.'],
+        ['Visit the living shrine', 'Read the official Cham and Mother Goddess context, follow the designated stair and staff directions, and give worshippers room.'],
+        ['Cross north by road', 'Use a confirmed driver or ride between the river-mouth shrine and Hon Chong; no fixed walk, fare or journey time is claimed.'],
+        ['Read the bay safely', 'Use a public stable viewpoint only. If rain, waves, a closure or uneven rock makes the edge unsafe, turn back and finish in town.']
       ],
       risks: [
-        ['Steep access', 'Po Nagar includes steep stone steps and Hon Chong has uneven surfaces; verify mobility needs and footwear before the route.'],
-        ['Sacred conduct', 'Po Nagar is an active spiritual space; clothing, voice, photography and movement must follow local guidance.'],
-        ['Rock and weather', 'Rain, waves and unstable surfaces can make Hon Chong unsafe; do not climb beyond public paths or edge toward the sea.']
+        ['Stairs and mobility', 'The official Po Nagar description records a steep stair to the upper precinct and a southern visitor stair. Confirm which is open and whether either works for your group; no step-free route was verified.'],
+        ['Ritual access', 'Po Nagar remains an active shared spiritual place. The dated hours do not guarantee every room or stair is open during worship or maintenance.'],
+        ['Rock and sea', 'Wet stone, waves and sudden rain make Hon Chong’s edge a poor place to improvise. Stay on the signed public viewpoint and leave if footing or access is unclear.']
       ],
-      duration: 'Allow a half day with time for both interpretation and a quiet pause; do not reduce Po Nagar to a drive-by viewpoint.',
-      combine: 'Combine with the central beach or city food chapter, not with a rushed island departure or Ba Ho hike.',
-      verify: 'Check Po Nagar visitor guidance, weather, Hon Chong access and local traffic before selecting the order.'
+      duration: 'Use a half day as an editorial allowance for two separate stops and road transfers; neither the time nor a live site schedule is an operator guarantee.',
+      combine: 'A central beach-city meal can complete the day if its public access is confirmed. Keep the Hon Mun boat and Ba Ho inland route on different full days.',
+      verify: 'Recheck the official Po Nagar visitor page and hours, ask staff about the usable stair and shrine boundaries, confirm Hon Chong’s public entry, and check rain, sea-edge conditions and both road pickups.'
     },
     {
       slug: 'hon-mun-island-marine-route',
       name: 'Hon Mun Island Marine Route',
       motif: 'Reef before recreation',
       instrument: 'expedition',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://nbca.gov.vn/khu-du-tru-thien-nhien-vinh-nha-trang-khanh-hoa/', 'National Biodiversity Conservation — Nha Trang Bay reserve and Hon Mun reef context (updated 16 June 2026; not a visitor permit or current open-zone notice)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — bay and island geography (checked 13 October 2026; not a tour timetable)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/things-to-know-when-traveling-by-boat-or-ferry-to-islands-1f7', 'Khanh Hoa Department of Culture, Sports and Tourism — boat safety, life-jacket use and crew authority (checked 13 October 2026)'],
+        ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — marine bulletin for Gia Lai–Khánh Hòa dated 13 October 2026; recheck the issue for your own travel date']
+      ],
       image: image({
         src: '/assets/images/vietnam-hon-mun.webp',
         alt: 'Hon Mun Island in Nha Trang Bay',
@@ -1036,26 +1101,40 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: 'Nguyen Hung Vu',
         license: 'CC BY 2.0'
       }),
-      summary: 'Plan Hon Mun and nearby island waters as a weather-led marine day with licensed operators, reef conduct and a protected return buffer.',
-      lead: 'Nha Trang Bay’s attraction is inseparable from its ecological pressure. The route must put the reef, vessel, crew, swimmer and current marine notice ahead of the promise of a particular fish or color.',
-      orientation: 'Choose one marine purpose—snorkeling, a quiet island landing or a short boat circuit—and leave capacity for cancellation or a land day.',
-      arrival: 'Confirm the exact departure port, operator, vessel, life-jacket policy, sea-state cancellation terms and return time. Speedboats are not interchangeable with wooden boats.',
-      sequence: 'Check the forecast at the pier, board according to crew instruction, enter water only where the operator and protection rules permit, then return with enough time for a missed connection.',
-      boundary: 'Protect coral and passengers: wear a secured life jacket when instructed, remain seated underway, never stand on coral, touch wildlife, feed fish or remove shells.',
+      searchKeywords: ['hon mun reserve access', 'nha trang bay coral permit', 'hon mun boat pier', 'nha trang marine forecast'],
+      summary: 'Treat Hon Mun as a conditional marine outing: verify the current protected-zone rules, named operator, actual pier, allowed activity, weather cancellation and return before paying.',
+      lead: 'Hon Mun’s reef is part of a nature-reserve system, not a promise that every tour may land, snorkel or enter every zone. The national biodiversity authority’s page describes protected waters and ecological pressure; it does not authorize a specific traveler, boat or reef site. Choose the marine day only after the bay authority and the responsible operator confirm what is lawful and operating on your date.',
+      orientation: 'Decide first whether the group wants a boat view or an in-water activity; those are different safety and access choices. The official NCHMF bulletin checked for 13 October 2026 described showers and thunderstorms in the Gia Lai–Khánh Hòa marine area, with possible strong gusts and 1–2 m waves, higher during storms. That is a dated regional snapshot, not a forecast for another day, a specific reef or a go/no-go rule. Recheck the latest bulletin and follow the responsible marine authority and captain.',
+      arrival: 'No current Hon Mun visitor zone, public landing, tour permit, licensed-operator roster, departure pier, ticket condition or cancellation policy was verified for this review. Before paying, obtain the operator’s legal identity and exact pier, named route and activity areas, vessel and crew information, life-jacket policy, return time and refund/reschedule terms. Ask the Nha Trang Bay Management Board which zones are currently open; a nature-reserve page or old tour listing is not clearance.',
+      sequence: 'Check the bay-management notice and forecast before the day; then reconfirm the same route, pier, vessel and return with the operator. At the pier, follow crew instructions and remain seated underway. Enter water only inside a specifically approved activity zone and only if the operator permits the conditions. If weather, access or safety changes, end the boat plan and return to the confirmed base rather than trying a different island or pier.',
+      boundary: 'Keep the reef and passenger boundary intact: follow the current protected-area rules, use a correctly fastened life jacket when instructed, stay seated while the vessel moves, and never stand on, touch, feed, collect from or anchor on reef habitat. Do not enter a closed zone even if another boat is visible there.',
+      routeDiagram: {
+        kind: 'flow',
+        title: 'Permission, weather and the return must all agree.',
+        intro: 'The reserve reference establishes conservation context but not visitor access. Treat each trip as conditional until the bay authority and the actual operator name the same lawful route.',
+        steps: [
+          ['Before booking', 'Ask the bay authority', 'Verify whether Hon Mun and the proposed reef or landing zone are currently open to that activity; if the answer is absent, do not infer permission.'],
+          ['Name the service', 'Record the actual pier and boat', 'Confirm operator identity, vessel, crew, safety equipment, exact route, passenger terms, return and weather cancellation in writing.'],
+          ['Day of departure', 'Use current marine information', 'Check the latest NCHMF issue and follow the captain or authority. A dated forecast or a calm view from the hotel is not clearance.'],
+          ['Return', 'Keep the land connection loose', 'Return to the named pier and leave a substantial buffer before onward rail or air travel; if the responsible party cancels, stay ashore.']
+        ],
+        fallbackTitle: 'If any access or safety answer is missing',
+        fallback: 'Cancel or postpone the outing. Use the already confirmed city beach walk without swimming, or the Po Nagar–Hon Chong route only if those land sites are independently open; do not search for another boat, reef or operator.'
+      },
       stages: [
-        ['Read the sea', 'Check official marine weather, wind, wave and operator notices before leaving the hotel or paying for a trip.'],
-        ['Contract the boat', 'Confirm the vessel, crew, pier, passenger list, safety equipment, route and cancellation policy; keep the written or digital details available.'],
-        ['Enter lightly', 'Follow the guide’s water boundary, maintain neutral buoyancy, keep fins away from coral and choose observation over contact.'],
-        ['Return with slack', 'Leave the water before fatigue, return to the assigned seat and protect the land-side buffer for weather or harbor delays.']
+        ['Check protection first', 'Ask the Nha Trang Bay Management Board whether the named Hon Mun zone and activity are open today; the reserve description itself does not grant entry.'],
+        ['Confirm the vessel', 'Get the exact pier, operator, boat, crew, route, safety equipment, return point and written cancellation conditions before payment.'],
+        ['Use today’s decision', 'Recheck the current marine bulletin and obey the captain or authority. If the outing is cancelled, remain ashore rather than bargain for an unverified replacement.'],
+        ['Protect the return', 'Use only the approved water area, keep life-jacket and reef rules, then return to the same confirmed pier with no tight flight or train connection.']
       ],
       risks: [
-        ['Marine forecast', 'Wind, waves, thunderstorms and visibility can cancel or transform a boat day; no island photo is worth ignoring the forecast.'],
-        ['Operator safety', 'Use a verifiable operator, listen to the captain, wear the life jacket correctly and never climb the bow or gunwale for photos.'],
-        ['Reef protection', 'Nha Trang Bay includes sensitive coral and seagrass; no touching, standing, anchoring in prohibited areas, collecting or feeding.']
+        ['Current zone unknown', 'The National Biodiversity Conservation page updated 16 June 2026 describes the reserve and Hon Mun habitat, but not current tourist permission, zone boundaries, fees or landings. Ask the bay authority.'],
+        ['Marine weather changes', 'The 13 October 2026 Gia Lai–Khánh Hòa bulletin was a one-day snapshot with possible storms and higher waves during storms. It cannot be reused as a later travel forecast.'],
+        ['Vessel and crew', 'The provincial boat-safety guide says to follow crew instructions, stay seated underway and wear the life jacket properly. If the actual operator or equipment is unclear, do not board.']
       ],
-      duration: 'Reserve a full flexible day including pier, boat and recovery time; a marine route should never be squeezed between fixed transport connections.',
-      combine: 'Combine with a city evening only after a generous return margin; do not pair with Cam Ranh airport departure on the same tight clock.',
-      verify: 'Check the National Center for Hydro-Meteorological Forecasting, Nha Trang Bay management notices and the exact licensed operator immediately before departure.'
+      duration: 'Reserve the whole daylight day plus road-to-pier and return slack. This is a planning shape, not a promise that a tour operates for that length or that Hon Mun access is granted.',
+      combine: 'A central-city meal is optional only after the boat returns on time. Do not pair with a flight, train, Ba Ho drive or another paid tour on the same tight schedule.',
+      verify: 'Check the current Nha Trang Bay Management Board notice, the latest NCHMF marine issue and the named operator’s permit, route, actual pier, safety terms and cancellation decision immediately before departure.'
     },
     {
       slug: 'cam-ranh-bai-dai',

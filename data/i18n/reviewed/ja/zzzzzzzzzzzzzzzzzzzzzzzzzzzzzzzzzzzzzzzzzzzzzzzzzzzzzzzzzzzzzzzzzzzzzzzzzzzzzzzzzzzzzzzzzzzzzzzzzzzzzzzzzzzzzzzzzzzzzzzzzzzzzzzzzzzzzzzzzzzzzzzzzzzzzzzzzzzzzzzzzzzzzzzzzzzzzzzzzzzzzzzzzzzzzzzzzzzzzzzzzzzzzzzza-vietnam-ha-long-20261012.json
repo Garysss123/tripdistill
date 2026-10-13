@@ -174,13 +174,7 @@
     "Trail access, ticket, guide and cave hours can change. The park’s live visitor details were not independently accessible during this review; confirm direct with management and the driver.": "トレイル、入園券、ガイド、洞窟の時間は変わります。公園の現行訪問情報を独立確認できなかったため、管理者と運転手へ直接問い合わせてください。",
     "Cat Ba National Park — official park information; check directly for current entry and trail status": "カットバ国立公園 — 現行の入園とトレイル状況は直接確認",
     "Sun World Cat Ba — current island road and attraction sequence context": "サンワールド・カットバ — 島内道路と観光地の順路情報",
-    "ha long bay": "ハロン湾",
     "ao tien port van don": "ヴァンドンのアオティエン港",
-    "cat ba ferry dong bai cai vieng": "カットバ島ドンバイ～カイビエンフェリー",
-    "cat ba town": "カットバ町",
-    "ben beo lan ha pier": "ベンベオ・ランハー湾港",
-    "lan ha bay": "ランハー湾",
-    "vietnam maritime karst route": "ベトナム海上カルストのルート",
     "bai tu long bay route": "バイトゥロン湾の航路",
     "bai tu long national park boat route": "バイトゥロン国立公園の船便",
     "tra ngo lon cai lim mang ha": "チャーゴーロン、カイリム、マンハーの順路",
@@ -197,7 +191,13 @@
     "cat ba national park official visitor information": "カットバ国立公園の公式訪問情報",
     "Walk one park-confirmed marked trail": "公園が通行可能と確認した標識ルートを歩く",
     "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and…": "カットバ町から陸路で日帰りする計画です。出発前に公園へ歩道の通行状況を確認し、洞窟が開いていて日照に余裕があればクアンイ洞とチュンチャン洞を追加します……",
-    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "カットバ町を拠点に陸路の日帰り行程を組みます。出発前に公園へ歩道の通行状況を確認し、開洞時間と日照に余裕がある場合だけクアンイ洞とチュンチャン洞を加えます。"
+    "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.": "カットバ町を拠点に陸路の日帰り行程を組みます。出発前に公園へ歩道の通行状況を確認し、開洞時間と日照に余裕がある場合だけクアンイ洞とチュンチャン洞を加えます。",
+    "ha long bay": "ハロン湾",
+    "cat ba ferry dong bai cai vieng": "カットバ島ドンバイ～カイビエンフェリー",
+    "cat ba town": "カットバ町",
+    "ben beo lan ha pier": "ベンベオ・ランハー湾港",
+    "lan ha bay": "ランハー湾",
+    "vietnam maritime karst route": "ベトナム海上カルストのルート"
   },
   "reviewProvenance": {
     "writer": "Runtime model identity was not exposed; translations authored in this session",

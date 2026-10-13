@@ -12,7 +12,6 @@
   ],
   "translations": {
     "Hue Guide | TripDistill": "คู่มือเที่ยว Hue | TripDistill",
-    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "Hue เหมาะกับการเที่ยวเป็นลำดับภูมิทัศน์ที่เชื่อมกัน ไม่ใช่เช็กลิสต์อนุสรณ์ ใช้ป้อมปราการเป็นฐานเดิน แล้วให้แม่น้ำ สุสานหลวง ตรอกหมู่บ้าน ป่าภูเขา และชายฝั่งลากูนมีเวลาและเผื่ออากาศของตัวเอง",
     "Hue Travel Guide": "คู่มือเที่ยว Hue",
     "How much time should Imperial City & Citadel receive?": "ควรเผื่อเวลาให้ Imperial City & Citadel เท่าไร?",
     "How much time should Royal Tombs of Minh Mang, Tu Duc & Khai Dinh receive?": "ควรเผื่อเวลาให้สุสานหลวง Minh Mang, Tu Duc และ Khai Dinh เท่าไร?",
@@ -22,12 +21,9 @@
     "How much time should Lang Co & Lap An Lagoon receive?": "ควรเผื่อเวลาให้ Lang Co และ Lap An Lagoon เท่าไร?",
     "Meridian Gate, Hue Imperial City · CC BY 4.0": "Meridian Gate, Hue Imperial City · CC BY 4.0",
     "Imperial City & Citadel": "เมืองจักรพรรดิและป้อมปราการ",
-    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "เดินผ่าน Meridian Gate ลานราชสำนัก และชั้นพระราชวังที่ยังเหลืออยู่ตามลำดับที่ช่วยทำความเข้าใจเมืองหลวงเว้ซึ่งมีกำแพงป้องกัน",
     "Royal Tombs of Minh Mang, Tu Duc & Khai Dinh": "สุสานหลวงของ Minh Mang, Tu Duc และ Khai Dinh",
-    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "เปรียบเทียบภูมิทัศน์สุสานหลวงราชวงศ์ Nguyen ทั้งสามแห่งจากแนวแกน สวน เนิน และวัสดุ แทนการรีบผ่านวงรอบอนุสรณ์แบบเดียวกัน",
     "Thien Mu Temple and Pagoda beside the Perfume River in Hue": "วัดและเจดีย์ Thien Mu ริมแม่น้ำ Perfume ใน Hue",
     "Thien Mu & Perfume River": "Thien Mu และแม่น้ำ Perfume",
-    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "ตามแม่น้ำ Perfume ไปยังเจดีย์ Thien Mu และภูมิทัศน์ศาสนาฝั่งตะวันตก ด้วยเส้นทางที่เผื่อจังหวะสักการะ ร่มเงา และริมน้ำ",
     "Thanh Toan tiled bridge near the rural waterways of Hue": "สะพานกระเบื้อง Thanh Toan ใกล้ทางน้ำชนบทของ Hue",
     "The working village edge": "ชุมชนที่ยังมีผู้คนใช้ชีวิตจริง",
     "Thanh Toan Rural & Canal Loop": "เส้นทางชนบทและคลอง Thanh Toan",
@@ -96,6 +92,10 @@
     "Combine with Bach Ma only when the park exit and coastal road are both confirmed; otherwise keep the lagoon as the main destination.": "จับคู่กับ Bach Ma เมื่อยืนยันทางออกอุทยานและถนนชายฝั่งแล้วเท่านั้น มิฉะนั้นให้ลากูนเป็นจุดหมายหลัก",
     "Where the road meets the lagoon.": "จุดที่ถนนบรรจบกับลากูน",
     "Lang Co and Lap An Lagoon · CC BY 4.0": "Lang Co and Lap An Lagoon · CC BY 4.0",
-    "Tide and weather": "น้ำขึ้นน้ำลงและสภาพอากาศ"
+    "Tide and weather": "น้ำขึ้นน้ำลงและสภาพอากาศ",
+    "Hue works best as a sequence of related landscapes rather than a checklist of monuments. Use the Citadel as a walkable anchor, then give the river, royal tombs, village lanes, mountain forest and lagoon coast their own time and weather margin.": "Hue เหมาะกับการเที่ยวเป็นลำดับภูมิทัศน์ที่เชื่อมกัน ไม่ใช่เช็กลิสต์อนุสรณ์ ใช้ป้อมปราการเป็นฐานเดิน แล้วให้แม่น้ำ สุสานหลวง ตรอกหมู่บ้าน ป่าภูเขา และชายฝั่งลากูนมีเวลาและเผื่ออากาศของตัวเอง",
+    "Walk the Meridian Gate, imperial courtyards and surviving palace layers with a realistic reading order for Hue’s defended royal city.": "เดินผ่าน Meridian Gate ลานราชสำนัก และชั้นพระราชวังที่ยังเหลืออยู่ตามลำดับที่ช่วยทำความเข้าใจเมืองหลวงเว้ซึ่งมีกำแพงป้องกัน",
+    "Compare three Nguyen royal tomb landscapes by axis, garden, hill and material rather than rushing through a generic monument loop.": "เปรียบเทียบภูมิทัศน์สุสานหลวงราชวงศ์ Nguyen ทั้งสามแห่งจากแนวแกน สวน เนิน และวัสดุ แทนการรีบผ่านวงรอบอนุสรณ์แบบเดียวกัน",
+    "Follow the Perfume River to Thien Mu Pagoda and the west-bank religious landscape with a route paced for worship, shade and water.": "ตามแม่น้ำ Perfume ไปยังเจดีย์ Thien Mu และภูมิทัศน์ศาสนาฝั่งตะวันตก ด้วยเส้นทางที่เผื่อจังหวะสักการะ ร่มเงา และริมน้ำ"
   }
 }

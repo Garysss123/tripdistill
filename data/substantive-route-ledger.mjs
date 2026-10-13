@@ -348,6 +348,13 @@ export const vietnamPhuQuocNewSubstantiveRoutes = Object.freeze([
   '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
 ]);
 
+export const vietnamNhaTrangNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/nha-trang-khanh-hoa/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/',
+  '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
+  '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -388,5 +395,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: '26-route historical coverage correction', count: 871 }),
   Object.freeze({ label: 'USA overview and Juneau historical correction', count: 873 }),
   Object.freeze({ label: 'Australia final-content batch', count: 878 }),
-  Object.freeze({ label: 'Phu Quoc', count: 882 })
+  Object.freeze({ label: 'Phu Quoc', count: 882 }),
+  Object.freeze({ label: 'Nha Trang', count: 886 })
 ]);

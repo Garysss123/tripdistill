@@ -870,6 +870,13 @@ const vietnamPhuQuocRoutes = [
   '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
   '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
 ];
+const vietnamNhaTrangLastmod = '2026-10-13';
+const vietnamNhaTrangRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/',
+  '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
+  '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
+];
 const australiaBroomeTasmaniaLastmod = '2026-10-13';
 const australiaBroomeTasmaniaRoutes = [
   '/australia/broome-kimberley/kununurra-lake-argyle/',
@@ -1341,6 +1348,11 @@ for (const route of vietnamPhuQuocRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date refreshed Phu Quoc route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamPhuQuocLastmod });
+}
+for (const route of vietnamNhaTrangRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date refreshed Nha Trang route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamNhaTrangLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

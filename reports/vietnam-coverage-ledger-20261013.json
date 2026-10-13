@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "auditedOn": "2026-10-13",
-  "branch": "codex/sprint-vn-after-phong-nha-20261013",
-  "sourceBaseCommit": "01144e03bf6173f468cb836d0899163e1a98c4ea",
+  "branch": "codex/sprint-vn-after-phu-quoc-20261013",
+  "sourceBaseCommit": "a639c760ec728d90a0c271e512cbb7af2fa8bfa4",
   "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
-  "verificationStatus": "npm run build and full npm run audit passed; exact 4,560-URL set retained; source-only branch with no main integration, UI acceptance, or deployment.",
-  "method": "scripts/test-vietnam-phu-quoc-refresh.mjs compares Parse5-visible #main-content text at initial atlas commit 8a1ada3b4021d077fd468c9c318d91823177c0cb, exact requested source base 01144e03bf6173f468cb836d0899163e1a98c4ea, and current tree. It excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It checks all four selected routes for identical initial/base SHA-256 fingerprints and changed current fingerprints; preserves the prior Phong Nha routes and Paradise–Tien Son route; and asserts five-edition canonical/hreflang/Article dates, search summaries, exact 4,560-URL sitemap scope and exact route/date changes.",
+  "verificationStatus": "Passed npm run audit (including i18n required-key and site audits), npm run build, focused Nha Trang/Phu Quoc regressions, 4,560-route sitemap and five-edition checks; source-only topic branch, no UI acceptance or deployment.",
+  "method": "scripts/test-vietnam-nha-trang-refresh.mjs compares Parse5-visible #main-content text at initial atlas commit 8a1ada3b4021d077fd468c9c318d91823177c0cb, exact requested source base a639c760ec728d90a0c271e512cbb7af2fa8bfa4, and current tree. It excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It verifies all four selected Nha Trang routes had identical initial/base SHA-256 fingerprints and changed current fingerprints; preserves earlier Phu Quoc/Phong Nha route bodies; and asserts five-edition canonical/hreflang/Article dates, page and search translations, exactly 20 existing sitemap date changes and the unchanged 4,560-URL set.",
   "totals": {
     "englishRoutes": 99,
-    "previousSubstantiveRoutes": 67,
+    "previousSubstantiveRoutes": 71,
     "previousSprintNewSubstantiveRoutes": 4,
     "newSubstantiveRoutes": 4,
-    "afterSprintSubstantiveRoutes": 75,
-    "remainingRoutes": 24
+    "afterSprintSubstantiveRoutes": 79,
+    "remainingRoutes": 20
   },
   "historicalGroups": {
     "Hanoi": 6,
@@ -24,67 +24,53 @@
   },
   "currentSprintRoutes": [
     {
-      "url": "/vietnam/phu-quoc-southern-islands/",
-      "initialWords": 1113,
-      "baseWords": 1113,
-      "currentWords": 2078,
-      "wordDelta": 965,
-      "initialMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
-      "baseMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
-      "currentMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710"
+      "url": "/vietnam/nha-trang-khanh-hoa/",
+      "initialWords": 1235,
+      "baseWords": 1235,
+      "currentWords": 1973,
+      "wordDelta": 738,
+      "initialMainTextSha256": "f10a0b070447b57b80779d6ec6257cbaf8e29c81857a44505d5d767586c1887a",
+      "baseMainTextSha256": "f10a0b070447b57b80779d6ec6257cbaf8e29c81857a44505d5d767586c1887a",
+      "currentMainTextSha256": "ec1d974399bcd9822b2b9dfbdf90193e704e4df3e2dcfc4626d4fe7989a99a7a"
     },
     {
-      "url": "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
-      "initialWords": 564,
-      "baseWords": 564,
-      "currentWords": 1154,
-      "wordDelta": 590,
-      "initialMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
-      "baseMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
-      "currentMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926"
+      "url": "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+      "initialWords": 666,
+      "baseWords": 666,
+      "currentWords": 1178,
+      "wordDelta": 512,
+      "initialMainTextSha256": "8d08b567d3f211cc6fe95a6d75c03f8bbc644165938a26ae4a34744b0c0c5f19",
+      "baseMainTextSha256": "8d08b567d3f211cc6fe95a6d75c03f8bbc644165938a26ae4a34744b0c0c5f19",
+      "currentMainTextSha256": "9948f162126b13c4b248e34e44e819150e792f23ced7fd6c7976bde0f8d7e2e3"
     },
     {
-      "url": "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
-      "initialWords": 555,
-      "baseWords": 555,
-      "currentWords": 1240,
-      "wordDelta": 685,
-      "initialMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
-      "baseMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
-      "currentMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173"
+      "url": "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+      "initialWords": 663,
+      "baseWords": 663,
+      "currentWords": 1223,
+      "wordDelta": 560,
+      "initialMainTextSha256": "6dd7671d8dfb0ac67d1d5af590de8954080b521371af82dae56ae69466e0ed41",
+      "baseMainTextSha256": "6dd7671d8dfb0ac67d1d5af590de8954080b521371af82dae56ae69466e0ed41",
+      "currentMainTextSha256": "69c5d1237503f99c85e82256ac06fb4e27c920683a5082d108ce03ad8251f877"
     },
     {
-      "url": "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
-      "initialWords": 566,
-      "baseWords": 566,
-      "currentWords": 1202,
-      "wordDelta": 636,
-      "initialMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
-      "baseMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
-      "currentMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67"
+      "url": "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+      "initialWords": 667,
+      "baseWords": 667,
+      "currentWords": 1234,
+      "wordDelta": 567,
+      "initialMainTextSha256": "029514db2eda163ca56247d41ef5a034892da16276a11faa139ae1914e928fd2",
+      "baseMainTextSha256": "029514db2eda163ca56247d41ef5a034892da16276a11faa139ae1914e928fd2",
+      "currentMainTextSha256": "f1c0254fe6f548769188208901f040aa605c36d31ea7d7c388dc62e23e80efae"
     }
   ],
   "excludedHistoricalRoutes": [
-    {
-      "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
-      "reason": "Substantive route body was already refreshed on 12 October 2026; keep it outside this follow-on batch.",
-      "initialMainTextSha256": "e3dfab26ee34a3dbf3eb58c2644de2612751965eeb46b427bdf2f4ccd29cbd7e",
-      "baseMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a",
-      "currentMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a"
-    },
     {
       "url": "/vietnam/phong-nha-ke-bang/",
       "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
       "initialMainTextSha256": "f2df9dd2b47dabc1ce5d37a2835e72d19ba6c6a7ece28b342eea06a620b430a6",
       "baseMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9",
       "currentMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9"
-    },
-    {
-      "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
-      "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
-      "initialMainTextSha256": "41b6de8cd4f2c0cf0d2d829e3b7731a07e29b9f12a88867f1017f97655813133",
-      "baseMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb",
-      "currentMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb"
     },
     {
       "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
@@ -99,6 +85,48 @@
       "initialMainTextSha256": "1f7caf6c5a395752b626a4716509cb02f415a0bf28d8b7ed4f788ec624a8006e",
       "baseMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063",
       "currentMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063"
+    },
+    {
+      "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+      "reason": "Substantive route body was already refreshed on 12 October 2026; keep it outside this follow-on batch.",
+      "initialMainTextSha256": "e3dfab26ee34a3dbf3eb58c2644de2612751965eeb46b427bdf2f4ccd29cbd7e",
+      "baseMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a",
+      "currentMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a"
+    },
+    {
+      "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+      "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+      "initialMainTextSha256": "41b6de8cd4f2c0cf0d2d829e3b7731a07e29b9f12a88867f1017f97655813133",
+      "baseMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb",
+      "currentMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/",
+      "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+      "initialMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
+      "baseMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710",
+      "currentMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+      "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+      "initialMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
+      "baseMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173",
+      "currentMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+      "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+      "initialMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
+      "baseMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926",
+      "currentMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+      "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+      "initialMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
+      "baseMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67",
+      "currentMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67"
     }
   ],
   "remainingRoutesAfterSprint": [
@@ -114,13 +142,9 @@
     "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
     "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
     "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
-    "/vietnam/nha-trang-khanh-hoa/",
     "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
     "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
-    "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
     "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
-    "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
-    "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
     "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
     "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
     "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
@@ -129,10 +153,10 @@
   ],
   "followUpSprint": {
     "reviewedOn": "2026-10-13",
-    "branch": "codex/sprint-vn-after-phong-nha-20261013",
-    "sourceBaseCommit": "01144e03bf6173f468cb836d0899163e1a98c4ea",
+    "branch": "codex/sprint-vn-after-phu-quoc-20261013",
+    "sourceBaseCommit": "a639c760ec728d90a0c271e512cbb7af2fa8bfa4",
     "substantiveRouteCount": 4,
-    "bodyWordDeltaTotal": 2876,
+    "bodyWordDeltaTotal": 2359,
     "routes": "currentSprintRoutes",
     "priorRemainingRoutes": "previousTopLevelSprint.remainingRoutesAfterSprint"
   },
@@ -2250,6 +2274,133 @@
     ]
   },
   "previousTopLevelSprint": {
+    "reviewedOn": "2026-10-13",
+    "branch": "codex/sprint-vn-after-phong-nha-20261013",
+    "sourceBaseCommit": "01144e03bf6173f468cb836d0899163e1a98c4ea",
+    "totals": {
+      "englishRoutes": 99,
+      "previousSubstantiveRoutes": 67,
+      "previousSprintNewSubstantiveRoutes": 4,
+      "newSubstantiveRoutes": 4,
+      "afterSprintSubstantiveRoutes": 75,
+      "remainingRoutes": 24
+    },
+    "currentSprintRoutes": [
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/",
+        "initialWords": 1113,
+        "baseWords": 1113,
+        "currentWords": 2078,
+        "wordDelta": 965,
+        "initialMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
+        "baseMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
+        "currentMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+        "initialWords": 564,
+        "baseWords": 564,
+        "currentWords": 1154,
+        "wordDelta": 590,
+        "initialMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
+        "baseMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
+        "currentMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+        "initialWords": 555,
+        "baseWords": 555,
+        "currentWords": 1240,
+        "wordDelta": 685,
+        "initialMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
+        "baseMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
+        "currentMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+        "initialWords": 566,
+        "baseWords": 566,
+        "currentWords": 1202,
+        "wordDelta": 636,
+        "initialMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
+        "baseMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
+        "currentMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67"
+      }
+    ],
+    "excludedHistoricalRoutes": [
+      {
+        "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+        "reason": "Substantive route body was already refreshed on 12 October 2026; keep it outside this follow-on batch.",
+        "initialMainTextSha256": "e3dfab26ee34a3dbf3eb58c2644de2612751965eeb46b427bdf2f4ccd29cbd7e",
+        "baseMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a",
+        "currentMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "f2df9dd2b47dabc1ce5d37a2835e72d19ba6c6a7ece28b342eea06a620b430a6",
+        "baseMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9",
+        "currentMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "41b6de8cd4f2c0cf0d2d829e3b7731a07e29b9f12a88867f1017f97655813133",
+        "baseMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb",
+        "currentMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "bc4422e269dcbf111b21a67bb952fb51518c0c669a735f6e72f2eb7f042cfc7c",
+        "baseMainTextSha256": "1833538575b9dd4862454650a79235f179bf1678bdc8c155e3b3594c26c63ea5",
+        "currentMainTextSha256": "1833538575b9dd4862454650a79235f179bf1678bdc8c155e3b3594c26c63ea5"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "1f7caf6c5a395752b626a4716509cb02f415a0bf28d8b7ed4f788ec624a8006e",
+        "baseMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063",
+        "currentMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063"
+      }
+    ],
+    "remainingRoutesAfterSprint": [
+      "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+      "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+      "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+      "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+      "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+      "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+      "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+      "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+      "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+      "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+      "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+      "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+      "/vietnam/nha-trang-khanh-hoa/",
+      "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+      "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+      "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+      "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+      "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+      "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+      "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+      "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+      "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+    ],
+    "followUpSprint": {
+      "reviewedOn": "2026-10-13",
+      "branch": "codex/sprint-vn-after-phong-nha-20261013",
+      "sourceBaseCommit": "01144e03bf6173f468cb836d0899163e1a98c4ea",
+      "substantiveRouteCount": 4,
+      "bodyWordDeltaTotal": 2876,
+      "routes": "currentSprintRoutes",
+      "priorRemainingRoutes": "previousTopLevelSprint.remainingRoutesAfterSprint"
+    }
+  },
+  "priorTopLevelSprint": {
     "reviewedOn": "2026-10-13",
     "branch": "codex/sprint-vn-after-mui-ne-20261013",
     "sourceBaseCommit": "cc6de926e49c81324d09cb02590366fefbd8a4eb",

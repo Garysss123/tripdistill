@@ -501,6 +501,13 @@ export const postIntegrationPhuQuocRoutes = Object.freeze([
 ]);
 export const followingVietnamPhuQuocRoutes = postIntegrationPhuQuocRoutes;
 
+export const followingVietnamNhaTrangRoutes = Object.freeze([
+  '/vietnam/nha-trang-khanh-hoa/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/',
+  '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
+  '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -511,6 +518,7 @@ export const postOctober13Routes = Object.freeze([
   ...postLosAngelesBostonRoutes,
   ...postLosAngelesSanDiegoRoutes,
   ...postIntegrationPhuQuocRoutes,
+  ...followingVietnamNhaTrangRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 
@@ -642,6 +650,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationMuiNeRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationPhongNhaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationPhuQuocRoutes) routes.add(`${prefix}${route}`);
+    for (const route of followingVietnamNhaTrangRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationBroomeTasmaniaRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
