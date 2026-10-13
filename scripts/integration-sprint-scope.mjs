@@ -475,6 +475,13 @@ export const postMekongDeltaIntegrationRoutes = Object.freeze([
   '/vietnam/mekong-delta/ben-tre-coconut-islets/'
 ]);
 
+export const followingVietnamDaLatRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/',
+  '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
+  '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
+]);
+
 export const postNewEnglandIntegrationRoutes = Object.freeze([
   '/usa/new-england/',
   '/usa/new-england/portland-maine/',
@@ -514,6 +521,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationAlpsMargaretRoutes) routes.add(`${prefix}${route}`);
     for (const route of postHaLongHCMCIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postMekongDeltaIntegrationRoutes) routes.add(`${prefix}${route}`);
+    for (const route of followingVietnamDaLatRoutes) routes.add(`${prefix}${route}`);
     for (const route of postNewEnglandIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
   }

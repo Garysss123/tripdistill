@@ -28,7 +28,8 @@ import {
   vietnamNewSubstantiveRoutes,
   vietnamHaLongNewSubstantiveRoutes,
   vietnamHcmcNewSubstantiveRoutes,
-  vietnamMekongNewSubstantiveRoutes
+  vietnamMekongNewSubstantiveRoutes,
+  vietnamDaLatNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -107,11 +108,15 @@ assert.equal(vietnamMekongNewSubstantiveRoutes.length, 4, 'Mekong Delta adds fou
 assert.equal(new Set(vietnamMekongNewSubstantiveRoutes).size, 4, 'Mekong Delta additions must be unique.');
 assert(vietnamMekongNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route) && !vietnamHcmcNewSubstantiveRoutes.includes(route)), 'Mekong Delta routes are disjoint from earlier Vietnam ledger groups.');
 for (const route of vietnamMekongNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Mekong Delta ledger path is missing: ${route}`);
+assert.equal(vietnamDaLatNewSubstantiveRoutes.length, 4, 'Da Lat and Central Highlands add four exact existing bodies.');
+assert.equal(new Set(vietnamDaLatNewSubstantiveRoutes).size, 4, 'Da Lat additions must be unique.');
+assert(vietnamDaLatNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route) && !vietnamHcmcNewSubstantiveRoutes.includes(route) && !vietnamMekongNewSubstantiveRoutes.includes(route)), 'Da Lat routes are disjoint from all earlier Vietnam ledger groups.');
+for (const route of vietnamDaLatNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Da Lat ledger path is missing: ${route}`);
 for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -175,4 +180,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta, four Florida, four New England and four Chicago improvements; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret and four remaining Margaret improvements; corrected checkpoints through 805.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta and Da Lat improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta, four Florida, four New England and four Chicago improvements; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret and four remaining Margaret improvements; corrected checkpoints through 809.');

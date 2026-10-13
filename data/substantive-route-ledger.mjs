@@ -161,6 +161,13 @@ export const vietnamMekongNewSubstantiveRoutes = Object.freeze([
   '/vietnam/mekong-delta/ben-tre-coconut-islets/'
 ]);
 
+export const vietnamDaLatNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/',
+  '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
+  '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
+]);
+
 // Canada reached its exact 73-path completion set in three late batches:
 // Winnipeg, Whitehorse and Yellowknife. The Canada overview counts only after
 // its non-card editorial text was materially refreshed in CA18.
@@ -247,5 +254,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Mekong Delta', count: 793 }),
   Object.freeze({ label: 'New England', count: 797 }),
   Object.freeze({ label: 'Margaret River remaining guides', count: 801 }),
-  Object.freeze({ label: 'Chicago', count: 805 })
+  Object.freeze({ label: 'Chicago', count: 805 }),
+  Object.freeze({ label: 'Da Lat & Central Highlands', count: 809 })
 ]);
