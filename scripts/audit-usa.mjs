@@ -7,6 +7,7 @@ import {usaImageManifest} from '../data/usa-image-manifest.mjs';
 import {miamiDescriptions} from './miami-editorial.mjs';
 import {orlandoDescriptions} from './orlando-editorial.mjs';
 import {hawaiiDescriptions} from './hawaii-editorial.mjs';
+import {atlantaDescriptions} from './atlanta-editorial.mjs';
 
 const root=path.resolve(import.meta.dirname,'..');
 const failures=[];
@@ -72,7 +73,8 @@ const usaEditedSitemapRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kena
 const sprintUsSitemapRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
 const hawaiiSitemapRoutes=new Set(['/usa/hawaii/','/usa/hawaii/oahu/','/usa/hawaii/maui/','/usa/hawaii/hawaii-island/']);
 const newOrleansRefreshRoutes=new Set(['/usa/new-orleans/','/usa/new-orleans/french-quarter/','/usa/new-orleans/garden-district/','/usa/new-orleans/river-wetlands/']);
-for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
+const atlantaRefreshRoutes=new Set(['/usa/atlanta/','/usa/atlanta/king-historic-district/','/usa/atlanta/midtown-museums/','/usa/atlanta/beltline/']);
+for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');
 for(const r of usaRoutes)check(records.some(x=>x.url===r),`${r}: missing search entry`);
@@ -84,7 +86,11 @@ const expectedEditorialSearch=new Map([
  ['/usa/hawaii/',hawaiiDescriptions[0]],
  ['/usa/hawaii/oahu/',hawaiiDescriptions[1]],
  ['/usa/hawaii/maui/',hawaiiDescriptions[2]],
- ['/usa/hawaii/hawaii-island/',hawaiiDescriptions[3]]
+ ['/usa/hawaii/hawaii-island/',hawaiiDescriptions[3]],
+ ['/usa/atlanta/',atlantaDescriptions[0]],
+ ['/usa/atlanta/king-historic-district/',atlantaDescriptions[1]],
+ ['/usa/atlanta/midtown-museums/',atlantaDescriptions[2]],
+ ['/usa/atlanta/beltline/',atlantaDescriptions[3]]
 ]);
 for(const [route,summary] of expectedEditorialSearch)check(records.find(x=>x.url===route)?.summary===summary,`${route}: search summary is stale`);
 check(read('scripts/build-dist.mjs').includes("'usa'"),'USA absent from build allowlist');

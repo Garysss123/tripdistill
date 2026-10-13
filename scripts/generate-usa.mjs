@@ -68,6 +68,9 @@ const hawaiiRefreshRoutes = new Set([
 const newOrleansRefreshRoutes = new Set([
  '/usa/new-orleans/','/usa/new-orleans/french-quarter/','/usa/new-orleans/garden-district/','/usa/new-orleans/river-wetlands/'
 ]);
+const atlantaRefreshRoutes = new Set([
+ '/usa/atlanta/','/usa/atlanta/king-historic-district/','/usa/atlanta/midtown-museums/','/usa/atlanta/beltline/'
+]);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
  '/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/',
@@ -83,7 +86,7 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }
