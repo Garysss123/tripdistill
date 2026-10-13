@@ -1,0 +1,38 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Po Sah Inu tower current opening": "ポーサイン塔の現在の開館状況",
+    "Pô Sah Inư Cham heritage Phan Thiet": "ファンティエットのポーサインウー・チャム遺跡",
+    "Phan Thiet public fishing harbor access": "ファンティエット漁港の一般公開エリア",
+    "Phan Thiet town or Mui Ne base": "ファンティエット市内とムイネーの宿泊拠点比較",
+    "Phan Thiet local transfer return": "ファンティエットの現地送迎と帰路",
+    "Ta Cu Mountain current cableway and trail": "タクー山の現在のロープウェイと登山道",
+    "Ke Ga lighthouse boat landing permission": "ケーガー灯台への船と上陸許可",
+    "Ke Ga tide and sea condition": "ケーガーの潮汐と海況",
+    "Phan Thiet base Ta Cu return driver": "ファンティエットを拠点にしたタクー山の帰りの車",
+    "Mui Ne to Ta Cu transport": "ムイネーからタクー山への交通",
+    "Phu Quy ferry exact date from Phan Thiet": "ファンティエット発フークイ島の指定日フェリー",
+    "Phu Quy island nights mainland buffer": "フークイ島の宿泊数と本土側の予備泊",
+    "Superdong Phu Quy ticket portal": "Superdong フークイ島の公式チケット窓口",
+    "Phu Quy island host transport": "フークイ島の宿からの送迎",
+    "Phu Quy Cao Cat Linh Son access": "フークイ島のカオカットとリンソンへのアクセス",
+    "Phu Quy ferry cancellation plan": "フークイ島フェリー欠航時の代替計画",
+    "U Minh Ha National Park visitor access": "カマウ省ウーミンハ国立公園の現在の入園情報",
+    "Ca Mau City to Dat Mui route and lodging": "カマウ市からダットムイ岬への経路と宿泊",
+    "Cape Ca Mau return transfer": "カマウ岬からの帰路送迎",
+    "Ca Mau forest and mangrove nights": "カマウの森林とマングローブに必要な宿泊数",
+    "Ca Mau park permit and local guide": "カマウ公園の許可と現地ガイド",
+    "U Minh Ha Dat Mui separate days": "ウーミンハとダットムイを別日に訪問"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Self-review checked place-name consistency, search intent, transport and access wording. It is not independent model or human review."
+  }
+}

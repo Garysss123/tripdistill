@@ -540,6 +540,14 @@ export const followingVietnamCavesIslandsGapsRoutes = Object.freeze([
   '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ]);
 
+// Coastal follow-on: four existing southern Vietnam routes.
+export const followingVietnamCoastalGapsRoutes = Object.freeze([
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -555,6 +563,7 @@ export const postOctober13Routes = Object.freeze([
   ...followingVietnamSouthernGapsRoutes,
   ...followingVietnamBayGapsRoutes,
   ...followingVietnamCavesIslandsGapsRoutes,
+  ...followingVietnamCoastalGapsRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 

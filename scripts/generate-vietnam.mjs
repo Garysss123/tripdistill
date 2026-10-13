@@ -138,8 +138,8 @@ function routeDiagramMarkup(diagram) {
 function nightPlanMarkup(plan, format = 'regional') {
   if (!plan) return '';
   const isGuide = format === 'guide';
-  const sectionClass = isGuide ? 'vn-stay-plan' : 'vn-mui-ne-plan';
-  const cardsClass = isGuide ? 'vn-stay-plan__cards' : 'vn-mui-ne-plan__cards';
+  const sectionClass = isGuide ? 'vn-stay-plan vn-night-plan' : 'vn-mui-ne-plan vn-night-plan';
+  const cardsClass = isGuide ? 'vn-stay-plan__cards vn-night-plan__cards' : 'vn-mui-ne-plan__cards vn-night-plan__cards';
   const titleId = isGuide ? 'vn-stay-plan-title' : 'vn-mui-ne-plan-title';
   const options = plan.options.map(([label, heading, copy]) => `
         <article><small>${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
@@ -222,7 +222,7 @@ ${guide.routeDiagram ? `      ${routeDiagramMarkup(guide.routeDiagram)}\n` : ''}
       <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.checksLabel || 'Before committing')}</span><h2 id="vn-checks-title">${escapeHtml(guide.presentation?.checksTitle || 'Three weak points to solve.')}</h2></div>${checksIntroMarkup}</div><div class="vn-check-grid">${checks}</div>${boundary}</section>
       <section class="vn-field-section" aria-labelledby="vn-faq-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.faqLabel || 'Planning answers')}</span><h2 id="vn-faq-title">${escapeHtml(guide.presentation?.faqTitle || (guide.name + ' FAQ'))}</h2></div></div><div class="faq-list">${faq}</div></section>
       <section class="vn-field-section" aria-labelledby="vn-related-title"><div class="vn-section-head"><div><span class="vn-section-label">Continue in ${escapeHtml(cluster.name)}</span><h2 id="vn-related-title">Choose the next chapter by purpose.</h2></div><p>Return to the hub before joining distant branches into one day.</p></div><div class="vn-related">${relatedCards(cluster, guide.slug, guide.relatedMotifOverrides)}</div><p class="vn-back"><a href="/vietnam/${cluster.slug}/">← Return to the complete ${escapeHtml(cluster.name)} guide</a></p></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${guideReviewDate}. Schedules, access, tickets, weather and operator terms change; verify directly before travel.</p><ul>${sourceList(guide.sources || cluster.sources)}${uniqueImages(cluster.guides).map((image) => imageCredit(image, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang')).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>${escapeHtml(guide.sourceReviewText || `Planning facts and image licenses were reviewed on ${guideReviewDate}. Schedules, access, tickets, weather and operator terms change; verify directly before travel.`)}</p><ul>${sourceList(guide.sources || cluster.sources)}${uniqueImages(cluster.guides).map((image) => imageCredit(image, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang')).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>

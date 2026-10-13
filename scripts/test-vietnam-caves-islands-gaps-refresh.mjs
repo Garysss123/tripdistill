@@ -20,6 +20,12 @@ const routes = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
   '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
+const coastalGapsRoutes = [
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+];
 const locales = [
   { code: 'en', dir: '', prefix: '' },
   { code: 'zh-Hant', dir: 'zh', prefix: '/zh' },
@@ -139,12 +145,12 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four assigned English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...coastalGapsRoutes].sort(), 'Only the four assigned English search records and the separately registered later coastal records may change.');
 
 // Only English route HTML is tracked. Localized route HTML lives under the
 // ignored generated edition directories and is checked from the generated
 // files below after localize:pages/build.
-const expectedPageFiles = routes.map((route) => `${route.slice(1)}index.html`).sort();
+const expectedPageFiles = [...routes, ...coastalGapsRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 const changedPageFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam', 'zh/vietnam', 'ja/vietnam', 'ko/vietnam', 'th/vietnam'])
   .trim().split('\n').filter(Boolean).sort();
 assert.deepEqual(changedPageFiles, expectedPageFiles, 'Only the four selected route pages in five editions may change under route directories.');
@@ -154,7 +160,7 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560, 'Exact base sitemap URL count.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap URL count.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(locales.flatMap(({ prefix }) => [...routes, ...coastalGapsRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -276,6 +282,16 @@ for (const locale of locales.slice(1)) {
   expectedReviewedDiffs.add(`data/i18n/reviewed/${locale.code}/${pageBatchNames[0]}`);
   expectedReviewedDiffs.add(`data/i18n/reviewed/${locale.code}/${searchBatchName}`);
 }
+const coastalArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-coastal-gaps/2026-10-13/manifest.json'), 'utf8'));
+for (const archived of coastalArchive.files) expectedReviewedDiffs.add(archived.sourcePath);
+for (const locale of locales.slice(1)) {
+  const directory = path.join(root, 'data/i18n/reviewed', locale.code);
+  for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${locale.code}: exact coastal ${suffix.includes('search') ? 'search' : 'pages'} batch.`);
+    expectedReviewedDiffs.add(`data/i18n/reviewed/${locale.code}/${matches[0]}`);
+  }
+}
 const changedReviewedDiffs = [...new Set([
   ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
@@ -332,15 +348,16 @@ for (const route of routes) {
 }
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.totals.englishRoutes, 99, 'Vietnam route total from prior ledger.');
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 87, 'Prior substantive baseline from VN87/99.');
-assert.equal(ledger.totals.remainingRoutes, 12, 'Prior exact remainder from VN87/99.');
-const priorRemaining = new Set(ledger.remainingRoutesAfterSprint);
+const priorLedger = ledger.previousCheckpoint;
+assert.equal(priorLedger.totals.englishRoutes, 99, 'Vietnam route total from the exact prior coverage checkpoint.');
+assert.equal(priorLedger.totals.afterSprintSubstantiveRoutes, 87, 'Exact substantive baseline from VN87/99.');
+assert.equal(priorLedger.totals.remainingRoutes, 12, 'Exact remainder from VN87/99.');
+const priorRemaining = new Set(priorLedger.remainingRoutesAfterSprint);
 for (const route of routes) assert(priorRemaining.has(route), `${route}: exact prior ledger did not list this route as remaining.`);
-const afterCount = ledger.totals.afterSprintSubstantiveRoutes + routes.length;
+const afterCount = priorLedger.totals.afterSprintSubstantiveRoutes + routes.length;
 assert.equal(afterCount, 91, 'Source-task ledger advances exactly four from 87 substantive routes.');
 assert.equal(898 + routes.length, 902, 'The verified integration checkpoint advances exactly four from 898 to 902 substantive routes.');
-assert.equal(ledger.totals.remainingRoutes - routes.length, 8, 'This batch leaves eight routes.');
+assert.equal(priorLedger.totals.remainingRoutes - routes.length, 8, 'This batch leaves eight routes from its exact historical 87/99 baseline.');
 
 console.log('Vietnam caves-islands-gaps regression passed: exact-base history hashes, four substantive bodies, four English/localized search records, 25 translated search keys per locale, 203 fresh page keys per locale, 340 source-base and 24 integration-follow-up stale keys archived, all reactivated keys retained, exact five-edition page scope/dates/canonicals/hreflang, exactly 20 sitemap dates, 4,560 stable URLs and the source-ledger 87→91/99 and integrated site ledger 898→902/907.');
 console.log(JSON.stringify({ baselineCommit, integrationBaseCommit, sourceTerminal, initialAtlasCommit, bodyChecks, coverage: { sourceBefore: 87, added: 4, sourceAfter: afterCount, integratedBefore: 898, integratedAfter: 902, remainingInSourceLedger: 8 }, searchRecords: { before: 955, after: currentSearch.length, changed: changedSearchRoutes }, sitemap: { before: baseSitemap.size, after: currentSitemap.size, changedDates: [...expectedDatePaths].sort() } }, null, 2));

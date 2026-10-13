@@ -31,6 +31,12 @@ const cavesIslandsGapsRoutes = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
   '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
+const coastalGapsRoutes = [
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+];
 const hubs = [
   'vietnam/ho-chi-minh-city/index.html',
   'vietnam/mekong-delta/index.html'
@@ -147,8 +153,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...bayGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...cavesIslandsGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four Southern guides, the Bay-gaps guides and four cave/island follow-on guides and their two updated hub excerpts.');
+const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...bayGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...cavesIslandsGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...coastalGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four Southern guides, the Bay-gaps guides, the cave/island and coastal follow-on guides, and their two updated hub excerpts.');
 const sourceEnglishVietnamFiles = git(['diff', '--name-only', `${baselineCommit}..${sourceTerminal}`, '--', 'vietnam']).trim().split('\n').filter((repoPath) => repoPath.endsWith('.html')).sort();
 const expectedSourceEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
 assert.deepEqual(sourceEnglishVietnamFiles, expectedSourceEnglishVietnamFiles, 'the exact southern source terminal changes only the four guides and two hub excerpts under vietnam/.');
@@ -166,7 +172,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes].sort(), 'Only the four Southern and the Bay-gaps and four cave/island follow-on English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].sort(), 'Only the four Southern and the Bay-gaps, cave/island and coastal follow-on English search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), route + ': English search record must match the exact southern source terminal.');
 
@@ -176,7 +182,7 @@ const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes].map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -308,23 +314,34 @@ for (const edition of editions.slice(1)) {
 }
 const bayArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-bay-gaps/2026-10-13/manifest.json'), 'utf8'));
 expectedReviewedDiffs.push(...bayArchive.archivedFiles.map((file) => file.source));
+const coastalArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-coastal-gaps/2026-10-13/manifest.json'), 'utf8'));
+expectedReviewedDiffs.push(...coastalArchive.files.map((file) => file.sourcePath));
+for (const edition of editions.slice(1)) {
+  const directory = path.join(root, 'data/i18n/reviewed', edition.code);
+  for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${edition.code}: expected one explicit coastal ${suffix.includes('search') ? 'search' : 'pages'} batch.`);
+    expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
+  }
+}
 assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only historical southern-gaps files, the separately archived bay-gaps overlay, and their reviewed batches may change; drafts and parallel translations must stay untouched.');
 
 const changedSvgs = git(['diff', '--name-only', integrationBaseCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.branch, 'codex/sprint-vn-southern-gaps-20261013');
-assert.equal(ledger.sourceBaseCommit, baselineCommit);
-assert.equal(ledger.totals.englishRoutes, 99);
-assert.equal(ledger.totals.previousSubstantiveRoutes, 79);
-assert.equal(ledger.totals.previousSprintNewSubstantiveRoutes, 4);
-assert.equal(ledger.totals.newSubstantiveRoutes, 4);
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 87);
-assert.equal(ledger.totals.remainingRoutes, 12);
-assert.deepEqual(ledger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
+const southernCheckpoint = ledger.previousCheckpoint;
+assert.equal(southernCheckpoint.branch, 'codex/sprint-vn-southern-gaps-20261013');
+assert.equal(southernCheckpoint.sourceBaseCommit, baselineCommit);
+assert.equal(southernCheckpoint.totals.englishRoutes, 99);
+assert.equal(southernCheckpoint.totals.previousSubstantiveRoutes, 79);
+assert.equal(southernCheckpoint.totals.previousSprintNewSubstantiveRoutes, 4);
+assert.equal(southernCheckpoint.totals.newSubstantiveRoutes, 4);
+assert.equal(southernCheckpoint.totals.afterSprintSubstantiveRoutes, 87);
+assert.equal(southernCheckpoint.totals.remainingRoutes, 12);
+assert.deepEqual(southernCheckpoint.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
 for (const check of bodyChecks) {
-  const entry = ledger.currentSprintRoutes.find((route) => route.url === check.url);
+  const entry = southernCheckpoint.currentSprintRoutes.find((route) => route.url === check.url);
   assert.equal(entry.baseWords, check.baseWords, check.url + ': ledger base words');
   assert.equal(entry.currentWords, check.currentWords, check.url + ': ledger current words');
   assert.equal(entry.currentMainTextSha256, check.currentMainTextSha256, check.url + ': ledger current body hash');
@@ -343,11 +360,11 @@ const expectedRemaining = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
   '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
-assert.deepEqual(ledger.remainingRoutesAfterSprint, expectedRemaining);
-assert.equal(ledger.previousSouthernGapsCheckpoint.totals.afterSprintSubstantiveRoutes, 83);
-assert.equal(ledger.previousSouthernGapsCheckpoint.totals.remainingRoutes, 16);
+assert.deepEqual(southernCheckpoint.remainingRoutesAfterSprint, expectedRemaining);
+assert.equal(southernCheckpoint.previousSouthernGapsCheckpoint.totals.afterSprintSubstantiveRoutes, 83);
+assert.equal(southernCheckpoint.previousSouthernGapsCheckpoint.totals.remainingRoutes, 16);
 assert.deepEqual(
-  ledger.previousSouthernGapsCheckpoint.remainingRoutesAfterSprint.filter((route) => routes.includes(route)).sort(),
+  southernCheckpoint.previousSouthernGapsCheckpoint.remainingRoutesAfterSprint.filter((route) => routes.includes(route)).sort(),
   [...routes].sort(),
   'The four targets must have been unfinished in the previous coverage checkpoint.'
 );
