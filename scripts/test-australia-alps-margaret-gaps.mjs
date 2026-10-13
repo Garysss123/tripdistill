@@ -11,7 +11,8 @@ const branches = new Set([
   'codex/sprint-au-alps-margaret-gaps-20261013',
   'codex/sprint-au-margaret-remaining-20261013',
   'codex/sprint-au-broome-content-20261013',
-  'codex/sprint-au-broome-tasmania-gaps-20261013'
+  'codex/sprint-au-broome-tasmania-gaps-20261013',
+  'codex/sprint-au-final-content-20261013'
 ]);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const followupCheckpoint = '55e3b9710c24b45975bdaea5769ab3e4a39ffc44';
@@ -139,7 +140,9 @@ function searchMap(text) { return new Map(JSON.parse(text).map((entry) => [entry
 const currentBranch = git(['branch', '--show-current']).trim();
 assert(branches.has(currentBranch), 'Selected source branch is one of the authorized Australia follow-up branches.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).trim().split(/\r?\n/u);
-const expectedCheckpoint = currentBranch === 'codex/sprint-au-broome-content-20261013'
+const finalContentSprint = currentBranch === 'codex/sprint-au-final-content-20261013';
+const exactFinalBase = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
+const expectedCheckpoint = finalContentSprint ? exactFinalBase : currentBranch === 'codex/sprint-au-broome-content-20261013'
   ? broomeCheckpoint
   : currentBranch === 'codex/sprint-au-broome-tasmania-gaps-20261013' ? '8baea8a720ebd88ff6834e60235e29c03343c4c4'
   : currentBranch === 'codex/sprint-au-margaret-remaining-20261013' ? followupCheckpoint : base;
@@ -152,6 +155,13 @@ const correctionFiles = [
 ];
 for (const file of correctionFiles) {
   assert.equal(fs.readFileSync(path.join(root, file), 'utf8'), git(['show', `${correction}:${file}`]), `${file}: parallel arrow correction stays byte-for-byte intact.`);
+}
+
+if (finalContentSprint) {
+  const priorRoutes = [...routes, ...remainingRoutes, ...broomeRoutes, ...broomeTasmaniaRoutes];
+  for (const route of priorRoutes) git(['diff', '--quiet', exactFinalBase, '--', `${route.slice(1)}index.html`]);
+  console.log('Earlier Australia content protection passed: all prior Alps, Margaret River, Broome and Tasmania routes remain unchanged from the exact final-content base; arrow corrections remain byte-for-byte intact.');
+  process.exit(0);
 }
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();

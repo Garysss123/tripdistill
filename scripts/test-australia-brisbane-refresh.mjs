@@ -98,8 +98,9 @@ const currentBroomeTasmaniaRoutes = [
   '/australia/tasmania/',
   '/australia/tasmania/nipaluna-hobart-salamanca/'
 ];
-const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes];
-const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes];
+const currentFinalContentRoutes = ['/australia/', '/australia/tasmania/cradle-freycinet/', '/australia/tasmania/kunanyi-mount-wellington/', '/australia/tasmania/launceston-tamar-valley/', '/australia/tasmania/port-arthur-tasman-peninsula/'];
+const branchRefreshRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes, ...currentFinalContentRoutes];
+const branchSearchRoutes = [...routes, ...subsequentRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...currentSydneyNswGapRoutes, ...currentBrisbaneGoldCoastGapRoutes, ...currentMelbourneOceanGapRoutes, ...currentAdelaidePerthGapRoutes, ...currentTopEndWhitsundaysRoutes, ...currentCanberraGapRoutes, ...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes, ...currentFinalContentRoutes];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const isoDate = '2026-10-12';
 const svgPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
@@ -414,7 +415,7 @@ const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only existing Australia refresh and current regional and Alps/Margaret gap route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) {
-  const expectedDate = [...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
+  const expectedDate = [...currentAlpsMargaretRoutes, ...currentMargaretRemainingRoutes, ...currentBroomeRoutes, ...currentBroomeTasmaniaRoutes, ...currentFinalContentRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
   assertIssue(currentSitemap.get(route) === expectedDate, `${route}: sitemap lastmod is not ${expectedDate}.`);
 }
 

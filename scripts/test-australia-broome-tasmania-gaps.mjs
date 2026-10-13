@@ -102,7 +102,18 @@ function sitemapMap(raw) {
 }
 function fileFor(route, prefix = '') { return path.join(root, `${prefix}${route}`.replace(/^\//u, ''), 'index.html'); }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Exact source branch.');
+const currentBranch = git(['branch', '--show-current']).trim();
+if (currentBranch === 'codex/sprint-au-final-content-20261013') {
+  const finalBase = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
+  git(['merge-base', '--is-ancestor', finalBase, 'HEAD']);
+  for (const route of routes) git(['diff', '--quiet', finalBase, '--', `${route.slice(1)}index.html`]);
+  for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg', 'assets/images/australia-kings-park-entry-choice.svg']) {
+    assert.equal(fs.readFileSync(path.join(root, asset), 'utf8'), git(['show', `${correction}:${asset}`]), `${asset}: parallel arrow correction remains intact.`);
+  }
+  console.log('Broome/Tasmania prior-route protection passed: all four earlier routes remain unchanged from the exact final-content base; arrow correction remains byte-for-byte intact.');
+  process.exit(0);
+}
+assert.equal(currentBranch, branch, 'Exact source branch.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=2', 'HEAD']).trim().split(/\r?\n/u);
 assert(firstParents[0] === base || firstParents[1] === base, 'The source branch starts at or is a direct child of the exact authorized checkpoint.');
 git(['merge-base', '--is-ancestor', base, 'HEAD']);

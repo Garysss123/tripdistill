@@ -102,8 +102,8 @@ if (branch === 'codex/sprint-au-alps-margaret-gaps-20261013') {
   process.exit(0);
 }
 
-if (['codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013', 'codex/sprint-au-broome-tasmania-gaps-20261013'].includes(branch)) {
-  const priorSourceBase = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
+if (['codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013', 'codex/sprint-au-broome-tasmania-gaps-20261013', 'codex/sprint-au-final-content-20261013'].includes(branch)) {
+  const priorSourceBase = branch === 'codex/sprint-au-final-content-20261013' ? '335f19b4f3cbc69038ff943a1beec7049c135a2c' : 'a99fbe9fe996ccedbac42b1b9386447a11403854';
   const priorCanberraPaths = routes.map((route) => `${route.slice(1)}index.html`);
   assert.equal(git(['diff', '--name-only', priorSourceBase, '--', ...priorCanberraPaths]).trim(), '', 'The previously refreshed Canberra city routes remain unchanged on the Margaret follow-up branch.');
   console.log('Canberra prior-route protection passed: all four city pages are unchanged from the exact a99fbe9 source base.');

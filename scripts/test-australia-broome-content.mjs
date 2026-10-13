@@ -106,6 +106,13 @@ function sitemapMap(xml) {
 }
 
 const currentBranch = git(['branch', '--show-current']).trim();
+if (currentBranch === 'codex/sprint-au-final-content-20261013') {
+  const finalBase = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
+  git(['merge-base', '--is-ancestor', finalBase, 'HEAD']);
+  for (const route of routes) git(['diff', '--quiet', finalBase, '--', `${route.slice(1)}index.html`]);
+  console.log('Broome prior-route protection passed: the four previously completed Broome routes remain unchanged from the exact final-content base.');
+  process.exit(0);
+}
 if (currentBranch === laterBranch) {
   git(['merge-base', '--is-ancestor', laterBase, 'HEAD']);
   for (const route of routes) git(['diff', '--quiet', laterBase, '--', route.slice(1) + 'index.html']);

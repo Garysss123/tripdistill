@@ -1,0 +1,23 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare a 14-night Sydney–Melbourne–Cairns flight route with an 18-night mainland and Tasmania ferry circuit, including nights, bases, terminal links, last-mile checks and weather or closure decisions.": "比較 14 晚雪梨–墨爾本–凱恩斯飛行路線與 18 晚澳洲本土加塔斯馬尼亞渡輪環線，列出夜數、住宿基地、碼頭接駁、最後一段交通查核，以及天候或封閉時的決策。",
+    "australia itinerary 14 nights": "澳洲 14 晚行程",
+    "18 night Australia Tasmania ferry route": "澳洲與塔斯馬尼亞 18 晚渡輪路線",
+    "Sydney Melbourne Cairns flights itinerary": "雪梨、墨爾本、凱恩斯航班行程",
+    "Geelong Devonport ferry Tasmania route": "吉朗、德文波特與塔斯馬尼亞渡輪路線",
+    "Tasmania gateway bases Cradle Freycinet Hobart": "塔斯馬尼亞基地：Cradle Mountain、Freycinet、荷巴特",
+    "Australia route nights and transfers": "澳洲行程夜數與轉乘",
+    "Australia weather closure transport alternative": "澳洲天候、封路與交通替代方案",
+    "first trip to Australia regional itinerary": "首次澳洲旅行區域行程"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}
