@@ -420,11 +420,24 @@ export const postAtlantaFloridaRoutes = Object.freeze([
   '/usa/orlando/winter-park/'
 ]);
 
+// Chicago source refresh after the Florida checkpoint; four existing city routes.
+export const postFloridaChicagoRoutes = Object.freeze([
+  '/usa/chicago/',
+  '/usa/chicago/loop-riverwalk/',
+  '/usa/chicago/museum-lakefront/',
+  '/usa/chicago/neighborhoods/'
+]);
+
+export const postOctober13Routes = Object.freeze([
+  ...postAtlantaFloridaRoutes,
+  ...postFloridaChicagoRoutes
+]);
+
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
   ...postIntegrationHawaiiRoutes,
   ...postHawaiiNewOrleansRoutes,
   ...postNewOrleansAtlantaRoutes,
-  ...postAtlantaFloridaRoutes
+  ...postOctober13Routes
 ]);
 
 export const postIntegrationAustraliaRoutes = Object.freeze([

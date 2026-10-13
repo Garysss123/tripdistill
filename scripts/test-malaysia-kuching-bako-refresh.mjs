@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = integrationSprintBaseline;
@@ -127,7 +127,7 @@ const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baseline
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact historical scope and five disjoint follow-on groups × five locales receive new lastmod');
 for (const route of expectedLocalizedRoutes) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewedDate;
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewedDate;
   assert.equal(sourceSitemap.get(route), expectedDate, `${route}: sitemap lastmod`);
 }
 
@@ -137,7 +137,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes]), 'only the exact integrated country, Hawaii, Australia, Canberra, New Orleans, Atlanta, New England and Margaret English search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes]), 'only the exact integrated country, Hawaii, Australia, Canberra, New Orleans, Atlanta, New England and Margaret English search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
 const images = new Map();

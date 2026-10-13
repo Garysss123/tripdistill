@@ -6,12 +6,19 @@ import { parse } from 'parse5';
 
 const base = '55147104cc93f80b6c9ec7f0b01436b01661e435';
 const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
-const routes = [
+const floridaRoutes = [
   '/usa/miami/south-beach/',
   '/usa/miami/little-havana-wynwood/',
   '/usa/orlando/theme-parks/',
   '/usa/orlando/winter-park/'
 ];
+const chicagoRoutes = [
+  '/usa/chicago/',
+  '/usa/chicago/loop-riverwalk/',
+  '/usa/chicago/museum-lakefront/',
+  '/usa/chicago/neighborhoods/'
+];
+const routes = [...floridaRoutes, ...chicagoRoutes];
 const postNewEnglandRoutes = [
   '/usa/new-england/',
   '/usa/new-england/portland-maine/',
@@ -115,7 +122,7 @@ const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()]
   .filter((url) => url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes].sort(), 'only the four Florida and four later New England target English search summaries changed');
+assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes].sort(), 'only the four Florida, four Chicago and four already-integrated New England English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -153,4 +160,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of routes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source-refresh scope passed: ${routes.length} Florida and ${postNewEnglandRoutes.length} later New England English bodies; eight English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source-refresh scope passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago and ${postNewEnglandRoutes.length} already-integrated New England English bodies; twelve English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);

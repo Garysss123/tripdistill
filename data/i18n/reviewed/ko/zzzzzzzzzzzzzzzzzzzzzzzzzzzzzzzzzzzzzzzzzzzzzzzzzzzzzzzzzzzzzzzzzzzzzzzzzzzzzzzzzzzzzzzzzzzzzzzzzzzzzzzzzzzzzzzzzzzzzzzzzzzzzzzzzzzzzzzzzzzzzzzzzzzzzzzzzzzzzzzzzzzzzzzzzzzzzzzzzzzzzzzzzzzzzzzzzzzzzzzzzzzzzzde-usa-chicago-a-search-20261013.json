@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a Chicago base for two, three or four nights; compare airport transfers, repeat transit trips and the current Loop station closure before setting the day order.": "시카고 숙소를 2~4박으로 정하기 전에 공항 환승, 반복되는 시내 이동, 현재 Loop 역 폐쇄 상황을 비교해 일정 순서를 정하세요.",
+    "Choose Field, Shedd or Adler by subject and ticket terms; plan around seasonal CTA route 130, route 146 and the Roosevelt connection before adding a shore walk.": "전시 주제와 티켓 조건으로 Field, Shedd, Adler 중 하나를 고르세요. 호숫가 산책을 추가하기 전에 계절 운행 CTA 130·146번과 Roosevelt 환승을 계획하세요.",
+    "Plan one Wicker Park or Logan Square outing with a named Blue Line start, a bounded visit and a rain-day alternative; check venue times and the return before an evening.": "Wicker Park 또는 Logan Square 한 곳을 정해 Blue Line 출발역, 제한된 방문 범위, 비 오는 날 대안을 마련하세요. 저녁 일정 전 장소 시간과 귀환 경로를 확인하세요.",
+    "Compare the 90-minute Architecture Center cruise at its named pier with a shorter Riverwalk–Loop walk; check weather, public access and CTA service for your return.": "Architecture Center의 90분 크루즈(선착장은 예약 확인)와 더 짧은 Riverwalk–Loop 도보 코스를 비교하세요. 돌아가기 전에 날씨, 공공 통로, CTA 운행을 확인하세요."
+  }
+}
