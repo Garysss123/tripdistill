@@ -433,13 +433,23 @@ export const postLosAngelesSanDiegoRoutes = Object.freeze([
   '/usa/san-diego/la-jolla/'
 ]);
 
+// Boston & Cambridge source refresh after San Diego; four existing routes
+// extend only the current-tree date and search scope.
+export const postSanDiegoBostonRoutes = Object.freeze([
+  '/usa/boston/',
+  '/usa/boston/freedom-trail/',
+  '/usa/boston/cambridge-harvard/',
+  '/usa/boston/harbor-islands/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
   ...postChicagoNewEnglandRoutes,
   ...postNewEnglandArizonaRoutes,
   ...postArizonaLosAngelesRoutes,
-  ...postLosAngelesSanDiegoRoutes
+  ...postLosAngelesSanDiegoRoutes,
+  ...postSanDiegoBostonRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
