@@ -44,6 +44,12 @@ const latestMargaretRoutes = [
   '/australia/margaret-river-southwest/boranup-caves-augusta/',
   '/australia/margaret-river-southwest/albany-torndirrup/'
 ];
+const currentBroomeRoutes = [
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+];
 const locales = [
   { code: 'en', prefix: '', script: /[A-Za-z]/u, date: 'reviewed 12 October 2026' },
   { code: 'zh-Hant', prefix: '/zh', script: /[\u3400-\u9fff]/u, date: '2026 年 10 月 12 日' },
@@ -161,7 +167,7 @@ function readBase(relativePath) {
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia'])
   .split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-const expectedEnglish = [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+const expectedEnglish = [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes, ...currentBroomeRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 check(changedEnglish.join('|') === expectedEnglish.join('|'), `English route file scope differs: ${changedEnglish.join(', ')}`);
 
 for (const route of routes) {
@@ -217,7 +223,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const currentSearchByUrl = new Map(currentSearch.map((record) => [record.url, record]));
 check(baseSearchByUrl.size === currentSearchByUrl.size && [...baseSearchByUrl.keys()].sort().join('|') === [...currentSearchByUrl.keys()].sort().join('|'), 'Search URL set/count changed.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-check(changedSearch.join('|') === [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes].sort().join('|'), `Search changes escaped the Melbourne/Ocean, later Adelaide/Perth, Top End/Whitsundays, Canberra and Margaret route scope: ${changedSearch.join(', ')}`);
+check(changedSearch.join('|') === [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes, ...currentBroomeRoutes].sort().join('|'), `Search changes escaped the Melbourne/Ocean, later Adelaide/Perth, Top End/Whitsundays, Canberra and Margaret route scope: ${changedSearch.join(', ')}`);
 
 const localesForBatches = locales.slice(1);
 for (const locale of localesForBatches) {
@@ -257,10 +263,10 @@ const baseSitemap = sitemapEntries(readBase('sitemap.xml'));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 check(baseSitemap.size === 4560 && currentSitemap.size === 4560, `Expected 4560 sitemap URLs, got ${baseSitemap.size}/${currentSitemap.size}.`);
 check([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed.');
-const expectedChanged = [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+const expectedChanged = [...routes, ...laterAdelaidePerthRoutes, ...laterTopEndWhitsundaysRoutes, ...laterCanberraRoutes, ...laterAlpsMargaretRoutes, ...latestMargaretRoutes, ...currentBroomeRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const actualChanged = [...currentSitemap.keys()].filter((url) => baseSitemap.get(url) !== currentSitemap.get(url)).sort();
 check(actualChanged.join('|') === expectedChanged.join('|'), `Sitemap lastmod changes escaped four routes/five languages: ${actualChanged.join(', ')}`);
-for (const url of expectedChanged) check(currentSitemap.get(url) === ([...laterAlpsMargaretRoutes, ...latestMargaretRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate), `${url}: lastmod does not match its route review date.`);
+for (const url of expectedChanged) check(currentSitemap.get(url) === ([...laterAlpsMargaretRoutes, ...latestMargaretRoutes, ...currentBroomeRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate), `${url}: lastmod does not match its route review date.`);
 
 if (issues.length) {
   console.error('Melbourne/Ocean gap regression failed:');

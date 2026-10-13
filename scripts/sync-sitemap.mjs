@@ -75,6 +75,13 @@ const australiaCairnsEditedRoutes = [
   '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
   '/australia/cairns-wet-tropics/northern-beaches-palm-cove/'
 ];
+const australiaBroomeLastmod = '2026-10-13';
+const australiaBroomeEditedRoutes = [
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+];
 const canadaLastmod = '2026-09-12';
 const victoriaResponsiveLastmod = '2026-10-08';
 const switzerlandLastmod = '2026-09-12';
@@ -961,6 +968,12 @@ for (const route of australiaCairnsEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error('Cannot date edited Cairns route absent from sitemap: ' + route);
   records.set(route, { ...record, lastmod: australiaCairnsLastmod });
+}
+
+for (const route of australiaBroomeEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error('Cannot date edited Broome/Kimberley route absent from sitemap: ' + route);
+  records.set(route, { ...record, lastmod: australiaBroomeLastmod });
 }
 
 const english = [...records.values()];

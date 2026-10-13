@@ -9,10 +9,12 @@ import { collectTranslationWork } from './i18n-lib.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const branches = new Set([
   'codex/sprint-au-alps-margaret-gaps-20261013',
-  'codex/sprint-au-margaret-remaining-20261013'
+  'codex/sprint-au-margaret-remaining-20261013',
+  'codex/sprint-au-broome-content-20261013'
 ]);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const followupCheckpoint = '55e3b9710c24b45975bdaea5769ab3e4a39ffc44';
+const broomeCheckpoint = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
 const isoDate = '2026-10-13';
 const routes = [
@@ -27,7 +29,13 @@ const remainingRoutes = [
   '/australia/margaret-river-southwest/boranup-caves-augusta/',
   '/australia/margaret-river-southwest/albany-torndirrup/'
 ];
-const allChangedRoutes = [...routes, ...remainingRoutes];
+const broomeRoutes = [
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+];
+const allChangedRoutes = [...routes, ...remainingRoutes, ...broomeRoutes];
 const locales = [
   { code: 'en', prefix: '', date: 'reviewed 13 October 2026', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', date: '2026 年 10 月 13 日', script: /[\u3400-\u9fff]/u },
@@ -124,7 +132,9 @@ function searchMap(text) { return new Map(JSON.parse(text).map((entry) => [entry
 const currentBranch = git(['branch', '--show-current']).trim();
 assert(branches.has(currentBranch), 'Selected source branch is one of the authorized Australia follow-up branches.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).trim().split(/\r?\n/u);
-const expectedCheckpoint = currentBranch === 'codex/sprint-au-margaret-remaining-20261013' ? followupCheckpoint : base;
+const expectedCheckpoint = currentBranch === 'codex/sprint-au-broome-content-20261013'
+  ? broomeCheckpoint
+  : currentBranch === 'codex/sprint-au-margaret-remaining-20261013' ? followupCheckpoint : base;
 assert(firstParents.includes(expectedCheckpoint) && firstParents.indexOf(expectedCheckpoint) <= 2, 'The source branch descends from the exact base or its recorded follow-up checkpoint.');
 const correctionFiles = [
   'assets/images/australia-kangaroo-island-regional-days.svg',

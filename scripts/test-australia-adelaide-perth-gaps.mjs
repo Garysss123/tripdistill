@@ -14,7 +14,9 @@ const followOnSprint = branch === 'codex/sprint-au-top-end-whitsundays-gaps-2026
 const canberraSprint = branch === 'codex/sprint-au-canberra-content-20261013';
 const alpsMargaretSprint = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
 const margaretRemainingSprint = branch === 'codex/sprint-au-margaret-remaining-20261013';
-const base = margaretRemainingSprint ? 'a99fbe9fe996ccedbac42b1b9386447a11403854' : alpsMargaretSprint ? '5f1205bbbee0ef636c34e883c399e6fceaa7b508' : followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
+const broomeSprint = branch === 'codex/sprint-au-broome-content-20261013';
+const australiaFollowupSprint = margaretRemainingSprint || broomeSprint;
+const base = australiaFollowupSprint ? 'a99fbe9fe996ccedbac42b1b9386447a11403854' : alpsMargaretSprint ? '5f1205bbbee0ef636c34e883c399e6fceaa7b508' : followOnSprint ? '90de552c65cf971a33dd4a1ef1976e0037392335' : canberraSprint ? '448f6cd5a03aff0ddbfea1a21226cc9f2be545b9' : 'a56b9b9a0c8d275ef5dc936b520b2b323ebe9ad3';
 const isoDate = '2026-10-12';
 const routes = [
   '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
@@ -186,12 +188,12 @@ function assertSvgSafe(file, digest) {
   }
 }
 
-assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013', 'codex/sprint-au-alps-margaret-gaps-20261013', 'codex/sprint-au-margaret-remaining-20261013'].includes(branch), 'Source branch name.');
+assert(['codex/sprint-au-adelaide-perth-gaps-20261013', 'codex/sprint-au-top-end-whitsundays-gaps-20261013', 'codex/sprint-au-canberra-content-20261013', 'codex/sprint-au-alps-margaret-gaps-20261013', 'codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013'].includes(branch), 'Source branch name.');
 const firstParents = git(['rev-list', '--first-parent', '--max-count=4', 'HEAD']).split(/\r?\n/u);
-const allowedParentHops = alpsMargaretSprint || margaretRemainingSprint ? 2 : 1;
+const allowedParentHops = alpsMargaretSprint || australiaFollowupSprint ? 2 : 1;
 assert(firstParents.includes(base) && firstParents.indexOf(base) <= allowedParentHops, 'The source branch must descend from its authorized exact base through only the expected scope and correction commits.');
 
-if (margaretRemainingSprint) {
+if (australiaFollowupSprint) {
   const priorAdelaidePaths = routes.map((route) => `${route.slice(1)}index.html`);
   assert.equal(git(['diff', '--name-only', base, '--', ...priorAdelaidePaths]).trim(), '', 'Adelaide and Perth route pages remain unchanged from the requested Margaret follow-up base.');
   const correctionCommit = '768151d3f42378358c122a1cde55100fcec9eafa';

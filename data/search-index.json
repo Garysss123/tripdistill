@@ -5894,7 +5894,7 @@
     "url": "/australia/broome-kimberley/",
     "parent": "Australia · Western Australia",
     "type": "Complete regional hub with five field guides",
-    "summary": "Broome/Rubibi and the Kimberley operate at continental scale. Town beaches, Dampier Peninsula, the Gibb River Road, Kununurra and Purnululu each need separate seasons, vehicles, permits, cultural operators and emergency planning. Five chapters reject the idea that a red line on the map is a same-day route.",
+    "summary": "Broome / Rubibi is a town-and-coast base; it is not a practical bed for every Kimberley excursion. Treat Cable Beach and Roebuck Bay as local choices, the Dampier Peninsula as a separately booked overnight, and the Gibb River Road as a multi-day expedition between the Derby and Kununurra ends. Kununurra and Purnululu need their own east-Kimberley block. These are separate operating areas, not a chain of nearby day trips.\n\nThe first decision is where you sleep after the last activity: a Broome town or Cable Beach address, an authorised peninsula property, a reserved station or park stay, or Kununurra. Then match each transfer to a real last mile. A town bus or hotel transfer can help around Broome; it does not reach a remote community, gorge, campground or private station. A map pin does not establish permission to enter Country, community land or a closed track.\n\nReviewed 13 October 2026. Main Roads WA explains that Gibb conditions change along the route and directs drivers to its live Travel Map and the separate Shire and parks reports. This review does not certify today’s road opening, river-crossing depth, fire rating, park access, tide window or community permission. If an official status cannot be confirmed for the exact segment, treat that segment as unavailable: do not infer an opening or use a side road as a workaround.",
     "keywords": [
       "broome & the kimberley",
       "broome kimberley",
@@ -6864,13 +6864,19 @@
     "url": "/australia/broome-kimberley/rubibi-broome-cable-beach/",
     "parent": "Australia · Broome & the Kimberley",
     "type": "Focused field and decision guide",
-    "summary": "A Broome base chapter connecting cultural context, town history and Cable Beach through tide, heat and legal vehicle zones.",
+    "summary": "Plan three Broome nights around one town-history route and one coast choice. Compare Cable Beach with Gantheaume Point’s tide-dependent tracks, check the official Broome tide table and local path notices, and confirm the current town bus or a booked last-mile ride.",
     "keywords": [
       "rubibi / broome & cable beach",
       "broome & the kimberley",
       "rubibi broome cable beach",
       "town tide and sunset",
-      "australia travel guide"
+      "australia travel guide",
+      "broome rubibi three nights base town cable beach",
+      "broome bus route cable beach current timetable",
+      "broome gantheaume point dinosaur footprints tide table",
+      "broome yawuru country cultural visitor guidance",
+      "broome beach driving legal access zones",
+      "broome town route wet weather coast alternative"
     ]
   },
   {
@@ -6878,13 +6884,19 @@
     "url": "/australia/broome-kimberley/dampier-peninsula/",
     "parent": "Australia · Broome & the Kimberley",
     "type": "Focused field and decision guide",
-    "summary": "A peninsula journey based on booked Aboriginal tourism, community access, fuel and road condition rather than an unplanned beach drive.",
+    "summary": "Plan one or two Dampier Peninsula nights around a confirmed Cygnet Bay stay or local Bardi-led tour. Check permission, the 3 km final driveway, vehicle clearance, road and fire status; current local visitor guidance says the Kooljaman access road/private northern tip is not open to casual visitors.",
     "keywords": [
       "dampier peninsula",
       "broome & the kimberley",
       "dampier peninsula",
       "cultural operator road plan",
-      "australia travel guide"
+      "australia travel guide",
+      "dampier peninsula broome overnight cygnet bay",
+      "cygnet bay borrgoron coast to creek tour booking",
+      "dampier peninsula visitor permit community access",
+      "cape leveque road road report 2wd 4wd clearance",
+      "kooljaman private native title access restriction",
+      "dampier peninsula fire weather road closure fallback"
     ]
   },
   {
@@ -6892,13 +6904,19 @@
     "url": "/australia/broome-kimberley/gibb-river-road/",
     "parent": "Australia · Broome & the Kimberley",
     "type": "Focused field and decision guide",
-    "summary": "A multi-day remote expedition requiring season, vehicle, tyres, fuel, communications and accommodation commitments before the first kilometre.",
+    "summary": "Build a 14-day-or-longer Gibb River Road plan from Derby to Kununurra with booked station/camp nights, a high-clearance 4WD or guided tour, fuel and communications. Check Main Roads, both Shires, each park, BOM and Emergency WA; unknown status means do not depart.",
     "keywords": [
       "gibb river road",
       "broome & the kimberley",
       "gibb river road",
       "remote expedition ledger",
-      "australia travel guide"
+      "australia travel guide",
+      "gibb river road 14 day itinerary nights stations",
+      "gibb river road derby kununurra 4wd high clearance rental",
+      "gibb river road current road closure travel map",
+      "kimberley gibb river road river crossing unknown depth",
+      "gibb river road fire danger park closure emergency wa",
+      "gibb river road fuel camps tour alternative"
     ]
   },
   {

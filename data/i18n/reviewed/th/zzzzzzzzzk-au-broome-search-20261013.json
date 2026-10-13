@@ -1,0 +1,35 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan three Broome nights around one town-history route and one coast choice. Compare Cable Beach with Gantheaume Point’s tide-dependent tracks, check the official Broome tide table and local path notices, and confirm the current town bus or a booked last-mile ride.": "วางแผนบรูมสามคืนโดยจัดหนึ่งวันเที่ยวประวัติศาสตร์เมืองและอีกหนึ่งกิจกรรมชายฝั่ง เปรียบเทียบ Cable Beach กับทางเดินตามน้ำลงที่ Gantheaume Point ตรวจตารางน้ำบรูมทางการและประกาศเส้นทางท้องถิ่น แล้ว ยืนยันรถบัสเมืองปัจจุบันหรือรถรับส่งช่วงสุดท้ายที่จองไว้",
+    "broome rubibi three nights base town cable beach": "บรูม รูบิบี 3 คืน ฐานในเมือง Cable Beach",
+    "broome bus route cable beach current timetable": "รถบัสบรูม Cable Beach ตารางปัจจุบัน",
+    "broome gantheaume point dinosaur footprints tide table": "บรูม Gantheaume Point รอยเท้าไดโนเสาร์ ตารางน้ำขึ้นน้ำลง",
+    "broome yawuru country cultural visitor guidance": "บรูม Country ของ Yawuru แนวทางผู้มาเยือนด้านวัฒนธรรม",
+    "broome beach driving legal access zones": "บรูม เขตขับรถบนชายหาดที่อนุญาต ป้ายกำกับ",
+    "broome town route wet weather coast alternative": "เส้นทางเดินในเมืองบรูม ทางเลือกชายฝั่งเมื่อฝนตก",
+    "Plan one or two Dampier Peninsula nights around a confirmed Cygnet Bay stay or local Bardi-led tour. Check permission, the 3 km final driveway, vehicle clearance, road and fire status; current local visitor guidance says the Kooljaman access road/private northern tip is not open to casual visitors.": "วางแผนค้างคืนบนคาบสมุทรแดมเปียร์หนึ่งหรือสองคืนโดยใช้ที่พัก Cygnet Bay ที่ยืนยันแล้วหรือทัวร์ท้องถิ่นที่ชาว Bardi นำ ตรวจใบอนุญาต ทางเข้าช่วงสุดท้าย 3 กม. ระยะใต้ท้องรถ สถานะถนนและไฟไหม้ ข้อมูลผู้มาเยือนท้องถิ่นปัจจุบันระบุว่าถนนเข้า Kooljaman/ปลายเหนือส่วนเอกชนไม่เปิดให้ผู้มาเยือนทั่วไป",
+    "dampier peninsula broome overnight cygnet bay": "คาบสมุทรแดมเปียร์ พักจากบรูม Cygnet Bay",
+    "cygnet bay borrgoron coast to creek tour booking": "จองทัวร์ Cygnet Bay Borrgoron Coast to Creek",
+    "dampier peninsula visitor permit community access": "คาบสมุทรแดมเปียร์ ใบอนุญาตผู้มาเยือน การเข้าชุมชน",
+    "cape leveque road road report 2wd 4wd clearance": "Cape Leveque Road รายงานถนน ระยะใต้ท้องรถ 2WD 4WD",
+    "kooljaman private native title access restriction": "Kooljaman ข้อจำกัดการเข้า Native Title เอกชน",
+    "dampier peninsula fire weather road closure fallback": "คาบสมุทรแดมเปียร์ ไฟไหม้ อากาศ ถนนปิด ทางเลือก",
+    "Build a 14-day-or-longer Gibb River Road plan from Derby to Kununurra with booked station/camp nights, a high-clearance 4WD or guided tour, fuel and communications. Check Main Roads, both Shires, each park, BOM and Emergency WA; unknown status means do not depart.": "วางแผน Gibb River Road อย่างน้อย 14 วันจาก Derby ถึง Kununurra จองคืนพักตามฟาร์ม/ลานแคมป์ ใช้รถ 4WD ระยะสูงหรือทัวร์พร้อมไกด์ เตรียมเชื้อเพลิงและการสื่อสาร ตรวจ Main Roads ไชร์ทั้งสอง อุทยานแต่ละแห่ง BOM และ Emergency WA หากไม่ทราบสถานะ อย่าออกเดินทาง",
+    "gibb river road 14 day itinerary nights stations": "Gibb River Road 14 วัน แผนเที่ยว ที่พักฟาร์ม",
+    "gibb river road derby kununurra 4wd high clearance rental": "Gibb River Road Derby Kununurra รถเช่า 4WD ระยะสูง",
+    "gibb river road current road closure travel map": "Gibb River Road สถานะถนนปัจจุบัน Travel Map",
+    "kimberley gibb river road river crossing unknown depth": "คิมเบอร์ลีย์ Gibb River Road ไม่ทราบความลึก จุดข้ามแม่น้ำ",
+    "gibb river road fire danger park closure emergency wa": "Gibb River Road ความเสี่ยงไฟไหม้ อุทยานปิด Emergency WA",
+    "gibb river road fuel camps tour alternative": "Gibb River Road เชื้อเพลิง แคมป์ ทางเลือกทัวร์"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

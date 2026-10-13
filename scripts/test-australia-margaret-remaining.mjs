@@ -6,10 +6,16 @@ import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 
 const root = path.resolve(import.meta.dirname, '..');
-const branch = 'codex/sprint-au-margaret-remaining-20261013';
+const branches = new Set(['codex/sprint-au-margaret-remaining-20261013', 'codex/sprint-au-broome-content-20261013']);
 const base = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
 const isoDate = '2026-10-13';
+const broomeRoutes = [
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+];
 const routes = [
   '/australia/margaret-river-southwest/busselton-dunsborough/',
   '/australia/margaret-river-southwest/cape-naturaliste-coast/',
@@ -100,13 +106,16 @@ function urlRecords(xml) {
 }
 function searchMap(text) { return new Map(JSON.parse(text).map((entry) => [entry.url, entry])); }
 
-assert.equal(git(['branch', '--show-current']).trim(), branch, 'Selected source branch.');
+const currentBranch = git(['branch', '--show-current']).trim();
+assert(branches.has(currentBranch), 'Selected source branch is Margaret remaining or its Broome follow-up.');
 git(['merge-base', '--is-ancestor', base, 'HEAD']);
-const parent = git(['rev-list', '--first-parent', '--max-count=2', 'HEAD']).trim().split(/\r?\n/u);
-if (parent[0] !== base) assert.equal(parent[1], base, 'The new commit is directly based on the requested commit.');
+const parent = git(['rev-list', '--first-parent', '--max-count=3', 'HEAD']).trim().split(/\r?\n/u);
+const expectedBase = currentBranch === 'codex/sprint-au-broome-content-20261013' ? '5578d6da740ca9d7ec07fca6c7eed65cc67868e8' : base;
+const branchRoutes = [...routes, ...(currentBranch === 'codex/sprint-au-broome-content-20261013' ? broomeRoutes : [])];
+assert(parent.includes(expectedBase), 'The branch descends from the exact requested Margaret checkpoint, directly or through the Broome follow-up checkpoint.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English child pages changed.');
+assert.deepEqual(changedEnglish, branchRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Margaret routes and, on the later Broome branch, its four routes changed.');
 for (const untouched of [
   'australia/margaret-river-southwest/index.html',
   'australia/margaret-river-southwest/margaret-river-wine-food/index.html'
@@ -139,15 +148,15 @@ const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-ind
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.');
 assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 records.');
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'Only the four requested English search records changed.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...branchRoutes].sort(), 'Only the four Margaret search records and, on the later Broome branch, its four search records changed.');
 
 const baseSitemap = urlRecords(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const changedDates = routes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only four routes × five locale lastmod values changed.');
+const changedDates = branchRoutes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
+assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the four Margaret routes and the later four Broome routes × five locale lastmod values changed.');
 for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);
 
 for (const locale of locales) {
