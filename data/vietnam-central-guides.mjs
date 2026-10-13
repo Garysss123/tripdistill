@@ -1141,6 +1141,14 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
       name: 'Cam Ranh & Bai Dai Coast',
       motif: 'The airport-side coast',
       instrument: 'ledger',
+      isoDate: '2026-10-13',
+      reviewDate: '13 October 2026',
+      countryCss: '/css/vietnam-bay-gaps.css?v=20261013-1',
+      sources: [
+        ['https://vietnam.travel/node/220', 'Vietnam Tourism — Cam Ranh Airport, central Nha Trang rail access and general ground-transport options (checked 13 October 2026; not a live Bai Dai transfer schedule)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — Nha Trang Bay and its coastal arcs (checked 13 October 2026; does not establish public Bai Dai access)'],
+        ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — current marine and hazard bulletins (check the issue for your date; no Bai Dai swim status is implied)']
+      ],
       image: image({
         src: '/assets/images/vietnam-cam-ranh.webp',
         alt: 'Cam Ranh coast in Khanh Hoa',
@@ -1149,32 +1157,64 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: 'GDAE',
         license: 'CC BY-SA 4.0'
       }),
-      summary: 'Use Cam Ranh and Bai Dai as an airport-linked coast chapter for quiet beach stays, arrival logistics and a different pace from central Nha Trang.',
-      lead: 'Cam Ranh is useful when the trip needs a calm airport-side base or a deliberate resort coast, not when a traveler wants to walk to Nha Trang’s city heritage every morning.',
-      orientation: 'Make the lodging decision first: central Nha Trang prioritizes access and services, while Bai Dai prioritizes a quieter, more self-contained shore.',
-      arrival: 'Confirm the hotel’s airport transfer, public-road access, meals, freshwater and onward transport. Resort areas can be visually close but practically far apart.',
-      sequence: 'Arrive with daylight if possible, settle the transfer and swimming plan, use the beach only within current safety guidance, then protect the next airport, rail or city connection.',
-      boundary: 'Respect public shore, resort rules and restricted facilities; do not enter military, port or construction areas, and do not describe a private beach as universally accessible.',
+      searchKeywords: ['bai dai coast hotel base', 'cam ranh airport transfer', 'nha trang train station transfer', 'bai dai public beach access'],
+      summary: 'Choose Bai Dai for a confirmed airport-side coast stay and a quieter resort rhythm; choose central Nha Trang when city walks, rail and everyday services matter more.',
+      lead: 'Bai Dai can suit a deliberately quiet coast stay, but a map view does not tell you whether your hotel shuttle, the public approach to the shore, meals or swimming supervision will operate on your dates. Cam Ranh International Airport is the southern arrival gateway; central Nha Trang and its rail station are a separate ground leg. Pick the bed around the next connection you actually need, then confirm each road handoff before paying.',
+      orientation: 'Central Nha Trang is the stronger base for Tran Phu, city food, Po Nagar and the railway station. Bai Dai is a resort-side choice for travelers who want the coast itself and have a named airport pickup, on-site meal plan and permitted shore entry. Splitting both bases adds check-out and road transfer time; consider it only on a longer stay with a confirmed driver, not as an automatic airport convenience.',
+      arrival: 'For an airport arrival, send the exact flight and hotel address to the property and get the pickup point, wait policy, payment and late-arrival plan in writing. Vietnam Tourism places Cam Ranh Airport about 30 km south of Nha Trang and lists shuttles, taxis and ride-hailing for the city generally; that does not verify a shuttle to a specific Bai Dai hotel. If you are arriving by rail, the station is in central Nha Trang, so confirm a separate onward road transfer rather than assuming a city taxi will carry on to the coast.',
+      sequence: 'Airport or Nha Trang station → named road pickup → one confirmed Bai Dai hotel → check the permitted public or guest shore approach and current water guidance → return to the same base or take a pre-arranged road transfer onward. Keep the arrival afternoon for settling in; do not make a flight, train or boat depend on an uncertain coast pickup.',
+      boundary: 'A resort frontage is not proof of a public entrance, and a hotel pool is not a public beach. Follow the actual gate, staff direction and local swimming flags; do not cross a barrier, port, military or construction boundary to reach a view. No current lifeguard roster or named public Bai Dai beach gate was verified for this review.',
       stages: [
-        ['Choose the launchpad', 'Compare airport distance, hotel transfer, city access and services before booking the coast as a base.'],
-        ['Check the beach', 'Read flags, lifeguard coverage, tide and current before swimming; a quiet shoreline may have fewer safety services.'],
-        ['Keep the coast quiet', 'Use public access and resort facilities as permitted, avoid restricted areas and keep noise and litter away from the shore.'],
-        ['Protect the departure', 'Confirm the next transfer with a generous margin; never place a long boat or uncertain road segment immediately before a flight.']
+        ['Pick the right bed', 'Choose central Nha Trang for city and rail access; choose Bai Dai only when the named property confirms its airport road pickup, meals and permitted shore access.'],
+        ['Lock the handoff', 'Confirm the pickup address and time with the hotel or transport provider. The general city transfer options do not prove a Bai Dai shuttle or a fixed travel time.'],
+        ['Use one daylight coast day', 'Ask staff where the current public or guest beach access begins and whether local flags or lifeguards support swimming. Keep the rest of the day optional.'],
+        ['Leave by the same contract', 'Reconfirm the return vehicle and destination before checkout. Leave a separate buffer for Nha Trang station or a flight; do not join an uncertain road leg to a fixed departure.']
       ],
       risks: [
-        ['Transfer distance', 'Cam Ranh, Bai Dai and central Nha Trang are different bases; hotel shuttles and taxis may not operate like city transit.'],
-        ['Swimming conditions', 'Currents, waves, tides and lifeguard coverage vary by beach and day; follow current flags and local staff.'],
-        ['Restricted access', 'Military, port, construction and private-resort boundaries can be unclear from a map; follow signs and do not improvise a shortcut.']
+        ['Wrong base for the plan', 'Bai Dai does not replace a central Nha Trang bed for rail, city heritage or evening services. A second base costs another road transfer.'],
+        ['Shore entry not established', 'No current official source verified a named public Bai Dai entrance, access hours or continuous public beach path. Ask the property or local authority; do not infer a right of entry from the map.'],
+        ['Water and return', 'No date-specific lifeguard, flag or swim report was verified. If staff cannot confirm safe conditions, stay out of the water and keep the pre-arranged return.']
       ],
-      duration: 'Use at least one unhurried coast day or an intentional arrival/departure night; it is not an efficient add-on to every Nha Trang itinerary.',
-      combine: 'Combine with a southern coastal transfer only when the road and airport buffer are protected; keep Hon Mun on a separate sea-weather day.',
-      verify: 'Confirm the accommodation transfer, current beach access, marine forecast, swimming status and airport or station connection before booking.'
+      duration: 'One full daylight coast day is enough to decide whether Bai Dai suits the trip; two nights can hold that day between arrival and onward travel. These are planning shapes, not measured visits or an opening guarantee.',
+      combine: 'A central Nha Trang land route can fit only when you have a separately confirmed return car and a full day. Do not combine Bai Dai with an island boat, Ba Ho or an airport departure on a tight clock.',
+      verify: 'Before booking, confirm the exact hotel address, airport or station pickup, late-arrival wait, meals, shore entry, whether facilities are guest-only, the day’s marine warning and swimming guidance, and the next road connection. If the access or return answer is missing, choose a central Nha Trang base instead.',
+      nightPlan: {
+        kicker: 'Nights, bases and road slack',
+        title: 'Buy a quiet coast stay only when the handoff works',
+        intro: 'Treat arrival and departure as transfer days. Bai Dai earns a bed when the hotel confirms the service you need; central Nha Trang is the simpler base for city walking and rail.',
+        options: [
+          ['1 night', 'Airport-side connection', 'Use a Bai Dai night only if the property confirms the airport pickup, check-in and food for your arrival time. Treat it as a rest or transfer night, not a guaranteed beach day.'],
+          ['2 nights', 'One coast day', 'Keep one Bai Dai base and one full daylight day for the shore. Confirm a permitted entrance and current water guidance before swimming; do not add a city visit unless a separate return car is agreed.'],
+          ['3 nights', 'Two days, one reserve', 'Two full days can hold a slow coast day and a city visit only with a confirmed road return, or leave one day open for weather. A central Nha Trang bed may serve better if the city is the main purpose.']
+        ],
+        footerTitle: 'Do not split just to be near the airport',
+        footer: 'A split stay makes sense only when the city and the resort each have a named purpose and the inter-hotel ride is booked. If the actual shore entrance, hotel transfer or rail/airport connection is unclear, keep one central Nha Trang bed and drop the Bai Dai detour.'
+      },
+      routeDiagram: {
+        kind: 'compare',
+        title: 'Match the bed to the next handoff.',
+        intro: 'Airport proximity is not the same as a confirmed transfer. Choose the base that protects the trip’s actual city, rail or coast purpose.',
+        steps: [
+          ['City and rail', 'Sleep in central Nha Trang', 'Prefer the central base for Tran Phu, Po Nagar, city services and the station; arrange a separate road ride to or from Cam Ranh Airport.'],
+          ['Quiet coast', 'Book Bai Dai only by contract', 'Ask the named hotel to confirm the road pickup, check-in, meals and exact allowed shore entrance. No public beach gate or hotel shuttle is assumed here.']
+        ],
+        fallbackTitle: 'If a transfer or shore access is not confirmed',
+        fallback: 'Choose the central Nha Trang bed, use a public-facing land route only where current access is clear, and leave the resort coast for a stay with a confirmed pickup and entrance.'
+      }
     },
     {
       slug: 'ba-ho-waterfalls',
       name: 'Ba Ho Waterfalls & Ninh Hoa',
-      motif: 'Three pools inland',
+      motif: 'Three stream pools inland',
       instrument: 'transect',
+      isoDate: '2026-10-13',
+      reviewDate: '13 October 2026',
+      countryCss: '/css/vietnam-bay-gaps.css?v=20261013-1',
+      sources: [
+        ['https://ninhhoa.khanhhoa.gov.vn/vi/diem-den-du-lich-36/khu-du-lich-sinh-thai-ba-ho', 'Ninh Hoa Ward People’s Committee — Ba Ho location and stream path (checked 13 October 2026; overview gives no current opening, fee or transfer schedule)'],
+        ['https://vietnam.travel/node/220', 'Vietnam Tourism — Nha Trang base, central rail station and Cam Ranh Airport orientation (checked 13 October 2026; not a Ba Ho road timetable)'],
+        ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — current rain and hazard bulletins (check upstream weather for the visit date; not a trail-status notice)']
+      ],
       image: image({
         src: '/assets/images/vietnam-ba-ho.webp',
         alt: 'Ba Ho stream and rocky pools in Khanh Hoa Province',
@@ -1183,32 +1223,66 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: '[Tycho]',
         license: 'CC BY-SA 3.0'
       }),
-      summary: 'Follow Ba Ho’s stream, forest and three-pool landscape as an inland contrast to Nha Trang’s beach, with rock, water and turn-back decisions visible.',
-      lead: 'Ba Ho is attractive because the route becomes progressively more physical as it follows the stream. The first pool is not a guarantee that the upper sections are safe or open.',
-      orientation: 'Set a group turn-back point before entering the rocks. A waterfall day is successful when everyone returns with energy, not when every pool is reached.',
-      arrival: 'The site lies north of Nha Trang near the national road, but the final approach and stream walk are not a city stroll. Use a confirmed driver, sturdy shoes and a weather check.',
-      sequence: 'Start at the access point, move along the stream only while footing and water level remain safe, swim only in an explicitly permitted area, and return before rain or darkness.',
+      searchKeywords: ['ba ho waterfall route ninh hoa', 'ninh ich phu huu access', 'nha trang day trip driver', 'ba ho stream water safety'],
+      summary: 'Plan Ba Ho as a separate northbound day from Nha Trang: arrange the road return, then decide how far to walk only after checking rain and stream conditions.',
+      lead: 'Ba Ho is an inland stream walk, not a city-side waterfall lookout. Ninh Hoa’s official tourism page places the site about 25 km north of Nha Trang and describes a rough streamside path: about 1,000 metres from the first pool to the second, then a further 300 metres to the third. That description is useful for deciding whether the upper pools suit your group; it does not confirm today’s trail, opening, water level or swimming permission.',
+      orientation: 'Keep central Nha Trang as the base if you also want Tran Phu, Po Nagar, Hon Chong or the city railway station. The official Ninh Hoa page locates Ba Ho around Ninh Ích and Phú Hữu near National Highway 1A; no current public shuttle, fixed bus departure, taxi fare or reliable last-mile pickup was verified. Arrange a driver for both directions and agree the exact meeting point before leaving. A Ninh Hoa overnight is a separate choice only when you have confirmed a room, food and return ride.',
+      arrival: 'Use a named Nha Trang accommodation as the starting point, then take a pre-arranged road vehicle north toward Ninh Ích and Phú Hữu. Have the driver confirm the site entrance and whether they will wait or return at an agreed time; do not assume a ride-hail car will be available for the trip back. Carry water, shoes that grip wet rock, a dry change and a charged phone, but do not assume mobile signal at the stream.',
+      sequence: 'Leave Nha Trang early enough for a daylight visit → confirm site access and weather at the entrance → walk first to the lower pool → continue to the rough upper stream only if the path is open and everyone is steady → turn back before rain, rising water or darkness → meet the same driver and return to Nha Trang. Treat the municipal distances as route context, not measured walking times.',
       boundary: 'Protect the stream and visitors: do not litter, carve rock, disturb vegetation or attempt cliff jumps unless the current operator explicitly permits a supervised activity.',
       stages: [
-        ['Check the water', 'Review rainfall, upstream weather, site notices and the group’s swimming ability before leaving the coast.'],
-        ['Start the transect', 'Walk from the access point with shoes that grip wet rock, keeping the first safe rest and turn-back point visible.'],
-        ['Choose the pool', 'Enter water only where current signs and staff allow; skip any pool when flow, depth or footing is uncertain.'],
-        ['Return early', 'Leave before a storm or sunset, carry out waste and keep a reliable vehicle and dry change available at the trailhead.']
+        ['Arrange both road legs', 'Book a driver from your named Nha Trang base to the confirmed entrance and agree the return pickup before departure. The official distance is about 25 km north, not a travel-time promise.'],
+        ['Start at the lower pool', 'Use the site’s current entry instructions and read the stream before walking farther. The first pool is a valid stopping point; no one needs to reach all three.'],
+        ['Continue only by choice', 'The local-government description gives about 1,000 m of rough streamside path to pool two and another 300 m to pool three. Skip either section if it is closed, slick or beyond the group’s ability.'],
+        ['Return before weather', 'Turn back at thunder, rising or muddy water, unsafe crossings or failing light. Meet the same agreed driver; do not improvise another exit.']
       ],
       risks: [
-        ['Flash water', 'Rain upstream can raise stream levels quickly even when the trailhead looks dry; turn back at thunder, rising water or murky flow.'],
-        ['Slippery rock', 'Uneven boulders and wet crossings cause falls; avoid alcohol, carry little and do not rush for photographs.'],
-        ['Remote support', 'The route has less immediate help than the city; keep the group together and do not assume phone signal or a quick rescue.']
+        ['Upstream rain', 'A dry entrance does not show conditions higher in the catchment. Thunder, a rising stream or cloudy fast water means leave the channel and return to the agreed vehicle.'],
+        ['Rough rock path', 'The municipal description calls the upper walk uneven and rocky. It is not a step-free route; limited-mobility visitors should confirm current access directly and choose a city alternative if unclear.'],
+        ['No confirmed last mile', 'The official page names National Highway 1A access but no current public schedule or pickup system. Save the driver’s number and meeting point; do not rely on a spontaneous return ride.']
       ],
-      duration: 'Allow a half or full day depending on how far the group safely walks; do not set a fixed pool-count as the success metric.',
-      combine: 'Combine with Ninh Hoa food or a quiet return to Nha Trang, not with an island boat or airport transfer on the same tight schedule.',
-      verify: 'Check Ninh Hoa or site management notices, rainfall and upstream weather, current swimming rules, trail condition and the return driver before going.'
+      duration: 'Reserve one full daylight day from a Nha Trang base. A shorter visit may suit a lower-pool turnaround, but neither walking time nor current site hours was verified; let the on-site route and weather set the return.',
+      combine: 'A Ninh Hoa meal is an optional stop only if a specific venue is open and the same driver agrees to the extra leg. Do not combine Ba Ho with an island boat, Bai Dai transfer or airport departure on the same day.',
+      verify: 'Check the Ninh Hoa site notice, whether the entrance and each stream section are open, upstream rain, current swimming rules, footwear suitability and both road handoffs. If water, trail or return is uncertain, stay in Nha Trang and choose a confirmed city-side land route.',
+      nightPlan: {
+        kicker: 'Nights, base and the northbound day',
+        title: 'Keep one Nha Trang bed for the waterfall outing',
+        intro: 'Ba Ho is a road day north of the city, not a reason by itself to move hotels. Count full days after the airport or rail transfer and reserve the stream for daylight.',
+        options: [
+          ['2 nights', 'One full Ba Ho day', 'Use one Nha Trang base and devote the single full day to Ba Ho. Keep dinner near the return route only if your driver confirms it; do not add an island boat or airport transfer.'],
+          ['3 nights', 'Waterfall plus city', 'Keep the same central bed for a full Ba Ho day and a separate Nha Trang beach or heritage day. This avoids packing and lets you drop the stream if upstream rain changes the plan.'],
+          ['4 nights', 'Hold a weather day', 'Use one day for Ba Ho, one for a city or north-coast land route, and leave one full day movable. Shift the waterfall only after the site and driver reconfirm; an extra night does not make a closed or unsafe trail usable.']
+        ],
+        footerTitle: 'Choose Ninh Hoa lodging only for a verified onward route',
+        footer: 'A night nearer Ba Ho can reduce repeat road distance only if the accommodation, evening meal, next-day vehicle and exact entrance are all confirmed. Otherwise a central Nha Trang base has more services and a clearer next-leg choice.'
+      },
+      routeDiagram: {
+        kind: 'flow',
+        title: 'A waterfall day has one road chain and one turn-back rule.',
+        intro: 'Ninh Hoa’s municipal page gives location and approximate stream-path distances; it does not provide today’s access, hours, trail condition or public transport.',
+        steps: [
+          ['Before departure', 'Name the entrance and driver', 'Agree the northbound pickup, the site meeting point and the return time with the same provider. No scheduled public shuttle was verified.'],
+          ['At the stream', 'Start low, then decide', 'Reach the lower pool first. Continue only if the current path is open, the group is steady and water remains calm.'],
+          ['On the upper path', 'Use distance as context', 'The official description estimates about 1 km to pool two and 300 m more to pool three over rough ground; it supplies no walking-time or safety guarantee.'],
+          ['If weather turns', 'Return by the known way', 'At thunder, rising water or a slippery crossing, leave the stream and meet the agreed driver. Do not search for another trail exit.']
+        ],
+        fallbackTitle: 'Rain or uncertain access cancels the stream plan',
+        fallback: 'Return to Nha Trang and use a confirmed city-side promenade or heritage visit. Do not substitute a different waterfall, pool or unmarked path.'
+      }
     },
     {
       slug: 'nha-trang-bay-conservation-transfer',
       name: 'Nha Trang Bay Conservation & Island Transfer',
       motif: 'The reef-side contract',
       instrument: 'docket',
+      isoDate: '2026-10-13',
+      reviewDate: '13 October 2026',
+      sources: [
+        ['https://dulichso.khanhhoa.gov.vn/en/article/nha-trang-bay-13c', 'Khanh Hoa Department of Culture, Sports and Tourism — Nha Trang Bay geography and conservation context (checked 13 October 2026; not current visitor permission or a boat schedule)'],
+        ['https://nbca.gov.vn/khu-du-tru-thien-nhien-vinh-nha-trang-khanh-hoa/', 'National Biodiversity Conservation — Nha Trang Bay reserve and Hon Mun habitat (updated 16 June 2026; not a current landing or activity permit)'],
+        ['https://dulichso.khanhhoa.gov.vn/en/article/things-to-know-when-traveling-by-boat-or-ferry-to-islands-1f7', 'Khanh Hoa Department of Culture, Sports and Tourism — passenger boat safety guidance (checked 13 October 2026; does not approve an individual operator)'],
+        ['https://www.nchmf.gov.vn/kttv/vi-VN/1/thoi-tiet-bien-24h-s12h3-15.html', 'National Centre for Hydro-Meteorological Forecasting — dated Gia Lai–Khánh Hòa marine bulletin (13 October 2026; check the issue for the actual travel date)']
+      ],
       image: image({
         src: '/assets/images/vietnam-hon-do.webp',
         alt: 'Hon Do Island and its pagoda viewed from Nha Trang mainland',
@@ -1217,6 +1291,7 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
         creator: 'Dominic Nelson',
         license: 'CC BY-SA 4.0'
       }),
+      searchKeywords: ['nha trang bay boat transfer', 'hon mun current access', 'nha trang marine reserve rules', 'nha trang pier operator safety'],
       summary: 'A practical conservation chapter for choosing a bay route, checking protected zones, selecting an operator and protecting the return transfer.',
       lead: 'The bay is not just a menu of islands. Coral, seagrass, mangrove, working ports, vessel safety, weather and community livelihoods all determine whether a marine itinerary is responsible and realistic.',
       orientation: 'Use this page before booking an island trip. It separates the destination decision from the operator decision and treats a safe return as part of the activity.',
@@ -1236,7 +1311,32 @@ const nhaTrangKhanhHoa = defineVietnamCluster({
       ],
       duration: 'Use this as a planning session before a marine day, then reserve the whole day for the actual transfer and weather margin.',
       combine: 'Combine with city planning or a flexible recovery day; never stack this decision chapter onto a fixed flight connection without slack.',
-      verify: 'Check NCHMF sea weather, the current Nha Trang Bay management notice, protected-area rules, operator details and the next transport connection.'
+      verify: 'Check the current Nha Trang Bay Management Board notice, latest NCHMF marine issue, named operator’s permit and exact pier, the allowed zone and activity, vessel and safety terms, cancellation and the return to your base. The reviewed reserve page establishes habitat context but not current visitor permission, fees or landing rights.' ,
+      nightPlan: {
+        kicker: 'Nights, one base and a movable sea day',
+        title: 'Stay central and keep the boat day conditional',
+        intro: 'A central Nha Trang bed supports both a confirmed pier transfer and a complete land fallback. Count full days after arrival; do not move to Cam Ranh or Bai Dai to solve an unconfirmed boat departure.',
+        options: [
+          ['2 nights', 'One full marine day only', 'Use one central base and reserve one complete daylight day for the boat only after the bay authority and operator confirm the same route. Keep city sightseeing short and loose; if access is unclear, stay ashore.'],
+          ['3 nights', 'Separate city and sea', 'Keep the same central base for a city orientation day, one conditional boat day and a departure or flexible day. Never let the boat return determine a same-day flight or train.'],
+          ['4 nights', 'Add a weather buffer', 'Separate the bay outing, a confirmed land route and one movable day. Shift the boat only after a fresh access and weather check; spare nights do not create permission or safe sea conditions.']
+        ],
+        footerTitle: 'Do not prepay around an unnamed pier',
+        footer: 'Choose lodging with an independently confirmed road pickup or easy return from the actual pier. No current public boat timetable, approved landing list, visitor zone, fare or operator roster was verified for this review.'
+      },
+      routeDiagram: {
+        kind: 'flow',
+        title: 'The boat is one link in a permission-to-return chain.',
+        intro: 'No current route or pier was verified. Match the bay authority’s access answer to the same named operator before setting a hotel or departure plan.',
+        steps: [
+          ['From a central base', 'Name the pier and pickup', 'Get the actual pier, road meeting point, operator identity, vessel, route, return time and cancellation terms in writing.'],
+          ['Before payment', 'Match the protected zone', 'Ask the bay authority whether that exact activity and landing are currently allowed; a reserve profile does not grant entry.'],
+          ['On the boat day', 'Recheck sea conditions', 'Use the newest marine bulletin and crew decision. Follow the life-jacket and underway instructions; do not board if the vessel or safety terms are unclear.'],
+          ['After return', 'Keep the next leg loose', 'Return to the same confirmed pier and leave a broad buffer. Do not connect a boat return to a fixed rail, air or ferry departure.']
+        ],
+        fallbackTitle: 'If permission, weather or the operator is unresolved',
+        fallback: 'Cancel the water outing. Keep the central Nha Trang base and use a city-side promenade without swimming, or a Po Nagar–Hon Chong land route only if its separate access is confirmed. Do not seek another unverified boat or landing.'
+      }
     }
   ]
 });

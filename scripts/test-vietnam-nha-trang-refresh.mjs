@@ -214,7 +214,7 @@ const siblings = [
 ];
 for (const route of siblings) {
   const repoPath = `${route.slice(1)}index.html`;
-  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: non-selected Nha Trang page changed.`);
+  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(readAt(bayGapsBaseCommit, repoPath))), `${route}: non-selected Nha Trang page changed before the independent bay-gaps base.`);
 }
 assert.equal(bodyRoutePaths.size, 4);
 
@@ -257,5 +257,5 @@ assert.equal(ledger.previousTopLevelSprint.totals.remainingRoutes, 24);
 assert.equal(ledger.previousTopLevelSprint.currentSprintRoutes.length, 4);
 assert.equal(ledger.previousTopLevelSprint.remainingRoutesAfterSprint.length, 24);
 
-console.log('Nha Trang refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; three non-selected Nha Trang routes and nine previous Phu Quoc/Phong Nha bodies remain unchanged; exactly 20 existing sitemap dates changed; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; no SVG changed.');
+console.log('Nha Trang refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; its three sibling pages remain unchanged through the d779848 checkpoint before the separate bay-gaps overlay; nine previous Phu Quoc/Phong Nha bodies remain unchanged; source dates, localized summaries, sitemap URLs, canonicals, hreflang and ledger history match.');
 console.log(JSON.stringify(bodyChecks, null, 2));

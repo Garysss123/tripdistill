@@ -201,8 +201,7 @@ for (const edition of editions.slice(1)) {
 const bodyRoutePaths = new Set(routes);
 const siblings = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
-  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/',
-  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
 for (const route of siblings) {
   const repoPath = `${route.slice(1)}index.html`;

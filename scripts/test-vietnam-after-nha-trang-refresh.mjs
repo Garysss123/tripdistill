@@ -26,6 +26,12 @@ const southernGapsRoutes = [
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
 const southernGapsHubs = ['vietnam/ho-chi-minh-city/index.html', 'vietnam/mekong-delta/index.html'];
+const bayGapsRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -155,7 +161,7 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
