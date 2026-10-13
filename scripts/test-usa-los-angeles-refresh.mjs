@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postLosAngelesBostonRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'd5f7d1689b784b4930cd9f7d4496ab3148929162';
@@ -15,6 +16,8 @@ const routes = [
   '/usa/los-angeles/hollywood-griffith/',
   '/usa/los-angeles/santa-monica-venice/'
 ];
+const laterBostonRoutes = postLosAngelesBostonRoutes;
+const bostonTerminal = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
 const locales = [
   { code: 'en', prefix: '', hreflang: 'en', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', hreflang: 'zh-Hant', script: /[\u3400-\u9fff]/u },
@@ -83,7 +86,7 @@ assert.equal(git(['rev-parse', `${sourceTerminal}^{tree}`]).toString('utf8').tri
 const selectedFiles = new Set(routes.map(relative));
 const changedEnglishPages = git(['diff', '--name-only', base, '--', 'usa'])
   .toString('utf8').trim().split('\n').filter((file) => file.endsWith('.html')).sort();
-assert.deepEqual(changedEnglishPages, [...selectedFiles].sort(), 'exactly four existing Los Angeles English pages changed');
+assert.deepEqual(changedEnglishPages, [...selectedFiles, ...laterBostonRoutes.map(relative)].sort(), 'the exact Los Angeles batch and later Boston batch changed English pages');
 
 const priorScopeReports = [
   'reports/usa-historical-source-scope-ledger-2026-10-12.md',
@@ -102,7 +105,14 @@ for (const file of baseUsaPages) {
   const before = mainText(gitText(base, file));
   const afterHtml = fs.readFileSync(path.join(root, file), 'utf8');
   if (!selectedFiles.has(file)) {
-    assert.equal(mainText(afterHtml), before, `${file}: English main content remains unchanged outside the four selected pages`);
+    if (laterBostonRoutes.some((route) => relative(route) === file)) {
+      assert.notEqual(mainText(afterHtml), before, `${file}: later Boston body changed after the Arizona source base`);
+      assert.equal(mainText(gitText(bostonTerminal, file)), mainText(afterHtml), `${file}: later Boston body matches the exact source terminal`);
+      assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: Boston Article dateModified`);
+      assert.match(afterHtml, /data-editorial-revision="boston-20261013"/, `${file}: Boston editorial marker`);
+    } else {
+      assert.equal(mainText(afterHtml), before, `${file}: English main content remains unchanged outside the four selected pages and later Boston batch`);
+    }
   } else {
     assert.notEqual(mainText(afterHtml), before, `${file}: substantive content differs from the exact base`);
     assert.equal(before, mainText(gitText(september, file)), `${file}: exact-base main body still matches 11 September`);
@@ -148,15 +158,15 @@ const baseSearchFromGit = new Map(JSON.parse(gitText(base, 'data/search-index.js
 assert.equal(baseSearchFromGit.size, 955, 'base English search index has 955 entries');
 assert.equal(currentSearch.size, 955, 'current English search index has 955 entries');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
-assert.deepEqual([...currentSearch].filter(([url, value]) => url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes].sort(), 'only the four Los Angeles search summaries changed among the exact 97-route U.S. index; later non-U.S. integration scopes are checked separately');
+assert.deepEqual([...currentSearch].filter(([url, value]) => url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes, ...laterBostonRoutes].sort(), 'only the four Los Angeles and four later Boston search summaries changed among the exact 97-route U.S. index; later non-U.S. integration scopes are checked separately');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'base sitemap has exactly 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap has exactly 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
-const datedPaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap].filter(([route, date]) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').startsWith('/usa/') && baseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only four Los Angeles routes across five editions receive new U.S. sitemap dates; other country updates are audited separately');
+const datedPaths = [...routes, ...laterBostonRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+assert.deepEqual([...currentSitemap].filter(([route, date]) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').startsWith('/usa/') && baseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only four Los Angeles and four later Boston routes across five editions receive new U.S. sitemap dates; other country updates are audited separately');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: lastmod`);
 
 for (const locale of locales) {
@@ -192,4 +202,4 @@ for (const locale of locales.slice(1)) {
 
 assert.equal(git(['diff', '--name-only', base, sourceTerminal, '--', 'assets']).toString('utf8').trim(), '', 'the Los Angeles source batch changes no image asset bytes or records');
 assert.equal(git(['diff', '--name-only', base, sourceTerminal, '--', '*.svg']).toString('utf8').trim(), '', 'the Los Angeles source batch adds or changes no SVG');
-console.log('Los Angeles source regression passed: four deduplicated routes, exact-base scope, translated page/search content, 20 dates, 4,560 URLs, New York unchanged, and no asset/SVG changes.');
+console.log('Los Angeles source regression passed: four deduplicated routes plus the later Boston batch, exact-base scope, translated page/search content, 40 U.S. dates, 4,560 URLs, New York unchanged, and no asset/SVG changes.');

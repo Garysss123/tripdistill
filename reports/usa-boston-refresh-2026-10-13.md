@@ -1,0 +1,42 @@
+# Boston & Cambridge U.S. source refresh — 13 October 2026
+
+## Scope and history
+
+Source branch `codex/sprint-us-after-san-diego-20261013` starts at exact source commit `bc08029d36448bcb9d0a42a986caddec883b3d1f` (parent `b7d32c7e1585d5af3cf3d4291dd323e5d2da30eb`). That base has 97 English U.S. routes and follows the disclosed 61/97 U.S. source-work subtotal. Comparing normalized visible `<main>` text with 11 September commit `71def01cd4d489552b9f5d67ca1a202becaa0435e`, and checking the ten previous task-scope reports, selected these four existing routes:
+
+| Route | Visible `<main>` words at base → refreshed | Main editorial changes |
+| --- | ---: | --- |
+| [`/usa/boston/`](/usa/boston/) | 1,538 → 1,807 | Two-, three- and four-night choices; Downtown, Back Bay, Harvard Square and Seaport base trade-offs; SL1 terminal stop → South Station → Red Line toward Harvard, or airport shuttle → Blue Line Airport → Aquarium with a live onward plan; three-day route order with the seasonal harbor dependency. |
+| [`/usa/boston/freedom-trail/`](/usa/boston/freedom-trail/) | 1,469 → 1,545 | Uses the NPS 2.5-mile route as a menu, separates the walk into manageable sections and named interiors, flags stairs-only access and weather/closure changes, and gives a shorter downtown fallback. |
+| [`/usa/boston/cambridge-harvard/`](/usa/boston/cambridge-harvard/) | 1,471 → 1,532 | Distinguishes Harvard’s free 16-stop self-guided route from its scheduled guided tour, records current booking lead time and arrival guidance, and builds a one-museum day with an authorized-access and rain fallback. |
+| [`/usa/boston/harbor-islands/`](/usa/boston/harbor-islands/) | 1,464 → 1,646 | Dates the 2026 ferry season and its last listed operating day, names the checked Long Wharf and Hingham departures, and requires a published return plus an NWS/accessibility check. If service is unavailable, it recommends a mainland day instead of an unverified or unauthorized boat. |
+
+Each route body matched its 11 September source at the task base, and none appears in the ten previous scoped batch reports. This is a refresh of routes that already existed and were present in the older September Boston release; it is not a claim that Boston had never been edited. The 65/97 subtotal is only the disclosed source-work ledger after adding four paths to 61. The ledger is not an exhaustive history, route-coverage acceptance count, or approval of the U.S. collection. New York and `/usa/` remain byte-for-byte unchanged.
+
+## Official references checked on 13 October 2026
+
+- [NPS: walking the Freedom Trail](https://www.nps.gov/thingstodo/walk-the-freedom-trail.htm) — the published route length is 2.5 miles. [Boston National Historical Park visitor information](https://www.nps.gov/bost/planyourvisit/basicinfo.htm), last updated 15 January 2026, distinguishes individual site access, including stairs-only access at the Old State House. Its [planning and alerts page](https://www.nps.gov/bost/planyourvisit/index.htm), last updated 6 October 2026, says hours and programs can change, including at short notice for severe weather.
+- [Harvard official tours](https://www.harvard.edu/visit/tours/) — checked 13 October; the page listed a free, 16-stop Revolutionary-era self-guided walk from Smith Campus Center at 1350 Massachusetts Avenue and a separate 45–60 minute public guided tour. The guided listing described registration, places released beginning the Friday before tour week, and arrival 15 minutes before the start. Tour availability, meeting details and campus access must be rechecked for the visit date. [Harvard maps](https://www.harvard.edu/visit/maps-directions/) are linked for wayfinding. Harvard Art Museums and Harvard Museums of Science & Culture visitor pages are linked, but no unverified future hours, free admission or display availability is promised.
+- [Boston Harbor Islands ferry schedule](https://www.bostonharborislands.org/ferryschedule/) — the 2026 schedule listed 12 October as the final day of regular seasonal public service; the page had no 2027 calendar on the review date. The described 2026 Spectacle Island service used Long Wharf and the 2026 Peddocks Island information directed passengers to Hingham. These details are dated 2026 snapshots, not future service guarantees. [NPS island accessibility](https://www.nps.gov/boha/planyourvisit/accessibility.htm) is linked for trip-specific checks.
+- [Massport Logan public transportation](https://www.massport.com/logan-airport/getting-to-logan/public-transportation) and [airport shuttle](https://www.massport.com/logan-airport/getting-to-logan/on-airport-shuttle), plus the [MBTA trip planner](https://www.mbta.com/trip-planner) and [service alerts](https://www.mbta.com/alerts), support the airport route chains. The MBTA planner and Massport dynamic content did not support reliable fare, headway or future timetable claims in this check, so the guide directs travelers to live tools rather than stating those values.
+- [National Weather Service Boston/Norton](https://www.weather.gov/box) — a live forecast and marine-hazard reference, not a forecast for an unspecified future visit and not confirmation that a ferry or venue is operating.
+
+No page suggests entering locked, staff-only, private, or closed areas or boarding an unverified substitute boat. Operating details, access rules, ticket terms, weather and schedules are dated or explicitly left for a live check.
+
+## Translation, derivatives and checks
+
+Traditional Chinese, Japanese, Korean and Thai each have 28 newly translated Boston strings and reuse 223 reviewed strings. The same runtime drafted and self-reviewed each locale; the exact runtime variant is unavailable. This is not independent second-model or human review. A dry-run-verified cleanup removed 20 stale keys per locale from the superseded `35a-boston-editorial.json` batch (80 total). The four localized batches record the exact four-route scope and translation provenance.
+
+Four English and four localized search summaries update in place. Each language keeps 955 search records. Exactly 20 sitemap `lastmod` values change (four routes × five editions), with the full 4,560-URL set unchanged. Each localized catalog has 60,761 required strings with no missing or stale entries after merging this batch into the integration catalog. No image or SVG file changed or was added.
+
+Source-content comparison used [`/japan/osaka/`](/japan/osaka/), [`/japan/osaka/namba/`](/japan/osaka/namba/) and [`/japan/tokyo/shinjuku/`](/japan/tokyo/shinjuku/) as structure references for stay-length/base trade-offs, named districts, day/evening sequencing and return decisions. This is a source-text comparison; desktop/mobile rendering and visual hierarchy were not reviewed.
+
+- `npm run build` passed: 5,499 files (4,577 HTML, 825 images; 327.7 MiB); all 4,560 sitemap routes verified in `dist/`, with 14,501 files of Cloudflare Pages headroom.
+- Final `npm run audit` passed, including translation coverage, `audit:usa`, the USA editorial structure check, all prior U.S. refresh regressions, `test-usa-boston-refresh`, integration-scope regression and final site audit (4,560 routes; 955 search records per language). The integration scope now records 374 English body updates, 1,865 changed dates over 373 existing routes × five editions, and 331 English search-record updates.
+- The Boston regression verifies exact-base and September body comparison, source-ledger de-duplication, only four English U.S. `<main>` changes, New York and `/usa/` byte preservation, five-language localized content and search, all 20 dates, the exact 4,560 sitemap URLs, and no assets or SVGs.
+
+## Integration checkpoint
+
+The direct Boston change from source terminal `b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda` (tree `4cd883f1ba0c53bd91539e92ad82e0acaf5afd39`) was applied to `codex/integration-sprint-20261011` at base `5808e5e31980359b1e49dd9f218e97e32392015a`. Source parent `bc08029d36448bcb9d0a42a986caddec883b3d1f` contains an unintegrated San Diego change; only the direct Boston source delta was used. The overall substantive-route ledger advances from 825 to 829/907. This is an integration-branch checkpoint, not a `main` update or deployment.
+
+The available checks are source/build regressions, not rendered UI or human editorial acceptance. No browser, headless/CDP, local server, whole-site HTTP crawl, `main` merge or deployment was used or performed.

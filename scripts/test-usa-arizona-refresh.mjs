@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postArizonaLosAngelesRoutes } from './integration-sprint-scope.mjs';
+import { postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '45cae962fdc7fb500cfceb505203efbfd2dbc396';
@@ -17,6 +17,7 @@ const routes = [
   '/usa/arizona/sedona/'
 ];
 const laterLosAngelesRoutes = postArizonaLosAngelesRoutes;
+const laterBostonRoutes = postLosAngelesBostonRoutes;
 const locales = [
   { code: 'en', prefix: '', hreflang: 'en', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', hreflang: 'zh-Hant', script: /[\u3400-\u9fff]/u },
@@ -88,6 +89,14 @@ for (const file of baseUsaPages) {
     assert.equal(mainText(gitText(losAngelesBase, file)), mainText(gitText(september, file)), `${file}: Los Angeles exact source base body matches the 11 September source`);
     assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: Los Angeles Article dateModified`);
     assert.match(afterHtml, /data-editorial-revision="los-angeles-20261013"/, `${file}: Los Angeles editorial revision`);
+  } else if (laterBostonRoutes.some((route) => relative(route) === file)) {
+    const bostonBase = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
+    const bostonTerminal = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
+    assert.notEqual(mainText(afterHtml), before, `${file}: later Boston source body changes after Arizona`);
+    assert.equal(mainText(gitText(bostonBase, file)), mainText(gitText(september, file)), `${file}: Boston exact source base body matches the 11 September source`);
+    assert.equal(mainText(gitText(bostonTerminal, file)), mainText(afterHtml), `${file}: Boston body matches the exact source terminal`);
+    assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: Boston Article dateModified`);
+    assert.match(afterHtml, /data-editorial-revision="boston-20261013"/, `${file}: Boston editorial revision`);
   } else if (!targetFiles.has(file)) {
     assert.equal(mainText(afterHtml), before, `${file}: English main content remains unchanged outside the four selected pages`);
   } else {
@@ -133,14 +142,14 @@ for (const route of routes) {
   assert.notDeepEqual(currentSearch.get(route), baseSearch.get(route), `${route}: Arizona summary changed from exact source base`);
 }
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...laterLosAngelesRoutes].sort(), 'only the four Arizona and four later Los Angeles U.S. search summaries changed; later non-U.S. integration scopes are checked separately');
+assert.deepEqual(changedSearchRoutes, [...routes, ...laterLosAngelesRoutes, ...laterBostonRoutes].sort(), 'only the four Arizona, four later Los Angeles and four Boston U.S. search summaries changed; later non-U.S. integration scopes are checked separately');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'the sitemap URL set is unchanged');
-const datedRoutes = [...routes, ...laterLosAngelesRoutes];
+const datedRoutes = [...routes, ...laterLosAngelesRoutes, ...laterBostonRoutes];
 const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedArizonaDates = [...currentSitemap]
   .filter(([route, date]) => datedRoutes.some((target) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').endsWith(target)) && baseSitemap.get(route) !== date)
@@ -167,4 +176,4 @@ for (const locale of locales.slice(1)) {
 
 const svgFiles = git(['diff', '--name-only', base, sourceTerminal, '--', '*.svg']).toString('utf8').trim();
 assert.equal(svgFiles, '', 'this Arizona batch adds or changes no SVG assets');
-console.log(`USA Arizona refresh regression passed: four existing routes selected after exact-base history review; New England, New York and /usa/ unchanged; four Arizona plus four later Los Angeles search records and ${datedPaths.length} edition dates; all 4,560 sitemap URLs preserved; no SVG changed.`);
+console.log(`USA Arizona refresh regression passed: four existing routes selected after exact-base history review; New England, New York and /usa/ unchanged; four Arizona plus four later Los Angeles and Boston search records and ${datedPaths.length} edition dates; all 4,560 sitemap URLs preserved; no SVG changed.`);

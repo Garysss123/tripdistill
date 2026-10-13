@@ -12,6 +12,7 @@ import {chicagoDescriptions} from './chicago-editorial.mjs';
 import {newEnglandDescriptions} from './new-england-editorial.mjs';
 import {arizonaDescriptions} from './arizona-editorial.mjs';
 import {losAngelesDescriptions} from './los-angeles-editorial.mjs';
+import {bostonDescriptions} from './boston-editorial.mjs';
 
 const root=path.resolve(import.meta.dirname,'..');
 const failures=[];
@@ -83,7 +84,8 @@ const chicagoRefreshRoutes=new Set(['/usa/chicago/','/usa/chicago/loop-riverwalk
 const newEnglandRefreshRoutes=new Set(['/usa/new-england/','/usa/new-england/portland-maine/','/usa/new-england/acadia/','/usa/new-england/white-mountains-vermont/']);
 const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/']);
 const losAngelesRefreshRoutes=new Set(['/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/']);
-for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
+const bostonRefreshRoutes=new Set(['/usa/boston/','/usa/boston/freedom-trail/','/usa/boston/cambridge-harvard/','/usa/boston/harbor-islands/']);
+for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||bostonRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');
 for(const r of usaRoutes)check(records.some(x=>x.url===r),`${r}: missing search entry`);
@@ -119,7 +121,11 @@ const expectedEditorialSearch=new Map([
  ['/usa/los-angeles/',losAngelesDescriptions[0]],
  ['/usa/los-angeles/downtown-arts/',losAngelesDescriptions[1]],
  ['/usa/los-angeles/hollywood-griffith/',losAngelesDescriptions[2]],
- ['/usa/los-angeles/santa-monica-venice/',losAngelesDescriptions[3]]
+ ['/usa/los-angeles/santa-monica-venice/',losAngelesDescriptions[3]],
+ ['/usa/boston/',bostonDescriptions[0]],
+ ['/usa/boston/freedom-trail/',bostonDescriptions[1]],
+ ['/usa/boston/cambridge-harvard/',bostonDescriptions[2]],
+ ['/usa/boston/harbor-islands/',bostonDescriptions[3]]
 ]);
 for(const [route,summary] of expectedEditorialSearch)check(records.find(x=>x.url===route)?.summary===summary,`${route}: search summary is stale`);
 check(read('scripts/build-dist.mjs').includes("'usa'"),'USA absent from build allowlist');

@@ -89,6 +89,13 @@ export const usaLosAngelesNewSubstantiveRoutes = Object.freeze([
   '/usa/los-angeles/santa-monica-venice/'
 ]);
 
+export const usaBostonNewSubstantiveRoutes = Object.freeze([
+  '/usa/boston/',
+  '/usa/boston/freedom-trail/',
+  '/usa/boston/cambridge-harvard/',
+  '/usa/boston/harbor-islands/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -287,5 +294,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Arizona', count: 813 }),
   Object.freeze({ label: 'Los Angeles', count: 817 }),
   Object.freeze({ label: 'Broome & Kimberley', count: 821 }),
-  Object.freeze({ label: 'Mui Ne & Binh Thuan', count: 825 })
+  Object.freeze({ label: 'Mui Ne & Binh Thuan', count: 825 }),
+  Object.freeze({ label: 'Boston & Cambridge', count: 829 })
 ]);

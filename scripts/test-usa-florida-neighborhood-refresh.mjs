@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes } from './integration-sprint-scope.mjs';
+import { postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes } from './integration-sprint-scope.mjs';
 
 const base = '55147104cc93f80b6c9ec7f0b01436b01661e435';
 const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
@@ -28,6 +28,7 @@ const postNewEnglandRoutes = [
 ];
 const arizonaRoutes = postNewEnglandArizonaRoutes;
 const losAngelesRoutes = postArizonaLosAngelesRoutes;
+const bostonRoutes = postLosAngelesBostonRoutes;
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -80,7 +81,7 @@ function htmlPath(route) {
   return `${route.slice(1)}index.html`;
 }
 
-const targetSet = new Set([...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes].map(htmlPath));
+const targetSet = new Set([...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...bostonRoutes].map(htmlPath));
 const newYorkAcceptancePath = 'usa/new-york/index.html';
 const basePaths = execFileSync('git', ['ls-tree', '-r', '--name-only', base, '--', 'usa'], { cwd: root, encoding: 'utf8' })
   .trim().split('\n').filter((file) => file.endsWith('/index.html') || file === 'usa/index.html');
@@ -102,7 +103,7 @@ for (const relativePath of basePaths) {
     assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
   }
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the exact Florida, Chicago, New England, Arizona and Los Angeles English U.S. bodies changed');
+assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles and Boston English U.S. bodies changed');
 assert.equal(normalizedMain(fs.readFileSync(path.join(root, newYorkAcceptancePath), 'utf8')),
   normalizedMain(gitShow(base, newYorkAcceptancePath)), 'New York acceptance sample body remains unchanged');
 
@@ -125,7 +126,7 @@ const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()]
   .filter((url) => url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes].sort(), 'only the exact Florida, Chicago, New England, Arizona and Los Angeles English search summaries changed');
+assert.deepEqual(changedSearch, [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...bostonRoutes].sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles and Boston English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -139,7 +140,7 @@ assert.equal(newSitemap.length, 4560, 'sitemap keeps 4,560 URLs');
 const oldDates = new Map(oldSitemap);
 const newDates = new Map(newSitemap);
 assert.deepEqual([...newDates.keys()].sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
-const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
+const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...bostonRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
 const changedDates = [...newDates.keys()]
   .filter((url) => {
     const route = new URL(url).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '');
@@ -163,4 +164,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of routes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source-refresh scope passed: Florida, Chicago, New England, Arizona and Los Angeles scopes total ${targetSet.size} English bodies; ${targetSet.size} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source-refresh scope passed: Florida, Chicago, New England, Arizona, Los Angeles and Boston scopes total ${targetSet.size} English bodies; ${targetSet.size} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
