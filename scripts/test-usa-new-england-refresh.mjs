@@ -15,6 +15,12 @@ const routes = [
   '/usa/new-england/acadia/',
   '/usa/new-england/white-mountains-vermont/'
 ];
+const laterArizonaRoutes = [
+  '/usa/arizona/',
+  '/usa/arizona/phoenix-scottsdale/',
+  '/usa/arizona/sedona/',
+  '/usa/arizona/grand-canyon/'
+];
 const locales = [
   { code: 'en', prefix: '', hreflang: 'en', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', hreflang: 'zh-Hant', script: /[\u3400-\u9fff]/u },
@@ -83,9 +89,7 @@ for (const relativePath of basePaths) {
   const afterHtml = fs.readFileSync(currentPath, 'utf8');
   const after = mainText(afterHtml);
   if (before !== after) changedBodyPaths.push(relativePath);
-  if (!targets.has(relativePath)) {
-    assert.equal(after, before, `${relativePath}: English main body remains unchanged outside the four selected paths`);
-  } else {
+  if (targets.has(relativePath)) {
     assert.notEqual(after, before, `${relativePath}: substantive body differs from exact task base`);
     assert.equal(mainText(gitText(september, relativePath)), before, `${relativePath}: exact task-base body matches its 11 September body`);
     const data = article(afterHtml);
@@ -95,9 +99,17 @@ for (const relativePath of basePaths) {
     assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath}: visible review date`);
     assert.match(afterHtml, /Source information checked on 13 October 2026\./, `${relativePath}: source-check date`);
     bodyStats.push({ route: `/${relativePath}`, beforeChars: before.length, afterChars: after.length, beforeWords: wordCount(before), afterWords: wordCount(after), beforeSha256: crypto.createHash('sha256').update(before).digest('hex'), afterSha256: crypto.createHash('sha256').update(after).digest('hex') });
+  } else if (laterArizonaRoutes.some((route) => route.slice(1) + 'index.html' === relativePath)) {
+    const arizonaBase = '45cae962fdc7fb500cfceb505203efbfd2dbc396';
+    assert.notEqual(after, before, `${relativePath}: later Arizona batch has a substantive body change`);
+    assert.equal(mainText(gitText(arizonaBase, relativePath)), mainText(gitText(september, relativePath)), `${relativePath}: Arizona exact source base matches its 11 September body`);
+    assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${relativePath}: Arizona Article dateModified`);
+    assert.match(afterHtml, /data-editorial-revision="arizona-20261013"/, `${relativePath}: Arizona editorial revision marker`);
+  } else {
+    assert.equal(after, before, `${relativePath}: English main body remains unchanged outside the selected paths and later Arizona batch`);
   }
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targets].sort(), 'exactly the four selected English U.S. main bodies changed');
+assert.deepEqual(changedBodyPaths.sort(), [...targets, ...laterArizonaRoutes.map((route) => route.slice(1) + 'index.html')].sort(), 'exactly the four selected New England and four later Arizona English U.S. main bodies changed');
 assert.deepEqual(gitBytes(base, 'usa/new-york/index.html'), fs.readFileSync(path.join(root, 'usa/new-york/index.html')), 'New York acceptance sample remains byte-for-byte unchanged');
 assert.deepEqual(gitBytes(base, 'usa/index.html'), fs.readFileSync(path.join(root, 'usa/index.html')), 'U.S. index remains byte-for-byte unchanged');
 
@@ -130,19 +142,19 @@ assert.equal(baseSearch.size, 955, 'source-base English search index has 955 rec
 assert.equal(currentSearch.size, 955, 'English search index retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'only the four selected English search summaries changed');
+assert.deepEqual(changedSearchRoutes, [...routes, ...laterArizonaRoutes].sort(), 'only the four selected New England and four later Arizona English search summaries changed');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'source-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set is unchanged');
-const datedPaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datedPaths = [...routes, ...laterArizonaRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(changedDates, datedPaths, 'only the selected four routes across five editions receive changed sitemap dates');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: sitemap lastmod`);
 
-for (const route of routes) {
+for (const route of [...routes, ...laterArizonaRoutes]) {
   for (const locale of locales) {
     const htmlPath = pathFor(locale.prefix, route);
     assert.ok(fs.existsSync(htmlPath), `${locale.code} edition page exists: ${route}`);
@@ -158,12 +170,12 @@ for (const locale of locales.slice(1)) {
   assert.ok(fs.existsSync(recordsPath), `${locale.code} localized search index exists`);
   const records = JSON.parse(fs.readFileSync(recordsPath, 'utf8'));
   assert.equal(records.length, 955, `${locale.code} search index retains 955 records`);
-  for (const route of routes) {
+  for (const route of [...routes, ...laterArizonaRoutes]) {
     const entry = records.find((record) => record.url === `${locale.prefix}${route}`);
     assert.ok(entry?.summary, `${locale.code} localized search summary exists: ${route}`);
     assert.ok(locale.script.test(entry.summary), `${locale.code} search summary is translated: ${route}`);
   }
 }
 
-console.log('USA New England refresh regression passed: four substantive routes selected by exact-body history; New York and /usa/ unchanged; four English search records changed; 20 edition dates updated; 4,560 sitemap URLs preserved.');
+console.log('USA New England refresh regression passed: four substantive New England routes plus the later four-page Arizona batch; New York and /usa/ unchanged; eight English search records changed; 40 edition dates updated; 4,560 sitemap URLs preserved.');
 console.log(JSON.stringify(bodyStats, null, 2));

@@ -10,6 +10,7 @@ import {hawaiiDescriptions} from './hawaii-editorial.mjs';
 import {atlantaDescriptions} from './atlanta-editorial.mjs';
 import {chicagoDescriptions} from './chicago-editorial.mjs';
 import {newEnglandDescriptions} from './new-england-editorial.mjs';
+import {arizonaDescriptions} from './arizona-editorial.mjs';
 
 const root=path.resolve(import.meta.dirname,'..');
 const failures=[];
@@ -79,7 +80,8 @@ const atlantaRefreshRoutes=new Set(['/usa/atlanta/','/usa/atlanta/king-historic-
 const floridaNeighborhoodRefreshRoutes=new Set(['/usa/miami/south-beach/','/usa/miami/little-havana-wynwood/','/usa/orlando/theme-parks/','/usa/orlando/winter-park/']);
 const chicagoRefreshRoutes=new Set(['/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/']);
 const newEnglandRefreshRoutes=new Set(['/usa/new-england/','/usa/new-england/portland-maine/','/usa/new-england/acadia/','/usa/new-england/white-mountains-vermont/']);
-for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
+const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/']);
+for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');
 for(const r of usaRoutes)check(records.some(x=>x.url===r),`${r}: missing search entry`);
@@ -107,7 +109,11 @@ const expectedEditorialSearch=new Map([
  ['/usa/new-england/',newEnglandDescriptions[0]],
  ['/usa/new-england/portland-maine/',newEnglandDescriptions[1]],
  ['/usa/new-england/acadia/',newEnglandDescriptions[2]],
- ['/usa/new-england/white-mountains-vermont/',newEnglandDescriptions[3]]
+ ['/usa/new-england/white-mountains-vermont/',newEnglandDescriptions[3]],
+ ['/usa/arizona/',arizonaDescriptions[0]],
+ ['/usa/arizona/grand-canyon/',arizonaDescriptions[1]],
+ ['/usa/arizona/sedona/',arizonaDescriptions[2]],
+ ['/usa/arizona/phoenix-scottsdale/',arizonaDescriptions[3]]
 ]);
 for(const [route,summary] of expectedEditorialSearch)check(records.find(x=>x.url===route)?.summary===summary,`${route}: search summary is stale`);
 check(read('scripts/build-dist.mjs').includes("'usa'"),'USA absent from build allowlist');

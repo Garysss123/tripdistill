@@ -24,8 +24,14 @@ const laterNewEnglandRoutes = [
   '/usa/new-england/acadia/',
   '/usa/new-england/white-mountains-vermont/'
 ];
+const laterArizonaRoutes = [
+  '/usa/arizona/',
+  '/usa/arizona/phoenix-scottsdale/',
+  '/usa/arizona/sedona/',
+  '/usa/arizona/grand-canyon/'
+];
 const routes = [...floridaRoutes, ...chicagoRoutes];
-const scopedRoutes = [...routes, ...laterNewEnglandRoutes];
+const scopedRoutes = [...routes, ...laterNewEnglandRoutes, ...laterArizonaRoutes];
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -109,7 +115,7 @@ for (const route of laterNewEnglandRoutes) {
   assert.equal(normalizedMain(gitShow(september, relativePath)), normalizedMain(gitShow(newEnglandBase, relativePath)),
     `${relativePath} must match its 11 September source body at its exact New England task base`);
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four Florida, four Chicago and four later New England English U.S. bodies changed');
+assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four Florida, four Chicago, four later New England and four later Arizona English U.S. bodies changed');
 assert.equal(normalizedMain(fs.readFileSync(path.join(root, newYorkAcceptancePath), 'utf8')),
   normalizedMain(gitShow(base, newYorkAcceptancePath)), 'New York acceptance sample body remains unchanged');
 
@@ -131,7 +137,7 @@ assert.equal(newSearch.length, 955, 'English search record count remains 955');
 const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()].filter((url) => JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...scopedRoutes].sort(), 'only the Florida, Chicago and later New England target English search summaries changed');
+assert.deepEqual(changedSearch, [...scopedRoutes].sort(), 'only the Florida, Chicago, later New England and later Arizona target English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -165,4 +171,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of scopedRoutes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA source refresh regression passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago and ${laterNewEnglandRoutes.length} New England bodies; ${scopedRoutes.length} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA source refresh regression passed: ${floridaRoutes.length} Florida, ${chicagoRoutes.length} Chicago, ${laterNewEnglandRoutes.length} New England and ${laterArizonaRoutes.length} Arizona bodies; ${scopedRoutes.length} English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);

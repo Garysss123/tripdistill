@@ -406,10 +406,20 @@ export const postChicagoNewEnglandRoutes = Object.freeze([
   '/usa/new-england/white-mountains-vermont/'
 ]);
 
+// Arizona source refresh after the New England checkpoint; four untouched
+// routes extend the current-tree date/search scope without changing inventory.
+export const postNewEnglandArizonaRoutes = Object.freeze([
+  '/usa/arizona/',
+  '/usa/arizona/phoenix-scottsdale/',
+  '/usa/arizona/grand-canyon/',
+  '/usa/arizona/sedona/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
-  ...postChicagoNewEnglandRoutes
+  ...postChicagoNewEnglandRoutes,
+  ...postNewEnglandArizonaRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
