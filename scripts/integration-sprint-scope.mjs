@@ -397,9 +397,19 @@ export const postFloridaChicagoRoutes = Object.freeze([
   '/usa/chicago/neighborhoods/'
 ]);
 
+// New England source refresh after the Chicago checkpoint; four more existing
+// English bodies extend only the current-tree date/search scope.
+export const postChicagoNewEnglandRoutes = Object.freeze([
+  '/usa/new-england/',
+  '/usa/new-england/portland-maine/',
+  '/usa/new-england/acadia/',
+  '/usa/new-england/white-mountains-vermont/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
-  ...postFloridaChicagoRoutes
+  ...postFloridaChicagoRoutes,
+  ...postChicagoNewEnglandRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([

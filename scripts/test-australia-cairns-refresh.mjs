@@ -131,7 +131,7 @@ function sitemapEntries(xml) {
 
 const expectedHtml = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', taskBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans, four Atlanta, four Florida and four Chicago English pages changed.');
+assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four New Orleans, four Atlanta, four Florida, four Chicago and four New England English pages changed.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -206,7 +206,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].sort(), 'From the exact source-task base, only the four New Orleans, four Atlanta, four Florida and four Chicago search records changed.');
+assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].sort(), 'From the exact source-task base, only the scoped New Orleans, Atlanta, Florida, Chicago and New England search records changed.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -227,7 +227,7 @@ const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.x
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const expectedLastmod = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans, four Atlanta, four Florida and four Chicago routes across five editions receive new lastmod dates.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the scoped New Orleans, Atlanta, Florida, Chicago and New England routes across five editions receive new lastmod dates.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postOctober13Routes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap date.');
 for (const route of routes) for (const [, prefix] of locales) assert.equal(currentSitemap.get(prefix + route), reviewIsoDate, prefix + route + ': Cairns date remains current.');
 
@@ -244,4 +244,4 @@ for (const [route, requiredText] of [
   [routes[3], 'Surf Life Saving Australia — Beachsafe beach information']
 ]) assert(fs.readFileSync(pageFile(route), 'utf8').includes(requiredText), `${route}: missing targeted official source ${requiredText}.`);
 
-console.log(`Cairns Australia regression passed: four edited routes (+${deltas.map(({ words }) => words).join(', ')} words), two repeat improvements and two new substantive routes, five-language dates/FAQ/canonical parity, exact current-branch New Orleans search/date scope, current Cairns date parity, 125 page keys + four search keys per locale, original Luna provenance and unverified continuation runtime, and unchanged photo bytes.`);
+console.log(`Cairns Australia regression passed: four edited routes (+${deltas.map(({ words }) => words).join(', ')} words), two repeat improvements and two new substantive routes, five-language dates/FAQ/canonical parity, exact current-branch post-integration U.S. source-search/date scope including New England, current Cairns date parity, 125 page keys + four search keys per locale, original Luna provenance and unverified continuation runtime, and unchanged photo bytes.`);

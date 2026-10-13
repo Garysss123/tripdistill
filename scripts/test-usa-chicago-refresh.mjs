@@ -15,6 +15,12 @@ const routes = [
   '/usa/chicago/museum-lakefront/',
   '/usa/chicago/neighborhoods/'
 ];
+const laterNewEnglandRoutes = [
+  '/usa/new-england/',
+  '/usa/new-england/portland-maine/',
+  '/usa/new-england/acadia/',
+  '/usa/new-england/white-mountains-vermont/'
+];
 const locales = [
   { code: 'en', prefix: '', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', script: /[\u3400-\u9fff]/u },
@@ -82,8 +88,8 @@ for (const relativePath of basePaths) {
   const before = mainText(beforeHtml);
   const after = mainText(afterHtml);
   if (before !== after) changedBodyPaths.push(relativePath);
-  if (!selectedPaths.has(relativePath)) assert.equal(after, before, `${relativePath}: main body must remain unchanged outside the four selected paths`);
-  else {
+  if (!selectedPaths.has(relativePath) && !laterNewEnglandRoutes.some((route) => route.slice(1) + 'index.html' === relativePath)) assert.equal(after, before, `${relativePath}: main body must remain unchanged outside this task and the later New England source batch`);
+  else if (selectedPaths.has(relativePath)) {
     assert.notEqual(after, before, `${relativePath}: substantive body must change`);
     assert.equal(mainText(gitShow(september, relativePath)), before, `${relativePath}: historical September body must match exact task base`);
     const data = article(afterHtml);
@@ -92,9 +98,13 @@ for (const relativePath of basePaths) {
     assert.match(afterHtml, /data-editorial-revision="chicago-20261013"/, `${relativePath}: editorial revision marker`);
     assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath}: visible English review date`);
     bodyStats.push({ route: `/${relativePath}`, beforeChars: before.length, afterChars: after.length, beforeWords: wordCount(before), afterWords: wordCount(after), beforeSha256: crypto.createHash('sha256').update(before).digest('hex'), afterSha256: crypto.createHash('sha256').update(after).digest('hex') });
+  } else {
+    const taskBase = 'dc88a75c561d3e7a4f30bd00afadb6e8d52841d7';
+    assert.notEqual(after, before, `${relativePath}: later New England body changes after the Chicago task base`);
+    assert.equal(mainText(gitShow(taskBase, relativePath)), mainText(gitShow(september, relativePath)), `${relativePath}: later New England selection matches the September body at its exact base`);
   }
 }
-assert.deepEqual(changedBodyPaths.sort(), [...selectedPaths].sort(), 'only the four authorized English Chicago main bodies changed among all U.S. routes');
+assert.deepEqual(changedBodyPaths.sort(), [...selectedPaths, ...laterNewEnglandRoutes.map((route) => route.slice(1) + 'index.html')].sort(), 'only the four Chicago and four later New England English bodies changed among U.S. routes');
 assert.deepEqual(gitBuffer(base, newYorkPath), fs.readFileSync(path.join(root, newYorkPath)), 'New York acceptance sample remains byte-for-byte unchanged from the exact task base');
 
 const expectedEvidence = new Map([
@@ -136,19 +146,19 @@ assert.equal(baseSearch.size, 955, 'source-base English search index has 955 rec
 assert.equal(currentSearch.size, 955, 'English search index retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set remains unchanged');
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, routes, 'only the four selected Chicago English search records changed');
+assert.deepEqual(changedSearchRoutes, [...routes, ...laterNewEnglandRoutes].sort(), 'only the four Chicago and four later New England English search records changed');
 
 const baseSitemap = sitemap(gitShow(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'source-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set remains unchanged');
-const datePaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datePaths = [...routes, ...laterNewEnglandRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(changedDates, datePaths, 'only four Chicago routes across five editions receive updated dates from exact task base');
+assert.deepEqual(changedDates, datePaths, 'only the Chicago task routes and four later New England routes across five editions receive updated dates from their respective exact task bases');
 for (const route of datePaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: sitemap lastmod`);
 
-for (const route of routes) {
+for (const route of [...routes, ...laterNewEnglandRoutes]) {
   for (const locale of locales) {
     const htmlPath = rootPath(locale.prefix, route);
     assert.ok(fs.existsSync(htmlPath), `${locale.code} page exists for ${route}`);
@@ -165,7 +175,7 @@ for (const locale of locales.slice(1)) {
   const records = searchByUrl(JSON.parse(fs.readFileSync(recordsPath, 'utf8')));
   assert.equal(records.size, 955, `${locale.code} search index has 955 records`);
   const summaries = [];
-  for (const route of routes) {
+  for (const route of [...routes, ...laterNewEnglandRoutes]) {
     const entry = records.get(`${locale.prefix}${route}`);
     assert.ok(entry?.summary, `${locale.code} localized search summary exists for ${route}`);
     assert.ok(locale.script.test(entry.summary), `${locale.code} search summary is translated for ${route}`);
@@ -173,5 +183,5 @@ for (const locale of locales.slice(1)) {
   }
 }
 
-console.log(`USA Chicago refresh regression passed: 4 substantive existing routes; 97-route U.S. inventory and New York acceptance sample unchanged; 20 selected edition dates, 955 English/localized search records, 4,560 sitemap URLs preserved.`);
+console.log(`USA Chicago refresh regression passed: four Chicago routes plus four later New England routes; 97-route U.S. inventory and New York acceptance sample unchanged; 40 edition dates, 955 English/localized search records, 4,560 sitemap URLs preserved.`);
 console.log(JSON.stringify(bodyStats, null, 2));

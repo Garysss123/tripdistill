@@ -30,6 +30,7 @@ const newOrleansRefreshRoutes=new Set(['/usa/new-orleans/','/usa/new-orleans/fre
 const atlantaRefreshRoutes=new Set(['/usa/atlanta/','/usa/atlanta/king-historic-district/','/usa/atlanta/midtown-museums/','/usa/atlanta/beltline/']);
 const floridaNeighborhoodRefreshRoutes=new Set(['/usa/miami/south-beach/','/usa/miami/little-havana-wynwood/','/usa/orlando/theme-parks/','/usa/orlando/winter-park/']);
 const chicagoRefreshRoutes=new Set(['/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/']);
+const newEnglandRefreshRoutes=new Set(['/usa/new-england/','/usa/new-england/portland-maine/','/usa/new-england/acadia/','/usa/new-england/white-mountains-vermont/']);
 const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];
@@ -49,7 +50,7 @@ for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
  }catch(error){check(false,`${locale}${route}: invalid JSON-LD (${error.message})`);continue;}
  check(articles.length===1,`${locale}${route}: expected exactly one JSON-LD Article, found ${articles.length}`);
  if(articles.length!==1)continue;
- const article=articles[0],expectedModified=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':dateExceptions.has(route)?'2026-10-09':'2026-09-11';
+ const article=articles[0],expectedModified=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':dateExceptions.has(route)?'2026-10-09':'2026-09-11';
  check(article.datePublished==='2026-09-11',`${locale}${route}: datePublished changed from original 2026-09-11`);
  check(article.dateModified===expectedModified,`${locale}${route}: expected dateModified ${expectedModified}, found ${article.dateModified}`);
 }
@@ -68,21 +69,21 @@ for(const [locale,prefix] of dateLocales)for(const route of usaRoutes){
  const dom=flatten(parse(fs.readFileSync(file,'utf8'))),reviewNodes=dom.filter(n=>n.tagName==='p'&&(attr(n,'class')||'').split(/\s+/).includes('us-review'));
  check(reviewNodes.length===1,`${locale}${route}: expected exactly one visible p.us-review, found ${reviewNodes.length}`);
  if(reviewNodes.length!==1)continue;
- const key=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)?reviewSource.florida:hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?reviewSource.hawaii:sprintUsRoutes.has(route)?reviewSource.sprint:dateExceptions.has(route)?reviewSource.updated:reviewSource.original;
+ const key=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?reviewSource.florida:hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?reviewSource.hawaii:sprintUsRoutes.has(route)?reviewSource.sprint:dateExceptions.has(route)?reviewSource.updated:reviewSource.original;
  let expected=key;
  if(locale!=='en'){
   const catalog=reviewCatalogs.get(locale),translation=catalog?.[key];
   if(!translation){check(false,`${locale}${route}: approved catalog missing visible review translation for exact source key "${key}"`);continue;}
   expected=translation;
  }
- check(text(reviewNodes[0]).trim()===expected,`${locale}${route}: visible review text does not match expected ${floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)?'13 October':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'12 October':sprintUsRoutes.has(route)?'10 October':dateExceptions.has(route)?'9 October':'11 September'} source/catalog string`);
+ check(text(reviewNodes[0]).trim()===expected,`${locale}${route}: visible review text does not match expected ${floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'13 October':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'12 October':sprintUsRoutes.has(route)?'10 October':dateExceptions.has(route)?'9 October':'11 September'} source/catalog string`);
 }
 for(const [slug,sections] of Object.entries(plans)){
  const h=usaHubs.find(h=>h.slug===slug),routes=[`/usa/${slug}/`,...h.guides.map(g=>g.url)];
  const assetSlug=slug==='washington-dc'?'dc':slug;
  for(const [i,route] of routes.entries()){
   const html=fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8'),dom=flatten(parse(html));
-  const markerDate=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)?'20261013':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'20261012':sprintUsRoutes.has(route)?'20261010':dateExceptions.has(route)?'20261009':'20260911';
+  const markerDate=floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)?'20261013':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'20261012':sprintUsRoutes.has(route)?'20261010':dateExceptions.has(route)?'20261009':'20260911';
   check(html.includes(`data-editorial-revision="${assetSlug}-${markerDate}"`),route+': missing editorial marker');
   check(html.includes(`/css/${assetSlug}-editorial.css?v=20260911-1`),route+': missing editorial stylesheet');
   check(!html.includes('A practical visit plan')&&!html.includes('Fit this visit into your trip'),route+': generic body returned');

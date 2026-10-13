@@ -256,7 +256,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].sort(), 'Only selected Great Ocean Road, later CA13, CA14/CA15, Gold Coast, Cairns, CH14/CH15 and Hawaii, New Orleans, Atlanta and Florida source-refresh search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterCanadaCa15Routes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...switzerlandCh15Routes, ...postIntegrationSourceRefreshRoutes].sort(), 'Only selected Great Ocean Road, later CA13, CA14/CA15, Gold Coast, Cairns, CH14/CH15 and scoped post-integration U.S. source-refresh search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
