@@ -1,0 +1,120 @@
+{
+  "topic": "Vietnam Da Lat and Ha Long reviewed translation batches before route refresh",
+  "sourceBaseCommit": "c604392705e094d5f0ee1effa9e98e38f04ed8c6",
+  "archivedOn": "2026-10-13",
+  "reason": "Byte-preserved original reviewed locale batches from the exact source commit before stale source keys were pruned. No draft or parallel-work batches were included.",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/26i-malaysia-kk.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/zh-Hant/26i-malaysia-kk.json",
+      "sha256": "c2686c25de7d3e69680e149d75ef42a60cfba2ff7615590f138fc5048f701922",
+      "bytes": 4382
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29d-vietnam-ha-long-cat-ba.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/zh-Hant/29d-vietnam-ha-long-cat-ba.json",
+      "sha256": "f52f500b70b7f8f5e0e509a76fed17f43866903edf5e8b447370790ca9413b32",
+      "bytes": 18932
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29e-vietnam-ninh-binh.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/zh-Hant/29e-vietnam-ninh-binh.json",
+      "sha256": "d76ffadf18f9cbbd1fc03ade95d067a47fd6d69f014d2404653ba2d15422391f",
+      "bytes": 10214
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29j-vietnam-da-lat-central-highlands.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/zh-Hant/29j-vietnam-da-lat-central-highlands.json",
+      "sha256": "13e951d32c51871df37b75991f0e60b2b6e85f81114feef3f52f0e018009caad",
+      "bytes": 27435
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/26i-malaysia-kota-kinabalu.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ja/26i-malaysia-kota-kinabalu.json",
+      "sha256": "bdcfca5f6f59849063699c89821b2eb060ebf69d1cfc37c374d31af8e7665d06",
+      "bytes": 5268
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29d-vietnam-ha-long-cat-ba.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ja/29d-vietnam-ha-long-cat-ba.json",
+      "sha256": "b51dfa7725aaa711879f7e4c47bcdbe670b404c856994c0a7eb0ca60492580e4",
+      "bytes": 21505
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29e-vietnam-ninh-binh.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ja/29e-vietnam-ninh-binh.json",
+      "sha256": "436d91d88a0b7aeb84003d955ab9cb56b12224f63711d75706c6582f64232f42",
+      "bytes": 11602
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29j-vietnam-da-lat-central-highlands.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ja/29j-vietnam-da-lat-central-highlands.json",
+      "sha256": "e872aaf0f953fda3ce32f42b196c6da5d320f41fd52a662385ab6ec59d2feabc",
+      "bytes": 31331
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/26i-malaysia-kota-kinabalu.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ko/26i-malaysia-kota-kinabalu.json",
+      "sha256": "d4bcf1d74c24c6d4afce8ae7e173693aad929bf7d43fa76f29682a8dd00c34dd",
+      "bytes": 4893
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29d-vietnam-ha-long.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ko/29d-vietnam-ha-long.json",
+      "sha256": "edcf4776a2853f7d42de467908cf46bc83d3ccefde6b563e07c47b879de319dc",
+      "bytes": 21132
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29e-vietnam-ninh-binh.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ko/29e-vietnam-ninh-binh.json",
+      "sha256": "64e9e8b301778fbd10d38fd42d116a8ede14b962ec12fd93b03aee32aedec1c4",
+      "bytes": 11427
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29j-vietnam-da-lat.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/ko/29j-vietnam-da-lat.json",
+      "sha256": "124ec0cafc6badcd6415244c7205c5df28870722700026e5c18a9f6b17edd087",
+      "bytes": 31021
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/28i-malaysia-kota-kinabalu.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/th/28i-malaysia-kota-kinabalu.json",
+      "sha256": "c785fa31689f353de2e0e18cd900f9cea6da383b4546f582e397c2b1cb78689a",
+      "bytes": 6836
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29d-vietnam-ha-long.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/th/29d-vietnam-ha-long.json",
+      "sha256": "3ccbe51ccfce6cf90d4ae0aa4a7bcc977094e632c4a8589947d03143a84e844c",
+      "bytes": 31417
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29e-vietnam-ninh-binh.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/th/29e-vietnam-ninh-binh.json",
+      "sha256": "d3f555a5fa206cf6aa75897b73219c15b15386e0e11f0065c8eeaf35d0b389db",
+      "bytes": 16639
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29j-vietnam-da-lat.json",
+      "archivePath": "data/i18n/archive/vietnam-after-nha-trang/2026-10-13/th/29j-vietnam-da-lat.json",
+      "sha256": "15f375026945b0df15f2bda90d0ce2a164cb90960a254090a296f1b725804229",
+      "bytes": 48249
+    }
+  ]
+}

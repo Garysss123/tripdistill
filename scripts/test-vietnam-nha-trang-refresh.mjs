@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { followingVietnamAfterNhaTrangRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = 'a639c760ec728d90a0c271e512cbb7af2fa8bfa4';
@@ -124,7 +125,7 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', integrationBase, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedEnglishVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four selected English Nha Trang route bodies may change under vietnam/.');
+assert.deepEqual(changedEnglishVietnamFiles, [...routes, ...followingVietnamAfterNhaTrangRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the Nha Trang and following four selected English Vietnam route bodies may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(integrationBase, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -138,7 +139,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...followingVietnamAfterNhaTrangRoutes].sort(), 'Only the Nha Trang and following four selected English search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), `${route}: English search record must match the exact Nha Trang source terminal.`);
 
@@ -148,11 +149,11 @@ const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingVietnamAfterNhaTrangRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four new routes in five editions may receive a new sitemap date.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the Nha Trang and following four selected routes in five editions may receive a new sitemap date.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
 for (const route of routes) for (const edition of editions) {
   const pagePath = `${edition.prefix}${route}`;
@@ -235,19 +236,19 @@ for (const route of previousRefresh) {
 const changedSvgs = git(['diff', '--name-only', integrationBase, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
-assert.equal(ledger.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
-assert.equal(ledger.sourceBaseCommit, baselineCommit);
-assert.equal(ledger.totals.englishRoutes, 99);
-assert.equal(ledger.totals.previousSubstantiveRoutes, 71);
-assert.equal(ledger.totals.previousSprintNewSubstantiveRoutes, 4);
-assert.equal(ledger.totals.newSubstantiveRoutes, 4);
-assert.equal(ledger.totals.afterSprintSubstantiveRoutes, 79);
-assert.equal(ledger.totals.remainingRoutes, 20);
-assert.deepEqual(ledger.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
+assert.equal(ledger.previousActiveSprint.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
+assert.equal(ledger.previousActiveSprint.sourceBaseCommit, baselineCommit);
+assert.equal(ledger.previousActiveSprint.totals.englishRoutes, 99);
+assert.equal(ledger.previousActiveSprint.totals.previousSubstantiveRoutes, 71);
+assert.equal(ledger.previousActiveSprint.totals.previousSprintNewSubstantiveRoutes, 4);
+assert.equal(ledger.previousActiveSprint.totals.newSubstantiveRoutes, 4);
+assert.equal(ledger.previousActiveSprint.totals.afterSprintSubstantiveRoutes, 79);
+assert.equal(ledger.previousActiveSprint.totals.remainingRoutes, 20);
+assert.deepEqual(ledger.previousActiveSprint.currentSprintRoutes.map((route) => route.url).sort(), [...routes].sort());
 assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phu-quoc-southern-islands/'));
 assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'));
-assert.equal(ledger.remainingRoutesAfterSprint.length, 20);
-assert.deepEqual(ledger.remainingRoutesAfterSprint, [...ledger.remainingRoutesAfterSprint].sort());
+assert.equal(ledger.previousActiveSprint.remainingRoutesAfterSprint.length, 20);
+assert.deepEqual(ledger.previousActiveSprint.remainingRoutesAfterSprint, [...ledger.previousActiveSprint.remainingRoutesAfterSprint].sort());
 assert.equal(ledger.previousTopLevelSprint.branch, 'codex/sprint-vn-after-phong-nha-20261013');
 assert.equal(ledger.previousTopLevelSprint.sourceBaseCommit, '01144e03bf6173f468cb836d0899163e1a98c4ea');
 assert.equal(ledger.previousTopLevelSprint.totals.afterSprintSubstantiveRoutes, 75);

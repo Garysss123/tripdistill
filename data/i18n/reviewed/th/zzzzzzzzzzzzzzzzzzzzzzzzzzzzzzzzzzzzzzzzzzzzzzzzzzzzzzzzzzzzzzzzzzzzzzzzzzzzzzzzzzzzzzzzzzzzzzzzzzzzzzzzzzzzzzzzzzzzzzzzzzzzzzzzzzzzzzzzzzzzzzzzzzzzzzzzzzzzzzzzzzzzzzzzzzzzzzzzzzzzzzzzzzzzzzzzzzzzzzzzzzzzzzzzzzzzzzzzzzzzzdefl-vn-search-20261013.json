@@ -1,0 +1,32 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "sung sot cave titov island VHL2 route": "เส้นทางเรือ VHL2 ถ้ำซุงซ็อตและเกาะติตอฟ",
+    "ha long two night cruise base": "ฐานล่องเรือฮาลอง พัก 2 คืน",
+    "tuan chau ha long named cruise port": "ท่าเรือขึ้นเรือฮาลองที่ต๋วนเจิวระบุชัดเจน",
+    "titov stairs cave closure weather": "บันไดติตอฟ ถ้ำปิด และสภาพอากาศ",
+    "dong bai cai vieng ferry schedule cat ba": "ตารางเรือข้ามฟาก Đồng Bài Cái Viềng กั๊ตบา",
+    "cat ba town viet hai park access route": "เส้นทางเข้าพื้นที่อุทยานเวียดไห่จากเมืองกั๊ตบา",
+    "cai beo fishing village boat landing": "จุดขึ้นเรือหมู่บ้านประมงก๊ายแบ่ว",
+    "cat ba ferry weather suspension 2026": "เรือกั๊ตบาหยุดเพราะอากาศ 2026",
+    "buon ma thuot to dray nur waterfall route": "เส้นทางจากบวนมาถวตไปน้ำตกเดรย์เนอร์",
+    "buon ma thuot nights base": "จำนวนคืนและฐานพักบวนมาถวต",
+    "dray nur river safety access": "ความปลอดภัยและทางเข้าน้ำตกเดรย์เนอร์",
+    "dak lak rainy season day trip": "ทริปวันเดียวช่วงฤดูฝนดั๊กลัก",
+    "yok don from buon ma thuot 38 km": "ยอกดอนห่างจากบวนมาถวต 38 km",
+    "yok don national park current visitor program": "โปรแกรมผู้เยี่ยมชมปัจจุบันของอุทยานแห่งชาติยอกดอน",
+    "buon don park day transfer": "การเดินทางเที่ยวอุทยานบวนดอนในหนึ่งวัน",
+    "yok don rainy dry season": "ยอกดอนฤดูฝนและฤดูแล้ง"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Same-model self-review checked place names, route terms, dates and search intent. Review is not independent or human review."
+  }
+}

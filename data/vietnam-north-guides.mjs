@@ -740,27 +740,37 @@ export const vietnamNorthClusters = [
         name: 'Sung Sot Cave and Titov Island',
         motif: 'cave chamber and island climb',
         instrument: 'fold',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://halongbay.com.vn/tours', 'Ha Long Bay Management Board — VHL2 published route inventory, checked 13 October 2026; not a live sailing or access confirmation'],
+          ['https://halongbay.com.vn/en/p/1013-canh-bao-som-dong-loc-tren-bien', 'Ha Long Bay Management Board — early squall warning updated 11 July 2026; use current notices and the captain’s decision'],
+          ['https://whc.unesco.org/en/list/672/', 'UNESCO World Heritage Centre — Ha Long Bay–Cat Ba Archipelago and visitor-management context']
+        ],
+        searchKeywords: ['sung sot cave titov island VHL2 route', 'ha long two night cruise base', 'tuan chau ha long named cruise port', 'titov stairs cave closure weather'],
         image: image({ src: '/assets/images/vietnam-sung-sot.webp', alt: 'A large chamber inside Sung Sot Cave in Ha Long Bay', source: 'https://commons.wikimedia.org/wiki/File:A_large_cave_inside_the_Sung_Sot_cave_is_brightly_flood_lit_%2831489274102%29.jpg', label: 'A large cave inside the Sung Sot cave is brightly flood lit (31489274102).jpg', creator: 'shankar s.', license: 'CC BY 2.0' }),
-        summary: 'A classic cave-and-viewpoint chapter combining Sung Sot’s stair approach with Titov Island’s managed shore and climb.',
-        lead: 'This route concentrates the bay’s most recognizable transitions: tender boat, steep cave path, crowded chamber and a separate island viewpoint. Show the physical sequence clearly so visitors can choose it for the right reasons.',
-        orientation: 'Treat Sung Sot and Titov as two exertion profiles. The cave requires stairs and crowd navigation; the island adds beach and uphill exposure that may not suit every traveler.',
-        arrival: 'Reach both sites by the operating cruise or tender route. Landing order, time ashore and access may change with the vessel and current management.',
-        sequence: 'Wear secure shoes, take the cave stairs slowly, follow the one-way flow and swim only in a currently designated area if the crew permits it.',
-        boundary: 'Do not touch formations, climb beyond the trail or use the island as an unsupervised swimming launch.',
+        arrivalLabel: 'Book one named bay route',
+        boundaryLabel: 'Stay inside today’s order',
+        summary: 'Use Ha Long City as the base for one confirmed cruise that lists both Sung Sot Cave and Titov Island; the management board’s VHL2 page is a route listing, not live access.',
+        lead: 'Sung Sot and Titov are connected by a boat itinerary, not independent stops to reach from Ha Long City. The Management Board’s published VHL2 sequence lists Soi Sim, Ti Tốp, then Hang Sửng Sốt among other stops. That is a published route inventory only: it does not tell you whether your vessel sails it today, which pier it uses, whether both landings are open or how long each stop lasts. Match the booking to the named vessel and port before paying.',
+        orientation: 'Choose two nights near the exact Ha Long City port named by your booking if you want one cruise day between arrival and departure. Three nights give a full shore day to move the cruise after a weather cancellation. The two stops suit visitors comfortable with a tender, uneven cave stairs and exposed uphill walking; choose a shorter confirmed itinerary if one of those efforts is unsuitable. Do not lodge in Cat Ba or Vân Đồn for a Ha Long City sailing without confirming the separate transfer.',
+        arrival: 'First get the operator’s vessel name, actual boarding port, check-in cutoff, included route and return port in writing. Ha Long Bay has more than one passenger port; a city hotel address or “Ha Long cruise” label does not establish the pier. Go to that named port, board only the confirmed vessel, and use its tender and crew for the listed landings. Current port assignment, ticket, landing status and visiting duration remain unknown until the operator and management confirm them.',
+        sequence: 'Keep arrival day ashore in Ha Long City. On the reserved cruise day, follow the operator’s approved order; if it confirms VHL2 for your departure, the board’s published list places Soi Sim Beach and Ti Tốp before Sửng Sốt Cave. Wear grippy shoes, take stairs only while footing and energy remain sound, then return to the same named boat and port. Do not try to stitch the cave and island together independently or assume a separate ferry/tender exists.',
+        boundary: 'Do not touch cave surfaces, cross barriers, swim outside a currently designated and supervised zone or pressure the crew to land during unsafe conditions. The Board’s 11 July 2026 early-warning notice describes fast-developing squalls and a bay warning system; it is a hazard reference, not today’s forecast or permission to sail. If the route is cancelled or a landing closed, remain ashore or return by the confirmed plan, move the cruise to your buffer day, or omit it. No unverified substitute boat, cave or island is recommended.',
         stages: [
-          ['Transfer to shore', 'Use the tender carefully, keep life-jacket instructions visible and be ready for wet or uneven landing surfaces.'],
-          ['Climb the cave path', 'Pace the stairs, keep the group together and let other visitors pass without stopping at the narrowest points.'],
-          ['Read the chamber', 'Observe scale, lighting and geology without touching rock or treating a managed cave as a private set.'],
-          ['Choose the island effort', 'Continue to Titov’s beach or viewpoint only when time, heat, footwear and sea conditions support it.']
+          ['Start from the booked port', 'Match vessel, pier, check-in and return port in writing. Keep arrival and departure days ashore; do not infer the pier from the city name.'],
+          ['Follow the sailing order', 'The Board’s VHL2 listing names Soi Sim, Ti Tốp and Sửng Sốt in that sequence. Board only if the operator confirms both sites on your live sailing.'],
+          ['Take the cave slowly', 'Use the permitted stair path and handrails, keep the group moving through narrow points, and turn back if fatigue, crowding or wet footing makes the descent unsafe.'],
+          ['Return with the crew', 'Titov’s shore and viewpoint require a separate landing and uphill effort. If weather, closure or the operator removes it, do not seek a private transfer; use the shore buffer or skip the stop.']
         ],
         risks: [
-          ['Steep stairs', 'The cave entrance and island viewpoint use uneven climbs. Use handrails and turn back before fatigue compromises footing.'],
-          ['Crowd bottlenecks', 'Do not stop at landings or cave mouths; keep cameras and bags close in the one-way flow.'],
-          ['Water conditions', 'Swimming and tender operations depend on current management and sea state. Follow crew and lifeguard directions.']
+          ['Route listing is not today’s ticket', 'The Management Board lists VHL2 and its stops, but the itinerary page does not confirm a vessel, pier, operating date, landing or admission. Obtain all five from the operator and authority.'],
+          ['Stairs, crowds and sea state', 'The cave and island involve different physical efforts. Use the crew’s timing and route, and skip a climb or water entry when the surface, crowd, heat or sea is unsafe.'],
+          ['Squall or closure', 'The 11 July 2026 Board notice explains a local warning system; conditions can change quickly. Follow current management and captain decisions, and preserve a full shore day if sailing is important.']
         ],
-        duration: 'Use the time allocated by the confirmed cruise; a comfortable visit needs more than a quick photo stop.',
-        combine: 'Combine with a core cruise route only when those stops are genuinely included; do not promise Sung Sot and Titov independently without a boat plan.',
-        verify: 'Check current cruise route, cave and island access, stairs, tide, swimming rules, footwear and weather.'
+        duration: 'Reserve one full cruise day between two Ha Long City nights for arrival, the sailing and departure; this assumes the actual intercity transfer fits those days and is not a guaranteed timetable. Three nights allow one uncommitted shore day to move or miss a cancelled cruise. Keep the operator’s check-in and return window clear of a fixed onward train or flight.',
+        combine: 'Do not add Cat Ba, Bai Tu Long or another Ha Long port on this same day. Compare the confirmed Ha Long route with those distinct gateways before choosing the base; changing bays means a separate transfer and often a different boarding port.',
+        verify: 'Checked 13 October 2026: the Board’s published VHL2 listing includes Soi Sim, Ti Tốp and Sửng Sốt; its 11 July squall notice is not a live forecast. Confirm the named vessel, pier, sailing date, route order, cave and island access, time ashore, stair condition, swimming boundary, cancellation/refund terms and return port. If the authority or captain closes a stop, follow the closure and use the shore day or omit it.'
       },
       {
         slug: 'lan-ha-town',
@@ -870,27 +880,38 @@ export const vietnamNorthClusters = [
         name: 'Viet Hai and Cai Beo',
         motif: 'village road and marine livelihood',
         instrument: 'field',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://haiphong.gov.vn/lich-tau-pha/dieu-chinh-lich-chay-pha-ben-dong-bai-cai-vieng-tu-ngay-1-9-2026-964317', 'Hai Phong People’s Committee — Đồng Bài–Cái Viềng schedule published 14 September 2026, stated for 1 September–31 December 2026'],
+          ['https://soxd.haiphong.gov.vn/tin-tuc/dung-hoat-dong-chay-pha-dong-bai-cai-vieng-va-pha-duong-ao-de-phong-chong-bao-so-4-thong-bao-so--952821', 'Hai Phong Department of Construction — ferry suspension notice dated 21 August 2026 for Typhoon No. 4; an example of weather closure, not a current status'],
+          ['https://catba.net.vn/?lang=en', 'Cat Ba National Park — official visitor information; checked 13 October 2026, page did not return readable current route details'],
+          ['https://whc.unesco.org/en/list/672/', 'UNESCO World Heritage Centre — Ha Long Bay–Cat Ba Archipelago, management and local-community context']
+        ],
+        searchKeywords: ['dong bai cai vieng ferry schedule cat ba', 'cat ba town viet hai park access route', 'cai beo fishing village boat landing', 'cat ba ferry weather suspension 2026'],
         image: image({ src: '/assets/images/vietnam-viet-hai.webp', alt: 'Rice fields in Viet Hai on Cat Ba Island', source: 'https://commons.wikimedia.org/wiki/File:Vi%E1%BB%87t_H%E1%BA%A3i%2C_C%C3%A1t_B%C3%A0_Island%2C_Vietnam%2C_20240131_1211_4613.jpg', label: 'Việt Hải, Cát Bà Island, Vietnam, 20240131 1211 4613.jpg', creator: 'Jakub Hałun', license: 'CC BY 4.0' }),
-        summary: 'A village-and-water chapter for Viet Hai’s rural lanes, cycling approach and Cai Beo fishing heritage within the Cat Ba island system.',
-        lead: 'Viet Hai gives Cat Ba a slower land rhythm, while Cai Beo points back to long-standing marine settlement. Keep both as living communities: the route is about access, agriculture and fishing culture, not a promise of untouched isolation.',
-        orientation: 'Choose either a park-linked cycling or walking approach to Viet Hai or a current Cai Beo marine visit. Tide and boat availability make them separate planning questions.',
-        arrival: 'Confirm whether the route begins by boat, park road, bicycle or guided walk. Carry water and expect limited services once away from Cat Ba town.',
-        sequence: 'Reach the village in daylight, use a hosted meal or public road, keep farm and aquaculture boundaries clear and return before the final boat or road transfer.',
-        boundary: 'Do not enter homes, rice plots, fish farms or boats without invitation. Ask before photographing residents and workers.',
+        arrivalLabel: 'Cross first, then confirm the island leg',
+        boundaryLabel: 'A working village and fishing water',
+        summary: 'Use Cat Ba Town as the base, cross Đồng Bài–Cái Viềng by the dated official ferry schedule, and add Viet Hai or Cai Beo only after each distinct island route and return is confirmed.',
+        lead: 'Viet Hai is a rural community route and Cai Beo is a working fishing-water setting; they are separate decisions, not one automatic village-and-boat circuit. Cat Ba National Park’s website returned no readable current visitor route during this review, and no official Cai Beo visitor landing was confirmed. Plan the mainland ferry handoff precisely, then ask park management and the named marine operator for the actual island access, endpoint, return time and community rules before adding either chapter.',
+        orientation: 'Base in Cat Ba Town. Two nights fit the mainland crossing, one full day for a single route that has been confirmed, and the return crossing. Three nights provide a second separate land or marine day if both are confirmed. Four nights make room for both routes and a weather/ferry reserve. Do not assume Viet Hai and Cai Beo share a boat, pier, ticket, park entry or day schedule; they remain independent until an operator confirms a connected itinerary.',
+        arrival: 'For the published schedule window 1 September–31 December 2026, Hai Phong’s 14 September notice says the Đồng Bài–Cái Viềng ferry terminals open at 05:00, scheduled service runs to 18:00, the general interval is about 30–40 minutes, and the final listed departure is 17:30 arriving at 18:00; extension to 19:00 may depend on conditions. These are dated details, not a guarantee outside that window or during disruption. Chain mainland Hai Phong → Đồng Bài terminal → ferry → Cái Viềng → pre-arranged island-road transfer → Cat Ba Town. Confirm vehicle space, queue, hotel pickup and reverse crossing; no late cable-car or other pier alternative is verified here.',
+        sequence: 'Keep the first day for the mainland-to-town transfer and the last day for the reverse handoff. On a Viet Hai day, leave town only after park management names the current gate or landing, route, guide/vehicle or boat segments, cutoff and same-day return; those links could not be verified on 13 October. On a separate Cai Beo day, use a named operator that confirms boarding pier, authorized landing or viewing boundary, tide decision and return. Do not count on walking between the two chapters or connecting to the ferry on the same day.',
+        boundary: 'Do not enter homes, fields, farms, boats, fish pens or private shoreline without invitation; ask before photographing residents and workers. The official Department of Construction stopped the Đồng Bài–Cái Viềng ferry from 07:00 on 22 August 2026 for Typhoon No. 4, showing why a timetable cannot be treated as a guarantee. If the ferry or either island route closes, wait on the safe side, extend the Cat Ba Town or mainland night and rebook only when the responsible authority confirms reopening. Do not improvise another pier, cable car, village road or private boat.',
         stages: [
-          ['Choose the approach', 'Match boat, bicycle or foot access to tide, heat, fitness and the current park route.'],
-          ['Read village work', 'Observe fields, lanes and homes from public space, keeping the group quiet and vehicles out of narrow passages.'],
-          ['Connect to the water', 'Use an approved Cai Beo or Lan Ha interpretation route and let fishers decide where visitors may stand or photograph.'],
-          ['Return before the cutoff', 'Confirm the last boat or vehicle, carry waste out and do not assume a late island transfer is available.']
+          ['Reach Cat Ba Town', 'Cross Hai Phong → Đồng Bài → Cái Viềng, then take a pre-arranged island-road transfer. The published 2026 ferry timetable ends with a 17:30 departure arriving at 18:00; check the notice for your travel date.'],
+          ['Confirm Viet Hai separately', 'Ask park management for the current gate/landing, route, guide, transport chain, cutoff and return. The park page supplied no readable current route details in this review.'],
+          ['Confirm Cai Beo separately', 'Get the named operator, pier, lawful landing or viewing boundary, tide/weather call and return time. A fishing-area map pin alone is not permission to board or land.'],
+          ['Protect the return crossing', 'Use a separate buffer before the ferry back. If the authority suspends service or the route closes, stay on the safe side and add a night; no substitute crossing is assumed.']
         ],
         risks: [
-          ['Tide and boat timing', 'A missed small boat can strand a group without a simple taxi alternative. Record the exact return time and operator contact.'],
-          ['Heat and cycling', 'Island roads expose visitors to sun, hills and limited water. Use a conservative pace and helmet where cycling is permitted.'],
-          ['Working community', 'Do not block farm lanes, touch gear or photograph private work without consent.']
+          ['Weather stops the ferry', 'The 21 August 2026 storm notice suspended service from 07:00 on 22 August; it is historical proof of interruption, not today’s status. Follow the live authority notice and do not assume extension or a second crossing.'],
+          ['Unknown island access', 'Viet Hai park routes and Cai Beo visitor landing/boats were not confirmed. Get each exact route, operator and return in writing; if not, omit that day rather than attempting an alternate gate.'],
+          ['Heat, tide and community limits', 'Carry water only for a route the responsible team has confirmed. Stay on public or hosted paths, leave work areas clear, and follow the host’s permission and photography boundary.']
         ],
-        duration: 'Allow a full day for Viet Hai; add Cai Beo as a separate marine chapter when the boat route is confirmed.',
-        combine: 'Combine with Cat Ba National Park only through a current connected route and sufficient daylight.',
-        verify: 'Check tide, boat or park access, bicycle condition, village permissions, water supply and the final return transfer.'
+        duration: 'Use two Cat Ba nights for the crossing plus one confirmed full route day; three nights can hold two separate confirmed route days; four add a full ferry/weather reserve. Those counts include arrival and return nights, not guaranteed ferry capacity. Keep the return to Đồng Bài–Cái Viềng on a separate day from a village or marine excursion.',
+        combine: 'Do not combine Viet Hai and Cai Beo until park management and a named operator confirm a connected route, both permissions, transfer legs and daylight return. The available official Cat Ba National Park page did not expose current route details during the 13 October 2026 review; current Cai Beo passenger boarding/landing was also not verified. Cat Ba Town remains the practical base while those details are resolved.',
+        verify: 'The official Hai Phong schedule dated 14 September 2026 applies 1 September–31 December 2026; it lists 05:00 opening, service through 18:00, a 17:30 last departure arriving at 18:00 and possible extension to 19:00 depending on conditions. Confirm the notice again close to travel, vehicle space and queue. Check current ferry suspension/weather notices, exact Cat Ba road transfer, park-authorized Viet Hai start/end, Cai Beo operator/pier/landing/tide, community permission and the return. If any link is unknown or closed, stop and add a night; no unverified alternate access is proposed.'
       }
     ]
   },

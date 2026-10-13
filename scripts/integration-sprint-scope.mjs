@@ -508,6 +508,14 @@ export const followingVietnamNhaTrangRoutes = Object.freeze([
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ]);
 
+// Exact follow-up after Nha Trang: four existing Da Lat and Ha Long/Cat Ba routes.
+export const followingVietnamAfterNhaTrangRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -519,6 +527,7 @@ export const postOctober13Routes = Object.freeze([
   ...postLosAngelesSanDiegoRoutes,
   ...postIntegrationPhuQuocRoutes,
   ...followingVietnamNhaTrangRoutes,
+  ...followingVietnamAfterNhaTrangRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 

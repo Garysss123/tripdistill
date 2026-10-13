@@ -355,6 +355,13 @@ export const vietnamNhaTrangNewSubstantiveRoutes = Object.freeze([
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ]);
 
+export const vietnamAfterNhaTrangNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -396,5 +403,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'USA overview and Juneau historical correction', count: 873 }),
   Object.freeze({ label: 'Australia final-content batch', count: 878 }),
   Object.freeze({ label: 'Phu Quoc', count: 882 }),
-  Object.freeze({ label: 'Nha Trang', count: 886 })
+  Object.freeze({ label: 'Nha Trang', count: 886 }),
+  Object.freeze({ label: 'Da Lat / Ha Long follow-on', count: 890 })
 ]);

@@ -1,0 +1,32 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "sung sot cave titov island VHL2 route": "驚訝洞與 Titov 島 VHL2 航線",
+    "ha long two night cruise base": "下龍灣兩晚遊船基地",
+    "tuan chau ha long named cruise port": "Tuần Châu 下龍灣指定遊船碼頭",
+    "titov stairs cave closure weather": "Titov 階梯、洞穴封閉與天候",
+    "dong bai cai vieng ferry schedule cat ba": "Đồng Bài、Cái Viềng 渡輪班表、吉婆島",
+    "cat ba town viet hai park access route": "吉婆鎮、Việt Hải 公園進入路線",
+    "cai beo fishing village boat landing": "Cái Bèo 漁村遊船登岸",
+    "cat ba ferry weather suspension 2026": "2026 吉婆島渡輪天候停航",
+    "buon ma thuot to dray nur waterfall route": "邦美蜀至 Dray Nur 瀑布路線",
+    "buon ma thuot nights base": "邦美蜀住宿晚數與基地",
+    "dray nur river safety access": "Dray Nur 河川安全與進入資訊",
+    "dak lak rainy season day trip": "Dak Lak 雨季一日遊",
+    "yok don from buon ma thuot 38 km": "邦美蜀至 Yok Don 38 公里",
+    "yok don national park current visitor program": "Yok Don 國家公園現行遊客行程",
+    "buon don park day transfer": "Buôn Đôn 公園一日交通",
+    "yok don rainy dry season": "Yok Don 雨季與乾季"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Same-model self-review checked place names, route terms, dates and search intent. Review is not independent or human review."
+  }
+}

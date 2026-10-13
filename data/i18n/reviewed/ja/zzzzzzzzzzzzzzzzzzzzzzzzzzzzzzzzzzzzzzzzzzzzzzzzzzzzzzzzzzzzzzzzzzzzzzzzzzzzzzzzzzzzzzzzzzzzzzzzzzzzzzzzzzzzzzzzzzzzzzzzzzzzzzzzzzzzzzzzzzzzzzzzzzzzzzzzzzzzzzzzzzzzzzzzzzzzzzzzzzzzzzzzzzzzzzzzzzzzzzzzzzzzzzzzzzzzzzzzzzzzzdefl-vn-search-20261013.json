@@ -1,0 +1,32 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "sung sot cave titov island VHL2 route": "スンソット洞窟・ティートップ島のVHL2航路",
+    "ha long two night cruise base": "ハロン湾クルーズの二泊拠点",
+    "tuan chau ha long named cruise port": "トゥアンチャウのハロン湾指定クルーズ港",
+    "titov stairs cave closure weather": "ティートップ階段・洞窟閉鎖・天候",
+    "dong bai cai vieng ferry schedule cat ba": "カットバ島のドンバイ・カイヴィエン間フェリー時刻",
+    "cat ba town viet hai park access route": "カットバタウン・ヴィエットハイ公園アクセス",
+    "cai beo fishing village boat landing": "カイベオ漁村の船と上陸",
+    "cat ba ferry weather suspension 2026": "2026年カットバ島フェリーの天候運休",
+    "buon ma thuot to dray nur waterfall route": "バンメトートからドレイヌール滝へのルート",
+    "buon ma thuot nights base": "バンメトートの宿泊数と拠点",
+    "dray nur river safety access": "ドレイヌールの川の安全とアクセス",
+    "dak lak rainy season day trip": "ダクラクの雨季の日帰り",
+    "yok don from buon ma thuot 38 km": "バンメトートからヨックドンまで38 km",
+    "yok don national park current visitor program": "ヨックドン国立公園の現在の来園プログラム",
+    "buon don park day transfer": "ブオンドン公園の日帰り移動",
+    "yok don rainy dry season": "ヨックドンの雨季と乾季"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Same-model self-review checked place names, route terms, dates and search intent. Review is not independent or human review."
+  }
+}

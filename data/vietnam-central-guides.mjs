@@ -1528,6 +1528,13 @@ const daLatCentralHighlands = defineVietnamCluster({
       name: 'Buon Ma Thuot & Dray Nur',
       motif: 'Coffee city, basalt water',
       instrument: 'atlas',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://daklak.gov.vn/', 'Dak Lak provincial portal — checked 13 October 2026; it did not load, so no current Dray Nur access claim is based on it'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — check the current regional forecast and warnings before departure']
+      ],
+      searchKeywords: ['buon ma thuot to dray nur waterfall route', 'buon ma thuot nights base', 'dray nur river safety access', 'dak lak rainy season day trip'],
       image: image({
         src: '/assets/images/vietnam-dray-nur.webp',
         alt: 'Dray Nur Waterfall near Buon Ma Thuot in Dak Lak',
@@ -1536,32 +1543,42 @@ const daLatCentralHighlands = defineVietnamCluster({
         creator: 'Sketyl none',
         license: 'CC BY 2.0'
       }),
-      summary: 'Connect Buon Ma Thuot’s coffee and urban highland life with Dray Nur’s basalt river landscape as a separate inland day.',
-      lead: 'Buon Ma Thuot is more than a coffee label, and Dray Nur is more than a waterfall. The route works when production, river geology, local communities and water safety stay in the same frame.',
-      orientation: 'Use the city as the logistics base, then set one clear rural departure. Keep the waterfall visit practical and weather-led rather than promising guaranteed swimming.',
-      arrival: 'Reach Buon Ma Thuot by regional transport, then use a confirmed car or local operator for the rural road. Wet-season conditions can lengthen the last segment.',
-      sequence: 'Read the city and coffee context first, travel to the falls in daylight, stay within permitted viewpoints or water areas, then return before river conditions and visibility change.',
-      boundary: 'Protect river and community space: do not enter closed water, climb barriers, disturb sacred areas, photograph residents without consent or leave food and plastic behind.',
+      arrivalLabel: 'Choose the base first',
+      boundaryLabel: 'Water and access limit',
+      summary: 'Use Buon Ma Thuot as the overnight base for its coffee-city day and a separate, confirmed Dray Nur river day; do not plan the falls as a Da Lat day trip.',
+      lead: 'This is a two-part inland itinerary with a transfer between regions, not a string of nearby stops. Give Buon Ma Thuot the nights: read its coffee and civic life on foot or with a local host, then reserve a separate daylight block for Dray Nur only after a named driver, access point and return are confirmed. The waterfall’s current gates, fees, permitted areas and water status were not verifiable in this review.',
+      orientation: 'Choose two nights if the trip is limited to one full day at Dray Nur and your arrival transfer reaches Buon Ma Thuot early enough to settle. Three nights allow a slower city day plus the waterfall day; four nights make room for both this route and Yok Don on separate days, with one uncommitted weather or road day. These are planning shapes, not required minimums. Da Lat is a separate highland base: do not use it for a same-day waterfall run or assume the intercity road schedule.',
+      arrival: 'Travel to Buon Ma Thuot first and sleep in the city for the full route. If coming from Da Lat, treat the intercity leg as its own transfer and verify the actual service and arrival time before booking the first rural day; current schedules and travel times were not confirmed here. For Dray Nur, arrange a named vehicle and exact pickup/return point with a local operator. The current site entrance, road condition, parking, admission and public transport connection remain unknown; do not set off based on a map pin alone.',
+      sequence: 'For a two-night stay: arrive in Buon Ma Thuot, then use the next full day for Dray Nur only after the driver has confirmed the road, site gate, permitted public area, weather call and return pickup; return to town in daylight. Add a third night for a separate coffee or market day at an unhurried pace. A fourth night can separate Yok Don and Dray Nur with weather slack before the onward transfer. Do not combine both rural routes into one rushed loop.',
+      boundary: 'River safety outranks a booked photo stop. Do not swim, wade, climb wet basalt or pass a barrier unless the responsible site staff expressly confirm that exact area is open and safe that day. If the gate, water boundary, road or return driver cannot be verified, stop at the city base and move or omit the outing; this review found no verified alternate waterfall entrance or substitute operator. Ask before photographing residents, homes, work or sacred places.',
       stages: [
-        ['Set the city base', 'Confirm accommodation, transport, water and a driver before committing to a rural waterfall day.'],
-        ['Read the coffee context', 'Use a credible local interpretation or market visit to understand the crop and region without reducing people to a commodity story.'],
-        ['Approach the basalt', 'Follow marked paths and observe river, rock and spray from safe ground; enter water only where current staff permit it.'],
-        ['Return before change', 'Leave enough time for the rural road, rain and a safe city return; do not add Yok Don after an already physical waterfall day.']
+        ['Sleep in Buon Ma Thuot', 'Two nights support one full rural day; three slow the city visit; four can separate Dray Nur and Yok Don with a weather reserve. Do not base this day in Da Lat.'],
+        ['Keep the city day whole', 'Use a local coffee, market or civic visit as a low-transfer day. Confirm the specific host or venue before treating it as a scheduled stop.'],
+        ['Make Dray Nur conditional', 'Before leaving, get the named gate, road, permitted viewing area, weather decision and return pickup from the responsible site contact and driver. Those current details are unknown here.'],
+        ['Return in daylight', 'Take the same arranged vehicle back to the city. If rain, road access, river limits or the return contract is unclear, cancel and retain the city day; no alternate entrance is verified.']
       ],
       risks: [
-        ['River force', 'Water level, slippery basalt and hidden currents can change quickly; obey barriers and do not swim where staff do not permit it.'],
-        ['Rural road', 'Rain, potholes and low visibility can make the return slower; use a reliable vehicle and avoid dark-road improvisation.'],
-        ['Living culture', 'Coffee, village and religious spaces need context and consent; do not photograph workers, rituals or homes as anonymous scenery.']
+        ['Unverified waterfall access', 'The provincial portal did not load on 13 October 2026. Current gate, admission, facilities and allowed viewpoints are not established; do not infer that the site is open from this guide.'],
+        ['River and road conditions', 'Rain, fast water, slick rock and poor visibility can change the safe return. Check the official forecast and follow the site authority’s closure call; if either is unclear, stay in Buon Ma Thuot.'],
+        ['Transfer and consent', 'An intercity arrival and the rural driver are separate legs. Confirm the actual pickup and return in advance, and ask before photographing workers, homes or religious practice.']
       ],
-      duration: 'Use a full day for city context plus Dray Nur, or separate the urban and waterfall readings when the group wants a slower route.',
-      combine: 'Combine with a Buon Ma Thuot city stay; reserve Yok Don for another day with its own guide and dry-forest conditions.',
-      verify: 'Check local attraction notices, rainfall and river conditions, safe water areas, vehicle status and the return route before leaving town.'
+      duration: 'Budget one full daylight block for the confirmed Dray Nur road return; do not attach a fixed evening flight, train or another rural site. Two nights fit one full outing after a settled arrival. Three nights give the city and river days separate space. Use four nights only if you also want a separately confirmed Yok Don day or need a weather/transfer reserve.',
+      combine: 'Combine only with Buon Ma Thuot city time. Yok Don is another roughly 38 km west of the city according to its official visitor page, so it is a separate full-day route with its own confirmed park program and car. Do not add it after Dray Nur or treat Da Lat as a closer base; the intercity connection is not documented here.',
+      verify: 'On 13 October 2026 the Dak Lak provincial portal could not be read, so current Dray Nur gate, hours, fees, permitted river area, road state and facilities remain unknown. Before departure, confirm each with the responsible site authority and the named driver, check the National Forecasting Center for current rain warnings, and secure the daylight return. If access or river limits are not confirmed, do not go through an alternate entrance.'
     },
     {
       slug: 'yok-don-buon-don',
       name: 'Yok Don & Buon Don',
       motif: 'Dry forest, river, living knowledge',
       instrument: 'roadbook',
+      reviewDate: '13 October 2026',
+      isoDate: '2026-10-13',
+      sources: [
+        ['https://tour.yokdonnationalpark.vn/EN/yokdon-national-park.html', 'Yok Don National Park visitor information — checked 13 October 2026; lists a 38 km distance and general activity menu, not live availability'],
+        ['https://tour.yokdonnationalpark.vn/EN/how-to-get-there.html', 'Yok Don National Park — official access information; confirm the actual vehicle and return directly'],
+        ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — current weather and warnings']
+      ],
+      searchKeywords: ['yok don from buon ma thuot 38 km', 'yok don national park current visitor program', 'buon don park day transfer', 'yok don rainy dry season'],
       image: image({
         src: '/assets/images/vietnam-yok-don.webp',
         alt: 'Dry-season forest landscape in Yok Don National Park',
@@ -1570,26 +1587,28 @@ const daLatCentralHighlands = defineVietnamCluster({
         creator: 'Đỗ Tuấn Hưng',
         license: 'CC BY-SA 3.0'
       }),
-      summary: 'Plan Yok Don and Buon Don around dry dipterocarp forest, Srepok River, ethical elephant observation and community-led knowledge.',
-      lead: 'Yok Don asks visitors to change their idea of a wildlife day. The value is in habitat, ranger practice, river, seasonal forest and an elephant-friendly model—not in forcing an animal encounter.',
-      orientation: 'Use the official park program that matches the season and ability: walking, cycling, birding, river or forest interpretation. Let elephants remain free to choose distance.',
-      arrival: 'The park is a substantial road transfer west of Buon Ma Thuot. Confirm the park center, guide, payment, food, signal and return vehicle before leaving the city.',
-      sequence: 'Check rain and heat, meet the park team, enter the appropriate forest or river program, observe without pursuit, then return with a full daylight and road buffer.',
-      boundary: 'Protect wildlife and communities: choose no-riding observation, never feed or approach elephants, stay with staff, respect Ede and M’Nông villages and leave no trace.',
+      arrivalLabel: 'Use the park as the day’s anchor',
+      boundaryLabel: 'Wildlife and access boundary',
+      summary: 'Base in Buon Ma Thuot for Yok Don’s dry-forest landscape; the park lists itself 38 km from town, but confirm the specific visitor program and return before travel.',
+      lead: 'Yok Don’s official visitor page describes a dry dipterocarp forest, the Srepok River and elephant-friendly conservation, with a general menu that includes walking, cycling, bird and animal watching, river trips and interpretation. That menu does not confirm a trip is running on your date. Plan around a named park contact and guide, not an animal sighting; the forest and community visit still matter when wildlife stays out of view.',
+      orientation: 'Two nights in Buon Ma Thuot can hold arrival, one park day and a next-day departure if the intercity arrival is settled before the visit. Three nights leave a separate city and coffee day. Four nights can include Dray Nur as another rural day and one uncommitted weather or road day. The park page gives 38 km from Buon Ma Thuot, but no reliable current travel time, departure schedule or exact program was confirmed; Da Lat is not a sensible same-day base for this west-of-town route.',
+      arrival: 'Travel to Buon Ma Thuot and sleep there. On the park day, use the official park visitor center as the confirmed meeting point only after the park gives you its current address/meeting instructions, guide, program, payment method, expected finish and return vehicle. The park’s access page lists general transport modes but does not establish a date-specific service; arrange the outbound and return legs directly. A map distance of 38 km is not a travel-time estimate.',
+      sequence: 'Choose one program with the park: walking or cycling on a named route, bird/forest interpretation, or a river activity only if the park confirms it is operating and safe. Check the National Forecasting Center near departure, then ask the park which seasonal track and turnaround rule apply. Meet staff, follow their route, keep distance from elephants and wildlife, and return to the same agreed pickup before dark. May–November is the park’s stated rainy season and December–April its dry season; those are climate context, not a daily access forecast.',
+      boundary: 'The current official activity list is not a reservation or an animal guarantee. Never ride, feed, touch, call, bait or pursue an elephant; remain with the park team, keep to the route and follow village hosts’ limits. If the park cannot confirm a current program, weather decision, vehicle and safe return, do not travel to the gate hoping to negotiate a replacement. Use a settled Buon Ma Thuot day instead; no unverified animal attraction is suggested as a substitute.',
       stages: [
-        ['Read the season', 'Use the park’s current rain, dry-forest and program information to choose an activity that fits the day rather than a fixed animal promise.'],
-        ['Meet the park', 'Confirm the official guide, route, payment, safety briefing and community protocol at the park center.'],
-        ['Observe at distance', 'Walk, cycle or travel by river as instructed; keep elephants and other wildlife unbaited, unhandled and free to move away.'],
-        ['Return the knowledge', 'Leave the forest clean, support legitimate local services and return before heat, darkness or rain makes the long road unsafe.']
+        ['Sleep in Buon Ma Thuot', 'Use two nights for one confirmed park day; three add city time; four can hold both Yok Don and Dray Nur on separate days plus a weather reserve.'],
+        ['Book a named program', 'Ask the visitor center for today’s route, meeting point, guide, payment, finish estimate, safety cutoff and pickup plan. The website menu is not live availability.'],
+        ['Follow the forest season', 'The park lists May–November as rainy and December–April as dry. Choose only the activity staff confirm for the forecast; no sighting is promised.'],
+        ['Return with the same driver', 'Confirm the outbound and return car before leaving town. Cancel if the guide, program, weather decision or daylight return remains unresolved.']
       ],
       risks: [
-        ['Seasonal road', 'Yok Don’s rain and dry seasons change tracks, river activity, heat and wildlife visibility; check current park conditions.'],
-        ['Animal welfare', 'Do not ride, feed, touch, call or corner elephants; use observation and keeper-led forest practice instead.'],
-        ['Community respect', 'Ede and M’Nông villages and gong traditions are living culture; use consent, fair payment and quiet participation.']
+        ['General menu versus live trip', 'The visitor page lists possible activities but does not show what is open or bookable on a particular date. Confirm the actual route and operator with the park.'],
+        ['Heat, rain and return road', 'The park’s seasonal dates do not replace a trip-day forecast. Check warnings and accept the guide’s turn-back decision; do not continue if the arranged vehicle cannot return in daylight.'],
+        ['Elephant welfare and consent', 'No riding, feeding, touch, calling or pursuit. Village life and gong traditions are not performances on demand; use an invited host and follow their photography and payment terms.']
       ],
-      duration: 'Reserve a full day for a focused park program, or an overnight only when official accommodation and transport are confirmed.',
-      combine: 'Combine with Buon Ma Thuot before or after the park, not with Dray Nur on a tight single-day loop.',
-      verify: 'Check the official Yok Don visitor page, current program and guide, rain and heat, road, payment method and return vehicle before departure.'
+      duration: 'Set aside one full day for the confirmed visitor program and both road legs. Two nights in the city are the compact shape; three allow one separate Buon Ma Thuot day, while four are appropriate only if adding a second rural day or weather/road slack. An overnight in the park is a separate plan and requires direct confirmation of room, meals, route and transport.',
+      combine: 'Pair Yok Don with city time before or after, not with Dray Nur on the same day. The official park page gives a 38 km road distance from Buon Ma Thuot and says rainy season is May–November, dry season December–April; it does not publish a live itinerary or guarantee access. Keep Da Lat as another region, reached only after confirming a separate intercity transfer.',
+      verify: 'Checked 13 October 2026: the official park visitor page lists general services and 38 km from Buon Ma Thuot, while the access page is not a date-specific timetable. Confirm the named program, route, park meeting point, guide, payment, weather cutoff and return vehicle with the park; check NCHMF before leaving. If these cannot be confirmed, stay in town rather than trying a different gate or an unverified operator.'
     }
   ]
 });
