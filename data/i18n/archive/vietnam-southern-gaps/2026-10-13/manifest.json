@@ -1,0 +1,64 @@
+{
+  "topic": "Vietnam southern Ho Chi Minh City and Mekong reviewed translations before refreshed route copy",
+  "sourceBaseCommit": "76bac54c6881348aabc9ec4c4e10299a705f1df9",
+  "archivedOn": "2026-10-13",
+  "reason": "Byte-preserved the exact source-branch reviewed translation batches before removing stale keys made obsolete by the new source strings. No draft or parallel-work batches were included.",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29l-vietnam-ho-chi-minh-city.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/zh-Hant/29l-vietnam-ho-chi-minh-city.json",
+      "sha256": "fdd315bed4b51a09004e276a3783f0d9570626995ed29add2d6da97de4927295",
+      "bytes": 20367
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/zh-Hant/29m-vietnam-mekong-delta.json",
+      "sha256": "146a818a6901385ca2d177d1f8d39942142db70ec0747759289a3f3e06b222ef",
+      "bytes": 22842
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29l-vietnam-ho-chi-minh-city.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/ja/29l-vietnam-ho-chi-minh-city.json",
+      "sha256": "c21cf79024896f5e7cc6c8dd78ec3860e19e2b0e5a178d547899bbf29d501695",
+      "bytes": 23294
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/ja/29m-vietnam-mekong-delta.json",
+      "sha256": "3bd0b2edbbdd64cd976e49ec9a1f20db01fe6c45abe33a614dcb1ff8d20a8fcd",
+      "bytes": 26001
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29l-vietnam-hcmc.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/ko/29l-vietnam-hcmc.json",
+      "sha256": "52081336cee8b51636b19ac11c8e36d8c00e5c51e9440d2c9ad84aee9dfd4253",
+      "bytes": 22375
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/ko/29m-vietnam-mekong.json",
+      "sha256": "042b0c58c3208bd48f2efd7f956866d277ebc2a1062b07738c7de7ff3738abd3",
+      "bytes": 25409
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29l-vietnam-hcmc.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/th/29l-vietnam-hcmc.json",
+      "sha256": "ae813e07e76ae695767b4f3733833bd8de83c3256341120a24b4efe261ab1f66",
+      "bytes": 35294
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/th/29m-vietnam-mekong.json",
+      "sha256": "39a0459bc7a1fe388022dcf402c2dbe58d4fb37410e0a4d45f9091d43e1df8ce",
+      "bytes": 39854
+    }
+  ]
+}

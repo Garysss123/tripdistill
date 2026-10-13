@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "auditedOn": "2026-10-13",
-  "branch": "codex/sprint-vn-after-nha-trang-20261013",
-  "sourceBaseCommit": "c604392705e094d5f0ee1effa9e98e38f04ed8c6",
+  "branch": "codex/sprint-vn-southern-gaps-20261013",
+  "sourceBaseCommit": "76bac54c6881348aabc9ec4c4e10299a705f1df9",
   "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
-  "verificationStatus": "Full npm run audit and npm run build passed; source-only branch, no main integration or deployment.",
-  "method": "scripts/test-vietnam-after-nha-trang-refresh.mjs compares Parse5-visible #main-content text at initial atlas commit 8a1ada3b4021d077fd468c9c318d91823177c0cb, exact requested source base c604392705e094d5f0ee1effa9e98e38f04ed8c6, and current tree. It excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It verifies the four selected Da Lat and Ha Long/Cat Ba routes were unmodified in both initial and exact base bodies; confirms four exact changed English route files and four search records; preserves the prior Nha Trang bodies and existing translation drafts; and checks five-edition canonical/hreflang/Article dates, translated page/search copy, exactly 20 sitemap date changes, the unchanged 4,560-URL set, locale-batch review provenance and remaining-route totals.",
+  "verificationStatus": "Full npm run audit and npm run build passed; 4,560 sitemap URLs and five-edition checks passed; source-only branch, no main integration, deployment or UI acceptance.",
+  "method": "scripts/test-vietnam-southern-gaps-refresh.mjs compares Parse5-visible #main-content text at initial atlas commit 8a1ada3b4021d077fd468c9c318d91823177c0cb, exact source base 76bac54c6881348aabc9ec4c4e10299a705f1df9, and current tree. It excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It verifies all four selected bodies were untouched at initial/base, the exact six English page-file scope (four guides and two excerpt-updated hubs), four search records, five-edition Article/canonical/hreflang/date and localized search/page copy, exactly 20 date changes, unchanged 4,560 sitemap URLs, reviewed-batch provenance, the eight-file hash archive before stale-key pruning, 87/99 coverage and the exact 12-route remainder.",
   "totals": {
     "englishRoutes": 99,
-    "previousSubstantiveRoutes": 75,
+    "previousSubstantiveRoutes": 79,
     "previousSprintNewSubstantiveRoutes": 4,
     "newSubstantiveRoutes": 4,
-    "afterSprintSubstantiveRoutes": 83,
-    "remainingRoutes": 16
+    "afterSprintSubstantiveRoutes": 87,
+    "remainingRoutes": 12
   },
   "historicalGroups": {
     "Hanoi": 6,
@@ -24,44 +24,44 @@
   },
   "currentSprintRoutes": [
     {
-      "url": "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
-      "initialWords": 670,
-      "baseWords": 670,
-      "currentWords": 1272,
-      "wordDelta": 602,
-      "initialMainTextSha256": "17e2b43165419334abd8887f9cc7d9da0176d63664cfa1d8395d8f5013e24e3e",
-      "baseMainTextSha256": "17e2b43165419334abd8887f9cc7d9da0176d63664cfa1d8395d8f5013e24e3e",
-      "currentMainTextSha256": "844cbd376061cd3b11020baa401eb489d30209a93112e7b58de6f3c82b8796b6"
+      "url": "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+      "initialWords": 559,
+      "baseWords": 559,
+      "currentWords": 1218,
+      "wordDelta": 659,
+      "initialMainTextSha256": "672bd6916e5554f9011934ff3bfa3f0bfc9d488ef3e5ce6d6be761e1c823b29d",
+      "baseMainTextSha256": "672bd6916e5554f9011934ff3bfa3f0bfc9d488ef3e5ce6d6be761e1c823b29d",
+      "currentMainTextSha256": "bc631539f76c92432919cb9b03f00e926fc1a58450f4a5500d9ce4ce392a03c2"
     },
     {
-      "url": "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
-      "initialWords": 649,
-      "baseWords": 649,
-      "currentWords": 1247,
-      "wordDelta": 598,
-      "initialMainTextSha256": "44a1675e1ef3dc932d4cbdaebae8ab6c0f6d6273f891e409227520b301edf69a",
-      "baseMainTextSha256": "44a1675e1ef3dc932d4cbdaebae8ab6c0f6d6273f891e409227520b301edf69a",
-      "currentMainTextSha256": "558e4919831a2c43bb3681e5495668b721a126254b5147136109dd2475c376b7"
+      "url": "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+      "initialWords": 524,
+      "baseWords": 524,
+      "currentWords": 1194,
+      "wordDelta": 670,
+      "initialMainTextSha256": "683b87a29c35454c78ae2f09a92bd2ef776a91e01f74491e1f1af071b1110f86",
+      "baseMainTextSha256": "683b87a29c35454c78ae2f09a92bd2ef776a91e01f74491e1f1af071b1110f86",
+      "currentMainTextSha256": "26d26e81f12d3727ff79d1e6a5cf775eb0a10ccb1838794619ad5cad55400f13"
     },
     {
-      "url": "/vietnam/ha-long-cat-ba/sung-sot-titov/",
-      "initialWords": 630,
-      "baseWords": 630,
-      "currentWords": 1268,
-      "wordDelta": 638,
-      "initialMainTextSha256": "26d6880ede8c914c091d4e383f9e0441902b2ea25618d3b143dc42f7d68b8319",
-      "baseMainTextSha256": "26d6880ede8c914c091d4e383f9e0441902b2ea25618d3b143dc42f7d68b8319",
-      "currentMainTextSha256": "bb5fc67bf9535ac7f841454bdffab764956154075daf82f7f329de693a3e4017"
+      "url": "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+      "initialWords": 543,
+      "baseWords": 543,
+      "currentWords": 1362,
+      "wordDelta": 819,
+      "initialMainTextSha256": "8582553cac111cf5c43a4d7557b444f8038a1237b495e8b4f656108070fff347",
+      "baseMainTextSha256": "8582553cac111cf5c43a4d7557b444f8038a1237b495e8b4f656108070fff347",
+      "currentMainTextSha256": "1da9691700422cfb6d6687422e92f817b387d9cd29f53c3f4b180eac84761f65"
     },
     {
-      "url": "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
-      "initialWords": 642,
-      "baseWords": 642,
-      "currentWords": 1371,
-      "wordDelta": 729,
-      "initialMainTextSha256": "f3ed0552e7bacbb800f71bbed1cdd6bd230ce5f533ff3623f613afefa65daf46",
-      "baseMainTextSha256": "f3ed0552e7bacbb800f71bbed1cdd6bd230ce5f533ff3623f613afefa65daf46",
-      "currentMainTextSha256": "fd88790dade93dd5f17699826909313784a8585670cd572874a343ee338c0d76"
+      "url": "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+      "initialWords": 571,
+      "baseWords": 571,
+      "currentWords": 1396,
+      "wordDelta": 825,
+      "initialMainTextSha256": "94fcb08a1143dee1db8c89f4dbb7f15f22c4f2af42e22cdc6f170283bce6f8b2",
+      "baseMainTextSha256": "94fcb08a1143dee1db8c89f4dbb7f15f22c4f2af42e22cdc6f170283bce6f8b2",
+      "currentMainTextSha256": "9fa50bea199f69ec1301b68891262c3e7f098f80fb4786eedea337ff4e9cf8e6"
     }
   ],
   "excludedHistoricalRoutes": [
@@ -174,11 +174,7 @@
     }
   ],
   "remainingRoutesAfterSprint": [
-    "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
-    "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
     "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
-    "/vietnam/mekong-delta/my-tho-thoi-son-island/",
-    "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
     "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
     "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
     "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
@@ -193,13 +189,13 @@
   ],
   "followUpSprint": {
     "reviewedOn": "2026-10-13",
-    "branch": "codex/sprint-vn-after-nha-trang-20261013",
-    "sourceBaseCommit": "c604392705e094d5f0ee1effa9e98e38f04ed8c6",
+    "branch": "codex/sprint-vn-southern-gaps-20261013",
+    "sourceBaseCommit": "76bac54c6881348aabc9ec4c4e10299a705f1df9",
     "substantiveRouteCount": 4,
-    "bodyWordDeltaTotal": 2567,
-    "verificationStatus": "Full npm run audit and npm run build passed; source-only branch, no main integration or deployment.",
+    "bodyWordDeltaTotal": 2973,
+    "verificationStatus": "Full npm run audit and npm run build passed; 4,560 sitemap URLs and five-edition checks passed; source-only branch, no main integration, deployment or UI acceptance.",
     "routes": "currentSprintRoutes",
-    "priorRemainingRoutes": "previousTopLevelSprint.remainingRoutesAfterSprint"
+    "priorRemainingRoutes": "previousSouthernGapsCheckpoint.remainingRoutesAfterSprint"
   },
   "previousSprint": {
     "schemaVersion": 1,
@@ -5036,6 +5032,208 @@
         "routes": "currentSprintRoutes",
         "priorRemainingRoutes": "priorCurrentSprint.remainingRoutesAfterSprint"
       }
+    }
+  },
+  "previousSouthernGapsCheckpoint": {
+    "reviewedOn": "2026-10-13",
+    "branch": "codex/sprint-vn-after-nha-trang-20261013",
+    "sourceBaseCommit": "c604392705e094d5f0ee1effa9e98e38f04ed8c6",
+    "verificationStatus": "Full npm run audit and npm run build passed; source-only branch, no main integration or deployment.",
+    "method": "scripts/test-vietnam-after-nha-trang-refresh.mjs compares Parse5-visible #main-content text at initial atlas commit 8a1ada3b4021d077fd468c9c318d91823177c0cb, exact requested source base c604392705e094d5f0ee1effa9e98e38f04ed8c6, and current tree. It excludes navigation, scripts/styles/SVG/noscript, ads, .sources and visible review-date phrases, then counts whitespace-separated words. It verifies the four selected Da Lat and Ha Long/Cat Ba routes were unmodified in both initial and exact base bodies; confirms four exact changed English route files and four search records; preserves the prior Nha Trang bodies and existing translation drafts; and checks five-edition canonical/hreflang/Article dates, translated page/search copy, exactly 20 sitemap date changes, the unchanged 4,560-URL set, locale-batch review provenance and remaining-route totals.",
+    "totals": {
+      "englishRoutes": 99,
+      "previousSubstantiveRoutes": 75,
+      "previousSprintNewSubstantiveRoutes": 4,
+      "newSubstantiveRoutes": 4,
+      "afterSprintSubstantiveRoutes": 83,
+      "remainingRoutes": 16
+    },
+    "historicalGroups": {
+      "Hanoi": 6,
+      "Sapa": 6,
+      "Ha Giang": 6,
+      "Ninh Binh": 7,
+      "Hue": 7,
+      "Da Nang/Hoi An": 7
+    },
+    "currentSprintRoutes": [
+      {
+        "url": "/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/",
+        "initialWords": 670,
+        "baseWords": 670,
+        "currentWords": 1272,
+        "wordDelta": 602,
+        "initialMainTextSha256": "17e2b43165419334abd8887f9cc7d9da0176d63664cfa1d8395d8f5013e24e3e",
+        "baseMainTextSha256": "17e2b43165419334abd8887f9cc7d9da0176d63664cfa1d8395d8f5013e24e3e",
+        "currentMainTextSha256": "844cbd376061cd3b11020baa401eb489d30209a93112e7b58de6f3c82b8796b6"
+      },
+      {
+        "url": "/vietnam/da-lat-central-highlands/yok-don-buon-don/",
+        "initialWords": 649,
+        "baseWords": 649,
+        "currentWords": 1247,
+        "wordDelta": 598,
+        "initialMainTextSha256": "44a1675e1ef3dc932d4cbdaebae8ab6c0f6d6273f891e409227520b301edf69a",
+        "baseMainTextSha256": "44a1675e1ef3dc932d4cbdaebae8ab6c0f6d6273f891e409227520b301edf69a",
+        "currentMainTextSha256": "558e4919831a2c43bb3681e5495668b721a126254b5147136109dd2475c376b7"
+      },
+      {
+        "url": "/vietnam/ha-long-cat-ba/sung-sot-titov/",
+        "initialWords": 630,
+        "baseWords": 630,
+        "currentWords": 1268,
+        "wordDelta": 638,
+        "initialMainTextSha256": "26d6880ede8c914c091d4e383f9e0441902b2ea25618d3b143dc42f7d68b8319",
+        "baseMainTextSha256": "26d6880ede8c914c091d4e383f9e0441902b2ea25618d3b143dc42f7d68b8319",
+        "currentMainTextSha256": "bb5fc67bf9535ac7f841454bdffab764956154075daf82f7f329de693a3e4017"
+      },
+      {
+        "url": "/vietnam/ha-long-cat-ba/viet-hai-cai-beo/",
+        "initialWords": 642,
+        "baseWords": 642,
+        "currentWords": 1371,
+        "wordDelta": 729,
+        "initialMainTextSha256": "f3ed0552e7bacbb800f71bbed1cdd6bd230ce5f533ff3623f613afefa65daf46",
+        "baseMainTextSha256": "f3ed0552e7bacbb800f71bbed1cdd6bd230ce5f533ff3623f613afefa65daf46",
+        "currentMainTextSha256": "fd88790dade93dd5f17699826909313784a8585670cd572874a343ee338c0d76"
+      }
+    ],
+    "excludedHistoricalRoutes": [
+      {
+        "url": "/vietnam/nha-trang-khanh-hoa/",
+        "initialWords": 1235,
+        "baseWords": 1235,
+        "currentWords": 1973,
+        "wordDelta": 738,
+        "initialMainTextSha256": "f10a0b070447b57b80779d6ec6257cbaf8e29c81857a44505d5d767586c1887a",
+        "baseMainTextSha256": "f10a0b070447b57b80779d6ec6257cbaf8e29c81857a44505d5d767586c1887a",
+        "currentMainTextSha256": "ec1d974399bcd9822b2b9dfbdf90193e704e4df3e2dcfc4626d4fe7989a99a7a",
+        "reason": "Substantively refreshed in the previous Nha Trang source sprint; excluded from this Da Lat / Ha Long follow-up."
+      },
+      {
+        "url": "/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/",
+        "initialWords": 667,
+        "baseWords": 667,
+        "currentWords": 1234,
+        "wordDelta": 567,
+        "initialMainTextSha256": "029514db2eda163ca56247d41ef5a034892da16276a11faa139ae1914e928fd2",
+        "baseMainTextSha256": "029514db2eda163ca56247d41ef5a034892da16276a11faa139ae1914e928fd2",
+        "currentMainTextSha256": "f1c0254fe6f548769188208901f040aa605c36d31ea7d7c388dc62e23e80efae",
+        "reason": "Substantively refreshed in the previous Nha Trang source sprint; excluded from this Da Lat / Ha Long follow-up."
+      },
+      {
+        "url": "/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/",
+        "initialWords": 666,
+        "baseWords": 666,
+        "currentWords": 1178,
+        "wordDelta": 512,
+        "initialMainTextSha256": "8d08b567d3f211cc6fe95a6d75c03f8bbc644165938a26ae4a34744b0c0c5f19",
+        "baseMainTextSha256": "8d08b567d3f211cc6fe95a6d75c03f8bbc644165938a26ae4a34744b0c0c5f19",
+        "currentMainTextSha256": "9948f162126b13c4b248e34e44e819150e792f23ced7fd6c7976bde0f8d7e2e3",
+        "reason": "Substantively refreshed in the previous Nha Trang source sprint; excluded from this Da Lat / Ha Long follow-up."
+      },
+      {
+        "url": "/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/",
+        "initialWords": 663,
+        "baseWords": 663,
+        "currentWords": 1223,
+        "wordDelta": 560,
+        "initialMainTextSha256": "6dd7671d8dfb0ac67d1d5af590de8954080b521371af82dae56ae69466e0ed41",
+        "baseMainTextSha256": "6dd7671d8dfb0ac67d1d5af590de8954080b521371af82dae56ae69466e0ed41",
+        "currentMainTextSha256": "69c5d1237503f99c85e82256ac06fb4e27c920683a5082d108ce03ad8251f877",
+        "reason": "Substantively refreshed in the previous Nha Trang source sprint; excluded from this Da Lat / Ha Long follow-up."
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "f2df9dd2b47dabc1ce5d37a2835e72d19ba6c6a7ece28b342eea06a620b430a6",
+        "baseMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9",
+        "currentMainTextSha256": "245e958168252008fea006070887d4dbc3b28de2f4ad66c2b266452730ee62c9"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "bc4422e269dcbf111b21a67bb952fb51518c0c669a735f6e72f2eb7f042cfc7c",
+        "baseMainTextSha256": "1833538575b9dd4862454650a79235f179bf1678bdc8c155e3b3594c26c63ea5",
+        "currentMainTextSha256": "1833538575b9dd4862454650a79235f179bf1678bdc8c155e3b3594c26c63ea5"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "1f7caf6c5a395752b626a4716509cb02f415a0bf28d8b7ed4f788ec624a8006e",
+        "baseMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063",
+        "currentMainTextSha256": "aa177718f0836a80993405e469df62068b497eece03cbcedbfe335ecbe273063"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/",
+        "reason": "Substantive route body was already refreshed on 12 October 2026; keep it outside this follow-on batch.",
+        "initialMainTextSha256": "e3dfab26ee34a3dbf3eb58c2644de2612751965eeb46b427bdf2f4ccd29cbd7e",
+        "baseMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a",
+        "currentMainTextSha256": "c048fda9ae6ea15638a81a566f092e784e088afdfc94d597d98ddb43c0c92b4a"
+      },
+      {
+        "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
+        "reason": "Substantively refreshed in the preceding Phong Nha source sprint; excluded from this Phu Quoc follow-up.",
+        "initialMainTextSha256": "41b6de8cd4f2c0cf0d2d829e3b7731a07e29b9f12a88867f1017f97655813133",
+        "baseMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb",
+        "currentMainTextSha256": "d9dff456e5acf649bbc9642f243cc51f2b11c00d76908f885deb762a5d17f4bb"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/",
+        "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+        "initialMainTextSha256": "9e6d17d4cd798bf5d3ecbdf6bf673a384057aa1aac6c9e0dac48b73058727bf1",
+        "baseMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710",
+        "currentMainTextSha256": "67b14b1e896fbac2d90ab89a74da285fc68d607651504a1ccffe8dea8033d710"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/",
+        "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+        "initialMainTextSha256": "b6f8a8847456ccad7baf238773e6379088affcaf08bd3dacf52e65beceb271c8",
+        "baseMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173",
+        "currentMainTextSha256": "03f21de1ea70c58800bedf83fde7e07e82de2512d587528a0c1d3fb26de2b173"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/",
+        "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+        "initialMainTextSha256": "f2846be64ee7e48a82a392f849887c0d18b5513b201583991f8a143986c5fc81",
+        "baseMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926",
+        "currentMainTextSha256": "26fc0d9305b3b0a79d2e5c364da02d9fb7504f646480bf6d6fd9170445229926"
+      },
+      {
+        "url": "/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/",
+        "reason": "Substantively refreshed in the preceding Phu Quoc branch; excluded from this Nha Trang batch.",
+        "initialMainTextSha256": "f8e28ec650a513839470286d88a527391917e4192bfbcf864cdbefe052eeea88",
+        "baseMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67",
+        "currentMainTextSha256": "5ac5dc6480bdd04851d4952772a5e7e755edad4fee96714cba91b9be2f005c67"
+      }
+    ],
+    "remainingRoutesAfterSprint": [
+      "/vietnam/ho-chi-minh-city/can-gio-mangroves/",
+      "/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/",
+      "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+      "/vietnam/mekong-delta/my-tho-thoi-son-island/",
+      "/vietnam/mekong-delta/sa-dec-flower-literary-quarter/",
+      "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+      "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+      "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+      "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+      "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+      "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+      "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+      "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+      "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+      "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+      "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+    ],
+    "followUpSprint": {
+      "reviewedOn": "2026-10-13",
+      "branch": "codex/sprint-vn-after-nha-trang-20261013",
+      "sourceBaseCommit": "c604392705e094d5f0ee1effa9e98e38f04ed8c6",
+      "substantiveRouteCount": 4,
+      "bodyWordDeltaTotal": 2567,
+      "verificationStatus": "Full npm run audit and npm run build passed; source-only branch, no main integration or deployment.",
+      "routes": "currentSprintRoutes",
+      "priorRemainingRoutes": "previousTopLevelSprint.remainingRoutesAfterSprint"
     }
   }
 }

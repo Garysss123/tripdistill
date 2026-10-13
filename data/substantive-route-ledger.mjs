@@ -362,6 +362,13 @@ export const vietnamAfterNhaTrangNewSubstantiveRoutes = Object.freeze([
   '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
 ]);
 
+export const vietnamSouthernGapsNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
+  '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
+  '/vietnam/mekong-delta/my-tho-thoi-son-island/',
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -404,5 +411,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Australia final-content batch', count: 878 }),
   Object.freeze({ label: 'Phu Quoc', count: 882 }),
   Object.freeze({ label: 'Nha Trang', count: 886 }),
-  Object.freeze({ label: 'Da Lat / Ha Long follow-on', count: 890 })
+  Object.freeze({ label: 'Da Lat / Ha Long follow-on', count: 890 }),
+  Object.freeze({ label: 'Southern Vietnam follow-on', count: 894 })
 ]);

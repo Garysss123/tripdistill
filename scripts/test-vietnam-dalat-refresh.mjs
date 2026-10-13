@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes } from './integration-sprint-scope.mjs';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -127,7 +127,8 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, [...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact Da Lat, Mekong, Mui Ne, Phong Nha and Phu Quoc English Vietnam paths may change.');
+const expectedVietnamFiles = [...new Set([...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].map((route) => `${route.slice(1)}index.html`).concat(['vietnam/ho-chi-minh-city/index.html', 'vietnam/mekong-delta/index.html']))].sort();
+assert.deepEqual(changedVietnamFiles, expectedVietnamFiles, 'Only the previously scoped Vietnam routes and exact southern follow-on pages/hubs may differ.');
 
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -141,14 +142,14 @@ for (const route of [...routes, ...previouslyUpdatedRoutes]) {
   assert.deepEqual(currentSearchByUrl.get(route), baseSearchByUrl.get(route), `${route}: body-only refresh must preserve the existing English search record`);
 }
 
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => [...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes].some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => [...routes, ...previouslyUpdatedRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four Da Lat, four preceding Mekong and four following Mui Ne, Phong Nha, Phu Quoc, Nha Trang and post-Nha-Trang routes in five editions may receive new sitemap dates relative to the exact batch base.');

@@ -516,6 +516,14 @@ export const followingVietnamAfterNhaTrangRoutes = Object.freeze([
   '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
 ]);
 
+// Southern Vietnam follow-up: four existing HCMC and Mekong guide bodies.
+export const followingVietnamSouthernGapsRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
+  '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
+  '/vietnam/mekong-delta/my-tho-thoi-son-island/',
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -528,6 +536,7 @@ export const postOctober13Routes = Object.freeze([
   ...postIntegrationPhuQuocRoutes,
   ...followingVietnamNhaTrangRoutes,
   ...followingVietnamAfterNhaTrangRoutes,
+  ...followingVietnamSouthernGapsRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 
