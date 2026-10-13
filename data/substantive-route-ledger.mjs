@@ -96,6 +96,69 @@ export const usaBostonNewSubstantiveRoutes = Object.freeze([
   '/usa/boston/harbor-islands/'
 ]);
 
+// Historical route-body changes from the first New York sample were not
+// recorded in the explicit path ledger. This corrects coverage accounting;
+// it is not a new source-work batch or an approval of U.S. collection quality.
+export const usaNewYorkHistoricalCoverageCorrectionRoutes = Object.freeze([
+  '/usa/new-york/',
+  '/usa/new-york/lower-manhattan/',
+  '/usa/new-york/midtown-central-park/',
+  '/usa/new-york/brooklyn-waterfront/'
+]);
+
+// These 26 existing routes had direct substantive body-rewrite evidence in
+// historical source commits but were omitted from the original U.S. coverage
+// arithmetic. They are an accounting correction, not work from this batch.
+export const usaOtherHistoricalCoverageCorrectionRoutes = Object.freeze([
+  '/usa/philadelphia/',
+  '/usa/philadelphia/old-city/',
+  '/usa/philadelphia/parkway-museums/',
+  '/usa/philadelphia/reading-terminal/',
+  '/usa/washington-dc/',
+  '/usa/washington-dc/georgetown/',
+  '/usa/washington-dc/national-mall/',
+  '/usa/washington-dc/smithsonian/',
+  '/usa/seattle/',
+  '/usa/seattle/bainbridge/',
+  '/usa/seattle/mount-rainier/',
+  '/usa/seattle/pike-place-waterfront/',
+  '/usa/portland-oregon/',
+  '/usa/portland-oregon/columbia-gorge/',
+  '/usa/portland-oregon/oregon-coast/',
+  '/usa/portland-oregon/washington-park/',
+  '/usa/san-francisco/',
+  '/usa/san-francisco/golden-gate-presidio/',
+  '/usa/san-francisco/mission-neighborhoods/',
+  '/usa/san-francisco/waterfront-alcatraz/',
+  '/usa/sierra-parks/yosemite-valley/',
+  '/usa/las-vegas/',
+  '/usa/las-vegas/downtown/',
+  '/usa/las-vegas/red-rock/',
+  '/usa/las-vegas/strip/',
+  '/usa/utah-parks/zion/'
+]);
+
+export const usaSanDiegoNewSubstantiveRoutes = Object.freeze([
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+]);
+
+export const vietnamPhongNhaNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/'
+]);
+
+export const australiaBroomeTasmaniaNewSubstantiveRoutes = Object.freeze([
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -295,5 +358,10 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Los Angeles', count: 817 }),
   Object.freeze({ label: 'Broome & Kimberley', count: 821 }),
   Object.freeze({ label: 'Mui Ne & Binh Thuan', count: 825 }),
-  Object.freeze({ label: 'Boston & Cambridge', count: 829 })
+  Object.freeze({ label: 'Boston & Cambridge', count: 829 }),
+  Object.freeze({ label: 'New York historical coverage correction', count: 833 }),
+  Object.freeze({ label: 'San Diego', count: 837 }),
+  Object.freeze({ label: 'Phong Nha & Ke Bang', count: 841 }),
+  Object.freeze({ label: 'Broome & Tasmania', count: 845 }),
+  Object.freeze({ label: '26-route historical coverage correction', count: 871 })
 ]);

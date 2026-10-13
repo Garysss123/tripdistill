@@ -26,6 +26,9 @@ import {
   postNewEnglandArizonaRoutes,
   postArizonaLosAngelesRoutes,
   postLosAngelesBostonRoutes,
+  postLosAngelesSanDiegoRoutes,
+  postIntegrationPhongNhaRoutes,
+  postIntegrationBroomeTasmaniaRoutes,
   postIntegrationBroomeRoutes,
   postIntegrationMuiNeRoutes,
   localizedIntegrationSitemapRoutes
@@ -97,13 +100,13 @@ assert.deepEqual(
 
 const changedFiles = git([
   'diff', '--name-only', integrationSprintBaseline, '--',
-  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'vietnam', 'usa/hawaii', 'usa/new-orleans', 'usa/atlanta', 'usa/miami', 'usa/orlando', 'usa/new-england', 'usa/chicago', 'usa/arizona', 'usa/los-angeles', 'usa/boston'
+  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'vietnam', 'usa/hawaii', 'usa/new-orleans', 'usa/atlanta', 'usa/miami', 'usa/orlando', 'usa/new-england', 'usa/chicago', 'usa/arizona', 'usa/los-angeles', 'usa/boston', 'usa/san-diego'
 ]).toString('utf8').trim().split('\n').filter(Boolean);
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.equal(changedBodyRoutes.length, 374);
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes]), 'the exact integration scope and eighteen separately accounted four-route follow-on batches changed');
+assert.equal(changedBodyRoutes.length, 386);
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes]), 'the exact integration scope and separately accounted follow-on batches changed');
 
 const taskBase = 'c7df46be0dc3f40649ff44d672861e971d0c082b';
 const newOrleansTerminal = 'dffbdfaacd0f8b583b35cbb4985ae007d3daf1a7';
@@ -239,6 +242,40 @@ for (const route of bostonRoutes) {
   assert.equal(fs.readFileSync(path.join(root, relative), 'utf8'), readFromGit(`${bostonTerminal}:${relative}`).toString('utf8'), `${route}: integrated body matches exact Boston source`);
 }
 
+const sanDiegoTerminal = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
+const sanDiegoBase = 'b7d32c7e1585d5af3cf3d4291dd323e5d2da30eb';
+const sanDiegoRoutes = postLosAngelesSanDiegoRoutes;
+assert.equal(git(['rev-parse', `${sanDiegoTerminal}^1`]).toString('utf8').trim(), sanDiegoBase, 'the San Diego source terminal has the exact Los Angeles source parent');
+assert.equal(git(['rev-parse', `${sanDiegoTerminal}^{tree}`]).toString('utf8').trim(), '2ca0dc7e9ea5ecd5d64824775848bfdd9154f603', 'the San Diego source terminal tree matches the verified source');
+assert.equal(git(['merge-base', sanDiegoBase, sanDiegoTerminal]).toString('utf8').trim(), sanDiegoBase, 'the San Diego source terminal descends from the exact Los Angeles source');
+const changedSanDiegoHtml = git(['diff', '--name-only', sanDiegoBase, sanDiegoTerminal, '--', 'usa/san-diego'])
+  .toString('utf8').trim().split('\n').filter((file) => file.endsWith('.html')).sort();
+assert.deepEqual(changedSanDiegoHtml, sanDiegoRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'the San Diego source changes exactly four existing English bodies');
+for (const route of sanDiegoRoutes) assert.equal(fs.readFileSync(path.join(root, `${route.slice(1)}index.html`), 'utf8'), readFromGit(`${sanDiegoTerminal}:${route.slice(1)}index.html`).toString('utf8'), `${route}: integrated body matches exact San Diego source`);
+
+const phongNhaTerminal = '01144e03bf6173f468cb836d0899163e1a98c4ea';
+const phongNhaBase = 'cc6de926e49c81324d09cb02590366fefbd8a4eb';
+const phongNhaRoutes = postIntegrationPhongNhaRoutes;
+assert.equal(git(['rev-parse', `${phongNhaTerminal}^1`]).toString('utf8').trim(), phongNhaBase, 'the Phong Nha source terminal has the exact Mui Ne source parent');
+assert.equal(git(['rev-parse', `${phongNhaTerminal}^{tree}`]).toString('utf8').trim(), '97cf53203b697ca824ba86dbffd86b8ae9af5d10', 'the Phong Nha source terminal tree matches the verified source');
+assert.equal(git(['merge-base', phongNhaBase, phongNhaTerminal]).toString('utf8').trim(), phongNhaBase, 'the Phong Nha source descends from the exact Mui Ne source');
+const changedPhongNhaHtml = git(['diff', '--name-only', phongNhaBase, phongNhaTerminal, '--', 'vietnam/phong-nha-ke-bang'])
+  .toString('utf8').trim().split('\n').filter((file) => file.endsWith('.html')).sort();
+assert.deepEqual(changedPhongNhaHtml, phongNhaRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'the Phong Nha source changes exactly four existing English bodies');
+assert(!phongNhaRoutes.includes('/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'), 'the previously counted Paradise/Tien Son route is not recounted');
+for (const route of phongNhaRoutes) assert.equal(fs.readFileSync(path.join(root, `${route.slice(1)}index.html`), 'utf8'), readFromGit(`${phongNhaTerminal}:${route.slice(1)}index.html`).toString('utf8'), `${route}: integrated body matches exact Phong Nha source`);
+
+const broomeTasmaniaTerminal = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
+const broomeTasmaniaBase = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
+const broomeTasmaniaRoutes = postIntegrationBroomeTasmaniaRoutes;
+assert.equal(git(['rev-parse', `${broomeTasmaniaTerminal}^1`]).toString('utf8').trim(), broomeTasmaniaBase, 'the Broome/Tasmania source terminal has the exact Broome source parent');
+assert.equal(git(['rev-parse', `${broomeTasmaniaTerminal}^{tree}`]).toString('utf8').trim(), '57308daba879626f870eea6c62a57879151ede00', 'the Broome/Tasmania source terminal tree matches the verified source');
+assert.equal(git(['merge-base', broomeTasmaniaBase, broomeTasmaniaTerminal]).toString('utf8').trim(), broomeTasmaniaBase, 'the Broome/Tasmania source descends from the exact Broome source');
+const changedBroomeTasmaniaHtml = git(['diff', '--name-only', broomeTasmaniaBase, broomeTasmaniaTerminal, '--', 'australia/broome-kimberley', 'australia/tasmania'])
+  .toString('utf8').trim().split('\n').filter((file) => file.endsWith('.html')).sort();
+assert.deepEqual(changedBroomeTasmaniaHtml, broomeTasmaniaRoutes.map((route) => `${route.slice(1)}index.html`).sort(), 'the Broome/Tasmania source changes exactly four existing English bodies');
+for (const route of broomeTasmaniaRoutes) assert.equal(fs.readFileSync(path.join(root, `${route.slice(1)}index.html`), 'utf8'), readFromGit(`${broomeTasmaniaTerminal}:${route.slice(1)}index.html`).toString('utf8'), `${route}: integrated body matches exact Broome/Tasmania source`);
+
 const margaretRemainingTerminal = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
 const margaretRemainingBase = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const margaretRemainingRoutes = postIntegrationMargaretRemainingRoutes;
@@ -284,10 +321,13 @@ for (const prefix of prefixes) {
   for (const route of postNewEnglandArizonaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postArizonaLosAngelesRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postLosAngelesBostonRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+  for (const route of postLosAngelesSanDiegoRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+  for (const route of postIntegrationPhongNhaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+  for (const route of postIntegrationBroomeTasmaniaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postFloridaChicagoRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postIntegrationAustraliaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
 }
-assert.equal(changedSitemapUrls.length, 1865);
+assert.equal(changedSitemapUrls.length, 1925);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
@@ -295,7 +335,7 @@ assert.deepEqual(
 );
 for (const url of changedSitemapUrls) {
   const route = new URL(url).pathname;
-  const expectedDate = [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
 }
 const alpsMargaretBaseSitemap = parseSitemap(readFromGit(`${alpsMargaretBase}:sitemap.xml`).toString('utf8'));
@@ -330,8 +370,8 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 331);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes]), 'only the exact integrated and disjoint four-route follow-on groups changed');
+assert.equal(changedSearchRoutes.length, 343);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes]), 'only the exact integrated and disjoint four-route follow-on groups changed');
 const alpsMargaretSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${alpsMargaretTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of alpsMargaretRoutes) assert.deepEqual(currentSearchByUrl.get(route), alpsMargaretSourceSearch.get(route), `${route}: exact Alps/Margaret source search record is integrated`);
 const haLongSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${haLongTerminal}:data/search-index.json`).toString('utf8')));
@@ -352,6 +392,12 @@ const arizonaSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${arizonaTermin
 for (const route of arizonaRoutes) assert.deepEqual(currentSearchByUrl.get(route), arizonaSourceSearch.get(route), `${route}: exact Arizona source search record is integrated`);
 const losAngelesSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${losAngelesTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of losAngelesRoutes) assert.deepEqual(currentSearchByUrl.get(route), losAngelesSourceSearch.get(route), `${route}: exact Los Angeles source search record is integrated`);
+const sanDiegoSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${sanDiegoTerminal}:data/search-index.json`).toString('utf8')));
+for (const route of sanDiegoRoutes) assert.deepEqual(currentSearchByUrl.get(route), sanDiegoSourceSearch.get(route), `${route}: exact San Diego source search record is integrated`);
+const phongNhaSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${phongNhaTerminal}:data/search-index.json`).toString('utf8')));
+for (const route of phongNhaRoutes) assert.deepEqual(currentSearchByUrl.get(route), phongNhaSourceSearch.get(route), `${route}: exact Phong Nha source search record is integrated`);
+const broomeTasmaniaSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${broomeTasmaniaTerminal}:data/search-index.json`).toString('utf8')));
+for (const route of broomeTasmaniaRoutes) assert.deepEqual(currentSearchByUrl.get(route), broomeTasmaniaSourceSearch.get(route), `${route}: exact Broome/Tasmania source search record is integrated`);
 const margaretRemainingSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${margaretRemainingTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of margaretRemainingRoutes) assert.deepEqual(currentSearchByUrl.get(route), margaretRemainingSourceSearch.get(route), `${route}: exact Margaret remaining source search record is integrated`);
 const broomeTerminal = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
@@ -380,4 +426,4 @@ for (const route of postIntegrationMuiNeRoutes) assert.deepEqual(currentSearchBy
 const bostonSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${bostonTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of bostonRoutes) assert.deepEqual(currentSearchByUrl.get(route), bostonSourceSearch.get(route), `${route}: exact Boston source search record is integrated`);
 
-console.log('Integration scope regression passed: 374 exact English bodies, 1,865 date changes over 373 routes × five editions, 331 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 386 exact English bodies, 1,925 date changes over 385 routes × five editions, 343 English search changes, and the unchanged 4,560-URL set.');

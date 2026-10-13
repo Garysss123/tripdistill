@@ -4347,7 +4347,7 @@
     "url": "/vietnam/phong-nha-ke-bang/",
     "parent": "Vietnam · North-Central Vietnam",
     "type": "Complete regional hub with six field guides",
-    "summary": "Phong Nha–Ke Bang is a cave and forest system rather than a single attraction. The Son River and Phong Nha Cave, Paradise and Tien Son, Chay River–Dark Cave, Nuoc Mooc, Hang En and Son Doong range from managed day visits to tightly controlled multi-day expeditions. The 2025 UNESCO transboundary extension makes conservation and carrying capacity central to every page.",
+    "summary": "Phong Nha–Ke Bang is a dispersed cave, river and forest landscape, so the first decision is where to sleep and how much slack to keep. With two nights, place one confirmed Son River–Phong Nha Cave day between transfers; with three, add one separate, confirmed Chay River–Dark Cave program or Nuoc Mooc forest day; with four, give yourself two distinct field days plus a full weather reserve. Base in Phong Nha village when your chosen day routes and confirmed pickup serve that village. Dong Hoi can suit a rail or airport arrival, but it adds a road transfer each way; no public connection, journey time or last departure is assumed here. Park opening, boat operations, water activities, tickets and closure notices must be checked directly. If a river or forest route is shut or conditions are unknown, do not swap to another same-catchment activity as if it were independent.",
     "keywords": [
       "phong nha–ke bang",
       "phong nha ke bang",
@@ -4950,13 +4950,18 @@
     "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "The accessible gateway chapter for a Son River boat approach to Phong Nha Cave and the surrounding village base.",
+    "summary": "Plan the Son River boat and Phong Nha Cave as one confirmed chain: village pickup, official pier, managed boat, public cave route and return.",
     "keywords": [
       "son river and phong nha cave",
       "phong nha–ke bang",
       "son river phong nha cave",
       "river entrance and accessible cave",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "son river boat",
+      "phong nha cave boat status",
+      "dong hoi transfer",
+      "cave water level",
+      "cave closure"
     ]
   },
   {
@@ -4984,13 +4989,18 @@
     "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "A supervised wet-adventure chapter combining Chay River, zipline, kayak or swim sections and Dark Cave equipment rules.",
+    "summary": "Decide whether a managed Chay River–Dark Cave day is suitable only after confirming the current program, safety limits, weather and return transfer.",
     "keywords": [
       "chay river and dark cave",
       "phong nha–ke bang",
       "chay river dark cave",
       "river adventure and wet cave",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "chay river closure",
+      "dark cave tour status",
+      "water activity rules",
+      "cave weather cancellation",
+      "dong hoi road transfer"
     ]
   },
   {
@@ -4998,13 +5008,17 @@
     "url": "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "A low-intensity forest and spring chapter for boardwalks, turquoise water, picnic planning and protected-park conduct.",
+    "summary": "Plan Nuoc Mooc as a separate road outing; verify the forest route, water access and facilities before leaving the village base.",
     "keywords": [
       "nuoc mooc forest springs",
       "phong nha–ke bang",
-      "nuoc mooc forest springs",
       "forest boardwalk and clear stream",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "nuoc mooc opening status",
+      "nuoc mooc water rules",
+      "nuoc mooc road transfer",
+      "forest route closure",
+      "phong nha weather warning"
     ]
   },
   {
@@ -5984,7 +5998,7 @@
     "url": "/australia/tasmania/",
     "parent": "Australia · Tasmania",
     "type": "Complete regional hub with five field guides",
-    "summary": "Tasmania is compact on a national map but slow on winding roads and mountain weather. nipaluna/Hobart, kunanyi, the Tasman Peninsula, Launceston, Cradle Mountain and the east coast cannot be compressed into a single loop speed. Five chapters keep city culture, convict history, wilderness access and driving fatigue distinct.",
+    "summary": "Plan Tasmania by gateway and nights: use Hobart for the south, Launceston for the north, and separate beds for the Tasman Peninsula, Cradle Mountain and Freycinet. A three-night visit should choose one area; a broad island circuit needs about two weeks plus weather and road buffers.",
     "keywords": [
       "tasmania",
       "tasmania",
@@ -5993,7 +6007,14 @@
       "kunanyi / mount wellington",
       "port arthur & tasman peninsula",
       "launceston & tamar valley",
-      "cradle mountain & freycinet"
+      "cradle mountain & freycinet",
+      "tasmania itinerary how many nights bases",
+      "hobart launceston cradle mountain freycinet route order",
+      "tasmania hire car versus coach park last mile",
+      "spirit of tasmania devonport ferry vehicle booking",
+      "tasmania road closures alpine weather fire park alerts",
+      "tasmania trip rain alternative extra night",
+      "nipaluna hobart tasmania regional guide"
     ]
   },
   {
@@ -6980,13 +7001,20 @@
     "url": "/australia/broome-kimberley/kununurra-lake-argyle/",
     "parent": "Australia · Broome & the Kimberley",
     "type": "Focused field and decision guide",
-    "summary": "An East Kimberley base connecting town services, lake cruise or lookout and Ord landscapes under heat and water-safety controls.",
+    "summary": "Plan three Kununurra nights around one town orientation, a booked Ord River or Lake Argyle experience and a weather buffer. Confirm the actual pickup, marina, road, return and water advice; Purnululu is a separate multi-night park trip, not a day detour.",
     "keywords": [
       "kununurra & lake argyle",
       "broome & the kimberley",
       "kununurra lake argyle",
       "east kimberley water base",
-      "australia travel guide"
+      "australia travel guide",
+      "kununurra lake argyle how many nights",
+      "kununurra to lake argyle drive and cruise transfer",
+      "ord river cruise from kununurra operator pickup",
+      "kununurra purnululu separate overnight road trip",
+      "mirima national park kununurra heat and access",
+      "lake argyle crocodile swimming advice",
+      "kununurra remote travel fuel weather road conditions"
     ]
   },
   {
@@ -6994,13 +7022,20 @@
     "url": "/australia/broome-kimberley/purnululu-bungle-bungle/",
     "parent": "Australia · Broome & the Kimberley",
     "type": "Focused field and decision guide",
-    "summary": "A World Heritage remote-park visit requiring a choice between scenic flight and difficult road access, with camp and heat limits made clear.",
+    "summary": "Plan at least two nights at Purnululu, with a confirmed Kununurra or Halls Creek gateway. DBCA lists a 53 km unsealed high-clearance 4WD access track taking 1.5–3 hours, no park fuel and 47 km between the north and south ends; check live park and road alerts before leaving.",
     "keywords": [
       "purnululu / bungle bungle range",
       "broome & the kimberley",
       "purnululu bungle bungle",
       "remote park flight-or-road gate",
-      "australia travel guide"
+      "australia travel guide",
+      "purnululu how many nights two campgrounds",
+      "bungle bungle spring creek track 53 km 4wd",
+      "purnululu from kununurra not day trip 304 km",
+      "purnululu north echidna chasm south cathedral gorge",
+      "purnululu park alerts seasonal opening road weather",
+      "purnululu high clearance vehicle fuel mobile phone",
+      "bungle bungle flight landing versus walking access"
     ]
   },
   {
@@ -7089,13 +7124,20 @@
     "url": "/australia/tasmania/nipaluna-hobart-salamanca/",
     "parent": "Australia · Tasmania",
     "type": "Focused field and decision guide",
-    "summary": "A harbour-city chapter connecting one cultural collection, Salamanca and the working waterfront without letting a market calendar define the whole visit.",
+    "summary": "Plan one or two Hobart nights around TMAG, Constitution Dock and Salamanca Place. Check the current Saturday market calendar, TMAG opening and access, Metro Tasmania return and harbour forecast; use the flat lower-city route if Kelly’s Steps, wind or walking distance do not suit.",
     "keywords": [
       "nipaluna / hobart & salamanca",
       "tasmania",
       "nipaluna hobart salamanca",
       "harbour-market cultural day",
-      "australia travel guide"
+      "australia travel guide",
+      "hobart itinerary one day salamanca place route",
+      "nipaluna hobart base cbd versus battery point",
+      "salamanca market saturday current dates hours",
+      "tmag hobart opening accessibility visitor information",
+      "hobart airport to city confirmed transfer metro timetable",
+      "hobart salamanca rain wind accessible alternative",
+      "kellys steps battery point hobart return walk"
     ]
   },
   {
@@ -11258,7 +11300,7 @@
     "url": "/usa/san-diego/",
     "parent": "United States",
     "type": "Regional guide",
-    "summary": "Plan San Diego with a useful airport connection and separate Balboa Park, La Jolla and harbor days, choosing the base and car days around real destinations.",
+    "summary": "Plan San Diego by nights and base: connect SAN, downtown, Balboa Park, La Jolla and Coronado without pretending every trip is one short ride.",
     "keywords": [
       "San Diego",
       "California"
@@ -11269,7 +11311,7 @@
     "url": "/usa/san-diego/balboa-park/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "Choose Balboa Park museums and gardens around El Prado, with separate admission, current paid parking and a zoo-versus-cultural-day decision.",
+    "summary": "Choose one Balboa Park collection, compare museum and garden days, and date-check parking, tram, Route 7 access and your return connection.",
     "keywords": [
       "Balboa Park",
       "San Diego"
@@ -11280,7 +11322,7 @@
     "url": "/usa/san-diego/la-jolla/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "Plan a land-based La Jolla visit that distinguishes the Cove, Point La Jolla and Children’s Pool, with current wildlife boundaries and a village meal.",
+    "summary": "Plan a land-based La Jolla day with the Route 30 last mile, distinct year-round and seasonal closures, and weather-safe alternatives.",
     "keywords": [
       "La Jolla Coast",
       "San Diego"
@@ -11291,7 +11333,7 @@
     "url": "/usa/san-diego/harbor-coronado/",
     "parent": "San Diego",
     "type": "Local guide",
-    "summary": "Choose a San Diego maritime museum or a Coronado ferry day, identifying the exact departure, bay landing and separate ocean-beach connection.",
+    "summary": "Compare a USS Midway visit with a Coronado ferry day, then trace the separate bay-landing-to-ocean connection and verified return.",
     "keywords": [
       "San Diego Harbor & Coronado",
       "San Diego"

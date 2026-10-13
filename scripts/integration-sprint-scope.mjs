@@ -464,13 +464,23 @@ export const postLosAngelesBostonRoutes = Object.freeze([
   '/usa/boston/harbor-islands/'
 ]);
 
+// San Diego source refresh after the Los Angeles terminal; Boston remains a
+// separate child source that follows this exact checkpoint.
+export const postLosAngelesSanDiegoRoutes = Object.freeze([
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
   ...postChicagoNewEnglandRoutes,
   ...postNewEnglandArizonaRoutes,
   ...postArizonaLosAngelesRoutes,
-  ...postLosAngelesBostonRoutes
+  ...postLosAngelesBostonRoutes,
+  ...postLosAngelesSanDiegoRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
@@ -529,6 +539,21 @@ export const postIntegrationMuiNeRoutes = Object.freeze([
   '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
 ]);
 
+export const postIntegrationPhongNhaRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/'
+]);
+export const followingVietnamPhongNhaRoutes = postIntegrationPhongNhaRoutes;
+
+export const postIntegrationBroomeTasmaniaRoutes = Object.freeze([
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
+]);
+
 export const postNewEnglandIntegrationRoutes = postChicagoNewEnglandRoutes;
 
 export const postIntegrationMargaretRemainingRoutes = Object.freeze([
@@ -575,6 +600,8 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationBroomeRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationMuiNeRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationPhongNhaRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationBroomeTasmaniaRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

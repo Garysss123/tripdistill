@@ -1,0 +1,46 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Tasmania by gateway and nights: use Hobart for the south, Launceston for the north, and separate beds for the Tasman Peninsula, Cradle Mountain and Freycinet. A three-night visit should choose one area; a broad island circuit needs about two weeks plus weather and road buffers.": "태즈메이니아는 관문 도시와 숙박 일수를 기준으로 계획하세요. 남쪽은 호바트, 북쪽은 론서스턴을 거점으로 삼고 태즈먼반도, 크레이들산, 프레이시넷에서는 각각 따로 숙박하세요. 3박이면 한 지역을 선택하고 섬을 넓게 돌려면 날씨와 도로 여유를 포함해 약 2주를 잡으세요.",
+    "tasmania itinerary how many nights bases": "태즈메이니아 여행 일정: 숙박 일수와 거점",
+    "hobart launceston cradle mountain freycinet route order": "호바트·론서스턴·크레이들산·프레이시넷 이동 순서",
+    "tasmania hire car versus coach park last mile": "태즈메이니아 렌터카 또는 버스: 공원 마지막 구간",
+    "spirit of tasmania devonport ferry vehicle booking": "Spirit of Tasmania 데번포트 페리와 차량 예약",
+    "tasmania road closures alpine weather fire park alerts": "태즈메이니아 도로 폐쇄·고산 날씨·화재·공원 경보",
+    "tasmania trip rain alternative extra night": "비 오는 날 태즈메이니아 대안과 예비 숙박",
+    "nipaluna hobart tasmania regional guide": "nipaluna 호바트 지역 여행 안내",
+    "Plan three Kununurra nights around one town orientation, a booked Ord River or Lake Argyle experience and a weather buffer. Confirm the actual pickup, marina, road, return and water advice; Purnululu is a separate multi-night park trip, not a day detour.": "쿠누누라 3박을 기준으로 시내 파악 하루, 예약한 오드강 또는 아가일호 체험 하나, 날씨 여유를 계획하세요. 실제 픽업, 선착장, 도로, 복귀, 수상 안전 정보를 확인하세요. 퍼눌룰루는 며칠 묵어야 하는 별도의 공원 여행이며 당일치기 경유지가 아닙니다.",
+    "kununurra lake argyle how many nights": "쿠누누라·아가일호: 필요한 숙박 일수",
+    "kununurra to lake argyle drive and cruise transfer": "쿠누누라에서 아가일호까지: 운전·크루즈·환승",
+    "ord river cruise from kununurra operator pickup": "쿠누누라 출발 오드강 크루즈: 업체 픽업",
+    "kununurra purnululu separate overnight road trip": "쿠누누라에서 퍼눌룰루로: 별도 숙박이 필요한 도로 여행",
+    "mirima national park kununurra heat and access": "쿠누누라 Mirima National Park: 더위와 접근",
+    "lake argyle crocodile swimming advice": "아가일호 악어·수영 안전 안내",
+    "kununurra remote travel fuel weather road conditions": "쿠누누라 오지 이동: 연료·날씨·도로 상황",
+    "Plan at least two nights at Purnululu, with a confirmed Kununurra or Halls Creek gateway. DBCA lists a 53 km unsealed high-clearance 4WD access track taking 1.5–3 hours, no park fuel and 47 km between the north and south ends; check live park and road alerts before leaving.": "퍼눌룰루에서 최소 2박하고 쿠누누라나 Halls Creek의 진입 거점을 확인하세요. DBCA에 따르면 비포장 고지상고 4WD 진입로는 53km이며 1.5~3시간 걸립니다. 공원 안에 연료가 없고 남북 끝은 47km 떨어져 있습니다. 출발 전에 실시간 공원 및 도로 경보를 확인하세요.",
+    "purnululu how many nights two campgrounds": "퍼눌룰루 숙박 일수와 두 캠프장",
+    "bungle bungle spring creek track 53 km 4wd": "번글번글 Spring Creek Track: 53km·4WD",
+    "purnululu from kununurra not day trip 304 km": "쿠누누라에서 퍼눌룰루는 당일치기 불가: 304km",
+    "purnululu north echidna chasm south cathedral gorge": "퍼눌룰루 북쪽 Echidna Chasm·남쪽 Cathedral Gorge",
+    "purnululu park alerts seasonal opening road weather": "퍼눌룰루 공원 경보·계절 개방·도로·날씨",
+    "purnululu high clearance vehicle fuel mobile phone": "퍼눌룰루 고지상고 차량·연료·휴대전화",
+    "bungle bungle flight landing versus walking access": "번글번글: 착륙 항공 관광과 도보 방문 비교",
+    "Plan one or two Hobart nights around TMAG, Constitution Dock and Salamanca Place. Check the current Saturday market calendar, TMAG opening and access, Metro Tasmania return and harbour forecast; use the flat lower-city route if Kelly’s Steps, wind or walking distance do not suit.": "호바트에 1~2박하며 TMAG, Constitution Dock, Salamanca Place를 둘러보세요. 현재 토요일 시장 일정, TMAG 개장과 접근성, Metro Tasmania 귀환, 항구 예보를 확인하세요. Kelly’s Steps, 바람, 걷는 거리가 맞지 않으면 낮은 시내 경로를 이용하세요.",
+    "hobart itinerary one day salamanca place route": "호바트 하루 일정: Salamanca Place 도보 경로",
+    "nipaluna hobart base cbd versus battery point": "nipaluna 호바트 숙박 거점: CBD 또는 Battery Point",
+    "salamanca market saturday current dates hours": "Salamanca Market: 토요일 최신 날짜와 운영 시간",
+    "tmag hobart opening accessibility visitor information": "호바트 TMAG 개장·방문·접근성 정보",
+    "hobart airport to city confirmed transfer metro timetable": "호바트 공항에서 시내까지 확정 교통편과 Metro 시간표",
+    "hobart salamanca rain wind accessible alternative": "호바트 Salamanca: 비·바람·접근 가능한 대안",
+    "kellys steps battery point hobart return walk": "Kelly’s Steps와 Battery Point에서 호바트로 돌아오는 걷기"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}

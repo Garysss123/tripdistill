@@ -5,7 +5,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
@@ -147,7 +147,7 @@ for (const file of correctionFiles) {
 
 const comparisonBase = integrationBranch ? integrationBase : base;
 const changedEnglish = git(['diff', '--name-only', comparisonBase, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-const expectedChangedEnglish = integrationBranch ? [...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes] : routes;
+const expectedChangedEnglish = integrationBranch ? [...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes] : routes;
 assert.deepEqual(changedEnglish, expectedChangedEnglish.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact source batch or subsequent four Margaret guides changed in the selected checkpoint.');
 
 const referenceHub = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/index.html'), 'utf8')));

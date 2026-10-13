@@ -34,7 +34,8 @@ const newEnglandRefreshRoutes=new Set(['/usa/new-england/','/usa/new-england/por
 const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/']);
 const losAngelesRefreshRoutes=new Set(['/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/']);
 const bostonRefreshRoutes=new Set(['/usa/boston/','/usa/boston/freedom-trail/','/usa/boston/cambridge-harvard/','/usa/boston/harbor-islands/']);
-const october13RefreshRoutes=new Set([...losAngelesRefreshRoutes,...arizonaRefreshRoutes,...floridaNeighborhoodRefreshRoutes,...chicagoRefreshRoutes,...newEnglandRefreshRoutes,...bostonRefreshRoutes]);
+const sanDiegoRefreshRoutes=new Set(['/usa/san-diego/','/usa/san-diego/balboa-park/','/usa/san-diego/harbor-coronado/','/usa/san-diego/la-jolla/']);
+const october13RefreshRoutes=new Set([...losAngelesRefreshRoutes,...arizonaRefreshRoutes,...floridaNeighborhoodRefreshRoutes,...chicagoRefreshRoutes,...newEnglandRefreshRoutes,...bostonRefreshRoutes,...sanDiegoRefreshRoutes]);
 const sprintUsRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
 const dateLocales=[['en',''],['zh-Hant','/zh'],['ja','/ja'],['ko','/ko'],['th','/th']];
 const usaRoutes=['/usa/',...usaHubs.flatMap(h=>[`/usa/${h.slug}/`,...h.guides.map(g=>g.url)])];

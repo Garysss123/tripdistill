@@ -9,7 +9,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { collectTranslationWork } from './i18n-lib.mjs';
 import { australiaGoldCoastDiagram } from '../data/australia-gold-coast-diagram.mjs';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'ec5e2f319333e946e5792b99777e5ce99a97e2b6';
@@ -224,11 +224,11 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => expectedLastmod.includes(route) && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'The four selected routes across five editions must receive a new lastmod.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
 
 const svg = fs.readFileSync(path.join(root, svgPath), 'utf8');
 assert(!/<script\b|\son[a-z]+\s*=|<foreignObject\b|\s(?:href|xlink:href)\s*=\s*["']https?:\/\//i.test(svg), 'SVG has no scripts, handlers, foreign objects or external references.');

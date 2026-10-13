@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postLosAngelesSanDiegoRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationPhongNhaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
@@ -116,7 +117,7 @@ for (const file of baseUsaPages) {
   assert.match(mainText(html), /Selected official access, weather and seasonal service information checked on 13 October 2026\./, `${route}: visible source-check date`);
   bodyStats.push({ route, beforeWords: before.split(/\s+/).length, afterWords: after.split(/\s+/).length });
 }
-assert.deepEqual(changedUsaBodies.sort(), routes.map(relative).sort(), 'no other English U.S. main body changed');
+assert.deepEqual(changedUsaBodies.sort(), [...routes, ...postLosAngelesSanDiegoRoutes].map(relative).sort(), 'only the exact San Diego predecessor batch and Boston source batch changed English U.S. main bodies');
 for (const file of ['usa/index.html', ...git(['ls-tree', '-r', '--name-only', base, '--', 'usa/new-york']).toString('utf8').trim().split('\n').filter((name) => name.endsWith('/index.html'))]) {
   assert.deepEqual(fs.readFileSync(path.join(root, file)), gitBytes(base, file), `${file}: New York sample or country overview remains byte-for-byte unchanged`);
 }
@@ -151,7 +152,7 @@ assert.equal(baseSearch.size, 955, 'English search has 955 records at the source
 assert.equal(integrationBaseSearch.size, 955, 'English search has 955 records at the integration checkpoint');
 assert.equal(currentSearch.size, 955, 'English search retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(integrationBaseSearch.keys()), 'English search URL set remains unchanged');
-assert.deepEqual([...currentSearch].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(integrationBaseSearch.get(url))).map(([url]) => url).sort(), routes.slice().sort(), 'only the four Boston English search summaries changed from the pushed checkpoint');
+assert.deepEqual([...currentSearch].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(integrationBaseSearch.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes].sort(), 'only the Boston, San Diego, Phong Nha and Broome/Tasmania English search summaries changed from the prior integration checkpoint');
 const sourceSearch = new Map(JSON.parse(gitText(sourceTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: English search record matches exact Boston source`);
 
@@ -162,7 +163,7 @@ assert.equal(baseSitemap.size, 4560, 'source-base sitemap has 4,560 URLs');
 assert.equal(integrationBaseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(integrationBaseSitemap.keys()), 'all 4,560 sitemap URLs remain unchanged');
-const datedPaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datedPaths = [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 assert.deepEqual([...currentSitemap].filter(([route, date]) => integrationBaseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only the four Boston routes across five editions receive new sitemap dates from the pushed checkpoint');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: sitemap lastmod`);
 
@@ -173,7 +174,7 @@ for (const locale of locales) {
   assert.equal(records.length, 955, `${locale.code}: search has 955 records`);
   if (locale.code === 'en') {
     const beforeRecords = new Map(JSON.parse(gitText(integrationBase, searchPath)).map((entry) => [entry.url, entry]));
-    assert.deepEqual([...afterRecords].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(beforeRecords.get(url))).map(([url]) => url).sort(), routes.slice().sort(), 'English: only Boston search summaries changed');
+    assert.deepEqual([...afterRecords].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(beforeRecords.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationBroomeTasmaniaRoutes].sort(), 'English: only Boston and exact earlier task-scope search summaries changed');
   }
   const catalog = locale.code === 'en' ? null : readJson(`data/i18n/${locale.code}.json`).translations;
   for (const route of routes) {

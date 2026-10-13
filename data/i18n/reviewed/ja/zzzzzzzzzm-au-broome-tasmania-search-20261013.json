@@ -1,0 +1,46 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Tasmania by gateway and nights: use Hobart for the south, Launceston for the north, and separate beds for the Tasman Peninsula, Cradle Mountain and Freycinet. A three-night visit should choose one area; a broad island circuit needs about two weeks plus weather and road buffers.": "タスマニアは玄関口と泊数を基に計画します。南部はホバート、北部はロンセストンを拠点にし、タスマン半島、クレイドル山、フレシネでは別々に宿泊してください。3泊なら一地域を選び、島を広く巡るには天候や道路の予備を加えて約2週間が目安です。",
+    "tasmania itinerary how many nights bases": "タスマニアの旅程：泊数と拠点",
+    "hobart launceston cradle mountain freycinet route order": "ホバート、ロンセストン、クレイドル山、フレシネの順路",
+    "tasmania hire car versus coach park last mile": "タスマニアのレンタカーとバス：公園までの最後の移動",
+    "spirit of tasmania devonport ferry vehicle booking": "Spirit of Tasmaniaのデボンポート行きフェリーと車両予約",
+    "tasmania road closures alpine weather fire park alerts": "タスマニアの道路閉鎖、高地の天候、火災、公園警報",
+    "tasmania trip rain alternative extra night": "雨の日のタスマニアと予備の一泊",
+    "nipaluna hobart tasmania regional guide": "nipaluna／ホバートの地域ガイド",
+    "Plan three Kununurra nights around one town orientation, a booked Ord River or Lake Argyle experience and a weather buffer. Confirm the actual pickup, marina, road, return and water advice; Purnululu is a separate multi-night park trip, not a day detour.": "クヌヌラに3泊し、町の下見、予約済みのオード川またはアーガイル湖体験を一つ、天候の余裕を組み合わせます。実際の送迎、マリーナ、道路、帰路、水辺の案内を確認してください。パーヌルルは数泊が必要な別の公園旅行で、日帰りの寄り道ではありません。",
+    "kununurra lake argyle how many nights": "クヌヌラとアーガイル湖：必要な泊数",
+    "kununurra to lake argyle drive and cruise transfer": "クヌヌラからアーガイル湖へ：運転、クルーズ、送迎",
+    "ord river cruise from kununurra operator pickup": "クヌヌラ発オード川クルーズ：事業者の送迎",
+    "kununurra purnululu separate overnight road trip": "クヌヌラからパーヌルルへ：別途宿泊する道路旅行",
+    "mirima national park kununurra heat and access": "クヌヌラのMirima National Park：暑さとアクセス",
+    "lake argyle crocodile swimming advice": "アーガイル湖のワニと遊泳の安全案内",
+    "kununurra remote travel fuel weather road conditions": "クヌヌラの遠隔地移動：燃料、天候、道路状況",
+    "Plan at least two nights at Purnululu, with a confirmed Kununurra or Halls Creek gateway. DBCA lists a 53 km unsealed high-clearance 4WD access track taking 1.5–3 hours, no park fuel and 47 km between the north and south ends; check live park and road alerts before leaving.": "クヌヌラまたはHalls Creekの玄関口を確保し、パーヌルルに最低2泊します。DBCAによると未舗装の高車高4WD専用道路は53 km、所要1.5〜3時間です。園内に燃料はなく、北端と南端は47 km離れています。出発前に公園と道路の最新警報を確認してください。",
+    "purnululu how many nights two campgrounds": "パーヌルルの必要泊数と二つのキャンプ地",
+    "bungle bungle spring creek track 53 km 4wd": "バングル・バングルのSpring Creek Track：53 km・4WD",
+    "purnululu from kununurra not day trip 304 km": "クヌヌラからパーヌルルへ日帰り不可：304 km",
+    "purnululu north echidna chasm south cathedral gorge": "パーヌルル北部のEchidna Chasmと南部のCathedral Gorge",
+    "purnululu park alerts seasonal opening road weather": "パーヌルルの公園警報、季節開園、道路、天候",
+    "purnululu high clearance vehicle fuel mobile phone": "パーヌルルの高車高車両、燃料、携帯電波",
+    "bungle bungle flight landing versus walking access": "バングル・バングル：着陸する遊覧飛行と徒歩訪問",
+    "Plan one or two Hobart nights around TMAG, Constitution Dock and Salamanca Place. Check the current Saturday market calendar, TMAG opening and access, Metro Tasmania return and harbour forecast; use the flat lower-city route if Kelly’s Steps, wind or walking distance do not suit.": "ホバートに1〜2泊し、TMAG、Constitution Dock、Salamanca Placeを巡ります。土曜市の最新日程、TMAGの開館とアクセス、Metro Tasmaniaの帰り、港の予報を確認しましょう。Kelly’s Steps、風、歩行距離が合わなければ、低地の市内ルートを使います。",
+    "hobart itinerary one day salamanca place route": "ホバート1日観光：Salamanca Place散策路",
+    "nipaluna hobart base cbd versus battery point": "nipaluna／ホバートの宿泊拠点：CBDかBattery Point",
+    "salamanca market saturday current dates hours": "Salamanca Market：土曜の開催日と時間",
+    "tmag hobart opening accessibility visitor information": "ホバートTMAG：開館、来館、アクセシビリティ",
+    "hobart airport to city confirmed transfer metro timetable": "ホバート空港から市内への送迎とMetro時刻表",
+    "hobart salamanca rain wind accessible alternative": "ホバートとSalamanca：雨、風、アクセシブルな代替案",
+    "kellys steps battery point hobart return walk": "Kelly’s Steps、Battery Pointからのホバート帰路"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}

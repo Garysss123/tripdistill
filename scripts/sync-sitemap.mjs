@@ -812,13 +812,6 @@ const usaFloridaNeighborhoodRoutes = [
   '/usa/orlando/theme-parks/',
   '/usa/orlando/winter-park/'
 ];
-const usaNewEnglandLastmod = '2026-10-13';
-const usaNewEnglandRoutes = [
-  '/usa/new-england/',
-  '/usa/new-england/portland-maine/',
-  '/usa/new-england/acadia/',
-  '/usa/new-england/white-mountains-vermont/'
-];
 const usaChicagoLastmod = '2026-10-13';
 const usaChicagoRoutes = [
   '/usa/chicago/',
@@ -853,6 +846,27 @@ const usaBostonRoutes = [
   '/usa/boston/freedom-trail/',
   '/usa/boston/cambridge-harvard/',
   '/usa/boston/harbor-islands/'
+];
+const usaSanDiegoLastmod = '2026-10-13';
+const usaSanDiegoRoutes = [
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+];
+const vietnamPhongNhaLastmod = '2026-10-13';
+const vietnamPhongNhaRoutes = [
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/'
+];
+const australiaBroomeTasmaniaLastmod = '2026-10-13';
+const australiaBroomeTasmaniaRoutes = [
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
 ];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
@@ -1299,10 +1313,25 @@ for (const route of usaBostonRoutes) {
   if (!record) throw new Error(`Cannot date edited Boston route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaBostonLastmod });
 }
+for (const route of usaSanDiegoRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited San Diego route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaSanDiegoLastmod });
+}
+for (const route of vietnamPhongNhaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date refreshed Phong Nha route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamPhongNhaLastmod });
+}
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date reviewed Australia route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod });
+}
+for (const route of australiaBroomeTasmaniaRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date refreshed Broome/Tasmania route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: australiaBroomeTasmaniaLastmod });
 }
 for (const route of japanEditedRoutes) {
   const record = records.get(route);

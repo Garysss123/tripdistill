@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postIntegrationBroomeRoutes, postIntegrationMuiNeRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
@@ -89,9 +89,11 @@ const checkpointContinuationRoutes = [
   ...postIntegrationMargaretRemainingRoutes,
   ...followingVietnamDaLatRoutes,
   ...postNewEnglandArizonaRoutes,
-  ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes,
+  ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes,
   ...postIntegrationBroomeRoutes,
-  ...postIntegrationMuiNeRoutes
+  ...postIntegrationBroomeTasmaniaRoutes,
+  ...postIntegrationMuiNeRoutes,
+  ...postIntegrationPhongNhaRoutes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -150,7 +152,7 @@ const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationD
 assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Australia, CH14–CH16, Vietnam through Da Lat, Hawaii, New Orleans, Atlanta, Florida, Chicago, New England and Arizona routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must be current.`);
 }
 

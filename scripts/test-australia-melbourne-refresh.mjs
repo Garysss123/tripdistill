@@ -4,7 +4,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { australiaSouthClusters } from '../data/australia-south-guides.mjs';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseline = 'a014412eceb30efae51894be3b6167debaa96ca3';
@@ -150,13 +150,13 @@ const laterAustraliaGapRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 340, 'sixty-eight exact Australia route dates across five language editions, including the four remaining Margaret River and Broome guides');
+assert.equal(editedUrls.size, 360, 'seventy-two exact Australia route dates across five language editions, including the four remaining Margaret River, Broome and Broome/Tasmania guides');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
   if (!pathname.includes('/australia/')) continue;
-  const isAlpsMargaretRoute = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes].some((route) => pathname.endsWith(route));
+  const isAlpsMargaretRoute = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes].some((route) => pathname.endsWith(route));
   const expectedDate = isAlpsMargaretRoute ? '2026-10-13' : editedUrls.has(pathname) ? '2026-10-12' : originalDate;
   assert.equal(currentEntries.get(url), expectedDate, `only the exact 60 selected Australia route dates change: ${url}`);
 }
@@ -271,4 +271,4 @@ for (const [route, [alt, source, license]] of photoExpectations) {
   assert.ok(readPage(root, '', route).html.includes(license), `${route} retains its displayed license declaration`);
 }
 
-  console.log('Australia refresh regression passed: 64 exact Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns, Top End/Whitsundays, Canberra and both Margaret River route groups × 5 language editions, only the 320 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');
+  console.log('Australia refresh regression passed: exact Melbourne, Adelaide, Sydney, Brisbane, Blue Mountains, Great Ocean Road, Gold Coast, Cairns, Top End/Whitsundays, Canberra, Margaret River, Broome and Broome/Tasmania route groups × 5 language editions, only the 360 selected sitemap dates changed, unchanged sitemap URL set, Adelaide localized headings/dates/source-and-dist parity/search summaries, Melbourne localized content and search parity, accurate hero alternatives, and unchanged photo-source/license declarations.');

@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationPhongNhaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '75c8caf79053a67cf645a53bed215a72eff07baf';
@@ -132,7 +133,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, [...routes, ...followingDaLatRoutes, ...followingMuiNeRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Mekong, four Da Lat and four following Mui Ne English Vietnam paths may change.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...followingDaLatRoutes, ...followingMuiNeRoutes, ...postIntegrationPhongNhaRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact Mekong, Da Lat, Mui Ne and Phong Nha English Vietnam paths may change.');
 
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));

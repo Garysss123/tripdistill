@@ -27,6 +27,11 @@ import {
   usaArizonaNewSubstantiveRoutes,
   usaLosAngelesNewSubstantiveRoutes,
   usaBostonNewSubstantiveRoutes,
+  usaNewYorkHistoricalCoverageCorrectionRoutes,
+  usaOtherHistoricalCoverageCorrectionRoutes,
+  usaSanDiegoNewSubstantiveRoutes,
+  vietnamPhongNhaNewSubstantiveRoutes,
+  australiaBroomeTasmaniaNewSubstantiveRoutes,
   vietnamCompletedRoutes,
   vietnamHistoricalExclusions,
   vietnamNewSubstantiveRoutes,
@@ -74,6 +79,31 @@ function substantiveOverviewText(html) {
   walk(main);
   return text.join(' ').replace(/\s+/g, ' ').trim();
 }
+
+function normalizedMainText(html) {
+  const document = parse(html);
+  const main = findOne(document, (node) => node.tagName === 'main');
+  assert(main, 'Expected an English route page with a main element.');
+  const text = [];
+  function walk(node) {
+    if (node.nodeName === '#text') { text.push(node.value); return; }
+    if (['script', 'style', 'svg'].includes(node.tagName)) return;
+    for (const child of node.childNodes || []) walk(child);
+  }
+  walk(main);
+  return text.join(' ').replace(/\s+/g, ' ').trim();
+}
+
+function substantiveCharacterCount(text) {
+  return [...text.replace(/\s/gu, '')].length;
+}
+
+const localeSourcePatterns = new Map([
+  ['zh', /[\u3400-\u9fff]/u],
+  ['ja', /[\u3040-\u30ff\u3400-\u9fff]/u],
+  ['ko', /[\uac00-\ud7af]/u],
+  ['th', /[\u0e00-\u0e7f]/u]
+]);
 
 assert.equal(reportedSubstantiveBaseline, 458);
 assert.equal(correctedSubstantiveBaseline, 457, 'The reported baseline counted one extra Vietnam route.');
@@ -125,7 +155,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -189,8 +219,158 @@ assert(usaLosAngelesNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedR
 assert.equal(usaBostonNewSubstantiveRoutes.length, 4, 'Boston & Cambridge adds four exact existing-route improvements.');
 assert.equal(new Set(usaBostonNewSubstantiveRoutes).size, 4, 'Boston additions must be unique.');
 assert(usaBostonNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route) && !usaNewOrleansNewSubstantiveRoutes.includes(route) && !usaAtlantaNewSubstantiveRoutes.includes(route) && !usaFloridaNewSubstantiveRoutes.includes(route) && !usaNewEnglandNewSubstantiveRoutes.includes(route) && !usaChicagoNewSubstantiveRoutes.includes(route) && !usaArizonaNewSubstantiveRoutes.includes(route) && !usaLosAngelesNewSubstantiveRoutes.includes(route)), 'Boston routes are disjoint from the historical 25 and every earlier U.S. refresh group.');
+assert.deepEqual(usaNewYorkHistoricalCoverageCorrectionRoutes, [
+  '/usa/new-york/',
+  '/usa/new-york/lower-manhattan/',
+  '/usa/new-york/midtown-central-park/',
+  '/usa/new-york/brooklyn-waterfront/'
+], 'Historical New York correction is the exact four-route sample, not current source work.');
+const usaRecordedSourceWorkRoutes = [
+  ...usaPreviouslyCountedRoutes,
+  ...usaHawaiiNewSubstantiveRoutes,
+  ...usaNewOrleansNewSubstantiveRoutes,
+  ...usaAtlantaNewSubstantiveRoutes,
+  ...usaFloridaNewSubstantiveRoutes,
+  ...usaNewEnglandNewSubstantiveRoutes,
+  ...usaChicagoNewSubstantiveRoutes,
+  ...usaArizonaNewSubstantiveRoutes,
+  ...usaLosAngelesNewSubstantiveRoutes,
+  ...usaBostonNewSubstantiveRoutes,
+  ...usaSanDiegoNewSubstantiveRoutes
+];
+assert.equal(new Set(usaRecordedSourceWorkRoutes).size, usaRecordedSourceWorkRoutes.length, 'Current U.S. source-work routes are disjoint.');
+assert(usaNewYorkHistoricalCoverageCorrectionRoutes.every((route) => !usaRecordedSourceWorkRoutes.includes(route)), 'The historical New York correction is disjoint from the explicit U.S. source-work route groups.');
+assert.equal(new Set(usaNewYorkHistoricalCoverageCorrectionRoutes).size, 4, 'Historical New York correction routes must be unique.');
+const newYorkSourceParent = 'e1c4908e99c2cf36e263d00ff67bafe517d77906';
+const newYorkSourceTerminal = '6b173d71878f1d4d553fdedd6753e3f74d3aaf21';
+assert.equal(git(['show', '-s', '--format=%P', newYorkSourceTerminal]).trim(), newYorkSourceParent, 'The New York history source terminal must retain its exact parent.');
+for (const route of usaNewYorkHistoricalCoverageCorrectionRoutes) {
+  const file = `${route.slice(1)}index.html`;
+  const before = normalizedMainText(git(['show', `${newYorkSourceParent}:${file}`]));
+  const source = normalizedMainText(git(['show', `${newYorkSourceTerminal}:${file}`]));
+  const current = normalizedMainText(fs.readFileSync(path.join(root, file), 'utf8'));
+  const wordCount = (text) => text.split(/\s+/).filter(Boolean).length;
+  assert(wordCount(source) - wordCount(before) > 800, `${route}: historical New York source must show a substantial body rewrite.`);
+  assert.equal(source, current, `${route}: historical correction must not edit the current New York body.`);
+  assert(git(['show', `${newYorkSourceTerminal}:${file}`]).includes('data-editorial-revision="nyc-20260911"'), `${route}: exact source revision marker must remain present.`);
+  for (const [locale, script] of localeSourcePatterns) {
+    const localized = path.join(root, locale, file);
+    assert(fs.existsSync(localized), `${locale} New York route is missing: ${route}`);
+    const localizedHtml = fs.readFileSync(localized, 'utf8');
+    assert(localizedHtml.includes('data-editorial-revision="nyc-20260911"'), `${locale} New York route lost its exact source revision marker: ${route}`);
+    const localizedMain = normalizedMainText(localizedHtml);
+    assert(substantiveCharacterCount(localizedMain) > 500, `${locale} New York route lost its translated body: ${route}`);
+    assert(script.test(localizedMain), `${locale} New York route lost native-script body content: ${route}`);
+  }
+}
+assert.equal(usaOtherHistoricalCoverageCorrectionRoutes.length, 26, 'The additional historical coverage correction contains exactly 26 already-rewritten U.S. paths.');
+assert.equal(new Set(usaOtherHistoricalCoverageCorrectionRoutes).size, 26, 'The 26 historical U.S. paths are unique.');
+const allExplicitUsaRouteGroups = [
+  ...usaRecordedSourceWorkRoutes,
+  ...usaNewYorkHistoricalCoverageCorrectionRoutes,
+  ...usaOtherHistoricalCoverageCorrectionRoutes
+];
+assert.equal(new Set(allExplicitUsaRouteGroups).size, allExplicitUsaRouteGroups.length, 'Historical coverage corrections do not overlap the prior source-work sets or each other.');
+
+const historicalUsaSources = [
+  {
+    label: 'Philadelphia & Washington, DC',
+    terminal: '4daf76a4b37ddeaaf6ded8c67032d94afc0adf56',
+    parent: '6b173d71878f1d4d553fdedd6753e3f74d3aaf21',
+    tree: '45f42e7d8a4e9d17e65575c403a1c9317496a341',
+    routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(0, 8)
+  },
+  {
+    label: 'Seattle & Portland',
+    terminal: '6b62cc9c5f6202e489626781836191b787e89a21',
+    parent: '174c93dd1b4e2f13ee655f8a4e356b26270fc583',
+    tree: '37d052c321bea96dbf3a56cbe01d3c8c67782926',
+    routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(8, 16)
+  },
+  {
+    label: 'San Francisco & Yosemite Valley',
+    terminal: 'ccbd6e9eba654a450e62be24d7b3acbbf9871c6f',
+    parent: '6b62cc9c5f6202e489626781836191b787e89a21',
+    tree: 'a7af225669a35c3f69021cf99161d93dd8c3990e',
+    routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(16, 21)
+  },
+  {
+    label: 'Las Vegas & Zion',
+    terminal: '5ef5073b3beb5e06ffcc8cba58359dd09ee70b4b',
+    parent: 'ccbd6e9eba654a450e62be24d7b3acbbf9871c6f',
+    tree: '06a0ffe6ccbbd51b92b95dce47e1a04de6d8926d',
+    routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(21)
+  }
+];
+const historicalTranslationBatches = [
+  { file: '35b-philadelphia-editorial.json', keys: 205, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(0, 4) },
+  { file: '35c-dc-editorial.json', keys: 197, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(4, 8) },
+  { file: '37a-seattle-editorial.json', keys: 177, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(8, 12) },
+  { file: '37b-portland-oregon-editorial.json', keys: 189, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(12, 16) },
+  { file: '38a-san-francisco-editorial.json', keys: 182, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(16, 20) },
+  { file: '38d-sierra-parks-editorial.json', keys: 186, routes: [usaOtherHistoricalCoverageCorrectionRoutes[20]] },
+  { file: '39a-las-vegas-editorial.json', keys: 186, routes: usaOtherHistoricalCoverageCorrectionRoutes.slice(21, 25) },
+  { file: '39b-utah-parks-editorial.json', keys: 187, routes: [usaOtherHistoricalCoverageCorrectionRoutes[25]] },
+  { file: '32-nyc-editorial.json', keys: 241, routes: usaNewYorkHistoricalCoverageCorrectionRoutes },
+  { file: '34-nyc-japan-baseline.json', keys: 14, routes: [usaNewYorkHistoricalCoverageCorrectionRoutes[0], usaNewYorkHistoricalCoverageCorrectionRoutes[2]] }
+];
+for (const batchSpec of historicalTranslationBatches) {
+  let referenceRoutes;
+  for (const locale of ['zh-Hant', 'ja', 'ko', 'th']) {
+    const batchPath = path.join(root, 'data/i18n/reviewed', locale, batchSpec.file);
+    const batch = JSON.parse(fs.readFileSync(batchPath, 'utf8'));
+    assert.equal(batch.qualityStatus, 'reviewed', `${locale}/${batchSpec.file}: historical translation batch status`);
+    assert.equal(Object.keys(batch.translations).length, batchSpec.keys, `${locale}/${batchSpec.file}: historical translation key count`);
+    for (const route of batchSpec.routes) assert(batch.routes.includes(route), `${locale}/${batchSpec.file}: reviewed batch covers ${route}`);
+    if (!referenceRoutes) referenceRoutes = batch.routes;
+    else assert.deepEqual(batch.routes, referenceRoutes, `${locale}/${batchSpec.file}: exact reviewed route scope matches other locales`);
+
+    const catalog = JSON.parse(fs.readFileSync(path.join(root, `data/i18n/${locale}.json`), 'utf8'));
+    for (const [key, value] of Object.entries(batch.translations)) {
+      assert.equal(catalog.translations[key], value, `${locale}/${batchSpec.file}: historical reviewed translation is retained in the catalog`);
+    }
+  }
+}
+assert.deepEqual(
+  JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/reviewed/zh-Hant/32-nyc-editorial.json'), 'utf8')).routes,
+  usaNewYorkHistoricalCoverageCorrectionRoutes,
+  'The 241-key New York body batch covers exactly the four documented sample routes.'
+);
+assert.deepEqual(
+  JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/reviewed/zh-Hant/34-nyc-japan-baseline.json'), 'utf8')).routes,
+  [usaNewYorkHistoricalCoverageCorrectionRoutes[0], usaNewYorkHistoricalCoverageCorrectionRoutes[2]],
+  'The 14-key New York/Japan baseline batch covers only the hub and Midtown route.'
+);
+for (const group of historicalUsaSources) {
+  assert.equal(git(['show', '-s', '--format=%P', group.terminal]).trim(), group.parent, `${group.label}: exact historical source parent`);
+  assert.equal(git(['show', '-s', '--format=%T', group.terminal]).trim(), group.tree, `${group.label}: exact historical source tree`);
+  for (const route of group.routes) {
+    const file = `${route.slice(1)}index.html`;
+    const source = normalizedMainText(git(['show', `${group.terminal}:${file}`]));
+    const current = normalizedMainText(fs.readFileSync(path.join(root, file), 'utf8'));
+    assert.equal(current, source, `${route}: current English body retains its exact historical rewrite`);
+    const wordCount = (text) => text.split(/\s+/).filter(Boolean).length;
+    const original = normalizedMainText(git(['show', `${group.terminal}^:${file}`]));
+    assert(wordCount(source) - wordCount(original) > 500, `${route}: historical rewrite has a substantive body delta`);
+    for (const [locale, script] of localeSourcePatterns) {
+      const localizedFile = path.join(root, locale, file);
+      assert(fs.existsSync(localizedFile), `${locale}: historical route is present: ${route}`);
+      const localized = fs.readFileSync(localizedFile, 'utf8');
+      const localizedMain = normalizedMainText(localized);
+      assert(substantiveCharacterCount(localizedMain) > 500, `${locale}${route}: historical localized main body is present`);
+      assert(script.test(localizedMain), `${locale}${route}: historical localized body retains native-script content`);
+    }
+  }
+}
+for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes]) {
+  assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Newly integrated route is missing: ${route}`);
+}
+assert.equal(usaSanDiegoNewSubstantiveRoutes.length, 4, 'San Diego adds four newly integrated body routes.');
+assert.equal(vietnamPhongNhaNewSubstantiveRoutes.length, 4, 'Phong Nha adds four distinct body routes; Paradise/Tien Son remains counted in its earlier batch.');
+assert(!vietnamPhongNhaNewSubstantiveRoutes.includes('/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/'), 'Paradise/Tien Son is not counted a second time.');
+assert.equal(australiaBroomeTasmaniaNewSubstantiveRoutes.length, 4, 'Broome/Tasmania adds four newly integrated body routes.');
 assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
-for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes, ...usaChicagoNewSubstantiveRoutes, ...usaArizonaNewSubstantiveRoutes, ...usaLosAngelesNewSubstantiveRoutes, ...usaBostonNewSubstantiveRoutes]) {
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes, ...usaNewEnglandNewSubstantiveRoutes, ...usaChicagoNewSubstantiveRoutes, ...usaArizonaNewSubstantiveRoutes, ...usaLosAngelesNewSubstantiveRoutes, ...usaBostonNewSubstantiveRoutes, ...usaSanDiegoNewSubstantiveRoutes, ...usaNewYorkHistoricalCoverageCorrectionRoutes, ...usaOtherHistoricalCoverageCorrectionRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
@@ -202,4 +382,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat and Mui Ne improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles and Boston improvements; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret and four Broome improvements; corrected checkpoints through 829.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne and Phong Nha improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; New York’s four historical routes and 26 other historical U.S. routes are separately accounted with body and reviewed five-language evidence retained; Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome and four Broome/Tasmania improvements; corrected coverage reaches 871/907 after the 26-route historical correction.');

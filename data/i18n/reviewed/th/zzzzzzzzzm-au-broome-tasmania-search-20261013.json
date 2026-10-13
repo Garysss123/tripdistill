@@ -1,0 +1,46 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Tasmania by gateway and nights: use Hobart for the south, Launceston for the north, and separate beds for the Tasman Peninsula, Cradle Mountain and Freycinet. A three-night visit should choose one area; a broad island circuit needs about two weeks plus weather and road buffers.": "วางแผนเที่ยวแทสเมเนียตามเมืองทางเข้าและจำนวนคืน ใช้โฮบาร์ตเป็นฐานภาคใต้ ลอนเซสตันเป็นฐานภาคเหนือ และพักแยกที่คาบสมุทรแทสเมน ภูเขาเครเดิล และเฟรย์ซิเน็ต ทริป 3 คืนควรเลือกเพียงหนึ่งพื้นที่ ส่วนการเที่ยวรอบเกาะกว้าง ๆ ควรเผื่อประมาณสองสัปดาห์บวกเวลาสำรองสำหรับอากาศและถนน",
+    "tasmania itinerary how many nights bases": "เที่ยวแทสเมเนีย: กี่คืนและพักที่ฐานใด",
+    "hobart launceston cradle mountain freycinet route order": "ลำดับเส้นทางโฮบาร์ต ลอนเซสตัน ภูเขาเครเดิล เฟรย์ซิเน็ต",
+    "tasmania hire car versus coach park last mile": "เช่ารถหรือขึ้นรถโค้ชในแทสเมเนีย: การเดินทางช่วงสุดท้ายไปอุทยาน",
+    "spirit of tasmania devonport ferry vehicle booking": "จองเรือ Spirit of Tasmania ไปเดวอนพอร์ตและจองรถ",
+    "tasmania road closures alpine weather fire park alerts": "ถนนปิด อากาศบนเขา ไฟป่า และประกาศอุทยานแทสเมเนีย",
+    "tasmania trip rain alternative extra night": "ทางเลือกเที่ยวแทสเมเนียวันฝนตกและเพิ่มคืนสำรอง",
+    "nipaluna hobart tasmania regional guide": "คู่มือภูมิภาค nipaluna／โฮบาร์ต",
+    "Plan three Kununurra nights around one town orientation, a booked Ord River or Lake Argyle experience and a weather buffer. Confirm the actual pickup, marina, road, return and water advice; Purnululu is a separate multi-night park trip, not a day detour.": "วางแผนคูนูเนอร์รา 3 คืนให้มีวันทำความรู้จักเมือง ทริปแม่น้ำออร์ดหรือทะเลสาบอาร์ไจล์ที่จองไว้หนึ่งอย่าง และเวลาสำรองตามอากาศ ยืนยันรถรับจริง ท่าเรือ ถนน ทางกลับ และคำแนะนำทางน้ำ พูร์นูลูลูเป็นทริปอุทยานที่ต้องพักหลายคืนแยกต่างหาก ไม่ใช่จุดแวะวันเดียว",
+    "kununurra lake argyle how many nights": "คูนูเนอร์ราและทะเลสาบอาร์ไจล์ควรพักกี่คืน",
+    "kununurra to lake argyle drive and cruise transfer": "ขับจากคูนูเนอร์ราไปอาร์ไจล์ ล่องเรือ และรถรับส่ง",
+    "ord river cruise from kununurra operator pickup": "เรือแม่น้ำออร์ดจากคูนูเนอร์ราและรถรับของผู้ให้บริการ",
+    "kununurra purnululu separate overnight road trip": "ขับจากคูนูเนอร์ราไปพูร์นูลูลูต้องพักค้างคืนแยก",
+    "mirima national park kununurra heat and access": "อากาศร้อนและการเข้าถึง Mirima National Park คูนูเนอร์รา",
+    "lake argyle crocodile swimming advice": "คำแนะนำจระเข้และการว่ายน้ำที่ทะเลสาบอาร์ไจล์",
+    "kununurra remote travel fuel weather road conditions": "เดินทางไกลจากคูนูเนอร์รา: น้ำมัน อากาศ สภาพถนน",
+    "Plan at least two nights at Purnululu, with a confirmed Kununurra or Halls Creek gateway. DBCA lists a 53 km unsealed high-clearance 4WD access track taking 1.5–3 hours, no park fuel and 47 km between the north and south ends; check live park and road alerts before leaving.": "พักพูร์นูลูลูอย่างน้อย 2 คืน และยืนยันเมืองทางเข้าที่คูนูเนอร์ราหรือ Halls Creek DBCA ระบุว่าถนนลูกรัง 53 กม. ที่ต้องใช้ 4WD ระยะใต้ท้องรถสูงใช้เวลา 1.5–3 ชั่วโมง ไม่มีน้ำมันในอุทยาน และปลายเหนือกับใต้ห่างกัน 47 กม. ตรวจประกาศอุทยานและถนนแบบสดก่อนออกเดินทาง",
+    "purnululu how many nights two campgrounds": "พูร์นูลูลูควรพักกี่คืนและมีแคมป์สองแห่ง",
+    "bungle bungle spring creek track 53 km 4wd": "เส้นทาง Spring Creek Track ไป Bungle Bungle: 53 กม. และ 4WD",
+    "purnululu from kununurra not day trip 304 km": "จากคูนูเนอร์ราไปพูร์นูลูลูไม่ใช่ทริปวันเดียว: 304 กม.",
+    "purnululu north echidna chasm south cathedral gorge": "Echidna Chasm ทางเหนือและ Cathedral Gorge ทางใต้ของพูร์นูลูลู",
+    "purnululu park alerts seasonal opening road weather": "ประกาศพูร์นูลูลู ฤดูกาลเปิดถนน และสภาพอากาศ",
+    "purnululu high clearance vehicle fuel mobile phone": "พูร์นูลูลูต้องใช้รถระยะใต้ท้องสูง น้ำมัน และไม่มีสัญญาณมือถือ",
+    "bungle bungle flight landing versus walking access": "เที่ยวบินลงจอดหรือเดินชม Bungle Bungle",
+    "Plan one or two Hobart nights around TMAG, Constitution Dock and Salamanca Place. Check the current Saturday market calendar, TMAG opening and access, Metro Tasmania return and harbour forecast; use the flat lower-city route if Kelly’s Steps, wind or walking distance do not suit.": "พักโฮบาร์ต 1–2 คืนเพื่อเที่ยว TMAG, Constitution Dock, Salamanca Place ตรวจปฏิทินตลาดวันเสาร์ เวลาเปิดและการเข้าถึง TMAG รถกลับ Metro Tasmania และพยากรณ์ท่าเรือ หาก Kelly’s Steps ลมแรงหรือระยะเดินไม่เหมาะ ให้ใช้เส้นทางเมืองด้านล่างที่ราบกว่า",
+    "hobart itinerary one day salamanca place route": "เส้นทางเดินเที่ยว Salamanca Place หนึ่งวันในโฮบาร์ต",
+    "nipaluna hobart base cbd versus battery point": "ฐานพัก nipaluna／โฮบาร์ต: CBD หรือ Battery Point",
+    "salamanca market saturday current dates hours": "Salamanca Market วันเสาร์: วันที่และเวลาปัจจุบัน",
+    "tmag hobart opening accessibility visitor information": "TMAG โฮบาร์ต: เวลาเปิด การเข้าชม และการเข้าถึง",
+    "hobart airport to city confirmed transfer metro timetable": "ยืนยันรถจากสนามบินโฮบาร์ตเข้าเมืองและตาราง Metro",
+    "hobart salamanca rain wind accessible alternative": "ทางเลือกเข้าถึงได้เมื่อฝนหรือลมแรงแถว Salamanca โฮบาร์ต",
+    "kellys steps battery point hobart return walk": "เส้นทางเดินกลับโฮบาร์ตจาก Kelly’s Steps และ Battery Point"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}
