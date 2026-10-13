@@ -1,0 +1,23 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare a 14-night Sydney–Melbourne–Cairns flight route with an 18-night mainland and Tasmania ferry circuit, including nights, bases, terminal links, last-mile checks and weather or closure decisions.": "14박 시드니–멜버른–케언스 항공 여행과 18박 본토·태즈메이니아 페리 순환 일정을 비교합니다. 숙박 일수와 거점, 터미널 연결, 마지막 이동 구간, 날씨·폐쇄 시 판단을 포함합니다.",
+    "australia itinerary 14 nights": "호주 14박 여행 일정",
+    "18 night Australia Tasmania ferry route": "호주 태즈메이니아 페리 18박 경로",
+    "Sydney Melbourne Cairns flights itinerary": "시드니 멜버른 케언스 항공편 일정",
+    "Geelong Devonport ferry Tasmania route": "질롱 데번포트 페리 태즈메이니아 경로",
+    "Tasmania gateway bases Cradle Freycinet Hobart": "태즈메이니아 거점 크래들 프레이시넷 호바트",
+    "Australia route nights and transfers": "호주 경로 숙박 일수와 이동",
+    "Australia weather closure transport alternative": "호주 날씨 폐쇄 교통 대안",
+    "first trip to Australia regional itinerary": "호주 첫 여행 지역별 일정"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}

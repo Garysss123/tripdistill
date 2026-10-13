@@ -101,6 +101,13 @@ const laterSwitzerlandCh14Routes = [
   '/switzerland/locarno-ascona-valleys/',
   '/switzerland/schaffhausen-rhine-falls/'
 ];
+const currentBroomeTasmaniaRoutes = [
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
+];
+const currentFinalContentRoutes = ['/australia/', '/australia/tasmania/cradle-freycinet/', '/australia/tasmania/kunanyi-mount-wellington/', '/australia/tasmania/launceston-tamar-valley/', '/australia/tasmania/port-arthur-tasman-peninsula/'];
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 const reviewIsoDate = '2026-10-12';
 const reviewDate = '12 October 2026';
