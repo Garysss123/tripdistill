@@ -9410,8 +9410,8 @@
       "total": 907
     },
     "vietnamCoverage": {
-      "before": 91,
-      "after": 95,
+      "before": 95,
+      "after": 99,
       "total": 99
     },
     "routes": [
@@ -9451,6 +9451,10 @@
       "renderedDesktopMobileAcceptance": "not performed",
       "mainUpdated": false,
       "deployed": false
+    },
+    "sourceOnlyCoastalLedger": {
+      "routes": 91,
+      "total": 99
     }
   }
 }

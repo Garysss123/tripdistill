@@ -190,6 +190,30 @@ assert.equal(new Set(vietnamCoastalGapsNewSubstantiveRoutes).size, 4, 'Vietnam c
 const allPriorVietnamGroups = [vietnamCompletedRoutes, vietnamNewSubstantiveRoutes, vietnamHaLongNewSubstantiveRoutes, vietnamHcmcNewSubstantiveRoutes, vietnamMekongNewSubstantiveRoutes, vietnamDaLatNewSubstantiveRoutes, vietnamMuiNeNewSubstantiveRoutes, vietnamPhongNhaNewSubstantiveRoutes, vietnamPhuQuocNewSubstantiveRoutes, vietnamNhaTrangNewSubstantiveRoutes, vietnamAfterNhaTrangNewSubstantiveRoutes, vietnamSouthernGapsNewSubstantiveRoutes, vietnamBayGapsNewSubstantiveRoutes, vietnamCavesIslandsGapsNewSubstantiveRoutes];
 assert(vietnamCoastalGapsNewSubstantiveRoutes.every((route) => allPriorVietnamGroups.every((group) => !group.includes(route))), 'Vietnam coastal routes are disjoint from all earlier Vietnam ledger groups.');
 for (const route of vietnamCoastalGapsNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam coastal route is missing: ${route}`);
+const vietnamIntegratedRouteGroups = [
+  vietnamCompletedRoutes,
+  vietnamNewSubstantiveRoutes,
+  vietnamHaLongNewSubstantiveRoutes,
+  vietnamHcmcNewSubstantiveRoutes,
+  vietnamMekongNewSubstantiveRoutes,
+  vietnamDaLatNewSubstantiveRoutes,
+  vietnamMuiNeNewSubstantiveRoutes,
+  vietnamPhongNhaNewSubstantiveRoutes,
+  vietnamPhuQuocNewSubstantiveRoutes,
+  vietnamNhaTrangNewSubstantiveRoutes,
+  vietnamAfterNhaTrangNewSubstantiveRoutes,
+  vietnamSouthernGapsNewSubstantiveRoutes,
+  vietnamBayGapsNewSubstantiveRoutes,
+  vietnamCavesIslandsGapsNewSubstantiveRoutes,
+  vietnamCoastalGapsNewSubstantiveRoutes
+];
+assert.deepEqual(vietnamIntegratedRouteGroups.map((routes) => routes.length), [39, 8, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], 'Cumulative Vietnam coverage must count the historical 39, prior eight, and all thirteen four-route batches including Phong Nha.');
+const vietnamIntegratedRoutes = vietnamIntegratedRouteGroups.flat();
+assert.equal(vietnamIntegratedRoutes.length, 99, 'Cumulative Vietnam route count must include the Phong Nha group and all thirteen four-route batches.');
+assert.equal(new Set(vietnamIntegratedRoutes).size, 99, 'Cumulative Vietnam route set must contain exactly 99 unique paths.');
+const vietnamCoverageLedger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
+assert.deepEqual(vietnamCoverageLedger.integratedCheckpoint.sourceOnlyCoastalLedger, { routes: 91, total: 99 }, 'The coastal source branch historical count stays distinct from cumulative integration.');
+assert.deepEqual(vietnamCoverageLedger.integratedCheckpoint.vietnamCoverage, { before: 95, after: vietnamIntegratedRoutes.length, total: 99 }, 'The integrated Vietnam summary must match all cumulative route groups, including Phong Nha.');
 for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
