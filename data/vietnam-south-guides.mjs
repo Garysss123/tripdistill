@@ -235,8 +235,23 @@ export const vietnamSouthClusters = [
     hubIntro: 'Ho Chi Minh City is easiest to understand as several overlapping movement systems: the compact District 1 core, Chợ Lớn’s wholesale and worship lanes, the new Thủ Thiêm–Thảo Điền riverfront, the distant Củ Chi tunnels, Cần Giờ’s mangrove reserve and the Saigon River itself. Choose a route by street density, history, water or ecology instead of trying to clear every landmark.',
     stay: 'District 1 works for the first walk; District 3, Bình Thạnh or Thảo Điền can reduce repeated crossings when the itinerary leans toward museums, riverfronts or the east bank.',
     transfer: 'Use walking only inside a deliberate pocket, then connect pockets by official transit or reputable ride-hailing; motorbike traffic, rain and construction make map distance deceptive.',
+    isoDate: '2026-10-13',
+    reviewDate: '13 October 2026',
+    planner: [
+      ['2 nights · one full day', 'Keep the first stay in District 1', 'Use arrival and departure as partial days; reserve the one full day for the Palace-to-Dong Khoi civic walk and one chosen interior. Skip Chợ Lớn and Củ Chi rather than squeezing either into the airport handoff. District 1 is the easiest base for this compact first visit.'],
+      ['3 nights · two full days', 'Keep one central base for District 1 and Chợ Lớn', 'Give the civic core one day and Chợ Lớn a separate half or full day. District 1 keeps the first route walkable; District 3 suits a museum-led stay but adds a ride to Chợ Lớn. A District 5 base shortens the market-side start only if most of the trip is west-side; it adds cross-city trips to the central landmarks.'],
+      ['5 nights · three chapters plus a buffer', 'Stay put; use a separate road day for Củ Chi', 'Plan one day each for District 1, Chợ Lớn and one chosen Củ Chi site, plus a fourth flexible day for rain, a closure or a slower city chapter. Do not move hotels just for the Củ Chi day. If you only have four nights, remove the buffer and accept that one disruption means dropping a chapter.']
+    ],
+    routeModelHeading: 'Three chapters, one base, and a deliberate outer day.',
+    routeModelLead: 'With two nights, choose the central core. Three nights allow a separate Chợ Lớn day. Four nights can fit one Củ Chi road day only if you accept no spare full day; five nights leave a weather and closure buffer. These counts assume arrival and departure are partial days.',
+    hubSources: [
+      ['https://vietnam.travel/places-to-go/southeastern-vietnam/ho-chi-minh-city', 'Vietnam Tourism — Ho Chi Minh City profile (checked 13 October 2026)'],
+      ['https://vietnam.travel/things-to-do/7-must-see-attractions-hcmc', 'Vietnam Tourism — HCMC landmark and Củ Chi overview (checked 13 October 2026)'],
+      ['https://dinhdoclap.gov.vn/en/', 'Independence Palace — visitor information (checked 13 October 2026; follow special notices)'],
+      ['https://diadaocuchi.com.vn/', 'Củ Chi Historic Relics & Tunnel Complex — official visitor information (page timed out in this check; verify directly)']
+    ],
     sources: [
-      ['https://vietnam.travel/places-to-go/southern-vietnam/ho-chi-minh-city', 'Vietnam Tourism — Ho Chi Minh City'],
+      ['https://vietnam.travel/places-to-go/southeastern-vietnam/ho-chi-minh-city', 'Vietnam Tourism — Ho Chi Minh City'],
       ['https://diadaocuchi.com.vn/', 'Cu Chi Historic Relics & Tunnel Complex'],
       ['https://www.unesco.org/en/mab/can-gio-mangrove', 'UNESCO — Can Gio Mangrove Biosphere Reserve']
     ],
@@ -255,25 +270,45 @@ export const vietnamSouthClusters = [
           license: 'CC BY-SA 3.0'
         }),
         summary: 'Build a readable first city walk from the civic core to the market grid, with heat, traffic and changing heritage access treated as part of the plan.',
-        lead: 'District 1 rewards a narrow route more than an exhaustive landmark list. Nguyen Hue, Dong Khoi, the Central Post Office, the cathedral precinct, Independence Palace and Ben Thanh occupy a compact map but very different thresholds.',
-        orientation: 'Choose one civic axis and one market finish. The day becomes more useful when a museum or interior is selected in advance rather than added after every facade.',
-        arrival: 'Set a precise drop-off near a public landmark and carry water, a small bag and a plan for crossing wide roads safely.',
-        sequence: 'Civic orientation, one interior, shaded pause, market edge and a transit-aware exit make the core coherent.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        lead: 'Treat the civic core as one daylight route, not a string of guaranteed admissions: start at Independence Palace, continue north through the cathedral precinct and Central Post Office, follow Đồng Khởi toward the Opera House and Nguyễn Huệ, then finish at Bến Thành only if its current visitor access suits the day. City Hall is an exterior landmark, not a public interior. The official tourism board groups these central sights together, while the Palace site publishes its own hours and special-closure notices.',
+        orientation: 'District 1 is the best single base for this route because the central sequence can be walked in short connected sections. Choose the Palace as the anchor if its official page shows normal access; use the cathedral and Post Office as exterior or short stops, not as assumed indoor visits. Add only one museum or market stop. A half-day works for the axis; a full day can hold a longer interior and a proper rest.',
+        arrival: 'Stay in District 1 for a one- or two-day central visit, or District 3 when museums and a quieter base matter more than walking straight from the hotel. Begin at the 135 Nam Kỳ Khởi Nghĩa Palace entrance only after checking the official visitor page and its special announcements. For the next leg, walk the civic corridor and use a named road-side pickup at the market end; do not depend on a live metro exit or unverified bus timing.',
+        sequence: 'Palace-first access check → cathedral precinct and Post Office exterior → Đồng Khởi / Opera House → Nguyễn Huệ → Bến Thành edge or a preselected indoor stop. This is a northbound walking sequence with one decision point, not a promise that every facade admits visitors.',
         boundary: 'A busy street is not a pedestrian plaza; wait for a safe crossing gap and do not use worship spaces or residents’ corridors as shortcuts.',
         stages: [
-          ['Start', 'Use the riverfront or a civic building to establish direction before entering the denser streets.'],
-          ['Read', 'Give one museum, palace or architectural interior enough time to explain the city’s layered past.'],
-          ['Taste', 'Finish the walking section at a market or small food stop without blocking vendors or turning transactions into a spectacle.'],
-          ['Exit', 'Choose a known station or pickup point and allow for rain, traffic and the final road crossing.']
+          ['Check · Palace', 'On the day before, confirm the Palace’s current hours, admission and special notices on its official site. If it is closed, keep it as an exterior start and move the interior slot to a museum whose own official page confirms access.'],
+          ['Walk · civic line', 'Continue to the cathedral precinct and Central Post Office, then follow Đồng Khởi toward the Opera House. Treat worship and government buildings as exterior visits unless posted visitor access says otherwise.'],
+          ['Choose · one interior', 'Commit to one verified interior rather than queueing for several. In heat or a short shower, pause in that confirmed indoor visit; do not assume an arcade or landmark is open to visitors.'],
+          ['Finish · market edge', 'Walk Nguyễn Huệ toward Bến Thành, then use a known main-road pickup. If rain becomes persistent, stop the outdoor axis and return from the nearest public street instead of forcing a market visit.']
         ],
         risks: [
-          ['Motorbike flow', 'Large intersections require patience and a predictable crossing rather than sudden movement.'],
-          ['Heat and rain', 'The central grid has exposed stretches and quick downpours.'],
-          ['Opening changes', 'Renovation, ceremony and security arrangements can change access to major landmarks.']
+          ['Road crossings', 'The route crosses fast, dense traffic. Use signalized crossings where available, move predictably and do not follow a crowd into moving lanes.'],
+          ['Wet-season timing', 'Vietnam Tourism describes May–November as a period with short afternoon showers. This is a broad climate cue, not a forecast; move outdoor walking earlier and keep a checked indoor option.'],
+          ['Access is conditional', 'The Palace page lists 07:00–18:00 daily but also allows special-case announcements. The tourism board’s older hours and admission figures may differ; follow the venue’s current notice and ticket page.']
         ],
-        duration: 'A focused half day works; a full day needs one meaningful interior and deliberate rest rather than more pins.',
-        combine: 'Pair with a separate evening food route or river ride, not Cholon and Củ Chi on the same compressed block.',
-        verify: 'Check current landmark opening, renovation status, rain forecast, pedestrian access and return transport.'
+        duration: 'Allow about 4–6 hours for the walk, one selected interior, food and rest; treat that as a planning estimate, not a venue timetable. Use one full day if adding a second checked museum.',
+        combine: 'Keep this as the first full day. Make Chợ Lớn a separate day and Củ Chi a separate road day; a 3-night stay can cover the two city chapters, while 4–5 nights are more realistic if the outer site matters.',
+        verify: 'Recheck the Independence Palace official page and ticket link, any cathedral or museum visitor notice, rain forecast, road crossings and the return pickup. The War Remnants Museum page did not expose readable details in this check, so its hours are not asserted here.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'One civic line with a single admission decision.',
+          intro: 'Keep the day on foot inside District 1; choose the interior only after checking its current visitor notice.',
+          steps: [
+            ['Before leaving', 'Check the Palace notice', 'Use the Palace’s own visitor page for hours, ticket and special closure information; its listed schedule is not a guarantee against a day-specific notice.'],
+            ['Morning', 'Palace to cathedral precinct', 'Start at the Palace, then walk north. Keep the cathedral precinct and Post Office as exterior or short visits unless their own current rules allow entry.'],
+            ['Midday', 'Pick one indoor stop', 'Select one verified museum or Palace visit, then pause for food and water. This is the route’s heat and rain hinge.'],
+            ['Afternoon', 'Walk out via Đồng Khởi', 'Continue toward the Opera House, Nguyễn Huệ and the Bến Thành edge; use a main-road pickup if traffic or weather rises.']
+          ],
+          fallbackTitle: 'If a site closes or rain persists',
+          fallback: 'Do not substitute an unverified landmark. Make the closed site an exterior stop, use only an indoor venue with a confirmed official notice, or shorten the walk and return to the District 1 base.'
+        },
+        sources: [
+          ['https://vietnam.travel/things-to-do/7-must-see-attractions-hcmc', 'Vietnam Tourism — HCMC landmarks (checked 13 October 2026; listed prices/hours may lag)'],
+          ['https://dinhdoclap.gov.vn/en/', 'Independence Palace — official hours, tickets and special notices (checked 13 October 2026)'],
+          ['https://baotangchungtichchientranh.vn/en/visit', 'War Remnants Museum — official visit page (details not extractable in this check; verify directly)']
+        ]
       },
       {
         slug: 'cho-lon-binh-tay',
@@ -289,25 +324,44 @@ export const vietnamSouthClusters = [
           license: 'CC BY-SA 2.0'
         }),
         summary: 'Explore Cholon through wholesale commerce, Chinese-Vietnamese temples, assembly halls and food lanes without flattening a lived neighborhood into a photo backdrop.',
-        lead: 'Cholon is a working cultural quarter. Binh Tay Market, Thien Hau Temple, Quan Am Pagoda, assembly halls and craft streets each carry their own community rhythm, and the strongest visit leaves room for worship and trade.',
-        orientation: 'Use the market as a geographic anchor, then select one or two temples or halls. Narrow lanes are more rewarding when read slowly than when crossed as a checklist.',
-        arrival: 'Travel by a reliable taxi or ride-hailing service to a named market entrance. Keep bags close and avoid arriving with a group so large that it blocks the lane.',
-        sequence: 'Market edge, temple threshold, craft street, food pause and a planned return form the neighborhood loop.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        lead: 'Make this a west-city half or full day from one base: ride directly to Bình Tây Market, read the wholesale edge without blocking loading, continue to Thiên Hậu Pagoda and one nearby hall or craft lane, then leave from a named main-road pickup. Vietnam Tourism identifies Bình Tây and Thiên Hậu as the Chợ Lớn anchors; its weekend itinerary places Thiên Hậu in District 5. The walk is deliberately short enough to preserve time for worship and work rhythms.',
+        orientation: 'If you have only two HCMC nights, choose either this chapter or the District 1 civic walk. Three nights allow both as separate days. Keep District 1 as the base for a first visit; choose a District 5/Chợ Lớn base only when the market quarter is the main focus, since central landmarks then need a separate ride. District 3 is a compromise for a museum-led stay, not a walkable bridge between both routes.',
+        arrival: 'From District 1 or District 3, arrange a direct taxi or reputable ride-hail to the Bình Tây Market entrance you have confirmed with your driver. No current public-transport route or travel time is asserted here. Agree on a return pickup on a larger road before entering narrow lanes; do not assume a car can reach a temple gate or wait beside market loading.',
+        sequence: 'Named market entrance → wholesale perimeter → one agreed market section → Thiên Hậu threshold → one nearby hall or craft lane → food pause → main-road pickup. Keep the loop compact and return to the same HCMC base rather than moving hotels mid-visit.',
         boundary: 'Do not photograph altars, worshippers or vendors without consent. Respect shoes, hats, dress and incense rules at each religious site.',
         stages: [
-          ['Market', 'Read the wholesale layout and let traders work; buy only where the transaction is clear.'],
-          ['Threshold', 'Pause outside each temple or hall to identify the access rules before entering.'],
-          ['Craft', 'Follow one material or food street and ask before photographing people at work.'],
-          ['Return', 'Leave through a known main road before fatigue and traffic make the narrow lanes difficult.']
+          ['Arrive · Bình Tây', 'Use the entrance agreed with the driver, orient at the market edge, and avoid delivery lanes. Check current market access before fixing an early start; the official tourism page is an overview, not a live market notice.'],
+          ['Read · wholesale edge', 'Walk one clearly public section and let porters, carts and vendors keep their line. If it is crowded, stay on the perimeter rather than cutting through working rows.'],
+          ['Visit · one temple', 'Continue to Thiên Hậu Pagoda and pause outside to read local entry rules. Add one hall or craft street only if the site is open and the lane remains passable.'],
+          ['Exit · main road', 'Eat or rest without blocking business, then return to the pre-agreed larger-road pickup. Leave extra time for the cross-city road ride; do not add a same-morning Củ Chi transfer.']
         ],
         risks: [
-          ['Crowded lanes', 'Carts, scooters and deliveries have priority in working market streets.'],
-          ['Incense and heat', 'Temple interiors can be smoky, hot and crowded during worship.'],
-          ['Privacy', 'Residences, family businesses and religious practice are not automatically public content.']
+          ['Working traffic', 'Market lanes carry deliveries, carts and scooters. Step aside for work and keep the route on the public edge when crowded.'],
+          ['Rain and incense', 'Vietnam Tourism describes short afternoon showers in May–November, but check a local forecast. In rain, shorten the exposed lane walk; enter a temple only if it is open and welcoming visitors.'],
+          ['Unconfirmed access', 'This check did not verify current Bình Tây Market hours or temple visitor rules. A closed site is a reason to return or use the next confirmed stop, not to enter another religious compound uninvited.']
         ],
-        duration: 'Allow a half day; a longer visit should add a specific craft, food or religious-history question.',
-        combine: 'It pairs with a District 5 food chapter, but not with a distant suburban attraction on the same morning.',
-        verify: 'Check current market access, temple opening, festival congestion, dress expectations and safe pickup points.'
+        duration: 'Allow 4–5 hours including the road transfer, a slow market edge, one temple and a rest; this is a buffer estimate, not a local opening schedule. Add a second half day only for a researched craft or food focus.',
+        combine: 'Pair with a District 5 food stop only when it is nearby and independently checked. Do not combine this with District 1’s full civic route or Củ Chi on one compressed day. With three HCMC nights, keep the city core and Chợ Lớn on separate days.',
+        verify: 'Confirm Bình Tây access, Thiên Hậu visitor rules, festival or worship congestion, rain, a safe main-road pickup and return transfer. Vietnam Tourism’s HCMC profile and weekend itinerary were checked 13 October 2026; they describe the places but do not confirm live opening.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A market-to-temple loop with a protected exit.',
+          intro: 'Make one direct ride outward and one deliberate pickup on the return; keep the walking section local and respectful.',
+          steps: [
+            ['Base', 'Choose where to sleep first', 'District 1 keeps the central landmark day easy; District 5 helps only when Chợ Lớn is the main focus. Keep one hotel for this route.'],
+            ['Ride', 'Drop at a confirmed market entrance', 'Agree on the exact Bình Tây entrance and return pickup with the driver. No public route number or travel-time claim is verified here.'],
+            ['Walk', 'Market edge to Thiên Hậu', 'Read the wholesale edge, then continue to Thiên Hậu and one optional nearby lane. Stop at the public threshold if entry is restricted or worship is underway.'],
+            ['Return', 'Use the main-road pickup', 'End before fatigue, confirm the ride back to the same base, and do not attach a second distant district.']
+          ],
+          fallbackTitle: 'If rain or a closure breaks the loop',
+          fallback: 'Use the next confirmed public indoor stop only if it welcomes visitors. Otherwise shorten to the market edge, skip the closed temple, and return to the base; keep the District 1 indoor chapter for a separate day.'
+        },
+        sources: [
+          ['https://vietnam.travel/places-to-go/southeastern-vietnam/ho-chi-minh-city', 'Vietnam Tourism — Chợ Lớn, Bình Tây and Thiên Hậu overview (checked 13 October 2026)'],
+          ['https://vietnam.travel/things-to-do/ho-chi-minh-city-itinerary', 'Vietnam Tourism — weekend itinerary, including Thiên Hậu (checked 13 October 2026)']
+        ]
       },
       {
         slug: 'thu-thiem-thao-dien',
@@ -357,25 +411,44 @@ export const vietnamSouthClusters = [
           license: 'CC0'
         }),
         summary: 'Plan a historically sensitive visit to the two Cu Chi sites with realistic travel time, confined-space choices and respect for memorial ground.',
-        lead: 'Ben Duoc and Ben Dinh are preserved historical sites, not interchangeable attractions. Their interpretation, distance from central Ho Chi Minh City and visitor programming should be checked before choosing one or both.',
-        orientation: 'Read the official site’s history first, then decide whether your visit is primarily for underground engineering, memorial interpretation or both.',
-        arrival: 'Use the current official bus, private-car or organized-tour guidance and confirm the exact site name. Traffic on the northwest approach can be unpredictable.',
-        sequence: 'Travel buffer, guided interpretation, optional tunnel section and a quiet exit keep the chapter from becoming a rushed war-tour package.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        lead: 'Treat Củ Chi as one full road day from the same HCMC hotel, choosing either Bến Đình or Bến Dược before departure. Vietnam Tourism currently describes the two entrances as roughly 35 km and 70 km from the city respectively; that distance difference is a route-planning signal, not a drive-time promise. The site operator page timed out in this check, so current programs, entrance access, tickets and opening are explicitly unverified until confirmed directly.',
+        orientation: 'Choose Bến Đình when limiting the listed road distance is the priority; choose Bến Dược only after checking its current visitor program and accepting the longer listed approach. Do not plan both entrances as one ticket or assume the official tourism directory’s old admission and hours remain current. The practical choice is a single named destination with a confirmed operator, outbound pickup, return agreement and a no-tunnel option.',
+        arrival: 'Keep the entire day based in District 1 or District 3 and use a pre-confirmed operator or driver who names the selected entrance on the booking. The current transit mode, road duration and site hours were not verifiable because the operator page timed out. Do not improvise with an unconfirmed public bus connection or book a late return against an onward flight.',
+        sequence: 'Confirm one entrance and the return contract → leave with a generous road buffer → take the site’s current guided interpretation → choose freely whether to enter a tunnel section → return to the same HCMC base. The 35 km / 70 km figures are the official tourism board’s listed distances checked today, not live driving times.',
         boundary: 'Follow guides and barriers, skip any activity that feels unsafe or exploitative and do not turn weapons displays, memorials or wartime suffering into entertainment.',
         stages: [
-          ['Approach', 'Leave the city with a generous road margin and carry water for the exposed grounds.'],
-          ['Interpret', 'Listen to the official historical account and compare the site’s preserved spaces with the surrounding forest.'],
-          ['Choose', 'Enter only tunnel sections that match your body, breathing and comfort; there is no virtue in forcing a crawl.'],
-          ['Reflect', 'Leave through the official route and allow time to process the site before returning to city nightlife.']
+          ['Book · one entrance', 'Ask the operator to name Bến Đình or Bến Dược, the exact meeting point, current entry terms and a return time. Do not infer the site’s program from a directory listing.'],
+          ['Travel · road buffer', 'Use a confirmed vehicle or tour and keep the evening free. Bến Dược is listed farther from central HCMC than Bến Đình, but traffic and weather can reverse any simple time estimate.'],
+          ['Visit · choose your limit', 'Follow the guide and posted barriers. Ask before photography, take the interpretation at ground level if desired, and skip tunnels if confinement, heat or breathing makes them uncomfortable.'],
+          ['Return · no onward ticket', 'Return to the same hotel and leave the night open. Do not schedule an airport, intercity bus or second attraction after the road day.']
         ],
         risks: [
-          ['Confined space', 'Low ceilings, heat and darkness can trigger panic or breathing problems.'],
-          ['Traffic', 'A late return from the outer district can take substantially longer than the outbound trip.'],
-          ['Historical sensitivity', 'Commercialized attractions can obscure the human cost of the site.']
+          ['Confined space', 'Low ceilings, heat and darkness can trigger panic or breathing problems. Tunnel entry is optional; turning back is a complete visit.'],
+          ['Operator and weather status', 'This check could not retrieve the official site operator page. Confirm that the selected entrance and road transfer are operating; if the site or road plan is cancelled, do not switch to an unverified entrance.'],
+          ['Stale directory details', 'Vietnam Tourism lists hours and a price on its overview, but those figures are not adopted as current because they may lag the operator. Verify current fees, hours, access and cancellation terms directly.']
         ],
-        duration: 'Reserve a full day including road transfer, even if the guided visit itself is shorter.',
-        combine: 'It can pair with a nearby rural or river stop only with private transport; do not add District 1 and Cần Giờ by default.',
-        verify: 'Check the official site, current fees and hours, the chosen Ben Dinh or Ben Duoc access, traffic and tunnel conditions.'
+        duration: 'Reserve one full daylight day plus the evening recovery window. Do not count this as a half-day excursion: exact drive time and current on-site program were not verifiable in this source check.',
+        combine: 'Keep it separate from District 1, Chợ Lớn and Cần Giờ. Two nights in HCMC give one full day, three nights give two, and four nights can fit these three chapters only if you accept no full-day buffer; five nights leave room for a weather or closure fallback.',
+        verify: 'Before paying, check the official site operator page for the named entrance, current program, opening, fee, safety rules and cancellation; confirm driver pickup and return in writing. The operator page timed out on 13 October 2026 and was not bypassed.',
+        routeDiagram: {
+          kind: 'compare',
+          title: 'Choose one entrance by the road day you can afford.',
+          intro: 'The tourism board’s current listing distinguishes the two approach distances; confirm the actual visit with the site operator before booking.',
+          steps: [
+            ['Shorter listed approach', 'Bến Đình · about 35 km', 'Vietnam Tourism currently lists this closer entrance. It can reduce the planned road distance, but not guarantee a shorter drive or a particular visitor program.'],
+            ['Longer listed approach', 'Bến Dược · about 70 km', 'Choose it only if the current official site information fits your purpose and you can keep the longer road buffer. Do not add Bến Đình by default.'],
+            ['Either route', 'One named operator, one return', 'Confirm exact meeting point, access, hours, tickets and cancellation directly with the operator. This check could not read the operator website.'],
+            ['Return plan', 'Back to the same hotel', 'Keep the evening empty. If weather or a closure cancels the visit, use an HCMC indoor plan whose current official access is confirmed.']
+          ],
+          fallbackTitle: 'If the official site or road trip is cancelled',
+          fallback: 'Do not try the other entrance without confirmation. Return to the HCMC base and choose a museum only after checking its official visitor notice; otherwise keep the day local and unbooked.'
+        },
+        sources: [
+          ['https://vietnam.travel/things-to-do/7-must-see-attractions-hcmc', 'Vietnam Tourism — two Củ Chi entrance distances (checked 13 October 2026; directory prices/hours not reused)'],
+          ['https://diadaocuchi.com.vn/', 'Củ Chi Historic Relics & Tunnel Complex — official operator (timed out on 13 October 2026; reconfirm directly)']
+        ]
       },
       {
         slug: 'can-gio-mangroves',

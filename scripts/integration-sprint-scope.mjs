@@ -448,6 +448,13 @@ export const postIntegrationAlpsMargaretRoutes = Object.freeze([
   '/australia/margaret-river-southwest/margaret-river-wine-food/'
 ]);
 
+export const postHaLongHCMCIntegrationRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -471,6 +478,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationCanberraRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAlpsMargaretRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postHaLongHCMCIntegrationRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

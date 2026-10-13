@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
-import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'd38eb8b13e90eaa121d4696a7d7a34b84e481b98';
@@ -329,7 +329,7 @@ const expectedLastmod = [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastR
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only the selected Blue Mountains, later Great Ocean Road, Gold Coast, Cairns and current AU gap routes in five editions may receive a new Australia sitemap lastmod.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), ([...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes].some((path) => route.endsWith(path))) ? '2026-10-13' : reviewIsoDate, `${route}: sitemap lastmod.`);
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), ([...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postHaLongHCMCIntegrationRoutes].some((path) => route.endsWith(path))) ? '2026-10-13' : reviewIsoDate, `${route}: sitemap lastmod.`);
 
 const svgFile = path.join(root, svgPath.slice(1));
 const svg = fs.readFileSync(svgFile, 'utf8');

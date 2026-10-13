@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { malaysiaDepthGuides, imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -105,7 +105,7 @@ const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedDates), selectedLocalizedPaths, 'only the exact historical scope and five disjoint follow-on groups changed lastmod');
 for (const route of selectedLocalizedPaths) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewDate;
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewDate;
   assert.equal(currentSitemap.get(`https://tripdistill.com${route}`), expectedDate, `${route}: sitemap date`);
 }
 

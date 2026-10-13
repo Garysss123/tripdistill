@@ -136,7 +136,7 @@ for (const record of routes) {
   }
   if (!html.includes(`hreflang="x-default" href="https://tripdistill.com${record.route}"`)) problems.push(`${record.route}: missing x-default hreflang`);
   const requiredFieldCss = (record.kind === 'guide' && record.guide.routeDiagram)
-    || (record.kind === 'hub' && record.route === '/vietnam/ha-long-cat-ba/')
+    || (record.kind === 'hub' && ['/vietnam/ha-long-cat-ba/', '/vietnam/ho-chi-minh-city/'].includes(record.route))
     ? diagramFieldCss
     : expectedFieldCss;
   if (record.kind !== 'country' && !html.includes(requiredFieldCss)) problems.push(`${record.route}: missing Vietnam field stylesheet ${requiredFieldCss}`);
@@ -206,9 +206,11 @@ for (const record of routes) {
         ? '2026-10-08'
         : record.kind === 'hub' && record.route === '/vietnam/ha-long-cat-ba/'
           ? '2026-10-12'
-          : record.kind === 'guide' && record.guide.isoDate === '2026-10-12'
-            ? '2026-10-12'
-            : '2026-08-31';
+          : record.kind === 'hub' && record.route === '/vietnam/ho-chi-minh-city/'
+            ? '2026-10-13'
+            : record.kind === 'guide' && ['2026-10-12', '2026-10-13'].includes(record.guide.isoDate)
+              ? record.guide.isoDate
+              : '2026-08-31';
     if (!sitemap.includes(`<loc>https://tripdistill.com${prefix}${record.route}</loc><lastmod>${lastmod}</lastmod>`)) problems.push(`${record.route}: missing ${prefix || 'English'} sitemap record with lastmod ${lastmod}`);
   }
 }

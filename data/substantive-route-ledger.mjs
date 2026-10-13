@@ -133,6 +133,20 @@ export const vietnamHaLongNewSubstantiveRoutes = Object.freeze([
   '/vietnam/ha-long-cat-ba/national-park/'
 ]);
 
+export const vietnamHcmcNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+]);
+
+export const vietnamMekongNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/mekong-delta/',
+  '/vietnam/mekong-delta/can-tho-cai-rang/',
+  '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
+]);
+
 // Canada reached its exact 73-path completion set in three late batches:
 // Winnipeg, Whitehorse and Yellowknife. The Canada overview counts only after
 // its non-card editorial text was materially refreshed in CA18.
@@ -207,5 +221,7 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Atlanta', count: 773 }),
   Object.freeze({ label: 'Ha Long & Cat Ba', count: 777 }),
   Object.freeze({ label: 'Australian Alps & Margaret River', count: 781 }),
-  Object.freeze({ label: 'Florida', count: 785 })
+  Object.freeze({ label: 'Florida', count: 785 }),
+  Object.freeze({ label: 'Ho Chi Minh City', count: 789 }),
+  Object.freeze({ label: 'Mekong Delta', count: 793 })
 ]);

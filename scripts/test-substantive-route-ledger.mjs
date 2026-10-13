@@ -23,7 +23,9 @@ import {
   vietnamCompletedRoutes,
   vietnamHistoricalExclusions,
   vietnamNewSubstantiveRoutes,
-  vietnamHaLongNewSubstantiveRoutes
+  vietnamHaLongNewSubstantiveRoutes,
+  vietnamHcmcNewSubstantiveRoutes,
+  vietnamMekongNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -94,11 +96,19 @@ for (const route of vietnamNewSubstantiveRoutes) {
 for (const route of vietnamHaLongNewSubstantiveRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Ha Long ledger path is missing: ${route}`);
 }
+assert.equal(vietnamHcmcNewSubstantiveRoutes.length, 4, 'Ho Chi Minh City adds four exact existing bodies.');
+assert.equal(new Set(vietnamHcmcNewSubstantiveRoutes).size, 4, 'Ho Chi Minh City additions must be unique.');
+assert(vietnamHcmcNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route)), 'Ho Chi Minh City routes are disjoint from earlier Vietnam ledger groups.');
+for (const route of vietnamHcmcNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Ho Chi Minh City ledger path is missing: ${route}`);
+assert.equal(vietnamMekongNewSubstantiveRoutes.length, 4, 'Mekong Delta adds four exact existing bodies.');
+assert.equal(new Set(vietnamMekongNewSubstantiveRoutes).size, 4, 'Mekong Delta additions must be unique.');
+assert(vietnamMekongNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route) && !vietnamNewSubstantiveRoutes.includes(route) && !vietnamHaLongNewSubstantiveRoutes.includes(route) && !vietnamHcmcNewSubstantiveRoutes.includes(route)), 'Mekong Delta routes are disjoint from earlier Vietnam ledger groups.');
+for (const route of vietnamMekongNewSubstantiveRoutes) assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Mekong Delta ledger path is missing: ${route}`);
 for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -152,4 +162,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four disjoint Ha Long improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta and four Florida improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 785.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City and Mekong Delta improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta and four Florida improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 793.');
