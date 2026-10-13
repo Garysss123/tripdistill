@@ -1144,6 +1144,12 @@ export const vietnamSouthClusters = [
         name: 'Con Dao National Park & Turtle Islands',
         motif: 'protected-island dossier',
         instrument: 'expedition',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [
+          ['https://www.condaopark.com.vn/en/', 'Con Dao National Park — official visitor-program listing, including the Bay Canh night turtle program (checked 13 October 2026; a listing is not date availability, price or a confirmed booking)'],
+          ['https://www.condaopark.com.vn/en/protection-regilations.html', 'Con Dao National Park — protected-area rules requiring park consent for activities in forest and sea areas (checked 13 October 2026)']
+        ],
         image: image({
           src: '/assets/images/vietnam-con-dao-national-park.webp',
           alt: 'Beach and forested coast of Con Dao National Park',
@@ -1152,26 +1158,52 @@ export const vietnamSouthClusters = [
           creator: 'Tycho',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'Keep Côn Đảo as a separate protected-archipelago stay with forest, marine park, historical memory and tightly managed turtle experiences.',
-        lead: 'Côn Đảo is not a day-trip extension of Phu Quoc. The archipelago combines a national park, marine habitat, difficult sea connections and a serious history of imprisonment and resistance.',
-        orientation: 'Choose a park, heritage or turtle-conservation question first. Every boat trip and island landing should follow the park’s current registration and environmental rules.',
-        arrival: 'Reach Côn Đảo by a currently operating flight or verified Vung Tau or Tran De ferry. Keep a spare day because sea conditions and capacity can change the connection.',
-        sequence: 'Main island orientation, ranger-led nature, protected islet or heritage site and a quiet return form the expedition.',
-        boundary: 'Turtle watching is registration-led: stay silent, never touch or shine lights at nesting animals, avoid single-use plastic and follow rangers even when a better photograph seems possible.',
+        searchKeywords: ['con dao park registration', 'bay canh turtle tour booking', 'con dao flight ferry connection', 'con dao park consent rules'],
+        summary: 'Give Côn Đảo its own multi-night base: confirm the island connection first, then reserve protected-area activity only through the park’s current consent and booking process.',
+        lead: 'Côn Đảo is a separate protected archipelago, not a quick extension from Phú Quốc. The park’s official program page currently lists a Bay Canh night turtle-watching program as one day/one night, but the linked detail page failed during this review. That listing does not establish a date, price, opening, operator, departure or available place. Treat any turtle activity as a park-controlled request, not a walk-up excursion.',
+        orientation: 'Keep one base on Côn Sơn/main island for ordinary meals, heritage visits and the confirmed arrival connection. The national park says activities in forest or sea areas require its consent and must follow its rules. A Bay Canh overnight is a separate, conditional package: book it only when the park confirms written consent, the actual operator, boat and return, sleeping arrangements, permitted viewing terms and date availability. Do not move hotels or pay a private boat based on the program title alone.',
+        arrival: 'The official material checked here did not verify a current flight timetable, ferry route, sailing date, fare or weather cancellation policy. Confirm the operating service and arrival point directly with the carrier, then ask the park which visitor office or approved provider handles the chosen activity. Keep the first night on the main island after arrival; do not plan an island boat connection on the same day as an uncertain flight or ferry.',
+        sequence: 'First arrive on the main island and keep a recovery night → use a separate daylight for the prison and island-history sites → ask the park about a land-based nature route and required consent → take a Bay Canh night only if the park itself confirms the exact booking and boat plan → return to the main island, then keep a separate weather/connection buffer before leaving. If a leg is not confirmed, leave it out instead of substituting another island landing.',
+        boundary: 'Côn Đảo’s prison and memorial sites record political imprisonment and resistance; visit with care and do not stage sensational images. In the park, follow the ranger’s viewing distance and light rules, never touch or handle turtles or hatchlings, keep quiet, carry waste back and do not enter a forest or marine area without park consent.',
         stages: [
-          ['Arrive', 'Confirm airport or ferry connection, park entry and the exact island transfer before booking a nature activity.'],
-          ['Learn', 'Use ranger interpretation to connect forest, reef, turtle nesting and local history.'],
-          ['Observe', 'Follow the authorized group size, viewing position and no-touch rules on beaches and islets.'],
-          ['Return', 'Bring all waste back, protect the next sea or flight buffer and leave the park quieter than you found it.']
+          ['Secure the island leg', 'Verify the carrier, travel date, arrival point, ticket terms and weather cancellation directly; the checked park sources do not publish a current inter-island schedule.'],
+          ['Keep the first day on land', 'Use the main-island base and visit history sites in daylight. Set aside a separate day for any park route so the arrival transfer does not become a missed tour.'],
+          ['Request the park activity', 'Ask the park for current consent, the named authorized provider, exact route, group rules, overnight arrangements, departure and return. The homepage’s Bay Canh listing is not a confirmed booking.'],
+          ['Protect the return', 'Check the park and carrier again before departure. Leave a full buffer night after a sea outing; if weather, consent or the boat changes, remain on the main island and do not improvise another landing.']
         ],
         risks: [
-          ['Ferry and swell', 'Open-water transfers can shift or cancel, especially when the forecast changes.'],
-          ['Turtle disturbance', 'Noise, flash, touch and beach traffic can harm nesting and hatchling behavior.'],
-          ['Historical weight', 'Memorials and prison sites require reflection rather than sensational photography.']
+          ['Unverified connection', 'No live flight or ferry timetable, sailing or cancellation terms were established by the official park pages reviewed. Keep connection details with the carrier and do not chain a sea transfer to departure day.'],
+          ['Listing is not availability', 'The official site displays the Bay Canh night program, but its linked detail page returned an error. Price, booking channel, date availability, operator and participation terms remain unknown here.'],
+          ['Protected-area consent', 'The park’s rules require consent for activities in forest and sea areas. A guide, social post or boat offer is not proof of park authorization; no landing can be inferred from a visible boat.']
         ],
-        duration: 'Reserve several nights plus a weather buffer; a same-day Phu Quoc connection is not a robust plan.',
-        combine: 'It should be its own island chapter, with any Phu Quoc route completed before departure or after a full recovery day.',
-        verify: 'Check Con Dao National Park registration, turtle rules, ferry or flight status, marine conditions, park access and heritage guidance.'
+        duration: 'Three nights is a compressed minimum only when the inbound and outbound carrier legs are confirmed and you choose one full land day. Four nights lets the main-island history and a separate park day breathe. Five nights is more resilient if a park-approved Bay Canh overnight or a movable weather day is the reason for coming. These are trip shapes, not a park booking guarantee.',
+        combine: 'Finish a Phú Quốc itinerary before travelling here, and avoid same-day transfer chains. Keep a full main-island buffer after a sea excursion before an onward flight or ferry; a park program listing does not promise that the boat returns at a connection-friendly time.',
+        verify: 'Confirm exact flight/ferry service and cancellation with the carrier; current park consent, route, named provider, boat, overnight and turtle rules with Con Dao National Park; and current marine conditions before departure. The Bay Canh detail link failed during this review, so date availability, price and booking terms are not verified.' ,
+        nightPlan: {
+          kicker: 'Nights, island base and boat contingency',
+          title: 'Sleep on the main island; add Bay Canh only by park confirmation',
+          intro: 'Count an arrival night and a separate departure buffer before you treat Côn Đảo as a short stop. Use one main-island base unless an authorized park program explicitly includes the outer-island overnight and return.',
+          options: [
+            ['3 nights', 'Compressed land stay', 'Use this only with confirmed inbound and outbound transport: arrival night, one full heritage or land-nature day, and a final connection buffer. Leave the turtle outing out unless the park confirms its schedule and you can add the needed night.'],
+            ['4 nights', 'History and park day', 'Stay in one main-island base for a separate heritage day and a park-approved land route, with a buffer before departure. Add no outer-island night by inference; ask the park which route is actually permitted.'],
+            ['5+ nights', 'Weather and turtle request', 'Keep the main-island room for arrival, history and the return buffer. Treat Bay Canh as an optional park-confirmed overnight only after the park names its provider, consent, terms and date; preserve a spare day if weather can move the boat.']
+          ],
+          footerTitle: 'Do not book a private substitute landing',
+          footer: 'If the park cannot confirm the Bay Canh program or your connection dates, keep the whole stay on Côn Sơn and use a confirmed public heritage or land route. Do not try another islet or operator to recover a missed turtle experience.'
+        },
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Arrive, request permission, then decide whether to sail.',
+          intro: 'The park lists a Bay Canh night program, but its detail page failed during review. Every outer-island segment remains conditional until the park confirms it directly.',
+          steps: [
+            ['Carrier to Côn Đảo', 'Confirm both connection legs', 'Get the actual operating date, arrival point, ticket conditions and cancellation policy from the carrier. None is inferred from the park program listing.'],
+            ['Main-island base', 'Keep arrival and history on land', 'Stay on the main island for the first night and use a separate daylight for heritage and a confirmed land route.'],
+            ['Park request', 'Get written approval and terms', 'Ask the park to confirm consent, operator, boat, exact route, night arrangements, viewing rules, date and price before paying.'],
+            ['Return buffer', 'Leave a spare night before departure', 'Reconfirm the sea and carrier. If the park cancels or any return detail is missing, remain on the main island and keep the onward connection separate.']
+          ],
+          fallbackTitle: 'If the park or sea leg is not confirmed',
+          fallback: 'Drop the outer-island tour and continue the main-island itinerary. A scheduled stay on Côn Đảo does not require a boat excursion; do not seek a different landing or a private operator.'
+        }
       }
     ]
   })

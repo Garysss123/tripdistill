@@ -23,6 +23,13 @@ const afterNhaTrangRoutes = [
   '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
 ];
 const southernGapsRoutes = ['/vietnam/ho-chi-minh-city/can-gio-mangroves/','/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/','/vietnam/mekong-delta/my-tho-thoi-son-island/','/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'];
+const bayGapsRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+];
+const bayGapsBaseCommit = 'd779848fbc247042561cfaa34773257122aa38d0';
 const southernGapsHubs = ['vietnam/ho-chi-minh-city/index.html','vietnam/mekong-delta/index.html'];
 const editions = [
   { code: 'en', prefix: '' },
@@ -123,7 +130,7 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedEnglishVietnamFiles, [...new Set([...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes].map((route) => `${route.slice(1)}index.html`).concat(southernGapsHubs))].sort(), 'Only the four selected Nha Trang and four post-Nha-Trang English route bodies may change under vietnam/.');
+assert.deepEqual(changedEnglishVietnamFiles, [...new Set([...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes, ...bayGapsRoutes].map((route) => `${route.slice(1)}index.html`).concat(southernGapsHubs))].sort(), 'Only the historical route batches and the separately recorded bay-gaps overlay may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -136,14 +143,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes].sort(), 'Only the four matching Nha Trang and four post-Nha-Trang English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes, ...bayGapsRoutes].sort(), 'Only the historical route batches and the separately recorded bay-gaps overlay may change English search records.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...afterNhaTrangRoutes, ...southernGapsRoutes, ...bayGapsRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -203,7 +210,7 @@ const siblings = [
 ];
 for (const route of siblings) {
   const repoPath = `${route.slice(1)}index.html`;
-  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: non-selected Nha Trang page changed.`);
+  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(readAt(bayGapsBaseCommit, repoPath))), `${route}: non-selected Nha Trang page changed before the independent bay-gaps base.`);
 }
 assert.equal(bodyRoutePaths.size, 4);
 
@@ -247,5 +254,5 @@ assert.equal(ledger.previousTopLevelSprint.totals.remainingRoutes, 24);
 assert.equal(ledger.previousTopLevelSprint.currentSprintRoutes.length, 4);
 assert.equal(ledger.previousTopLevelSprint.remainingRoutesAfterSprint.length, 24);
 
-console.log('Nha Trang refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; three non-selected Nha Trang routes and nine previous Phu Quoc/Phong Nha bodies remain unchanged; exactly 20 existing sitemap dates changed; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; no SVG changed.');
+console.log('Nha Trang refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; its three sibling pages remain unchanged through the d779848 checkpoint before the separate bay-gaps overlay; nine previous Phu Quoc/Phong Nha bodies remain unchanged; source dates, localized summaries, sitemap URLs, canonicals, hreflang and ledger history match.');
 console.log(JSON.stringify(bodyChecks, null, 2));

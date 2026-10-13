@@ -17,6 +17,12 @@ const routes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
+const bayGapsRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+];
 const hubs = [
   'vietnam/ho-chi-minh-city/index.html',
   'vietnam/mekong-delta/index.html'
@@ -130,8 +136,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain only four target guides and their two updated hub excerpts.');
+const expectedEnglishVietnamFiles = [...routes, ...bayGapsRoutes].map((route) => route.slice(1) + 'index.html').concat(hubs).sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four historical southern guides, their two hub excerpts and the separately recorded bay-gaps overlay.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -144,14 +150,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes].sort(), 'Only the four historical and four separately recorded bay-gaps search records may change.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -244,8 +250,15 @@ for (const edition of editions.slice(1)) {
     assert(name, edition.code + ': missing ' + suffix);
     expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
   }
+  for (const suffix of ['defo-bay-gaps-pages-20261013.json', 'defo-bay-gaps-search-20261013.json']) {
+    const name = fs.readdirSync(directory).find((file) => file.endsWith(suffix));
+    assert(name, edition.code + ': missing ' + suffix);
+    expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
+  }
 }
-assert.deepEqual(reviewedDiffs, expectedReviewedDiffs.sort(), 'Only the eight southern-gaps batches and eight archived reviewed batches may change; drafts and parallel translations must stay untouched.');
+const bayArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-bay-gaps/2026-10-13/manifest.json'), 'utf8'));
+expectedReviewedDiffs.push(...bayArchive.archivedFiles.map((file) => file.source));
+assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only historical southern-gaps files, the separately archived bay-gaps overlay, and their reviewed batches may change; drafts and parallel translations must stay untouched.');
 
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
@@ -289,5 +302,5 @@ assert.deepEqual(
   'The four targets must have been unfinished in the previous coverage checkpoint.'
 );
 
-console.log('Southern Vietnam scope regression passed: four exact-base untouched bodies gained at least 350 visible words; four search records, five-edition metadata and exactly 20 dates match; 4,560 sitemap URLs are preserved; eight reviewed locale files are hash-archived before stale-key pruning; 87/99 substantive routes leave the exact 12-route remainder.');
+console.log('Southern Vietnam historical scope regression passed with the separately archived bay-gaps overlay: the four southern bodies, their metadata and 87/99 checkpoint remain intact; the bay overlay adds only four routes, 20 dates and its separately named translations.');
 console.log(JSON.stringify(bodyChecks, null, 2));

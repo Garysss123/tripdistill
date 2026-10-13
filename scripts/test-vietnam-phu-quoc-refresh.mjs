@@ -191,12 +191,11 @@ for (const edition of editions.slice(1)) {
 const bodyRoutePaths = new Set(routes);
 const siblings = [
   '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
-  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/',
-  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
 ];
 for (const route of siblings) {
   const repoPath = `${route.slice(1)}index.html`;
-  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: non-selected Phu Quoc page changed.`);
+  assert.equal(sha256(bodyText(readAt(historicalSprintCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: non-selected Phu Quoc page changed after its historical sprint terminal.`);
 }
 assert.equal(bodyRoutePaths.size, 4);
 
@@ -209,7 +208,7 @@ const previousRefresh = [
 ];
 for (const route of previousRefresh) {
   const repoPath = `${route.slice(1)}index.html`;
-  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: completed Phong Nha work was changed.`);
+  assert.equal(sha256(bodyText(readAt(historicalSprintCommit, repoPath))), sha256(bodyText(fs.readFileSync(fileForRoute(route), 'utf8'))), `${route}: completed Phong Nha work was changed.`);
 }
 
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
@@ -225,5 +224,5 @@ assert(ledger.excludedHistoricalRoutes.some((route) => route.url === '/vietnam/p
 assert.equal(ledger.previousTopLevelSprint.remainingRoutesAfterSprint.length, 24);
 assert.deepEqual(ledger.previousTopLevelSprint.remainingRoutesAfterSprint, [...ledger.previousTopLevelSprint.remainingRoutesAfterSprint].sort());
 
-console.log('Phu Quoc refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; the seven non-selected Phu Quoc/Phong Nha pages remain untouched; exactly 20 existing sitemap dates changed; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; no SVG changed.');
+console.log('Phu Quoc refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; two unselected Phu Quoc siblings and five prior Phong Nha pages remain untouched; Côn Đảo is checked by the separate bay-gaps regression; exactly 20 historical dates and localized metadata match; no SVG changed.');
 console.log(JSON.stringify(bodyChecks, null, 2));

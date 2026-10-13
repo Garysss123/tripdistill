@@ -24,6 +24,12 @@ const southernGapsRoutes = [
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
 const southernGapsHubs = ['vietnam/ho-chi-minh-city/index.html', 'vietnam/mekong-delta/index.html'];
+const bayGapsRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -123,8 +129,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'Only the two reviewed four-guide batches and their two updated hub excerpts may change under vietnam/.');
+const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...bayGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'Only the historical guide batches, their two hub excerpts and the separately recorded bay-gaps overlay may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -137,14 +143,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes].sort(), 'Only the two reviewed four-guide batches may change English search records.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes, ...bayGapsRoutes].sort(), 'Only the historical guide batches and the separately recorded bay-gaps overlay may change English search records.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -245,6 +251,9 @@ for (const edition of editions.slice(1)) {
   const southernNames = fs.readdirSync(directory).filter((name) => name.endsWith('defm-vietnam-south-pages.json') || name.endsWith('defn-vietnam-south-search.json'));
   assert.equal(southernNames.length, 2, `${edition.code}: expected exactly two southern-gaps batches.`);
   expectedReviewedDiffs.push(...southernNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
+  const bayNames = fs.readdirSync(directory).filter((name) => name.endsWith('defo-bay-gaps-pages-20261013.json') || name.endsWith('defo-bay-gaps-search-20261013.json'));
+  assert.equal(bayNames.length, 2, `${edition.code}: expected exactly two bay-gaps batches.`);
+  expectedReviewedDiffs.push(...bayNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
 }
 for (const repoPath of baseReviewedPaths) {
   const before = JSON.parse(readAt(baselineCommit, repoPath));
@@ -260,8 +269,8 @@ for (const repoPath of baseReviewedPaths) {
 expectedReviewedDiffs.sort();
 assert.deepEqual(reviewedDiffs, expectedReviewedDiffs, 'Draft and parallel-work files must remain untouched; existing reviewed batches may only lose keys absent from the current source set.');
 const nonReviewedI18nDiffs = git(['diff', '--name-only', baselineCommit, '--', 'data/i18n']).trim().split('\n').filter(Boolean)
-  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
-assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or other localization files may change in this sprint.');
+  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-bay-gaps/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
+assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or unrelated localization files may change in this sprint.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 assert.equal(ledger.branch, 'codex/sprint-vn-southern-gaps-20261013');
@@ -304,5 +313,5 @@ assert.equal(ledger.previousActiveSprint.currentSprintRoutes.length, 4);
 assert.equal(ledger.previousActiveSprint.remainingRoutesAfterSprint.length, 20);
 assert.equal(ledger.previousTopLevelSprint.branch, 'codex/sprint-vn-after-phong-nha-20261013');
 
-console.log('Historical Da Lat/Ha Long regression passed alongside the southern-gaps batch: the prior four bodies, archives and locale copy remain intact; exactly eight route records and 40 combined locale dates changed since its original base; 87/99 coverage leaves the exact 12-route remainder.');
+console.log('Historical Da Lat/Ha Long and southern-gaps regression passed with the separately recorded bay-gaps overlay: prior bodies and archives remain intact; the overlay adds only four route records and 20 dates; the checkpoint ledger remains 87/99 with 12 remaining routes.');
 console.log(JSON.stringify(bodyChecks, null, 2));

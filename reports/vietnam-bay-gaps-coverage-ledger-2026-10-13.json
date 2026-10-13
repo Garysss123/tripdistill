@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "branch": "codex/sprint-vn-bay-gaps-20261013",
+  "sourceBaseCommit": "d779848fbc247042561cfaa34773257122aa38d0",
+  "verificationStatus": "npm run audit and npm run build passed; the build contains 5,497 files and verifies all 4,560 sitemap routes. Source-only branch with no main integration or deployment; UI acceptance remains unverified. This ledger counts only the four routes added by the bay-gaps branch on top of its exact 87/99 source base.",
+  "method": "scripts/test-vietnam-bay-gaps-refresh.mjs compares Parse5-visible #main-content text at the exact source base and current tree, excluding navigation, scripts, styles, SVG, noscript, ads, source notes and visible review-date phrases. It checks exact English route/search scope, five-edition Article/canonical/hreflang/date metadata and localized page/search copy, exactly 20 date changes, the unchanged 4,560-URL sitemap set, batch provenance, exact-base hash archives before stale-key pruning, and the remaining-route ledger.",
+  "totals": {
+    "englishRoutes": 99,
+    "baseSubstantiveRoutes": 87,
+    "newSubstantiveRoutes": 4,
+    "afterSprintSubstantiveRoutes": 91,
+    "remainingRoutes": 8
+  },
+  "currentSprintRoutes": [
+    {
+      "url": "/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/",
+      "baseWords": 689,
+      "currentWords": 1481,
+      "wordDelta": 792,
+      "baseMainTextSha256": "6207861230987baad240bd15e530f1c44b69131405afa239db4fcd128f4ebc86",
+      "currentMainTextSha256": "5056840da401fb5cff8840de9b475eb0edf600f648106ff944be9582def0f551"
+    },
+    {
+      "url": "/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/",
+      "baseWords": 662,
+      "currentWords": 1464,
+      "wordDelta": 802,
+      "baseMainTextSha256": "d1e431fdd58fdf2777b06c234acf29c11d632bd126783f0453d5e78d10ae694c",
+      "currentMainTextSha256": "b4977e89b796401a40721b6e461121aab8f22ae99c2fc38468f29d35dd95e6fb"
+    },
+    {
+      "url": "/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/",
+      "baseWords": 663,
+      "currentWords": 1110,
+      "wordDelta": 447,
+      "baseMainTextSha256": "a3b91c5fc566bdea93e54b320563756cdf9ba5389470ea3908ce733ec385447f",
+      "currentMainTextSha256": "3ee21e2755380833b558bc363ecf1d1fc90c6841db8c34530b227db410cd6c94"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/con-dao-national-park/",
+      "baseWords": 580,
+      "currentWords": 1575,
+      "wordDelta": 995,
+      "baseMainTextSha256": "dc72d7510d2ea19b09b6ae23f8de884181e0e4a11594fd7ff6b4a7a433986886",
+      "currentMainTextSha256": "a20efba5286dcd1135914087a5e45b960de87cbb488c55c87fcf46b2b3f3a477"
+    }
+  ],
+  "remainingRoutesAfterSprint": [
+    "/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/",
+    "/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/",
+    "/vietnam/mui-ne-binh-thuan/phu-quy-island/",
+    "/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/",
+    "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+    "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+    "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+    "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+  ]
+}

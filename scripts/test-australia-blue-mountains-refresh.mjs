@@ -92,6 +92,12 @@ const laterVietnamNhaTrangRoutes = [
   '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
   '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
 ];
+const bayGapsVietnamRoutes = [
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+];
 const afterNhaTrangVietnamRoutes = [
   '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
   '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
@@ -317,7 +323,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search-index URL set and count must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 child, CH14 and Vietnam search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...laterGreatOceanRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes, ...bayGapsVietnamRoutes].sort(), 'Only the selected Blue Mountains and exact later Great Ocean Road, Gold Coast, Cairns, CA13, CA14 child, CH14 and Vietnam search records may change.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(fileFor(route), 'utf8').includes(record.summary), `${route}: search summary must match page copy.`);

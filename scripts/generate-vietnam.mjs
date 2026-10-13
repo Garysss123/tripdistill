@@ -135,11 +135,15 @@ function routeDiagramMarkup(diagram) {
       </ol><aside><strong>${escapeHtml(diagram.fallbackTitle)}</strong><p>${escapeHtml(diagram.fallback)}</p></aside></section>`;
 }
 
-function nightPlanMarkup(plan) {
+function nightPlanMarkup(plan, format = 'regional') {
   if (!plan) return '';
+  const isGuide = format === 'guide';
+  const sectionClass = isGuide ? 'vn-stay-plan' : 'vn-mui-ne-plan';
+  const cardsClass = isGuide ? 'vn-stay-plan__cards' : 'vn-mui-ne-plan__cards';
+  const titleId = isGuide ? 'vn-stay-plan-title' : 'vn-mui-ne-plan-title';
   const options = plan.options.map(([label, heading, copy]) => `
         <article><small>${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
-  return `      <section class="vn-mui-ne-plan" aria-labelledby="vn-mui-ne-plan-title"><header><span class="vn-section-label">${escapeHtml(plan.kicker)}</span><h2 id="vn-mui-ne-plan-title">${escapeHtml(plan.title)}</h2><p>${escapeHtml(plan.intro)}</p></header><div class="vn-mui-ne-plan__cards">${options}
+  return `      <section class="${sectionClass}" aria-labelledby="${titleId}"><header><span class="vn-section-label">${escapeHtml(plan.kicker)}</span><h2 id="${titleId}">${escapeHtml(plan.title)}</h2><p>${escapeHtml(plan.intro)}</p></header><div class="${cardsClass}">${options}
       </div><aside><strong>${escapeHtml(plan.footerTitle)}</strong><p>${escapeHtml(plan.footer)}</p></aside></section>`;
 }
 
@@ -213,7 +217,7 @@ function guidePage(guide, cluster) {
 
       <section class="vn-decision-strip" aria-label="Three planning decisions">${decisions}</section>
       <section class="vn-reading" aria-labelledby="vn-reading-title"><div><span class="vn-section-label">Read the place</span><h2 id="vn-reading-title">${escapeHtml(guide.presentation?.readingTitle || 'Keep the local logic visible.')}</h2><p>${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
-${guide.routeDiagram ? `      ${routeDiagramMarkup(guide.routeDiagram)}\n` : ''}      <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
+${guide.routeDiagram ? `      ${routeDiagramMarkup(guide.routeDiagram)}\n` : ''}${guide.nightPlan ? `${nightPlanMarkup(guide.nightPlan, 'guide')}\n` : ''}      <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
       <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">${escapeHtml(guide.presentation?.routeTitle || 'Let sequence do the editing.')}</h2></div>${routeLead}</div><div class="vn-route">${route}</div></section>
       <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.checksLabel || 'Before committing')}</span><h2 id="vn-checks-title">${escapeHtml(guide.presentation?.checksTitle || 'Three weak points to solve.')}</h2></div>${checksIntroMarkup}</div><div class="vn-check-grid">${checks}</div>${boundary}</section>
       <section class="vn-field-section" aria-labelledby="vn-faq-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.faqLabel || 'Planning answers')}</span><h2 id="vn-faq-title">${escapeHtml(guide.presentation?.faqTitle || (guide.name + ' FAQ'))}</h2></div></div><div class="faq-list">${faq}</div></section>
