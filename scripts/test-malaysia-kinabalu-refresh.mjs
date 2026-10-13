@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { malaysiaDepthGuides, imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, currentSourceBranchSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -115,7 +115,7 @@ const baseSourceByUrl = byUrl(baseSourceSearch);
 assert.equal(sourceSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(sourceByUrl.keys()), new Set(baseSourceByUrl.keys()), 'English search URL inventory is unchanged');
 const sourceChangedSearch = [...sourceByUrl].filter(([url, row]) => JSON.stringify(row) !== JSON.stringify(baseSourceByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(sourceChangedSearch), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Italy, Switzerland, Canada and Malaysia search records changed');
+assert.deepEqual(new Set(sourceChangedSearch), new Set(currentSourceBranchSearchRoutes), 'only the exact integrated and current source-branch search records changed');
 
 const wordDeltas = [];
 const imageRefs = new Set();

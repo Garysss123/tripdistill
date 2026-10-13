@@ -22,6 +22,12 @@ const previouslyUpdatedRoutes = [
   '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
   '/vietnam/mekong-delta/ben-tre-coconut-islets/'
 ];
+const followingMuiNeRoutes = [
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -126,7 +132,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, [...routes, ...previouslyUpdatedRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Da Lat and four preceding Mekong English Vietnam paths may change.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four Da Lat, four preceding Mekong, and four following Mui Ne English Vietnam paths may change.');
 
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -140,9 +146,9 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, [], 'Body-only refresh must preserve the existing English search records.');
+assert.deepEqual(changedSearchRoutes, followingMuiNeRoutes.slice().sort(), 'Only the four following Mui Ne English summaries may change.');
 
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...previouslyUpdatedRoutes, ...followingMuiNeRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
@@ -152,7 +158,7 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four Da Lat and four preceding Mekong routes in five editions may receive new sitemap dates.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four Da Lat, four preceding Mekong, and four following Mui Ne routes in five editions may receive new sitemap dates.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
 
 for (const route of routes) {
@@ -191,5 +197,5 @@ for (const edition of editions.slice(1)) {
   }
 }
 
-console.log(`Da Lat refresh regression passed: ${routes.length} Da Lat bodies remain expanded by 400+ visible words; the four preceding Mekong paths remain in scope; English search rows are unchanged; localized metadata/date checks and the 4,560-URL sitemap remain exact.`);
+console.log(`Da Lat refresh regression passed: ${routes.length} Da Lat bodies remain expanded by 400+ visible words; the preceding Mekong paths and following Mui Ne summary updates remain in scope; localized metadata/date checks and the 4,560-URL sitemap remain exact.`);
 console.log(JSON.stringify(bodyChecks, null, 2));

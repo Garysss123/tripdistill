@@ -107,7 +107,13 @@ const currentVietnamRoutes = [
   '/vietnam/ha-long-cat-ba/lan-ha-town/',
   '/vietnam/ha-long-cat-ba/national-park/'
 ];
-const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes]);
+const laterVietnamMuiNeRoutes = [
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+];
+const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch13Routes, ...ch14Routes, ...laterCa11Routes, ...laterCa12Routes, ...laterCa13Routes, ...laterCa14Routes, ...laterAustraliaRoutes, ...laterAustraliaSearchOnlyRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes]);
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {

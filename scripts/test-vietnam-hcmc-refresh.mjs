@@ -26,7 +26,11 @@ const followingRoutes = [
   '/vietnam/da-lat-central-highlands/',
   '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
   '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
-  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/',
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
 ];
 const editions = [
   { code: 'en', prefix: '' },
@@ -151,7 +155,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, [], 'The existing four search records should remain stable for this body-only refresh.');
+assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/')).sort(), 'Only the four following Mui Ne summaries may change after the HCMC body-only refresh.');
 
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
@@ -163,7 +167,7 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong and Da Lat routes in five editions may receive new sitemap dates.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong, Da Lat and Mui Ne routes in five editions may receive new sitemap dates.');
 const followOnDatePaths = new Set(editions.flatMap(({ prefix }) => followingRoutes.map((route) => `${prefix}${route}`)));
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), followOnDatePaths.has(pagePath) ? '2026-10-13' : baseDate, `${pagePath}: sitemap date`);
 

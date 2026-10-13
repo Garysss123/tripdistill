@@ -1,5 +1,10 @@
 import { defineVietnamCluster, image } from './vietnam-guide-builder.mjs';
 
+const muiNeSources = [
+  ['https://www.vietnam.travel/things-to-do/mui-ne-land-sand-dunes-and-water-sports', 'Viet Nam National Authority of Tourism — Mui Ne dunes and water sports (checked 13 October 2026)'],
+  ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — inland, marine and hazard bulletins (checked 13 October 2026)']
+];
+
 export const vietnamSouthClusters = [
   defineVietnamCluster({
     slug: 'mui-ne-binh-thuan',
@@ -8,9 +13,31 @@ export const vietnamSouthClusters = [
     family: 'dune-wind',
     label: 'South-Central Coast',
     tagline: 'A coast measured in wind, sand, Cham memory and sea-state decisions.',
-    hubIntro: 'Mui Ne and the wider Binh Thuan coast are not only a resort strip. Red and white dunes, working fishing villages, Cham towers, forested hills, a lighthouse coast and the remote island of Phu Quy each run on a different clock. Use this hub to choose the landscape that matches your weather window, mobility and appetite for exposure.',
-    stay: 'Use Ham Tien or Mui Ne as the first mainland base, then add Phan Thiet, the Ta Cu coast or an island night only when the transfer earns the time.',
-    transfer: 'Solve the mainland arrival through Phan Thiet and Muong Man first; keep a weather buffer for dune roads, boat landings and Phu Quy crossings.',
+    isoDate: '2026-10-13',
+    reviewDate: '13 October 2026',
+    hubCss: '/css/vietnam-mui-ne.css?v=20261013-1',
+    hubIntro: 'Plan the Binh Thuan coast from one base: red dunes fit a cool-hour outing, kiteboarding depends on a same-day school decision, and Bau Trang needs its own long-drive day. Choose two, three or four nights by how much weather slack your transfers can absorb.',
+    stay: 'Keep Ham Tien or Mui Ne as the beach base for the red dunes and a possible lesson. Choose Phan Thiet town only when a confirmed arrival or town visit earns it; a split stay adds another road transfer. Two nights allow one full outing, three allow two, and four can protect a spare day.',
+    transfer: 'A current exact-date train or coach connection was not confirmed. Book only to the terminal printed on your valid ticket, then confirm a separate road pickup to your chosen bed. No fare, timetable, drive duration, dune entrance or visitor closure was verified on 13 October 2026.',
+    hubSources: muiNeSources,
+    nightPlan: {
+      kicker: 'Nights, base and slack',
+      title: 'Let the transfer set the coast stay',
+      intro: 'Count full usable days after arrival and before departure, then choose the route. This plan makes no assumption about train, coach or excursion timetables.',
+      options: [
+        ['2 nights', 'Choose one main outing', 'Use the arrival day to reach one confirmed base and arrange the return pickup. Spend the one full day on the red dunes, a supervised kite lesson, or Bau Trang as the main landscape; do not stack all three.'],
+        ['3 nights', 'Add a contrasting day', 'Keep Ham Tien or Mui Ne for both nights in between. Pair a cool-hour red-dune visit with either the school-led water session or the longer Bau Trang drive, then leave the other chapter for a future trip.'],
+        ['4 nights', 'Protect one weather reserve', 'Three usable days can hold two different outings plus one unbooked day. Move the lesson or remote drive into that reserve only after the official forecast and local access check support it; an extra night does not guarantee an opening.']
+      ],
+      footerTitle: 'Choose one bed before the last mile',
+      footer: 'Ham Tien or Mui Ne favors coast days; Phan Thiet town may suit a confirmed arrival or a town-focused stay. Keep one base for a short visit. Split only when a dated connection or a clear town plan pays for the extra road transfer.'
+    },
+    routeModelHeading: 'Route from the near coast to one chosen day out.',
+    routeModelLead: 'Use the red dunes for a confirmed cool-hour window. Give either kiteboarding or Bau Trang a separate full day, then keep a spare day unbooked if weather matters. When a closure or access point is unknown, do not test an unmarked road; return to the base or reschedule.',
+    presentation: {
+      conditionsTitle: 'Choose the access contract before the landscape.',
+      conditionsLead: 'The town-side coast, a school launch and a remote dune road do not share one pickup, forecast or fallback.'
+    },
     sources: [
       ['https://www.vietnam.travel/places-to-go/southern-vietnam/binh-thuan', 'Vietnam Tourism — Binh Thuan'],
       ['https://www.vietnam.travel/things-to-do/mui-ne-land-sand-dunes-and-water-sports', 'Vietnam Tourism — Mui Ne: Sand Dunes and Water Sports'],
@@ -23,6 +50,9 @@ export const vietnamSouthClusters = [
         name: 'Mui Ne Red Sand Dunes at Golden Hour',
         motif: 'warm sand clock',
         instrument: 'zine',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: muiNeSources,
         image: image({
           src: '/assets/images/vietnam-mui-ne-red-dunes.webp',
           alt: 'Wind-shaped red sand dunes outside Mui Ne',
@@ -31,32 +61,48 @@ export const vietnamSouthClusters = [
           creator: 'Monster4711',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'A practical sunrise and sunset chapter for reading Mui Ne’s red dunes without turning a fragile landscape into an off-road playground.',
-        lead: 'The red dunes are the closest expression of Mui Ne’s wind-and-sand identity, but the useful visit is about timing, footing and restraint. Light changes quickly, loose sand is tiring, and vehicle tracks can erase the very contours visitors came to see.',
-        orientation: 'Treat the dunes as a short exposed walk with a cool-hour start, a simple viewpoint and a defined way back. The best photograph is not a reason to cross a plant patch, a steep slip face or a marked vehicle lane.',
-        arrival: 'Arrive with water, covered shoulders, secure footwear and a confirmed meeting point. If using a board, quad bike or 4x4, choose the designated operator area before entering the dunes.',
-        sequence: 'Cool-hour arrival, low-impact contour reading, one activity choice and a shaded return make a reliable half-day chapter.',
-        boundary: 'Do not combine the red dunes with every nearby stop by default; heat, wind and the ride back are part of the route rather than empty space.',
+        summary: 'Plan Mui Ne’s red dunes as a cool-hour half-day from one coastal base, with a permitted access point, activity boundary and return pickup confirmed before travel.',
+        lead: 'These dunes can fit between two nights on the coast, but the visible pin is not proof that an entrance or vehicle lane is public today. Before leaving Ham Tien or Mui Ne, get one current pickup point, a permitted visitor boundary and the same-day return arrangement from the responsible local contact. If none can be confirmed, skip the dune face rather than following an unofficial track.',
+        orientation: 'Read this as one short exposed walk, not a scenic road loop. Pick a turnaround point before climbing, carry water and footwear suited to loose sand, and agree where the driver will meet you again. The Vietnam Tourism page describes the dunes, but it does not publish a current visitor gate, vehicle boundary or closure notice.',
+        arrival: 'A two- or three-night Ham Tien/Mui Ne base keeps this chapter close to the coast; a Phan Thiet town stay adds a separate road leg. No official entrance map or visitor-zone notice was readable on 13 October 2026, so this guide deliberately does not name a guessed gate. Confirm the location, pickup and return with your accommodation or the site authority before setting out.',
+        sequence: 'Coast base → confirmed pickup → permitted entrance → short cool-hour walk or booked activity → return with the same arranged transport; keep Bau Trang for another day.',
+        boundary: 'If the official forecast raises a heavy-rain or strong-wind alert, or local staff closes the entrance, do not reroute onto an unmarked track. Return to base, use the spare day if you have one, or choose a confirmed indoor town visit instead.',
         stages: [
-          ['Arrive', 'Reach the agreed entrance while the sand is still manageable, and put water, phone protection and footwear within easy reach.'],
-          ['Read', 'Follow existing paths, notice how wind creates ridges and photograph from stable ground rather than climbing every crest.'],
-          ['Choose', 'Commit to either a quiet walk or a properly managed sand activity; do not mix moving vehicles with an improvised photo line.'],
-          ['Exit', 'Leave before fatigue turns a short descent into a heat problem, and keep the next coastal transfer separate.']
+          ['Confirm', 'Ask for the public entrance, the agreed drop-off and the matching return pickup. If access or a return ride cannot be identified, do not leave the coast base.'],
+          ['Check', 'Read the National Centre forecast and hazard notices on the day, then ask whether the local entrance is open. A forecast does not certify dune access.'],
+          ['Walk', 'Stay inside the marked visitor area and choose either a quiet walk or an operator-managed activity. Never join a vehicle lane for a photograph.'],
+          ['Return', 'Turn back while the route is comfortable, meet the same arranged driver and leave the rest of the day unscheduled.']
         ],
         risks: [
-          ['Surface heat', 'Bare sand and reflected light can become punishing well before the landscape looks extreme.'],
-          ['Vehicle conflict', 'ATVs and 4x4s need a clearly separated operating area; never stand in a launch or turning line.'],
-          ['Dune erosion', 'Avoid plants, steep edges, litter and new tracks that damage the dune profile.']
+          ['Unclear entrance', 'The current official public entrance and vehicle boundary could not be verified; a map pin or driver suggestion is not authorization.'],
+          ['Heat and loose footing', 'The exposed walk can tire visitors before the sand looks extreme; shorten it, carry water and leave before discomfort builds.'],
+          ['Wind or closure', 'A weather alert or local closure cancels the dune plan. Do not replace it with an improvised route across private or marked vehicle areas.']
         ],
-        duration: 'Allow a focused half day, with the exact light window chosen around the current forecast rather than a fixed promise.',
-        combine: 'Pair with a nearby fishing-village or Suoi Tien stop only if transport and heat margins remain comfortable.',
-        verify: 'Check the current entrance, operator zone, weather, vehicle rules and any local conservation or parking notice.'
+        duration: 'Reserve half a day for the outing and recovery, but treat that as a planning allowance, not a measured visit or opening guarantee. Choose the light window only after a permitted entrance and return are confirmed.',
+        combine: 'Do not combine this with the remote white dunes or a kite lesson. Add one nearby stop only when the same transport provider confirms both access points and a workable return; otherwise keep the afternoon for rest at the coast base.',
+        verify: 'On 13 October 2026 no current official entrance map, vehicle-zone rule or local closure notice could be retrieved. Check the national forecast, then confirm access and the return pickup locally; if either remains unknown, skip the route.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A dune visit begins with the access answer',
+          intro: 'Choose the short walk only when the actual entrance, visitor boundary and return ride are all clear.',
+          steps: [
+            ['Before leaving', 'Name the entrance', 'Ask the accommodation or responsible site contact for a public access point and a return pickup.'],
+            ['Same day', 'Read the forecast', 'Check rain, wind and hazard notices; then confirm locally that the visitor area is open.'],
+            ['On the sand', 'Keep one boundary', 'Stay in the permitted walking or booked activity area. Leave vehicle lanes and planted edges alone.'],
+            ['If unclear', 'Return to base', 'Do not try another track. Reschedule within a spare day or keep the afternoon local.']
+          ],
+          fallbackTitle: 'No verified entrance means no dune entry',
+          fallback: 'A government forecast does not establish land access. Skip the route if the entrance, closure status or return pickup cannot be confirmed.'
+        }
       },
       {
         slug: 'bau-trang-white-dunes',
         name: 'Bau Trang White Dunes & Lotus Lake',
         motif: 'lake-between-sand',
         instrument: 'axis',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: muiNeSources,
         image: image({
           src: '/assets/images/vietnam-bau-trang.webp',
           alt: 'White dunes surrounding Bau Trang lake in Binh Thuan',
@@ -65,32 +111,48 @@ export const vietnamSouthClusters = [
           creator: 'Hưng Hồ Bá',
           license: 'CC BY 2.0'
         }),
-        summary: 'Plan the longer coastal run to Bau Trang around the sharp meeting of white dunes, freshwater lakes and a road exposed to sun and wind.',
-        lead: 'Bau Trang is a different proposition from Mui Ne’s red dunes: the water, lotus season and long approach give the landscape more depth, but also make a rushed transfer feel wasteful. The route deserves time to look across the lake as well as climb the sand.',
-        orientation: 'Use the lake-and-dune divide as the chapter’s ruler. Decide whether the day is for a landscape walk, a quiet shoreline reading or a permitted sand activity before arriving.',
-        arrival: 'Start with a reliable vehicle, offline directions and enough water for a remote-feeling stop. Confirm the currently recognized access point because roads, parking and visitor arrangements can change.',
-        sequence: 'Mainland departure, lake orientation, dune contour and a weather-aware return form the route.',
-        boundary: 'The lake edge, lotus beds and dune vegetation are not interchangeable photo surfaces; keep the landscape readable for the next visitor.',
+        summary: 'Give Bau Trang its own full day from Mui Ne: confirm the route, visitor entrance, driver and daylight return first, then keep the lake and dune visit short and low-impact.',
+        lead: 'Bau Trang is the long road day in this coast cluster. Vietnam Tourism confirms the white dunes sit beside lakes, but the official pages available in this review did not establish a current visitor gate, public walking line, road condition or vehicle permission. Do not treat a map pin or an old tour description as proof that an access road is open. If the route and return driver cannot be confirmed for your date, keep the day at the coast.',
+        orientation: 'Choose one permitted lakeside viewpoint and one short dune contour only after the current site contact confirms both. The name “Lotus Lake” is not a promise of a bloom: plan around the lake-and-sand landscape, not a seasonal flower display. Keep away from planted or soft shoreline edges unless the site explicitly marks them for visitors.',
+        arrival: 'Use the same Ham Tien or Mui Ne base rather than moving hotels for this outing. Reserve a dedicated return vehicle with a named pickup point, offline directions and an agreed daylight turnaround; no public departure, travel time or fare was independently confirmed on 13 October 2026. Carry water and sun cover, and do not assume quick roadside support.',
+        sequence: 'Coastal base → confirmed driver and entrance → lake-side orientation → short permitted dune walk → daylight return; leave both the red dunes and kite session for another day.',
+        boundary: 'If the national forecast shows heavy rain, thunderstorms or a strong-wind alert, if the road status is unclear, or if local access is closed, do not start the remote drive. Keep the day near the base or use a separately confirmed local alternative; never search for an unofficial track around a closure.',
         stages: [
-          ['Approach', 'Leave a generous road buffer and treat the drive as part of the coastal landscape, not a transfer to compress.'],
-          ['Orient', 'Read Bau Ong and Bau Ba from a stable lake-side position before choosing a short sand contour.'],
-          ['Explore', 'Stay on established access lines, use only approved activity areas and give the water and lotus margin space.'],
-          ['Return', 'Turn back with daylight and fuel margin; avoid letting a late photo stop create an unsafe coastal drive.']
+          ['Book the leg', 'Confirm the actual route, named pickup, return vehicle and permitted entrance for the date. If any part is unclear, keep the remote day out of the plan.'],
+          ['Check the window', 'Read the national inland forecast and warnings before leaving, then confirm road and visitor access locally; neither source guarantees a dune opening.'],
+          ['Use one viewpoint', 'Start at the approved lakeside position, read the landscape and take only a short marked sand contour. Do not plan on lotus bloom or off-road access.'],
+          ['Return early', 'Agree a daylight turnaround with the driver and keep fuel, water and phone power for the full return rather than adding a last-minute stop.']
         ],
         risks: [
-          ['Remote exposure', 'Shade, water and quick roadside support are limited compared with the resort strip.'],
-          ['Road condition', 'Sand, rain and construction can change the best approach without notice.'],
-          ['Landscape damage', 'Vehicle tracks and trampling around the lake or lotus beds can permanently alter a sensitive edge.']
+          ['Access not verified', 'The current government site plan timed out, and no official visitor map or closure notice was readable; the entrance and vehicle permissions remain unknown.'],
+          ['Long return leg', 'Rain, road works, fuel or a late departure can turn the remote outing into a pressured drive; keep the return vehicle and daylight margin protected.'],
+          ['Soft lake edge', 'Waterline, vegetation and sand are not open-use surfaces by default. Stay on the current visitor line and do not drive onto the dunes.']
         ],
-        duration: 'Reserve most of a day including the mainland drive, rather than treating Bau Trang as a quick detour.',
-        combine: 'It can follow the red dunes only on a private vehicle day with a deliberate return buffer; otherwise keep it as the main landscape chapter.',
-        verify: 'Confirm the current route, access point, activity permissions, lake conditions, weather and fuel plan.'
+        duration: 'Hold a full day for the road leg, a short visit and a conservative return. That is a planning shape, not a measured drive time; no dated timetable or route duration was verified.',
+        combine: 'Do not stack Bau Trang with a kite lesson or the red dunes. On a two-night stay, choose Bau Trang only if this landscape is the trip’s priority and both transfers are confirmed; on three nights, place it on its own day and use a different day for a nearby coast activity.',
+        verify: 'As of 13 October 2026, the Binh Thuan government site plan was not readable in this review and no official public entrance or current road closure page was confirmed. Check the NCHMF forecast, then ask the responsible local site contact about route, access, vehicle rules and return.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'The white-dune day has one decision gate',
+          intro: 'The drive is worth keeping only when both the access and the return leg are confirmed.',
+          steps: [
+            ['Before booking', 'Confirm the base', 'Stay in Ham Tien or Mui Ne and reserve one named vehicle for the out-and-back day.'],
+            ['Before departure', 'Verify access', 'Ask the responsible local contact for the current entrance, road condition and visitor boundary.'],
+            ['At Bau Trang', 'Keep the visit bounded', 'Use one approved lakeside view and a short permitted dune section; avoid vehicle access on sand.'],
+            ['If blocked', 'Do not reroute', 'Return to the coast base or move the outing into a spare day after a new access check.']
+          ],
+          fallbackTitle: 'An unreadable local source leaves access unknown',
+          fallback: 'If a site contact cannot verify the road or entrance, cancel the remote outing. A national forecast is not a road-opening notice.'
+        }
       },
       {
         slug: 'mui-ne-kiteboarding-coast',
         name: 'Mui Ne Kiteboarding Coast',
         motif: 'wind-window board',
         instrument: 'tide',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: muiNeSources,
         image: image({
           src: '/assets/images/vietnam-mui-ne-kite.webp',
           alt: 'Kitesurfers flying colorful kites above Mui Ne beach',
@@ -99,26 +161,39 @@ export const vietnamSouthClusters = [
           creator: 'Vyacheslav Argenberg',
           license: 'CC BY 4.0'
         }),
-        summary: 'A wind-and-water planning guide for choosing a safe lesson, understanding beach launch zones and leaving enough space for changing sea conditions.',
-        lead: 'Mui Ne’s wind is a reason to visit, not a guarantee that every beach hour is suitable. Kiteboarding, windsurfing and ordinary swimming occupy different parts of the shore, and a good day begins with the school’s safety assessment rather than a rented board.',
-        orientation: 'Read the beach as a working launch area. Watch the flags, instructors and shoreline before deciding whether to take a lesson, observe from land or choose a calmer activity.',
-        arrival: 'Book with a school that explains equipment, rescue cover, launch space and beginner limits. Arrive ready for sun, wind-blown sand and a possible weather pause.',
-        sequence: 'Shore briefing, land practice, water decision and a conservative exit create the chapter’s logic.',
-        boundary: 'Do not treat a clear horizon as proof of safe water; wind direction, current, crowding and instructor judgment outrank a prewritten itinerary.',
+        summary: 'Plan a Mui Ne kiteboarding day around a confirmed school and its same-day go/no-go decision; keep the water session separate from the remote dune drive.',
+        lead: 'Mui Ne’s reputation for wind is not a forecast for your lesson date. Vietnam Tourism describes kite and windsurfing along the beach, but does not publish a live beach-zone map, school roster or cancellation status. Choose a school that explains its current meeting point, beginner limits, launch space and rescue plan. If it will not give those details, observe only from a public place where access is permitted or choose another day.',
+        orientation: 'A kite lesson is an operator-led water activity, not a self-guided beach rental. Wind, current, crowding and storm warnings can change the decision after arrival. Keep the return plan open and do not use a clear horizon as evidence that the launch corridor is suitable.',
+        arrival: 'Base in Ham Tien or Mui Ne for a two- to four-night coast stay, but verify that your chosen school can collect you or name the exact beach meeting point. Ask how a cancelled session is rescheduled and whether the fee is refundable; no current school authorization list or beach zoning notice could be confirmed here.',
+        sequence: 'Coast base → school briefing → same-day weather and launch decision → supervised lesson or no-go → safe return; do not schedule Bau Trang as the backup on the same day.',
+        boundary: 'If the National Centre issues a relevant storm, heavy-rain or strong-wind warning, or the school calls the session off, do not launch and do not rent equipment for an independent attempt. Reschedule within a spare day or keep the day on land.',
         stages: [
-          ['Brief', 'Learn the school’s signals, launch corridor, rescue plan and conditions that cancel a session.'],
-          ['Prepare', 'Practice on land and check harness, helmet, board and kite before entering the shared water.'],
-          ['Ride', 'Stay inside the instructor’s zone and ability envelope, leaving swimming and fishing areas clear.'],
-          ['Recover', 'Secure equipment, rehydrate and reassess the sea before adding another water activity.']
+          ['Confirm', 'Book only after the school names its meeting point, lesson format, cancellation rule and how it handles a beginner return.'],
+          ['Decide', 'Check the National Centre’s marine and hazard bulletins, then follow the instructor’s same-day assessment. A public forecast does not approve a launch.'],
+          ['Take the lesson', 'Use the school’s briefing, equipment and supervised zone; do not cross into a swimming or working shoreline area.'],
+          ['Use the fallback', 'On a no-go day, do not self-launch. Move the lesson to an open reserve slot or choose a land-based rest day near the same coast base.']
         ],
         risks: [
-          ['Launch traffic', 'Kites, lines, swimmers and beach users can conflict in a narrow corridor.'],
-          ['Wind and current', 'A wind shift or rip current can turn a beginner session into a rescue problem.'],
-          ['Sun exposure', 'Long lessons combine heat, reflected light and wind that hides dehydration.']
+          ['Unverified beach zones', 'The current public launch boundary and school operating permissions were not confirmed by an official local source. Use only a school that can explain its current zone.'],
+          ['Weather reversal', 'Wind, sea and storm conditions may change between booking and launch. Keep the session movable and accept the operator’s no-go decision.'],
+          ['Overloaded day', 'A lesson uses time for briefing, practice and recovery. Do not add a remote drive or another water activity against a fixed return.']
         ],
-        duration: 'Use a half or full day depending on the school’s lesson plan, with no fixed promise that wind will cooperate.',
-        combine: 'A land-based fishing-village or Cham heritage visit is easier to combine than another high-risk water session.',
-        verify: 'Check the school’s credentials, current beach zoning, wind and sea forecast, rescue equipment and cancellation policy.'
+        duration: 'Leave a half or full day according to the school’s lesson plan, including briefing and recovery. No wind window or lesson availability is guaranteed by this guide.',
+        combine: 'Use a different day for Bau Trang. If the lesson is cancelled, keep the land alternative close to the base; attempt the red dunes only after a separate access and forecast check, not as an automatic switch.',
+        verify: 'Check the national marine forecast and hazard bulletin on the day, then ask the school about its current launch area, instructor plan, rescue cover and cancellation terms. No official local beach-zone map was confirmed on 13 October 2026.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Keep the lesson behind two go/no-go checks',
+          intro: 'A booked slot is not a promise that wind or sea conditions will support a launch.',
+          steps: [
+            ['Before paying', 'Confirm the school', 'Get the meeting point, lesson terms, beginner plan and cancellation or rescheduling rule.'],
+            ['On the day', 'Check marine warnings', 'Read the National Centre bulletin and ask the instructor to reassess local conditions.'],
+            ['If approved', 'Stay supervised', 'Use the school’s equipment and launch zone; stop if its instructor changes the plan.'],
+            ['If cancelled', 'Stay on land', 'Rebook within the reserve day or rest near the coast base; do not self-launch or drive to Bau Trang.']
+          ],
+          fallbackTitle: 'No-go means no water session',
+          fallback: 'Use the spare day for a confirmed lesson window. If the weather stays unsettled, retain a land-based coast day and leave the water for another trip.'
+        }
       },
       {
         slug: 'phan-thiet-poshanu-heritage',

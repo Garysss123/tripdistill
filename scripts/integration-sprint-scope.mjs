@@ -372,10 +372,23 @@ export const followingVietnamDaLatRoutes = Object.freeze([
   '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
 ]);
 
+// The next source sprint updates four Mui Ne coast bodies and their search summaries.
+export const followingVietnamMuiNeRoutes = Object.freeze([
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+]);
+
+export const currentSourceBranchSearchRoutes = Object.freeze([
+  ...integrationSearchRoutes,
+  ...followingVietnamMuiNeRoutes
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes].map((route) => `${prefix}${route}`))
 );

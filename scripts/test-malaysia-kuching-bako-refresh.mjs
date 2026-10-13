@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { malaysiaDepthClusters, malaysiaDepthGuides } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, currentSourceBranchSearchRoutes, integrationSprintBaseline, localizedIntegrationSitemapRoutes, localizedSourceBranchSitemapRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = integrationSprintBaseline;
@@ -135,7 +135,7 @@ const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record])
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
 assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearchRoutes), new Set(integrationSearchRoutes), 'only the exact integrated UK, France, Italy, Switzerland, Canada and Malaysia English search records changed');
+assert.deepEqual(new Set(changedSearchRoutes), new Set(currentSourceBranchSearchRoutes), 'only the exact integrated and current source-branch English search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
 const images = new Map();
