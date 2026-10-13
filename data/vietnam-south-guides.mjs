@@ -552,9 +552,23 @@ export const vietnamSouthClusters = [
     family: 'delta-ledger',
     label: 'River and Garden South',
     tagline: 'A living ledger of markets, islands, farms, wetlands and river crossings.',
-    hubIntro: 'The Mekong Delta is best planned as a chain of working water landscapes rather than one interchangeable boat tour. Cần Thơ’s dawn commerce, Bến Tre’s coconut islets, Mỹ Tho’s lower-river gateway, Châu Đốc’s border culture, Sa Đéc’s flower and literary memory, and Cà Mau’s freshwater-to-mangrove edge each justify a different stay and transfer.',
-    stay: 'Use Cần Thơ for a first river base, then add Bến Tre, Châu Đốc, Sa Đéc or Cà Mau when the slower route and overnight stay are more valuable than a checklist day trip.',
-    transfer: 'Combine long-distance bus or road legs with local ferries and licensed boats; water level, early departures and small bridges make the final kilometer as important as the highway.',
+    hubIntro: 'Plan the Mekong Delta as separate river corridors, with three decisions made before booking: where to sleep, which road leg to commit to, and which water activity can safely run. Cần Thơ is the practical first base for Cái Răng at dawn and a second local day; Bến Tre is for a slower island and coconut-craft overnight; Châu Đốc is an upper-delta and wetland stay, not a casual day trip. Sa Đéc and Cà Mau extend the map in different directions, so each needs its own transfer and time.',
+    stay: 'Two nights: choose either Cần Thơ for Cái Răng plus one local day, or Bến Tre for one island/canal loop. Three nights: one in Bến Tre and two in Cần Thơ. Five nights: add two in Châu Đốc. Arrival and departure are travel days; do not split a two-night stay across several bases.',
+    transfer: 'Use a scheduled coach or prebooked road car from Ho Chi Minh City; the national tourism authority describes buses linking Delta towns with Mien Tay Coach Station, but its route guide is not a live timetable. Confirm terminals, luggage and onward car or boat separately. A river departure from Cambodia is not a guaranteed border crossing: verify current carrier and entry requirements first.',
+    isoDate: '2026-10-13',
+    reviewDate: '13 October 2026',
+    routeModelHeading: 'Choose one river base; let the upper Delta earn two nights.',
+    routeModelLead: 'Two nights means one base; three can join Bến Tre and Cần Thơ; five adds Châu Đốc. These are planning shapes, not carrier guarantees. For heavy rain, a river warning or an operator suspension, drop the water leg and stay at the same base. Do not add a night road transfer after dark to rescue a missed connection.',
+    hubSources: [
+      ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — 4 Memorable Days in the Mekong Delta'],
+      ['https://canthotourism.vn/en/chocairang', 'Can Tho Tourism — Cai Rang Floating Market'],
+      ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official forecasts and warnings; checked 13 October 2026']
+    ],
+    planner: [
+      ['2 nights · one base', 'Choose Cần Thơ or Bến Tre', 'For a dawn market and city meals, use two nights in Cần Thơ, arrive the day before the boat and keep a second daylight block for one islet or garden. If coconut lanes and a hosted meal matter more, choose Bến Tre for both nights instead. Arrival and departure consume time; do not try to sleep in both towns.'],
+      ['3 nights · two bases', 'Connect Bến Tre to Cần Thơ', 'Stay one night in Bến Tre for one locally confirmed ferry or island loop, then two nights in Cần Thơ. The second base puts the Cái Răng boat on a separate morning from the road transfer and leaves another daylight block for Cồn Sơn or a garden. Confirm each road and boat leg separately.'],
+      ['5 nights · upper Delta', 'Add Châu Đốc, not a same-day detour', 'After Bến Tre and Cần Thơ, stay two nights in Châu Đốc. Use the arrival afternoon locally and reserve the next day for Sam Mountain or Trà Sư after checking access. This makes the upper Delta a destination instead of a rushed transfer. Keep Cà Mau for a longer trip on its own corridor.']
+    ],
     sources: [
       ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — 4 Memorable Days in the Mekong Delta'],
       ['https://vietnam.travel/places-to-go/southern-vietnam/chau-doc', 'Vietnam Tourism — Chau Doc'],
@@ -576,26 +590,33 @@ export const vietnamSouthClusters = [
           creator: 'Andre Hospers',
           license: 'CC BY 4.0'
         }),
-        summary: 'Plan Cần Thơ around the market’s working hours, a safe boat choice and one quieter islet or garden rather than a dawn photo sprint.',
-        lead: 'Cái Răng is a living wholesale market whose boats, produce and breakfast traffic predate tourism. A thoughtful visit watches how commerce works, then moves toward the islets where canals, fruit gardens and family businesses continue the river story.',
-        orientation: 'Treat the market as a working appointment, not a stage. Choose whether your second chapter is Con Son, a fruit garden, a noodle workshop or a riverside neighborhood.',
-        arrival: 'Arrange a licensed boat or a clearly identified public landing, and carry dry protection for phones and documents. Early departure and low light make meeting points important.',
-        sequence: 'Dawn water, market reading, islet mobility and a mainland reset define the route.',
-        boundary: 'Do not board private trader boats, touch produce without asking or block a vessel’s working path for a photograph.',
+        summary: 'A two-night Cần Thơ base fits one Cái Răng dawn boat and a slower city or islet day; a one-night stop should stay market-focused and use a confirmed pickup.',
+        lead: 'Cái Răng is a wholesale market, not a scheduled performance. Decide whether you want only a short pass through the river trade or the longer market-plus-islet morning; the second choice needs a named landing, an agreed return and one community visit with clear access. The market’s produce boats and breakfast sellers work for local buyers first, so watch the trading pattern without turning boats or families into a photo set.',
+        orientation: 'Use two nights when you want both the market and an unhurried local day. A base near Ninh Kiều can make evening food and the riverfront easier; choose a Cái Răng stay only when your operator confirms the exact pre-dawn pickup. The Can Tho tourism page recommends 05:00–08:00 as the busiest market window, but its general time field is not a boat timetable. Treat that window as a planning cue and reconfirm activity the day before.',
+        arrival: 'Reach Cần Thơ the previous afternoon and pin the departure pier, boat name and return with the operator before paying. The official city listing describes Ninh Kiều quay as about 30 minutes from the market by boat, checked 13 October 2026; that static orientation is not a guaranteed travel time. If the seller cannot identify the landing, life jackets and return plan, stay ashore rather than improvising at dawn.',
+        sequence: 'Arrive by road and settle first; take one confirmed dawn boat to Cái Răng; observe the wholesale trade from a safe public boat; add only one garden, Cồn Sơn or canal stop with permission; return to town for food and rest. Keep the next road transfer on a separate daylight block.',
+        boundary: 'Keep clear of working hulls and loading paths. Ask before photographing sellers, never board a trader’s boat or handle produce, and treat a garden, workshop or home as private until its host confirms a visitor route.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://canthotourism.vn/en/chocairang', 'Can Tho Tourism — Cai Rang Floating Market'],
+          ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — 4 Memorable Days in the Mekong Delta'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official forecasts and warnings; checked 13 October 2026']
+        ],
         stages: [
-          ['Launch', 'Confirm boat, pier, life jacket and return arrangement before the market is fully active.'],
-          ['Observe', 'Read the hanging produce poles, boat roles and breakfast trade without interrupting sellers.'],
-          ['Land', 'Cycle or walk one islet lane, choosing a family business or garden with transparent access.'],
-          ['Reset', 'Return to town for shade, food and a slower interpretation of what the river morning showed.']
+          ['Settle', 'On the afternoon before, confirm which quay, pickup time, operator and return are included; save a Vietnamese address and a road pickup point.'],
+          ['Launch', 'The city tourism page describes 05:00–08:00 as the busy window. Go only when the named operator confirms the departure and safe river conditions; do not chase an earlier boat from an unmarked landing.'],
+          ['Observe', 'From the public boat, notice produce poles, wholesale loading and breakfast sellers. Keep distance from working boats, do not block their paths, and ask before taking close portraits.'],
+          ['Choose one landing', 'Add one host-approved garden, Cồn Sơn visit or canal segment, then return to Cần Thơ for lunch and rest. Do not add a second island to the same short morning.']
         ],
         risks: [
-          ['Early fatigue', 'The useful market window begins before many city services are fully open.'],
-          ['Boat movement', 'Wake, slippery decks and crowded landings require life jackets and steady footing.'],
-          ['Commercial privacy', 'Trading families should not be treated as unpaid performers.']
+          ['Window confusion', 'The official page’s busiest period is a guide, while its general opening field is ambiguous. Ask the boat operator about the actual departure and return instead of treating either as a live schedule.'],
+          ['Water or weather change', 'Rain, lightning, rough water or a cancellation can make an early launch unsafe. Do not bargain for an unofficial substitute; switch to a town-side breakfast and a later Cần Thơ walk, then move the boat to another day only if the operator confirms.'],
+          ['Too little recovery', 'A late road arrival followed by a pre-dawn boat makes a one-night stop fragile. If traffic erases the rest window, skip the boat or the islet add-on rather than rushing onto the river.']
         ],
-        duration: 'Protect a full morning; add an afternoon only when the chosen islet or community activity is confirmed.',
-        combine: 'It can anchor a two-day Cần Thơ stay and connect to a separate Binh Thuy or Con Son chapter.',
-        verify: 'Check the current market landing, boat operator, water conditions, early transport, weather and islet access.'
+        duration: 'Two nights are the more dependable first visit: arrive by road, take the market boat the next morning, and keep another daylight block for one islet or garden before leaving. One night works only as a market-focused stop when your road arrival leaves a real rest window and the next transfer can move if service changes.',
+        combine: 'Use the second Cần Thơ block for either Cồn Sơn or one Binh Thuy heritage stop, not both by default. Bến Tre and Châu Đốc are separate road chapters; do not turn the market morning into a same-day multi-town checklist.',
+        verify: 'Reconfirm the operator, exact landing, boat and life jackets, return time, cancellation notice, weather and any host permission. The official city page was checked 13 October 2026; it does not establish a live boat schedule or current fare.'
       },
       {
         slug: 'ben-tre-coconut-islets',
@@ -610,26 +631,32 @@ export const vietnamSouthClusters = [
           creator: 'Magicknight94',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'Use Bến Tre’s coconut groves, small ferries, cycling lanes and family workshops to plan a slower Delta stay with real local participation.',
-        lead: 'Bến Tre is defined by water crossings and coconut economies. Its best route makes space for a shaded bicycle ride, a transparent craft visit and a family-run meal instead of promising a generic sampan loop.',
-        orientation: 'Choose one island or canal system and understand how the ferry, bicycle and boat connect. The province’s richness is in the transitions between them.',
-        arrival: 'From Ho Chi Minh City, plan a road journey with room for traffic. Confirm the homestay, ferry landing and workshop access before leaving the main road.',
-        sequence: 'Road arrival, island crossing, coconut or brick craft, village lane and homestay meal create the chapter.',
-        boundary: 'A farm or home is not an open museum. Ask before entering, photographing workers or handling tools and products.',
+        summary: 'Give Bến Tre one night for a single confirmed island or canal loop; a day trip should choose one local pocket and keep the return to Ho Chi Minh City flexible.',
+        lead: 'Bến Tre is a water-crossing and coconut-growing landscape, not one standard sampan circuit. Choose a single island or canal area, then pair it with one host-led workshop or a shaded bicycle loop. The national tourism authority’s four-day Delta guide describes a ferry to Cù Lao Long and cycling there, but it does not provide a current local ferry timetable. Treat the named island as route orientation, not a promised service.',
+        orientation: 'Use Bến Tre town when you want a straightforward road arrival, meals and an onward coach; choose a homestay closer to a planned island only after the host confirms the pier, crossing and pickup. One overnight protects the local morning and avoids treating a long road transfer as sightseeing. Two nights suit travelers who want a slow cycle or a rain buffer; a same-day add-on to Mỹ Tho and Cần Thơ dilutes both places.',
+        arrival: 'Travel from Ho Chi Minh City by a scheduled coach or a prebooked road car, verifying the actual drop-off and the onward ride before departure. The national tourism guide checked 13 October 2026 describes a local ferry to Cù Lao Long but not its current frequency, fare or operating status. Ask your host for the exact landing and return; if the crossing or workshop is not confirmed, plan a mainland visit and keep the overnight.',
+        sequence: 'Reach Bến Tre by road before the local visit; sleep near a confirmed pickup; cross once to the chosen island or canal; cycle only the host-approved public lanes; visit one transparent coconut or brick workshop; return to town or the homestay before the next intercity transfer. Keep Mỹ Tho and Cần Thơ as separate legs.',
+        boundary: 'A farm, workshop, home and ferry deck are working places, not open exhibits. Ask before entering or photographing, follow the host’s safety rules, do not handle tools or products without permission, and pay an agreed visitor fee rather than pressuring residents for unpaid access.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — 4 Memorable Days in the Mekong Delta'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official forecasts and warnings; checked 13 October 2026']
+        ],
         stages: [
-          ['Cross', 'Use the correct ferry or boat and keep bicycle, bags and passengers balanced.'],
-          ['Cycle', 'Follow small lanes at local speed, yielding to residents, livestock and working vehicles.'],
-          ['Learn', 'Choose one coconut, brick or food workshop that explains its process and pays its hosts fairly.'],
-          ['Stay', 'Use a hosted meal or homestay as a conversation, not a staged cultural performance.']
+          ['Choose', 'Before leaving the main road, ask the host which named island or canal route is actually available and how the return works; reserve one loop, not several speculative stops.'],
+          ['Cross', 'Use the landing and ferry the local operator confirms for your date. Keep bags and bicycle secure, follow the crew’s loading instruction, and do not board if weather or capacity makes the crossing unsafe.'],
+          ['Explore', 'Ride or walk one public lane at a local pace, yield to residents and work traffic, then visit one workshop only with the host’s consent and a clear explanation of the fee.'],
+          ['Return', 'Come back to the agreed mainland pickup with daylight and road margin. Keep the meal or homestay as a hosted exchange, then take the onward coach on a separate confirmed leg.']
         ],
         risks: [
-          ['Small crossings', 'Ferries, bridges and narrow lanes have different capacity and weather limits.'],
-          ['Heat and rain', 'Shade is valuable, but tropical showers can make unsealed lanes slippery.'],
-          ['Extractive visits', 'Unpaid access, forced demonstrations and intrusive photos undermine the community route.']
+          ['Unverified crossing', 'The public tourism article is route orientation, not a current ferry notice. If the local landing, operator or return is unconfirmed, do not build the itinerary around a crossing; use a mainland town route instead.'],
+          ['Rain or heat', 'Check the national forecast before cycling. Lightning, heavy rain, flooding or slick unsealed lanes end the ride; shorten to a safe town-side meal or a covered host visit only if that host confirms access.'],
+          ['Road-day squeeze', 'A late arrival from Ho Chi Minh City can erase the useful island window. Keep one overnight and drop the workshop if delayed; never add Mỹ Tho and Cần Thơ to the same day just to recover a missed stop.']
         ],
-        duration: 'Give Bến Tre at least an overnight when possible; a day trip should select one coherent island loop.',
-        combine: 'It can connect onward to Tra Vinh or Cần Thơ, but not while also trying to cover Mỹ Tho in a single rushed day.',
-        verify: 'Check current road, ferry and boat arrangements, hosted access, weather, bicycle condition and accommodation.'
+        duration: 'One night is the useful minimum if the island or canal experience matters: arrive by road, sleep near a host-confirmed pickup, and use the next daylight block for one crossing and one activity. Two nights are better when cycling slowly or keeping a weather margin. A day visit from Ho Chi Minh City should choose only one pocket and leave its return flexible.',
+        combine: 'Connect Bến Tre to Cần Thơ only as a separate road leg; the three-night shape is one Bến Tre night plus two Cần Thơ nights. Mỹ Tho–Thới Sơn is a different lower-river route. Choose one instead of crossing between both areas while trying to preserve a same-day coach.',
+        verify: 'Ask the host for the exact landing, current ferry or boat operator, return, bicycle route, workshop fee and permission. Check the National Center forecast and road departure terminal on 13 October 2026 source review; no current local ferry schedule or venue opening was confirmed here.'
       },
       {
         slug: 'my-tho-thoi-son-island',
@@ -678,26 +705,33 @@ export const vietnamSouthClusters = [
           creator: 'Christophe95',
           license: 'CC BY-SA 4.0'
         }),
-        summary: 'Connect Châu Đốc’s floating homes, Cham communities, Sam Mountain temples and Trà Sư wetland through a two-night-friendly borderland route.',
-        lead: 'Châu Đốc gathers several cultures and habitats at the Delta’s edge. The floating village and Cham islets are living communities, Sam Mountain is active sacred ground, and Trà Sư is a managed wetland rather than a guaranteed bird show.',
-        orientation: 'Choose a river-and-community reading or a mountain-and-wetland reading first. Crossing into Cambodia is a separate immigration plan, not an automatic add-on.',
-        arrival: 'Use the official tourism guidance for the long road from Ho Chi Minh City or the transfer from Cần Thơ, and leave space for boat conditions.',
-        sequence: 'Border river, cultural threshold, sacred mountain and wetland boat create a route with different conduct at every stop.',
-        boundary: 'Ask before photographing Cham or Muslim residents, dress modestly at religious sites and never feed birds or disturb floating households.',
+        summary: 'Keep Châu Đốc for at least two nights; use three if you want separate time for the river communities, Sam Mountain and a weather-dependent Trà Sư visit.',
+        lead: 'Châu Đốc is an upper-delta base where river commerce, Cham communities, Sam Mountain worship and Trà Sư wetland need different routes and conduct. Decide whether the second full day belongs to the wetland boat or to the mountain-and-town sequence; do not promise both on an arrival day. Vietnam Tourism lists the flooded forest as a seasonal attraction, but seasonal water does not confirm the park, trail or boat is operating on your date.',
+        orientation: 'A town base gives access to meals and a confirmed road pickup; add a separate vehicle day for Trà Sư only after the operator and site confirm entry. Give two nights when arriving from a nearby Delta base and choosing one main outing. Allow three from Ho Chi Minh City or when you want both Sam Mountain and Trà Sư on different days. Any Cambodia crossing is a separate transport and immigration plan, not an assumed sightseeing boat.',
+        arrival: 'Vietnam Tourism’s Châu Đốc page, checked 13 October 2026, describes the town as reachable by road or Mekong boat from Cambodia and gives about five hours by road from Ho Chi Minh City. That is broad orientation, not a current bus timetable, border permission or traffic estimate. Book the actual road leg, arrival terminal and local pickup separately; treat arrival day as transit and do not stack Sam Mountain or Trà Sư before settling in.',
+        sequence: 'Arrive by a confirmed road leg; use the first afternoon for town orientation; on a separate daylight outing choose the Sam Mountain temples and nearby river communities; reserve another day for Trà Sư only if the site and boat route confirm access. Keep the return to town on the same agreed transport and leave border travel outside the sightseeing day.',
+        boundary: 'Ask before photographing residents or entering a home, floating platform or Cham community space. Dress respectfully at active places of worship, follow local hosts, and do not feed birds or treat a religious visit as a viewpoint stop.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://vietnam.travel/places-to-go/mekong-delta/chau-doc', 'Vietnam Tourism — Chau Doc (checked 13 October 2026)'],
+          ['https://vietnam.travel/things-to-do/4-memorable-days-mekong-delta', 'Vietnam Tourism — 4 Memorable Days in the Mekong Delta'],
+          ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official forecasts and warnings; checked 13 October 2026']
+        ],
         stages: [
-          ['River', 'Read floating homes and fish farming from the public boat route without entering private platforms.'],
-          ['Culture', 'Visit Cham spaces only with consent and the appropriate local guide or host.'],
-          ['Mountain', 'Treat Sam Mountain’s temples as places of worship, not merely viewpoints.'],
-          ['Wetland', 'Use the authorized Trà Sư route and let seasonal water and birds set the pace.']
+          ['Settle', 'Confirm the road drop-off and a local driver before departure; use the first afternoon for food, the riverfront and a weather check rather than a timed park booking.'],
+          ['Choose the town day', 'Visit Sam Mountain’s active temples with modest clothing and the current local access instructions. Add a river or Cham-community visit only with an identified host and agreed public route.'],
+          ['Check the wetland', 'Before setting out for Trà Sư, ask the site or licensed operator whether the boat and marked visitor route are open. The official tourism page lists September–November as a seasonal window, not a guarantee of water, birds or entry.'],
+          ['Return or extend', 'If the wetland is operating, follow its authorized route and return to the same base before dark. If it is closed or conditions are poor, remain in town; do not search for an informal boat. Add another night if a safe reschedule matters.']
         ],
         risks: [
-          ['Long transfer', 'The road from the main southern hubs is tiring and vulnerable to traffic delays.'],
-          ['High water', 'Rain and flood-season levels change wetland access, boat routes and visibility.'],
-          ['Religious privacy', 'Tourist photography can intrude on ceremonies and community life.']
+          ['Arrival fatigue', 'The national tourism site gives about five road hours from Ho Chi Minh City, but this is not a live service promise. If the actual transfer arrives late, drop the first outing and move it to a fresh daylight block.'],
+          ['Flood or closure', 'The official seasonal window does not certify Trà Sư access. Check the forecast and same-day site/operator notice; if rain, lightning, water level or closure cancels the boat, switch to a town-side meal and public river walk only where currently open.'],
+          ['Border assumptions', 'A river route from Cambodia appears in national tourism orientation, but service and immigration rules were not confirmed. Do not book a sightseeing boat as a border crossing; verify carrier, checkpoint and entry requirements with the authorities.']
         ],
-        duration: 'Plan two nights for a humane version; a single day is only practical from a nearby base with one focus.',
-        combine: 'It can lead toward a verified Cambodia crossing, but keep visa and border checks outside the sightseeing schedule.',
-        verify: 'Check current road, boat and wetland access, temple rules, local cultural guidance, border status and forecast.'
+        duration: 'Two nights are a practical minimum from a nearby Delta base if you choose one full outing after arrival. Use three nights from Ho Chi Minh City or when you want a separate Sam Mountain day, a separate Trà Sư day and a weather margin. One night is a transfer stop, not time to cover the river, mountain and wetland.',
+        combine: 'Pair the town and Sam Mountain with one cultural or river visit. Add Trà Sư on another daylight day; do not compress it into the road arrival or into a proposed Cambodia transfer. If the park closes, retain the night and move the wetland day rather than replacing it with an unverified boat.',
+        verify: 'Confirm the intercity operator, terminal, local driver, current temple access, community-host permission, Trà Sư visitor route and same-day boat status. Check the official forecast on the travel date. The official source pages were read on 13 October 2026; no live park opening, bus timetable or border service is asserted.'
       },
       {
         slug: 'sa-dec-flower-literary-quarter',

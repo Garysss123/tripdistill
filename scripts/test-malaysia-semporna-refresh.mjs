@@ -6,7 +6,7 @@ import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
 import { imageCredits, malaysiaDepthClusters, malaysiaDepthGuides, retiredMalaysiaImageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '022870fcc645493460430fe6399027ea4a9b391a';
@@ -139,7 +139,7 @@ const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baseline
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact historical scope and five disjoint follow-on groups × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewedDate;
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewedDate;
   assert.equal(sourceSitemap.get(route), expectedDate, `${route}: sitemap lastmod`);
 }
 

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes } from './integration-sprint-scope.mjs';
+import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { laterCa16Ca18DatedRoutes, laterCa16Ca18SearchRoutes } from './canada-ca16-ca18-scope.mjs';
 
@@ -83,7 +83,8 @@ const checkpointContinuationRoutes = [
   ...postNewOrleansAtlantaRoutes,
   ...postAtlantaFloridaRoutes,
   ...postIntegrationAlpsMargaretRoutes,
-  ...postHaLongHCMCIntegrationRoutes
+  ...postHaLongHCMCIntegrationRoutes,
+  ...postMekongDeltaIntegrationRoutes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -142,7 +143,7 @@ const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationD
 assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Australia, CH14–CH16, Vietnam and the explicit Hawaii, New Orleans, Atlanta and Florida routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {
-  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...postAtlantaFloridaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must be current.`);
 }
 
