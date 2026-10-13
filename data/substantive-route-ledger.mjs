@@ -47,6 +47,13 @@ export const usaNewOrleansNewSubstantiveRoutes = Object.freeze([
   '/usa/new-orleans/river-wetlands/'
 ]);
 
+export const usaAtlantaNewSubstantiveRoutes = Object.freeze([
+  '/usa/atlanta/',
+  '/usa/atlanta/king-historic-district/',
+  '/usa/atlanta/midtown-museums/',
+  '/usa/atlanta/beltline/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -110,6 +117,15 @@ export const vietnamNewSubstantiveRoutes = Object.freeze([
   '/vietnam/ha-giang/meo-vac-du-gia/'
 ]);
 
+// The later Ha Long refresh updates four different existing bodies. The core
+// cruise is already included above and must not be counted a second time.
+export const vietnamHaLongNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/ha-long-cat-ba/',
+  '/vietnam/ha-long-cat-ba/bai-tu-long/',
+  '/vietnam/ha-long-cat-ba/lan-ha-town/',
+  '/vietnam/ha-long-cat-ba/national-park/'
+]);
+
 // Canada reached its exact 73-path completion set in three late batches:
 // Winnipeg, Whitehorse and Yellowknife. The Canada overview counts only after
 // its non-card editorial text was materially refreshed in CA18.
@@ -149,6 +165,13 @@ export const australiaNewSubstantiveRoutes = Object.freeze([
   '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
 ]);
 
+export const australiaCanberraNewSubstantiveRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/',
+  '/australia/canberra-australian-alps/parliamentary-triangle/',
+  '/australia/canberra-australian-alps/lake-burley-griffin-national-museum/',
+  '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -165,5 +188,8 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Top End & Whitsundays gap refresh', count: 748 }),
   Object.freeze({ label: 'New Orleans refresh', count: 752 }),
   Object.freeze({ label: 'Switzerland CH16', count: 757 }),
-  Object.freeze({ label: 'Vietnam content and north gaps', count: 765 })
+  Object.freeze({ label: 'Vietnam content and north gaps', count: 765 }),
+  Object.freeze({ label: 'Canberra & Australian Alps', count: 769 }),
+  Object.freeze({ label: 'Atlanta', count: 773 }),
+  Object.freeze({ label: 'Ha Long & Cat Ba', count: 777 })
 ]);

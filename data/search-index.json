@@ -4309,17 +4309,19 @@
     "url": "/vietnam/ha-long-cat-ba/",
     "parent": "Vietnam · Northeast Vietnam",
     "type": "Complete regional hub with six field guides",
-    "summary": "Ha Long Bay and Cat Ba are one maritime karst landscape but not one interchangeable tour. Ha Long cruise routes, Bai Tu Long’s quieter islands, Sung Sot and Titov, Lan Ha Bay, Cat Ba National Park and Viet Hai each have different boarding points, boat rules, tides and conservation boundaries. Explain the management context and make every sea decision conditional on current official notices.",
+    "summary": "Ha Long Bay, Bai Tu Long and Cat Ba are one World Heritage archipelago, but they use different gateways. Ha Long City day and overnight vessels list either Tuần Châu International Cruise Port or Hạ Long International Passenger Port; Bai Tu Long National Park itineraries begin at Ao Tiên Port in Vân Đồn; Cat Ba’s Lan Ha trips usually leave Bến Bèo, after the Đồng Bài–Cái Viềng crossing. Pick the coast and boarding pier first, then add one route per day. Wind, squalls, ferry suspensions and park closures can reorder the plan.",
     "keywords": [
-      "ha long and cat ba",
-      "ha long cat ba",
-      "northeast vietnam",
-      "ha long bay core cruise",
+      "ha long bay",
       "bai tu long bay",
-      "sung sot cave and titov island",
-      "cat ba town and lan ha bay",
+      "ao tien port van don",
+      "tuan chau cruise port",
+      "ha long international passenger port",
+      "cat ba ferry dong bai cai vieng",
+      "cat ba town",
+      "ben beo lan ha pier",
+      "lan ha bay",
       "cat ba national park",
-      "viet hai and cai beo"
+      "vietnam maritime karst route"
     ]
   },
   {
@@ -4779,13 +4781,18 @@
     "url": "/vietnam/ha-long-cat-ba/bai-tu-long/",
     "parent": "Vietnam · Ha Long and Cat Ba",
     "type": "Focused area and decision guide",
-    "summary": "A lower-density bay chapter for comparing Bai Tu Long routes, remote islands and community-scale marine travel with Ha Long’s core.",
+    "summary": "Plan Bai Tu Long as a Vân Đồn day or overnight route: the national park’s published itineraries depart Ao Tiên, then follow named island stops and return by the booked boat.",
     "keywords": [
       "bai tu long bay",
       "ha long and cat ba",
       "bai tu long",
       "quieter archipelago and carrying capacity",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "bai tu long bay route",
+      "ao tien port van don",
+      "bai tu long national park boat route",
+      "tra ngo lon cai lim mang ha",
+      "bai tu long weather cancellation"
     ]
   },
   {
@@ -4807,13 +4814,18 @@
     "url": "/vietnam/ha-long-cat-ba/lan-ha-town/",
     "parent": "Vietnam · Ha Long and Cat Ba",
     "type": "Focused area and decision guide",
-    "summary": "An island-base chapter for Cat Ba town, Lan Ha Bay kayaking, beaches and the practical chain of ferry, cable-car and small-boat connections.",
+    "summary": "Route to Cat Ba Town through Đồng Bài–Cái Viềng, then use Bến Bèo for a separately booked Lan Ha boat. A 2026 ferry timetable and storm fallback make the handoffs explicit.",
     "keywords": [
       "cat ba town and lan ha bay",
       "ha long and cat ba",
       "lan ha town",
       "island base and sheltered water",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "cat ba ferry dong bai cai vieng timetable",
+      "cai vieng to cat ba town",
+      "cat hai phu long cable car",
+      "ben beo lan ha bay pier",
+      "lan ha bay boat weather cancellation"
     ]
   },
   {
@@ -4821,13 +4833,18 @@
     "url": "/vietnam/ha-long-cat-ba/national-park/",
     "parent": "Vietnam · Ha Long and Cat Ba",
     "type": "Focused area and decision guide",
-    "summary": "A protected-forest chapter covering Cat Ba National Park trails, caves, viewpoints and the conservation responsibility around the island’s langur habitat.",
+    "summary": "Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.",
     "keywords": [
       "cat ba national park",
       "ha long and cat ba",
       "national park",
       "island forest and langur protection",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "cat ba national park entrance from town",
+      "cat ba park trail weather closure",
+      "quan y cave trung trang cave route",
+      "cat ba forest park access",
+      "cat ba national park official visitor information"
     ]
   },
   {

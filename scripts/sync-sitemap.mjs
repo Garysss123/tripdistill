@@ -128,6 +128,7 @@ const vietnamCountryLastmod = '2026-10-12';
 const vietnamHueLastmod = '2026-10-08';
 const vietnamFieldLastmod = '2026-10-12';
 const vietnamFieldEditedRoutes = vietnamGuides.filter((guide) => guide.isoDate === vietnamFieldLastmod).map((guide) => guide.url);
+const vietnamFieldEditedHubRoutes = ['/vietnam/ha-long-cat-ba/'];
 const australiaLastmod = '2026-09-04';
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
@@ -1560,6 +1561,11 @@ for (const route of vietnamHueEditedRoutes) {
 for (const route of vietnamFieldEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Vietnam field guide absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamFieldLastmod });
+}
+for (const route of vietnamFieldEditedHubRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Vietnam field hub absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamFieldLastmod });
 }
 

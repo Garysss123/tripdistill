@@ -307,6 +307,10 @@ export const integrationRouteGroups = Object.freeze({
   ]),
   vietnam: Object.freeze([
     '/vietnam/ha-long-cat-ba/core-cruise/',
+    '/vietnam/ha-long-cat-ba/',
+    '/vietnam/ha-long-cat-ba/bai-tu-long/',
+    '/vietnam/ha-long-cat-ba/lan-ha-town/',
+    '/vietnam/ha-long-cat-ba/national-park/',
     '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
     '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
     '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',

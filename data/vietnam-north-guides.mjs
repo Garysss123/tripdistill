@@ -596,9 +596,35 @@ export const vietnamNorthClusters = [
     family: 'maritime-karst',
     label: 'BAYS / ISLANDS / TIDAL FOREST',
     tagline: 'Choose a water route, then let tide, weather and carrying capacity lead.',
-    hubIntro: 'Ha Long Bay and Cat Ba are one maritime karst landscape but not one interchangeable tour. Ha Long cruise routes, Bai Tu Long’s quieter islands, Sung Sot and Titov, Lan Ha Bay, Cat Ba National Park and Viet Hai each have different boarding points, boat rules, tides and conservation boundaries. Explain the management context and make every sea decision conditional on current official notices.',
-    stay: 'Choose either a Ha Long port base or Cat Ba town according to the planned water route. Confirm the actual pier, transfer time, luggage policy and return option; “Ha Long” or “Cat Ba” on a booking does not identify the boarding point by itself.',
-    transfer: 'Road, ferry, cable car and small-boat connections are subject to weather and operator changes. Build a land-based fallback and avoid scheduling a flight or long rail connection immediately after a sea excursion.',
+    reviewDate: '12 October 2026',
+    isoDate: '2026-10-12',
+    hubIntro: 'Ha Long Bay, Bai Tu Long and Cat Ba are one World Heritage archipelago, but they use different gateways. Ha Long City day and overnight vessels list either Tuần Châu International Cruise Port or Hạ Long International Passenger Port; Bai Tu Long National Park itineraries begin at Ao Tiên Port in Vân Đồn; Cat Ba’s Lan Ha trips usually leave Bến Bèo, after the Đồng Bài–Cái Viềng crossing. Pick the coast and boarding pier first, then add one route per day. Wind, squalls, ferry suspensions and park closures can reorder the plan.',
+    stay: 'For a Ha Long City cruise, stay near the named Tuần Châu or Hạ Long International Passenger port transfer. For a park-authorized Bai Tu Long trip, use Vân Đồn/Ao Tiên as the mainland gateway. For Lan Ha, sleep in Cat Ba Town and allow the mainland ferry or cable-car transfer a separate buffer. A destination label is not a boarding address.',
+    transfer: 'Read the geography west to east, then south: Ha Long City ports → Vân Đồn’s Ao Tiên for Bai Tu Long → Đồng Bài ferry / Cái Viềng on Cat Ba → Cat Ba Town → Bến Bèo for Lan Ha. Keep land days between separate bays. Never book a fixed evening flight or train after a boat or island transfer; use official weather and operator notices to decide whether to defer.',
+    planner: [
+      ['West · Ha Long City', 'Core bay from the vessel’s named port', 'The management board lists boats at both Tuần Châu and Hạ Long International Passenger Port. Match vessel, pier, gate and route before choosing a hotel transfer.'],
+      ['East · Vân Đồn', 'Bai Tu Long from Ao Tiên', 'The park’s published boat itineraries start at Ao Tiên. Choose a confirmed park route and return to the same mainland gateway; do not substitute a Ha Long City cruise pier.'],
+      ['South · Cat Ba', 'Lan Ha by Bến Bèo; forest by road', 'Cross Đồng Bài–Cái Viềng, continue to Cat Ba Town, then use Bến Bèo for a booked bay route. Keep the north-island park and caves for a separate land day.']
+    ],
+    routeModelHeading: 'Choose one gateway, then move along the coast.',
+    routeModelLead: 'This west-to-east-to-south order is geographic, not a same-day itinerary. Tuần Châu and Hạ Long ports serve Ha Long City routes; Ao Tiên is the Vân Đồn gateway for Bai Tu Long; Cái Viềng and Bến Bèo are different Cat Ba handoffs. Weather, official closure notices and the operator’s named return point outrank the map.',
+    presentation: {
+      conditionsKicker: 'Four separate handoffs',
+      conditionsTitle: 'Match the pier to the bay.',
+      conditionsLead: 'Each chapter begins at a different coast, landing or road. Check the named operator, official access notice and return margin before adding another stop.',
+      faqKicker: 'Plan by gateway',
+      faqTitle: 'Ha Long and Cat Ba route choices'
+    },
+    hubSources: [
+      ['https://halongbay.com.vn/boats?type=2', 'Ha Long Bay Management Board — current daytime vessel list and named ports'],
+      ['https://halongbay.com.vn/boats?type=1', 'Ha Long Bay Management Board — current overnight vessel list and named ports'],
+      ['https://halongbay.com.vn/tours', 'Ha Long Bay Management Board — official bay routes and destinations'],
+      ['https://vuonquocgiabaitulong.vn/vi', 'Bai Tu Long National Park — published visitor routes from Ao Tiên; site identifies itself as in trial'],
+      ['https://haiphong.gov.vn/lich-tau-pha/dieu-chinh-lich-chay-pha-ben-dong-bai-cai-vieng-tu-ngay-1-9-2026-964317', 'Hai Phong People’s Committee — Đồng Bài–Cái Viềng timetable for 1 September–31 December 2026'],
+      ['https://soxd.haiphong.gov.vn/tin-tuc/dung-hoat-dong-chay-pha-dong-bai-cai-vieng-va-pha-duong-ao-de-phong-chong-bao-so-4-thong-bao-so--952821', 'Hai Phong Department of Construction — storm-safety ferry suspension notice'],
+      ['https://halongbay.com.vn/en/p/1013-canh-bao-som-dong-loc-tren-bien', 'Ha Long Bay Management Board — squall warning and live marine notice link'],
+      ['https://whc.unesco.org/en/list/672/', 'UNESCO — Ha Long Bay–Cat Ba Archipelago']
+    ],
     sources: [
       ['https://whc.unesco.org/en/list/672/', 'UNESCO — Ha Long Bay–Cat Ba Archipelago'],
       ['https://vietnam.travel/node/1368', 'Vietnam Tourism — Things to Do in Ha Long Bay'],
@@ -663,27 +689,51 @@ export const vietnamNorthClusters = [
         name: 'Bai Tu Long Bay',
         motif: 'quieter archipelago and carrying capacity',
         instrument: 'compass',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://vuonquocgiabaitulong.vn/vi', 'Bai Tu Long National Park — current published visitor routes and Ao Tiên departure; site says it is in trial'],
+          ['https://vuonquocgiabaitulong.vn/vi/diem-den/3', 'Bai Tu Long National Park — route description and named island sequence'],
+          ['https://halongbay.com.vn/en/p/1013-canh-bao-som-dong-loc-tren-bien', 'Ha Long Bay Management Board — bay squall notices and linked live warning service'],
+          ['https://whc.unesco.org/en/list/672/', 'UNESCO — Ha Long Bay–Cat Ba Archipelago']
+        ],
+        searchKeywords: ['bai tu long bay route', 'ao tien port van don', 'bai tu long national park boat route', 'tra ngo lon cai lim mang ha', 'bai tu long weather cancellation'],
         image: image({ src: '/assets/images/vietnam-bai-tu-long.webp', alt: 'Satellite view of the islands and waters of Bai Tu Long Bay', source: 'https://commons.wikimedia.org/wiki/File:Bai_Tu_Long_Bay.jpeg', label: 'Bai Tu Long Bay.jpeg', creator: 'NASA Earth Observatory images by Joshua Stevens using USGS Landsat data', license: 'Public domain' }),
-        summary: 'A lower-density bay chapter for comparing Bai Tu Long routes, remote islands and community-scale marine travel with Ha Long’s core.',
-        lead: 'Bai Tu Long can offer a quieter reading of the same drowned-karst system, but “quiet” is not a promise of unrestricted access. Routes, permits, vessels and community landings are controlled by current management and weather.',
-        orientation: 'Use the bay as a route-selection problem: fewer departures, longer water exposure and more sensitive island environments. Choose a verified itinerary instead of improvising a private boat plan.',
-        arrival: 'Confirm the operating port and transfer because Bai Tu Long departures may not use the same harbor as core Ha Long cruises. Leave extra time for weather or traffic.',
-        sequence: 'Board with supplies and a clear return plan, follow the approved island and water sequence, and keep shore visits small, quiet and brief.',
-        boundary: 'Do not collect shells or coral, enter private fishing areas or encourage operators to stop in unapproved coves for a photograph.',
+        summary: 'Plan Bai Tu Long as a Vân Đồn day or overnight route: the national park’s published itineraries depart Ao Tiên, then follow named island stops and return by the booked boat.',
+        lead: 'Bai Tu Long is the eastward archipelago beyond Ha Long City, not a quiet extension of a Tuần Châu cruise. The national park’s published visitor routes start at Cảng Ao Tiên in Vân Đồn. One listed sequence goes from Ao Tiên to Vụng Trà Thần (Trà Ngọ Lớn), Cái Lim, the Máng Hà overnight anchorage and Cái Dé. The park site says it is in trial, so treat that as a route example, not a guaranteed departure or permit.',
+        orientation: 'Map this as a mainland-to-outer-islands trip: Vân Đồn town / Ao Tiên first, then the exact park- and operator-approved water sequence, then the same confirmed return pier. Ao Tiên is a separate drive from Ha Long City’s cruise ports. Do not buy a Ha Long City transfer for a Vân Đồn departure.',
+        arrival: 'Before payment, get the operator and park confirmation in writing: Ao Tiên gate and check-in time, route and landing permissions, vessel name, overnight anchorage if relevant, meal/water plan, return time and shore contact. The park’s own trial notice means its web route list does not prove that a trip is currently operating.',
+        sequence: 'Travel to Ao Tiên in Vân Đồn; board only the confirmed route; follow its published island order; return to Ao Tiên. The cited example runs Trà Thần / Trà Ngọ Lớn → Cái Lim → Máng Hà anchorage → Cái Dé. Keep Ha Long City and Cat Ba on separate days rather than attempting a same-day cross-bay transfer.',
+        boundary: 'Stay with the permitted route and captain’s call. Do not arrange an unlisted landing, enter aquaculture gear or treat a published park itinerary as permission to charter into a restricted zone.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Follow the Ao Tiên route contract',
+          intro: 'A published park route is a planning reference. Confirm that the route, landing and return are operating for your date.',
+          steps: [
+            ['Mainland · Vân Đồn', 'Check in at Ao Tiên', 'Confirm the exact gate, vessel, time and return pier; this is not either Ha Long City cruise port.'],
+            ['Outer bay · eastward', 'Use the named itinerary', 'One park-listed sequence names Trà Thần / Trà Ngọ Lớn, Cái Lim, Máng Hà anchorage and Cái Dé.'],
+            ['On the islands', 'Land only where approved', 'Use the operator’s current permits and local instructions; the park website notes that it is in trial.'],
+            ['Return · same gateway', 'Reach Ao Tiên with margin', 'Add a Vân Đồn overnight or spare day if the boat, weather or road return is not protected.']
+          ],
+          fallbackTitle: 'If the park route does not run',
+          fallback: 'Stay ashore in Vân Đồn or move the boat day. Do not improvise a private landing or substitute a Ha Long City ticket without a new pier and itinerary confirmation.'
+        },
+        arrivalLabel: 'Ao Tiên contract',
+        boundaryLabel: 'Permitted route',
         stages: [
-          ['Compare the route', 'Ask what makes the itinerary different—shoreline, village, cave, conservation or simply fewer boats—and record the real boarding port.'],
-          ['Board for distance', 'Carry water, sun and motion-sickness support because remote routes can spend longer away from land services.'],
-          ['Keep island contact light', 'Stay on public paths, follow community instructions and do not disturb aquaculture, fishing gear or wildlife.'],
-          ['Return defensively', 'Keep a shore-day fallback and do not connect the final boat to an inflexible evening departure.']
+          ['Reach Vân Đồn first', 'Plan the road to Cảng Ao Tiên and save its exact gate. Ask whether your booking includes any land transfer from Ha Long City or Hanoi; do not assume it does.'],
+          ['Confirm the route in use', 'Compare your booking with the park’s published list, including the named sequence and return pier. Confirm operation directly because the site marks itself as in trial.'],
+          ['Travel the approved island order', 'Carry water, sun and motion-sickness supplies. Follow crew directions at Trà Ngọ Lớn, Cái Lim, Máng Hà or Cái Dé and remain inside permitted landings.'],
+          ['Return to Ao Tiên', 'Keep a Vân Đồn night or shore day in reserve. Do not tie an exposed-water return to a fixed evening train, flight or Cat Ba ferry.']
         ],
         risks: [
-          ['Sparse services', 'Remote water routes have fewer medical, fuel and communication options. Choose a reputable operator and share the route with someone ashore.'],
-          ['Weather exposure', 'Open water and small islands amplify wind and rain. Follow the captain’s route decision without negotiation.'],
-          ['Community disruption', 'Fishing and aquaculture are livelihoods. Keep groups small, do not touch gear and ask before photographing workers.']
+          ['Wrong gateway', 'Ao Tiên is in Vân Đồn, east of Ha Long City. A car sent to Tuần Châu or Hạ Long International Passenger Port will not reach the right check-in.'],
+          ['Sea or route closure', 'Squalls, wind or management decisions may cancel or shorten the route. The captain and authorities decide; keep an uncommitted shore day and confirm refund or rebooking terms.'],
+          ['Unverified park listing', 'The national park website states that it is in trial. Confirm current permits, access and island landing with park management and the licensed operator before traveling.']
         ],
-        duration: 'Reserve a full day or overnight depending on the confirmed route; allow more time than a core-bay comparison suggests.',
-        combine: 'Combine with Ha Long core only when the two routes answer different landscape questions; otherwise choose one bay and experience it properly.',
-        verify: 'Check current approved itinerary, departure port, permits, weather, operator credentials, emergency contact and marine rules.'
+        duration: 'Reserve the full booked operating window and road transfer to Ao Tiên. For an overnight route, keep the night aboard only if the named anchorage and next-day return are confirmed.',
+        combine: 'Use one bay route per day. Compare Bai Tu Long with Ha Long core by landscape and access, but do not try to join Ao Tiên, a Ha Long City port and Cat Ba in one day.',
+        verify: 'Confirm Ao Tiên gate, park/permit status, vessel and route order, approved landings, current marine notice, return port, emergency contact and cancellation terms.'
       },
       {
         slug: 'sung-sot-titov',
@@ -717,54 +767,103 @@ export const vietnamNorthClusters = [
         name: 'Cat Ba Town and Lan Ha Bay',
         motif: 'island base and sheltered water',
         instrument: 'ribbon',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://haiphong.gov.vn/lich-tau-pha/dieu-chinh-lich-chay-pha-ben-dong-bai-cai-vieng-tu-ngay-1-9-2026-964317', 'Hai Phong People’s Committee — current Đồng Bài–Cái Viềng ferry timetable, 1 September–31 December 2026'],
+          ['https://soxd.haiphong.gov.vn/tin-tuc/dung-hoat-dong-chay-pha-dong-bai-cai-vieng-va-pha-duong-ao-de-phong-chong-bao-so-4-thong-bao-so--952821', 'Hai Phong Department of Construction — weather-related ferry suspension notice'],
+          ['https://sunworld.vn/en/cat-ba/transportation/how-to-get-from-hai-phong-to-cat-ba-quickly-and-conveniently-in-2026-29061', 'Sun World Cat Ba — Đồng Bài, Cái Viềng and cable-car transfer options'],
+          ['https://sunworld.vn/en/cat-ba/transportation/how-to-get-from-cat-ba-to-lan-ha-bay-a-detailed-guide-29071', 'Sun World Cat Ba — Bến Bèo departure and Lan Ha boat options'],
+          ['https://sunworld.vn/en/cat-ba/transportation', 'Sun World Cat Ba — current cable-car information'],
+          ['https://halongbay.com.vn/en/p/1013-canh-bao-som-dong-loc-tren-bien', 'Ha Long Bay Management Board — squall and marine-condition notices']
+        ],
+        searchKeywords: ['cat ba ferry dong bai cai vieng timetable', 'cai vieng to cat ba town', 'cat hai phu long cable car', 'ben beo lan ha bay pier', 'lan ha bay boat weather cancellation'],
         image: image({ src: '/assets/images/vietnam-lan-ha.webp', alt: 'Limestone islands seen from a boat in Lan Ha Bay', source: 'https://commons.wikimedia.org/wiki/File:Lan_Ha_Bay_05.jpg', label: 'Lan Ha Bay 05.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0' }),
-        summary: 'An island-base chapter for Cat Ba town, Lan Ha Bay kayaking, beaches and the practical chain of ferry, cable-car and small-boat connections.',
-        lead: 'Cat Ba town is the useful base for seeing Lan Ha slowly, but the water route still belongs to tide, wind and operator competence. Build the day around one protected bay experience rather than stacking every beach and cave on the island.',
-        orientation: 'Use Cat Ba town for food, lodging and transport; use Lan Ha for a guided water route. The two should be written as base and excursion, not as one continuous shoreline.',
-        arrival: 'Confirm whether the approach uses ferry, bridge, cable car or road transfer and where luggage is handed over. Schedules and routes can change seasonally.',
-        sequence: 'Settle in, check the marine forecast, kayak or boat in a protected route, and keep swimming or beach time conditional on flags and tide.',
-        boundary: 'Use a life jacket and authorized operator, avoid coral or marine-lake damage and never paddle alone beyond the group’s agreed water boundary.',
+        summary: 'Route to Cat Ba Town through Đồng Bài–Cái Viềng, then use Bến Bèo for a separately booked Lan Ha boat. A 2026 ferry timetable and storm fallback make the handoffs explicit.',
+        lead: 'Lan Ha is a boat day from Cat Ba Town, not the ferry crossing itself. From mainland Hai Phong, the car ferry runs Đồng Bài → Cái Viềng; then allow roughly 25 km by island road to town. A passenger alternative is the Cát Hải → Phù Long cable car, followed by about 17 km by road. In town, Bến Bèo is the usual Lan Ha departure pier, around 3 km / 10 minutes by road. Confirm the exact boat, pier and pickup before setting the day.',
+        orientation: 'Keep the handoffs in order: mainland Hai Phong → Đồng Bài terminal → Cái Viềng terminal → Cat Ba Town → Bến Bèo → booked Lan Ha route → Bến Bèo → town. The cable car replaces the ferry crossing only for passengers and still needs a road transfer from Phù Long; verify its operating hours and luggage rules. Do not assume a town hotel pickup is included.',
+        arrival: 'For 1 September–31 December 2026, the city’s posted Cái Viềng–Đồng Bài schedule opens at 05:00, runs through a 17:30 last departure arriving at 18:00, and has alternating service about every 30–40 minutes; the notice allows extension to 19:00 in some conditions. It is a dated timetable, not a guarantee: storms can suspend the crossing. Save both terminal names and the Lan Ha boat’s Bến Bèo check-in separately.',
+        sequence: 'Prefer a transfer day, then a full sea day. On the first day, cross at Đồng Bài, land at Cái Viềng, travel to Cat Ba Town and confirm tomorrow’s Bến Bèo pickup. On the boat day, follow the operator’s route and return to Bến Bèo before the agreed time. No tight rail or flight connection should follow either crossing or boat.',
+        boundary: 'A ferry timetable does not promise a Lan Ha sailing. Use the ferry operator for the crossing and a separately identified boat operator for Bến Bèo; the boat captain can shorten or cancel for wind, rain or unsafe water.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Two days, two different boats',
+          intro: 'Protect the mainland crossing and the Lan Ha departure as separate handoffs.',
+          steps: [
+            ['Mainland · Hai Phong', 'Choose ferry or cable car', 'Car ferry: Đồng Bài → Cái Viềng. Passenger alternative: Cát Hải → Phù Long cable car, then road transfer.'],
+            ['Island · transfer day', 'Cái Viềng to Cat Ba Town', 'Allow about 25 km by road after the ferry; save a town hotel pin and tomorrow’s Bến Bèo pickup.'],
+            ['Sea day · Bến Bèo', 'Board the booked Lan Ha route', 'Bến Bèo is about 3 km / 10 minutes from town. Confirm route, check-in, PFD and return time with the operator.'],
+            ['Exit · protect the return', 'Return to the same pier', 'Use a land day or extra night if ferry service or sea conditions are doubtful; do not chain a fixed departure.']
+          ],
+          fallbackTitle: 'If weather stops the crossing or boat',
+          fallback: 'Wait for the official ferry restart or move the sea day. Once already on Cat Ba, choose a road-based park/cave visit only if the site and road are open and safe.'
+        },
+        arrivalLabel: 'Two transfer contracts',
+        boundaryLabel: 'Separate operators',
         stages: [
-          ['Make the island transfer', 'Record the exact terminal, final vehicle and town lodging pin before crossing to Cat Ba.'],
-          ['Choose sheltered water', 'Select a route matched to wind, tide, skill and equipment rather than chasing the most remote-looking cove.'],
-          ['Land lightly', 'Keep beaches and floating communities clean, ask before photographing residents and do not climb private fish-farm structures.'],
-          ['Return with tide margin', 'Leave enough time for the small boat, road or cable-car return and a dry change before dinner.']
+          ['Book the mainland handoff', 'Decide whether vehicle and luggage require Đồng Bài–Cái Viềng ferry or whether the Cát Hải–Phù Long cable car works for your party. Check current hours, baggage and road connection.'],
+          ['Reach town before the boat day', 'After Cái Viềng, allow the island-road transfer to Cat Ba Town. If using the cable car, arrange the separate Phù Long road leg. Keep one night between the long transfer and a timed Bến Bèo check-in.'],
+          ['Depart from Bến Bèo', 'Save the pier pin and meet the named Lan Ha operator. Confirm the route, boat, life jackets, included kayaking/swimming stops and latest return before boarding.'],
+          ['Return with a shore buffer', 'Come back to Bến Bèo, then use a separate road transfer. A ferry delay or squall can erase the last connection; preserve an extra island night or transfer day.']
         ],
         risks: [
-          ['Tide and wind', 'Sheltered water can change quickly at an opening or channel. Follow the guide and abandon a route when conditions worsen.'],
-          ['Transfer chain', 'Ferry, cable-car and boat connections may not align. Keep a land fallback and never assume the last departure.'],
-          ['Water activity', 'PFDs, swimming boundaries and operator credentials matter more than a scenic photograph. Do not solo-kayak or dive from rocks.']
+          ['Dated ferry clock', 'The posted schedule covers 1 September–31 December 2026. Departures may extend or stop for weather and safety; recheck Hai Phong’s current notice before travel.'],
+          ['Pier or road mismatch', 'Cái Viềng is not Cat Ba Town and Bến Bèo is not the ferry terminal. Confirm who supplies the 25 km island road leg and the separate town-to-pier transfer.'],
+          ['Unsafe sea state', 'Wind, rain or rough water can alter route, kayaking and swimming. Follow the skipper, use a PFD and move the trip rather than bargaining for a departure.']
         ],
-        duration: 'Allow at least two nights for Cat Ba town and one full Lan Ha water day.',
-        combine: 'Combine with Cat Ba National Park or Viet Hai on separate days, not as a rushed add-on after an all-day kayak route.',
-        verify: 'Check ferry or cable-car status, marine forecast, tide, operator equipment, swimming flags and the return connection.'
+        duration: 'Allow at least two nights: one transfer/settling night and one full Lan Ha day. A weather buffer or late ferry makes a third night safer.',
+        combine: 'Use another day for Cat Ba National Park or Viet Hai. Do not combine a full Lan Ha boat route with the mainland ferry or an inland forest trail.',
+        verify: 'Recheck the current ferry timetable and weather notices, cable-car hours/luggage if used, Cái Viềng road transfer, Bến Bèo check-in, boat safety gear and exact return.'
       },
       {
         slug: 'national-park',
         name: 'Cat Ba National Park',
         motif: 'island forest and langur protection',
         instrument: 'transect',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://catba.net.vn/?lang=en', 'Cat Ba National Park — official park information; check directly for current entry and trail status'],
+          ['https://sunworld.vn/en/cat-ba/transportation/how-to-travel-between-tourist-attractions-in-cat-ba-29058', 'Sun World Cat Ba — current island road and attraction sequence context'],
+          ['https://whc.unesco.org/en/list/672/', 'UNESCO — Ha Long Bay–Cat Ba Archipelago']
+        ],
+        searchKeywords: ['cat ba national park entrance from town', 'cat ba park trail weather closure', 'quan y cave trung trang cave route', 'cat ba forest park access', 'cat ba national park official visitor information'],
         image: image({ src: '/assets/images/vietnam-cat-ba-park.webp', alt: 'Forest landscape in Cat Ba National Park', source: 'https://commons.wikimedia.org/wiki/File:Cat_Ba_National_Park_267.JPG', label: 'Cat Ba National Park 267.JPG', creator: 'Schwede66', license: 'CC BY-SA 3.0' }),
-        summary: 'A protected-forest chapter covering Cat Ba National Park trails, caves, viewpoints and the conservation responsibility around the island’s langur habitat.',
-        lead: 'Cat Ba’s forest is the landward half of the same World Heritage landscape as the bay. The route should make heat, steps, guide requirements and wildlife ethics as prominent as the view.',
-        orientation: 'Choose one marked trail or cave combination from the current park map. Do not imply that every interior path is open or appropriate without a guide.',
-        arrival: 'Reach the current park entrance by island road and confirm ticket, guide and vehicle arrangements. Weather and maintenance can close individual trails.',
-        sequence: 'Start early, follow the marked forest route, keep the group quiet near wildlife habitat and exit before heat, storms or low light.',
-        boundary: 'No feeding, touching, collecting plants, leaving the path or flying a drone without permission. A rare langur sighting is never a license to pursue it.',
+        summary: 'Plan a road-based day from Cat Ba Town: choose one forest trail only after the park confirms current access; add Quan Y and Trung Trang caves only if open and daylight permits.',
+        lead: 'The park is the island’s landward route, separate from the Bến Bèo boat day. From Cat Ba Town, travel north by island road to the current park entrance; arrange the outbound ride and a named return pickup before leaving. If the park and caves confirm access, keep the order northward: one marked forest trail first, then Quan Y Cave, then Trung Trang Cave. The cave stops sit along the island’s north-road corridor; this is an optional land loop, not a guaranteed park itinerary.',
+        orientation: 'Build the day from Cat Ba Town outward rather than trying to walk the whole island. Select a single trail from the park’s current map; add Quan Y and Trung Trang only after checking that each is open and that your driver can wait or return. The park’s official page is the authority for entry and trail rules, but its live visitor details could not be confirmed in this review; do not infer hours, guide requirements or ticket terms from old listings.',
+        arrival: 'Book a road transfer from town to the park’s current public entrance and agree the return time/pickup in advance; do not count on a spontaneous car from a forest road. Ask the park directly for today’s open trail, admission, guide requirement and weather closure. If including caves, confirm their separate opening and entry rules before the car leaves town.',
+        sequence: 'Start early with one marked forest trail while conditions are cool. Return to the road and continue north to Quan Y Cave, then Trung Trang Cave, only if both are open and the driver/daylight buffer remains. Heavy rain, thunderstorms, slippery roots or a late start are reasons to shorten the forest walk or cancel it; never continue into an unmarked path to save a stop.',
+        boundary: 'Stay on the current marked route and obey park staff. Do not call, follow, feed or flash wildlife; Cat Ba langurs are endangered. A drone requires permission. Leave caves and forest exactly as found.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A north-island road day from town',
+          intro: 'This sequence depends on same-day park and cave access; confirm each stop before leaving Cat Ba Town.',
+          steps: [
+            ['Base · Cat Ba Town', 'Arrange both road legs', 'Save the current public park entrance and a confirmed return pickup; do not assume a late ridehail.'],
+            ['First · forest', 'Walk one park-confirmed marked trail', 'Use the park’s current map and turnaround advice. Heat, rain, slippery roots or low light shorten the route.'],
+            ['Then · north road', 'Quan Y Cave, if open', 'Treat this as a separate stop with its own access check, not an automatic part of the trail ticket.'],
+            ['Last · north road', 'Trung Trang Cave, if open', 'Finish with the road-side cave only when access, daylight and the return car are still confirmed.']
+          ],
+          fallbackTitle: 'If rain or access closes the trail',
+          fallback: 'Skip the forest hike. Use a cave or short road visit only if that site is separately open and the road is safe; otherwise return to town and reschedule.'
+        },
+        arrivalLabel: 'Road pickup contract',
+        boundaryLabel: 'Wildlife and trail limit',
         stages: [
-          ['Choose a legal trail', 'Use the park’s current information and select a route whose length and stairs suit the group.'],
-          ['Read the forest', 'Notice limestone, canopy, caves and island ecology without stripping leaves, moving rocks or amplifying sound.'],
-          ['Watch wildlife ethically', 'Keep distance, avoid calls or baiting and let animals disappear rather than following them off trail.'],
-          ['Exit before exposure', 'Carry water, rain protection and a clear return time; forest heat and storms can make a late exit unsafe.']
+          ['Fix the road plan', 'Start in Cat Ba Town. Save the park’s current entrance, driver number, meeting point and return pickup; ask whether the vehicle waits or returns at a fixed time.'],
+          ['Take one marked trail', 'Check the official map and current park instructions, then choose a length and stair profile that fits the group. Turn around if heat, wet roots or weather makes footing uncertain.'],
+          ['Continue north only if open', 'Use the island-road corridor to Quan Y Cave and then Trung Trang Cave, checking each site separately. Skip either stop if its gate, road or daylight window is not confirmed.'],
+          ['Return before conditions worsen', 'Carry water and rain protection, keep a time margin for the drive back and return to town before storms or low light. Do not depend on finding a new ride at a remote stop.']
         ],
         risks: [
-          ['Heat and slippery trail', 'Tropical humidity, steps and wet roots increase fatigue and falls. Use proper shoes and a conservative turnaround.'],
-          ['Wildlife disturbance', 'Do not feed, touch, chase or use flash near animals. Report unusual encounters to park staff.'],
-          ['Access changes', 'Park zones, guides, tickets and trail closures can change after weather or conservation work. Check the official notice.']
+          ['Rain and trail footing', 'Humidity, steep steps and wet roots make falls and heat illness more likely. In heavy rain, thunder or poor visibility, shorten or cancel the forest leg.'],
+          ['Wildlife disturbance', 'Never feed, call, chase, flash or leave the trail to follow a langur. Keep voices low and report concerns to park staff.'],
+          ['Unconfirmed admission or return', 'Trail access, ticket, guide and cave hours can change. The park’s live visitor details were not independently accessible during this review; confirm direct with management and the driver.']
         ],
-        duration: 'Allow a half or full day depending on the current trail; do not combine several long forest routes by assumption.',
-        combine: 'Combine with Viet Hai when a park trail explicitly connects them and the group has daylight; otherwise give each a separate day.',
-        verify: 'Check park opening, current trail map, guide and ticket rules, weather, footwear, water and wildlife guidance.'
+        duration: 'Allow one full daylight block for a single trail plus up to two road-side caves if currently open. Reserve extra time for the island-road transfer and driver wait.',
+        combine: 'Keep this separate from a full Lan Ha cruise. Pair with Viet Hai only if the park confirms a connected route and your group has enough daylight, fitness and return transport.',
+        verify: 'Contact the park about entrance, trail map, admission/guide rules and weather closures; confirm Quan Y and Trung Trang opening, road pickup, rain forecast, shoes, water and turnaround time.'
       },
       {
         slug: 'viet-hai-cai-beo',
