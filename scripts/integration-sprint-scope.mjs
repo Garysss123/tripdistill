@@ -411,10 +411,20 @@ export const postNewOrleansAtlantaRoutes = Object.freeze([
   '/usa/atlanta/beltline/'
 ]);
 
+// Miami/Orlando source refresh after the Atlanta checkpoint; four more existing
+// English bodies extend the current-tree date/search scope.
+export const postAtlantaFloridaRoutes = Object.freeze([
+  '/usa/miami/south-beach/',
+  '/usa/miami/little-havana-wynwood/',
+  '/usa/orlando/theme-parks/',
+  '/usa/orlando/winter-park/'
+]);
+
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
   ...postIntegrationHawaiiRoutes,
   ...postHawaiiNewOrleansRoutes,
-  ...postNewOrleansAtlantaRoutes
+  ...postNewOrleansAtlantaRoutes,
+  ...postAtlantaFloridaRoutes
 ]);
 
 export const postIntegrationAustraliaRoutes = Object.freeze([

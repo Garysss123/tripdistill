@@ -54,6 +54,13 @@ export const usaAtlantaNewSubstantiveRoutes = Object.freeze([
   '/usa/atlanta/beltline/'
 ]);
 
+export const usaFloridaNewSubstantiveRoutes = Object.freeze([
+  '/usa/miami/south-beach/',
+  '/usa/miami/little-havana-wynwood/',
+  '/usa/orlando/theme-parks/',
+  '/usa/orlando/winter-park/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -199,5 +206,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Canberra & Australian Alps', count: 769 }),
   Object.freeze({ label: 'Atlanta', count: 773 }),
   Object.freeze({ label: 'Ha Long & Cat Ba', count: 777 }),
-  Object.freeze({ label: 'Australian Alps & Margaret River', count: 781 })
+  Object.freeze({ label: 'Australian Alps & Margaret River', count: 781 }),
+  Object.freeze({ label: 'Florida', count: 785 })
 ]);

@@ -19,6 +19,7 @@ import {
   usaHawaiiNewSubstantiveRoutes,
   usaNewOrleansNewSubstantiveRoutes,
   usaAtlantaNewSubstantiveRoutes,
+  usaFloridaNewSubstantiveRoutes,
   vietnamCompletedRoutes,
   vietnamHistoricalExclusions,
   vietnamNewSubstantiveRoutes,
@@ -97,7 +98,7 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -135,8 +136,11 @@ assert.equal(usaAtlantaNewSubstantiveRoutes.length, 4, 'Atlanta adds four exact 
 assert.equal(new Set(usaAtlantaNewSubstantiveRoutes).size, 4, 'Atlanta additions must be unique.');
 assert(usaAtlantaNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route) && !usaNewOrleansNewSubstantiveRoutes.includes(route)), 'Atlanta routes are disjoint from the prior 25, Hawaii and New Orleans route sets.');
 assert.equal(new Set(usaNewOrleansNewSubstantiveRoutes).size, 4, 'New Orleans additions must be unique.');
+assert.equal(usaFloridaNewSubstantiveRoutes.length, 4, 'Florida adds four exact existing-route improvements.');
+assert.equal(new Set(usaFloridaNewSubstantiveRoutes).size, 4, 'Florida additions must be unique.');
+assert(usaFloridaNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route) && !usaNewOrleansNewSubstantiveRoutes.includes(route) && !usaAtlantaNewSubstantiveRoutes.includes(route)), 'Florida routes are disjoint from the historical 25 and Hawaii, New Orleans and Atlanta additions.');
 assert(usaNewOrleansNewSubstantiveRoutes.every((route) => !usaPreviouslyCountedRoutes.includes(route) && !usaHawaiiNewSubstantiveRoutes.includes(route)), 'New Orleans routes are disjoint from the historical 25 and the four Hawaii paths.');
-for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes]) {
+for (const route of [...usaPreviouslyCountedRoutes, ...usaHawaiiNewSubstantiveRoutes, ...usaNewOrleansNewSubstantiveRoutes, ...usaAtlantaNewSubstantiveRoutes, ...usaFloridaNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `U.S. ledger path is missing: ${route}`);
 }
 
@@ -148,4 +152,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four disjoint Ha Long improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans and four Atlanta improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 781.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four disjoint Ha Long improvements (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, four New Orleans, four Atlanta and four Florida improvements; Australia’s twelve late gap improvements plus four Canberra and four Alps/Margaret improvements; corrected checkpoints through 785.');

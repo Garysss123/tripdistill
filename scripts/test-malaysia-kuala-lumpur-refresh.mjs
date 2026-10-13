@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { imageCredits } from '../data/malaysia-depth-guides.mjs';
-import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes } from './integration-sprint-scope.mjs';
+import { integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const outputRoot = process.argv.includes('--dist') ? path.join(root, 'dist') : root;
@@ -96,7 +96,7 @@ const currentSearchByUrl = byUrl(currentSearch);
 assert.equal(currentSearch.length, 955, 'English search keeps 955 records');
 assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
 const changedSearch = [...currentSearchByUrl].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
-assert.deepEqual(new Set(changedSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes]), 'only the exact integrated country, Hawaii, Australia, Canberra, New Orleans and Atlanta search records changed');
+assert.deepEqual(new Set(changedSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes]), 'only the exact integrated country, Hawaii, Australia, Canberra, New Orleans and Atlanta search records changed');
 
 const localizedPaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const wordIncrements = [];
