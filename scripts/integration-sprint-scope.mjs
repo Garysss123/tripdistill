@@ -380,9 +380,18 @@ export const followingVietnamMuiNeRoutes = Object.freeze([
   '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
 ]);
 
+// The next source sprint refreshes the Phong Nha guide and its three route pages.
+export const followingVietnamPhongNhaRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
+]);
+
 export const currentSourceBranchSearchRoutes = Object.freeze([
   ...integrationSearchRoutes,
-  ...followingVietnamMuiNeRoutes
+  ...followingVietnamMuiNeRoutes,
+  ...followingVietnamPhongNhaRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
@@ -390,5 +399,5 @@ export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes].map((route) => `${prefix}${route}`))
 );

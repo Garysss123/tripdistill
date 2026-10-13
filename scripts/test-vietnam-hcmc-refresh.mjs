@@ -16,8 +16,8 @@ const routes = [
   '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
   '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
 ];
-// The source-base workstream has since updated these four additional routes; keep
-// the HCMC date-history assertion aware of the following sprint without weakening it.
+// Later source-only workstreams refreshed the routes below; keep the HCMC
+// historical date and search assertions exact without weakening their scope.
 const followingRoutes = [
   '/vietnam/mekong-delta/',
   '/vietnam/mekong-delta/can-tho-cai-rang/',
@@ -30,7 +30,11 @@ const followingRoutes = [
   '/vietnam/mui-ne-binh-thuan/',
   '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
   '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
-  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/',
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/'
 ];
 const editions = [
   { code: 'en', prefix: '' },
@@ -155,7 +159,7 @@ const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/')).sort(), 'Only the four following Mui Ne summaries may change after the HCMC body-only refresh.');
+assert.deepEqual(changedSearchRoutes, followingRoutes.filter((route) => route.startsWith('/vietnam/mui-ne-binh-thuan/') || route.startsWith('/vietnam/phong-nha-ke-bang/')).sort(), 'Only the four following Mui Ne and four Phong Nha summaries may change after the HCMC body-only refresh.');
 
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingRoutes].map((route) => `${prefix}${route}`)));
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
@@ -167,7 +171,7 @@ const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong, Da Lat and Mui Ne routes in five editions may receive new sitemap dates.');
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the HCMC, following Mekong, Da Lat, Mui Ne and Phong Nha routes in five editions may receive new sitemap dates.');
 const followOnDatePaths = new Set(editions.flatMap(({ prefix }) => followingRoutes.map((route) => `${prefix}${route}`)));
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), followOnDatePaths.has(pagePath) ? '2026-10-13' : baseDate, `${pagePath}: sitemap date`);
 

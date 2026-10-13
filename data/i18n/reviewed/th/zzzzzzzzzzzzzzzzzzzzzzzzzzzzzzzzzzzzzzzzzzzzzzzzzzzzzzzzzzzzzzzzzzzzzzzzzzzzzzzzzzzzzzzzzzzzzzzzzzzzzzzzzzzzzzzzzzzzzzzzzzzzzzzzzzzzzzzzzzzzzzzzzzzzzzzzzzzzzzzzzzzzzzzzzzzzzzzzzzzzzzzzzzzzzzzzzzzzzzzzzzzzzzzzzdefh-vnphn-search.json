@@ -1,0 +1,28 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "son river boat": "เรือแม่น้ำ Son",
+    "phong nha cave boat status": "สถานะเรือไปถ้ำ Phong Nha",
+    "dong hoi transfer": "รถรับส่ง Dong Hoi",
+    "cave water level": "ระดับน้ำในถ้ำ",
+    "chay river closure": "การปิดแม่น้ำ Chay",
+    "dark cave tour status": "สถานะทัวร์ Dark Cave",
+    "water activity rules": "กฎกิจกรรมทางน้ำ",
+    "cave weather cancellation": "การยกเลิกทัวร์ถ้ำเพราะอากาศ",
+    "dong hoi road transfer": "รถทางถนนจาก Dong Hoi",
+    "nuoc mooc opening status": "สถานะเปิดของ Nuoc Mooc",
+    "nuoc mooc water rules": "กฎพื้นที่น้ำ Nuoc Mooc",
+    "nuoc mooc road transfer": "รถทางถนนไป Nuoc Mooc",
+    "forest route closure": "การปิดเส้นทางป่า",
+    "phong nha weather warning": "ประกาศอากาศ Phong Nha"
+  },
+  "reviewProvenance": {
+    "writer": "Codex model runtime; exact runtime/model identifier not exposed",
+    "reviewer": "Same-model self-review by the Codex model runtime; no independent second-model or human review",
+    "independentSecondModel": false
+  }
+}

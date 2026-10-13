@@ -1083,14 +1083,22 @@ export const vietnamNorthClusters = [
     family: 'cave-ecology',
     label: 'CAVES / RIVERS / FOREST',
     tagline: 'Start with an accessible river cave, then earn the expedition layers.',
-    hubIntro: 'Phong Nha–Ke Bang is a cave and forest system rather than a single attraction. The Son River and Phong Nha Cave, Paradise and Tien Son, Chay River–Dark Cave, Nuoc Mooc, Hang En and Son Doong range from managed day visits to tightly controlled multi-day expeditions. The 2025 UNESCO transboundary extension makes conservation and carrying capacity central to every page.',
-    stay: 'Use Phong Nha village for accessible caves and day programs, or arrange an official expedition base through the authorized operator. Dong Hoi is a transfer gateway, not a substitute for checking the early briefing or pickup location.',
-    transfer: 'Rail, airport, bus and road transfers converge through Dong Hoi and Phong Nha with different timing. Adventure tours may require arrival the previous day and a mandatory safety briefing; never place a cave expedition directly after an uncertain arrival.',
+    reviewDate: '13 October 2026',
+    isoDate: '2026-10-13',
+    routeModelHeading: 'Build the stay around two field days and one weather reserve.',
+    routeModelLead: 'Two nights allow one confirmed cave day between road transfers. Three nights add a second field day or a recovery reserve. Four nights let you separate the village river cave, one independently confirmed forest or river program, and a full weather buffer. These are planning shapes, not promises that sites are open together.',
+    hubIntro: 'Phong Nha–Ke Bang is a dispersed cave, river and forest landscape, so the first decision is where to sleep and how much slack to keep. With two nights, place one confirmed Son River–Phong Nha Cave day between transfers; with three, add one separate, confirmed Chay River–Dark Cave program or Nuoc Mooc forest day; with four, give yourself two distinct field days plus a full weather reserve. Base in Phong Nha village when your chosen day routes and confirmed pickup serve that village. Dong Hoi can suit a rail or airport arrival, but it adds a road transfer each way; no public connection, journey time or last departure is assumed here. Park opening, boat operations, water activities, tickets and closure notices must be checked directly. If a river or forest route is shut or conditions are unknown, do not swap to another same-catchment activity as if it were independent.',
+    stay: 'Base in Phong Nha village for confirmed local day trips; use Dong Hoi for rail or airport nights and book each road transfer.',
+    transfer: 'Connect Dong Hoi rail or airport to the chosen base by a confirmed road pickup; times and public services are unknown.',
     sources: [
       ['https://whc.unesco.org/en/list/951/', 'UNESCO — Phong Nha–Ke Bang and Hin Nam No National Parks'],
       ['https://www.phongnhakebang.vn/home', 'Phong Nha–Ke Bang National Park — official site'],
       ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — official visitor routes'],
-      ['https://oxalisadventure.com/safety/', 'Oxalis Adventure — official cave-tour safety information']
+      ['https://phongnhakebang.vn/travel/phong-nha-ky-quan-de-nhat-dong1-en', 'National Park official Phong Nha Cave route page — page unavailable to this review on 13 October 2026; verify current details directly'],
+      ['https://phongnhakebang.vn/travel/tuyen-du-lich-song-chay-hang-toi5-en', 'National Park official Chay River–Dark Cave route page — page unavailable to this review on 13 October 2026; verify current details directly'],
+      ['https://phongnhakebang.vn/travel/diem-du-lich-sinh-thai-suoi-nuoc-mooc7-en', 'National Park official Nuoc Mooc route page — page unavailable to this review on 13 October 2026; verify current details directly'],
+      ['https://www.nchmf.gov.vn/kttv/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-thanh-pho-quang-tri-hue-va-da-nang-post54593.html', 'National Centre for Hydro-Meteorological Forecasting — 13 October 2026 flash-flood and landslide bulletin for its named provinces; not a Phong Nha park status or site-specific forecast'],
+      ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — check the current locality-specific bulletin before travel']
     ],
     guides: [
       {
@@ -1099,26 +1107,34 @@ export const vietnamNorthClusters = [
         motif: 'river entrance and accessible cave',
         instrument: 'ribbon',
         image: image({ src: '/assets/images/vietnam-phong-nha-son-river.webp', alt: 'Son River and karst mountains at Phong Nha-Ke Bang', source: 'https://commons.wikimedia.org/wiki/File:Phongnhakebang1.jpg', label: 'Phongnhakebang1.jpg', creator: 'Genghiskhanviet', license: 'Public domain' }),
-        summary: 'The accessible gateway chapter for a Son River boat approach to Phong Nha Cave and the surrounding village base.',
-        lead: 'Phong Nha Cave is the right starting point for understanding the region’s water-and-karst system. The boat approach, cave lighting, river level and official visitor flow all matter more than an exaggerated claim about cave size.',
-        orientation: 'Use Phong Nha village, the Son River pier and the cave entrance as one managed chain. Keep Tien Son and remote expeditions as separate decisions.',
-        arrival: 'Reach the official tourism center or pier with current ticket and boat information. Water level and weather can affect departures.',
-        sequence: 'Board safely, read the river approach, stay with the managed cave route and finish with a village or conservation context stop.',
-        boundary: 'Do not stand in boats, touch formations or use flash where prohibited. The cave is a protected environment and the river is an active transport route.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://phongnhakebang.vn/travel/phong-nha-ky-quan-de-nhat-dong1-en', 'National Park official Phong Nha Cave route page — unavailable to this review on 13 October 2026; confirm boats, entrance, route and restrictions directly'],
+          ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — official route and visitor notices; recheck on travel day'],
+          ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — current weather and hazard bulletins']
+        ],
+        searchKeywords: ['son river boat', 'phong nha cave boat status', 'dong hoi transfer', 'cave water level', 'cave closure'],
+        summary: 'Plan the Son River boat and Phong Nha Cave as one confirmed chain: village pickup, official pier, managed boat, public cave route and return.',
+        lead: 'The useful plan is a linked sequence, not an assumed timetable: stay near the confirmed Phong Nha pickup, reach the official pier, take only the boat route that park staff say is operating, visit the public cave area that is open, then return to the same agreed endpoint. The National Park route page could not be read during this 13 October 2026 review, so departure hours, fares, boat sharing, route distance, cave access and current river limits remain unknown. Confirm those details directly before paying or arranging onward transport.',
+        orientation: 'Treat Phong Nha village, the official Son River pier, the boat and the cave entrance as a single out-and-back trip. Dong Hoi is a separate road transfer in each direction; a train or flight arrival does not prove a same-day boat connection. Keep Paradise and Tien Son, Chay River–Dark Cave and remote expeditions as separate operating decisions.',
+        arrival: 'Arrange a named road pickup from your actual base to the official visitor point, and agree the return point and wait policy. The public transport, travel time, ticket channel, boat schedule and last return were not verifiable; do not leave a train, flight or hotel checkout buffer to guesswork.',
+        sequence: 'Check the current National Park notice and weather; confirm the pier, ticket, boat departure and return endpoint; ride seated under crew directions; use only the route open that day; then return to the agreed village pickup. If water level, closure or the return is uncertain, cancel the river plan rather than improvising a different boat.',
+        boundary: 'Stay seated while underway, follow crew and park directions, and keep to the signed public cave route. Do not touch formations, cross barriers, use prohibited flash or assume a closed route is accessible because an older page describes it.',
         stages: [
-          ['Find the village base', 'Confirm the pier, ticket, boat capacity and return point before entering the river system.'],
-          ['Read the Son River', 'Observe karst, settlement and the changing cave entrance while remaining seated and following crew directions.'],
-          ['Enter the public cave', 'Use the lit route, protect formations and let the official interpretation carry the geology.'],
-          ['Close with context', 'Choose a conservation, village or river-side stop and keep the rest of the day low-intensity.']
+          ['Choose the base and pickup', 'Book one Phong Nha village base or a Dong Hoi road transfer, then confirm the pickup and return with the actual operator. No timetable or public connection is assumed.'],
+          ['Confirm the managed boat', 'Ask the official visitor point whether the pier, boat route, water level, ticket and return service are operating today. If any answer is unknown, do not board.'],
+          ['Follow the open cave route', 'Remain seated with the crew and use only the public cave section the park has opened; route length and current restrictions remain unverified here.'],
+          ['Return to the agreed endpoint', 'Keep the second transfer and evening free of a tight connection. If the river route closes, return to base and defer rather than substituting another unverified water activity.']
         ],
         risks: [
-          ['Water level', 'Rain and river conditions can change boat operations. Check the current notice rather than assuming a fixed departure.'],
-          ['Wet surfaces', 'Piers and cave floors can be slippery. Use secure footwear and handrails.'],
-          ['Crowd flow', 'Do not stop at narrow passages or block boat landings; keep the group together.']
+          ['River and closure status', 'Boat operations, water level, official route and return schedule were not readable in the linked Park page on 13 October 2026. Verify the exact day with the Park; no fixed departure is known.'],
+          ['Transfer chain', 'The Dong Hoi–Phong Nha road service, journey time and late return were not verified. Prearrange both legs and do not connect this route to an uncertain train or flight.'],
+          ['Water and cave safety', 'Rain, river level, slippery landings and cave restrictions can change the safe route. If staff close or cannot confirm it, do not enter or replace it with another same-catchment activity.']
         ],
-        duration: 'Allow a half day for the cave and river; a full day allows a slower village or conservation add-on.',
-        combine: 'Combine with Paradise or Tien Son only when transport and opening windows are confirmed; keep adventure tours separate.',
-        verify: 'Check official ticket and boat status, water and weather, cave route, photography rules and return transport.'
+        duration: 'Reserve one unhurried field day plus the road transfer. No reliable visit duration, boat interval or last departure was confirmed, so do not schedule an onward train, flight or second attraction on the same day.',
+        combine: 'Use a second day for a separate dry cave or forest plan only after its own opening, transfer and weather are confirmed. Do not combine a river cave with Dark Cave or Nuoc Mooc as a same-day closure workaround.',
+        verify: 'Recheck the National Park route page and visitor point for today’s pier, boat, fare, ticket, open cave segment, water restriction, weather, cancellation and return pickup; these current details were unavailable to this review.'
       },
       {
         slug: 'paradise-tien-son-caves',
@@ -1174,26 +1190,34 @@ export const vietnamNorthClusters = [
         motif: 'river adventure and wet cave',
         instrument: 'signal',
         image: image({ src: '/assets/images/vietnam-chay-dark-cave.webp', alt: 'River and limestone landscape in Phong Nha-Ke Bang', source: 'https://commons.wikimedia.org/wiki/File:Phongnhakebang6.jpg', label: 'Phongnhakebang6.jpg', creator: 'Genghiskhanviet', license: 'Public domain' }),
-        summary: 'A supervised wet-adventure chapter combining Chay River, zipline, kayak or swim sections and Dark Cave equipment rules.',
-        lead: 'Chay River–Dark Cave is a managed activity program, not a self-guided cave walk. The right guide explains equipment, water level, age or body-size limits and what happens when weather changes the program.',
-        orientation: 'Separate the river approach, zipline or kayak section, mud or swim activity and cave interior. Not every component operates under every condition.',
-        arrival: 'Use the official tourism center or authorized operator entrance with the required briefing and equipment. Leave valuables and non-waterproof electronics behind.',
-        sequence: 'Complete the safety briefing, wear every required device, follow the guide through the water route and stop immediately when instructed.',
-        boundary: 'No independent swimming, diving, rock climbing or gear changes. Keep the river and cave free from sunscreen waste, plastic and noise.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://phongnhakebang.vn/travel/tuyen-du-lich-song-chay-hang-toi5-en', 'National Park official Chay River–Dark Cave route page — unavailable to this review on 13 October 2026; verify itinerary and operating limits directly'],
+          ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — official visitor routes; recheck weather, closure and pickup'],
+          ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — current locality-specific warnings']
+        ],
+        searchKeywords: ['chay river closure', 'dark cave tour status', 'water activity rules', 'cave weather cancellation', 'dong hoi road transfer'],
+        summary: 'Decide whether a managed Chay River–Dark Cave day is suitable only after confirming the current program, safety limits, weather and return transfer.',
+        lead: 'Treat Chay River–Dark Cave as one supervised program whose components and operating limits must be confirmed, not a self-guided cave walk or a menu of guaranteed activities. The National Park’s route page could not be read on 13 October 2026, so the current itinerary, equipment, age or health restrictions, prices, hours, water limits and cancellation rules remain unknown. Ask the Park or named authorized provider exactly what is operating that day and what the briefing requires; a reservation alone does not override a closure.',
+        orientation: 'First settle the road pickup from Phong Nha village or Dong Hoi; then confirm the official entrance, the current activity sequence and the same-day return. Do not assume zipline, kayak, swimming, mud, cave access or any shared ticket is included. Each is an unknown until the provider confirms it.',
+        arrival: 'Prearrange a road pickup to the named official entrance and the return ride. Before payment, request the provider identity, current route, equipment supplied, participant limits, weather cancellation and refund terms in writing; none was verifiable from the unavailable Park page.',
+        sequence: 'Check the current weather and Park closure notice; confirm the exact program and every participant’s eligibility; attend the full briefing; use only staff-fitted equipment; remain with the guide; then take the agreed road return. If the Park, provider or forecast makes the route unsafe, cancel and return to the base without transferring to another river or cave activity.',
+        boundary: 'No independent swimming, diving, climbing, river crossing or equipment changes. Stay with the authorized guide and stop at any instruction. Do not enter water or cave sections when the operator has closed them, even if another component remains open.',
         stages: [
-          ['Attend the briefing', 'Understand the water route, equipment, age or fitness rules and the weather cancellation process before signing in.'],
-          ['Use the gear', 'Check helmet, life jacket, harness and footwear with staff; do not loosen equipment for a photograph.'],
-          ['Move through the wet cave', 'Stay behind the guide, keep hands and feet controlled and follow the group’s spacing in mud or water.'],
-          ['Dry out responsibly', 'Rinse only where permitted, collect personal items and leave the activity area without carrying sediment or waste into the river.']
+          ['Confirm the program first', 'Ask which named river and cave components operate today, the authorized provider, the participant rules, equipment, weather cutoff and cancellation terms. Those details remain unknown until confirmed.'],
+          ['Arrive on a booked road transfer', 'Agree the official entrance, pickup time and return driver from your chosen base. No public service or journey time has been verified.'],
+          ['Follow the live safety briefing', 'Have staff explain and fit the equipment for each activity that is actually open. Stay with the guide and do not participate if the restrictions or route are unclear.'],
+          ['Return or defer as one unit', 'If weather, water level or a closure changes the program, follow staff and return to base. Do not replace it with an unverified Nuoc Mooc or Phong Nha boat trip.']
         ],
         risks: [
-          ['Water level', 'Rain can raise a river or close a cave route rapidly. Operator and park decisions override a prebooked plan.'],
-          ['Slippery activity', 'Mud, zipline landings and cave rock require full equipment and guide control. Do not improvise a shortcut.'],
-          ['Fitness and health', 'Swimming, enclosed spaces and heat affect participants differently. Declare limitations and stop before exhaustion.']
+          ['Closure and water conditions', 'The official route page was unavailable on 13 October 2026. The current water level, flood threshold, activity sequence and closure status are unknown; a booking is not a go-ahead.'],
+          ['Participant limits and gear', 'Age, health, size, swimming ability, equipment and provider rules were not confirmed. Ask the authorized operator directly; do not guess eligibility or substitute personal gear.'],
+          ['Weather and return road', 'Rain may affect the river program and the road back. Use the current official warning, operator decision and confirmed return; if any is unclear, defer the whole outing.']
         ],
-        duration: 'Allow a half day for the managed program and recovery; do not schedule another physically demanding cave afterward.',
-        combine: 'Combine with a gentle village or river meal, not with Hang En or Son Doong.',
-        verify: 'Check authorized operator, age and fitness rules, weather, water level, equipment, cancellation terms and transport.'
+        duration: 'Keep the full day open for the road transfer, briefing, whichever activities are confirmed and the return. Current check-in, program duration and last return are unknown; avoid a same-day rail, flight or second adventure.',
+        combine: 'Do not pair this water program with Nuoc Mooc or the Son River boat on the same day. If one closes, use a base-side meal or rest only after confirming it is open; choose another route on a later day after an independent status check.',
+        verify: 'Confirm the Park’s live closure and water notice, provider authorization, exact itinerary, participant and equipment rules, weather cutoff, refund policy, entrance, road pickup and return. None of those current operational details was independently verified here.'
       },
       {
         slug: 'nuoc-mooc-forest-springs',
@@ -1201,26 +1225,34 @@ export const vietnamNorthClusters = [
         motif: 'forest boardwalk and clear stream',
         instrument: 'field',
         image: image({ src: '/assets/images/vietnam-nuoc-mooc.webp', alt: 'Lush forest and limestone landscape in Phong Nha-Ke Bang', source: 'https://commons.wikimedia.org/wiki/File:Phongnhakebang11.jpg', label: 'Phongnhakebang11.jpg', creator: 'Genghiskhanviet', license: 'Public domain' }),
-        summary: 'A low-intensity forest and spring chapter for boardwalks, turquoise water, picnic planning and protected-park conduct.',
-        lead: 'Nuoc Mooc is a good counterweight to cave adrenaline. Its value comes from water clarity, forest shade and a carefully managed visitor edge, so the page should describe where swimming or picnicking is allowed instead of implying open access everywhere.',
-        orientation: 'Use the current tourism-center route and distinguish the boardwalk, stream, picnic area and designated water sections.',
-        arrival: 'Travel by road from Phong Nha and confirm the current entrance, parking, lockers and water-area status. Rain can change the stream and close activities.',
-        sequence: 'Walk the forest first, choose only a designated water activity, keep food and waste controlled and leave before storms or the final road becomes dark.',
-        boundary: 'No soap, litter, fishing, plant collection or swimming outside designated areas. Keep voices low and do not climb wet banks.',
+        reviewDate: '13 October 2026',
+        isoDate: '2026-10-13',
+        sources: [
+          ['https://phongnhakebang.vn/travel/diem-du-lich-sinh-thai-suoi-nuoc-mooc7-en', 'National Park official Nuoc Mooc route page — unavailable to this review on 13 October 2026; verify access, facilities and permitted activity directly'],
+          ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — official visitor routes; recheck access and road pickup'],
+          ['https://www.nchmf.gov.vn/kttv/', 'National Centre for Hydro-Meteorological Forecasting — current locality-specific warnings']
+        ],
+        searchKeywords: ['nuoc mooc opening status', 'nuoc mooc water rules', 'nuoc mooc road transfer', 'forest route closure', 'phong nha weather warning'],
+        summary: 'Plan Nuoc Mooc as a separate road outing; verify the forest route, water access and facilities before leaving the village base.',
+        lead: 'Nuoc Mooc is a protected forest and spring visit, but a place name or old photograph does not confirm that its gate, boardwalk, water area, picnic facilities or swimming rules are open today. The National Park route page could not be read during this 13 October 2026 review. Treat opening, access distance, ticket, parking, lockers, food rules, water quality and any permitted activity as unknown until the Park confirms them directly. Build the day around a quiet forest visit only if the current public route and a safe return road are confirmed.',
+        orientation: 'Connect a confirmed Phong Nha village or Dong Hoi base to the official entrance by a booked road vehicle, then ask staff which public path is open. Do not assume boardwalk length, swimming access, picnic zones or shared tickets. The exact route and facilities were not independently verified.',
+        arrival: 'Arrange the outward and return road pickup before leaving. Ask the Park about the current gate, road condition, entrance rules, open paths, water-area limits, facilities and weather cutoff; journey time, parking and lockers remain unknown here.',
+        sequence: 'Check the current forecast and Park closure notice; confirm the open route and permitted activities at the official entrance; stay on signed visitor paths; enter water only if staff explicitly allow the named area and conditions; then return by the agreed road pickup. If rain, a warning, closure or an unanswered access question remains, defer the forest trip and do not substitute another same-catchment water attraction.',
+        boundary: 'Stay on open public paths and use water only in an area that Park staff identify as permitted that day. Do not bathe with soap, litter, fish, collect plants, climb wet banks or cross a barrier to reach a spring.',
         stages: [
-          ['Check the spring', 'Confirm water quality, current access, weather and designated activities before packing a swim or picnic plan.'],
-          ['Read the boardwalk', 'Use the marked route to observe forest, karst and stream ecology without stepping into fragile banks.'],
-          ['Enter water only where allowed', 'Use provided safety equipment and follow staff instructions about depth, current and group limits.'],
-          ['Leave the forest clean', 'Pack waste out, dry equipment responsibly and return to Phong Nha with road and weather margin.']
+          ['Confirm that the gate is open', 'Ask the National Park whether the entrance, road, public path and any water area are open today. The linked route page was unavailable to this review on 13 October 2026.'],
+          ['Book a round-trip road pickup', 'Name the entrance, pickup point, wait arrangement and return time with the driver; no public connection or journey time is verified.'],
+          ['Use only the signed area', 'Follow staff and barriers. Swimming, picnic zones, lockers, food rules, water quality and access limits remain unknown until the Park confirms them.'],
+          ['Defer when conditions change', 'Leave before the agreed return margin. If weather or a closure interrupts the route, return to base; do not improvise another river or forest site.']
         ],
         risks: [
-          ['Current and water quality', 'Rain and upstream conditions alter clear water and swimming safety. Check the day’s notice.'],
-          ['Wet boardwalk', 'Wood, roots and stream edges are slippery. Use grip shoes and do not climb over rails.'],
-          ['Visitor pressure', 'Peak days can overwhelm quiet areas. Keep groups small and respect designated capacity.']
+          ['Water and flood status', 'The Park page did not load in this review, so no current stream depth, water-quality notice or swim limit is known. Do not infer safety from clear-looking water or a dated photo.'],
+          ['Forest closure and road return', 'Trail opening, road condition, facilities and travel time are unverified. Ask the Park and driver before departure; defer if either cannot confirm a safe return.'],
+          ['Protected-area rules', 'Boardwalk access, picnic capacity, food, lockers and designated activity zones remain unknown. Follow current signs and staff rather than an old map or itinerary.']
         ],
-        duration: 'Allow a half day, or most of a day with a relaxed picnic and boardwalk rhythm.',
-        combine: 'Combine with Paradise Cave for a balanced cave-and-forest day only when transport and heat allow; keep adventure routes separate.',
-        verify: 'Check current opening, water-area rules, weather, road transfer, lockers, food policy and safety notices.'
+        duration: 'Keep a full daylight day free for the road transfer, current visitor route and return buffer. No posted duration, gate schedule or travel time was verifiable during this review.',
+        combine: 'Prefer a separate day from Phong Nha Cave or Chay River–Dark Cave so a forest closure does not create pressure to rush between same-catchment sites. If the forest is shut, return to base or rest; do not treat the river as an automatic alternative.',
+        verify: 'Ask the National Park about today’s gate, official route, road, water quality and permitted activities, facilities, tickets, weather closure and return pickup. These current facts remain unknown until confirmed directly.'
       },
       {
         slug: 'hang-en-expedition',

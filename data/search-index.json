@@ -4347,7 +4347,7 @@
     "url": "/vietnam/phong-nha-ke-bang/",
     "parent": "Vietnam · North-Central Vietnam",
     "type": "Complete regional hub with six field guides",
-    "summary": "Phong Nha–Ke Bang is a cave and forest system rather than a single attraction. The Son River and Phong Nha Cave, Paradise and Tien Son, Chay River–Dark Cave, Nuoc Mooc, Hang En and Son Doong range from managed day visits to tightly controlled multi-day expeditions. The 2025 UNESCO transboundary extension makes conservation and carrying capacity central to every page.",
+    "summary": "Phong Nha–Ke Bang is a dispersed cave, river and forest landscape, so the first decision is where to sleep and how much slack to keep. With two nights, place one confirmed Son River–Phong Nha Cave day between transfers; with three, add one separate, confirmed Chay River–Dark Cave program or Nuoc Mooc forest day; with four, give yourself two distinct field days plus a full weather reserve. Base in Phong Nha village when your chosen day routes and confirmed pickup serve that village. Dong Hoi can suit a rail or airport arrival, but it adds a road transfer each way; no public connection, journey time or last departure is assumed here. Park opening, boat operations, water activities, tickets and closure notices must be checked directly. If a river or forest route is shut or conditions are unknown, do not swap to another same-catchment activity as if it were independent.",
     "keywords": [
       "phong nha–ke bang",
       "phong nha ke bang",
@@ -4950,13 +4950,18 @@
     "url": "/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "The accessible gateway chapter for a Son River boat approach to Phong Nha Cave and the surrounding village base.",
+    "summary": "Plan the Son River boat and Phong Nha Cave as one confirmed chain: village pickup, official pier, managed boat, public cave route and return.",
     "keywords": [
       "son river and phong nha cave",
       "phong nha–ke bang",
       "son river phong nha cave",
       "river entrance and accessible cave",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "son river boat",
+      "phong nha cave boat status",
+      "dong hoi transfer",
+      "cave water level",
+      "cave closure"
     ]
   },
   {
@@ -4984,13 +4989,18 @@
     "url": "/vietnam/phong-nha-ke-bang/chay-river-dark-cave/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "A supervised wet-adventure chapter combining Chay River, zipline, kayak or swim sections and Dark Cave equipment rules.",
+    "summary": "Decide whether a managed Chay River–Dark Cave day is suitable only after confirming the current program, safety limits, weather and return transfer.",
     "keywords": [
       "chay river and dark cave",
       "phong nha–ke bang",
       "chay river dark cave",
       "river adventure and wet cave",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "chay river closure",
+      "dark cave tour status",
+      "water activity rules",
+      "cave weather cancellation",
+      "dong hoi road transfer"
     ]
   },
   {
@@ -4998,13 +5008,17 @@
     "url": "/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/",
     "parent": "Vietnam · Phong Nha–Ke Bang",
     "type": "Focused area and decision guide",
-    "summary": "A low-intensity forest and spring chapter for boardwalks, turquoise water, picnic planning and protected-park conduct.",
+    "summary": "Plan Nuoc Mooc as a separate road outing; verify the forest route, water access and facilities before leaving the village base.",
     "keywords": [
       "nuoc mooc forest springs",
       "phong nha–ke bang",
-      "nuoc mooc forest springs",
       "forest boardwalk and clear stream",
-      "vietnam travel guide"
+      "vietnam travel guide",
+      "nuoc mooc opening status",
+      "nuoc mooc water rules",
+      "nuoc mooc road transfer",
+      "forest route closure",
+      "phong nha weather warning"
     ]
   },
   {

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { currentBranchVietnamRoutes, followingVietnamMekongRoutes, followingVietnamDaLatRoutes, followingVietnamMuiNeRoutes } from './integration-sprint-scope.mjs';
+import { currentBranchVietnamRoutes, followingVietnamMekongRoutes, followingVietnamDaLatRoutes, followingVietnamMuiNeRoutes, followingVietnamPhongNhaRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'a4679e646708b5a772e56f72df017900fdb0bc4d';
@@ -59,7 +59,8 @@ const checkpointContinuationRoutes = [
   ...currentBranchVietnamRoutes,
   ...followingVietnamMekongRoutes,
   ...followingVietnamDaLatRoutes,
-  ...followingVietnamMuiNeRoutes
+  ...followingVietnamMuiNeRoutes,
+  ...followingVietnamPhongNhaRoutes
 ];
 assert.equal(cluster.guides.length, 3);
 assert.deepEqual([`/canada/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)], routes);
@@ -115,12 +116,12 @@ const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previ
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
 const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns, CH14 and Vietnam date routes, including the follow-on Mekong, Da Lat and Mui Ne batches, may have changed.');
+assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page integration checkpoint, only the exact CA13, Gold Coast, Cairns, CH14 and Vietnam date routes, including the follow-on Mekong, Da Lat, Mui Ne and Phong Nha batches, may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {
   const pathname = new URL(`https://tripdistill.com${route}`).pathname;
   const englishPath = pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '');
-  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes].includes(englishPath) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = [...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes].includes(englishPath) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must match its reviewed batch.`);
 }
 
