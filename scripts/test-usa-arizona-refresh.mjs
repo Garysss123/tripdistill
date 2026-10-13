@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postArizonaLosAngelesRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '45cae962fdc7fb500cfceb505203efbfd2dbc396';
@@ -15,6 +16,7 @@ const routes = [
   '/usa/arizona/grand-canyon/',
   '/usa/arizona/sedona/'
 ];
+const laterLosAngelesRoutes = postArizonaLosAngelesRoutes;
 const locales = [
   { code: 'en', prefix: '', hreflang: 'en', script: /[A-Za-z]/u },
   { code: 'zh-Hant', prefix: '/zh', hreflang: 'zh-Hant', script: /[\u3400-\u9fff]/u },
@@ -80,7 +82,13 @@ assert.deepEqual(changedArizonaHtml, [...targetFiles].sort(), 'exactly the four 
 for (const file of baseUsaPages) {
   const before = mainText(gitText(base, file));
   const afterHtml = fs.readFileSync(path.join(root, file), 'utf8');
-  if (!targetFiles.has(file)) {
+  if (laterLosAngelesRoutes.some((route) => relative(route) === file)) {
+    const losAngelesBase = 'd5f7d1689b784b4930cd9f7d4496ab3148929162';
+    assert.notEqual(mainText(afterHtml), before, `${file}: later Los Angeles source body changes after Arizona`);
+    assert.equal(mainText(gitText(losAngelesBase, file)), mainText(gitText(september, file)), `${file}: Los Angeles exact source base body matches the 11 September source`);
+    assert.equal(article(afterHtml)?.dateModified, '2026-10-13', `${file}: Los Angeles Article dateModified`);
+    assert.match(afterHtml, /data-editorial-revision="los-angeles-20261013"/, `${file}: Los Angeles editorial revision`);
+  } else if (!targetFiles.has(file)) {
     assert.equal(mainText(afterHtml), before, `${file}: English main content remains unchanged outside the four selected pages`);
   } else {
     assert.notEqual(mainText(afterHtml), before, `${file}: substantive English content differs from the exact source base`);
@@ -124,17 +132,20 @@ for (const route of routes) {
   assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: integrated search record matches exact Arizona terminal`);
   assert.notDeepEqual(currentSearch.get(route), baseSearch.get(route), `${route}: Arizona summary changed from exact source base`);
 }
+const changedSearchRoutes = [...currentSearch].filter(([url, value]) => url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
+assert.deepEqual(changedSearchRoutes, [...routes, ...laterLosAngelesRoutes].sort(), 'only the four Arizona and four later Los Angeles U.S. search summaries changed; later non-U.S. integration scopes are checked separately');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'the sitemap URL set is unchanged');
-const datedPaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datedRoutes = [...routes, ...laterLosAngelesRoutes];
+const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedArizonaDates = [...currentSitemap]
-  .filter(([route, date]) => routes.some((target) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').endsWith(target)) && baseSitemap.get(route) !== date)
+  .filter(([route, date]) => datedRoutes.some((target) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').endsWith(target)) && baseSitemap.get(route) !== date)
   .map(([route]) => route).sort();
-assert.deepEqual(changedArizonaDates, datedPaths, 'only the four Arizona routes across five editions receive new sitemap dates relative to the exact source base');
+assert.deepEqual(changedArizonaDates, datedPaths, 'only the four Arizona and four later Los Angeles routes across five editions receive new sitemap dates relative to the exact source base');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: lastmod`);
 
 for (const route of routes) {
@@ -156,4 +167,4 @@ for (const locale of locales.slice(1)) {
 
 const svgFiles = git(['diff', '--name-only', base, sourceTerminal, '--', '*.svg']).toString('utf8').trim();
 assert.equal(svgFiles, '', 'this Arizona batch adds or changes no SVG assets');
-console.log('USA Arizona refresh regression passed: four existing routes selected after exact-base history review; New England, New York and /usa/ unchanged; four search records and 20 edition dates updated; all 4,560 sitemap URLs preserved; no SVG changed.');
+console.log(`USA Arizona refresh regression passed: four existing routes selected after exact-base history review; New England, New York and /usa/ unchanged; four Arizona plus four later Los Angeles search records and ${datedPaths.length} edition dates; all 4,560 sitemap URLs preserved; no SVG changed.`);

@@ -82,6 +82,13 @@ export const usaArizonaNewSubstantiveRoutes = Object.freeze([
   '/usa/arizona/sedona/'
 ]);
 
+export const usaLosAngelesNewSubstantiveRoutes = Object.freeze([
+  '/usa/los-angeles/',
+  '/usa/los-angeles/downtown-arts/',
+  '/usa/los-angeles/hollywood-griffith/',
+  '/usa/los-angeles/santa-monica-venice/'
+]);
+
 export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/hanoi/',
   '/vietnam/hanoi/ba-dinh-thang-long/',
@@ -175,6 +182,13 @@ export const vietnamDaLatNewSubstantiveRoutes = Object.freeze([
   '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
 ]);
 
+export const vietnamMuiNeNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+]);
+
 // Canada reached its exact 73-path completion set in three late batches:
 // Winnipeg, Whitehorse and Yellowknife. The Canada overview counts only after
 // its non-card editorial text was materially refreshed in CA18.
@@ -235,6 +249,13 @@ export const australiaMargaretRemainingNewSubstantiveRoutes = Object.freeze([
   '/australia/margaret-river-southwest/albany-torndirrup/'
 ]);
 
+export const australiaBroomeNewSubstantiveRoutes = Object.freeze([
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -263,5 +284,8 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Margaret River remaining guides', count: 801 }),
   Object.freeze({ label: 'Chicago', count: 805 }),
   Object.freeze({ label: 'Da Lat & Central Highlands', count: 809 }),
-  Object.freeze({ label: 'Arizona', count: 813 })
+  Object.freeze({ label: 'Arizona', count: 813 }),
+  Object.freeze({ label: 'Los Angeles', count: 817 }),
+  Object.freeze({ label: 'Broome & Kimberley', count: 821 }),
+  Object.freeze({ label: 'Mui Ne & Binh Thuan', count: 825 })
 ]);

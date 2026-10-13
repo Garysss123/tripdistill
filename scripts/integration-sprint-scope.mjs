@@ -446,11 +446,21 @@ export const postNewEnglandArizonaRoutes = Object.freeze([
   '/usa/arizona/sedona/'
 ]);
 
+// Los Angeles source refresh after the Arizona checkpoint; four untouched
+// routes extend only the current-tree date/search scope.
+export const postArizonaLosAngelesRoutes = Object.freeze([
+  '/usa/los-angeles/',
+  '/usa/los-angeles/downtown-arts/',
+  '/usa/los-angeles/hollywood-griffith/',
+  '/usa/los-angeles/santa-monica-venice/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAtlantaFloridaRoutes,
   ...postFloridaChicagoRoutes,
   ...postChicagoNewEnglandRoutes,
-  ...postNewEnglandArizonaRoutes
+  ...postNewEnglandArizonaRoutes,
+  ...postArizonaLosAngelesRoutes
 ]);
 
 export const postIntegrationSourceRefreshRoutes = Object.freeze([
