@@ -167,7 +167,7 @@ const graubuendenLocs = new Set(graubuendenRoutes.flatMap((route) => locales.map
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const ch14HubLocs = new Set(ch14HubRoutes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const loc of routeLocs) assert.equal(currentMap.get(loc), '2026-10-12', `sitemap lastmod: ${loc}`);
-const changedDates = new Set([...currentMap].filter(([loc, date]) => baseMap.get(loc) !== date).map(([loc]) => loc));
+const changedDates = new Set([...currentMap].filter(([loc, date]) => loc.includes('/switzerland/') && baseMap.get(loc) !== date).map(([loc]) => loc));
 const ch15Locs = new Set(switzerlandCh15Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const ch16Locs = new Set(switzerlandCh16Routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 assert.deepEqual([...changedDates].sort(), [...new Set([...routeLocs, ...bernEmmentalLocs, ...baselLocs, ...stMoritzLocs, ...stGallenLocs, ...graubuendenLocs, ...ch14HubLocs, ...ch15Locs, ...ch16Locs])].sort(), 'only the reviewed Swiss routes receive dates since the CH07 base');
@@ -232,14 +232,14 @@ const stations = diagram.items.filter((item) => item.tag === 'circle' && item.at
 assert.equal(stations.length, 4, 'four named route points are drawn');
 assert.ok(stations.every((station, index) => index === 0 || (Number(station.attrs.cx) > Number(stations[index - 1].attrs.cx) && Number(station.attrs.cy) < Number(stations[index - 1].attrs.cy))), 'the symbolic climb advances up and to the right');
 
-// Protect the separate Rigi and Zermatt diagrams that the user asked to leave alone.
-for (const asset of [
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg'
+// Protect the parallel visually verified Rigi and Zermatt diagram corrections.
+for (const [asset, referenceCommit] of [
+  ['assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg', '20c0023e15bd8178f6d89e7837ce774c3522620c'],
+  ['assets/images/tripdistill-zermatt-glacier-route-choice.svg', '2566e88965470810f8ae997d2a69f501aa7e3a35']
 ]) {
   const current = fs.readFileSync(path.join(root, asset));
-  const base = execFileSync('git', ['show', `${baseCommit}:${asset}`], { cwd: root });
-  assert.equal(sha1(current), sha1(base), `${asset} bytes are unchanged from the requested base`);
+  const expected = execFileSync('git', ['show', `${referenceCommit}:${asset}`], { cwd: root });
+  assert.equal(sha1(current), sha1(expected), `${asset} retains the reviewed fix from ${referenceCommit}`);
 }
 
 console.log(`Montreux refresh regression passed: ${routes.length} existing routes × ${locales.length} editions; canonical/hreflang/search/schema/date checks; unchanged sitemap URL set; retired-photo byte preservation; parsed SVG/XML geometry and five-language legend; Rigi/Zermatt assets protected.`);

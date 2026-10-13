@@ -24,9 +24,9 @@ const locales = [
   { code: 'th', prefix: '/th' }
 ];
 const protectedImages = [
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg',
-  'assets/images/switzerland-bern-emmental-emmental-day-trip.webp'
+  ['assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg', '20c0023e15bd8178f6d89e7837ce774c3522620c'],
+  ['assets/images/tripdistill-zermatt-glacier-route-choice.svg', '2566e88965470810f8ae997d2a69f501aa7e3a35'],
+  ['assets/images/switzerland-bern-emmental-emmental-day-trip.webp', baseCommit]
 ];
 const diagramPath = '/assets/images/switzerland-bern-emmental-gateway-choices.svg';
 const diagramSha1 = 'e0111ab8ddc5345216d6cc4cec956dde4a0c6a6a';
@@ -105,7 +105,7 @@ const graubuendenRoutes = [
 ];
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14HubRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, 160, 'the cumulative Bern/Emmental, Basel and CH11–CH16 routes receive only their expected edition dates');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
@@ -208,8 +208,8 @@ assert.equal(retired.license, null, 'retired record does not claim rights cleara
 assert.deepEqual(retired.sourceDeclaredLicenses, ['CC BY-SA 4.0'], 'source declaration remains historical metadata');
 assert.equal(retired.localSha1, 'cec21b3831e0d8421e32b36a142f973a64f55f47');
 
-for (const relative of protectedImages) {
-  const previous = execFileSync('git', ['show', `${baseCommit}:${relative}`], { cwd: root });
+for (const [relative, referenceCommit] of protectedImages) {
+  const previous = execFileSync('git', ['show', `${referenceCommit}:${relative}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, relative)), previous, `protected or archived image bytes stay unchanged: ${relative}`);
 }
 

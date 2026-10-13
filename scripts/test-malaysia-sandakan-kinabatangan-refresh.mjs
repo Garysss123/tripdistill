@@ -147,7 +147,7 @@ assert.deepEqual(new Set(sitemap.keys()), new Set(baselineSitemap.keys()), 'refr
 const expectedTargets = new Set(locales.flatMap(({ prefix }) => routes.map((route) => `${prefix}${route}`)));
 const integrationTargets = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
 const actualDateChanges = [...sitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
-assert.equal(integrationRoutes.length, 290, 'the exact UK, Australia, France, Italy, Switzerland, Canada and Malaysia source route scope contains 290 existing English pages after the AU gap batches');
+assert.equal(integrationRoutes.length, 298, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and eight Vietnam route scope contains 298 existing English pages');
 assert.deepEqual(new Set(actualDateChanges), integrationTargets, 'only the historical integration and four later Hawaii routes × five locales receive new lastmod values');
 for (const url of expectedTargets) assert.equal(sitemap.get(url), reviewedDate, `${url}: sitemap lastmod`);
 

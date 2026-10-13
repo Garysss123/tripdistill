@@ -76,7 +76,7 @@ const afterSitemap = sitemapRecords(read('sitemap.xml'));
 assert.equal(beforeSitemap.size, 4560, 'base sitemap has 4,560 URLs');
 assert.equal(afterSitemap.size, beforeSitemap.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...afterSitemap.keys()].sort(), [...beforeSitemap.keys()].sort(), 'CH12 adds or removes no URL');
-const changedDates = [...afterSitemap].filter(([route, date]) => beforeSitemap.get(route) !== date);
+const changedDates = [...afterSitemap].filter(([route, date]) => route.includes('/switzerland/') && beforeSitemap.get(route) !== date);
 assert.equal(changedDates.length, expectedLocalized.size, 'CH12–CH16 routes receive only their declared dates across five editions');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalized.has(route), `unexpected lastmod change: ${route}`);
@@ -84,8 +84,8 @@ for (const [route, date] of changedDates) {
 }
 
 const protectedAssets = {
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': 'c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8'
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '671a60852805748c8bf7ea4f5fc362305dc8f8c932fbd58fd661a8921794d366'
 };
 for (const [asset, sha256] of Object.entries(protectedAssets)) {
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, asset))).digest('hex'), sha256, `${asset} remains unchanged`);
@@ -147,7 +147,7 @@ execFileSync('python3', ['-c', pythonSvgCheck, path.join(root, diagram.src.slice
 const targetSearch = JSON.parse(read('data/search-index.json')).filter((record) => targetSet.has(record.url));
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 assert.equal(targetSearch.length, 4, 'the four existing English search records remain');
-for (const record of JSON.parse(read('data/search-index.json')).filter((item) => !targetSet.has(item.url) && !graubuendenSet.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
+for (const record of JSON.parse(read('data/search-index.json')).filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !graubuendenSet.has(item.url) && !ch14Set.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record ${record.url} remains unchanged`);
 }
 

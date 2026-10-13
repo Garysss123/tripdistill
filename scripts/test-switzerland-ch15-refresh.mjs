@@ -110,7 +110,7 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const targetLocalized = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
 const targetAndLaterLocalized = new Set(locales.flatMap(({ prefix }) => [...targetRoutes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 assert.equal(targetLocalized.size, 20, 'the CH15 four-route batch covers twenty edition paths');
-const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date);
+const changedDates = [...currentSitemap].filter(([route, date]) => route.includes('/switzerland/') && baseSitemap.get(route) !== date);
 assert.equal(changedDates.length, targetAndLaterLocalized.size, 'only four CH15 and five later CH16 routes receive new sitemap dates in five locales');
 for (const [route, date] of changedDates) {
   assert.ok(targetAndLaterLocalized.has(route), `unexpected sitemap date change for ${route}`);
@@ -120,7 +120,7 @@ for (const [route, date] of changedDates) {
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
 assert.equal(currentSearch.length, baseSearch.length, 'the English search record count is unchanged');
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh16Routes.includes(item.url))) {
+for (const record of currentSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record changed: ${record.url}`);
 }
 

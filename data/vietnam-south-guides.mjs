@@ -416,6 +416,15 @@ export const vietnamSouthClusters = [
         name: 'Saigon River Waterbus & Thanh Da',
         motif: 'public-waterline chart',
         instrument: 'chart',
+        reviewDate: '12 October 2026',
+        isoDate: '2026-10-12',
+        sources: [
+          ['https://saigonwaterbus.com/water-bus', 'Saigon Waterbus — official route map, stops and service information'],
+          ['https://saigonwaterbus.com/dat-ve-truc-tuyen', 'Saigon Waterbus — official online booking: one-way tickets and current leg information; book the return separately'],
+          ['https://saigonwaterbus.com/dieu-khoan-su-dung-dat-ve-va-thanh-toan-truc-tuyen', 'Saigon Waterbus — current online ticket terms, including missed-ticket and refund rules'],
+          ['https://saigonwaterbus.com/lich-khoi-hanh', 'Saigon Waterbus — departure board; confirm the live service before traveling to a pier']
+        ],
+        searchKeywords: ['saigon waterbus timetable', 'bach dang pier', 'thanh da pier', 'linh dong terminal', 'one way waterbus ticket', 'saigon river boat return'],
         image: image({
           src: '/assets/images/vietnam-hcmc-saigon-river.webp',
           alt: 'Fishermen working on the Saigon River beside Ho Chi Minh City',
@@ -424,26 +433,41 @@ export const vietnamSouthClusters = [
           creator: 'Diego Delso',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'Turn the Saigon River Waterbus into a practical city chapter: named piers, public transport, Thanh Da’s quieter edge and a weather-aware return.',
-        lead: 'The river is infrastructure as much as scenery. A waterbus ride shows port edges, skyline shifts and residential banks while connecting public spaces that feel far apart on the road.',
-        orientation: 'Start with the official pier map and choose one onward stop, such as Thanh Da or a northern terminal. A round trip is not automatically the best use of the day.',
-        arrival: 'Use the official booking or station process and arrive with a ticket, light luggage and an alternative road plan in case weather changes service.',
-        sequence: 'Bach Dang departure, river reading, one bank-side walk and a booked return create a clear waterline.',
-        boundary: 'Remain seated or within marked areas, follow crew instructions and remember that the boat carries passengers rather than serving as a private photo platform.',
+        summary: 'Plan the Saigon Waterbus as two separately booked one-way legs: choose a named stop such as Thanh Đa, then secure the return or a road fallback before boarding.',
+        lead: 'Route #1 links Bạch Đằng with Linh Đông and calls at eight named stops, including Thanh Đa. The booking site sells one-way legs and says to book the return separately; it displays journey-specific times that can change. Online ticket terms say paid tickets cannot be refunded or exchanged, so check the live departure and return before paying.',
+        orientation: 'Decide whether the river ride is the destination or a one-way connector. For a short outing, Bạch Đằng–Thanh Đa offers a defined crossing and a quieter bank-side walk; onward stops add more road and service uncertainty. A return seat is a separate decision, not an implied round trip.',
+        arrival: 'Use the official route map and departure board, choose each direction separately and read the ticket terms before payment. Arrive at the named pier with time to complete its check-in process; keep a road option for the far bank.',
+        sequence: 'Book the outbound and return as separate legs, ride to Thanh Đa, take one purposeful walk, then return only on a confirmed sailing. If the return is unavailable or suspended, leave by road rather than waiting on an assumed next boat.',
+        boundary: 'Follow crew instructions, keep clear of working piers and stay inside marked passenger areas. The river is an active transport corridor, not a private photo platform.',
+        routeDiagram: {
+          kind: 'flow',
+          title: 'A one-way ticket needs a return decision',
+          intro: 'Use the official route and live departure board. The displayed leg duration is an estimate for that service, not a promise for another sailing.',
+          steps: [
+            ['Bạch Đằng', 'Choose the outbound leg', 'Confirm route #1, direction, pier and live departure; check online ticket terms before paying.'],
+            ['Thanh Đa', 'Exit for one bank walk', 'Choose a short local purpose and keep the pier and next booked departure visible.'],
+            ['Return booking', 'Buy the reverse leg separately', 'The official booking site sells one-way tickets; do not assume a round-trip ticket or spare seat.'],
+            ['Road fallback', 'Leave if service changes', 'If the return is unavailable or suspended, use a road transfer and allow for city traffic.']
+          ],
+          fallbackTitle: 'Before paying online',
+          fallback: 'The current online terms say paid tickets are not refundable or exchangeable. Confirm the departure, return and service status first; if the timing is uncertain, verify at the official counter before choosing a ticket.'
+        },
+        arrivalLabel: 'Two-leg ticket plan',
+        boundaryLabel: 'Passenger corridor',
         stages: [
-          ['Board', 'Confirm pier, direction, ticket and final return before entering the boat.'],
-          ['Read', 'Use the crossing to compare port, skyline, flood edge and residential riverbank rather than photographing continuously.'],
-          ['Walk', 'Explore one named stop with respect for residents, restaurants and working piers.'],
-          ['Return', 'Reach the pier early and use the road fallback if the final boat is full or suspended.']
+          ['Confirm both legs', 'Check the official map, live departures and one-way ticket terms. Reserve the return before treating Thanh Đa as a round trip.'],
+          ['Board at Bạch Đằng', 'Match the ticket to the named pier and direction; use the crew’s boarding instructions and keep the river edge clear.'],
+          ['Walk one bank', 'Use Thanh Đa for one short local visit rather than adding stops that make the booked return fragile.'],
+          ['Return or switch', 'Arrive early for the confirmed sailing. If it is suspended or no return ticket is available, leave by road and allow traffic time.']
         ],
         risks: [
-          ['Schedule drift', 'Waterbus times, capacity and service can change with weather or operations.'],
-          ['River edge', 'Wake, slippery surfaces and vessel traffic make leaning over rails unsafe.'],
-          ['Last connection', 'A missed return can create a long road transfer across a congested city.']
+          ['No automatic return', 'The booking site sells one-way tickets. Without a separately booked leg, there may be no seat when you want to come back.'],
+          ['Ticket terms', 'Current online terms state paid tickets are not refundable or exchangeable; a missed boat may leave both cost and transfer unresolved.'],
+          ['Service interruption', 'Weather, capacity or operating decisions can disrupt departures. Keep enough time and money for a road exit from the far bank.']
         ],
-        duration: 'Allow half a day, expanding to a full day only when the chosen bank-side stop has its own purpose.',
-        combine: 'It pairs with Thao Dien–Thu Thiem, but keep a separate ticket and weather buffer for both.',
-        verify: 'Check the official waterbus route, pier, ticket availability, weather cancellation and last return before boarding.'
+        duration: 'Allow a half day for one confirmed out-and-back plan, including pier arrival, a bank-side walk and traffic fallback time.',
+        combine: 'Pair with another district only when both waterbus legs are secured and the second destination has a distinct purpose.',
+        verify: 'Check route #1, stop and direction, live departures, two separate ticket legs, online ticket terms, service notices and the road exit.'
       }
     ]
   }),

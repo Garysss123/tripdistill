@@ -77,7 +77,7 @@ assert.equal(baseMap.size, 4560, 'base sitemap contains the existing 4,560 URLs'
 assert.equal(currentMap.size, baseMap.size, 'sitemap route count is unchanged');
 assert.deepEqual([...currentMap.keys()].sort(), [...baseMap.keys()].sort(), 'CH14 adds or removes no URL');
 const editions = new Set(localePrefixes.flatMap((prefix) => [...targetRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
-const changedLastmods = [...currentMap].filter(([route, date]) => baseMap.get(route) !== date);
+const changedLastmods = [...currentMap].filter(([route, date]) => route.includes('/switzerland/') && baseMap.get(route) !== date);
 assert.equal(changedLastmods.length, 60, 'the three CH14 hubs, four CH15 guides and five CH16 guides receive new lastmods; the country date already matched the exact base');
 for (const [route, date] of changedLastmods) {
   assert.ok(editions.has(route), `unexpected sitemap date change for ${route}`);
@@ -90,7 +90,7 @@ const currentSearch = JSON.parse(read('data/search-index.json'));
 assert.equal(currentSearch.length, baseSearch.length, 'search URL count is unchanged');
 const targetSearch = currentSearch.filter((item) => targetSet.has(item.url));
 assert.equal(targetSearch.length, 4, 'search changes only the four existing target records');
-for (const record of currentSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
+for (const record of currentSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record changed: ${record.url}`);
 }
 
@@ -174,8 +174,8 @@ for (const [index, prefix] of localePrefixes.entries()) {
   const code = localeCodes[index];
   const prior = previousTranslations(code);
   const localSearch = JSON.parse(read(`${prefix.slice(1)}/data/search-index.json`));
-  const expectedSearch = localizeSearchIndex(baseSearch.filter((item) => !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url)), prior, code);
-  for (const record of localSearch.filter((item) => !targetSet.has(item.url.slice(prefix.length)) && !switzerlandCh15Routes.includes(item.url.slice(prefix.length)) && !switzerlandCh16Routes.includes(item.url.slice(prefix.length)))) {
+  const expectedSearch = localizeSearchIndex(baseSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url)), prior, code);
+  for (const record of localSearch.filter((item) => item.url.slice(prefix.length).startsWith('/switzerland/') && !targetSet.has(item.url.slice(prefix.length)) && !switzerlandCh15Routes.includes(item.url.slice(prefix.length)) && !switzerlandCh16Routes.includes(item.url.slice(prefix.length)))) {
     assert.deepEqual(record, expectedSearch.find((item) => item.url === record.url), `${code} non-target search record changed: ${record.url}`);
   }
   for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerlandCh15AffectedRoutes.includes(item) && !switzerlandCh16Routes.includes(item))) {

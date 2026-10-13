@@ -89,7 +89,21 @@ export const vietnamCompletedRoutes = Object.freeze([
   '/vietnam/da-nang-hoi-an/son-tra-peninsula/'
 ]);
 
-export const vietnamExcludedRoutes = Object.freeze([
+// These four paths were excluded from the original 39-route history because
+// their earlier edits were cards, credits or CTAs. The later Vietnam batches
+// now provide separately evidenced substantive body improvements.
+export const vietnamHistoricalExclusions = Object.freeze([
+  '/vietnam/',
+  '/vietnam/hanoi/west-lake-truc-bach/',
+  '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
+  '/vietnam/ha-giang/meo-vac-du-gia/'
+]);
+
+export const vietnamNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/ha-long-cat-ba/core-cruise/',
+  '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+  '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',
   '/vietnam/',
   '/vietnam/hanoi/west-lake-truc-bach/',
   '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
@@ -149,5 +163,7 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Adelaide & Perth gap refresh', count: 740 }),
   Object.freeze({ label: 'Hawaii refresh', count: 744 }),
   Object.freeze({ label: 'Top End & Whitsundays gap refresh', count: 748 }),
-  Object.freeze({ label: 'New Orleans refresh', count: 752 })
+  Object.freeze({ label: 'New Orleans refresh', count: 752 }),
+  Object.freeze({ label: 'Switzerland CH16', count: 757 }),
+  Object.freeze({ label: 'Vietnam content and north gaps', count: 765 })
 ]);

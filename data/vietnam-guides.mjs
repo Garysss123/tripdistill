@@ -42,7 +42,7 @@ if (new Set(vietnamGuides.map((guide) => guide.url)).size !== vietnamGuides.leng
 export const vietnamCountrySources = [
   ['https://vietnam.travel/place-to-go', 'Vietnam Tourism — official destinations and regional planning'],
   ['https://evisa.gov.vn/?option=MO', 'Vietnam Immigration Department — official e-visa portal'],
-  ['https://dsvn.vn/?bk=english', 'Vietnam Railways — official passenger booking and schedules'],
+  ['https://giotaugiave.dsvn.vn/', 'Vietnam Railways — official timetable and ticket portal; confirm the actual train, date, station and berth'],
   ['https://acv.vn/en/airports-2', 'Airports Corporation of Vietnam — official airport directory'],
   ['https://www.nchmf.gov.vn/KttvsiteE/en-US/2/index.html', 'National Center for Hydro-Meteorological Forecasting — official forecasts and warnings'],
   ['https://www.vietnam.travel/things-to-do/how-travel-responsibly-vietnam', 'Vietnam Tourism — responsible travel guidance'],

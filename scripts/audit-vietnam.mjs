@@ -7,6 +7,8 @@ const problems = [];
 const metaDescriptions = new Map();
 const expectedCss = '/css/vietnam.css?v=20260831-2';
 const expectedFieldCss = '/css/vietnam-field.css?v=20260831-1';
+const diagramFieldCss = '/css/vietnam-field.css?v=20261012-1';
+const countryRouteCss = '/css/vietnam-overview-routes.css?v=20261012-1';
 const expectedScript = '/js/main.js?v=20260911-1';
 const locales = [['en', ''], ['zh-Hant', '/zh'], ['ja', '/ja'], ['ko', '/ko'], ['th', '/th']];
 
@@ -126,16 +128,21 @@ for (const record of routes) {
   if (!html.includes('"@type":"Article"')) problems.push(`${record.route}: missing valid Article JSON-LD`);
   if (html.includes('"@type":"TravelGuide"')) problems.push(`${record.route}: uses unregistered TravelGuide JSON-LD type`);
   if (!html.includes('data-adsense-client="ca-pub-1732059148394592"')) problems.push(`${record.route}: missing AdSense publisher`);
-  const expectedReviewDate = record.kind === 'hub' ? (record.cluster.reviewDate || '31 August 2026') : record.kind === 'guide' ? (record.guide.reviewDate || '31 August 2026') : '31 August 2026';
+  const expectedReviewDate = record.kind === 'hub' ? (record.cluster.reviewDate || '31 August 2026') : record.kind === 'guide' ? (record.guide.reviewDate || '31 August 2026') : '12 October 2026';
   if (!html.includes(expectedReviewDate)) problems.push(`${record.route}: missing editorial review date`);
   if (!html.includes(`<link rel="canonical" href="https://tripdistill.com${record.route}">`)) problems.push(`${record.route}: invalid canonical`);
   for (const [locale, prefix] of locales) {
     if (!html.includes(`hreflang="${locale}" href="https://tripdistill.com${prefix}${record.route}"`)) problems.push(`${record.route}: missing ${locale} hreflang`);
   }
   if (!html.includes(`hreflang="x-default" href="https://tripdistill.com${record.route}"`)) problems.push(`${record.route}: missing x-default hreflang`);
-  if (record.kind !== 'country' && !html.includes(expectedFieldCss)) problems.push(`${record.route}: missing Vietnam field stylesheet`);
+  const requiredFieldCss = record.kind === 'guide' && record.guide.routeDiagram ? diagramFieldCss : expectedFieldCss;
+  if (record.kind !== 'country' && !html.includes(requiredFieldCss)) problems.push(`${record.route}: missing Vietnam field stylesheet ${requiredFieldCss}`);
   if (record.kind === 'country' && (html.match(/class="vn-country-card"/g) || []).length !== 14) problems.push(`${record.route}: expected fourteen country cards`);
   if (record.kind === 'country') {
+    if (!html.includes(countryRouteCss)) problems.push(`${record.route}: missing scoped country trip-route stylesheet ${countryRouteCss}`);
+    for (const requiredRouteChoice of ['7 nights · stay north', '12 nights · north to south', '14 nights · add the delta slowly', 'Vietnam Railways’ official timetable and ticket portal']) {
+      if (!html.includes(requiredRouteChoice)) problems.push(`${record.route}: missing country route-planning content: ${requiredRouteChoice}`);
+    }
     for (const cluster of vietnamClusters) checkImageCredit(html, cluster.guides[0].image, record.route);
   }
   if (record.kind === 'hub') {
@@ -144,6 +151,13 @@ for (const record of routes) {
   }
   if (record.kind === 'guide') {
     const cluster = vietnamClusters.find((item) => item.slug === record.guide.hubSlug);
+    if (record.guide.sources) {
+      if (record.guide.sources.length < 2) problems.push(`${record.route}: fewer than two route-specific official sources`);
+      if (new Set(record.guide.sources.map(([url]) => url)).size !== record.guide.sources.length) problems.push(`${record.route}: duplicate route-specific official source URL`);
+    }
+    if (record.guide.routeDiagram && (!html.includes('class="vn-route-map ') || !html.includes(record.guide.routeDiagram.title) || !html.includes(record.guide.routeDiagram.fallbackTitle))) {
+      problems.push(`${record.route}: missing its route-specific decision diagram or fallback`);
+    }
     for (const sibling of cluster.guides) checkImageCredit(html, sibling.image, record.route, html.includes(sibling.image.src));
     const legacyHueTombCard = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
     if (record.guide.hubSlug === 'hue' && html.includes(legacyHueTombCard)) {
@@ -183,7 +197,7 @@ if (new Set(vietnamSearch.map((item) => item.url)).size !== vietnamSearch.length
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 for (const record of routes) {
   for (const [, prefix] of locales) {
-    const lastmod = record.route.startsWith('/vietnam/hue/') ? '2026-10-08' : '2026-08-31';
+    const lastmod = record.route === '/vietnam/' ? '2026-10-12' : record.route.startsWith('/vietnam/hue/') ? '2026-10-08' : record.kind === 'guide' && record.guide.isoDate === '2026-10-12' ? record.guide.isoDate : '2026-08-31';
     if (!sitemap.includes(`<loc>https://tripdistill.com${prefix}${record.route}</loc><lastmod>${lastmod}</lastmod>`)) problems.push(`${record.route}: missing ${prefix || 'English'} sitemap record with lastmod ${lastmod}`);
   }
 }

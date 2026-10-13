@@ -304,6 +304,16 @@ export const integrationRouteGroups = Object.freeze({
     '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
     '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
     '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+  ]),
+  vietnam: Object.freeze([
+    '/vietnam/ha-long-cat-ba/core-cruise/',
+    '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+    '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+    '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',
+    '/vietnam/',
+    '/vietnam/hanoi/west-lake-truc-bach/',
+    '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
+    '/vietnam/ha-giang/meo-vac-du-gia/'
   ])
 });
 
@@ -314,17 +324,12 @@ export const integrationRoutes = Object.freeze([
   ...integrationRouteGroups.switzerland,
   ...integrationRouteGroups.italy,
   ...integrationRouteGroups.canada,
-  ...integrationRouteGroups.malaysia
+  ...integrationRouteGroups.malaysia,
+  ...integrationRouteGroups.vietnam
 ]);
 
 export const integrationSitemapRoutes = Object.freeze(
-  integrationRoutes.filter((route) => route !== '/united-kingdom/' && ![
-    '/switzerland/lugano-southern-ticino/lugano-lakefront/',
-    '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
-    '/switzerland/locarno-ascona-valleys/locarno-ascona/',
-    '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
-    '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/'
-  ].includes(route))
+  integrationRoutes.filter((route) => route !== '/united-kingdom/')
 );
 
 const integrationSearchOnlyRoutes = Object.freeze([
@@ -342,11 +347,6 @@ export const integrationSearchRoutes = Object.freeze([
     '/france/french-alps/grenoble-bastille-chartreuse/',
     '/france/languedoc-camargue/arles-camargue/',
     '/france/languedoc-camargue/nimes-pont-du-gard/',
-    '/switzerland/lugano-southern-ticino/lugano-lakefront/',
-    '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
-    '/switzerland/locarno-ascona-valleys/locarno-ascona/',
-    '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
-    '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/',
     '/italy/basilicata-calabria/maratea-pollino/',
     '/italy/basilicata-calabria/matera-sassi-murgia/',
     '/italy/basilicata-calabria/tropea-scilla-reggio/',

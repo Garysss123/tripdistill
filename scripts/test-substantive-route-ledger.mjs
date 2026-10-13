@@ -17,7 +17,8 @@ import {
   usaHawaiiNewSubstantiveRoutes,
   usaNewOrleansNewSubstantiveRoutes,
   vietnamCompletedRoutes,
-  vietnamExcludedRoutes
+  vietnamHistoricalExclusions,
+  vietnamNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -62,13 +63,30 @@ assert.equal(reportedSubstantiveBaseline, 458);
 assert.equal(correctedSubstantiveBaseline, 457, 'The reported baseline counted one extra Vietnam route.');
 assert.equal(vietnamCompletedRoutes.length, 39);
 assert.equal(new Set(vietnamCompletedRoutes).size, 39, 'Vietnam route ledger must contain 39 unique paths.');
-assert.equal(vietnamExcludedRoutes.length, 4);
-assert(vietnamExcludedRoutes.every((route) => !vietnamCompletedRoutes.includes(route)), 'Explicit exclusions must stay outside the Vietnam 39.');
+assert.equal(vietnamHistoricalExclusions.length, 4);
+assert(vietnamHistoricalExclusions.every((route) => !vietnamCompletedRoutes.includes(route)), 'The four original exclusions stay outside the historical Vietnam 39.');
+assert.equal(vietnamNewSubstantiveRoutes.length, 8, 'The Vietnam next-content and overview/north-gap batches add eight substantive routes.');
+assert.equal(new Set(vietnamNewSubstantiveRoutes).size, 8, 'Vietnam additions must be unique.');
+assert.deepEqual(new Set(vietnamNewSubstantiveRoutes), new Set([
+  '/vietnam/ha-long-cat-ba/core-cruise/',
+  '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+  '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+  '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',
+  '/vietnam/',
+  '/vietnam/hanoi/west-lake-truc-bach/',
+  '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
+  '/vietnam/ha-giang/meo-vac-du-gia/'
+]), 'The source-ledger Vietnam route set must match exactly the eight evidenced paths.');
+assert(vietnamNewSubstantiveRoutes.every((route) => !vietnamCompletedRoutes.includes(route)), 'The eight Vietnam additions are disjoint from the historical 39.');
+assert(vietnamHistoricalExclusions.every((route) => vietnamNewSubstantiveRoutes.includes(route)), 'All four historic exclusions have new substantive body evidence in the later Vietnam batches.');
+for (const route of vietnamNewSubstantiveRoutes) {
+  assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam addition is missing: ${route}`);
+}
 for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765]);
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -108,4 +126,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 with four explicit exclusions; Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii and four New Orleans improvements; Australia’s exact twelve late gap improvements; corrected checkpoints through 752; unchanged non-card Vietnam overview copy.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight disjoint new improvements (including the four original exclusions); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii and four New Orleans improvements; Australia’s exact twelve late gap improvements; corrected checkpoints through 765.');

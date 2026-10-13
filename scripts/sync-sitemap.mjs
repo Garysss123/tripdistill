@@ -124,7 +124,10 @@ const malaysiaKinabaluRoutes = [
   '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
 ];
 const vietnamLastmod = '2026-08-31';
+const vietnamCountryLastmod = '2026-10-12';
 const vietnamHueLastmod = '2026-10-08';
+const vietnamFieldLastmod = '2026-10-12';
+const vietnamFieldEditedRoutes = vietnamGuides.filter((guide) => guide.isoDate === vietnamFieldLastmod).map((guide) => guide.url);
 const australiaLastmod = '2026-09-04';
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
@@ -951,7 +954,7 @@ const newRoutes = [
   ['/malaysia/', malaysiaLastmod, 'monthly', '0.9'],
   ...malaysiaDepthClusters.map((cluster) => [`/malaysia/${cluster.hubSlug}/`, malaysiaLastmod, 'monthly', '0.8']),
   ...malaysiaDepthGuides.map((guide) => [guide.url, malaysiaLastmod, 'monthly', '0.7']),
-  ['/vietnam/', vietnamLastmod, 'monthly', '0.9'],
+  ['/vietnam/', vietnamCountryLastmod, 'monthly', '0.9'],
   ...vietnamClusters.map((cluster) => [`/vietnam/${cluster.slug}/`, vietnamLastmod, 'monthly', '0.8']),
   ...vietnamGuides.map((guide) => [guide.url, vietnamLastmod, 'monthly', '0.7']),
   ['/australia/', australiaLastmod, 'monthly', '0.9'],
@@ -1540,6 +1543,12 @@ for (const route of vietnamHueEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Hue route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: vietnamHueLastmod });
+}
+
+for (const route of vietnamFieldEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Vietnam field guide absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: vietnamFieldLastmod });
 }
 
 for (const route of australiaGreatOceanEditedRoutes) {

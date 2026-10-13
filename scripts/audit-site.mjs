@@ -11,6 +11,10 @@ import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 import { hasVisibleOriginalProjectProvenance } from './site-image-provenance-guard.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
+const vietnamFieldCssVersions = [
+  '/css/vietnam-field.css?v=20260831-1',
+  '/css/vietnam-field.css?v=20261012-1'
+];
 const thailandBangkokCssRoutes = new Set([
   '/thailand/bangkok/',
   '/thailand/bangkok/rattanakosin-grand-palace/',
@@ -305,12 +309,12 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/vietnam/') && baseRoute !== '/vietnam/' && !/<body\b[^>]*\bdata-parent-page="vietnam"/i.test(html)) problems.push(`${relativePath}: Vietnam primary navigation parent is not set`);
   if (baseRoute === '/vietnam/' && (html.match(/class="vn-country-card"/g) || []).length !== 14) problems.push(`${relativePath}: Vietnam country hub does not contain fourteen linked regional cards`);
   if (vietnamHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/vietnam-field.css?v=20260831-1')) problems.push(`${relativePath}: missing Vietnam regional field-guide stylesheet`);
+    if (!vietnamFieldCssVersions.some((href) => html.includes(href))) problems.push(`${relativePath}: missing Vietnam regional field-guide stylesheet`);
     if ((html.match(/class="vn-hub-card"/g) || []).length !== 6) problems.push(`${relativePath}: Vietnam regional hub does not contain six linked field-guide cards`);
   }
   const vietnamGuide = vietnamByRoute.get(baseRoute);
   if (vietnamGuide) {
-    if (!html.includes('/css/vietnam-field.css?v=20260831-1')) problems.push(`${relativePath}: missing Vietnam child-guide stylesheet`);
+    if (!vietnamFieldCssVersions.some((href) => html.includes(href))) problems.push(`${relativePath}: missing Vietnam child-guide stylesheet`);
     if (!html.includes(`data-vn-family="${vietnamGuide.family}"`)) problems.push(`${relativePath}: missing ${vietnamGuide.family} Vietnam family marker`);
     if (!html.includes(`data-vn-instrument="${vietnamGuide.instrument}"`)) problems.push(`${relativePath}: missing ${vietnamGuide.instrument} Vietnam instrument marker`);
     if ((html.match(/class="vn-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Vietnam child guide does not contain four route stages`);

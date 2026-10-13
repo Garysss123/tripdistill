@@ -29,9 +29,20 @@ assert.ok(integrationRouteGroups.switzerland.includes('/switzerland/'), 'the sub
 assert.equal(integrationRouteGroups.italy.length, 61);
 assert.equal(integrationRouteGroups.canada.length, 53);
 assert.equal(integrationRouteGroups.malaysia.length, 41);
-assert.equal(integrationRoutes.length, 290);
-assert.equal(integrationSitemapRoutes.length, 284);
-assert.equal(integrationSearchRoutes.length, 254);
+assert.equal(integrationRouteGroups.vietnam.length, 8);
+assert.equal(integrationRoutes.length, 298);
+assert.equal(integrationSitemapRoutes.length, 297);
+assert.equal(integrationSearchRoutes.length, 267);
+for (const route of [
+  '/switzerland/lugano-southern-ticino/lugano-lakefront/',
+  '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
+  '/switzerland/locarno-ascona-valleys/locarno-ascona/',
+  '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
+  '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/'
+]) {
+  assert(integrationSitemapRoutes.includes(route), `${route}: CH16 date belongs in exact integration scope`);
+  assert(integrationSearchRoutes.includes(route), `${route}: CH16 search belongs in exact integration scope`);
+}
 assert.deepEqual(
   readFromGit(`${integrationSprintBaseline}:switzerland/index.html`),
   readFromGit('545800b8d30c9494e3555e56ca02df6dc4ad6094:switzerland/index.html'),
@@ -40,13 +51,13 @@ assert.deepEqual(
 
 const changedFiles = git([
   'diff', '--name-only', integrationSprintBaseline, '--',
-  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'usa/hawaii', 'usa/new-orleans'
+  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'vietnam', 'usa/hawaii', 'usa/new-orleans'
 ]).toString('utf8').trim().split('\n').filter(Boolean);
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.equal(changedBodyRoutes.length, 302);
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]), 'the exact 290 historical integration, four-route Hawaii, Australia and New Orleans follow-on bodies changed');
+assert.equal(changedBodyRoutes.length, 310);
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]), 'the exact 298-route integration scope, four-route Hawaii, Australia and New Orleans follow-on bodies changed');
 
 const taskBase = 'c7df46be0dc3f40649ff44d672861e971d0c082b';
 const newOrleansTerminal = 'dffbdfaacd0f8b583b35cbb4985ae007d3daf1a7';
@@ -88,11 +99,11 @@ for (const prefix of prefixes) {
   for (const route of postHawaiiNewOrleansRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postIntegrationAustraliaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
 }
-assert.equal(changedSitemapUrls.length, 1480);
+assert.equal(changedSitemapUrls.length, 1545);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact 284 integrated and four-route Hawaii, Australia and New Orleans follow-on dates across five editions have updated sitemap dates'
+  'only the exact 297 integrated and four-route Hawaii, Australia and New Orleans follow-on dates across five editions have updated sitemap dates'
 );
 for (const url of changedSitemapUrls) assert.equal(currentSitemap.get(url), '2026-10-12', `${url}: current sitemap date`);
 const taskBaseSitemap = parseSitemap(readFromGit(`${taskBase}:sitemap.xml`).toString('utf8'));
@@ -112,7 +123,7 @@ assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baselineSearchByUrl
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 266);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]), 'only the exact 254 integrated and four-route Hawaii, Australia and New Orleans follow-on English search records changed');
+assert.equal(changedSearchRoutes.length, 279);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes]), 'only the exact 267 integrated and four-route Hawaii, Australia and New Orleans follow-on English search records changed');
 
-console.log('Integration scope regression passed: 302 exact English bodies, 1,480 date changes over 296 routes × five editions, 266 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 310 exact English bodies, 1,545 date changes over 309 routes × five editions, 279 English search changes, and the unchanged 4,560-URL set.');

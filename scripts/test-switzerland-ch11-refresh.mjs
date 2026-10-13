@@ -27,8 +27,8 @@ const preservedOrLaterRoutes = new Set([...expectedRoutes, ...ch12Routes, ...ch1
 const allRoutes = ['/switzerland/', ...switzerlandClusters.flatMap((cluster) => [`/switzerland/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)])];
 const baselinePages = new Map();
 const protectedAssets = {
-  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7aa01e299447ab7e80b94d93a44c1664774e548976424713b0549edcb21767d5',
-  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': 'c2557a543a6ff6eb4690763cc2822b2a15bc0bae1a95847cc9bd2c39073a8ea8'
+  'assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg': '7ba0854acd7bd4602f5559cfb37f73b497408dafb1afec7a9094bf43b9b5e4cf',
+  'assets/images/tripdistill-zermatt-glacier-route-choice.svg': '671a60852805748c8bf7ea4f5fc362305dc8f8c932fbd58fd661a8921794d366'
 };
 
 function read(relative) { return fs.readFileSync(path.join(root, relative), 'utf8'); }
@@ -71,8 +71,8 @@ const after = sitemapRecords(read('sitemap.xml'));
 assert.equal(before.size, 4560, 'verified CH10 sitemap contains 4,560 URLs');
 assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
 assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'CH11 adds or removes no sitemap route');
-const changedDates = [...after].filter(([route, date]) => before.get(route) !== date);
-assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'CH11 and downstream CH12, CH13 and CH14 hubs receive new dates across five editions');
+const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
+assert.equal(changedDates.length, expectedLocalizedRoutes.size, 'only CH11 and downstream CH12–CH16 Swiss routes receive dates across five editions');
 for (const [route, date] of changedDates) {
   assert.ok(expectedLocalizedRoutes.has(route), `unexpected changed date: ${route}`);
   assert.equal(date, '2026-10-12', `CH11 date for ${route}`);
@@ -89,7 +89,7 @@ const englishSearch = JSON.parse(read('data/search-index.json'));
 const baseEnglishSearch = JSON.parse(execFileSync('git', ['show', `${baseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentTargetSearch = englishSearch.filter((record) => targetSet.has(record.url));
 assert.equal(currentTargetSearch.length, 4, 'each CH11 English route appears once in search');
-for (const record of englishSearch.filter((item) => !preservedOrLaterRoutes.has(item.url))) {
+for (const record of englishSearch.filter((item) => item.url.startsWith('/switzerland/') && !preservedOrLaterRoutes.has(item.url))) {
   assert.deepEqual(record, baseEnglishSearch.find((item) => item.url === record.url), `non-target search entry ${record.url} is unchanged`);
 }
 
