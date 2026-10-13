@@ -822,19 +822,125 @@ export const australiaSouthClusters = [
       }),
       g({
         slug: 'namadgi-national-park', name: 'Namadgi National Park', motif: 'bush-country threshold', instrument: 'bush-register', imageQuery: 'Namadgi National Park Australian Capital Territory mountains', imageAlt: 'Mountain and grassland landscape in Namadgi National Park',
-        summary: 'A remote ACT park day built from Ngunnawal Country guidance, road and track status, fire danger and a conservative turnaround.',
-        orientation: 'choose one visitor-area or track system and understand the distance from Canberra services.', access: 'Drive a suitable vehicle or use a qualified operator, carrying offline navigation and supplies.', sequence: 'Check current park information, use one open walk, keep cultural places protected and return before wildlife and low light.', boundary: 'Namadgi is Ngunnawal Country with cultural sites and recovering landscapes. Stay out of closed areas and use authoritative interpretation.',
-        stages: [['Check the park gate', 'Read road, track, fire and cultural-site closures before departure.'], ['Select one route', 'Match grade, water and distance to the group.'], ['Walk with Country awareness', 'Stay on formed routes and leave artefacts and sensitive places untouched.'], ['Return before dusk', 'Preserve road visibility and emergency margin.']],
-        risks: [['Fire and weather', 'Conditions can close the park rapidly.'], ['Limited communication', 'Mobile coverage and services are sparse.'], ['Cultural-site damage', 'Never enter closed rock-art or archaeological areas.']],
-        duration: 'Use a full day for one route; remote or overnight walks need expedition preparation.', combine: 'Keep Namadgi separate from city museums and Kosciuszko.', verify: 'Check ACT Parks alerts, fire danger, road, track, weather, water and emergency communication.'
+        summary: 'Plan Namadgi as a full day from Canberra, with one open trail system chosen by grade, road approach and daylight. The useful decision is whether the group wants a short visitor-centre walk, a granite lookout, Yankee Hat cultural interpretation or the longer Mount Tennent climb—not how many map pins can fit.',
+        orientationTitle: 'Pick the access corridor before the trail.',
+        orientation: 'Namadgi covers almost half the ACT and its trailheads sit along separate unsealed approaches. Use the Namadgi Visitor Centre / Naas Road for the Woodland Walk and Mount Tennent; Corin Road for Square Rock; Old Boboyan Road for Yankee Hat. Leave the city as your overnight base unless a booked campground is itself part of the plan. Driving between trailheads can consume the time you expected to spend walking.',
+        access: 'A car gives the practical last-mile access; do not assume a city bus reaches a trailhead. Booroomba Rocks Road, Old Boboyan Road and Orroral Ridge Road are unsealed and generally suit 2WD only in dry conditions. Ask the Namadgi Visitor Centre about the chosen road, carry an offline map, water and warm waterproof layers, and tell someone your route and return time. Reception may be unreliable.',
+        sequence: 'Check the ACT park and fire notices, then select one trailhead. Record the chosen route in the park register where provided, set a turnaround time, and do not add a second valley after the walk. In October 2026 the official track page showed Gibraltar Falls Lookout closed until further notice; use a currently open route such as the Visitor Centre Woodland Walk only if its access remains open on the day.',
+        boundary: 'Namadgi is Ngunnawal Country, with living cultural meaning and places that require protection. Read official interpretation, stay on formed public routes, do not touch or photograph restricted cultural material, and never treat a closed gate as a route suggestion. The 2020 Orroral Valley fire affected more than 80% of the park; recovery and infrastructure access remain part of the landscape.',
+        decisions: [
+          ['Base · Canberra', 'Keep accommodation in Canberra for a single park day. An overnight camp changes the permit, booking, fire and equipment plan; it is not a shortcut between trails.'],
+          ['Road · one entrance', 'Choose Naas Road, Corin Road or Old Boboyan Road before leaving town. Their trailheads are not interchangeable, and wet weather can change an unsealed approach.'],
+          ['Walk · match the day', 'Woodland Walk is a 1km, 30–45 minute Grade 2 loop; Square Rock is 10km / about 4 hours; Yankee Hat is 6.5km / about 3 hours; Mount Tennent is 4.5km / about 2 hours to Cypress Pine Outlook or 15km / about 6 hours to the summit.']
+        ],
+        fieldLens: {
+          label: 'Three trailheads, three different days',
+          title: 'The kilometres start at the gate, not at Canberra.',
+          copy: 'Choose by the walk you want and the approach you can safely drive. The official track descriptions include time and grade; those estimates do not include the drive, a late start, a wet track or a long return to town.',
+          notes: [
+            ['Visitor Centre / Naas Road', 'Woodland Walk adds a short cultural and ecology circuit. Mount Tennent shares this start: turn around at Cypress Pine Outlook for the shorter 4.5km option, or reserve the whole day for the steep 15km summit return.'],
+            ['Corin Road', 'Square Rock is a 10km Grade 3 return, suggested at 4 hours. A side lookout or Smokers Flat Loop makes this its own day; do not append it to the Mount Tennent summit.'],
+            ['Old Boboyan Road', 'Yankee Hat is a 6.5km Grade 3 return, suggested at 3 hours, to a public viewing platform and interpretation. Stay on the boardwalk and respect the site; do not visit if its access is closed.']
+          ]
+        },
+        stages: [
+          ['Choose a gate, then check it', 'Select Naas Road, Corin Road or Old Boboyan Road to match one walk. Confirm the access road, track, fire and cultural closures that morning; an open walk can still have a closed approach.'],
+          ['Set one honest distance', 'Use the official grade and return distance, add drive and rest time, and choose the shorter Mt Tennent outlook if the full summit does not fit. Keep water, daylight and a turnaround in reserve.'],
+          ['Walk with the place', 'Use marked tracks, registers and official interpretation. Yankee Hat has a viewing platform; do not leave it to approach rock art or other sensitive places. Bring your own drinking water and carry out rubbish.'],
+          ['Close the loop in daylight', 'Return to the same vehicle before dusk, when wildlife and reduced visibility make rural roads harder. If weather, smoke, fire or road status changes, turn back and use an open short walk or a Canberra indoor day instead.']
+        ],
+        risks: [
+          ['Road, fire and recovery', 'Unsealed road access can change at short notice. The 2020 Orroral Valley fire burned more than 80% of Namadgi; smoke, prescribed burns, storm damage and recovery works can close roads or lengthen a walk. Check the managing authority, then confirm uncertain roads with the Visitor Centre.'],
+          ['Mountain weather and communication', 'Carry warm waterproof clothing in every season, water, offline navigation and a charged phone; coverage is not assured. A PLB is worth considering on remote routes. Do not start a long walk if cloud, wind, heat or the remaining daylight removes the return margin.'],
+          ['Cultural and wildlife care', 'Dogs are generally not allowed in Namadgi; the park allows them in vehicles transiting between the ACT and NSW on Boboyan or Brindabella Roads. Stay out of closed cultural areas, leave huts and artefacts undisturbed, and carry food and rubbish back out.']
+        ],
+        duration: 'Give Namadgi one full day from a Canberra base for one named trail. Add a second Canberra night if you need a weather buffer; remote multi-day walks require route, water, booking, navigation and emergency preparation beyond this day plan.',
+        combine: 'Do not pair a summit walk with the city museums or Snowy Mountains in one day. If you have two days, keep one in Canberra and use the other for a single Namadgi trail; move your base to Jindabyne only for a separate Kosciuszko leg.',
+        verify: 'Check the Parks ACT Namadgi and walking-track pages, alerts, fire advice, the selected road and track, and the Canberra-area forecast. Confirm uncertain road access with Namadgi Visitor Centre. Recheck on the day; the 13 October 2026 track page marked Gibraltar Falls Lookout closed until further notice.',
+        searchSummary: 'Choose one Namadgi trail from Canberra by trailhead, grade, unsealed-road access and daylight. Compare Mount Tennent, Square Rock and Yankee Hat; check Ngunnawal cultural guidance, fire, weather, road closures and the return before leaving.',
+        searchKeywords: ['namadgi walks from canberra', 'mount tennent 4.5 km 15 km', 'square rock track corin road', 'yankee hat walk old boboyan road', 'namadgi road closures and fire', 'namadgi visitor centre woodland walk'],
+        faq: [
+          ['How many nights should I stay for Namadgi?', 'Keep a Canberra base for at least the night before a one-day walk; two nights give a weather buffer without moving accommodation. Add camping nights only after confirming the exact campground booking, fire rules, water and access.'],
+          ['Which Namadgi walk suits a shorter day?', 'The official Woodland Walk is a 1km Grade 2 loop from the Visitor Centre, usually 30–45 minutes. For a larger day, Square Rock is 10km return from Corin Road (about 4 hours, Grade 3), while Yankee Hat is 6.5km return from Old Boboyan Road (about 3 hours, Grade 3).'],
+          ['Do I have to climb all of Mount Tennent?', 'No. Parks ACT lists a 4.5km return, two-hour Grade 4 walk to Cypress Pine Outlook from the Visitor Centre, and a separate 15km, six-hour summit return. Treat the outlook as the turnaround, not a promise to continue.'],
+          ['What if the road, track or weather closes my choice?', 'Do not bypass a closure or switch to an unverified spur. Check another official route from a different open approach only if there is enough daylight, or return to Canberra. On 13 October 2026 the official track list marked Gibraltar Falls Lookout closed until further notice; recheck before travel.'],
+          ['Can I bring a dog?', 'Parks ACT says dogs are not allowed in Namadgi except in vehicles travelling between the ACT and NSW on Boboyan or Brindabella Roads. Plan the visit without a dog outside that transit exception.'],
+          ['Is Namadgi a reasonable same-day visit from Canberra?', 'Yes for one trail with an early departure and a return margin. It is not a quick add-on: check the exact trailhead drive, carry supplies, record your walk and be back before dusk.']
+        ],
+        nearbySources: [
+          ['https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park/namadgi-national-park-walking-tracks', 'Parks ACT — track grades, distances, road access and closures'],
+          ['https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park', 'Parks ACT — Ngunnawal Country, fire recovery, safety and park access'],
+          ['https://www.bom.gov.au/act/forecasts/canberra.shtml', 'Bureau of Meteorology — Canberra forecast']
+        ],
+        sources: [
+          ['https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park/namadgi-national-park-walking-tracks', 'Parks ACT — Namadgi walks, current trail status, grades and distances'],
+          ['https://www.parks.act.gov.au/find-a-nature-park/namadgi-national-park', 'Parks ACT — park access, Ngunnawal Country, fire recovery and visitor preparation'],
+          ['https://www.parks.act.gov.au/find-a-park/alerts', 'Parks ACT — alerts and closures; recheck the selected route'],
+          ['https://esa.act.gov.au/', 'ACT Emergency Services Agency — fire danger, warnings and emergency advice'],
+          ['https://www.bom.gov.au/act/forecasts/canberra.shtml', 'Bureau of Meteorology — Canberra forecast and warnings']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       }),
       g({
         slug: 'snowy-mountains-kosciuszko', name: 'Snowy Mountains & Kosciuszko', motif: 'alpine season gate', instrument: 'altitude-board', imageQuery: 'Kosciuszko National Park Snowy Mountains Australia', imageAlt: 'Alpine landscape in Kosciuszko National Park',
-        summary: 'An alpine route that begins in a gateway such as Jindabyne and changes completely between snow season, summer walking and severe weather.',
-        orientation: 'select the gateway, season and exact open lift, road or walking route before naming a summit objective.', access: 'Drive or use scheduled alpine transport with park entry, tyre, chain and seasonal rules understood.', sequence: 'Check alpine forecasts, use the most constrained transport first, walk only the open graded route and descend before weather or lift closure.', boundary: 'Alpine vegetation is fragile and high-country weather is serious. Stay on paths, follow resort and park rules and respect cultural significance.',
-        stages: [['Declare the season', 'Snow, shoulder and summer conditions require different equipment and routes.'], ['Confirm the gateway', 'Match Jindabyne, Thredbo or Charlotte Pass to the exact objective.'], ['Use the open ascent', 'Check lift, road and track status before climbing.'], ['Descend with reserve', 'Turn around for wind, cloud, fatigue or transport cutoff.']],
-        risks: [['Alpine weather', 'Cold, lightning, wind and whiteout can arrive quickly.'], ['Seasonal road rules', 'Chains, closures and park entry conditions can apply.'], ['Summit overconfidence', 'A famous highest point is still a remote alpine walk.']],
-        duration: 'Stay at least two nights in the alpine gateway; longer in winter or uncertain weather.', combine: 'Do not pair with a Canberra museum day. Treat it as a separate regional leg.', verify: 'Check NSW National Parks, alpine forecast, road and chain rules, lift operations, track status, equipment and turnaround.'
+        summary: 'Treat Kosciuszko as a separate regional leg, not a Canberra day trip. First choose the season and gateway; then decide between the long Charlotte Pass summit walk, a lift-dependent Thredbo ascent, skiing, or a lower-key town day if weather or access closes the high country.',
+        orientationTitle: 'The gateway is part of the route.',
+        orientation: 'From Canberra, the Thredbo–Perisher and Lower Snowy River areas route via Cooma and Jindabyne; the approach to Jindabyne is about 145km in the official park directions. Thredbo branches 33km along Alpine Way, while Perisher is 33km from Jindabyne and Charlotte Pass a further 8km beyond Perisher. Those are separate bases and road legs. Other Snowy Mountain areas use Adaminaby, Tumut or Khancoban gateways, so choose the named park area before booking accommodation.',
+        access: 'A private vehicle offers the broadest access, but park entry, seasonal chain rules, parking and winter road closures apply. Check Live Traffic NSW, the Kosciuszko alerts page and Bureau of Meteorology alpine forecast on the day. The Charlotte Pass road closes in winter; reaching Charlotte Pass then requires the current oversnow arrangement from Perisher. A booked coach to Jindabyne does not include the last mile to a trailhead.',
+        sequence: 'Book two or more nights in the gateway that serves the selected walk, with a spare day if summit success matters. For the Charlotte Pass route, the 18.6km Grade 3 return is 6–8 hours before transfer, breaks or queueing; drive via Jindabyne and start early. For Thredbo, the route starts at the top of the Kosciuszko Express chairlift, so confirm lift operation and last descent before choosing it. Descend on schedule, not when the summit feels finished.',
+        boundary: 'The alpine environment has fragile vegetation, rapid weather changes and limited mobile reception. Stay on formed paths, carry all-weather layers, water, navigation and food, and turn around before visibility, wind, snow, ice, fatigue or transport cutoff makes descent uncertain. Respect Aboriginal cultural significance and the rules of the park and resort; summit status is never more important than a safe exit.',
+        decisions: [
+          ['Base · Jindabyne', 'Use Jindabyne for the Thredbo–Perisher gateway and regional services; move to Thredbo or Perisher only when that changes the lift, snow or early-start plan. Adaminaby or Tumut serve other park sectors.'],
+          ['Ascent · walk or lift', 'Charlotte Pass is an 18.6km / 6–8 hour return walk in the snow-free season. The Thredbo route depends on the Kosciuszko Express chairlift; its operating day defines the return.'],
+          ['Buffer · two or three nights', 'Two nights permit arrival and one mountain day. Three nights create a weather reserve; if the summit is closed or unsafe, take that reserve in town or use only a separate lower route confirmed open by the park.']
+        ],
+        fieldLens: {
+          label: 'One summit, two access contracts',
+          title: 'Charlotte Pass removes the lift; Thredbo removes kilometres.',
+          copy: 'Both routes reach Mount Kosciuszko, but they are not interchangeable on the same timetable. Pick the base and return plan first, then check the actual operating date and conditions.',
+          notes: [
+            ['Charlotte Pass', 'The official track is 18.6km return, Grade 3, suggested at 6–8 hours, with park fees. It starts near the trackhead on Kosciuszko Road. Winter closes the private road between Perisher and Charlotte Pass; do not drive to the trailhead then.'],
+            ['Thredbo', 'The route begins at the top of Kosciuszko Express chairlift and follows the high-country trail to Rawson Pass and the summit. Check the lift’s daily operation, booking and last descent; if it is not running, do not improvise an alpine approach.'],
+            ['Other park sectors', 'Selwyn, High Plains and Yarrangobilly use the Snowy Mountains Highway from Cooma via Adaminaby; access from Tumut is a different approach. Cabramurra–Khancoban Road (KNP5) has a seasonal winter closure. Do not cross these gateways off a day-trip map.']
+          ]
+        },
+        stages: [
+          ['Declare season and gateway', 'Choose Jindabyne, Thredbo, Perisher, Charlotte Pass or a northern park gateway by the exact trail and season. Allow the Canberra–Cooma–Jindabyne road leg as a move day, not as time inside the hike.'],
+          ['Lock the constrained transfer', 'For Charlotte Pass, verify Kosciuszko Road, winter oversnow access, entry fees, chain requirements and parking. For Thredbo, verify the chairlift and last return. For a regional coach, book the onward trailhead transfer separately.'],
+          ['Walk the route you prepared for', 'Use the official distance and all-weather gear, water and navigation. Start only when the live alpine forecast, alert and access status support the full return; there is no safe summit shortcut through a closure.'],
+          ['Keep a weather day', 'If wind, cloud, snow, road closure or lift operation cancels the ascent, take the reserved day in the gateway town or choose a different park walk only after independently confirming its access and conditions. Do not replace it with a longer drive across an unfamiliar pass.']
+        ],
+        risks: [
+          ['Fast alpine change', 'The official park warns that weather can be extreme and unpredictable and mobile reception limited. A benign town forecast does not equal a summit forecast. Do not start if poor weather is approaching; turn around early when the route or return loses visibility.'],
+          ['Chains, road and fee gates', 'Two-wheel drives must carry chains on named roads during the winter period; the road to Charlotte Pass closes in winter and KNP5 closes seasonally. Check the current rule, road notices, park entry and live traffic before each leg.'],
+          ['Lift and vehicle cutoffs', 'Thredbo’s summit route relies on the chairlift. A late start, queue, closure or missed last descent breaks the plan; reserve the lift before setting the walking pace and obey the operator’s return time.']
+        ],
+        duration: 'Stay at least two nights in Jindabyne or the specific gateway: one arrival / setup night, one mountain day and a clear onward plan. Choose three nights when a summit is the purpose of the trip so weather can move the walk without forcing a risky departure.',
+        combine: 'Do not combine Kosciuszko with Canberra institutions or Namadgi on the same day. Treat Canberra–Cooma–Jindabyne as a regional relocation and use the high country as its own two- or three-night chapter.',
+        verify: 'Use NSW National Parks local alerts and visitor directions, Live Traffic NSW, the relevant resort / oversnow operator, park entry rules and the BOM alpine forecast. Check the exact route on the morning of travel; the Charlotte Pass access and Thredbo lift have different seasonal cutoffs.',
+        searchSummary: 'Plan the Snowy Mountains by gateway, season and ascent: Charlotte Pass for the 18.6km summit walk or Thredbo for the lift-dependent route. Allow at least two Jindabyne-area nights, check chains, road closures, park alerts and alpine weather.',
+        searchKeywords: ['Canberra to Jindabyne via Cooma', 'Charlotte Pass Kosciuszko summit walk 18.6km', 'Thredbo chairlift Kosciuszko summit route', 'Kosciuszko snow chains and winter road closure', 'Snowy Mountains Adaminaby and Tumut access', 'Kosciuszko alpine weather and park alerts'],
+        faq: [
+          ['Can I visit Kosciuszko from Canberra in one day?', 'It is a long regional drive before the trail begins, and the summit walk itself is 18.6km return with 6–8 hours suggested. Stay in the Jindabyne gateway for at least two nights rather than trying to combine a Canberra visit and summit.'],
+          ['Where should I stay for the summit?', 'Jindabyne is the practical base for either the Thredbo–Perisher road or the Kosciuszko Road approach to Charlotte Pass. A Thredbo or Perisher stay is useful only when it improves the specific lift, snow or start-time plan; book the base that matches the current access.'],
+          ['Is the Charlotte Pass summit route open all year?', 'No. NSW National Parks describes the 18.6km Grade 3 track as snowbound in winter and says the private road between Perisher and Charlotte Pass closes then. The winter access is by oversnow transport from Perisher; verify the service and the current park guidance before travelling.'],
+          ['What if the Thredbo chairlift does not run?', 'The route begins at the top of Kosciuszko Express, so the planned trailhead disappears if the lift is not operating. Do not assume you can walk from the village and still meet the same schedule. Take the weather buffer or a separate open route confirmed by the park.'],
+          ['Do I need chains in spring?', 'The official visitor information specifies a winter chain-carry period for 2WD vehicles on named park roads and recommends chains more broadly in extreme weather. Check the current dates, roads and legal instructions for your own vehicle and day.'],
+          ['What is a sensible weather backup?', 'Reserve an extra night and let the live alert and alpine forecast decide. If the summit is unsafe, stay in the gateway or choose a different, lower-elevation park-area visit only after checking its road and track status. Do not force the summit or substitute a long road circuit.']
+        ],
+        nearbySources: [
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info', 'NSW National Parks — gateways, roads, chains and local alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/mount-kosciuszko-summit-walk/visitor-info', 'NSW National Parks — summit distance, grade, season and safety'],
+          ['https://www.livetraffic.com/', 'Live Traffic NSW — current road conditions']
+        ],
+        sources: [
+          ['https://www.nationalparks.nsw.gov.au/visit-a-park/parks/kosciuszko-national-park/visitor-info', 'NSW National Parks — park sectors, gateway roads, seasonal closure and local alerts'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/mount-kosciuszko-summit-walk/visitor-info', 'NSW National Parks — Charlotte Pass summit walk, 18.6km return, winter access, chains and safety'],
+          ['https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/thredbo-to-mount-kosciuszko', 'NSW National Parks — Thredbo summit route and lift access'],
+          ['https://www.livetraffic.com/', 'Transport for NSW — Live Traffic road conditions'],
+          ['https://www.bom.gov.au/nsw/forecasts/kosciuszko.shtml', 'Bureau of Meteorology — Kosciuszko alpine forecast']
+        ],
+        reviewDate: '13 October 2026', reviewIsoDate: '2026-10-13'
       })
     ]
   })

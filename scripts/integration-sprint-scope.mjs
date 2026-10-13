@@ -431,6 +431,13 @@ export const postIntegrationCanberraRoutes = Object.freeze([
   '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
 ]);
 
+export const postIntegrationAlpsMargaretRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/namadgi-national-park/',
+  '/australia/canberra-australian-alps/snowy-mountains-kosciuszko/',
+  '/australia/margaret-river-southwest/',
+  '/australia/margaret-river-southwest/margaret-river-wine-food/'
+]);
+
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
   prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
 );
@@ -453,6 +460,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationSourceRefreshRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationCanberraRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationAlpsMargaretRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };

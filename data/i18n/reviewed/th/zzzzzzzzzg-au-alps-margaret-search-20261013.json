@@ -1,0 +1,42 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Build a southwest Western Australia route with separate Busselton/Dunsborough, Margaret River, Augusta and Albany bases. Compare three-, five- and longer-night plans, then check the date-specific Transwa coach, sober wine transport, park and fire closures, coastal weather and road conditions.": "วางแผนเที่ยวตะวันตกเฉียงใต้ของเวสเทิร์นออสเตรเลียโดยแยกที่พักที่ Busselton/Dunsborough, Margaret River, Augusta และ Albany เปรียบเทียบแผน 3 คืน 5 คืน และแผนที่นานกว่า แล้วตรวจรถโค้ช Transwa ตามวันเดินทาง การเดินทางชิมไวน์กับคนขับที่งดแอลกอฮอล์ การปิดอุทยานและไฟป่า อากาศชายฝั่ง และสภาพถนน",
+    "southwest western australia itinerary nights": "แผนเที่ยวและจำนวนคืนในตะวันตกเฉียงใต้ของเวสเทิร์นออสเตรเลีย",
+    "perth to margaret river transwa sw1 coach": "รถโค้ช Transwa SW1 จาก Perth ไป Margaret River",
+    "busselton dunsborough margaret river bases": "ที่พักหลัก Busselton Dunsborough Margaret River",
+    "margaret river to augusta and albany road trip": "ขับรถเที่ยวจาก Margaret River ไป Augusta และ Albany",
+    "leeuwin-naturaliste park access and closures": "การเข้าถึงและการปิด Leeuwin-Naturaliste Park",
+    "margaret river wine tour sober driver": "ทัวร์ไวน์ Margaret River กับคนขับที่งดแอลกอฮอล์",
+    "Plan Margaret River wine and food around a pre-booked zero-alcohol driver, two or three nearby cellar-door appointments, a fixed meal and a daylight return. Transwa SW1 connects regional towns on selected dates but is not a winery shuttle.": "วางแผนวันชิมไวน์และอาหารใน Margaret River โดยจองคนขับที่งดแอลกอฮอล์ล่วงหน้า เลือก cellar door ใกล้กันสองหรือสามแห่ง กำหนดมื้ออาหารไว้แน่นอน และกลับก่อนมืด Transwa SW1 เชื่อมเมืองภูมิภาคในบางวัน แต่ไม่ใช่รถรับส่งไปโรงไวน์",
+    "margaret river cellar door sober driver": "คนขับที่งดแอลกอฮอล์สำหรับ cellar door ใน Margaret River",
+    "margaret river wine tours pickup": "รถรับส่งทัวร์ไวน์ Margaret River",
+    "busselton dunsborough margaret river sw1 coach": "รถโค้ช SW1 ระหว่าง Busselton Dunsborough Margaret River",
+    "margaret river wineries lunch bookings": "จองมื้อกลางวันที่โรงไวน์ Margaret River",
+    "margaret river tasting appointments and fees": "นัดชิมและค่าธรรมเนียม Margaret River",
+    "margaret river rural road daylight return": "ถนนชนบท Margaret River กลับก่อนมืด",
+    "Choose one Namadgi trail from Canberra by trailhead, grade, unsealed-road access and daylight. Compare Mount Tennent, Square Rock and Yankee Hat; check Ngunnawal cultural guidance, fire, weather, road closures and the return before leaving.": "เลือกเส้นทาง Namadgi จาก Canberra เพียงหนึ่งเส้น โดยดูจุดเริ่มเดิน ระดับความยาก การเข้าถึงถนนลูกรัง และช่วงกลางวันที่เหลือ เปรียบเทียบ Mount Tennent, Square Rock และ Yankee Hat แล้วตรวจคำแนะนำทางวัฒนธรรมของชาว Ngunnawal ไฟป่า อากาศ การปิดถนน และเวลาเดินทางกลับ",
+    "namadgi walks from canberra": "เส้นทางเดิน Namadgi จาก Canberra",
+    "mount tennent 4.5 km 15 km": "เส้นทาง Mount Tennent 4.5 km และ 15 km",
+    "square rock track corin road": "เส้นทาง Square Rock ถนน Corin Road",
+    "yankee hat walk old boboyan road": "เส้นทาง Yankee Hat ถนน Old Boboyan Road",
+    "namadgi road closures and fire": "ถนน Namadgi ปิดและไฟป่า",
+    "namadgi visitor centre woodland walk": "Woodland Walk ศูนย์นักท่องเที่ยว Namadgi",
+    "Plan the Snowy Mountains by gateway, season and ascent: Charlotte Pass for the 18.6km summit walk or Thredbo for the lift-dependent route. Allow at least two Jindabyne-area nights, check chains, road closures, park alerts and alpine weather.": "วางแผน Snowy Mountains ตามเมืองทางเข้า ฤดูกาล และเส้นทางขึ้นเขา: Charlotte Pass สำหรับเส้นทางยอดเขา 18.6 km หรือ Thredbo สำหรับเส้นทางที่ต้องใช้กระเช้า พักอย่างน้อย 2 คืนในย่าน Jindabyne แล้วตรวจโซ่ล้อ การปิดถนน ประกาศอุทยาน และอากาศบนภูเขา",
+    "canberra to jindabyne via cooma": "จาก Canberra ไป Jindabyne ผ่าน Cooma",
+    "charlotte pass kosciuszko summit walk 18.6km": "เส้นทางยอดเขา Kosciuszko จาก Charlotte Pass 18.6 km",
+    "thredbo chairlift kosciuszko summit route": "กระเช้า Thredbo กับเส้นทางยอดเขา Kosciuszko",
+    "kosciuszko snow chains and winter road closure": "โซ่ล้อ Kosciuszko และถนนปิดช่วงฤดูหนาว",
+    "snowy mountains adaminaby and tumut access": "การเข้าถึง Adaminaby และ Tumut ใน Snowy Mountains",
+    "kosciuszko alpine weather and park alerts": "อากาศบนภูเขาและประกาศอุทยาน Kosciuszko"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

@@ -172,6 +172,13 @@ export const australiaCanberraNewSubstantiveRoutes = Object.freeze([
   '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
 ]);
 
+export const australiaAlpsMargaretNewSubstantiveRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/namadgi-national-park/',
+  '/australia/canberra-australian-alps/snowy-mountains-kosciuszko/',
+  '/australia/margaret-river-southwest/',
+  '/australia/margaret-river-southwest/margaret-river-wine-food/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -191,5 +198,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Vietnam content and north gaps', count: 765 }),
   Object.freeze({ label: 'Canberra & Australian Alps', count: 769 }),
   Object.freeze({ label: 'Atlanta', count: 773 }),
-  Object.freeze({ label: 'Ha Long & Cat Ba', count: 777 })
+  Object.freeze({ label: 'Ha Long & Cat Ba', count: 777 }),
+  Object.freeze({ label: 'Australian Alps & Margaret River', count: 781 })
 ]);
