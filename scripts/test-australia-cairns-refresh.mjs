@@ -8,7 +8,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postHawaiiNewOrleansRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
+import { postHawaiiNewOrleansRoutes, postNewOrleansAtlantaRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
@@ -129,9 +129,9 @@ function sitemapEntries(xml) {
   return new Map(rows.map(({ loc, lastmod }) => [new URL(loc).pathname, lastmod]));
 }
 
-const expectedHtml = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const expectedHtml = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', taskBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans, four Atlanta and four Florida English pages changed.');
+assert.deepEqual(changedHtml, expectedHtml, 'From the exact source-task base, only the four authorized New Orleans, four Atlanta, four Florida and four Chicago English pages changed.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -206,7 +206,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes].sort(), 'From the exact source-task base, only the four New Orleans, four Atlanta and four Florida search records changed.');
+assert.deepEqual(changedSearch, [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].sort(), 'From the exact source-task base, only the four New Orleans, four Atlanta, four Florida and four Chicago search records changed.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -225,10 +225,10 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${taskBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postOctober13Routes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
-assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans, four Atlanta and four Florida routes across five editions receive new lastmod dates.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap date.');
+assert.deepEqual(changedLastmod, expectedLastmod, 'From the exact source-task base, only the four New Orleans, four Atlanta, four Florida and four Chicago routes across five editions receive new lastmod dates.');
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postOctober13Routes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap date.');
 for (const route of routes) for (const [, prefix] of locales) assert.equal(currentSitemap.get(prefix + route), reviewIsoDate, prefix + route + ': Cairns date remains current.');
 
 for (const file of photoPaths) assert.deepEqual(fs.readFileSync(path.join(root, file)), git(['show', `${base}:${file}`], true), file + ': existing photo bytes must be unchanged.');

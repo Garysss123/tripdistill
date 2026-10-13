@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { canadaClusters } from '../data/canada-guides.mjs';
-import { postIntegrationSourceRefreshRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -112,7 +112,7 @@ const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationD
 assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13, Gold Coast, Cairns, CH14, CH15 and the scoped U.S. source-refresh date routes may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {
-  const expectedDate = postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = postOctober13Routes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(dates.get(route), expectedDate, `${route}: checkpoint continuation lastmod must be current.`);
 }
 

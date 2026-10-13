@@ -760,6 +760,13 @@ const usaFloridaNeighborhoodRoutes = [
   '/usa/orlando/theme-parks/',
   '/usa/orlando/winter-park/'
 ];
+const usaChicagoEditorialLastmod = '2026-10-13';
+const usaChicagoEditorialRoutes = [
+  '/usa/chicago/',
+  '/usa/chicago/loop-riverwalk/',
+  '/usa/chicago/museum-lakefront/',
+  '/usa/chicago/neighborhoods/'
+];
 const australiaReviewDates = new Map([
   ['/australia/', '2026-10-09'],
   ...australiaClusters
@@ -1174,6 +1181,11 @@ for (const route of usaFloridaNeighborhoodRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Florida neighborhood route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: usaFloridaNeighborhoodLastmod });
+}
+for (const route of usaChicagoEditorialRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Chicago route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: usaChicagoEditorialLastmod });
 }
 for (const [route, lastmod] of australiaReviewDates) {
   const record = records.get(route);

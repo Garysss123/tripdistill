@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a Chicago base for two, three or four nights; compare airport transfers, repeat transit trips and the current Loop station closure before setting the day order.": "選擇芝加哥住宿基地，安排兩至四晚；先比較機場轉乘、重複搭乘交通工具的次數，以及 Loop 車站目前的關閉情況，再排定日程。",
+    "Choose Field, Shedd or Adler by subject and ticket terms; plan around seasonal CTA route 130, route 146 and the Roosevelt connection before adding a shore walk.": "依主題和門票條款選擇 Field、Shedd 或 Adler；加入湖岸步行前，先規劃季節限定的 CTA 130、146 號公車及 Roosevelt 轉乘。",
+    "Plan one Wicker Park or Logan Square outing with a named Blue Line start, a bounded visit and a rain-day alternative; check venue times and the return before an evening.": "規劃一次 Wicker Park 或 Logan Square 行程，標明 Blue Line 起點、有限的走訪範圍和雨天替代方案；晚間活動前查看場地時間及返程。",
+    "Compare the 90-minute Architecture Center cruise at its named pier with a shorter Riverwalk–Loop walk; check weather, public access and CTA service for your return.": "比較 Architecture Center 90 分鐘遊船（碼頭依預訂確認）與較短的 Riverwalk–Loop 步行路線；返程前查看天候、公共通道與 CTA 服務。"
+  }
+}

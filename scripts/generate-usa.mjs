@@ -74,6 +74,9 @@ const atlantaRefreshRoutes = new Set([
 const floridaNeighborhoodRefreshRoutes = new Set([
  '/usa/miami/south-beach/','/usa/miami/little-havana-wynwood/','/usa/orlando/theme-parks/','/usa/orlando/winter-park/'
 ]);
+const chicagoRefreshRoutes = new Set([
+ '/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/'
+]);
 const sprintUsRoutes = new Set([
  '/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/',
  '/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/',
@@ -89,7 +92,7 @@ function regionalEditorialPage(h,g){
  const config=regionalEditorials[h.slug];
  if(!config)throw Error('Unregistered editorial region '+h.slug);
  const i=g?h.guides.indexOf(g)+1:0,route=g?.url||`/usa/${h.slug}/`;
- const modifiedDate=floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
+ const modifiedDate=chicagoRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)?'2026-10-13':hawaiiRefreshRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsRoutes.has(route)?'2026-10-10':usaRevisedRoutes.has(route)?'2026-10-09':date;
  return shell(route,(g?.name||h.name)+' Travel Guide',config.descriptions[i],config.render({h,g,photo,credit,card,source,ad}),h,g,modifiedDate)
   .replace('</head>',`<link rel="stylesheet" href="/css/${h.slug}-editorial.css?v=20260911-1"></head>`);
 }

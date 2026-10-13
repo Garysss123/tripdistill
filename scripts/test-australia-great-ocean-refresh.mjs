@@ -9,7 +9,7 @@ import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes } from './switzerland-ch15-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
-import { postIntegrationSourceRefreshRoutes, postAtlantaFloridaRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationSourceRefreshRoutes, postOctober13Routes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = '18b6789bdc780c5425dff77d7d027d4078b4f32a';
@@ -276,7 +276,7 @@ const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only selected Great Ocean Road, later CA13/CA14, Gold Coast, Cairns, CH14/CH15 and scoped U.S. refresh routes whose dates differ from the prior checkpoint may receive a new lastmod.');
-for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postAtlantaFloridaRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
+for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postOctober13Routes.some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : reviewIsoDate, route + ': sitemap lastmod.');
 
 const svgFile = path.join(root, svgPath);
 const svg = fs.readFileSync(svgFile, 'utf8');

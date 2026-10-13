@@ -6,12 +6,19 @@ import { parse } from 'parse5';
 
 const base = '55147104cc93f80b6c9ec7f0b01436b01661e435';
 const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
-const routes = [
+const floridaRoutes = [
   '/usa/miami/south-beach/',
   '/usa/miami/little-havana-wynwood/',
   '/usa/orlando/theme-parks/',
   '/usa/orlando/winter-park/'
 ];
+const chicagoRoutes = [
+  '/usa/chicago/',
+  '/usa/chicago/loop-riverwalk/',
+  '/usa/chicago/museum-lakefront/',
+  '/usa/chicago/neighborhoods/'
+];
+const routes = [...floridaRoutes, ...chicagoRoutes];
 const localePrefixes = ['', '/zh', '/ja', '/ko', '/th'];
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -80,13 +87,16 @@ for (const relativePath of basePaths) {
   if (before !== after) changedBodyPaths.push(relativePath);
   if (targetSet.has(relativePath)) {
     assert.notEqual(after, before, `${relativePath} must have a substantive body change`);
-    assert.equal(normalizedMain(gitShow(september, relativePath)), before,
-      `${relativePath} must match its 11 September source body at the exact task base`);
     assert.equal(articleDate(afterHtml), '2026-10-13', `${relativePath} Article dateModified`);
     assert.match(afterHtml, /Editorial review: 13 October 2026\./, `${relativePath} visible review date`);
   }
 }
-assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four assigned English U.S. bodies changed');
+for (const route of floridaRoutes) {
+  const relativePath = htmlPath(route);
+  assert.equal(normalizedMain(gitShow(september, relativePath)), normalizedMain(gitShow(base, relativePath)),
+    `${relativePath} must match its 11 September source body at the exact Florida task base`);
+}
+assert.deepEqual(changedBodyPaths.sort(), [...targetSet].sort(), 'only the four Florida and four Chicago English U.S. bodies changed');
 assert.equal(normalizedMain(fs.readFileSync(path.join(root, newYorkAcceptancePath), 'utf8')),
   normalizedMain(gitShow(base, newYorkAcceptancePath)), 'New York acceptance sample body remains unchanged');
 
@@ -108,7 +118,7 @@ assert.equal(newSearch.length, 955, 'English search record count remains 955');
 const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()].filter((url) => JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes].sort(), 'only the four target English search summaries changed');
+assert.deepEqual(changedSearch, [...routes].sort(), 'only the four Florida and four Chicago target English search summaries changed');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
 const sitemapAfter = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
@@ -142,4 +152,4 @@ for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   for (const route of routes) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 
-console.log(`USA Florida neighborhood refresh regression passed: ${routes.length} substantive English bodies; only four English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
+console.log(`USA Florida + Chicago refresh regression passed: ${floridaRoutes.length} Florida and ${chicagoRoutes.length} Chicago substantive English bodies; only eight English search records changed; ${expectedDatedUrls.length} route-edition dates updated; all 4,560 sitemap URLs preserved.`);
