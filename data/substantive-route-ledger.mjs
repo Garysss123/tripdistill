@@ -376,6 +376,13 @@ export const vietnamBayGapsNewSubstantiveRoutes = Object.freeze([
   '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
 ]);
 
+export const vietnamCavesIslandsGapsNewSubstantiveRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -420,5 +427,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Nha Trang', count: 886 }),
   Object.freeze({ label: 'Da Lat / Ha Long follow-on', count: 890 }),
   Object.freeze({ label: 'Southern Vietnam follow-on', count: 894 }),
-  Object.freeze({ label: 'Vietnam bay and Con Dao follow-on', count: 898 })
+  Object.freeze({ label: 'Vietnam bay and Con Dao follow-on', count: 898 }),
+  Object.freeze({ label: 'Vietnam caves and island gaps follow-on', count: 902 })
 ]);

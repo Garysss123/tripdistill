@@ -532,6 +532,14 @@ export const followingVietnamBayGapsRoutes = Object.freeze([
   '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
 ]);
 
+// Cave and island follow-up: four existing Phong Nha and Phu Quoc guides.
+export const followingVietnamCavesIslandsGapsRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+]);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -546,6 +554,7 @@ export const postOctober13Routes = Object.freeze([
   ...followingVietnamAfterNhaTrangRoutes,
   ...followingVietnamSouthernGapsRoutes,
   ...followingVietnamBayGapsRoutes,
+  ...followingVietnamCavesIslandsGapsRoutes,
   ...postBostonOverviewJuneauRoutes
 ]);
 

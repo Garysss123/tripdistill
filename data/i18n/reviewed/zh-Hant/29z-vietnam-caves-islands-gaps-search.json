@@ -1,0 +1,41 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "hang en guided expedition": "Hang En 導覽探險",
+    "hang en 2 days 1 night": "Hang En 2 天 1 夜",
+    "hang en fitness requirement": "Hang En 體能要求",
+    "hang en tour booking": "Hang En 行程預訂",
+    "phong nha cave alternatives": "Phong Nha 洞穴替代行程",
+    "cave access permit": "洞穴進入許可",
+    "son doong expedition booking": "Son Doong 探險預訂",
+    "son doong licensed operator": "Son Doong 授權業者",
+    "son doong 6 days 5 nights": "Son Doong 6 天 5 夜",
+    "son doong fitness requirements": "Son Doong 體能要求",
+    "son doong age limits": "Son Doong 年齡限制",
+    "phong nha public cave tours": "Phong Nha 公眾洞穴行程",
+    "Ganh Dau Phu Quoc road": "富國島 Gành Dầu 公路",
+    "Rach Vem north island": "北島 Rạch Vẹm",
+    "Bai Thom Phu Quoc": "富國島 Bãi Thơm",
+    "Phu Quoc north forest trail": "富國島北部森林步道",
+    "Phu Quoc north base nights": "富國島北部住宿晚數",
+    "Ganh Dau access status": "Gành Dầu 進入狀況",
+    "phu quoc forest & suoi tranh stream": "富國島森林與 Suối Tranh 溪流",
+    "Suoi Tranh stream walk": "Suối Tranh 溪流步道",
+    "Phu Quoc forest trail access": "富國島森林步道進入方式",
+    "Suoi Tranh opening status": "Suối Tranh 開放狀況",
+    "Suoi Tranh water safety": "Suối Tranh 水域安全",
+    "Phu Quoc national park visitor routes": "富國國家公園遊客路線",
+    "Phu Quoc rain forest walk": "富國島雨林步道"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex per-locale translation pass",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the four assigned routes and retained place names. The translation review is not independent model or human review."
+  }
+}

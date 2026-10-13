@@ -20,6 +20,12 @@ const routes = [
   '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
   '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
 ];
+const cavesIslandsGapsRoutes = [
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -110,7 +116,7 @@ for (const route of routes) {
 }
 
 const changedVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-assert.deepEqual(changedVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English guide bodies may change under vietnam/.');
+assert.deepEqual(changedVietnamFiles, [...routes, ...cavesIslandsGapsRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four bay guides and four registered cave/island follow-on English bodies may change under vietnam/.');
 const sourceVietnamFiles = git(['diff', '--name-only', `${baseCommit}..${sourceTerminal}`, '--', 'vietnam']).trim().split('\n').filter((file) => file.endsWith('.html')).sort();
 assert.deepEqual(sourceVietnamFiles, routes.map((route) => `${route.slice(1)}index.html`).sort(), 'The exact bay-gaps source changes only the four requested English guide bodies under vietnam/.');
 const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.json'));
@@ -122,14 +128,14 @@ const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set changed.');
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four requested English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...cavesIslandsGapsRoutes].sort(), 'Only the four bay and four registered cave/island follow-on English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(integrationBaseCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four selected routes in five editions may receive new dates.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap lastmod`);
@@ -188,6 +194,20 @@ for (const archived of manifest.archivedFiles) {
 }
 
 const expectedReviewedDiffs = manifest.archivedFiles.map((item) => item.source);
+const cavesArchiveRoot = 'data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13';
+const cavesManifest = JSON.parse(fs.readFileSync(path.join(root, cavesArchiveRoot, 'manifest.json'), 'utf8'));
+const cavesSupersededManifest = JSON.parse(fs.readFileSync(path.join(root, cavesArchiveRoot, 'superseded-batches-manifest.json'), 'utf8'));
+expectedReviewedDiffs.push(...cavesManifest.files.filter((item) => item.staleKeys.some((source) => !activeTranslationSources.has(source))).map((item) => item.sourcePath));
+expectedReviewedDiffs.push(...cavesSupersededManifest.files.map((item) => item.successorPath));
+const cavesIntegrationFollowup = JSON.parse(fs.readFileSync(path.join(root, cavesArchiveRoot, 'integration-followup-manifest.json'), 'utf8'));
+expectedReviewedDiffs.push(...cavesIntegrationFollowup.files.map((item) => item.sourcePath));
+for (const edition of editions.slice(1)) {
+  const directory = path.join(root, 'data/i18n/reviewed', edition.code);
+  const pageBatches = fs.readdirSync(directory).filter((name) => name.endsWith('-caves-islands-gaps-pages.json'));
+  assert.equal(pageBatches.length, 1, `${edition.code}: one caves/islands page batch is expected.`);
+  expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${pageBatches[0]}`);
+  expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/29z-vietnam-caves-islands-gaps-search.json`);
+}
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
   for (const [kind, suffix, expectedRoutes, expectedKeys] of [
@@ -212,7 +232,7 @@ const reviewedDiffs = [...new Set([
   ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
 ])].sort();
-assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only the four bay-gaps batches and the archived reviewed snapshots may change.');
+assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only the four Bay batches, registered Caves batches and both archived reviewed snapshot groups may change.');
 
 const expectedLedgerRemaining = [
   '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',

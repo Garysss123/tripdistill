@@ -1037,8 +1037,17 @@ export const vietnamSouthClusters = [
       {
         slug: 'ganh-dau-bai-thom',
         name: 'Ganh Dau, Rach Vem & Bai Thom',
-        motif: 'north-island edge',
+        motif: 'two-branch northern roadbook',
         instrument: 'roadbook',
+        instrumentLabel: 'West-coast / north-east road choice',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [
+          ['https://vietnam.travel/things-to-do/phu-quoc-nature', 'Vietnam Tourism — northern forest, Ganh Dau, Bai Thom and Rach Vem context; general destination guidance, not a current road notice'],
+          ['https://vqgpq.angiang.gov.vn/tong-quan-vuon-quoc-gia-phu-quoc', 'Phu Quoc National Park — official overview; current visitor gate, road and trail notices are not stated on this page'],
+          ['https://www.nchmf.gov.vn/', 'National Centre for Hydro-Meteorological Forecasting — check current island weather before the road day']
+        ],
+        searchKeywords: ['Ganh Dau Phu Quoc road', 'Rach Vem north island', 'Bai Thom Phu Quoc', 'Phu Quoc north forest trail', 'Phu Quoc north base nights', 'Ganh Dau access status'],
         image: image({
           src: '/assets/images/vietnam-phu-quoc-ganh-dau.webp',
           alt: 'Palm-lined beach and clear water on Phu Quoc Island',
@@ -1047,32 +1056,62 @@ export const vietnamSouthClusters = [
           creator: 'ntt',
           license: 'CC BY-SA 3.0'
         }),
-        summary: 'A north-island road chapter for quieter beaches, Rach Vem, Ganh Dau, Bai Thom and the border-facing geography of Phu Quoc.',
-        lead: 'Northern Phu Quoc asks visitors to trade resort convenience for dirt roads, forest edges and smaller services. The quiet is not emptiness: fishing communities, temples, protected forest and border sensitivity all shape the route.',
-        orientation: 'Pick one coast segment and one cultural or food stop. Trying to cover every northern road can leave no daylight for the return.',
-        arrival: 'Use a roadworthy motorbike with a helmet or a trusted driver, download offline directions and confirm fuel and food options before leaving the main road.',
-        sequence: 'Northbound road, village or temple, one shore, forest edge and a weather-aware return define the roadbook.',
-        boundary: 'Keep cameras and drones away from military or border installations, and ask residents before photographing homes, boats or religious spaces.',
+        summary: 'Use a full daylight day for one north-island branch—Ganh Dau and Rach Vem, or Bai Thom—then return by a prearranged road ride. Current road times, access points and north-side services are not verified here.',
+        lead: 'Vietnam Tourism describes Gành Dầu and Bãi Thơm among Phú Quốc’s northern protected forest areas and names trails and dirt roads there; it also places Rạch Vẹm on the north coast. That is useful geography, not a live notice that a particular road, beach or trail is open today. Choose one branch, arrange the return before leaving, and treat forest paths, village shorelines and private resort beaches as separate access questions.',
+        orientation: 'For a 3–4-night island stay, keep Dương Đông or your already-booked central-west lodging as the base and make one north-coast day trip. Choose the Gành Dầu–Rạch Vẹm side or the Bãi Thơm side; do not try to tick all three names in one loop. With five or more nights, a one-night northern base can split the branches only if you first confirm lodging, meals, fuel, mobile coverage and a return ride. A map distance is not a travel-time guarantee, and no current public-bus timetable for these stops was verified.',
+        arrival: 'Before departure, ask your hotel or a named driver to confirm the pickup, intended public stop, road condition, fuel plan, waiting arrangement and return point. Use a driver if you cannot verify that a motorbike, licence, insurance and road surface are suitable for you. Travel in daylight; download an offline map, but do not use it to cross a gate, restricted sign or private access road.',
+        sequence: 'Central-west base → agreed early road pickup → one chosen northern branch → one publicly welcoming shore, trail entrance or village stop confirmed on the day → meal only at a confirmed open business → daylight return to the same base. If a road, trail or beach is closed or unclear, turn back instead of using an unmarked detour.',
+        boundary: 'Stay on marked, publicly permitted routes; leave homes, working land, forest barriers and security-restricted places alone. Vietnam Tourism’s general overview does not establish a current permit, beach landing, drone rule or road closure for a particular stop. Ask before photographing residents or working boats, and obey all signs.',
         stages: [
-          ['Prepare', 'Check fuel, helmet, rain layer, offline map and a daytime return before heading north.'],
-          ['Move', 'Ride slowly on unsealed or narrow roads and yield to residents, livestock and local traffic.'],
-          ['Pause', 'Choose one public beach, temple or village business and keep the visit low-impact.'],
-          ['Return', 'Leave the remote coast with light and fuel margin; do not let a quiet sunset create a dark-road ride.']
+          ['Choose a branch', 'From a central base, plan either the Gành Dầu–Rạch Vẹm side or Bãi Thơm. Use two daylight days for both branches; do not assume a direct cross-island shortcut is open.'],
+          ['Confirm the road', 'Agree a driver or suitable self-drive plan, named public access, fuel, weather, pickup and return before setting out. Current distances, bus service and road times remain unverified.'],
+          ['Make one stop count', 'Choose a marked trail, a public shore or a village business that is open and welcomes visitors. Keep beaches, forest and local work separate rather than entering an unmarked turnoff.'],
+          ['Close before dark', 'Return to the agreed pickup while there is daylight. In rain, a closure or a missed connection, turn back to the confirmed road; do not improvise a forest crossing.']
         ],
         risks: [
-          ['Road surface', 'Potholes, sand, rain and construction can make a short map distance slow.'],
-          ['Remote support', 'Fuel, medical care and reliable phone signal are less predictable in the north.'],
-          ['Restricted views', 'Border and security areas can carry photography and access restrictions.']
+          ['Road and rain', 'The official destination guide describes dirt roads, but current surface, works, flooding and travel time are unknown. Avoid a wet or dark-road ride and keep a vehicle fallback.'],
+          ['Thin services', 'No current fuel, clinic, public transport or mobile-coverage inventory was verified for these stops. Carry water and a charged phone, and agree the return before leaving the central area.'],
+          ['Access and privacy', 'A named beach or trail is not automatically open from every road. Do not enter private, restricted or working areas, and leave if the local sign or resident says access is closed.']
         ],
-        duration: 'Use a full day from Dương Đông, or stay north when the route is the main purpose.',
-        combine: 'Pair with the National Park chapter only if the road and energy budget support it; keep An Thoi on a separate sea day.',
-        verify: 'Check current road status, fuel, park boundaries, public beach access, security restrictions and forecast.'
+        duration: 'Reserve one full daylight day from Dương Đông for one northern branch. Use two days if you want both the Gành Dầu–Rạch Vẹm side and Bãi Thơm. Only move one night north after lodging, food, fuel and transport are individually confirmed; this is itinerary pacing, not a published transfer time.',
+        combine: 'Keep this road day separate from An Thới boat trips, the Suối Tranh forest walk and any flight or mainland ferry. A second north-coast branch works better the next day or from a confirmed northern overnight base.',
+        verify: 'Check the exact day’s road and weather, public entrance and trail status, permitted beach access, local signs, fuel and food, driver pickup and return, phone coverage and daylight. The official sources reviewed do not publish current road times or live access for each named stop.',
+        faqLastQuestion: 'Can I follow any trail or beach access shown on a map?',
+        presentation: {
+          readingTitle: 'Treat the north as two road branches, not a checklist.',
+          routeTitle: 'Choose one coast, confirm the return, then ride.',
+          checksTitle: 'The route works only if these three conditions hold.',
+          checksIntro: 'Official destination pages describe the region, but do not replace a same-day check of a specific road or entrance.',
+          faqTitle: 'Northern Phu Quoc road planning',
+          boundaryTitle: 'A map pin is not public access'
+        },
+        routeDiagram: {
+          kind: 'compare',
+          title: 'Pick west-north or north-east before leaving base',
+          intro: 'These are separate daylight road plans; current journey times and public access are not published in the official sources reviewed.',
+          steps: [
+            ['West-north', 'Gành Dầu and Rạch Vẹm', 'Choose one marked trail or public coast stop, and confirm the village approach and driver return on the day.'],
+            ['North-east', 'Bãi Thơm', 'Give this branch its own road day. Do not add it as an assumed quick extension after a north-west visit.'],
+            ['Longer stay', 'Split the branches', 'A northern overnight can reduce backtracking only after lodging, food, fuel and the next-day return have been confirmed.']
+          ],
+          fallbackTitle: 'If access or the road is unclear, turn back',
+          fallback: 'Use the central base for a nearby meal or rest day. Do not cross a closure or search for an unmarked beach or forest entrance.'
+        }
       },
       {
         slug: 'national-park-suoi-tranh',
-        name: 'Phu Quoc National Park & Suoi Tranh',
-        motif: 'forest-water contour',
+        name: 'Phu Quoc Forest & Suoi Tranh Stream',
+        motif: 'gate-to-stream field route',
         instrument: 'contour',
+        instrumentLabel: 'Confirmed-gate forest walk',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [
+          ['https://vietnam.travel/things-to-do/phu-quoc-nature', 'Vietnam Tourism — general description of forest trails and Suoi Tranh; not a current opening, fee or water-safety notice'],
+          ['https://vqgpq.angiang.gov.vn/tong-quan-vuon-quoc-gia-phu-quoc', 'Phu Quoc National Park — official overview; the page does not state current visitor routes or gate operations'],
+          ['https://www.nchmf.gov.vn/', 'National Centre for Hydro-Meteorological Forecasting — check current rainfall and storm notices']
+        ],
+        searchKeywords: ['Suoi Tranh stream walk', 'Phu Quoc forest trail access', 'Suoi Tranh opening status', 'Suoi Tranh water safety', 'Phu Quoc national park visitor routes', 'Phu Quoc rain forest walk'],
         image: image({
           src: '/assets/images/vietnam-phu-quoc-suoi-tranh.webp',
           alt: 'Waterfall and stream at Suoi Tranh on Phu Quoc',
@@ -1081,26 +1120,47 @@ export const vietnamSouthClusters = [
           creator: 'Sketyl none',
           license: 'CC BY 2.0'
         }),
-        summary: 'Move inland from Phu Quoc’s beaches into protected forest, seasonal streams and Suoi Tranh with trail ability and rainfall as the route’s main variables.',
-        lead: 'Phu Quoc’s forest is the island’s other identity. National Park trails, Mount Chua, streams and Suoi Tranh reward visitors who accept mud, insects and a quieter pace instead of treating the forest as a backdrop to a swim.',
-        orientation: 'Choose a short waterfall walk or a more demanding park trail, and confirm whether the current entrance and guide arrangement supports that choice.',
-        arrival: 'Travel in daylight with proper shoes, water, insect protection and a current park contact. Rain can alter stream depth and trail safety quickly.',
-        sequence: 'Forest threshold, canopy reading, stream or waterfall, and a marked return create a resilient land route.',
-        boundary: 'Stay on designated paths, do not collect plants or rocks and never swim where park staff have not confirmed conditions.',
+        summary: 'Plan a half-day outing at a confirmed Suoi Tranh entrance; current official sources do not verify its hours, fee, marked route, swimming rules or cave access.',
+        lead: 'Vietnam Tourism describes a gentle hike to Suối Tranh and says a dip may be possible, while the National Park’s official overview focuses on forest management and biodiversity rather than visitor operations. Neither source gives a current gate notice, fee, trail map, swimming limit or guide rule for your date. Treat the stream walk as a conditional managed visit: confirm the exact entrance and open path before leaving base, and do not infer cave or off-trail access from a waterfall description.',
+        orientation: 'For a 3–4-night Phú Quốc stay, keep Dương Đông or a confirmed central-west lodging as the base; there is no need to move hotels just for this half-day outing. Hold the afternoon open because the official pages do not publish the drive time or a dependable trail duration. If the gate is closed, rain makes rock unsafe, or the site cannot confirm its visitor route, return to the base for a meal or rest day instead of shifting to an unverified forest track.',
+        arrival: 'Before setting out, contact the named site or Park visitor office and confirm the exact public entrance, opening status, fee, marked trail, guide requirement, water rules and pickup point. Arrange a round-trip driver or another legal, suitable road option; no current public-bus schedule or travel time was verified. Start in daylight and keep the driver’s return contact available.',
+        sequence: 'Confirmed central-island base → named public entrance and same-day status check → marked visitor trail only if open → return by the agreed pickup before rain or dark. Do not add a cave, stream swim, remote north-coast road or fixed ferry connection unless the responsible site and transport provider confirm each separately.',
+        boundary: 'A forest or waterfall walk does not authorize cave entry. Use only the signed public route that the site confirms is open; do not enter a cave, stream pool, closed trail or forest track without explicit permission and a qualified guide where required. If there is no clear visitor answer, do not proceed past the entrance.',
         stages: [
-          ['Enter', 'Check the park route, weather and footwear before leaving the road.'],
-          ['Read', 'Notice evergreen forest, wetland and stream ecology rather than chasing a single viewpoint.'],
-          ['Rest', 'Use only approved swimming or picnic areas and keep food away from wildlife.'],
-          ['Return', 'Leave enough daylight for the road back and report any route closure rather than bypassing it.']
+          ['Confirm the gate', 'Ask the site or Park office whether Suoi Tranh’s visitor entrance and a named public path are open today, and whether a guide or ticket is required. These operating details remain unverified in the published official pages reviewed.'],
+          ['Arrange both rides', 'Name the pickup and return point with the driver before leaving the central base. No current bus service or travel time was confirmed; do not rely on a map estimate for the last ride.'],
+          ['Stay on the marked walk', 'If the entrance confirms access, follow the signed public path and staff instructions. The tourism page’s general mention of swimming is not a same-day water-safety clearance; ask before entering the stream.'],
+          ['Use the land fallback', 'If rain, a closure, slippery rock or an unanswered access question changes the plan, return to base or choose a nearby confirmed town activity. Do not use an unmarked cave or trail as a substitute.']
         ],
         risks: [
-          ['Rain and mud', 'Tropical showers make rocks, roots and unsealed paths slippery.'],
-          ['Seasonal water', 'A dry stream or swollen waterfall can both disappoint or endanger visitors.'],
-          ['Wildlife distance', 'The park is habitat, not a petting or feeding area.']
+          ['Unknown site operations', 'The current official Park overview does not publish Suoi Tranh’s gate, fee, path, guide or closure status. Do not use old hours or third-party listings as an operating guarantee.'],
+          ['Rain, rock and water', 'The official tourism description is general; it does not certify today’s stream depth or swimming safety. Wet rock, fast water or a storm is a reason to leave the trail.'],
+          ['Return transport', 'A half-day label does not establish a bus, pickup or road time. Confirm both legs and retain daylight; otherwise choose a closer activity from the base.']
         ],
-        duration: 'Allow a half day for Suoi Tranh or a full day for a longer park route.',
-        combine: 'It pairs with a north-island road chapter only when the chosen trail and return road remain realistic.',
-        verify: 'Check the official park portal, trail and entrance status, guide needs, rainfall, stream safety and transport.'
+        duration: 'Reserve a half day from a central-west base for the confirmed entrance, walk and return, but treat actual road and trail times as unknown until the site and driver confirm them. Keep the rest of the day flexible; do not book a same-day flight or ferry around this estimate.',
+        combine: 'A simple meal or rest near the base can follow an early return. Keep the northern Gành Dầu/Bãi Thơm road day and An Thới boat day separate; the sources reviewed do not verify a through-transfer between them and this site.',
+        verify: 'Confirm today’s entrance and open path with the responsible site or Park office, fee and guide rules, whether swimming is allowed, rainfall and stream conditions, road pickup in both directions and the daylight return. Current hours, fees, route length, bus service and cave-entry authorization are unknown here.',
+        faqLastQuestion: 'Does the Suoi Tranh walk include a cave route?',
+        presentation: {
+          readingTitle: 'The open gate is the first route decision.',
+          routeTitle: 'Confirm the visitor path before the forest walk.',
+          checksTitle: 'Three facts are missing from public operating notices.',
+          checksIntro: 'Official destination pages provide general forest context, not a same-day access or water-safety clearance.',
+          faqTitle: 'Suoi Tranh forest-walk planning',
+          boundaryTitle: 'No cave or unmarked-trail entry'
+        },
+        routeDiagram: {
+          kind: 'flow',
+          title: 'Make the forest visit conditional on the real gate',
+          intro: 'A half-day plan works only when the entrance, public route and return are confirmed.',
+          steps: [
+            ['Before leaving', 'Confirm today’s route', 'Ask about the gate, ticket, marked path, guide requirement, weather closure and water rules.'],
+            ['If confirmed open', 'Walk the public trail', 'Stay on signs and staff instructions. A general tourism description does not authorize cave entry.'],
+            ['If not confirmed', 'Keep the day on land', 'Return to the central base or choose a nearby confirmed stop; do not look for another forest or cave entrance.']
+          ],
+          fallbackTitle: 'Unknown status means no entry',
+          fallback: 'The exact hours, fee, route length, swimming rule and cave access are not verified here. Ask the responsible site before you travel.'
+        }
       },
       {
         slug: 'ham-ninh-fishing-village',

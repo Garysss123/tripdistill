@@ -25,6 +25,12 @@ const bayGapsRoutes = [
   '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
   '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
 ];
+const cavesIslandsGapsRoutes = [
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+];
 const hubs = [
   'vietnam/ho-chi-minh-city/index.html',
   'vietnam/mekong-delta/index.html'
@@ -141,8 +147,8 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', integrationBaseCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...bayGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
-assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four Southern guides, four separately recorded Bay-gaps guides and their two updated hub excerpts.');
+const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...bayGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...cavesIslandsGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
+assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain the four Southern guides, the Bay-gaps guides and four cave/island follow-on guides and their two updated hub excerpts.');
 const sourceEnglishVietnamFiles = git(['diff', '--name-only', `${baselineCommit}..${sourceTerminal}`, '--', 'vietnam']).trim().split('\n').filter((repoPath) => repoPath.endsWith('.html')).sort();
 const expectedSourceEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
 assert.deepEqual(sourceEnglishVietnamFiles, expectedSourceEnglishVietnamFiles, 'the exact southern source terminal changes only the four guides and two hub excerpts under vietnam/.');
@@ -160,7 +166,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes].sort(), 'Only the four Southern and four separately recorded Bay-gaps English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes].sort(), 'Only the four Southern and the Bay-gaps and four cave/island follow-on English search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), route + ': English search record must match the exact southern source terminal.');
 
@@ -170,7 +176,7 @@ const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes].map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -256,7 +262,16 @@ const reviewedDiffs = [...new Set([
   ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
 ])].sort();
-const expectedReviewedDiffs = manifest.files.map((file) => file.sourcePath);
+const cavesArchiveRoot = path.join(root, 'data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13');
+const cavesManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'manifest.json'), 'utf8'));
+const cavesFollowupManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'integration-followup-manifest.json'), 'utf8'));
+const cavesSupersededManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'superseded-batches-manifest.json'), 'utf8'));
+const expectedReviewedDiffs = [
+  ...manifest.files.map((file) => file.sourcePath),
+  ...cavesManifest.files.filter((item) => item.staleKeys.some((source) => !activeTranslationSources.has(source))).map((item) => item.sourcePath),
+  ...cavesFollowupManifest.files.map((item) => item.sourcePath),
+  ...cavesSupersededManifest.files.map((item) => item.successorPath)
+];
 const sharedPruneManifest = JSON.parse(fs.readFileSync(path.join(root, archiveRoot, 'shared-prune/manifest.json'), 'utf8'));
 assert.equal(sharedPruneManifest.sourceBaseCommit, integrationBaseCommit, 'shared stale-key archives must name the exact integration base.');
 assert.equal(sharedPruneManifest.files.length, 4, 'archive the four locale copies of the stale shared reviewed key.');
@@ -286,6 +301,10 @@ for (const edition of editions.slice(1)) {
     assert(name, edition.code + ': missing ' + suffix);
     expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
   }
+  const cavesPageBatch = fs.readdirSync(directory).find((name) => name.endsWith('-caves-islands-gaps-pages.json'));
+  assert(cavesPageBatch, edition.code + ': Caves page batch is present.');
+  expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + cavesPageBatch);
+  expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/29z-vietnam-caves-islands-gaps-search.json');
 }
 const bayArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-bay-gaps/2026-10-13/manifest.json'), 'utf8'));
 expectedReviewedDiffs.push(...bayArchive.archivedFiles.map((file) => file.source));
@@ -333,5 +352,5 @@ assert.deepEqual(
   'The four targets must have been unfinished in the previous coverage checkpoint.'
 );
 
-console.log('Southern Vietnam historical scope regression passed with the separately archived bay-gaps overlay: the four southern bodies, their metadata and 87/99 checkpoint remain intact; the bay overlay adds only four routes, 20 dates and its separately named translations.');
+console.log('Southern Vietnam historical scope regression passed with separately archived Bay and caves/islands overlays: the four southern bodies, their metadata and 87/99 checkpoint remain intact; each follow-on adds only its four exact routes, 20 dates and separately named translations.');
 console.log(JSON.stringify(bodyChecks, null, 2));
