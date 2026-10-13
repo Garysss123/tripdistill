@@ -50,4 +50,4 @@ No headless browser, CDP, local server, HTTP crawler or security-setting change 
 - The four page batches passed structure/coverage validation and sample review in Traditional Chinese, Japanese, Korean and Thai. The four search batches passed validation/sample checks as well; all four page-batch samples finished without long-target reuse warnings.
 - `git diff --check` passed before commit. The site-wide `npm run audit:australia-sources` was not run because that script sends HTTP range requests to every official citation; the user prohibited HTTP crawling. The official sources listed above were checked directly in the browsing tool, with access restrictions respected.
 
-Commit, parent/tree IDs and source-branch push/readback are recorded below after completion.
+The substantive batch commit is `55e3b9710c24b45975bdaea5769ab3e4a39ffc44` (parent `768151d3f42378358c122a1cde55100fcec9eafa`, tree `f929835b5ec009bd0f81076130993261cf2b7355`). The source branch was pushed to `origin`, and its remote ref read back as that exact commit.
