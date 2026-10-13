@@ -1278,56 +1278,117 @@ export const vietnamNorthClusters = [
       {
         slug: 'hang-en-expedition',
         name: 'Hang En Expedition',
-        motif: 'jungle crossing and cave camp',
+        motif: 'screened jungle-to-cave expedition',
         instrument: 'expedition',
+        instrumentLabel: 'Briefing-to-cave expedition plan',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [
+          ['https://oxalisadventure.com/tour/hang-en-adventure-cave-camp/', 'Oxalis Adventure — Hang En Cave Adventure itinerary, current screening and season listing (checked 13 October 2026)'],
+          ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — Park-managed public visitor routes; not an entry permit for Hang En'],
+          ['https://whc.unesco.org/en/list/951/', 'UNESCO World Heritage Centre — Phong Nha–Ke Bang and Hin Nam No conservation context']
+        ],
+        searchKeywords: ['hang en guided expedition', 'hang en 2 days 1 night', 'hang en fitness requirement', 'hang en tour booking', 'phong nha cave alternatives', 'cave access permit'],
         image: image({ src: '/assets/images/vietnam-hang-en.webp', alt: 'Entrance to Hang En Cave in Phong Nha-Ke Bang National Park', source: 'https://commons.wikimedia.org/wiki/File:Hang_%C3%89n_Cave_-_201505_-_JB.jpg', label: 'Hang Én Cave - 201505 - JB.jpg', creator: 'Jérémie B.', license: 'CC BY-SA 4.0' }),
-        summary: 'A controlled two-day cave expedition involving jungle trekking, stream crossings, Ban Doong context and overnight camping inside Hang En.',
-        lead: 'Hang En is a guided expedition with real water crossings, steep terrain and conservation limits. The page should help readers decide whether they are ready and show why a trained team, safety briefing and seasonal operation are essential.',
-        orientation: 'Treat the pre-trip briefing, road transfer, jungle approach, cave camp and return as one connected operation. There is no sensible self-guided version of this route.',
-        arrival: 'Arrive in Phong Nha before the operator’s required briefing and pickup window. Equipment, releases and medical information are part of participation.',
-        sequence: 'Attend the briefing, follow the guide through jungle and streams, keep camp clean, respect Ban Doong community boundaries and return only with the team.',
-        boundary: 'No solo departure, cave alteration, litter, loud behavior or unauthorized photography of residents. The core zone is not a public shortcut.',
+        summary: 'Oxalis lists Hang En as a guided 2-day/1-night cave expedition with a jungle approach, stream crossings and cave camping. Base in Phong Nha around the briefing and return; confirm eligibility, dates and current authorization before booking.',
+        lead: 'Hang En is a separate cave-and-jungle expedition, not an extension of the public Phong Nha Cave boat route or a walk from a park trail. On 13 October 2026, Oxalis listed a 2-day/1-night trip for ages 16–70, rated moderate, but its page also requires recent steep-terrain trekking experience, a fitness benchmark and medical screening. Those are the operator’s current conditions, not a universal park rule. Read them before paying and accept the guide’s weather or safety decision.',
+        orientation: 'For a short visit, keep Phong Nha village as the base for managed visitor routes and omit the remote expedition. For Hang En, plan three nights in Phong Nha: arrive and attend the operator’s briefing, take the listed 2-day/1-night tour, then stay after the stated return instead of risking a same-evening connection. Add a fourth night for a separate public cave day or a tight rail/flight link. Dong Hoi is a transfer gateway; confirm the named pickup, briefing and lodging with the operator rather than treating it as the cave base. This is an editorial margin around the current listing, not a guaranteed itinerary.',
+        arrival: 'Book only through the operator’s current Hang En product page and confirm the actual departure date, remaining place, authorization, briefing address, pickup and return plan in writing. If arriving through Dong Hoi, arrange the road transfer to the operator’s named meeting point and arrive the previous day. The public information reviewed here does not establish a separate self-guided route or independent cave-entry permission.',
+        sequence: 'Arrival day: reach the confirmed Phong Nha lodging and attend the operator’s briefing. Tour day 1: follow the assigned team from the named pickup through the forest and stream crossings to the designated cave camp. Tour day 2: explore only the operator’s approved section, then return with the guide and safety staff. Keep the post-tour night in Phong Nha; move to a public visitor route only on a separate day.',
+        boundary: 'Enter Hang En only as part of a currently authorized guided expedition with a confirmed booking. A public park trail, a cave photograph or the fact that Hang En lies on the broader Son Doong route does not grant entry. Do not follow unmarked tracks, enter the cave independently, or bypass a barrier or guide decision.',
         stages: [
-          ['Pass the briefing', 'Read the medical, fitness, equipment and weather rules before committing; a missed briefing can end participation.'],
-          ['Cross the forest', 'Use the supplied gear, keep group spacing and let the safety team decide when water or terrain is no longer acceptable.'],
-          ['Camp in the cave', 'Respect the designated campsite, swifts, formations and waste system; keep light and sound controlled.'],
-          ['Return as one team', 'Do not race ahead or remain behind. The guide’s return decision is part of the safety system.']
+          ['Check the product', 'Oxalis currently lists a 2-day/1-night trip, ages 16–70 and a December-to-mid-September operating window. Confirm that your exact date is offered and that the current permit and operator arrangements are in force.'],
+          ['Clear the screening', 'The page asks for a recent overnight trek or one-to-two-day hikes on steep, rocky jungle terrain, plus a stated fitness benchmark and medical review. Ask Oxalis about your own record and health; a self-assessment is not approval.'],
+          ['Travel with the team', 'The listed terrain includes about 25 km of rough mountain and river paths, repeated shallow stream crossings and cave walking. Use the issued equipment and follow the guide and safety team; water depth and route decisions can change with weather.'],
+          ['Take the public-route fallback', 'If dates, fitness, access or conditions do not work, choose a separate Park-managed daylight visitor route such as the routes published by the Tourism Center, or keep the day in town. Those routes have their own tickets and limits; they do not authorize entry to Hang En.']
         ],
         risks: [
-          ['Water and mud', 'Streams and jungle trails become slippery or impassable in rain. Tours may change or stop according to weather.'],
-          ['Remote medical access', 'The route is away from ordinary roads and hospitals. Declare health conditions and carry approved medication.'],
-          ['Community and wildlife', 'Ban Doong and cave wildlife deserve distance and consent. Do not treat either as entertainment.']
+          ['Season and water', 'Oxalis currently lists December to mid-September operation and says the route includes stream crossings; weather may change or stop a tour. The date, water level and go/no-go for a future departure remain unknown until the operator confirms them.'],
+          ['Fitness and remote care', 'This is not a casual cave walk. The operator’s screening and guide decision control participation; declare medical conditions and do not rely on an editorial guide to judge fitness.'],
+          ['Transfer and return', 'The current itinerary can change and the operator’s page gives a late return estimate. Keep the post-tour night free, confirm the actual drop-off, and do not attach a fixed evening train, flight or island transfer.']
         ],
-        duration: 'Plan two days and one night with a pre-trip briefing and a full recovery period afterward.',
-        combine: 'Combine with accessible Phong Nha only before or after the expedition, not on the same active day.',
-        verify: 'Check the authorized operator, current season, briefing time, fitness and medical requirements, weather, equipment and cancellation terms.'
+        duration: 'Use three Phong Nha nights as a practical minimum around the listed 2-day/1-night expedition: one before the briefing, the cave night included in the tour, and one after the return. Add a fourth if you want a separate public cave day or have a tight onward connection. This is a planning estimate, not an operator guarantee.',
+        combine: 'Do not combine the expedition with a public cave visit on either active tour day. With a fourth night, place a Park-managed boat or boardwalk route on a separate daylight day and recheck its own access rules.',
+        verify: 'Before paying, confirm the current operator authorization and booking, exact dates and season, age and fitness screening, medical exclusions, briefing and pickup location, included lodging, route and equipment, weather cancellation and return time.',
+        faqLastQuestion: 'Can I walk into Hang En from a public trail?',
+        presentation: {
+          readingTitle: 'Treat the briefing as the first stage of the route.',
+          routeTitle: 'Clear the operator gates before the forest day.',
+          checksTitle: 'Three checks decide whether this trip is viable.',
+          checksIntro: 'Oxalis’s product page is the current source for its tour terms. Exact future availability, permits and conditions must be confirmed directly.',
+          faqTitle: 'Hang En expedition planning',
+          boundaryTitle: 'No independent cave entry'
+        },
+        routeDiagram: {
+          kind: 'compare',
+          title: 'Choose a managed visit or a screened expedition',
+          intro: 'A public cave route and Hang En do not share an entrance contract or physical demand.',
+          steps: [
+            ['Public visitor route', 'Park-managed day visit', 'Use the Tourism Center’s currently listed public routes, after checking that route’s ticket, access and physical requirements.'],
+            ['Hang En', 'Guided 2D1N product', 'Book the current operator product, pass its fitness and medical review, attend the briefing and stay with the assigned team.'],
+            ['No-go day', 'Remain on the public side', 'If the expedition is unavailable or you do not qualify, choose an open managed visitor route or return to Phong Nha. Never substitute self-entry.']
+          ],
+          fallbackTitle: 'A cave view is not an access permission',
+          fallback: 'Public boat, boardwalk and guided expedition routes have separate rules. Do not leave a marked visitor route to reach Hang En.'
+        }
       },
       {
         slug: 'son-doong-expedition',
         name: 'Son Doong Expedition',
-        motif: 'large-scale cave ecology and strict access',
+        motif: 'licensed core-zone expedition',
         instrument: 'expedition',
+        instrumentLabel: 'Booking-and-eligibility gate',
+        isoDate: '2026-10-13',
+        reviewDate: '13 October 2026',
+        sources: [
+          ['https://oxalisadventure.com/tour/son-doong-cave-expedition-4d3n/', 'Oxalis Adventure — Son Doong product, licensing statement, screening and published duration (checked 13 October 2026)'],
+          ['https://oxalisadventure.com/getting-ready-oxalis-tour/', 'Oxalis Adventure — preparation and physical requirements for its expeditions'],
+          ['https://phongnhatourism.com.vn/', 'Phong Nha–Ke Bang Tourism Center — Park-managed public visitor routes for a lower-demand alternative'],
+          ['https://whc.unesco.org/en/list/951/', 'UNESCO World Heritage Centre — Phong Nha–Ke Bang and Hin Nam No conservation context']
+        ],
+        searchKeywords: ['son doong expedition booking', 'son doong licensed operator', 'son doong 6 days 5 nights', 'son doong fitness requirements', 'son doong age limits', 'phong nha public cave tours'],
         image: image({ src: '/assets/images/vietnam-son-doong.webp', alt: 'Large stalagmites inside Son Doong Cave in Vietnam', source: 'https://commons.wikimedia.org/wiki/File:Son_Doong_Cave_DB_%282%29-edited.jpg', label: 'Son Doong Cave DB (2)-edited.jpg', creator: 'Dave Bunnell, edited by Cart', license: 'CC BY-SA 4.0' }),
-        summary: 'A high-level multi-day expedition guide for Son Doong’s core-zone trek, underground weather, camps and conservation controls.',
-        lead: 'Son Doong is not simply a larger cave tour. It is a tightly controlled, physically demanding journey through forest and underground systems with limited communications, seasonal operation and strict ecological rules.',
-        orientation: 'Explain the full chain: pre-trip screening, safety briefing, jungle approach, cave camps, weather decisions and return. The official operator is part of the access model, not an optional booking convenience.',
-        arrival: 'Reach Dong Hoi or Phong Nha according to the operator’s required schedule, attend the mandatory briefing and bring only approved equipment.',
-        sequence: 'Complete screening and briefing, trek under the safety team, follow all camp and cave protocols, and accept an early return if weather or health demands it.',
-        boundary: 'No independent entry, unauthorized route, collecting, touching formations, drone, litter or photography that compromises people, wildlife or safety.',
+        summary: 'Oxalis lists Son Doong as a guided 6-day/5-night expedition for ages 18–70, operating January–August. The same page carries conflicting duration labels, so confirm written dates, eligibility and included nights before booking travel.',
+        lead: 'Son Doong is not a difficult public trail; it is a remote core-zone expedition. Oxalis currently states that it is the only operator licensed to organize the cave expedition, and that visitors must join its tour. Its page lists a 6-day/5-night product, ages 18–70 and a demanding fitness screen, while the URL still says 4D3N. Treat the exact schedule, future availability and authorization for your date as unconfirmed until the operator answers in writing.',
+        orientation: 'Use Dong Hoi as the rail/airport gateway and Phong Nha as the cave-area base, but do not choose a hotel or transfer from a map pin alone: Oxalis currently describes a pickup from Dong Hoi, a transfer to Commander Lodge and a mandatory briefing, with expedition lodging arranged through its itinerary. The page asks guests to reach Dong Hoi by 3:00 PM, yet its duration labels conflict. Confirm the exact pickup, briefing, included nights and return transfer before buying separate tickets.',
+        arrival: 'Start with the official Son Doong product page and request the precise departure calendar, license/permit basis, screening decision and written itinerary. Oxalis’s current page requires a Dong Hoi arrival by 3:00 PM and a mandatory safety briefing; confirm these checkpoints directly because the page also carries a 4D3N URL and a 6D5N product block. Do not arrive in Phong Nha on the morning of the briefing or connect a fixed departure to the expedition’s estimated return.',
+        sequence: 'Before travel: submit honest trekking and medical details and wait for the operator’s confirmation. Arrival: use the confirmed Dong Hoi pickup and attend the mandatory briefing with approved equipment. Expedition: travel only with the assigned cave expert, guide and safety team, accepting changes for weather or health. Return: use the operator’s arranged lodging and transfer, then keep a separate recovery/departure margin.',
+        boundary: 'Son Doong entry requires the booked guided expedition; Oxalis currently says it is the only licensed operator. Do not attempt to find or enter the cave from Hang En, a forest trail, a map pin or any public visitor route. No itinerary or safety advice authorizes crossing a barrier, bypassing a permit or continuing against the guide’s decision.',
         stages: [
-          ['Qualify before arrival', 'Confirm health, fitness, equipment and the current operating season before purchasing non-refundable travel around the expedition.'],
-          ['Enter the core zone', 'Stay with the guide and safety experts, carry only permitted gear and treat every river crossing or climb as consequential.'],
-          ['Live with the cave', 'Respect underground weather, camps, formations and the conservation program; keep light, sound and waste controlled.'],
-          ['Exit by the safe decision', 'The team may change the itinerary or end the journey. A safe return is the successful outcome, not a failure.']
+          ['Choose the right trip', 'For an ordinary managed cave visit, use a separate Park visitor route. Son Doong is for travelers seeking a multi-day expedition and willing to follow a strict booking and safety contract.'],
+          ['Pass the screen', 'Oxalis lists a recent overnight forest or mountain trek with at least 8 km per day and 1,000 m of elevation gain, a fitness benchmark and medical exclusions. The product block gives ages 18–70; the operator makes the final decision.'],
+          ['Resolve the calendar', 'The current product block says 6 days/5 nights and January–August; the URL says 4D3N. Obtain written confirmation of trip length, departure, briefing, pickup, permits and included lodging before booking rail, flights or extra hotel nights.'],
+          ['Stay with the team', 'Follow the briefing, guide and safety experts through forest, river crossings, camps and cave sections. If the tour is unavailable, the screen is not passed, or weather changes the route, use a separate public visitor option or postpone; never self-enter.']
         ],
         risks: [
-          ['Seasonal flooding', 'The underground river and forest weather can close the route. Current operator and park decisions override old schedules.'],
-          ['High physical demand', 'Repeated climbs, mud, water and remote terrain require genuine preparation. Do not market the route to an unready audience.'],
-          ['Remote communication', 'Ordinary mobile service is limited. Follow the expedition communication plan and disclose medical needs in advance.']
+          ['Duration and availability', 'The official product page is inconsistent about 4D3N versus 6D5N. Current dates and places are not verified here; a booking calendar or old itinerary is not a confirmed reservation.'],
+          ['Fitness and medical access', 'Oxalis describes steep jungle trekking, repeated stream crossings, technical cave sections and limited access to medical facilities. Disclose conditions and let the operator assess eligibility; do not self-clear.'],
+          ['Weather and communications', 'Flooding, underground weather and remote terrain can alter or end the tour. The operator’s guide decision overrides an old route description; keep the return flexible and follow its emergency communications plan.']
         ],
-        duration: 'Reserve the official multi-day expedition length plus a recovery and weather buffer; do not attach a fixed same-day connection.',
-        combine: 'Combine with village, river or accessible caves only on a separate recovery day before or after the expedition.',
-        verify: 'Check the authorized operator, current operating season, health and fitness screening, briefing, permits, weather, equipment and conservation rules.'
+        duration: 'The product block and booking FAQ currently say 6 days/5 nights, while the same page URL says 4D3N. If Oxalis confirms 6D5N for your date, reserve that full operator block plus a separate arrival night before briefing and one recovery/departure night after: at least seven nights in total. Do not use seven as a fixed promise until the operator confirms its included lodging and exact schedule in writing.',
+        combine: 'Keep Son Doong separate from Hang En, public caves, boat routes and a same-day onward connection. Place another Phong Nha activity only on a genuinely free day before or after the confirmed expedition, with operator-approved recovery and transfer time.',
+        verify: 'Confirm in writing the current licensed operator and permit basis, exact departure dates and tour duration, age and fitness eligibility, medical exclusions, available place, Dong Hoi pickup and briefing, included accommodation, weather cancellation, equipment, return time and cancellation terms.',
+        faqLastQuestion: 'Can I enter Son Doong without the expedition booking?',
+        presentation: {
+          readingTitle: 'The booking and safety system is part of the route.',
+          routeTitle: 'Keep the calendar, screening and guided entry in order.',
+          checksTitle: 'Resolve these three gates before arranging flights.',
+          checksIntro: 'Oxalis’s own page currently contains different duration labels. The operator must confirm your actual itinerary and authorization before non-refundable travel.',
+          faqTitle: 'Son Doong expedition planning',
+          boundaryTitle: 'No independent core-zone access'
+        },
+        routeDiagram: {
+          kind: 'compare',
+          title: 'Son Doong, Hang En and public caves are different products',
+          intro: 'Each route has its own booking, access boundary and physical requirements.',
+          steps: [
+            ['Highest-demand trip', 'Son Doong expedition', 'Oxalis lists 6D5N, ages 18–70 and challenging screening, while its page URL says 4D3N. Obtain a written itinerary and booking confirmation.'],
+            ['Shorter expedition', 'Hang En 2D1N', 'This is still a guided jungle-and-cave trip with recent trekking and fitness requirements; it is not a self-guided substitute.'],
+            ['Public day visit', 'Park-managed visitor route', 'The Tourism Center publishes separate routes such as Phong Nha and Tien Son. Follow their current ticket and access rules; these do not lead into Son Doong.']
+          ],
+          fallbackTitle: 'No booking or no qualification means no cave entry',
+          fallback: 'Choose an open, managed public route or postpone. Do not look for an unmarked approach or attempt to bypass a restricted area.'
+        }
       }
     ]
   }

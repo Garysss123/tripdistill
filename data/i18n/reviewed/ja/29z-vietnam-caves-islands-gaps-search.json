@@ -1,0 +1,41 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "hang en guided expedition": "ハンエン洞窟 ガイド付き探検",
+    "hang en 2 days 1 night": "ハンエン洞窟 2日間1泊",
+    "hang en fitness requirement": "ハンエン洞窟 参加条件と体力基準",
+    "hang en tour booking": "ハンエン洞窟ツアー予約",
+    "phong nha cave alternatives": "フォンニャの洞窟 代替プラン",
+    "cave access permit": "洞窟への入場許可",
+    "son doong expedition booking": "ソンドン洞窟探検の予約",
+    "son doong licensed operator": "ソンドン洞窟の認可事業者",
+    "son doong 6 days 5 nights": "ソンドン洞窟 6日間5泊",
+    "son doong fitness requirements": "ソンドン洞窟 体力要件",
+    "son doong age limits": "ソンドン洞窟 年齢制限",
+    "phong nha public cave tours": "フォンニャの一般洞窟ツアー",
+    "Ganh Dau Phu Quoc road": "フーコック島 ガンザウへの道路",
+    "Rach Vem north island": "北島 ラックヴェム",
+    "Bai Thom Phu Quoc": "フーコック島 バイトム",
+    "Phu Quoc north forest trail": "フーコック島北部の森林歩道",
+    "Phu Quoc north base nights": "フーコック島北部の宿泊数",
+    "Ganh Dau access status": "ガンザウの立ち入り状況",
+    "phu quoc forest & suoi tranh stream": "フーコック島の森とスオイチャイン川",
+    "Suoi Tranh stream walk": "スオイチャイン川の散策路",
+    "Phu Quoc forest trail access": "フーコック島の森林歩道への立ち入り",
+    "Suoi Tranh opening status": "スオイチャインの営業状況",
+    "Suoi Tranh water safety": "スオイチャインの水辺の安全",
+    "Phu Quoc national park visitor routes": "フーコック国立公園の来訪者ルート",
+    "Phu Quoc rain forest walk": "フーコック島の熱帯雨林散策"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex per-locale translation pass",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the four assigned routes and retained place names. The translation review is not independent model or human review."
+  }
+}

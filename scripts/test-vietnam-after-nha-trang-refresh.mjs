@@ -23,6 +23,7 @@ const southernGapsRoutes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
+const cavesIslandsGapsRoutes = ['/vietnam/phong-nha-ke-bang/hang-en-expedition/', '/vietnam/phong-nha-ke-bang/son-doong-expedition/', '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/', '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'];
 const southernGapsHubs = ['vietnam/ho-chi-minh-city/index.html', 'vietnam/mekong-delta/index.html'];
 const editions = [
   { code: 'en', prefix: '' },
@@ -123,7 +124,7 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
+const expectedEnglishVietnamFiles = [...routes.map((route) => `${route.slice(1)}index.html`), ...southernGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...cavesIslandsGapsRoutes.map((route) => `${route.slice(1)}index.html`), ...southernGapsHubs].sort();
 assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'Only the two reviewed four-guide batches and their two updated hub excerpts may change under vietnam/.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
@@ -137,14 +138,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes].sort(), 'Only the two reviewed four-guide batches may change English search records.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes, ...cavesIslandsGapsRoutes].sort(), 'Only the two reviewed four-guide batches may change English search records.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...cavesIslandsGapsRoutes].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -242,6 +243,12 @@ for (const edition of editions.slice(1)) {
   const newNames = fs.readdirSync(directory).filter((name) => name.endsWith('defk-vn-pages-20261013.json') || name.endsWith('defl-vn-search-20261013.json'));
   assert.equal(newNames.length, 2, `${edition.code}: expected exactly two new reviewed batches.`);
   expectedReviewedDiffs.push(...newNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
+  const cavesPageNames = fs.readdirSync(directory).filter((name) => name.endsWith('-caves-islands-gaps-pages.json'));
+  assert.equal(cavesPageNames.length, 1, `${edition.code}: expected one uniquely named caves-islands-gaps page batch.`);
+  const cavesSearchNames = fs.readdirSync(directory).filter((name) => name === '29z-vietnam-caves-islands-gaps-search.json');
+  assert.equal(cavesSearchNames.length, 1, `${edition.code}: expected one uniquely named caves-islands-gaps search batch.`);
+  expectedReviewedDiffs.push(...cavesPageNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
+  expectedReviewedDiffs.push(...cavesSearchNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
   const southernNames = fs.readdirSync(directory).filter((name) => name.endsWith('defm-vietnam-south-pages.json') || name.endsWith('defn-vietnam-south-search.json'));
   assert.equal(southernNames.length, 2, `${edition.code}: expected exactly two southern-gaps batches.`);
   expectedReviewedDiffs.push(...southernNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
@@ -260,7 +267,7 @@ for (const repoPath of baseReviewedPaths) {
 expectedReviewedDiffs.sort();
 assert.deepEqual(reviewedDiffs, expectedReviewedDiffs, 'Draft and parallel-work files must remain untouched; existing reviewed batches may only lose keys absent from the current source set.');
 const nonReviewedI18nDiffs = git(['diff', '--name-only', baselineCommit, '--', 'data/i18n']).trim().split('\n').filter(Boolean)
-  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
+  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
 assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or other localization files may change in this sprint.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));

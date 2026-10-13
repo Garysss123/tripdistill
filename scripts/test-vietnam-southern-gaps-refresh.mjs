@@ -17,6 +17,12 @@ const routes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
+const cavesIslandsGapsRoutes = [
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+];
 const hubs = [
   'vietnam/ho-chi-minh-city/index.html',
   'vietnam/mekong-delta/index.html'
@@ -130,7 +136,7 @@ for (const route of routes) {
 }
 
 const changedEnglishVietnamFiles = git(['diff', '--name-only', baselineCommit, '--', 'vietnam']).trim().split('\n').filter(Boolean).sort();
-const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
+const expectedEnglishVietnamFiles = [...routes.map((route) => route.slice(1) + 'index.html'), ...cavesIslandsGapsRoutes.map((route) => route.slice(1) + 'index.html'), ...hubs].sort();
 assert.deepEqual(changedEnglishVietnamFiles, expectedEnglishVietnamFiles, 'English Vietnam page scope must contain only four target guides and their two updated hub excerpts.');
 
 const baseSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
@@ -144,14 +150,14 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes].sort(), 'Only the four matching English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...cavesIslandsGapsRoutes].sort(), 'Only the two registered four-guide batches may change English search records.');
 
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
@@ -244,8 +250,16 @@ for (const edition of editions.slice(1)) {
     assert(name, edition.code + ': missing ' + suffix);
     expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
   }
+  const cavesPageName = fs.readdirSync(directory).find((name) => name.endsWith('-caves-islands-gaps-pages.json'));
+  const cavesSearchName = fs.readdirSync(directory).find((name) => name === '29z-vietnam-caves-islands-gaps-search.json');
+  assert(cavesPageName && cavesSearchName, edition.code + ': missing caves-islands-gaps reviewed batches.');
+  expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + cavesPageName);
+  expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + cavesSearchName);
 }
-assert.deepEqual(reviewedDiffs, expectedReviewedDiffs.sort(), 'Only the eight southern-gaps batches and eight archived reviewed batches may change; drafts and parallel translations must stay untouched.');
+const cavesArchiveManifest = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/manifest.json'), 'utf8'));
+expectedReviewedDiffs.push(...cavesArchiveManifest.files.map((file) => file.sourcePath));
+const expectedReviewedDiffSet = [...new Set(expectedReviewedDiffs)].sort();
+assert.deepEqual(reviewedDiffs, expectedReviewedDiffSet, 'Only the registered Vietnam batches and archived stale-key sources may change; drafts and parallel translations must stay untouched.');
 
 const changedSvgs = git(['diff', '--name-only', baselineCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');

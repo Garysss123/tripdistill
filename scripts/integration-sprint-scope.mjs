@@ -420,6 +420,15 @@ export const followingVietnamSouthernGapsRoutes = Object.freeze([
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ]);
 
+// This independent source branch refreshes four existing cave/island guides;
+// it remains outside the integrated Vietnam route and substantive-coverage counts.
+export const followingVietnamCavesIslandsGapsRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+]);
+
 export const currentSourceBranchSearchRoutes = Object.freeze([
   ...integrationSearchRoutes,
   ...followingVietnamMuiNeRoutes,
@@ -427,7 +436,8 @@ export const currentSourceBranchSearchRoutes = Object.freeze([
   ...followingVietnamPhuQuocRoutes,
   ...followingVietnamNhaTrangRoutes,
   ...followingVietnamAfterNhaTrangRoutes,
-  ...followingVietnamSouthernGapsRoutes
+  ...followingVietnamSouthernGapsRoutes,
+  ...followingVietnamCavesIslandsGapsRoutes
 ]);
 
 export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
@@ -435,5 +445,5 @@ export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
 );
 
 export const localizedSourceBranchSitemapRoutes = (prefixes) => new Set(
-  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes].map((route) => `${prefix}${route}`))
+  prefixes.flatMap((prefix) => [...integrationSitemapRoutes, ...currentBranchVietnamRoutes, ...followingVietnamMekongRoutes, ...followingVietnamDaLatRoutes, ...followingVietnamMuiNeRoutes, ...followingVietnamPhongNhaRoutes, ...followingVietnamPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes].map((route) => `${prefix}${route}`))
 );

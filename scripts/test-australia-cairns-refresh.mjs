@@ -192,9 +192,15 @@ const afterNhaTrangVietnamRoutes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
-const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
+const cavesIslandsVietnamRoutes = [
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+];
+const expectedHtml = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].map((route) => route.replace(/^\//, '') + 'index.html').sort();
 const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
-assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns, known Vietnam documents and twenty-eight explicit HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang source-branch pages may change.');
+assert.deepEqual(changedHtml, expectedHtml, 'Only the four selected English Cairns, known Vietnam documents and thirty-two explicit HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang/caves-islands source-branch pages may change.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 const priorBodyRoutes = priorBodyHtml.map((name) => '/' + name.replace(/index\.html$/, ''));
@@ -269,7 +275,7 @@ const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item])
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 assert.deepEqual([...englishSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...englishSearchByUrl.keys()].filter((url) => JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes].sort(), 'Only the four selected Cairns and the enumerated current Vietnam search records may change.');
+assert.deepEqual(changedSearch, [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].sort(), 'Only the four selected Cairns and the enumerated current Vietnam search records may change.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
   ...cluster.guides.filter((guide) => routes.includes(guide.url)).map((guide) => [guide.url, guide.searchSummary])
@@ -288,11 +294,11 @@ for (const [locale, prefix] of locales.slice(1)) {
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...vietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four selected Cairns, known Vietnam routes and 140 explicit HCMC/Mekong/Da Lat/Mui Ne/Phong Nha/Phu Quoc/Nha Trang source-branch edition paths may receive new lastmod dates.');
 for (const route of expectedLastmod) {
-  const expectedDate = [...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
+  const expectedDate = [...currentBranchVietnamRoutes, ...laterMuiNeVietnamRoutes, ...laterPhongNhaVietnamRoutes, ...laterPhuQuocVietnamRoutes, ...laterNhaTrangVietnamRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
   assert.equal(currentSitemap.get(route), expectedDate, route + ': sitemap date.');
 }
 

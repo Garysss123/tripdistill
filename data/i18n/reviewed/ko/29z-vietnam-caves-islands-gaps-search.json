@@ -1,0 +1,41 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "hang en guided expedition": "Hang En 가이드 탐험",
+    "hang en 2 days 1 night": "Hang En 2일 1박",
+    "hang en fitness requirement": "Hang En 체력 요건",
+    "hang en tour booking": "Hang En 투어 예약",
+    "phong nha cave alternatives": "Phong Nha 동굴 대안 코스",
+    "cave access permit": "동굴 출입 허가",
+    "son doong expedition booking": "Son Doong 탐험 예약",
+    "son doong licensed operator": "Son Doong 허가 운영사",
+    "son doong 6 days 5 nights": "Son Doong 6일 5박",
+    "son doong fitness requirements": "Son Doong 체력 요건",
+    "son doong age limits": "Son Doong 연령 제한",
+    "phong nha public cave tours": "Phong Nha 일반 동굴 투어",
+    "Ganh Dau Phu Quoc road": "푸꾸옥 Ganh Dau 도로",
+    "Rach Vem north island": "북쪽 섬 Rach Vem",
+    "Bai Thom Phu Quoc": "푸꾸옥 Bai Thom",
+    "Phu Quoc north forest trail": "푸꾸옥 북부 숲길",
+    "Phu Quoc north base nights": "푸꾸옥 북부 숙박 일수",
+    "Ganh Dau access status": "Ganh Dau 출입 현황",
+    "phu quoc forest & suoi tranh stream": "푸꾸옥 숲과 Suoi Tranh 개울",
+    "Suoi Tranh stream walk": "Suoi Tranh 개울 산책로",
+    "Phu Quoc forest trail access": "푸꾸옥 숲길 출입 방법",
+    "Suoi Tranh opening status": "Suoi Tranh 운영 여부",
+    "Suoi Tranh water safety": "Suoi Tranh 물놀이 안전",
+    "Phu Quoc national park visitor routes": "푸꾸옥 국립공원 방문객 코스",
+    "Phu Quoc rain forest walk": "푸꾸옥 열대우림 산책로"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex per-locale translation pass",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the four assigned routes and retained place names. The translation review is not independent model or human review."
+  }
+}

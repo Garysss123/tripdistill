@@ -99,6 +99,12 @@ const afterNhaTrangVietnamRoutes = [
   '/vietnam/mekong-delta/my-tho-thoi-son-island/',
   '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
 ];
+const cavesIslandsVietnamRoutes = [
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+];
 const currentBranchVietnamRoutes = [
   '/vietnam/ho-chi-minh-city/',
   '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
@@ -316,7 +322,7 @@ const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
 const changedSearch = [...currentSearchByUrl.keys()].filter((url) => JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
-assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes].sort(), 'Only four selected Great Ocean Road, exact later CA13, CA14 child, Gold Coast, Cairns, CH14 and Vietnam search records may change since the prior integration checkpoint.');
+assert.deepEqual(changedSearch, [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14SearchRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14Routes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].sort(), 'Only the selected Great Ocean Road, exact later regional batches and explicitly reviewed Vietnam source-branch search records may change since the prior integration checkpoint.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
   assert(record?.summary && fs.readFileSync(pageFile(route), 'utf8').includes(record.summary), route + ': search summary must match the page copy.');
@@ -332,12 +338,12 @@ for (const route of routes) {
 const baseSitemap = sitemapEntries(git(['show', integrationBase + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...followingMekongRoutes, ...followingDaLatRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
+const expectedLastmod = [...routes, ...laterCanadaCa13Routes, ...laterCanadaCa14DateRoutes, ...laterGoldCoastRoutes, ...laterCairnsRoutes, ...laterSwitzerlandCh14DateRoutes, ...laterVietnamRoutes, ...currentVietnamRoutes, ...currentBranchVietnamRoutes, ...followingMekongRoutes, ...followingDaLatRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only four selected Great Ocean Road, exact later CA13/CA14, Gold Coast, Cairns, CH14 and Vietnam routes, including the following Mekong, Da Lat and Phu Quoc batches, across five editions may receive a new lastmod since the prior integration checkpoint.');
 for (const route of expectedLastmod) {
-  const expectedDate = [...currentBranchVietnamRoutes, ...followingMekongRoutes, ...followingDaLatRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
+  const expectedDate = [...currentBranchVietnamRoutes, ...followingMekongRoutes, ...followingDaLatRoutes, ...laterVietnamMuiNeRoutes, ...laterVietnamPhongNhaRoutes, ...laterVietnamPhuQuocRoutes, ...laterVietnamNhaTrangRoutes, ...afterNhaTrangVietnamRoutes, ...cavesIslandsVietnamRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : reviewIsoDate;
   assert.equal(currentSitemap.get(route), expectedDate, route + ': sitemap lastmod.');
 }
 
