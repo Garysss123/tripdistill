@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postIntegrationBroomeRoutes, postIntegrationMuiNeRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'f2a2aa1d9aaab0151a6bd75dfc31c907c63afb28';
@@ -154,14 +154,14 @@ assert.equal(baseSearch.size, 955, 'integration-base English search index has 95
 assert.equal(currentSearch.size, 955, 'English search index retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes].sort(), 'only the four selected New England, Chicago, Margaret, Arizona and Los Angeles search summaries changed');
+assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes].sort(), 'only the selected New England, Chicago, Margaret, Arizona, Los Angeles, Broome and Mui Ne search summaries changed');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set is unchanged');
-const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes];
+const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes];
 const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(changedDates, datedPaths, 'only the selected New England, Chicago, Margaret, Da Lat, Arizona and Los Angeles routes across five editions receive changed sitemap dates');

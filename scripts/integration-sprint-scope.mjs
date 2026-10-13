@@ -512,6 +512,13 @@ export const followingVietnamDaLatRoutes = Object.freeze([
   '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
 ]);
 
+export const postIntegrationMuiNeRoutes = Object.freeze([
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+]);
+
 export const postNewEnglandIntegrationRoutes = postChicagoNewEnglandRoutes;
 
 export const postIntegrationMargaretRemainingRoutes = Object.freeze([
@@ -557,6 +564,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postNewEnglandIntegrationRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationBroomeRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationMuiNeRoutes) routes.add(`${prefix}${route}`);
   }
   return routes;
 };
