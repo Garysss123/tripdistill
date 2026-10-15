@@ -3,7 +3,15 @@
 - **Work branch:** `codex/thailand-country-overview-20261014`
 - **Verified GitHub source base:** `codex/integration-sprint-20261011` at `2dfb69529b96e29ff77f1e579baceb0b22da5e13`
 - **Country-level official-source check:** 14 October 2026
-- **Status:** source-only work, ready for the separate integration task
+- **Status:** integrated into `codex/integration-sprint-20261011`
+
+## Integration checkpoint — 15 October 2026
+
+The remote integration branch was fetched at `2dfb69529b96e29ff77f1e579baceb0b22da5e13`, the exact source base. Source terminal `c51ec3d2010eeb5ab626264e6e0f09c346df6f62` is its direct child (tree `118e127daf6193721777699b6106d3802ef7fc71`) and was integrated unchanged by fast-forward. Follow-up commit `6a570ed071a867d04282c55531ec0d9a8edff24f` corrects the cumulative scope regression by adding the exact `/thailand/` body path from the substantive-route ledger; it does not widen the guard. Its parent is the source terminal and its tree is `2b6c5f92b6cd7c8fd80f5a1caac8644d2c87ff04`.
+
+The cumulative exact scope is now 422 changed English bodies (420 source-work bodies plus two separately accounted U.S. historical paths), 2,105 sitemap `lastmod` changes across 421 routes × five editions, 378 changed English search records, and the unchanged 4,560-URL set. The substantive-route ledger is 907/907.
+
+Full `npm run audit` passed, including the integration-scope regression and final site audit: 4,560 published routes (912 per edition), 955 search records per language, and 4,560 unique localized titles. The four locale catalogs each have 61,728 required strings with zero missing or stale entries. `npm run build` passed with 5,501 files (4,577 HTML, 825 images; 329.5 MiB), verified all sitemap routes and left 14,499 files of Cloudflare Pages headroom. No rendered desktop/mobile or reading-order acceptance is claimed; no `main` update or deployment was performed.
 
 ## Provenance
 
@@ -42,4 +50,4 @@ The overview links to the Immigration Bureau's [Thailand Digital Arrival Card FA
 - `npm run build` passed: **5,501 files**, including 4,577 HTML files and 825 images; all 4,560 sitemap routes were verified.
 - `git diff --check` passed.
 
-These checks cover source content, translations, data, regressions and the static build. No rendered desktop/mobile review, reading-order acceptance or deployment is claimed. The next step is to integrate this standalone branch through the single integration task.
+These checks cover source content, translations, data, regressions and the static build. No rendered desktop/mobile review, reading-order acceptance or deployment is claimed.
