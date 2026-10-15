@@ -43,6 +43,7 @@ import {
   postAustraliaFinalRoutes,
   localizedIntegrationSitemapRoutes
 } from './integration-sprint-scope.mjs';
+import { thailandCountryOverviewNewSubstantiveRoutes } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const git = (args) => execFileSync('git', args, { cwd: root });
@@ -110,13 +111,14 @@ assert.deepEqual(
 
 const changedFiles = git([
   'diff', '--name-only', integrationSprintBaseline, '--',
-  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'vietnam', 'usa/hawaii', 'usa/new-orleans', 'usa/atlanta', 'usa/miami', 'usa/orlando', 'usa/new-england', 'usa/chicago', 'usa/arizona', 'usa/los-angeles', 'usa/boston', 'usa/san-diego', 'usa/index.html', 'usa/alaska/juneau-southeast'
+  'united-kingdom', 'australia', 'france', 'switzerland', 'italy', 'canada', 'malaysia', 'vietnam', 'thailand/index.html', 'usa/hawaii', 'usa/new-orleans', 'usa/atlanta', 'usa/miami', 'usa/orlando', 'usa/new-england', 'usa/chicago', 'usa/arizona', 'usa/los-angeles', 'usa/boston', 'usa/san-diego', 'usa/index.html', 'usa/alaska/juneau-southeast'
 ]).toString('utf8').trim().split('\n').filter(Boolean);
 const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
-assert.equal(changedBodyRoutes.length, 421);
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes]), 'the exact integration scope and separately accounted follow-on batches changed');
+assert.equal(thailandCountryOverviewNewSubstantiveRoutes.length, 1);
+assert.equal(changedBodyRoutes.length, 422);
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes, ...thailandCountryOverviewNewSubstantiveRoutes]), 'the exact integration scope and separately accounted follow-on batches changed');
 
 const phuQuocParent = '01144e03bf6173f468cb836d0899163e1a98c4ea';
 const phuQuocTerminal = 'a639c760ec728d90a0c271e512cbb7af2fa8bfa4';
@@ -460,4 +462,4 @@ for (const route of postIntegrationMuiNeRoutes) assert.deepEqual(currentSearchBy
 const bostonSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${bostonTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of bostonRoutes) assert.deepEqual(currentSearchByUrl.get(route), bostonSourceSearch.get(route), `${route}: exact Boston source search record is integrated`);
 
-console.log('Integration scope regression passed: 421 exact English bodies (419 source-work bodies plus two separately accounted USA historical paths), 2,100 integration date changes over 420 routes × five editions plus the five separately tracked Thailand overview dates, 378 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 422 exact English bodies (420 source-work bodies plus two separately accounted USA historical paths), 2,105 integration date changes over 421 routes × five editions, 378 English search changes, and the unchanged 4,560-URL set.');
