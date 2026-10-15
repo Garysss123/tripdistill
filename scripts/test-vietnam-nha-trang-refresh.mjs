@@ -141,7 +141,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes].sort(), 'Only the Nha Trang, later Vietnam and separately recorded Bay-gaps English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, '/thailand/'].sort(), 'Only the Nha Trang/later Vietnam, separately recorded gap groups and Thailand overview search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), `${route}: English search record must match the exact Nha Trang source terminal.`);
 
@@ -151,12 +151,15 @@ const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the Nha Trang and following four selected routes in five editions may receive a new sitemap date.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the Nha Trang/following Vietnam routes and Thailand overview in five editions may receive the declared sitemap dates.');
+for (const pagePath of expectedDatePaths) {
+  const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap date`);
+}
 for (const route of routes) for (const edition of editions) {
   const pagePath = `${edition.prefix}${route}`;
   assert.equal(currentSitemap.get(pagePath), sourceSitemap.get(pagePath), `${pagePath}: sitemap date must match the exact Nha Trang source terminal.`);

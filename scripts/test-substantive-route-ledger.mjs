@@ -48,7 +48,8 @@ import {
   vietnamSouthernGapsNewSubstantiveRoutes,
   vietnamBayGapsNewSubstantiveRoutes,
   vietnamCavesIslandsGapsNewSubstantiveRoutes,
-  vietnamCoastalGapsNewSubstantiveRoutes
+  vietnamCoastalGapsNewSubstantiveRoutes,
+  thailandCountryOverviewNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -218,7 +219,8 @@ for (const route of vietnamCompletedRoutes) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Vietnam ledger path is missing: ${route}`);
 }
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
-assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878, 882, 886, 890, 894, 898, 902, 906]);
+assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878, 882, 886, 890, 894, 898, 902, 906, 907]);
+assert.deepEqual(thailandCountryOverviewNewSubstantiveRoutes, ['/thailand/'], 'The Thailand addition is exactly its country overview.');
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -456,7 +458,7 @@ for (const group of historicalUsaSources) {
     }
   }
 }
-for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...vietnamBayGapsNewSubstantiveRoutes, ...vietnamCavesIslandsGapsNewSubstantiveRoutes, ...vietnamCoastalGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes]) {
+for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...vietnamBayGapsNewSubstantiveRoutes, ...vietnamCavesIslandsGapsNewSubstantiveRoutes, ...vietnamCoastalGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes, ...thailandCountryOverviewNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Newly integrated route is missing: ${route}`);
 }
 assert.equal(usaSanDiegoNewSubstantiveRoutes.length, 4, 'San Diego adds four newly integrated body routes.');
@@ -481,4 +483,4 @@ assert.equal(
   'Vietnam overview non-card editorial text must not count toward the route ledger; later card excerpts are excluded.'
 );
 
-console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne, Phong Nha, Phu Quoc and Nha Trang improvements, then the disjoint Southern Vietnam, Bay/Con Dao, caves/islands and coastal groups (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome, four Broome/Tasmania and five final-content improvements; corrected coverage reaches 906/907.');
+console.log('Substantive route ledger passed: Vietnam 39 historical routes plus eight prior and four each of Ha Long, Ho Chi Minh City, Mekong Delta, Da Lat, Mui Ne, Phong Nha, Phu Quoc and Nha Trang improvements, then the disjoint Southern Vietnam, Bay/Con Dao, caves/islands and coastal groups (core-cruise counted once); Canada 73 unique paths and 13 CA16–CA18 improvements; the exact 25 historical U.S. paths are disjoint from four Hawaii, New Orleans, Atlanta, Florida, New England, Chicago, Arizona, Los Angeles, Boston and San Diego source-work groups; all 32 historical U.S. corrections are separately accounted (New York 4, other historical paths 26, overview/Juneau 2); Australia’s twelve late gap improvements plus four Canberra, four Alps/Margaret, four remaining Margaret, four Broome, four Broome/Tasmania and five final-content improvements; the substantive ledger reaches 907/907 after the recreated Thailand country overview.');

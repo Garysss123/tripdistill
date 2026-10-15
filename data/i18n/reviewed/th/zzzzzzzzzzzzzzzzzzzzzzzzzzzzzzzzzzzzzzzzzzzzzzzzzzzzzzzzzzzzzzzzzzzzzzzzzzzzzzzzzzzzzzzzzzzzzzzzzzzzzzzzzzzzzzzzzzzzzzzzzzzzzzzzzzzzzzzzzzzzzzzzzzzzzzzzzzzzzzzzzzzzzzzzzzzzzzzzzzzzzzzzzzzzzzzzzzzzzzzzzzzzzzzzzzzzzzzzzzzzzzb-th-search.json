@@ -1,0 +1,10 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare 7-, 10- and 14-day Thailand routes with matching hotel-night counts, Bangkok transfers, Chiang Mai or Andaman bases, and seasonal weather choices.": "เปรียบเทียบแผนเที่ยวไทย 7, 10 และ 14 วัน โดยจัดจำนวนคืนที่พักให้พอดีกับวันเดินทาง วางแผนต่อรถในกรุงเทพฯ เลือกพักเป็นฐานที่เชียงใหม่หรือชายฝั่งอันดามัน และเตรียมทางเลือกให้เหมาะกับฤดูกาลและอากาศ"
+  }
+}

@@ -682,6 +682,7 @@ export const localizedPostIntegrationSourceRefreshSitemapRoutes = (prefixes) => 
 export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
   const routes = localizedIntegrationSitemapRoutes(prefixes);
   for (const prefix of prefixes) {
+    routes.add(`${prefix}/thailand/`);
     for (const route of postIntegrationSitemapRefreshRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationCanberraRoutes) routes.add(`${prefix}${route}`);

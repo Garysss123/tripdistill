@@ -10,7 +10,7 @@ import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, po
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = 'a99fbe9fe996ccedbac42b1b9386447a11403854';

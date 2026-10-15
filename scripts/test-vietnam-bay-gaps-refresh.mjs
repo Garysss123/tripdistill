@@ -134,17 +134,20 @@ const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
 assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set changed.');
 const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].sort(), 'Only the registered Bay, Caves/islands, and later coastal English search records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].sort(), 'Only the registered Bay/Caves/islands/coastal and Thailand overview English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(integrationBaseCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four selected routes in five editions may receive new dates.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap lastmod`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared dates.');
+for (const pagePath of expectedDatePaths) {
+  const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap lastmod`);
+}
 
 for (const route of routes) {
   const sourceSearch = currentSearchByUrl.get(route);
@@ -199,7 +202,11 @@ for (const archived of manifest.archivedFiles) {
   for (const source of archived.removedKeys) assert(!activeTranslationSources.has(source), `${archived.source}: removed key is still active.`);
 }
 
-const expectedReviewedDiffs = manifest.archivedFiles.map((item) => item.source);
+const thailandManifest = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/thailand-country-overview-refresh/2026-10-14/manifest.json'), 'utf8'));
+const expectedReviewedDiffs = [
+  ...thailandManifest.files.map((item) => item.sourcePath),
+  ...manifest.archivedFiles.map((item) => item.source)
+];
 const cavesArchiveRoot = 'data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13';
 const cavesManifest = JSON.parse(fs.readFileSync(path.join(root, cavesArchiveRoot, 'manifest.json'), 'utf8'));
 const cavesSupersededManifest = JSON.parse(fs.readFileSync(path.join(root, cavesArchiveRoot, 'superseded-batches-manifest.json'), 'utf8'));
@@ -241,6 +248,11 @@ for (const edition of editions.slice(1)) {
   for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
     const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
     assert.equal(matches.length, 1, `${edition.code}: expected one explicit coastal ${suffix.includes('search') ? 'search' : 'pages'} batch.`);
+    expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
+  }
+  for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${edition.code}: expected one Thailand overview ${suffix.includes('search') ? 'search' : 'page'} batch.`);
     expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
   }
 }

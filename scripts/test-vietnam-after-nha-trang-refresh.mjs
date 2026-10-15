@@ -164,7 +164,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].sort(), 'Only the historical guide batches and the separately recorded Bay, caves/island and coastal follow-on overlays may change English search records.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].sort(), 'Only the historical Vietnam batches, recorded follow-on overlays and Thailand country overview may change English search records.');
 const sourceSearchByUrl = byUrl(sourceSearch);
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), `${route}: English search record must match the exact source terminal.`);
 
@@ -173,12 +173,15 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four selected routes in five editions may receive a new sitemap date.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared sitemap dates.');
+for (const pagePath of expectedDatePaths) {
+  const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap date`);
+}
 
 for (const route of routes) {
   const sourceSearch = currentSearchByUrl.get(route);
@@ -269,20 +272,27 @@ const cavesArchiveRoot = path.join(root, 'data/i18n/archive/vietnam-caves-island
 const cavesManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'manifest.json'), 'utf8'));
 const cavesFollowupManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'integration-followup-manifest.json'), 'utf8'));
 const cavesSupersededManifest = JSON.parse(fs.readFileSync(path.join(cavesArchiveRoot, 'superseded-batches-manifest.json'), 'utf8'));
+const thailandManifest = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/thailand-country-overview-refresh/2026-10-14/manifest.json'), 'utf8'));
 const expectedReviewedDiffs = [
+  ...thailandManifest.files.map((item) => item.sourcePath),
   ...cavesManifest.files.filter((item) => item.staleKeys.some((source) => !activeTranslationSources.has(source))).map((item) => item.sourcePath),
   ...cavesFollowupManifest.files.map((item) => item.sourcePath),
   ...cavesSupersededManifest.files.map((item) => item.successorPath)
 ];
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
-  const newNames = fs.readdirSync(directory).filter((name) => ['defk-vn-pages-20261013.json', 'defl-vn-search-20261013.json', 'defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json', 'defo-bay-gaps-pages-20261013.json', 'defo-bay-gaps-search-20261013.json'].some((suffix) => name.endsWith(suffix)));
-  assert.equal(newNames.length, 6, `${edition.code}: expected exactly six reviewed page/search batches across these three sprints.`);
+  const newNames = fs.readdirSync(directory).filter((name) => ['defk-vn-pages-20261013.json', 'defl-vn-search-20261013.json', 'defm-vietnam-south-pages.json', 'defn-vietnam-south-search.json', 'defo-bay-gaps-pages-20261013.json', 'defo-bay-gaps-search-20261013.json', 'a-th-pages.json', 'b-th-search.json'].some((suffix) => name.endsWith(suffix)));
+  assert.equal(newNames.length, 8, `${edition.code}: expected exactly eight reviewed page/search batches across these four route sprints.`);
   expectedReviewedDiffs.push(...newNames.map((name) => `data/i18n/reviewed/${edition.code}/${name}`));
   const cavesPageBatch = fs.readdirSync(directory).find((name) => name.endsWith('-caves-islands-gaps-pages.json'));
   assert(cavesPageBatch, `${edition.code}: Caves page batch is present.`);
   expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${cavesPageBatch}`);
   expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/29z-vietnam-caves-islands-gaps-search.json`);
+  for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${edition.code}: expected one Thailand overview ${suffix.includes('search') ? 'search' : 'page'} batch.`);
+    expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
+  }
 }
 for (const repoPath of baseReviewedPaths) {
   const before = JSON.parse(readAt(integrationBaseCommit, repoPath));
@@ -307,7 +317,7 @@ for (const edition of editions.slice(1)) {
 uniqueExpectedReviewedDiffs.sort();
 assert.deepEqual(reviewedDiffs, uniqueExpectedReviewedDiffs, 'Draft and parallel-work files must remain untouched; existing reviewed batches may only lose keys absent from the current source set.');
 const nonReviewedI18nDiffs = git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n']).trim().split('\n').filter(Boolean)
-  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-bay-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath))
+  .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-bay-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/thailand-country-overview-refresh/2026-10-14/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath))
   .filter((repoPath) => !repoPath.startsWith('data/i18n/archive/vietnam-coastal-gaps/2026-10-13/') && !/^data\/i18n\/terms-(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
 assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or other localization files may change in this sprint.');
 

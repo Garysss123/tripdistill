@@ -177,7 +177,7 @@ assert.equal(baseSearch.size, 955, 'integration-base English search index has 95
 assert.equal(currentSearch.size, 955, 'English search index retains 955 records');
 assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearch].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postAustraliaFinalRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'only the selected route summaries, coastal Vietnam, exact final Australia follow-up and Juneau changed; the USA overview summary remains unchanged');
+assert.deepEqual(changedSearchRoutes, [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postAustraliaFinalRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'only the selected route summaries, coastal Vietnam, final Australia, Juneau and Thailand overview changed; the USA overview summary remains unchanged');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
@@ -185,10 +185,10 @@ assert.equal(baseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set is unchanged');
 const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postAustraliaFinalRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes];
-const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).concat(locales.map(({ prefix }) => `${prefix}/thailand/`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(changedDates, datedPaths, 'only the selected New England, Chicago, Margaret, Da Lat, Arizona, Los Angeles, Broome/Tasmania, Mui Ne, Phong Nha, San Diego and Boston routes across five editions receive changed sitemap dates');
-for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: sitemap lastmod`);
+assert.deepEqual(changedDates, datedPaths, 'only the selected New England, Chicago, Margaret, Da Lat, Arizona, Los Angeles, Broome/Tasmania, Mui Ne, Phong Nha, San Diego, Boston and Thailand overview routes across five editions receive changed sitemap dates');
+for (const route of datedPaths) assert.equal(currentSitemap.get(route), route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
 
 for (const route of routes) {
   for (const locale of locales) {

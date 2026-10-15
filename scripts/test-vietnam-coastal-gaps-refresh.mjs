@@ -141,10 +141,16 @@ const integrationBaseSearchByUrl = byUrl(integrationBaseSearch);
 const integratedChangedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(integrationBaseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(integratedChangedSearchRoutes, [...routes].sort(), 'Only the four coastal English search records change on the integration checkpoint.');
+assert.deepEqual(integratedChangedSearchRoutes, [...routes, '/thailand/'].sort(), 'Only the four coastal and separately tracked Thailand overview English search records change on the integration checkpoint.');
 for (const route of routes) assert.deepEqual(currentSearchByUrl.get(route), sourceSearchByUrl.get(route), route + ': integrated search record must match the exact coastal source terminal.');
 
 const coastalGlossaryKeys = ['Binh Thuan', 'Bình Thuận', 'Cà Mau City', 'Đất Mũi', 'Ke Ga', 'Kê Gà', 'Lam Dong', 'Lâm Đồng', 'Mui Ne', 'Mũi Né', 'Phan Thiet', 'Phan Thiết', 'Phu Quy', 'Phú Quý', 'Pô Sah Inư', 'Ta Cu', 'Tà Cú', 'U Minh Hạ'].sort();
+const thailandGlossaryKeys = {
+  ja: ['Airports of Thailand', 'D-Ticket', 'Don Mueang', 'Pa Sak River', 'Satun', 'State Railway of Thailand', 'Suvarnabhumi', 'Thai Meteorological Department'],
+  ko: ['Airports of Thailand', 'Don Mueang', 'Satun', 'Suvarnabhumi', 'Thai Meteorological Department'],
+  th: ['Airports of Thailand', 'Andaman', 'Chiang Mai', 'D-Ticket', 'Don Mueang', 'Krabi', 'Pa Sak River', 'Phuket', 'Satun', 'State Railway of Thailand', 'Suvarnabhumi', 'Thai Meteorological Department', 'Trang'],
+  'zh-Hant': ['Airports of Thailand', 'D-Ticket', 'Don Mueang', 'Satun', 'State Railway of Thailand', 'Suvarnabhumi', 'Thai Meteorological Department']
+};
 for (const locale of editions.slice(1)) {
   const glossaryPath = `data/i18n/terms-${locale.code}.json`;
   const before = JSON.parse(readAt(integrationBaseCommit, glossaryPath));
@@ -153,8 +159,9 @@ for (const locale of editions.slice(1)) {
     assert.equal(current[source], translation, `${locale.code}: existing shared glossary translation changed for ${source}.`);
   }
   const added = Object.keys(current).filter((source) => !(source in before)).sort();
-  assert.deepEqual(added, coastalGlossaryKeys, `${locale.code}: only the exact coastal place-name glossary keys may be added.`);
-  for (const source of coastalGlossaryKeys) assert(current[source]?.trim(), `${locale.code}: missing coastal glossary translation for ${source}.`);
+  const expectedGlossaryKeys = [...new Set([...coastalGlossaryKeys, ...thailandGlossaryKeys[locale.code]])].sort();
+  assert.deepEqual(added, expectedGlossaryKeys, `${locale.code}: only the exact coastal and Thailand overview glossary keys may be added.`);
+  for (const source of expectedGlossaryKeys) assert(current[source]?.trim(), `${locale.code}: missing refreshed glossary translation for ${source}.`);
 }
 
 const baseSitemap = parseSitemap(readAt(baseCommit, 'sitemap.xml'));
@@ -167,9 +174,11 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const sourceChangedDatePaths = [...sourceSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(sourceChangedDatePaths, [...expectedDatePaths].sort(), 'The coastal source changes dates for exactly four routes in five editions.');
+const integrationExpectedDatePaths = new Set([...expectedDatePaths, ...editions.map(({ prefix }) => prefix + '/thailand/')]);
 const integrationChangedDatePaths = [...currentSitemap].filter(([url, date]) => integrationBaseSitemap.get(url) !== date).map(([url]) => url).sort();
-assert.deepEqual(integrationChangedDatePaths, [...expectedDatePaths].sort(), 'The integration checkpoint changes dates for exactly the four coastal routes in five editions.');
+assert.deepEqual(integrationChangedDatePaths, [...integrationExpectedDatePaths].sort(), 'The integration checkpoint changes dates for exactly the four coastal routes and the separately tracked Thailand overview in five editions.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, pagePath + ': sitemap date');
+for (const pagePath of editions.map(({ prefix }) => prefix + '/thailand/')) assert.equal(currentSitemap.get(pagePath), '2026-10-14', pagePath + ': Thailand overview sitemap date');
 
 for (const route of routes) {
   const sourceSearch = currentSearchByUrl.get(route);
@@ -251,11 +260,17 @@ const reviewedDiffs = [...new Set([
   ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)
 ])].sort();
-const expectedReviewedDiffs = [...archivedSources];
+const thailandManifest = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/thailand-country-overview-refresh/2026-10-14/manifest.json'), 'utf8'));
+const expectedReviewedDiffs = [...archivedSources, ...thailandManifest.files.map((file) => file.sourcePath)];
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
   for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
     const name = fs.readdirSync(directory).find((file) => file.endsWith(suffix));
+    expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
+  }
+  for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
+    const name = fs.readdirSync(directory).find((file) => file.endsWith(suffix));
+    assert(name, edition.code + ': missing Thailand overview ' + suffix);
     expectedReviewedDiffs.push('data/i18n/reviewed/' + edition.code + '/' + name);
   }
 }

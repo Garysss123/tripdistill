@@ -145,7 +145,7 @@ assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
-assert.deepEqual(changedSearchRoutes, [...routes, ...coastalGapsRoutes].sort(), 'Only the four assigned English search records and the separately registered later coastal records may change.');
+assert.deepEqual(changedSearchRoutes, [...routes, ...coastalGapsRoutes, '/thailand/'].sort(), 'Only the assigned Vietnam, separately registered coastal and Thailand overview English search records may change.');
 
 // Only English route HTML is tracked. Localized route HTML lives under the
 // ignored generated edition directories and is checked from the generated
@@ -160,12 +160,15 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560, 'Exact base sitemap URL count.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap URL count.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(locales.flatMap(({ prefix }) => [...routes, ...coastalGapsRoutes].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(locales.flatMap(({ prefix }) => [...routes, ...coastalGapsRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only four selected routes in five editions may receive new sitemap dates.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared sitemap dates.');
+for (const pagePath of expectedDatePaths) {
+  const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap date`);
+}
 
 const pageBatchKeysByLocale = new Map();
 const searchBatchKeysByLocale = new Map();
@@ -284,11 +287,18 @@ for (const locale of locales.slice(1)) {
 }
 const coastalArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/vietnam-coastal-gaps/2026-10-13/manifest.json'), 'utf8'));
 for (const archived of coastalArchive.files) expectedReviewedDiffs.add(archived.sourcePath);
+const thailandArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/archive/thailand-country-overview-refresh/2026-10-14/manifest.json'), 'utf8'));
+for (const archived of thailandArchive.files) expectedReviewedDiffs.add(archived.sourcePath);
 for (const locale of locales.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', locale.code);
   for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
     const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
     assert.equal(matches.length, 1, `${locale.code}: exact coastal ${suffix.includes('search') ? 'search' : 'pages'} batch.`);
+    expectedReviewedDiffs.add(`data/i18n/reviewed/${locale.code}/${matches[0]}`);
+  }
+  for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${locale.code}: exact Thailand overview ${suffix.includes('search') ? 'search' : 'page'} batch.`);
     expectedReviewedDiffs.add(`data/i18n/reviewed/${locale.code}/${matches[0]}`);
   }
 }

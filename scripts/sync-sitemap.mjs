@@ -376,6 +376,7 @@ const thailandBangkokLastmod = '2026-10-08';
 const thailandChiangMaiLastmod = '2026-10-08';
 const thailandAndamanLastmod = '2026-10-09';
 const thailandAyutthayaLastmod = '2026-10-09';
+const thailandCountryOverviewLastmod = '2026-10-14';
 const franceLastmod = '2026-09-20';
 const franceBrittanyLastmod = '2026-10-10';
 const franceFr02Lastmod = '2026-10-11';
@@ -1011,6 +1012,7 @@ const thailandAyutthayaEditedRoutes = [
   '/thailand/ayutthaya/foreign-settlements-south-river/',
   '/thailand/ayutthaya/bang-pa-in-palace/',
 ];
+const thailandCountryOverviewEditedRoutes = ['/thailand/'];
 // The shared narrow-viewport correction is scoped to every France regional route outside Paris city.
 const franceResponsiveEditedRoutes = franceClusters
   .filter((cluster) => cluster.slug !== 'paris')
@@ -1720,6 +1722,12 @@ for (const route of thailandAyutthayaEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error(`Cannot date edited Ayutthaya route absent from sitemap: ${route}`);
   records.set(route, { ...record, lastmod: thailandAyutthayaLastmod });
+}
+
+for (const route of thailandCountryOverviewEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Thailand country overview absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: thailandCountryOverviewLastmod });
 }
 
 for (const route of vietnamHueEditedRoutes) {

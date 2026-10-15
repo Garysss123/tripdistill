@@ -66,7 +66,7 @@ function localePagePath(locale, route) {
 assert.equal(git(['rev-parse', base]).toString('utf8').trim(), base, 'the exact Boston source base exists');
 assert.equal(git(['rev-parse', `${base}^`]).toString('utf8').trim(), baseParent, 'the source branch starts at the exact requested parent');
 assert.equal(git(['rev-parse', sourceTerminal]).toString('utf8').trim(), sourceTerminal, 'the exact USA follow-up source terminal exists');
-assert.ok(['codex/sprint-us-after-boston-20261013', 'codex/integration-sprint-20261011-preflight'].includes(git(['branch', '--show-current']).toString('utf8').trim()), 'work is either on the exact requested source branch or the isolated integration preflight branch');
+assert.ok(['codex/sprint-us-after-boston-20261013', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(git(['branch', '--show-current']).toString('utf8').trim()), 'work is on the exact requested source branch, isolated integration preflight or independent Thailand overview branch');
 assert.equal(git(['ls-tree', '-r', '--name-only', base, '--', 'usa']).toString('utf8').trim().split('\n').filter((file) => file.endsWith('/index.html') || file === 'usa/index.html').length, 97, 'base has the existing English USA routes');
 
 const baseUsaPages = git(['ls-tree', '-r', '--name-only', base, '--', 'usa']).toString('utf8')
