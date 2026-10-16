@@ -11,7 +11,6 @@ import { followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = 'a639c760ec728d90a0c271e512cbb7af2fa8bfa4';
 const sourceTerminal = 'c604392705e094d5f0ee1effa9e98e38f04ed8c6';
-const bayGapsBaseCommit = 'd779848fbc247042561cfaa34773257122aa38d0';
 const integrationBase = 'e664be07b5e06f6b04a1cec7048b645a18bf7738';
 const initialAtlasCommit = '8a1ada3b4021d077fd468c9c318d91823177c0cb';
 const origin = 'https://tripdistill.com';
@@ -219,7 +218,7 @@ const siblings = [
 ];
 for (const route of siblings) {
   const repoPath = `${route.slice(1)}index.html`;
-  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(readAt(bayGapsBaseCommit, repoPath))), `${route}: non-selected Nha Trang page changed before the independent bay-gaps base.`);
+  assert.equal(sha256(bodyText(readAt(baselineCommit, repoPath))), sha256(bodyText(readAt(sourceTerminal, repoPath))), `${route}: non-selected Nha Trang page changed in the exact source batch.`);
 }
 assert.equal(bodyRoutePaths.size, 4);
 
