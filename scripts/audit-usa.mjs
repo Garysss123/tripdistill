@@ -4,6 +4,16 @@ import {spawnSync} from 'node:child_process';
 import {parse} from 'parse5';
 import {usaHubs, usaGuides, usaRoutes} from '../data/usa-guides.mjs';
 import {usaImageManifest} from '../data/usa-image-manifest.mjs';
+import {miamiDescriptions} from './miami-editorial.mjs';
+import {orlandoDescriptions} from './orlando-editorial.mjs';
+import {hawaiiDescriptions} from './hawaii-editorial.mjs';
+import {atlantaDescriptions} from './atlanta-editorial.mjs';
+import {chicagoDescriptions} from './chicago-editorial.mjs';
+import {newEnglandDescriptions} from './new-england-editorial.mjs';
+import {arizonaDescriptions} from './arizona-editorial.mjs';
+import {losAngelesDescriptions} from './los-angeles-editorial.mjs';
+import {bostonDescriptions} from './boston-editorial.mjs';
+import {sanDiegoDescriptions} from './san-diego-editorial.mjs';
 
 const root=path.resolve(import.meta.dirname,'..');
 const failures=[];
@@ -39,7 +49,7 @@ for(const route of usaRoutes){
  const description=attr(dom.find(n=>n.tagName==='meta'&&attr(n,'name')==='description'),'content');
  check(title&&!titles.has(title),`${route}: missing or duplicate title`);titles.add(title);
  check(description&&description.length>=120&&description.length<=170&&!descriptions.has(description),`${route}: invalid or duplicate description`);descriptions.add(description);
- check(html.includes('/css/usa.css?v=20260911-1')&&html.includes('/js/main.js?v=20260911-1'),`${route}: stale assets`);
+ check(html.includes('/css/usa.css?v=20260911-1')&&html.includes('/js/main.js?v=20261016-1'),`${route}: stale assets`);
  check(dom.filter(n=>n.tagName==='h1').length===1,`${route}: expected one H1`);
  check(html.includes('"@type":"Article"')&&html.includes('"@type":"BreadcrumbList"'),`${route}: structured data missing`);
  check(!/\b(?:TODO|lorem ipsum|coming soon|placeholder copy)\b/i.test(text(dom[0])),`${route}: placeholder copy`);
@@ -65,10 +75,67 @@ for(const route of usaRoutes){
  }
 }
 const sitemap=read('sitemap.xml');
-for(const route of usaRoutes)for(const [,prefix]of locales)check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-11</lastmod>`),`${prefix+route}: stale sitemap entry`);
+const usaEditedSitemapRoutes=new Set(['/usa/alaska/','/usa/alaska/anchorage-kenai/','/usa/alaska/denali/','/usa/sierra-parks/','/usa/sierra-parks/sequoia-giant-forest/','/usa/sierra-parks/kings-canyon/','/usa/yellowstone-tetons/','/usa/yellowstone-tetons/geyser-basins/','/usa/yellowstone-tetons/canyon-lamar/','/usa/yellowstone-tetons/grand-teton/','/usa/utah-parks/','/usa/utah-parks/bryce/','/usa/utah-parks/moab-arches-canyonlands/']);
+const sprintUsSitemapRoutes=new Set(['/usa/miami/','/usa/miami/everglades/','/usa/orlando/','/usa/orlando/kennedy-space-center/','/usa/texas/','/usa/texas/austin/','/usa/texas/san-antonio/','/usa/texas/houston/','/usa/colorado/','/usa/colorado/denver/','/usa/colorado/mountain-towns/','/usa/colorado/rocky-mountain/']);
+const hawaiiSitemapRoutes=new Set(['/usa/hawaii/','/usa/hawaii/oahu/','/usa/hawaii/maui/','/usa/hawaii/hawaii-island/']);
+const newOrleansRefreshRoutes=new Set(['/usa/new-orleans/','/usa/new-orleans/french-quarter/','/usa/new-orleans/garden-district/','/usa/new-orleans/river-wetlands/']);
+const atlantaRefreshRoutes=new Set(['/usa/atlanta/','/usa/atlanta/king-historic-district/','/usa/atlanta/midtown-museums/','/usa/atlanta/beltline/']);
+const floridaNeighborhoodRefreshRoutes=new Set(['/usa/miami/south-beach/','/usa/miami/little-havana-wynwood/','/usa/orlando/theme-parks/','/usa/orlando/winter-park/']);
+const chicagoRefreshRoutes=new Set(['/usa/chicago/','/usa/chicago/loop-riverwalk/','/usa/chicago/museum-lakefront/','/usa/chicago/neighborhoods/']);
+const newEnglandRefreshRoutes=new Set(['/usa/new-england/','/usa/new-england/portland-maine/','/usa/new-england/acadia/','/usa/new-england/white-mountains-vermont/']);
+const arizonaRefreshRoutes=new Set(['/usa/arizona/','/usa/arizona/phoenix-scottsdale/','/usa/arizona/grand-canyon/','/usa/arizona/sedona/']);
+const losAngelesRefreshRoutes=new Set(['/usa/los-angeles/','/usa/los-angeles/downtown-arts/','/usa/los-angeles/hollywood-griffith/','/usa/los-angeles/santa-monica-venice/']);
+const bostonRefreshRoutes=new Set(['/usa/boston/','/usa/boston/freedom-trail/','/usa/boston/cambridge-harvard/','/usa/boston/harbor-islands/']);
+const sanDiegoRefreshRoutes=new Set(['/usa/san-diego/','/usa/san-diego/balboa-park/','/usa/san-diego/harbor-coronado/','/usa/san-diego/la-jolla/']);
+const overviewJuneauRefreshRoutes=new Set(['/usa/','/usa/alaska/juneau-southeast/']);
+for(const route of usaRoutes)for(const [,prefix]of locales){const expectedLastmod=sanDiegoRefreshRoutes.has(route)||losAngelesRefreshRoutes.has(route)||arizonaRefreshRoutes.has(route)||floridaNeighborhoodRefreshRoutes.has(route)||chicagoRefreshRoutes.has(route)||newEnglandRefreshRoutes.has(route)||bostonRefreshRoutes.has(route)||overviewJuneauRefreshRoutes.has(route)?'2026-10-13':hawaiiSitemapRoutes.has(route)||newOrleansRefreshRoutes.has(route)||atlantaRefreshRoutes.has(route)?'2026-10-12':sprintUsSitemapRoutes.has(route)?'2026-10-10':usaEditedSitemapRoutes.has(route)?'2026-10-09':'2026-09-11';check(sitemap.includes(`<url><loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`),`${prefix+route}: stale sitemap entry`);}
 const records=JSON.parse(read('data/search-index.json')).filter(x=>x.url.startsWith('/usa/'));
 check(records.length===97&&new Set(records.map(x=>x.url)).size===97,'USA search index parity');
 for(const r of usaRoutes)check(records.some(x=>x.url===r),`${r}: missing search entry`);
+const expectedEditorialSearch=new Map([
+ ['/usa/miami/',miamiDescriptions[0]],
+ ['/usa/miami/south-beach/',miamiDescriptions[1]],
+ ['/usa/miami/little-havana-wynwood/',miamiDescriptions[2]],
+ ['/usa/miami/everglades/',miamiDescriptions[3]],
+ ['/usa/orlando/',orlandoDescriptions[0]],
+ ['/usa/orlando/theme-parks/',orlandoDescriptions[1]],
+ ['/usa/orlando/winter-park/',orlandoDescriptions[2]],
+ ['/usa/orlando/kennedy-space-center/',orlandoDescriptions[3]],
+ ['/usa/hawaii/',hawaiiDescriptions[0]],
+ ['/usa/hawaii/oahu/',hawaiiDescriptions[1]],
+ ['/usa/hawaii/maui/',hawaiiDescriptions[2]],
+ ['/usa/hawaii/hawaii-island/',hawaiiDescriptions[3]],
+ ['/usa/atlanta/',atlantaDescriptions[0]],
+ ['/usa/atlanta/king-historic-district/',atlantaDescriptions[1]],
+ ['/usa/atlanta/midtown-museums/',atlantaDescriptions[2]],
+ ['/usa/atlanta/beltline/',atlantaDescriptions[3]],
+ ['/usa/chicago/',chicagoDescriptions[0]],
+ ['/usa/chicago/loop-riverwalk/',chicagoDescriptions[1]],
+ ['/usa/chicago/museum-lakefront/',chicagoDescriptions[2]],
+ ['/usa/chicago/neighborhoods/',chicagoDescriptions[3]],
+ ['/usa/new-england/',newEnglandDescriptions[0]],
+ ['/usa/new-england/portland-maine/',newEnglandDescriptions[1]],
+ ['/usa/new-england/acadia/',newEnglandDescriptions[2]],
+ ['/usa/new-england/white-mountains-vermont/',newEnglandDescriptions[3]],
+ ['/usa/arizona/',arizonaDescriptions[0]],
+ ['/usa/arizona/grand-canyon/',arizonaDescriptions[1]],
+ ['/usa/arizona/sedona/',arizonaDescriptions[2]],
+ ['/usa/arizona/phoenix-scottsdale/',arizonaDescriptions[3]],
+ ['/usa/los-angeles/',losAngelesDescriptions[0]],
+ ['/usa/los-angeles/downtown-arts/',losAngelesDescriptions[1]],
+ ['/usa/los-angeles/hollywood-griffith/',losAngelesDescriptions[2]],
+ ['/usa/los-angeles/santa-monica-venice/',losAngelesDescriptions[3]],
+ ['/usa/boston/',bostonDescriptions[0]],
+ ['/usa/boston/freedom-trail/',bostonDescriptions[1]],
+ ['/usa/boston/cambridge-harvard/',bostonDescriptions[2]],
+ ['/usa/boston/harbor-islands/',bostonDescriptions[3]],
+ ['/usa/san-diego/',sanDiegoDescriptions[0]],
+ ['/usa/san-diego/balboa-park/',sanDiegoDescriptions[1]],
+ ['/usa/san-diego/la-jolla/',sanDiegoDescriptions[2]],
+ ['/usa/san-diego/harbor-coronado/',sanDiegoDescriptions[3]],
+ ['/usa/alaska/juneau-southeast/','Choose Juneau with a one-night downtown plan or a 2–3-night single-base stay, and map the full airport, Auke Bay and Mendenhall transfers before choosing each day.']
+]);
+for(const [route,summary] of expectedEditorialSearch)check(records.find(x=>x.url===route)?.summary===summary,`${route}: search summary is stale`);
 check(read('scripts/build-dist.mjs').includes("'usa'"),'USA absent from build allowlist');
 check(read('components/sidebar.html').includes('data-sidebar-id="north-america"'),'North America navigation missing');
 check(read('components/header.html').includes('data-nav-key="usa"'),'USA header navigation missing');

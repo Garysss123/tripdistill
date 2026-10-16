@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris/",
+    "/france/paris/seine-islands-latin-quarter/",
+    "/france/paris/louvre-tuileries-opera/",
+    "/france/paris/eiffel-invalides-montparnasse/"
+  ],
+  "translations": {
+    "It is an uphill branch beyond the lower Latin Quarter, so give it a separate time block and check current entry information. Cluny and Saint-Germain make a flatter finish; Cluny also includes visible remains of Lutetia’s Roman baths, including the monumental frigidarium. Check the museum’s current route and access page before assuming every archaeological space is open on your date.": "라탱 지구 저지대 너머로 오르막을 올라가는 갈래 코스이므로 별도의 시간을 배정하고 최신 입장 정보를 확인하세요. 클뤼니와 생제르맹 쪽으로 마무리하면 경사가 덜합니다. 클뤼니에는 기념비적인 프리기다리움을 비롯한 루테티아의 로마 목욕탕 유적도 눈에 보이게 남아 있습니다. 고고학 유적 공간이 모두 방문일에 개방된다고 단정하기 전에 박물관의 최신 관람 동선과 접근 안내를 확인하세요.",
+    "Choose a small connected group that matches your interest and energy. The museum’s official visitor trails and live gallery list help bound the walk. Room 345 for the Venus de Milo, the Daru staircase and room 703 for Winged Victory, and Salle des États / room 711 for the Mona Lisa are route examples, never promises of access; confirm the day’s rooms before choosing two neighboring areas.": "관심사와 체력에 맞는 인접 구역 몇 곳을 고르세요. 박물관의 공식 관람 동선과 실시간 전시실 목록을 참고하면 걷는 범위를 정하는 데 도움이 됩니다. 밀로의 비너스 345호, 사모트라케의 니케를 보러 다뤼 계단과 703호를 지나는 동선, 살 데타(Salle des États) 711호의 모나리자는 동선 예시일 뿐 관람을 보장하지 않습니다. 인접한 두 전시 구역을 고르기 전에 당일 개방된 전시실을 확인하세요.",
+    "Yes, if one is the primary interior. A tower ticket plus a short Champ de Mars walk can fit with an Invalides exterior; a focused Dôme and tomb visit with one museum section can fill a half-day. Several collection periods and a meal can take most of a day; six hours is an optional planning example, not a minimum. Check the live opening and ticket coverage before booking.": "네, 실내 관람지 한 곳을 일정의 중심으로 잡으면 가능합니다. 에펠탑 입장에 샹드마르스 짧은 산책을 더하면 앵발리드 외관 관람과 함께 하루 일정에 넣을 수 있습니다. 앵발리드 돔과 묘, 박물관 전시 구역 한 곳을 집중 관람하면 반나절이 될 수 있습니다. 여러 시대의 소장품을 둘러보고 식사까지 하면 하루 대부분이 걸릴 수 있으며, 6시간은 선택 가능한 일정 예시이지 최소 시간이 아닙니다. 예약 전에 실시간 개관 정보와 입장권 적용 범위를 확인하세요."
+  }
+}

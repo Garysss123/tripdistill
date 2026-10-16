@@ -2,9 +2,9 @@
 export const italyImageManifest = {
   "rome/ancient-rome-capitoline": {
     "src": "/assets/images/italy-rome-ancient-rome-capitoline.webp",
-    "alt": "The Roman Forum and Colosseum in central Rome",
+    "alt": "Roman Forum seen through the Arch of Septimius Severus",
     "source": "https://commons.wikimedia.org/wiki/File:Forum_Romanum_through_Arch_of_Septimius_Severus_Forum_Romanum_Rome.jpg",
-    "label": "Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg",
+    "label": "Roman Forum viewed through the Arch of Septimius Severus",
     "creator": "Jebulon",
     "license": "CC0",
     "commonsTitle": "File:Forum Romanum through Arch of Septimius Severus Forum Romanum Rome.jpg",
@@ -12,23 +12,24 @@ export const italyImageManifest = {
   },
   "rome/vatican-borgo-prati": {
     "src": "/assets/images/italy-rome-vatican-borgo-prati.webp",
-    "alt": "Saint Peter’s Square and Basilica in Vatican City",
+    "alt": "St Peter’s Square and Via della Conciliazione viewed from the dome of St Peter’s Basilica",
     "source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
-    "label": "St Peter's Square, Vatican City - April 2007.jpg",
-    "creator": "Diliff",
+    "label": "St Peter’s Square and Via della Conciliazione from the Basilica dome",
+    "creator": "David Iliff (Diliff)",
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:St Peter's Square, Vatican City - April 2007.jpg",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 3.0.",
     "remoteSha1": "d061e97f616ea0b9cd9bc9662cefd6bf8659464e"
   },
   "rome/historic-centre-trastevere": {
     "src": "/assets/images/italy-rome-historic-centre-trastevere.webp",
-    "alt": "Piazza Navona and the historic centre of Rome",
-    "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_1.jpg",
-    "label": "Piazza Navona 1.jpg",
-    "creator": "Myrabella",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Piazza Navona 1.jpg",
-    "remoteSha1": "d036a3e680f0195e37f167f29ef04bb1457bf984"
+    "alt": "Fountain in Piazza Santa Maria in Trastevere",
+    "source": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg",
+    "label": "Fountain at Piazza Santa Maria in Trastevere",
+    "creator": "Jensens",
+    "license": "Public domain",
+    "commonsTitle": "File:Santa Maria in Trastevere fountain.jpg",
+    "remoteSha1": "302f3a4ec40e0d39cb4ad56442caf4cf68ef643b"
   },
   "naples-pompeii-vesuvius/naples-centre-mann-waterfront": {
     "src": "/assets/images/italy-naples-pompeii-vesuvius-naples-centre-mann-waterfront.webp",
@@ -42,23 +43,23 @@ export const italyImageManifest = {
   },
   "naples-pompeii-vesuvius/pompeii-city-route": {
     "src": "/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp",
-    "alt": "The excavated streets of Pompeii with Vesuvius beyond",
-    "source": "https://commons.wikimedia.org/wiki/File:Pompeii_Forum_and_Vesuvius_(23521893934).jpg",
-    "label": "Pompeii Forum and Vesuvius (23521893934).jpg",
-    "creator": "Takver from Australia",
+    "alt": "Ancient Pompeii, modern Pompeii and Vesuvius in one view",
+    "source": "https://commons.wikimedia.org/wiki/File:Ancient_Pompeii_(LHS),_Modern_Pompeii_(RHS)_and_Vesuvius_(Centre)_(52786653083).jpg",
+    "label": "Ancient Pompeii (LHS), Modern Pompeii (RHS) and Vesuvius (Centre) (52786653083).jpg",
+    "creator": "Tracey Hind from Aups, France",
     "license": "CC BY-SA 2.0",
-    "commonsTitle": "File:Pompeii Forum and Vesuvius (23521893934).jpg",
-    "remoteSha1": "cde547cbc69cc7efbe8a8f901787ad050c82adc7"
+    "commonsTitle": "File:Ancient Pompeii (LHS), Modern Pompeii (RHS) and Vesuvius (Centre) (52786653083).jpg",
+    "remoteSha1": "665f9fe50edc4bdc7a2196e97154341414067325"
   },
   "naples-pompeii-vesuvius/herculaneum-vesuvius": {
     "src": "/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp",
-    "alt": "Herculaneum archaeological site below Mount Vesuvius",
-    "source": "https://commons.wikimedia.org/wiki/File:Antigua_ciudad_de_Herculano,_Italia,_2023-03-27,_DD_141.jpg",
-    "label": "Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg",
-    "creator": "Diego Delso",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Antigua ciudad de Herculano, Italia, 2023-03-27, DD 141.jpg",
-    "remoteSha1": "ef068d0216590a165094e8007685865c5816a243"
+    "alt": "Excavated buildings and courtyard inside Herculaneum",
+    "source": "https://commons.wikimedia.org/wiki/File:Herculaneum_(39517905442).jpg",
+    "label": "Herculaneum (39517905442).jpg",
+    "creator": "Andrea Schaffer from Sydney, Australia",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:Herculaneum (39517905442).jpg",
+    "remoteSha1": "273eb2f58a1616422beb0e12aa7d6f8261072645"
   },
   "sorrento-amalfi-capri/sorrento-gateway": {
     "src": "/assets/images/italy-sorrento-amalfi-capri-sorrento-gateway.webp",
@@ -97,6 +98,7 @@ export const italyImageManifest = {
     "label": "Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
     "creator": "Txllxt TxllxT",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Firenze - Florence - Galleria degli Uffizi - Terrace on top of Loggia dei Lanzi - View on il Duomo & thunderclouds.jpg",
     "remoteSha1": "e565469e58815483c9a319d0c3eaf382e224a6bc"
   },
@@ -105,8 +107,10 @@ export const italyImageManifest = {
     "alt": "Florence viewed across the Arno toward the Oltrarno hills",
     "source": "https://commons.wikimedia.org/wiki/File:Vista_de_Florencia_desde_Piazzale_Michelangelo,_Italia,_2022-09-18,_DD_212-214_HDR.jpg",
     "label": "Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg",
-    "creator": "Diego Delso",
+    "creator": "Diego Delso, delso.photo",
+    "creditLicenseLabel": "License CC BY-SA 4.0",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Vista de Florencia desde Piazzale Michelangelo, Italia, 2022-09-18, DD 212-214 HDR.jpg",
     "remoteSha1": "f928f5859c94b5301eeb5429902874e933d64357"
   },
@@ -117,18 +121,19 @@ export const italyImageManifest = {
     "label": "Lucca, mura e campanila San Frediano.jpg",
     "creator": "Palickap",
     "license": "CC BY-SA 4.0",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
     "commonsTitle": "File:Lucca, mura e campanila San Frediano.jpg",
     "remoteSha1": "a38d43210e274b2ba18a2da5a11ba810a925d852"
   },
   "siena-southern-tuscany/siena-civic-cathedral": {
     "src": "/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp",
-    "alt": "Siena’s Piazza del Campo and medieval skyline in Tuscany",
-    "source": "https://commons.wikimedia.org/wiki/File:Piazza_del_Campo_de_Siena_un_dia_de_pluja.JPG",
-    "label": "Piazza del Campo de Siena un dia de pluja.JPG",
-    "creator": "Joanbanjo",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Piazza del Campo de Siena un dia de pluja.JPG",
-    "remoteSha1": "a74750c364288e6c4c6b434d5d2d313e59f3e08d"
+    "alt": "Medieval palaces surrounding Siena’s Piazza del Campo",
+    "source": "https://commons.wikimedia.org/wiki/File:Palaces_-_Piazza_del_Campo_-_Siena_2016.jpg",
+    "label": "Palaces - Piazza del Campo - Siena 2016.jpg",
+    "creator": "José Luiz Bernardes Ribeiro",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Palaces - Piazza del Campo - Siena 2016.jpg",
+    "remoteSha1": "81ef147a37feb95ccc70c4fdd225c79c608cf307"
   },
   "siena-southern-tuscany/val-dorcia-towns": {
     "src": "/assets/images/italy-siena-southern-tuscany-val-dorcia-towns.webp",
@@ -143,12 +148,12 @@ export const italyImageManifest = {
   "siena-southern-tuscany/maremma-park-coast": {
     "src": "/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp",
     "alt": "Mediterranean coast and wild landscape in Maremma Natural Park",
-    "source": "https://commons.wikimedia.org/wiki/File:Cala_di_forno.JPG",
-    "label": "Cala di forno.JPG",
-    "creator": "Simone F. Franci",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Cala di forno.JPG",
-    "remoteSha1": "9229a0dac38cd82ec071bbd9b96762f18847b5e5"
+    "source": "https://commons.wikimedia.org/wiki/File:Costa_parco_naturale_della_Maremma.jpg",
+    "label": "Costa parco naturale della Maremma.jpg",
+    "creator": "Denis Dascanio",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Costa parco naturale della Maremma.jpg",
+    "remoteSha1": "ec386ce3d9ecfda3cec8156668716896e1590047"
   },
   "umbria/perugia-ridge-city": {
     "src": "/assets/images/italy-umbria-perugia-ridge-city.webp",
@@ -181,24 +186,34 @@ export const italyImageManifest = {
     "remoteSha1": "a5506c22797e95db5927b0becc440f78f46b773e"
   },
   "emilia-romagna/bologna-porticoes-markets": {
-    "src": "/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp",
-    "alt": "Historic porticoes leading through central Bologna",
-    "source": "https://commons.wikimedia.org/wiki/File:Bologna_Piazza_Maggiore_11.jpg",
-    "label": "Bologna Piazza Maggiore 11.jpg",
-    "creator": "GennaroBologna",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Bologna Piazza Maggiore 11.jpg",
-    "remoteSha1": "c370b3119f3aaacc2d6a3693368580a98bfc1716"
+    "src": "/assets/images/tripdistill-italy-bologna-portico-plan.svg",
+    "alt": "Original schematic linking Bologna Centrale, the porticoed centre and the San Luca branch",
+    "source": "https://tripdistill.com/assets/images/tripdistill-italy-bologna-portico-plan.svg",
+    "label": "Bologna portico route schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "originalSchematic": true,
+    "legendTitle": "Diagram key · route logic, not a map",
+    "legend": ["1 · Bologna Centrale to Via dell’Indipendenza", "2 · Piazza Maggiore, civic doors and nearby markets", "3 · San Luca is a separate branch; verify its return"]
   },
   "emilia-romagna/modena-parma-via-emilia": {
-    "src": "/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp",
-    "alt": "Modena Cathedral and Piazza Grande along the Via Emilia corridor",
-    "source": "https://commons.wikimedia.org/wiki/File:Modena_-_Piazza_Grande_-_Duomo.jpg",
-    "label": "Modena - Piazza Grande - Duomo.jpg",
-    "creator": "Gerolamondo",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Modena - Piazza Grande - Duomo.jpg",
-    "remoteSha1": "689443cb9de5ea6a2999a9ef2ad557da6b30683a"
+    "src": "/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg",
+    "alt": "Original schematic showing the Modena and Parma rail pair and optional booked branches",
+    "source": "https://tripdistill.com/assets/images/tripdistill-italy-modena-parma-rail-and-booking-plan.svg",
+    "label": "Modena and Parma rail and booking schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "originalSchematic": true,
+    "legendTitle": "Diagram key · schematic, not to scale",
+    "legend": ["1 · Modena rail gateway", "2 · Via Emilia regional rail corridor", "3 · Parma rail gateway", "4 · Maranello needs a confirmed separate last mile", "5 · A booked producer visit has its own gateway and return"]
   },
   "emilia-romagna/ravenna-ferrara-po-delta": {
     "src": "/assets/images/italy-emilia-romagna-ravenna-ferrara-po-delta.webp",
@@ -213,22 +228,23 @@ export const italyImageManifest = {
   "venice-lagoon/san-marco-rialto": {
     "src": "/assets/images/italy-venice-lagoon-san-marco-rialto.webp",
     "alt": "The Doge’s Palace and waterfront at San Marco in Venice",
-    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_and_Venice_on_Easter_2013.jpg",
-    "label": "Panorama Piazza San Marco and Venice on Easter 2013.jpg",
-    "creator": "Wolfgang Moroder",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Panorama Piazza San Marco and Venice on Easter 2013.jpg",
-    "remoteSha1": "6d147f1afaec1828e9b74297ca85423888c93958"
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_Venezia_06_2017_2965.jpg",
+    "label": "Panorama Piazza San Marco Venezia 06 2017 2965.jpg",
+    "creator": "Mariordo (Mario Roberto Durán Ortiz)",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Panorama Piazza San Marco Venezia 06 2017 2965.jpg",
+    "editNote": "Resized, display-cropped and converted to WebP; the image derivative remains under CC BY-SA 4.0.",
+    "remoteSha1": "8b62db7b210aa23be10b3d611b34610d05563e85"
   },
   "venice-lagoon/cannaregio-dorsoduro-giudecca": {
     "src": "/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp",
     "alt": "A canal and residential street in Cannaregio, Venice",
-    "source": "https://commons.wikimedia.org/wiki/File:Palazzo_Labia_in_Venice_on_Cannaregio_canal.JPG",
-    "label": "Palazzo Labia in Venice on Cannaregio canal.JPG",
-    "creator": "Wolfgang Moroder",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Palazzo Labia in Venice on Cannaregio canal.JPG",
-    "remoteSha1": "1b12d11bfc9e25a49524ff5a3334bfaed810b59f"
+    "source": "https://commons.wikimedia.org/wiki/File:Canale_di_Cannaregio_(7227730810).jpg",
+    "label": "Canale di Cannaregio (7227730810).jpg",
+    "creator": "Tony Hisgett from Birmingham, UK",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:Canale di Cannaregio (7227730810).jpg",
+    "remoteSha1": "f451af817d09c6285ff7a7b23602a750ee2ccd84"
   },
   "venice-lagoon/murano-burano-torcello": {
     "src": "/assets/images/italy-venice-lagoon-murano-burano-torcello.webp",
@@ -242,7 +258,7 @@ export const italyImageManifest = {
   },
   "veneto-art-cities/verona-arena-river": {
     "src": "/assets/images/italy-veneto-art-cities-verona-arena-river.webp",
-    "alt": "The Roman Arena facing Piazza Bra in Verona",
+    "alt": "Piazza Bra’s arcaded façades viewed from the Verona Arena",
     "source": "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
     "label": "Verona Italy Piazza Bra from arena DSC08039.JPG",
     "creator": "David Monniaux",
@@ -265,7 +281,7 @@ export const italyImageManifest = {
     "alt": "The domes of the Basilica of Saint Anthony in Padua",
     "source": "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
     "label": "Prato 5 con Santo.JPG",
-    "creator": "P tasso",
+    "creator": "Piero tasso (P tasso)",
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Prato 5 con Santo.JPG",
     "remoteSha1": "044e1efa4c5a266c4bbb9d7742e2e44efa0f5e3a"
@@ -403,12 +419,12 @@ export const italyImageManifest = {
   "genoa-liguria/cinque-terre-rail-trails": {
     "src": "/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp",
     "alt": "A Cinque Terre village compressed between the Ligurian coast and steep hills",
-    "source": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre_Sep23_A7C_06872.jpg",
-    "label": "Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
-    "creator": "Timothy A. Gonsalves",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_delle_Cinque_Terre_da_Monterosso.JPG",
+    "label": "Panorama delle Cinque Terre da Monterosso.JPG",
+    "creator": "Luca Aless",
     "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg",
-    "remoteSha1": "4fa97e7896d9f2fb15763a764de24569275fcbb2"
+    "commonsTitle": "File:Panorama delle Cinque Terre da Monterosso.JPG",
+    "remoteSha1": "7f0e696722f9ebf49c3f0116371d52f96f7dc043"
   },
   "genoa-liguria/camogli-portofino-san-fruttuoso": {
     "src": "/assets/images/italy-genoa-liguria-camogli-portofino-san-fruttuoso.webp",
@@ -452,33 +468,33 @@ export const italyImageManifest = {
   },
   "puglia/bari-trani-castel-del-monte": {
     "src": "/assets/images/italy-puglia-bari-trani-castel-del-monte.webp",
-    "alt": "Bari old town and the Basilica of San Nicola beside the Adriatic waterfront",
-    "source": "https://commons.wikimedia.org/wiki/File:Bari_-_Lungomare_Araldo_di_Crollalanza.jpg",
-    "label": "Bari - Lungomare Araldo di Crollalanza.jpg",
-    "creator": "Benjamin Smith",
+    "alt": "A view over historic buildings in Bari",
+    "source": "https://commons.wikimedia.org/wiki/File:Puglia_bari_old-town.jpg",
+    "label": "Puglia bari old-town.jpg",
+    "creator": "Francesco Di Stefano 08",
     "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Bari - Lungomare Araldo di Crollalanza.jpg",
-    "remoteSha1": "6ce9b0317a4062607695c2065c1aa7e1496bc401"
+    "commonsTitle": "File:Puglia bari old-town.jpg",
+    "remoteSha1": "ef3079e71a4bc6574985f58b9953441185baf08f"
   },
   "puglia/alberobello-itria-valley": {
     "src": "/assets/images/italy-puglia-alberobello-itria-valley.webp",
-    "alt": "Whitewashed trulli roofs in Alberobello’s Aia Piccola district",
-    "source": "https://commons.wikimedia.org/wiki/File:Alberobello_-_Trulli_del_Rione_Aia_Piccola_-_02.jpg",
-    "label": "Alberobello - Trulli del Rione Aia Piccola - 02.jpg",
-    "creator": "Benjamin Smith",
+    "alt": "Stone trulli dwellings and conical roofs in Alberobello",
+    "source": "https://commons.wikimedia.org/wiki/File:Alberobello,_trulli_(13).jpg",
+    "label": "Alberobello, trulli (13).jpg",
+    "creator": "Palickap",
     "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Alberobello - Trulli del Rione Aia Piccola - 02.jpg",
-    "remoteSha1": "687db9638b67ca3bd8953a0dde56f84384e445db"
+    "commonsTitle": "File:Alberobello, trulli (13).jpg",
+    "remoteSha1": "1827b864fdf242b463663fb9af4da70cd2555453"
   },
   "puglia/lecce-otranto-gallipoli": {
     "src": "/assets/images/italy-puglia-lecce-otranto-gallipoli.webp",
-    "alt": "The carved baroque façade of Santa Croce in Lecce",
-    "source": "https://commons.wikimedia.org/wiki/File:Lecce_-_Santa_Croce_-_17.jpg",
-    "label": "Lecce - Santa Croce - 17.jpg",
-    "creator": "Benjamin Smith",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Lecce - Santa Croce - 17.jpg",
-    "remoteSha1": "7c759fcdf6dc499838a2395dd6eb1af6108dbfb4"
+    "alt": "Aerial view over Lecce’s rooftops and streets",
+    "source": "https://commons.wikimedia.org/wiki/File:Lecce_from_the_air.jpg",
+    "label": "Lecce from the air.jpg",
+    "creator": "Joolz",
+    "license": "CC BY-SA 2.5",
+    "commonsTitle": "File:Lecce from the air.jpg",
+    "remoteSha1": "dfccd5cf75ecca15d00477425719050b2bb2eb6d"
   },
   "basilicata-calabria/matera-sassi-murgia": {
     "src": "/assets/images/italy-basilicata-calabria-matera-sassi-murgia.webp",
@@ -503,12 +519,12 @@ export const italyImageManifest = {
   "basilicata-calabria/tropea-scilla-reggio": {
     "src": "/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp",
     "alt": "Tropea’s cliff-top old town and Santa Maria dell’Isola above the sea",
-    "source": "https://commons.wikimedia.org/wiki/File:Palaces_of_the_old_town_of_Tropea_perched_on_a_Cliff_overlooking_the_beach_below_-_Province_of_Vibo_Valentia,_Calabria,_Italy.jpg",
-    "label": "Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
-    "creator": "The original uploader was Luigino at Italian Wikipedia .",
+    "source": "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
+    "label": "Santa Maria dell'Isola - Tropea - Calabria - Italy - July 17th 2013 - 01.jpg",
+    "creator": "Norbert Nagel",
     "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Palaces of the old town of Tropea perched on a Cliff overlooking the beach below - Province of Vibo Valentia, Calabria, Italy.jpg",
-    "remoteSha1": "7e913712714dccaea62a70ffdff8494e95dc7988"
+    "commonsTitle": "File:Santa Maria dell'Isola - Tropea - Calabria - Italy - July 17th 2013 - 01.jpg",
+    "remoteSha1": "31b6934c139f3f19cb6ca8206cb8681d10ac677f"
   },
   "western-sicily/palermo-monreale-cefalu": {
     "src": "/assets/images/italy-western-sicily-palermo-monreale-cefalu.webp",
@@ -592,12 +608,12 @@ export const italyImageManifest = {
   },
   "sardinia/gulf-orosei-gennargentu": {
     "src": "/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp",
-    "alt": "The limestone pinnacle and turquoise water of Cala Goloritzé on the Gulf of Orosei",
-    "source": "https://commons.wikimedia.org/wiki/File:Cala_Goloritze_o.jpg",
-    "label": "Cala Goloritze o.jpg",
-    "creator": "delaere",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Cala Goloritze o.jpg",
-    "remoteSha1": "e18d5714669c95ea07af38e68d68cc7865ee16f3"
+    "alt": "White limestone cliffs and turquoise water at Cala Goloritzé",
+    "source": "https://commons.wikimedia.org/wiki/File:Cala_Goloritz%C3%A8_13_sept._2017.jpg",
+    "label": "Cala Goloritzè 13 sept. 2017.jpg",
+    "creator": "Nicola Secci",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Cala Goloritzè 13 sept. 2017.jpg",
+    "remoteSha1": "01615599e43c6b9f2d77e15174de905aa17362f3"
   }
 };

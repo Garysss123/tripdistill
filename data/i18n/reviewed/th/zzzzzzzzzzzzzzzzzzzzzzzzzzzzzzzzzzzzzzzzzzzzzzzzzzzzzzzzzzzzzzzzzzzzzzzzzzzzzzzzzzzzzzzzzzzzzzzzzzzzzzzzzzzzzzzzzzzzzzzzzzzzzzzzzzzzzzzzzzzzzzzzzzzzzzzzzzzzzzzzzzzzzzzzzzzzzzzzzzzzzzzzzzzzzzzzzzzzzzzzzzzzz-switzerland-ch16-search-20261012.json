@@ -1,0 +1,42 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Lugano station": "สถานีลูกาโน",
+    "Piazza Cioccaro": "Piazza Cioccaro",
+    "Via Nassa": "Via Nassa",
+    "Parco Ciani": "Parco Ciani",
+    "Lugano lake promenade": "ทางเดินเลียบทะเลสาบลูกาโน",
+    "TPL funicular": "รถรางไต่ระดับ TPL",
+    "Monte San Salvatore": "Monte San Salvatore",
+    "Paradiso funicular": "รถรางไต่ระดับจาก Paradiso",
+    "Morcote": "Morcote",
+    "lake navigation": "เรือโดยสารในทะเลสาบ",
+    "Lugano mountain and village": "ภูเขาและหมู่บ้านในลูกาโน",
+    "Locarno": "Locarno",
+    "Ascona": "Ascona",
+    "Locarno-Muralto station": "สถานี Locarno-Muralto",
+    "FART bus": "รถโดยสาร FART",
+    "Lake Maggiore promenade": "ทางเดินเลียบทะเลสาบ Maggiore",
+    "Rhine Falls": "Rhine Falls",
+    "Neuhausen Rheinfall station": "สถานี Neuhausen Rheinfall",
+    "Schloss Laufen": "Schloss Laufen",
+    "north bank": "ฝั่งเหนือ",
+    "south bank": "ฝั่งใต้",
+    "Rhyfall Mändli boats": "เรือ Rhyfall Mändli",
+    "Schaffhausen old town": "ย่านเมืองเก่า Schaffhausen",
+    "Munot": "Munot",
+    "Vordergasse": "Vordergasse",
+    "Schaffhausen station": "สถานี Schaffhausen",
+    "Allerheiligen museum": "พิพิธภัณฑ์ Allerheiligen"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna was requested for translation; the runtime model identifier is not independently verifiable.",
+    "reviewer": "Same-session self-review and editorial sampling; no independent second-model or human review.",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-12"
+  }
+}

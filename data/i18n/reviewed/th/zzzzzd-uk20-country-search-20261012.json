@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan UK nights and bases across England, Scotland, Wales and Northern Ireland. Compare 5–7-, 8–10- and 14-night routes, open-jaw airport choices, rail, coach, car and rural last-mile trade-offs.": "วางแผนจำนวนคืนและฐานที่พักในอังกฤษ สกอตแลนด์ เวลส์ และไอร์แลนด์เหนือ เปรียบเทียบเส้นทาง 5–7 คืน, 8–10 คืน และ 14 คืน การเลือกสนามบินขาเข้าและขาออกคนละเมือง รถไฟ รถโค้ชระหว่างเมือง รถเช่า และการเดินทางช่วงสุดท้ายในชนบท",
+    "United Kingdom itinerary nights": "จำนวนคืนสำหรับแผนเที่ยวสหราชอาณาจักร",
+    "UK trip length": "ระยะเวลาเที่ยวสหราชอาณาจักร",
+    "UK open-jaw flights": "เที่ยวบินขาเข้าและขาออกคนละเมืองในสหราชอาณาจักร",
+    "UK train or coach": "รถไฟหรือรถโค้ชในสหราชอาณาจักร",
+    "UK self-drive": "ขับรถเที่ยวสหราชอาณาจักร"
+  }
+}

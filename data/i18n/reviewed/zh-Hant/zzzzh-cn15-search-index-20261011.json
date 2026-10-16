@@ -1,0 +1,32 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose a China trip by region, realistic nights and rail moves. Compare one-region and multi-city routes, check season by area, and verify visa or transit eligibility for your passport before travel.": "按區域規劃中國行程，安排合理住宿晚數與鐵路移動。比較單一區域與多城市路線，依各地季節調整，並在出發前依你的護照確認簽證或過境資格。",
+    "trip length": "行程天數",
+    "regional itinerary": "區域行程",
+    "240-hour visa-free transit": "240 小時過境免簽",
+    "entry eligibility": "入境資格",
+    "beijing shanghai hangzhou": "北京、上海、杭州",
+    "Plan five full Beijing days as roughly six nights when travel days are separate. Choose a base by your first mornings, group the Central Axis and neighborhoods, protect one full Mutianyu day, and match the airport or rail station to your return.": "若交通日另計，在北京安排 5 個完整觀光日通常約需 6 晚。依最初幾天的清晨行程選擇住宿據點，分區走訪中軸線與街區，為慕田峪長城保留完整一日，並依返程安排選擇機場或火車站。",
+    "airport arrival": "機場抵達",
+    "departure": "離境返程",
+    "Mutianyu Great Wall day": "慕田峪長城一日遊",
+    "limited walking": "步行受限",
+    "rail station": "火車站",
+    "Plan the 297-hectare Summer Palace by entrance and exit: East Palace Gate for a court-first route or a north-side gate for a hill-first day. Check current passport booking and seasonal hours, then choose one zone, rain fallback and a realistic walking limit.": "依入口與出口規劃面積 297 公頃的頤和園：先走宮殿區可從東宮門入園，先登山可選北側入口。查核最新護照預約規定與季節性開放時間，再選定一個遊覽區、雨天備案及符合實際體力的步行範圍。",
+    "East Palace Gate": "頤和園東宮門",
+    "north entrance": "北側入口",
+    "passport ticket booking": "護照購票預約",
+    "297 hectares": "297 公頃",
+    "Give Hangzhou three full days, typically four nights: choose a north-shore sequence, one western-hills day and a south-shore or canal contrast. Add a fourth day for Xixi or Liangzhu, confirm the exact station or airport, and scale walks to rain and mobility.": "杭州可安排 3 個完整觀光日，通常需住 4 晚：選一條北岸路線、一日遊覽西山，再安排南岸或運河作為對照。若增加第 4 日，可選西溪或良渚；確認車票上的確切車站或機場，並依降雨與行動需求調整步行距離。",
+    "Hangzhou East station": "杭州東站",
+    "Hangzhou West station": "杭州西站",
+    "Hangzhou Xiaoshan airport": "杭州蕭山機場",
+    "Meiyu rain": "梅雨天氣",
+    "mobility": "行動需求"
+  }
+}

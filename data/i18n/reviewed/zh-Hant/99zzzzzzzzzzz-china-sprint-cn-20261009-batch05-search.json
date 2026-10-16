@@ -1,0 +1,22 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start at Wukang Building; follow No 393 → Wukang Court → Ba Jin’s former residence (No 113), exterior only.": "從武康大樓出發，依序經過 393 號 → Wukang Court → 巴金故居（113 號）；僅從外部參觀。",
+    "jiao tong university station": "交通大學站",
+    "wukang and hunan roads": "武康路與湖南路",
+    "ba jin former residence": "巴金故居",
+    "Plan Hongkou from the museum: a 10 km municipal route, a shorter named-stop edit, or Suzhou Creek’s separate Jing’an walk.": "以博物館為起點規劃虹口：可走市府規劃的 10 公里路線、選擇較短且停靠點明確的走法，或另行安排靜安的蘇州河步行路線。",
+    "tilanqiao station": "提籃橋站",
+    "metro line 12": "地鐵 12 號線",
+    "beisuzhou road": "北蘇州路",
+    "north bund": "北外灘",
+    "Pair Longhua Temple with one current West Bund Museum exhibition, then use its riverside entrance and plan the Line 11 return.": "龍華寺搭配西岸美術館目前的一場展覽，接著從臨河入口前往河岸，並規劃 11 號線返程。",
+    "west bund museum": "西岸美術館",
+    "yunjin road station": "雲錦路站",
+    "xuhui riverside": "徐匯濱江"
+  }
+}

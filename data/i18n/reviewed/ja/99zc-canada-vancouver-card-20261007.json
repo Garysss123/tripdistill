@@ -1,0 +1,10 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "This is three different trips sharing one hotel base: downtown Vancouver is a compact harbour-and-neighbourhood walk; the North Shore is a bus-and-trail…": "一つの宿泊拠点から三つの異なる旅へ。バンクーバー中心部は港と街区を歩き、ノースショアはバスとトレイルで巡ります……"
+  }
+}

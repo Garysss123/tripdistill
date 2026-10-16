@@ -115,6 +115,10 @@
 .au-hub-hero figure::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,color-mix(in srgb,var(--au-family-dark) 72%,transparent),transparent 38%),linear-gradient(0deg,rgba(0,0,0,.48),transparent 38%); }
 .au-hub-hero figure img { width:100%; height:100%; object-fit:cover; }
 .au-hub-hero figcaption { position:absolute; z-index:2; right:1rem; bottom:.8rem; color:rgba(255,255,255,.84); font-size:.6rem; }
+.au-hub-map-frame { background:#f4f8fb; }
+.au-hub-map-frame::after { display:none; }
+.au-hub-map-frame img { object-fit:contain!important; }
+.au-hub-map-frame figcaption { right:.5rem; bottom:.5rem; padding:.45rem .65rem; color:#19324a; background:rgba(255,255,255,.94); border:1px solid #b4c5d1; }
 .au-hub-index { position:absolute; z-index:5; top:1rem; right:1rem; width:8rem; padding:1rem; color:#fff; text-align:right; background:color-mix(in srgb,var(--au-family-dark) 86%,transparent); border:1px solid rgba(255,255,255,.45); }
 .au-hub-index small,.au-hub-index span { display:block; font:900 .53rem/1.3 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
 .au-hub-index strong { display:block; margin:.4rem 0; font:950 2.5rem/.9 Arial,sans-serif; }
@@ -250,4 +254,18 @@
 
 @media (prefers-reduced-motion:reduce) {
   .au-country-card,.au-hub-card { transform:none!important; }
+}
+
+/* Keep CJK Red Centre titles readable across their full text width. */
+html[lang="zh-Hant"] [data-au-family="desert-light-compass"] .au-hub-copy h1,
+html[lang="ja"] [data-au-family="desert-light-compass"] .au-hub-copy h1,
+html[lang="ko"] [data-au-family="desert-light-compass"] .au-hub-copy h1 {
+  line-height: 1.22;
+}
+html[lang="zh-Hant"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span,
+html[lang="ja"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span,
+html[lang="ko"] [data-au-family="desert-light-compass"] .au-hub-copy h1 span {
+  max-width: none;
+  line-height: 1.35;
+  letter-spacing: 0;
 }

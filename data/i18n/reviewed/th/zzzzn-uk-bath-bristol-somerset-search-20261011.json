@@ -1,0 +1,35 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Bath Spa": "สถานี Bath Spa",
+    "Bathwick": "Bathwick (ย่านที่พักฝั่งตะวันออกของ Bath)",
+    "Temple Meads": "สถานี Temple Meads",
+    "Temple Quay": "Temple Quay (ย่านท่าเรือ Temple ใน Bristol)",
+    "route 8": "รถบัสสาย 8",
+    "route 174": "รถบัสสาย 174",
+    "route 376": "รถบัสสาย 376",
+    "Wells": "Wells (เวลส์)",
+    "Glastonbury": "Glastonbury (กลาสตันเบอรี)",
+    "Roman Baths": "Roman Baths",
+    "Bath Abbey": "Bath Abbey",
+    "Pulteney Bridge": "Pulteney Bridge",
+    "Royal Crescent": "Royal Crescent",
+    "M Shed": "M Shed",
+    "Floating Harbour": "Floating Harbour",
+    "First Bus 8": "First Bus สาย 8",
+    "T10": "ป้าย T10",
+    "T1": "ป้าย T1",
+    "Clifton Suspension Bridge": "Clifton Suspension Bridge",
+    "First Bus 174": "First Bus สาย 174",
+    "First Bus 376": "First Bus สาย 376",
+    "Wells Cathedral": "Wells Cathedral",
+    "Glastonbury Abbey": "Glastonbury Abbey",
+    "Glastonbury Tor": "Glastonbury Tor",
+    "Cheddar Gorge": "Cheddar Gorge",
+    "Wookey Hole": "Wookey Hole"
+  }
+}

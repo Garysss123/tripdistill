@@ -25,10 +25,13 @@ const classHas = (node, name) => (attr(node, 'class') || '').split(/\s+/).includ
 
 check(canadaClusters.length === 18, `Expected 18 Canada hubs, found ${canadaClusters.length}`);
 check(canadaGuides.length === 54, `Expected 54 Canada guides, found ${canadaGuides.length}`);
+const imageGuides = canadaGuides.filter((guide) => guide.image);
+const mapGuides = canadaGuides.filter((guide) => guide.mapTreatment);
+check(imageGuides.length === 52 && mapGuides.length === 2, `Expected 52 photo guides and two map treatments, found ${imageGuides.length} and ${mapGuides.length}`);
 check(routes.length === 73 && new Set(routes).size === 73, 'Expected 73 unique English Canada routes');
 check(new Set(canadaClusters.map((item) => item.family)).size === 18, 'Canada hub families must be unique');
 check(new Set(canadaGuides.map((item) => item.instrument)).size === 54, 'Canada planning instruments must be unique');
-check(new Set(canadaGuides.map((item) => item.image.src)).size === 54, 'Canada guide images must be unique');
+check(new Set(imageGuides.map((item) => item.image.src)).size === imageGuides.length, 'Canada guide images must be unique');
 check(new Set(canadaGuides.map((item) => item.layout)).size === 25, 'Expected 25 Canada child layout families');
 
 for (const cluster of canadaClusters) {
@@ -40,7 +43,12 @@ for (const cluster of canadaClusters) {
 for (const guide of canadaGuides) {
   check(guide.summary.length >= 120, `${guide.url}: thin summary`);
   check(guide.access.length >= 100 && guide.tradeoff.length >= 100 && guide.fallback.length >= 90, `${guide.url}: thin operating guidance`);
-  check(guide.route.length === 4 && guide.checks.length === 3 && guide.faq.length === 3, `${guide.url}: route/check/FAQ parity`);
+  check(guide.route.length === 4 && guide.checks.length === 3 && guide.faq.length >= 3, `${guide.url}: route/check/FAQ parity`);
+  check(Boolean(guide.image) !== Boolean(guide.mapTreatment), `${guide.url}: must have exactly one photo or text map treatment`);
+  if (!guide.image) {
+    check(guide.mapTreatment?.choices?.length === 3 && guide.mapTreatment.choices.every((choice) => choice.length === 3), `${guide.url}: incomplete text map choices`);
+    continue;
+  }
   check(guide.image.creator && guide.image.license && guide.image.source && guide.image.remoteSha1, `${guide.url}: incomplete image provenance`);
   check(/^https:\/\/commons\.wikimedia\.org\//.test(guide.image.source), `${guide.url}: image source is not Wikimedia Commons`);
   check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
@@ -63,7 +71,7 @@ for (const route of routes) {
   check(description && description.length >= 120 && description.length <= 170 && !descriptions.has(description), `${route}: invalid or duplicate meta description`); descriptions.add(description);
   check(dom.filter((node) => node.tagName === 'h1').length === 1, `${route}: expected exactly one H1`);
   check(html.includes('/css/canada.css?v=20260912-1'), `${route}: Canada CSS missing`);
-  check(html.includes('/js/main.js?v=20260911-1'), `${route}: shared JS missing`);
+  check(html.includes('/js/main.js?v=20261016-1'), `${route}: shared JS missing`);
   check(html.includes('"@type":"Article"') && html.includes('"@type":"BreadcrumbList"') && html.includes('"@type":"FAQPage"'), `${route}: required JSON-LD graph missing`);
   check(dom.some((node) => classHas(node, 'ad-slot')), `${route}: AdSense placeholder missing`);
   check(!/\b(?:TODO|lorem ipsum|coming soon|placeholder copy)\b/i.test(text(dom[0])), `${route}: placeholder copy found`);
@@ -72,9 +80,10 @@ for (const route of routes) {
   }
 
   const hub = canadaClusters.find((cluster) => route === `/canada/${cluster.slug}/` || route.startsWith(`/canada/${cluster.slug}/`));
-  const credited = route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || [];
+  const credited = (route === '/canada/' ? canadaClusters.map((cluster) => cluster.guides[0]) : hub?.guides || []);
   for (const guide of credited) {
-    check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+    if (guide.image) check(html.includes(guide.image.source) && html.includes(escape(guide.image.creator)) && html.includes(guide.image.license), `${route}: visible image credit missing for ${guide.slug}`);
+    if (guide.mapTreatment?.src) check(html.includes(guide.mapTreatment.src) && html.includes(guide.mapTreatment.source) && html.includes(guide.mapTreatment.rightsStatusUrl), `${route}: original diagram provenance missing for ${guide.slug}`);
   }
 
   if (route === '/canada/') {
@@ -83,6 +92,18 @@ for (const route of routes) {
     check(dom.filter((node) => classHas(node, 'ca-route-step')).length === 4, `${route}: expected four route stages`);
     check(dom.filter((node) => classHas(node, 'ca-related-card')).length === 2, `${route}: expected two related child cards`);
     check(/data-ca-layout="[^"]+"/.test(html) && /data-ca-instrument="[^"]+"/.test(html), `${route}: child layout markers missing`);
+    const guide = canadaGuides.find((item) => item.url === route);
+    if (!guide.image) {
+      check(html.includes('ca-victoria-route-choices'), `${route}: text map treatment missing`);
+      if (guide.slug === 'sooke-juan-de-fuca') {
+        check(!html.includes('canada-victoria-south-island-sooke-juan-de-fuca.webp'), `${route}: unverified photo still used`);
+        check(!html.includes('Rocky coast between Little Kuitshe Campsite'), `${route}: unverified photo credit still shown`);
+      }
+      if (guide.mapTreatment?.src) {
+        check(html.includes(guide.mapTreatment.src), `${route}: original SVG is not rendered`);
+        check(!html.includes('/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'), `${route}: retired mismatched Banff photo is still referenced`);
+      }
+    }
   } else {
     check(dom.filter((node) => classHas(node, 'ca-hub-card')).length === 3, `${route}: expected three child cards`);
     check(/data-ca-family="[^"]+"/.test(html), `${route}: hub family marker missing`);
@@ -96,7 +117,10 @@ for (const route of routes) {
     if (!fs.existsSync(localizedFile)) continue;
     const localized = fs.readFileSync(localizedFile, 'utf8');
     check(localized.includes(`rel="canonical" href="https://tripdistill.com${prefix}${route}"`), `${prefix + route}: localized canonical mismatch`);
-    for (const guide of credited) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+    for (const guide of credited) {
+      if (guide.image) check(localized.includes(guide.image.source) && localized.includes(guide.image.license), `${prefix + route}: localized image provenance missing for ${guide.slug}`);
+      if (guide.mapTreatment?.src) check(localized.includes(guide.mapTreatment.source) && localized.includes(guide.mapTreatment.rightsStatusUrl), `${prefix + route}: localized original-diagram provenance missing for ${guide.slug}`);
+    }
   }
 }
 
@@ -116,7 +140,93 @@ check(read('scripts/build-dist.mjs').includes("'canada'"), 'Canada absent from b
 
 if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const sitemap = read('sitemap.xml');
-  for (const route of routes) check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>2026-09-12</lastmod>`), `${route}: sitemap missing or stale`);
+  const layoutUpdatedRoutes = new Set([
+    '/canada/victoria-south-island/',
+    '/canada/victoria-south-island/butchart-saanich/',
+    '/canada/victoria-south-island/sooke-juan-de-fuca/'
+  ]);
+  const pacificRimUpdatedRoutes = new Set([
+    '/canada/pacific-rim-tofino/',
+    '/canada/pacific-rim-tofino/long-beach-rainforest/',
+    '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
+    '/canada/pacific-rim-tofino/tofino-marine-day/'
+  ]);
+  const banffUpdatedRoutes = new Set([
+    '/canada/banff-lake-louise/',
+    '/canada/banff-lake-louise/banff-town-bow-valley/',
+    '/canada/banff-lake-louise/lake-louise-moraine/',
+    '/canada/banff-lake-louise/johnston-minnewanka/'
+  ]);
+  const jasperUpdatedRoutes = new Set([
+    '/canada/jasper-icefields/',
+    '/canada/jasper-icefields/jasper-town-maligne/',
+    '/canada/jasper-icefields/icefields-parkway/',
+    '/canada/jasper-icefields/athabasca-sunwapta/'
+  ]);
+  const calgaryBadlandsUpdatedRoutes = new Set([
+    '/canada/calgary-badlands/',
+    '/canada/calgary-badlands/calgary-core/',
+    '/canada/calgary-badlands/drumheller-royal-tyrrell/',
+    '/canada/calgary-badlands/dinosaur-provincial-park/'
+  ]);
+  const newfoundlandUpdatedRoutes = new Set([
+    '/canada/newfoundland-labrador/',
+    '/canada/newfoundland-labrador/st-johns-signal-hill/',
+    '/canada/newfoundland-labrador/bonavista-trinity/',
+    '/canada/newfoundland-labrador/gros-morne/'
+  ]);
+  const ottawaGatineauUpdatedRoutes = new Set([
+    '/canada/ottawa-gatineau/',
+    '/canada/ottawa-gatineau/parliament-rideau/',
+    '/canada/ottawa-gatineau/national-museums/',
+    '/canada/ottawa-gatineau/gatineau-park/'
+  ]);
+  const niagaraUpdatedRoutes = new Set([
+    '/canada/niagara/',
+    '/canada/niagara/falls-parkway/',
+    '/canada/niagara/niagara-gorge/',
+    '/canada/niagara/niagara-on-the-lake/'
+  ]);
+  const saguenayUpdatedRoutes = new Set([
+    '/canada/saguenay-tadoussac/',
+    '/canada/saguenay-tadoussac/tadoussac-marine/',
+    '/canada/saguenay-tadoussac/fjord-hiking/',
+    '/canada/saguenay-tadoussac/saguenay-city-valley/'
+  ]);
+  const halifaxUpdatedRoutes = new Set([
+    '/canada/halifax-nova-scotia/',
+    '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+    '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+    '/canada/halifax-nova-scotia/cape-breton-cabot/'
+  ]);
+  const peiUpdatedRoutes = new Set([
+    '/canada/prince-edward-island/',
+    '/canada/prince-edward-island/charlottetown/',
+    '/canada/prince-edward-island/cavendish-north-shore/',
+    '/canada/prince-edward-island/coastal-drives/'
+  ]);
+  const winnipegUpdatedRoutes = new Set([
+    '/canada/winnipeg-churchill/',
+    '/canada/winnipeg-churchill/forks-exchange/',
+    '/canada/winnipeg-churchill/human-rights-assiniboine/',
+    '/canada/winnipeg-churchill/churchill-hudson-bay/'
+  ]);
+  const whitehorseUpdatedRoutes = new Set([
+    '/canada/whitehorse-kluane/',
+    '/canada/whitehorse-kluane/whitehorse-river/',
+    '/canada/whitehorse-kluane/kluane-haines-junction/',
+    '/canada/whitehorse-kluane/miles-canyon-aurora/'
+  ]);
+  const yellowknifeUpdatedRoutes = new Set([
+    '/canada/yellowknife-great-slave/',
+    '/canada/yellowknife-great-slave/old-town-great-slave/',
+    '/canada/yellowknife-great-slave/aurora-dark-sky/',
+    '/canada/yellowknife-great-slave/ingraham-trail/'
+  ]);
+  for (const route of routes) {
+    const lastmod = route === '/canada/' || pacificRimUpdatedRoutes.has(route) || banffUpdatedRoutes.has(route) || jasperUpdatedRoutes.has(route) || calgaryBadlandsUpdatedRoutes.has(route) || newfoundlandUpdatedRoutes.has(route) || ottawaGatineauUpdatedRoutes.has(route) || niagaraUpdatedRoutes.has(route) || saguenayUpdatedRoutes.has(route) || halifaxUpdatedRoutes.has(route) || peiUpdatedRoutes.has(route) || winnipegUpdatedRoutes.has(route) || whitehorseUpdatedRoutes.has(route) || yellowknifeUpdatedRoutes.has(route) ? '2026-10-12' : layoutUpdatedRoutes.has(route) ? '2026-10-08' : '2026-09-12';
+    check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${lastmod}</lastmod>`), `${route}: sitemap missing or stale`);
+  }
 }
 
 if (failures.length) {
@@ -124,5 +234,5 @@ if (failures.length) {
   console.error(`Canada audit: ${failures.length} failure(s).`);
   process.exitCode = 1;
 } else {
-  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 54 credited images and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
+  console.log(`Canada audit passed: 18 hubs, 54 focused guides, 73 English / 365 five-language routes, 52 credited photos, two map treatments and 25 child layout families${englishOnly ? ' (localized file checks deferred)' : ''}.`);
 }

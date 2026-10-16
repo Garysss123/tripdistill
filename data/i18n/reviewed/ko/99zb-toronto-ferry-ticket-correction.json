@@ -1,0 +1,21 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/toronto/",
+    "/canada/toronto/downtown-waterfront/",
+    "/canada/toronto/annex-kensington-museums/",
+    "/canada/toronto/toronto-islands/"
+  ],
+  "translations": {
+    "Choose Centre, Ward’s or Hanlan’s for its distinct park or beach. City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal; check the chosen landing’s seasonal timetable and keep a downtown Toronto alternative ready.": "공원이나 해변의 성격에 따라 Centre, Ward’s, Hanlan’s 중에서 고르세요. 토론토시 페리 티켓은 토론토 아일랜드의 어느 선착장으로 갈 때나, 어느 선착장에서 Jack Layton Ferry Terminal로 돌아올 때나 유효합니다. 선택한 선착장의 계절별 운항 시간표를 확인하고 토론토 다운타운의 대안도 준비하세요.",
+    "City of Toronto — Ferry Ticket & Passenger Information": "토론토시 — 페리 티켓 및 승객 안내",
+    "Can I return to Jack Layton Ferry Terminal from a different Island dock?": "다른 아일랜드 선착장에서 Jack Layton Ferry Terminal로 돌아올 수 있나요?",
+    "Yes. City ferry tickets are valid for travel to any dock on the Islands and for the return trip from any island dock to Jack Layton Ferry Terminal. Check the actual operating schedule for your chosen dock and the next return boat; the landings follow separate timetables.": "네. 토론토시 페리 티켓은 토론토 아일랜드의 어느 선착장으로 가는 승선에도, 어느 선착장에서 Jack Layton Ferry Terminal로 돌아오는 승선에도 유효합니다. 선착장마다 실제 운항 시간표가 다르므로 이용하려는 선착장의 운항 시간과 다음 귀항편을 확인하세요.",
+    "Choose your return dock": "귀항할 선착장 선택",
+    "City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal. Before walking to another landing, check that dock’s actual operating schedule and the next departure; keep a downtown Toronto plan ready if service changes.": "토론토시 페리 티켓은 토론토 아일랜드의 어느 선착장으로 갈 때나, 어느 선착장에서 Jack Layton Ferry Terminal로 돌아올 때나 유효합니다. 다른 선착장으로 걸어가기 전에 그곳의 실제 운항 시간표와 다음 출항편을 확인하고, 운항에 변동이 있으면 토론토 다운타운의 대안을 준비하세요.",
+    "If the wind, service notice or queue makes the crossing a poor choice, move the island day and choose a downtown Toronto or museum route instead. The ferry is the day’s commitment, not a small add-on after a timed booking.": "바람, 운항 공지 또는 대기 줄 때문에 페리를 타기 적절하지 않다면 아일랜드 방문을 다른 날로 미루고 토론토 다운타운이나 박물관 코스를 선택하세요. 페리는 예약 일정 뒤에 가볍게 덧붙이는 일정이 아니라 그날의 중심 일정입니다.",
+    "A ticket does not set the timetable": "티켓이 운항 시간표를 정해 주지는 않습니다",
+    "A City ticket is valid to any island dock and for the return from any island dock to Jack Layton Ferry Terminal. Departures still vary by landing and season, so check the dock you plan to use and its next boat before a long walk.": "토론토시 페리 티켓은 토론토 아일랜드의 어느 선착장으로 갈 때나, 어느 선착장에서 Jack Layton Ferry Terminal로 돌아올 때나 유효합니다. 출항 시간은 선착장과 계절에 따라 다르므로 오래 걷기 전에 이용하려는 선착장의 실제 시간표와 다음 배편을 확인하세요."
+  }
+}

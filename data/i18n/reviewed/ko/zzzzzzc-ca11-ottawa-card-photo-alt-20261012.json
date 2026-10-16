@@ -1,0 +1,12 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/",
+    "/canada/ottawa-gatineau/gatineau-park/"
+  ],
+  "translations": {
+    "Ottawa and Gatineau share a river and a capital-region story, but the Parliament precinct, museum bank and Gatineau Park do not fit into one sightseeing…": "오타와와 가티노는 강을 사이에 둔 수도권입니다. 의회 구역, 박물관과 가티노 공원은 각각 별도 일정으로 계획하세요…",
+    "Autumn hills and valley seen from Champlain Lookout, Gatineau Park": "가티노 공원 샹플랭 전망대에서 바라본 가을 언덕과 계곡"
+  }
+}

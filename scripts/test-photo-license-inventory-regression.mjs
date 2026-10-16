@@ -1,0 +1,1551 @@
+#!/usr/bin/env node
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse } from 'parse5';
+import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const assetPath = '/assets/images/osaka-castle-sakura.webp';
+const sourceUrl = 'https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg';
+const yongduamAssetPath = '/assets/images/korea-jeju-yongduam.webp';
+const yongduamSourceUrl = 'https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg';
+const hueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-20261008.webp';
+const hueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg';
+const hueTombLicenseUrl = 'https://creativecommons.org/licenses/by-sa/2.0/';
+const legacyHueTombAssetPath = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
+const legacyHueTombSourceUrl = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+const bordeauxPhotos = [
+  { assetPath: '/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG', sourceTitle: 'File:Bordeaux place de la bourse avec la Garonne-2015a.JPG', creator: 'Nataloche', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourceDate: '18 February 2015', localSha256: '53a12b65244cfffd88fa11653287771ef87387108112dca87c18b07f93d36387', subject: 'illuminated Place de la Bourse facade and its night reflection in the Garonne' },
+  { assetPath: '/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg', sourceTitle: 'File:Saint-Emilion 33 Place 2013.jpg', creator: 'JLPC', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourceDate: '27 May 2013', localSha256: 'c1a821385fa2aeefcda31feb83400e8c0728142dcfbf0ac3807f381c001bbb64', subject: 'Saint-Émilion village and main square as seen from the monolithic church' },
+  { assetPath: '/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg', sourceTitle: "File:Sunrise Cap Ferret Banc du Toulinguet - Arcachon - Océan Atlantique - Picture Image Photography - Sunset - Coucher de soleil - Dune du pilat pyla - Banc d'arguin water eau vagues waves beach plage sky colors red yellow (14501089751).jpg", creator: 'Grand Parc - Bordeaux, France from France', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', localSha256: 'b622a8f4affd7f65a959456ba412e0799bd6484d5b6484ef37ec3009224000b3', subject: 'low orange sun above open bay water' }
+];
+const wadjemupDiagramAssetPath = '/assets/images/australia-wadjemup-ferry-day-sequence.svg';
+const wadjemupDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-wadjemup-ferry-day-sequence.svg';
+const sydneyDiagramAssetPath = '/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
+const sydneyDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-sydney-harbour-coast-network-schematic.svg';
+const brisbaneDiagramAssetPath = '/assets/images/tripdistill-brisbane-bay-crossings.svg';
+const brisbaneDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-brisbane-bay-crossings.svg';
+const blueMountainsDiagramAssetPath = '/assets/images/australia-blue-mountains-western-line-planning.svg';
+const blueMountainsDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-blue-mountains-western-line-planning.svg';
+const greatOceanDiagramAssetPath = '/assets/images/australia-great-ocean-road-route-schematic.svg';
+const greatOceanDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-great-ocean-road-route-schematic.svg';
+const goldCoastDiagramAssetPath = '/assets/images/australia-gold-coast-coast-to-range-planning.svg';
+const goldCoastDiagramSourceUrl = 'https://tripdistill.com/assets/images/australia-gold-coast-coast-to-range-planning.svg';
+const goldCoastPhotoChecks = [
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Surfers_Paradise_Beach_with_skyline.jpg', creator: 'Bernard Spragg. NZ from Christchurch, New Zealand', license: 'CC0', subject: /Surfers Paradise beach, surf and skyline/i },
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Burleigh_Heads_and_Tallebudgera_Creek_2.JPG', creator: 'Shiftchange', license: 'Public domain', subject: /Tallebudgera Creek shoreline and nearby beach/i },
+  { assetPath: '/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Snapper_Rocks,_Coolangatta,_Gold_Coast,_Queensland_03.jpg', creator: 'Kgbo', license: 'CC BY-SA 4.0', subject: /Snapper Rocks surf breaking across the rocky coast/i }
+];
+const graubuendenDiagramAssetPath = '/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
+const graubuendenDiagramSourceUrl = 'https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg';
+const frenchAlpsDiagramAssetPath = '/assets/images/france-grenoble-bastille-route-sequence.svg';
+const ukKeswickOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater.webp';
+const ukCarlisleOldAssetPath = '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west.webp';
+const chinaLhasaRetiredAssetPath = '/assets/images/china-destination-lhasa.webp';
+const chinaLhasaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg';
+const franceVimyRetiredAssetPath = '/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp';
+const franceVimyRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg';
+const franceVimyDiagramAssetPath = '/assets/images/france-lille-arras-vimy-sequence-legend.svg';
+const franceVimyDiagramSourceUrl = 'https://tripdistill.com/assets/images/france-lille-arras-vimy-sequence-legend.svg';
+const melakaRetiredAssetPath = '/assets/images/malaysia-melaka-kampung-morten.webp';
+const melakaRetiredSourceUrl = 'https://commons.wikimedia.org/wiki/File:Waiting_for_Iftar_at_Kampung_Morten,_Malacca.jpg';
+const melakaDiagramAssetPath = '/assets/images/malaysia-melaka-two-bank-route.svg';
+const melakaDiagramSourceUrl = 'https://tripdistill.com/assets/images/malaysia-melaka-two-bank-route.svg';
+const chinaLhasaDiagramAssetPath = '/assets/images/china-lhasa-preparation.svg';
+const chinaXinjiangAssetPath = '/assets/images/china-destination-xinjiang.webp';
+const chinaXinjiangSourceUrl = 'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg';
+const ukLakeDiagramPaths = [
+  '/assets/images/united-kingdom-lake-district-cumbria-keswick-derwentwater-route-choice.svg',
+  '/assets/images/united-kingdom-lake-district-cumbria-carlisle-hadrians-wall-west-route-choice.svg'
+];
+const victoriaImageRecords = [
+  { assetPath: '/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', creator: 'DXR', license: 'CC BY-SA 4.0', sourceDate: '2024-08-27' },
+  { assetPath: '/assets/images/canada-victoria-south-island-butchart-saanich.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', creator: 'Fyre Mael', license: 'CC BY 2.0', sourceDate: '2015-06-26' }
+];
+const thailandImageRecords = [
+  { assetPath: '/assets/images/thailand-wat-arun-river.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', sourceDate: '2016-06-19', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-wat-arun-sunset.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', sourceDate: '2024-10-22', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-grand-palace.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', sourceDate: '2019-09-29', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-phra-athit.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Athit_Road_-_2017-01-26_(001).jpg', sourceDate: '2017-01-26', license: 'CC0 1.0' },
+  { assetPath: '/assets/images/thailand-yaowarat-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', sourceDate: '2018-05-10', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-siam-skyline.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', sourceDate: '2010-01-20', license: 'CC BY 4.0' },
+  { assetPath: '/assets/images/thailand-sukhumvit-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', sourceDate: '2018-11-24', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-lumphini.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', sourceDate: '2006-10-02', license: 'Public domain' },
+  { assetPath: '/assets/images/thailand-khlong-bang-luang.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', sourceDate: '2021-02-13', license: 'CC BY-SA 4.0' }
+];
+const koreaPhotoRecords = [
+  { assetPath: '/assets/images/korea-bukchon-blue-hour.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg', creator: 'Basile Morin', license: 'CC BY-SA 4.0', sourceDate: '2024-06-03' },
+  { assetPath: '/assets/images/korea-gyedong-alley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gyedong-gil_street_with_climbing_plants_at_golden_hour_in_Seoul_South_Korea.jpg', creator: 'Basile Morin', license: 'CC BY-SA 4.0', sourceDate: '2024-06-03' },
+  { assetPath: '/assets/images/korea-gwanghwamun-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg', creator: 'Seoul Tourism Organization', license: 'KOGL Type 1', sourceDate: '2024-12-11' },
+  { assetPath: '/assets/images/korea-busan-biff-night.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', sourceDate: '2018-09-27' },
+  { assetPath: '/assets/images/korea-busan-dongbaek.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg', creator: 'IsouM', license: 'CC BY-SA 4.0', sourceDate: '2018-10-11' }
+];
+const chiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-old-city.webp', sourceDate: '2017-11-05', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/thailand-chiang-mai-wat-pha-lat.webp', sourceDate: '2014-05-24', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/thailand-chiang-mai-ping-river.webp', sourceDate: '2018-09-06', license: 'CC BY-SA 4.0' }
+];
+const reviewedChiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-doi-inthanon.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg', creator: 'Nnthurber', license: 'CC BY-SA 4.0', sourcePhotoDate: null },
+  { assetPath: '/assets/images/thailand-chiang-mai-mae-kampong.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg', creator: 'LannaPhoto', license: 'CC BY-SA 3.0', sourcePhotoDate: null },
+  { assetPath: '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg', creator: 'FredTC', license: 'CC BY-SA 4.0', sourcePhotoDate: '2017-12-20' }
+];
+const newChiangMaiImageRecords = [
+  { assetPath: '/assets/images/thailand-chiang-mai-warorot.webp', route: 'thailand/chiang-mai/chang-moi-warorot/', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Warorot_market_4.jpg', sourceTitle: 'File:Warorot market 4.jpg', creator: 'Christophe95', license: 'CC BY-SA 4.0', sourcePhotoDate: '2018-09-06' },
+  { assetPath: '/assets/images/thailand-chiang-mai-mae-rim.webp', route: 'thailand/chiang-mai/mae-rim-mae-sa/', sourceUrl: 'https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg', sourceTitle: 'File:View of Mae Sa Valley, Chiang Mai, Thailand.jpg', creator: 'VN.NguyenDucDuy', license: 'CC BY-SA 4.0', sourcePhotoDate: null }
+];
+const danangImageRecords = [
+  { assetPath: '/assets/images/vietnam-da-nang-han-river.webp', sourceDate: '2023-08-19' },
+  { assetPath: '/assets/images/vietnam-da-nang-marble-mountains.webp', sourceDate: '2024-08-01' },
+  { assetPath: '/assets/images/vietnam-da-nang-my-khe.webp', sourceDate: '2018-07-30' },
+  { assetPath: '/assets/images/vietnam-da-nang-son-tra.webp', sourceDate: '2011-05-14' },
+  { assetPath: '/assets/images/vietnam-hoi-an-ancient-town.webp', sourceDate: '2020-01-22' },
+  { assetPath: '/assets/images/vietnam-my-son-sanctuary.webp', sourceDate: '2024-08-02' }
+];
+const removedUnverifiedVictoriaAsset = '/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp';
+const pagePath = path.join(root, 'japan', 'osaka', 'osaka-castle-area', 'index.html');
+const artifactPaths = [
+  path.join(root, 'reports', 'photo-license-inventory.json'),
+  path.join(root, 'reports', 'photo-license-inventory.md')
+];
+const originalArtifacts = artifactPaths.map((file) => [file, fs.readFileSync(file)]);
+const checkedInReport = JSON.parse(originalArtifacts[0][1].toString('utf8'));
+const checkedInYongduam = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/korea-jeju-yongduam.webp');
+assert.ok(checkedInYongduam, 'checked-in inventory must retain the Jeju Yongduam asset record');
+assert.equal(checkedInYongduam.sourceUrl, 'https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg');
+assert.equal(checkedInYongduam.sourceTitle, '용두암.jpg');
+assert.equal(checkedInYongduam.creator, 'Ahn Beom-jin');
+assert.equal(checkedInYongduam.license, 'CC BY-SA 4.0');
+assert.ok(checkedInYongduam.editHistory.includes('no further per-image edit details'));
+const checkedInSwitzerlandCh14Diagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/switzerland-country-route-choice.svg');
+assert.ok(checkedInSwitzerlandCh14Diagram, 'checked-in inventory must include the CH14 five-language Switzerland schematic');
+assert.equal(checkedInSwitzerlandCh14Diagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInSwitzerlandCh14Diagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-country-route-choice.svg');
+assert.equal(checkedInSwitzerlandCh14Diagram.creator, 'TripDistill Editorial Team');
+assert.equal(checkedInSwitzerlandCh14Diagram.license, null);
+assert.equal(checkedInSwitzerlandCh14Diagram.rightsStatus, 'Project original; no separate reuse license declared');
+const checkedInGoldCoastDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === goldCoastDiagramAssetPath);
+assert.ok(checkedInGoldCoastDiagram, 'checked-in inventory must include the original Gold Coast planning schematic');
+assert.equal(checkedInGoldCoastDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInGoldCoastDiagram.sourceUrl, goldCoastDiagramSourceUrl);
+assert.equal(checkedInGoldCoastDiagram.license, null);
+assert.equal(checkedInGoldCoastDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInGoldCoastDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInGoldCoastDiagram.commercialReuseEligibility, 'unknown');
+for (const expected of goldCoastPhotoChecks) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include Gold Coast photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, expected.subject);
+  assert.match(record.verificationDetail, /no independent rights clearance is claimed/i);
+}
+const checkedInNewfoundlandDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-newfoundland-regions.svg');
+assert.ok(checkedInNewfoundlandDiagram, 'checked-in inventory must include the Newfoundland planning diagram');
+assert.equal(checkedInNewfoundlandDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInNewfoundlandDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInNewfoundlandDiagram.visualReviewStatus, 'visually_reviewed_2026-10-12', 'the supplied native render/pixel check must be recorded');
+const checkedInOttawaDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+assert.ok(checkedInOttawaDiagram, 'checked-in inventory must include the Ottawa–Gatineau planning diagram');
+assert.equal(checkedInOttawaDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInOttawaDiagram.localSha1, 'b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d');
+assert.equal(checkedInOttawaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInOttawaDiagram.verificationStatus, 'site_credit_or_metadata_only');
+const checkedInNiagaraPhotos = [
+  { assetPath: '/assets/images/canada-niagara-falls-parkway.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Horseshoe_Falls_-_Niagara_Falls_Canada.JPG', creator: 'Gzzz', license: 'CC BY-SA 4.0' },
+  { assetPath: '/assets/images/canada-niagara-niagara-gorge.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Niagara_Falls_Whirlpool_aerial_view.jpg', creator: 'Zwergelstern', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-niagara-niagara-on-the-lake.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg', creator: 'Spudgun67', license: 'CC BY-SA 4.0' }
+];
+for (const expected of checkedInNiagaraPhotos) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include the Niagara photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.verificationDate, '2026-10-12');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, /do not independently establish uploader authority or a rights chain|does not independently establish uploader authority or a rights chain/i);
+}
+const checkedInNiagaraDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-niagara-falls-decision.svg');
+assert.ok(checkedInNiagaraDiagram, 'checked-in inventory must include the original Niagara planning diagram');
+assert.equal(checkedInNiagaraDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInNiagaraDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-niagara-falls-decision.svg');
+assert.equal(checkedInNiagaraDiagram.creator, 'TripDistill');
+assert.equal(checkedInNiagaraDiagram.license, null);
+assert.equal(checkedInNiagaraDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInNiagaraDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+assert.equal(checkedInNiagaraDiagram.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInNiagaraDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInNiagaraDiagram.localSha1, '742c1b1ba89c38a9de02872e76681a57640dc8d2');
+const checkedInSaguenayPhotos = [
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tadoussac.jpg', creator: 'Bodoklecksel', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG', creator: 'Ajor933', license: 'CC BY-SA 3.0' },
+  { assetPath: '/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg', creator: '0x010C', license: 'CC BY-SA 4.0' }
+];
+for (const expected of checkedInSaguenayPhotos) {
+  const record = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+  assert.ok(record, `checked-in inventory must include the Saguenay photo ${expected.assetPath}`);
+  assert.equal(record.sourceUrl, expected.sourceUrl);
+  assert.equal(record.creator, expected.creator);
+  assert.equal(record.license, expected.license);
+  assert.equal(record.verificationStatus, 'source_page_checked');
+  assert.equal(record.verificationDate, '2026-10-12');
+  assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(record.verificationDetail, /does not independently establish uploader authority or a rights chain/i);
+  assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(expected.creator)));
+}
+const checkedInSaguenayDiagram = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/tripdistill-canada-saguenay-sector-decisions.svg');
+assert.ok(checkedInSaguenayDiagram, 'checked-in inventory must include the original Saguenay sector schematic');
+assert.equal(checkedInSaguenayDiagram.assetType, 'original-planning-diagram');
+assert.equal(checkedInSaguenayDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-saguenay-sector-decisions.svg');
+assert.equal(checkedInSaguenayDiagram.creator, 'TripDistill');
+assert.equal(checkedInSaguenayDiagram.license, null);
+assert.equal(checkedInSaguenayDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInSaguenayDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+assert.equal(checkedInSaguenayDiagram.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInSaguenayDiagram.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInSaguenayDiagram.inventoryStatus, 'used');
+assert.equal(checkedInSaguenayDiagram.useCount, 1);
+assert.deepEqual(checkedInSaguenayDiagram.routes, ['/canada/saguenay-tadoussac/fjord-hiking/']);
+assert.match(checkedInSaguenayDiagram.localSha1, /^[a-f0-9]{40}$/);
+
+function attrs(node) { return Object.fromEntries((node.attrs || []).map((item) => [item.name, item.value])); }
+function findAll(node, predicate, output = []) {
+  if (predicate(node)) output.push(node);
+  for (const child of node.childNodes || []) findAll(child, predicate, output);
+  return output;
+}
+function textContent(node) {
+  if (node.nodeName === '#text') return node.value || '';
+  return (node.childNodes || []).map(textContent).join('');
+}
+
+try {
+  // Regenerate first so this test exercises the actual inventory extraction path.
+  execFileSync(process.execPath, [path.join(root, 'scripts', 'audit-photo-license-inventory.mjs')], { cwd: root, stdio: 'inherit' });
+
+  const document = parse(fs.readFileSync(pagePath, 'utf8'));
+  const explicitCreditRows = findAll(document, (node) => node.tagName === 'li' && attrs(node)['data-photo-asset'] === assetPath);
+  assert.equal(explicitCreditRows.length, 1, 'Osaka sakura asset must keep exactly one explicit visible credit mapping');
+  const creditAttrs = attrs(explicitCreditRows[0]);
+  assert.equal(creditAttrs['data-photo-creator'], 'Luka Peternel');
+  assert.equal(creditAttrs['data-photo-license'], 'CC BY-SA 4.0');
+  assert.ok(findAll(explicitCreditRows[0], (node) => node.tagName === 'a' && attrs(node).href === sourceUrl).length, 'visible credit must link to the exact Commons file page');
+
+  const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
+  const kotaKinabaluPhotos = [
+    { assetPath: '/assets/images/malaysia-kota-kinabalu.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', creator: 'Garysawjuntiek', license: 'CC BY-SA 4.0', sourceDate: '2018-08-25', localSha1: '3b436ef0bbeb3f5f78ab7ff2d955983af73b4706', originalSize: '4,160 × 3,120' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-jetty.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', sourceDate: '2012-01-01', localSha1: 'f7233f4fb25f8bc1040d5815db79735fdbcb77dc', originalSize: '1,200 × 729' },
+    { assetPath: '/assets/images/malaysia-kota-kinabalu-islands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', creator: 'Thien Zie Yung', license: 'CC BY 2.0', sourceDate: '2008-12-16', localSha1: 'b5aed8c3d2d0c835ccdb29914147d5a89f5be97c', originalSize: '3,648 × 2,736' }
+  ];
+  const allPhotoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const image of kotaKinabaluPhotos) {
+    const record = allPhotoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Kota Kinabalu inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.localSha1, image.localSha1, 'inventory must bind the review to the exact local WebP bytes');
+    assert.equal(record.sourcePhotoDate, image.sourceDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'Commons original dimensions must be recorded');
+    assert.ok(record.verificationDetail.includes('local 1,440 × 960 WebP pixels'), 'local pixel dimensions and subject check must be explicit');
+    assert.match(record.verificationDetail, /not independent rights|not independent.*clearance/i, 'page declarations must not imply chain-of-title clearance');
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.match(record.editHistory, /center-cropped to 1440 × 960 and converted to WebP/i);
+    if (image.license.includes('BY-SA')) assert.ok(record.editHistory.includes(image.license), 'the adapted photo must retain the exact share-alike version');
+  }
+  const kotaKinabaluJettyPhoto = allPhotoRecords.find((item) => item.assetPath === '/assets/images/malaysia-kota-kinabalu-jetty.webp');
+  assert.match(kotaKinabaluJettyPhoto.verificationDetail, /CC BY-SA 3\.0 declaration among its listed license versions;.*CC BY-SA 4\.0 as a later option/i);
+  assert.equal(report.counts.sourceMetadataConflicts, 0, 'distinct offered license versions are choices, not an automatic metadata conflict');
+  const kotaKinabaluLocaleHubs = [
+    { prefix: '', label: 'English' },
+    { prefix: 'zh', label: 'Traditional Chinese' },
+    { prefix: 'ja', label: 'Japanese' },
+    { prefix: 'ko', label: 'Korean' },
+    { prefix: 'th', label: 'Thai' }
+  ];
+  for (const { prefix, label } of kotaKinabaluLocaleHubs) {
+    const page = parse(fs.readFileSync(path.join(root, prefix, 'malaysia/kota-kinabalu-tunku-abdul-rahman/index.html'), 'utf8'));
+    const sources = findAll(page, (node) => node.tagName === 'section' && attrs(node).class?.split(/\s+/).includes('sources'));
+    assert.equal(sources.length, 1, `${label} Kota Kinabalu hub must retain one source and photo-credit section`);
+    for (const image of kotaKinabaluPhotos) {
+      const credits = findAll(sources[0], (node) => node.tagName === 'a' && attrs(node).href === image.sourceUrl);
+      assert.equal(credits.length, 1, `${label} Kota Kinabalu hub must link the exact Commons page`);
+      const creditText = textContent(credits[0].parentNode);
+      assert.ok(creditText.includes(image.creator), `${label} Kota Kinabalu hub must retain the credited creator`);
+      assert.ok(creditText.includes(image.license), `${label} Kota Kinabalu hub must retain the declared license version`);
+    }
+  }
+  const perhentianRedangPhotos = [
+    { assetPath: '/assets/images/malaysia-perhentian.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Perhentian_Kecil_Island,_Malaysia,_Beach.jpg', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0', sha1: '7d9bd9426bda7a02491cf53be261e226cef9ebfa', visual: /palm-lined Perhentian beach with clear water/i },
+    { assetPath: '/assets/images/malaysia-perhentian-coral-bay.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Coral_Bay,_Perhentian_Kecil.JPG', creator: 'DTravel AU', license: 'CC BY-SA 3.0', sha1: 'fac966b61c484a42eb9a9b42dcf8fa3942845eaf', visual: /Coral Bay shoreline, boats and a palm-lined coast/i },
+    { assetPath: '/assets/images/malaysia-redang-beach.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pulau_Redang_-_White_sandy_beach.jpg', creator: 'Azreey', license: 'CC BY-SA 4.0', sha1: '0e13f9c06b555d9a3b3c7a1194215f0e1b6ebd92', visual: /white-sand Redang shore, turquoise water and a rocky headland/i }
+  ];
+  for (const photo of perhentianRedangPhotos) {
+    const record = allPhotoRecords.find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Perhentian/Redang inventory must retain ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.localSha1, photo.sha1);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, photo.visual);
+    assert.match(record.verificationDetail, /not independent .*?(?:rights|legal) clearance|without asserting uploader authority or independent rights clearance/i);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator) && credit.includes(photo.license)));
+  }
+  const similan = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/thailand-andaman-similan.webp');
+  assert.ok(similan, 'inventory regeneration must include the Andaman Similan image');
+  assert.equal(similan.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg');
+  assert.equal(similan.creator, 'Sgroey');
+  assert.equal(similan.license, 'CC BY 4.0');
+  assert.equal(similan.sourcePhotoDate, null, 'the Commons/EXIF date conflict must remain unresolved');
+  assert.equal(similan.visualReviewStatus, 'visually_reviewed_2026-10-09');
+  assert.equal(similan.verificationStatus, 'source_page_checked');
+  assert.ok(similan.rawVisibleCredits.some((credit) => credit.includes('Sgroey') && !credit.includes('Budelli')));
+  const oxfordPhotoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const oxfordPhotoChecks = [
+    {
+      assetPath: '/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Oxford_-_Catte_Street_-_View_SSW_on_the_Radcliffe_Camera_1737-48_by_James_Gibbs_-_University_Church_of_St_Mary_the_Virgin_%26_Brasenose_College_in_the_back.jpg',
+      creator: 'Txllxt TxllxT',
+      license: 'CC BY-SA 4.0'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Blenheim_Palace_from_the_Water_Terraces_October_2016.jpg',
+      creator: 'DeFacto',
+      license: 'CC BY-SA 4.0'
+    }
+  ];
+  for (const expected of oxfordPhotoChecks) {
+    const record = oxfordPhotoRecords.find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `Oxford/Cotswolds inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+  }
+  const peakDistrictPhotoChecks = [
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-bakewell-chatsworth.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Chatsworth_House_-_geograph.org.uk_-_2191619.jpg',
+      creator: 'Trevor Rickard',
+      license: 'CC BY-SA 2.0',
+      dimensions: '1,024 × 768'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-hope-valley-edale.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mam_Tor_from_the_Ridge_path_-_Flickr_-_Donnchadh_H.jpg',
+      creator: 'Donnchadh H',
+      license: 'CC BY 2.0',
+      dimensions: '5,568 × 3,712'
+    },
+    {
+      assetPath: '/assets/images/united-kingdom-peak-district-derbyshire-dovedale-ashbourne.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Dovedale_-_River_Dove_-_Thorpe_Cloud_-_Stepping_Stones_(15041656340).jpg',
+      creator: 'Elliott Brown from Birmingham, United Kingdom',
+      license: 'CC BY-SA 2.0',
+      dimensions: '3,072 × 2,304'
+    }
+  ];
+  for (const expected of peakDistrictPhotoChecks) {
+    const record = report.entries.flatMap((item) => item.sourceRecords).find((photo) => photo.assetPath === expected.assetPath);
+    assert.ok(record, `Peak District inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(expected.dimensions), 'verification details must retain Commons source dimensions');
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+    assert.match(record.editHistory, /resiz|crop|WebP/i);
+  }
+  const cotswoldPhoto = oxfordPhotoRecords.find((item) => item.assetPath === '/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp');
+  assert.ok(cotswoldPhoto, 'Oxford/Cotswolds inventory must retain the Cotswold village image');
+  assert.equal(cotswoldPhoto.verificationStatus, 'site_credit_or_metadata_only', 'the inaccessible Commons page must not be reported as verified');
+  assert.equal(cotswoldPhoto.verificationDate, null);
+  assert.equal(cotswoldPhoto.visualReviewStatus, 'visually_reviewed_2026-10-11', 'local pixel review remains distinct from source-page verification');
+  assert.equal(report.counts.activeMissingSourceCreditMatch, 0, 'all currently referenced assets have a source, creator and license match');
+  assert.equal(report.counts.activeIncompleteAttributionFields, 0, 'no currently used image is missing required attribution or rights fields');
+  assert.equal(report.counts.unreferencedMissingSourceCreditMatch, 24, 'the remaining unmatched records are unused assets');
+  const dordognePhotos = [
+    { assetPath: '/assets/images/france-dordogne-perigord-dordogne-castles-villages.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Castle_and_church_(left)_of_Beynac_along_the_Dordogneriver_-_panoramio.jpg', creator: 'Henk Monster', license: 'CC BY 3.0' },
+    { assetPath: '/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg', creator: 'Manfred Heyde', license: 'CC BY-SA 3.0' },
+    { assetPath: '/assets/images/france-dordogne-perigord-vezere-prehistory.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Les_Eyzies-de-Tayac_falaise_bourg_(2).jpg', creator: 'Père Igor', license: 'CC BY-SA 4.0' }
+  ];
+  for (const photo of dordognePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Dordogne inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11', 'each Dordogne WebP was inspected at pixel level');
+  }
+  const beynacPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[0].assetPath);
+  const sarlatPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[1].assetPath);
+  const lesEyziesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === dordognePhotos[2].assetPath);
+  for (const [record, date] of [[beynacPhoto, '16 October 2011'], [sarlatPhoto, 'May 2008']]) {
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.ok(record.verificationDetail.includes(date));
+  }
+  assert.equal(lesEyziesPhoto.verificationStatus, 'site_credit_or_metadata_only', 'an inaccessible exact source page remains explicitly unverified');
+  assert.equal(lesEyziesPhoto.verificationDate, null);
+  const provencePhotos = [
+    {
+      assetPath: '/assets/images/france-provence-inland-avignon-papal-city.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Avignon_-_%C3%8Ele_de_Piot_-_Chemin_des_Berges_-_Panorama_View_from_the_Rh%C3%B4ne_river_bank_towards_Pont_Saint_B%C3%A9n%C3%A9zet_(Pont_d%27Avignon),_Jardin_des_doms,_Avignon_Cathedral,_Palais_des_Papes_%26_Pont_%C3%89douard_Daladier_02.jpg',
+      creator: 'Txllxt TxllxT',
+      license: 'CC BY-SA 4.0',
+      localSha256: 'a82d6f1117c6e34ca179d7f001284e99fb3e9da18141962d8cf9908869a905d3',
+      pixelNote: 'distant walled Avignon skyline and Palace of the Popes from the Rhône bank at Île de Piot'
+    },
+    {
+      assetPath: '/assets/images/france-provence-inland-aix-markets-cezanne.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:France-002438_-_Cours_Mirabeau_Fountain_(15867627856).jpg',
+      creator: 'Dennis G. Jarvis',
+      license: 'CC BY-SA 2.0',
+      localSha256: 'f072c6ba751bb14712fe4d4675031e450b2c063266cd9090c740391cc2b9e967',
+      pixelNote: 'Fontaine de la Rotonde and plane-tree avenue on Cours Mirabeau in Aix-en-Provence'
+    },
+    {
+      assetPath: '/assets/images/france-provence-inland-luberon-villages-abbey.webp',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg',
+      creator: 'Einaz80',
+      license: 'CC BY-SA 4.0',
+      localSha256: '0865181e415724083187a5cbdf601274a86b966a34d28ed22d23791e73cb8d89',
+      pixelNote: 'Gordes hillside village and stone buildings in the Luberon'
+    }
+  ];
+  for (const expected of provencePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `Provence inventory must retain ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.sha256, expected.localSha256, 'source verification must preserve the inspected local image bytes');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.match(record.verificationDetail, /1,600 × 1,066 WebP pixels were inspected/i);
+    assert.ok(record.verificationDetail.includes(expected.pixelNote), 'verification note must match the visible subject');
+    assert.match(record.verificationDetail, /not independent rights clearance/i);
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+  }
+  const marseillePhotos = [
+    { assetPath: '/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', sourceSha1: '7d381ee1748237e9db100c3e84e36d09c2180ddb', pixelNote: 'older harbor-side stone building under restoration scaffolding' },
+    { assetPath: '/assets/images/france-marseille-calanques-calanques-access-choice.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', sourceSha1: '684c46cd9c74d508c0c51324e6533f545ad4b904', pixelNote: 'aerial limestone inlets including Port-Miou, Port-Pin and En-Vau' },
+    { assetPath: '/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', creator: 'DJ Poldoc', license: 'CC0', sourceSha1: '4c262f89d1eaa0d52a65b8d2593f0a972257f6fd', pixelNote: 'Cassis harbor with boats in the foreground and Cap Canaille beyond' }
+  ];
+  for (const photo of marseillePhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Marseille inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(photo.pixelNote));
+    assert.ok(record.verificationDetail.includes(photo.sourceSha1));
+    assert.ok(record.verificationDetail.includes('not independent rights or chain-of-title verification'));
+    assert.ok(record.altTexts.length && record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+  }
+  const coteDAzurPhotos = [
+    { assetPath: '/assets/images/france-cote-dazur-nice-old-town-hills.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg', creator: 'Lspigon', license: 'Public domain', sourcePhotoDate: '2006-01-01' },
+    { assetPath: '/assets/images/france-cote-dazur-eze-monaco-menton.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:02_statue_and_view_Jardin_Exotique_%C3%88ze_Village_French_Riviera_Copr_2022_by_Tim_Adams_CC_by_3.jpg', creator: 'Tim Adams', license: 'CC BY 3.0', sourcePhotoDate: '2022-04-27' },
+    { assetPath: '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Port_vauban_vieille_ville.jpg', creator: 'Abxbay', license: 'CC BY-SA 4.0', sourcePhotoDate: '2016-06-07' }
+  ];
+  for (const photo of coteDAzurPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Côte d’Azur inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.sourcePhotoDate, photo.sourcePhotoDate);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, /local 1,600 × 1,066 WebP pixels were inspected/i);
+  }
+  const sandakanPhotos = [
+    { assetPath: '/assets/images/malaysia-kinabatangan.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-05-25', localSha1: '27b5ea43a1a1dfb4267aaf8492bf7960eecb6bee' },
+    { assetPath: '/assets/images/malaysia-sepilok.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-09', localSha1: '521a5ca48b846592d8d51f5c9703db4d2e074ced' },
+    { assetPath: '/assets/images/malaysia-kinabatangan-proboscis.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Proboscis_monkey_and_its_baby_-_Kinabatangan_area_-_Sabah_-_Borneo_-_Malaysia_-_panoramio.jpg', creator: 'diego_cue', license: 'CC BY-SA 3.0', sourcePhotoDate: '2010-03-06', localSha1: '72b74b0a09835faa4fc7bf63e76a1111d7f11561' }
+  ];
+  for (const photo of sandakanPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Sandakan inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.sourcePhotoDate, photo.sourcePhotoDate);
+    assert.equal(record.localSha1, photo.localSha1);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, /local WebP pixels show/i);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator) && credit.includes('CC BY-SA 3.0')));
+    assert.match(record.editHistory, /Resized, center-cropped and converted to WebP/i, `${photo.assetPath} edit history records the local derivative`);
+    assert.ok(record.editHistory.includes('shared under CC BY-SA 3.0'), `${photo.assetPath} inventory preserves the exact share-alike version`);
+    assert.match(record.verificationDetail, /not independent .*rights clearance/i, `${photo.assetPath} source-page claims do not overstate legal review`);
+  }
+  const sempornaPhotos = [
+    { assetPath: '/assets/images/malaysia-semporna.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Buhey_Dulang,Semporna,_Sabah.jpg', sourceTitle: 'File:Buhey Dulang,Semporna, Sabah.jpg', creator: 'Redzuan Bohari', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', localSha1: '9dc40d9185466dd970c3d694d0b5efbf8435e807', visual: /pixels show the Bohey Dulang ridge above the turquoise Tun Sakaran lagoon/i },
+    { assetPath: '/assets/images/malaysia-semporna-water-taxi.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Semporna_Sabah_Water-taxi-01.jpg', sourceTitle: 'File:Semporna Sabah Water-taxi-01.jpg', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', localSha1: '40b0ffa7e7c6e111e094c121196f7797f59f1c26', visual: /pixels show a small Semporna water taxi with passengers/i },
+    { assetPath: '/assets/images/malaysia-tun-sakaran.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Semporna_-_Tun_Sakaran_Marine_Park.jpg', sourceTitle: 'File:Semporna - Tun Sakaran Marine Park.jpg', creator: 'Adznee Abas', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', localSha1: '5d948c5957885618aa8b8516b1e57db6daab79b5', visual: /pixels match Tun Sakaran island silhouettes viewed from Semporna at sunset/i }
+  ];
+  for (const photo of sempornaPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Semporna inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.sourceTitle, photo.sourceTitle);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.licenseUrl, photo.licenseUrl);
+    assert.equal(record.localSha1, photo.localSha1);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.match(record.verificationDetail, photo.visual);
+    assert.match(record.verificationDetail, /not independent rights or uploader-authority clearance/i);
+    if (photo.assetPath !== '/assets/images/malaysia-tun-sakaran.webp') {
+      assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+    }
+  }
+  const retiredSemporna = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/malaysia-tun-sakaran.webp');
+  assert.equal(retiredSemporna.inventoryStatus, 'unused');
+  assert.equal(retiredSemporna.useCount, 0);
+  assert.deepEqual(retiredSemporna.routes, []);
+  assert.match(retiredSemporna.retirementNote, /not Mabul, Kapalai or Sipadan/i);
+  const blueMountainsPhotos = [
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Three_Sisters,_Blue_Mountains_(1).jpg', creator: 'Alicia Brogan ( Ali b at English Wikipedia )', license: 'CC BY-SA 3.0', visual: /pixels show the Three Sisters above Jamison Valley/i },
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wentworth_Falls_from_Princes_Rock.jpg', creator: 'Lschoen', license: 'CC BY-SA 4.0', visual: /pixels show the waterfall and escarpment/i },
+    { assetPath: '/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Govetts_Leap_-_Blue_Mountains_-_panoramio.jpg', creator: 'Pavel Špindler', license: 'CC BY 3.0', visual: /pixels show the Govetts Leap lookout marker and Grose Valley view/i }
+  ];
+  for (const photo of blueMountainsPhotos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Blue Mountains inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.match(record.verificationDetail, photo.visual);
+    assert.match(record.verificationDetail, /no independent rights clearance is claimed/i);
+  }
+  const switzerlandCh14Photos = [
+    { assetPath: '/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg', creator: 'Chris j wood', license: 'CC BY-SA 4.0', subject: 'ferry at the Lugano lakefront' },
+    { assetPath: '/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg', creator: 'Glenn Steiger (Switzerland)', license: 'CC BY 3.0', subject: 'Locarno/Ascona and lake view' },
+    { assetPath: '/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg', creator: 'More pics than views…', license: 'CC BY 3.0', subject: 'Rhine Falls viewing platform and waterfall' }
+  ];
+  for (const photo of switzerlandCh14Photos) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === photo.assetPath);
+    assert.ok(record, `Switzerland CH14 inventory must include ${photo.assetPath}`);
+    assert.equal(record.sourceUrl, photo.sourceUrl);
+    assert.equal(record.creator, photo.creator);
+    assert.equal(record.license, photo.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes(photo.subject));
+    assert.match(record.verificationDetail, /not independent uploader authority or chain-of-title clearance/i);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(photo.creator)));
+  }
+  const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
+  assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the four new Australia project originals remain metadata-only and make no independent rights claim');
+  assert.equal(report.counts.sourcePageChecked, 292, 'the merged inventory retains source-page checks for the three CH14 photos alongside the previous reviewed assets');
+  assert.equal(report.counts.assetsVisuallyReviewed, 217, 'the merged inventory includes four individually reviewed Australia planning schematics');
+  assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
+  const summary = fs.readFileSync(artifactPaths[1], 'utf8');
+  assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
+  assert.ok(!summary.includes('N Seoul Tower subject description conflicts'), 'the resolved N Seoul Tower mismatch must not reappear in the Markdown report');
+  const hueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === hueTombAssetPath);
+  assert.ok(hueTomb, 'inventory regeneration must include the new Hue Minh Mang asset');
+  assert.equal(hueTomb.sourceUrl, hueTombSourceUrl);
+  assert.equal(hueTomb.sourceTitle, 'Royal Tomb of Minh Mang (14720605126).jpg');
+  assert.equal(hueTomb.creditLabel, 'Royal Tomb of Minh Mang');
+  assert.equal(hueTomb.creator, 'Erwin Verbruggen');
+  assert.equal(hueTomb.license, 'CC BY-SA 2.0');
+  assert.equal(hueTomb.licenseUrl, hueTombLicenseUrl);
+  assert.equal(hueTomb.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+  assert.equal(hueTomb.metadataOrigin, 'structured_data_record');
+  assert.equal(hueTomb.verificationStatus, 'source_page_checked');
+  assert.equal(hueTomb.verificationDate, '2026-10-08');
+  assert.equal(hueTomb.visualReviewStatus, 'visually_reviewed_2026-10-08');
+  assert.ok(hueTomb.editHistory.includes('same license version'));
+  assert.ok(hueTomb.verificationDetail.includes('25 June 2014'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === hueTombAssetPath), false);
+  for (const image of victoriaImageRecords) {
+    const record = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Victoria photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.sourcePhotoDate, image.sourceDate, 'Victoria inventory must retain the source photograph date');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
+  }
+  const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  for (const [routeKey, diagram] of Object.entries(australiaAdelaidePerthDiagrams)) {
+    const record = photoRecords.find((item) => item.assetPath === diagram.src);
+    assert.ok(record, `inventory must include the original Australia planning diagram ${diagram.src}`);
+    assert.equal(fs.existsSync(path.join(root, diagram.src.slice(1))), true);
+    assert.equal(record.assetType, 'original-planning-diagram');
+    assert.equal(record.creator, diagram.creator);
+    assert.equal(record.license, null);
+    assert.equal(record.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(record.commercialReuseEligibility, 'unknown');
+    assert.equal(record.inventoryStatus, 'used');
+    assert.equal(record.useCount, 1);
+    assert.deepEqual(record.routes, [`/australia/${routeKey}/`]);
+    assert.equal(record.localSha1, diagram.localSha1);
+    assert.ok(record.altTexts.includes(diagram.alt));
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(record.verificationStatus, 'site_credit_or_metadata_only');
+    assert.equal(report.unmatchedAssets.some((item) => item.src === diagram.src), false);
+  }
+  const bordeauxRoutes = [
+    '/france/bordeaux-gironde/',
+    '/france/bordeaux-gironde/bordeaux-river-wine-city/',
+    '/france/bordeaux-gironde/saint-emilion-vineyards/',
+    '/france/bordeaux-gironde/arcachon-dune-pilat/'
+  ];
+  for (const image of bordeauxPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Bordeaux/Gironde inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, image.licenseUrl);
+    assert.equal(record.sha256, image.localSha256, 'inventory hash must match the reviewed local pixels');
+    assert.equal(record.metadataOrigin, 'structured_data_record');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.subject), 'the source-page and pixel match note must state the inspected subject');
+    if (image.sourceDate) assert.ok(record.verificationDetail.includes(image.sourceDate), 'the source photo date must be recorded');
+    assert.ok(record.verificationDetail.includes('without asserting independent rights clearance'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+    if (image.license.includes('BY-SA')) assert.ok(record.editHistory.includes(image.license), 'CC BY-SA adaptations must preserve the exact share-alike license version');
+    assert.ok(bordeauxRoutes.every((route) => record.routes.includes(route)), 'each current Bordeaux image must be used by the four reviewed routes');
+  }
+  const bordeauxLocales = [
+    { locale: 'en', prefix: '' },
+    { locale: 'zh-Hant', prefix: 'zh' },
+    { locale: 'ja', prefix: 'ja' },
+    { locale: 'ko', prefix: 'ko' },
+    { locale: 'th', prefix: 'th' }
+  ];
+  const bordeauxEditNoteSource = (license) => `. Resized, cropped for display and converted to WebP; changes disclosed. Shared under the same ${license} license.`;
+  const bordeauxEditNoteTranslations = Object.fromEntries(bordeauxLocales.filter(({ locale }) => locale !== 'en').map(({ locale }) => {
+    const batch = JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', locale, 'zzzzn-fr06-bordeaux-pages-20261011.json'), 'utf8'));
+    return [locale, batch.translations];
+  }));
+  for (const { locale, prefix } of bordeauxLocales) {
+    for (const route of bordeauxRoutes) {
+      const document = parse(fs.readFileSync(path.join(root, prefix, route, 'index.html'), 'utf8'));
+      for (const image of bordeauxPhotos) {
+        const matchingPixels = findAll(document, (node) => node.tagName === 'img' && attrs(node).src === image.assetPath);
+        assert.ok(matchingPixels.length >= 1, `${locale} ${route} must use the pixel-reviewed image ${image.assetPath}`);
+        const exactCredits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === image.sourceUrl).length > 0);
+        assert.equal(exactCredits.length, 1, `${locale} ${route} must link the exact Commons page for ${image.assetPath}`);
+        const credit = textContent(exactCredits[0]);
+        assert.ok(credit.includes(image.creator), `${locale} ${route} must retain exact creator attribution`);
+        assert.ok(credit.includes(image.license), `${locale} ${route} must retain the exact license version`);
+        assert.ok(findAll(exactCredits[0], (link) => link.tagName === 'a' && attrs(link).href === image.licenseUrl).length, `${locale} ${route} must link the declared license`);
+        assert.ok(credit.includes('WebP'), `${locale} ${route} must show the image adaptation disclosure`);
+        if (image.license.includes('BY-SA')) {
+          const editNote = locale === 'en' ? bordeauxEditNoteSource(image.license) : bordeauxEditNoteTranslations[locale][bordeauxEditNoteSource(image.license)];
+          assert.ok(editNote && credit.includes(editNote), `${locale} ${route} must retain the localized adaptation disclosure and exact share-alike license version`);
+        }
+      }
+    }
+  }
+  const cornwallPhotos = [
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg', sourceTitle: 'File:The beach in St. Ives harbour, Cornwall - geograph.org.uk - 2273997.jpg', creator: 'nick macneill', license: 'CC BY-SA 2.0', sourcePhotoDate: '1991-09-15', originalSize: '1,024 × 693' },
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg', sourceTitle: 'File:Ferry to Falmouth & sailing boats, St Mawes Harbour, Cornwall - June 2025.jpg', creator: 'Mutney', license: 'CC BY 4.0', sourcePhotoDate: '2025-06-28', originalSize: '4,032 × 2,198' },
+    { assetPath: '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg', sourceTitle: 'File:Exeter , Exeter Cathedral ^ Green - geograph.org.uk - 3144068.jpg', creator: 'Lewis Clarke', license: 'CC BY-SA 2.0', sourcePhotoDate: '2012-09-21', originalSize: '4,288 × 2,848' }
+  ];
+  for (const image of cornwallPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Cornwall photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY 4.0' ? 'by/4.0' : 'by-sa/2.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'source page original dimensions must be recorded');
+    assert.ok(record.verificationDetail.includes('Local WebP pixels were inspected'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+  }
+  const cameronPhotos = [
+    { assetPath: '/assets/images/malaysia-cameron-highlands.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', creator: 'Jakub Hałun', license: 'CC BY 4.0', sourcePhotoDate: '2025-08-29', originalSize: '5,439 × 3,631' },
+    { assetPath: '/assets/images/malaysia-cameron-mossy-forest.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Big_Mossy_Tree_at_Mossy_Forest,_Cameron_Highlands.jpg', creator: 'Pro QueeNia', license: 'CC BY-SA 4.0', sourcePhotoDate: '2019-10-15', originalSize: '2,448 × 3,264' }
+  ];
+  for (const image of cameronPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Cameron Highlands photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY 4.0' ? 'by/4.0' : 'by-sa/4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize));
+    assert.ok(record.verificationDetail.includes('Local WebP pixels show'));
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'));
+  }
+  const chinaCn12Photos = [
+    { assetPath: '/assets/images/china-destination-harbin.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', sourceTitle: 'File:Harbin Saint Sophia Cathedral 2017 summer.jpg', creator: 'Amarespeco', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-07-14', originalSize: '4,000 × 6,000' },
+    { assetPath: '/assets/images/china-destination-inner-mongolia.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', sourceTitle: 'File:Hulun Buir.jpg', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-07-15', originalSize: '4,213 × 3,160' },
+    { assetPath: '/assets/images/china-destination-huangshan.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', sourceTitle: 'File:Huangshan pic 6.jpg', creator: 'eviltomthai', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', sourcePhotoDate: '2009-09-28', originalSize: '3,888 × 2,592' },
+    { assetPath: '/assets/images/china-destination-qingdao.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', sourceTitle: 'File:Qingdao Zhanqiao.jpg', creator: 'Vitsuha', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2021-07-19', originalSize: '3,648 × 2,736' }
+  ];
+  for (const image of chinaCn12Photos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `China CN12 photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, image.licenseUrl);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-11');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11');
+    assert.ok(record.verificationDetail.includes(image.originalSize), 'Commons original dimensions must be recorded');
+    assert.ok(record.verificationDetail?.includes('WebP pixels were inspected'), `${image.assetPath}: source-page metadata does not stand in for pixel review (${record.verificationDetail || 'no verification detail'})`);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)));
+    assert.ok(record.editHistory.includes('WebP'), 'photo edit history must disclose the local WebP asset');
+    if (image.license.startsWith('CC BY-SA ')) {
+      assert.ok(record.editHistory.includes(`shared under ${image.license}`), 'share-alike adaptations must keep the exact license version');
+    }
+  }
+  const chinaCn15Routes = new Set(['/china/', '/china/beijing/', '/china/hangzhou/', '/china/beijing/summer-palace/']);
+  const chinaCn15PhotoRecords = photoRecords.filter((record) => record.routes?.some((route) => chinaCn15Routes.has(route)) && !record.assetPath.includes('lhasa') && !record.assetPath.includes('potala'));
+  assert.equal(chinaCn15PhotoRecords.length, 47, 'the four CN15 routes use 47 distinct reviewed local image assets, excluding the Lhasa image assigned to parallel work');
+  for (const record of chinaCn15PhotoRecords) {
+    assert.ok(!record.assetPath.includes('lhasa') && !record.assetPath.includes('potala'), 'the parallel Lhasa/Potala image must remain outside this review');
+    assert.equal(record.verificationStatus, 'source_page_checked', `${record.assetPath} must have an exact source-page check`);
+    assert.equal(record.verificationDate, '2026-10-11', `${record.assetPath} source page must carry the CN15 check date`);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-11', `${record.assetPath} local pixels must be individually reviewed`);
+    assert.ok(/WebP pixels were inspected/i.test(record.verificationDetail), `${record.assetPath} must record a pixel-to-source comparison`);
+    assert.ok(/does not independently establish|not independent|not an independent/i.test(record.verificationDetail), `${record.assetPath} must not imply global rights clearance`);
+    assert.ok(record.sourceUrl?.startsWith('https://commons.wikimedia.org/wiki/File:'), `${record.assetPath} must identify its exact Commons file page`);
+    assert.ok(record.creator && record.license && record.licenseUrl, `${record.assetPath} must retain its author and exact linked license`);
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(record.creator) && credit.includes(record.license)), `${record.assetPath} must match its visible creator and license credit`);
+    assert.ok(record.editHistory.includes('WebP'), `${record.assetPath} must disclose the local WebP adaptation`);
+    if (record.license.startsWith('CC BY-SA ')) {
+      for (const credit of record.rawVisibleCredits.filter((item) => /shared under the same/i.test(item))) {
+        assert.ok(credit.includes(record.license), `${record.assetPath} must keep any visible share-alike statement on the exact source license version`);
+      }
+    }
+  }
+  for (const assetPath of ['/assets/images/china-destination-hangzhou.webp', '/assets/images/china-hangzhou-west-lake.webp']) {
+    const record = chinaCn15PhotoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(record, `CN15 West Lake source review must include ${assetPath}`);
+    assert.equal(record.sourceUrl, 'https://commons.wikimedia.org/wiki/File:West_lake_and_Leifeng_pagoda_-Hangzhou-China_-_panoramio.jpg');
+    assert.equal(record.creator, 'Haluk Comertel');
+    assert.equal(record.license, 'CC BY 3.0');
+  }
+  const hangzhouLeifeng = chinaCn15PhotoRecords.find((record) => record.assetPath === '/assets/images/china-hangzhou-leifeng.webp');
+  assert.ok(hangzhouLeifeng, 'CN15 review must distinguish the close Leifeng Pagoda image from the West Lake panorama');
+  assert.equal(hangzhouLeifeng.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg');
+  assert.equal(hangzhouLeifeng.sourceTitle, 'File:Hangzhou Leifeng Pagoda 20161006.jpg');
+  assert.equal(hangzhouLeifeng.creator, 'Tyg728');
+  assert.equal(hangzhouLeifeng.license, 'CC BY-SA 4.0');
+  assert.equal(hangzhouLeifeng.verificationStatus, 'source_page_checked');
+  assert.equal(hangzhouLeifeng.visualReviewStatus, 'visually_reviewed_2026-10-11');
+  const shanghaiPudong = chinaCn15PhotoRecords.find((record) => record.assetPath === '/assets/images/china-shanghai-huangpu-panorama.webp');
+  assert.ok(shanghaiPudong, 'CN15 Shanghai skyline review must retain the country-hub panorama');
+  assert.equal(shanghaiPudong.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg');
+  assert.equal(shanghaiPudong.creator, 'Ermell');
+  assert.equal(shanghaiPudong.license, 'CC0 1.0');
+  assert.ok(!shanghaiPudong.rawVisibleCredits.some((credit) => credit.includes('King of Hearts')));
+  const wadjemupDiagram = photoRecords.find((item) => item.assetPath === wadjemupDiagramAssetPath);
+  assert.ok(wadjemupDiagram, 'inventory must retain the original Wadjemup planning diagram');
+  assert.equal(wadjemupDiagram.assetType, 'original-planning-diagram');
+  assert.equal(wadjemupDiagram.sourceUrl, wadjemupDiagramSourceUrl);
+  assert.equal(wadjemupDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(wadjemupDiagram.license, null, 'a project-original diagram must not claim an unapproved public license');
+  assert.equal(wadjemupDiagram.licenseUrl, null);
+  assert.equal(wadjemupDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(wadjemupDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(wadjemupDiagram.commercialReuseEligibility, 'unknown');
+  const blueMountainsDiagram = photoRecords.find((item) => item.assetPath === blueMountainsDiagramAssetPath);
+  assert.ok(blueMountainsDiagram, 'inventory must retain the original Blue Mountains station gateway schematic');
+  assert.equal(blueMountainsDiagram.assetType, 'original-planning-diagram');
+  assert.equal(blueMountainsDiagram.sourceUrl, blueMountainsDiagramSourceUrl);
+  assert.equal(blueMountainsDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(blueMountainsDiagram.license, null, 'the Blue Mountains original SVG must not claim a public license');
+  assert.equal(blueMountainsDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(blueMountainsDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(blueMountainsDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(blueMountainsDiagram.inventoryStatus, 'used');
+  assert.equal(blueMountainsDiagram.useCount, 1);
+  assert.deepEqual(blueMountainsDiagram.routes, ['/australia/blue-mountains-nsw-coast/']);
+  assert.match(blueMountainsDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.equal(blueMountainsDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(blueMountainsDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === blueMountainsDiagramAssetPath), false);
+  const greatOceanDiagram = photoRecords.find((item) => item.assetPath === greatOceanDiagramAssetPath);
+  assert.ok(greatOceanDiagram, 'inventory must retain the original Great Ocean Road planning schematic');
+  assert.equal(greatOceanDiagram.assetType, 'original-planning-diagram');
+  assert.equal(greatOceanDiagram.sourceUrl, greatOceanDiagramSourceUrl);
+  assert.equal(greatOceanDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(greatOceanDiagram.license, null, 'the Great Ocean Road original SVG must not claim a public license');
+  assert.equal(greatOceanDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(greatOceanDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(greatOceanDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(greatOceanDiagram.inventoryStatus, 'used');
+  assert.equal(greatOceanDiagram.useCount, 1);
+  assert.deepEqual(greatOceanDiagram.routes, ['/australia/great-ocean-road-gariwerd/']);
+  assert.equal(greatOceanDiagram.localSha1, 'a42e6895290dbbd74720456ca4e2d00db29a33db');
+  assert.equal(greatOceanDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(greatOceanDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(greatOceanDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === greatOceanDiagramAssetPath), false);
+  const sydneyDiagram = photoRecords.find((item) => item.assetPath === sydneyDiagramAssetPath);
+  assert.ok(sydneyDiagram, 'inventory must retain the original Sydney planning schematic');
+  assert.equal(sydneyDiagram.assetType, 'original-planning-diagram');
+  assert.equal(sydneyDiagram.sourceUrl, sydneyDiagramSourceUrl);
+  assert.equal(sydneyDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(sydneyDiagram.license, null, 'the Sydney original SVG must not claim a public license');
+  assert.equal(sydneyDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(sydneyDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(sydneyDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(sydneyDiagram.inventoryStatus, 'used');
+  assert.equal(sydneyDiagram.useCount, 1);
+  assert.deepEqual(sydneyDiagram.routes, ['/australia/sydney-harbour-coast/']);
+  assert.equal(sydneyDiagram.localSha1, '67a25f29090493988d5a5fcd126f95890bd3c465');
+  assert.equal(sydneyDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(sydneyDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(sydneyDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === sydneyDiagramAssetPath), false);
+  const brisbaneDiagram = photoRecords.find((item) => item.assetPath === brisbaneDiagramAssetPath);
+  assert.ok(brisbaneDiagram, 'inventory must retain the original Brisbane and Moreton Bay crossing schematic');
+  assert.equal(brisbaneDiagram.assetType, 'original-planning-diagram');
+  assert.equal(brisbaneDiagram.sourceUrl, brisbaneDiagramSourceUrl);
+  assert.equal(brisbaneDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(brisbaneDiagram.license, null, 'the Brisbane original SVG must not claim a public license');
+  assert.equal(brisbaneDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(brisbaneDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(brisbaneDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(brisbaneDiagram.inventoryStatus, 'used');
+  assert.equal(brisbaneDiagram.useCount, 1);
+  assert.deepEqual(brisbaneDiagram.routes, ['/australia/brisbane-moreton-bay/']);
+  assert.equal(brisbaneDiagram.localSha1, 'a7fc09995c32941de97e3ca874b58725e68e40c5');
+  assert.equal(brisbaneDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(brisbaneDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(brisbaneDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === brisbaneDiagramAssetPath), false);
+  const graubuendenDiagram = photoRecords.find((item) => item.assetPath === graubuendenDiagramAssetPath);
+  assert.ok(graubuendenDiagram, 'inventory must retain the original Graubünden corridor-choice schematic');
+  assert.equal(graubuendenDiagram.assetType, 'original-planning-diagram');
+  assert.equal(graubuendenDiagram.sourceUrl, graubuendenDiagramSourceUrl);
+  assert.equal(graubuendenDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(graubuendenDiagram.license, null, 'the Graubünden original SVG must not claim a public license');
+  assert.equal(graubuendenDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(graubuendenDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(graubuendenDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(graubuendenDiagram.inventoryStatus, 'used');
+  assert.equal(graubuendenDiagram.useCount, 1);
+  assert.deepEqual(graubuendenDiagram.routes, ['/switzerland/graubunden-corridors/chur-rhine-gorge/']);
+  assert.equal(graubuendenDiagram.localSha1, '02f05c2b62f632289bef849a8cfb9d817c024b7f');
+  assert.equal(graubuendenDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === graubuendenDiagramAssetPath), false);
+  const banffDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-banff-two-corridors.svg');
+  assert.ok(banffDiagram, 'inventory must include the original Banff two-corridor schematic');
+  assert.equal(banffDiagram.assetType, 'original-planning-diagram');
+  assert.equal(banffDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-banff-two-corridors.svg');
+  assert.equal(banffDiagram.creator, 'TripDistill');
+  assert.equal(banffDiagram.license, null, 'the original Banff SVG must not claim an unapproved public license');
+  assert.equal(banffDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(banffDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(banffDiagram.commercialReuseEligibility, 'unknown');
+  const jasperPhotos = [
+    { assetPath: '/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg', creator: 'Christianabend', license: 'CC BY-SA 3.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-icefields-parkway.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg', creator: 'Mike from Vancouver, Canada', license: 'CC BY-SA 2.0' },
+    { assetPath: '/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg', creator: 'InSapphoWeTrust from Los Angeles, California, USA', license: 'CC BY-SA 2.0' }
+  ];
+  for (const expected of jasperPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === expected.assetPath);
+    assert.ok(record, `inventory must include the Jasper photo ${expected.assetPath}`);
+    assert.equal(record.sourceUrl, expected.sourceUrl);
+    assert.equal(record.creator, expected.creator);
+    assert.equal(record.license, expected.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-12');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.ok(record.verificationDetail.includes('not independent uploader-authority or rights-chain clearance'));
+  }
+  const malignePhoto = photoRecords.find((item) => item.assetPath === jasperPhotos[0].assetPath);
+  assert.ok(malignePhoto.verificationDetail.includes('CC BY-SA 2.0') && malignePhoto.verificationDetail.includes('CC BY-SA 3.0'));
+  assert.ok(malignePhoto.verificationDetail.includes('not treated as a direct conflict'));
+  const jasperDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.ok(jasperDiagram, 'inventory must include the original Jasper three-corridor schematic');
+  assert.equal(jasperDiagram.assetType, 'original-planning-diagram');
+  assert.equal(jasperDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-jasper-three-corridors.svg');
+  assert.equal(jasperDiagram.creator, 'TripDistill');
+  assert.equal(jasperDiagram.license, null);
+  assert.equal(jasperDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(jasperDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(jasperDiagram.commercialReuseEligibility, 'unknown');
+  const ottawaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+  assert.ok(ottawaDiagram, 'inventory must include the original Ottawa–Gatineau planning schematic');
+  assert.equal(ottawaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(ottawaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-canada-ottawa-gatineau-access.svg');
+  assert.equal(ottawaDiagram.creator, 'TripDistill');
+  assert.equal(ottawaDiagram.license, null, 'the Ottawa–Gatineau SVG must not claim a public photo license');
+  assert.equal(ottawaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(ottawaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(ottawaDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(ottawaDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(ottawaDiagram.inventoryStatus, 'used');
+  assert.equal(ottawaDiagram.useCount, 1);
+  assert.deepEqual(ottawaDiagram.routes, ['/canada/ottawa-gatineau/gatineau-park/']);
+  assert.ok(ottawaDiagram.altTexts.some((alt) => /not-to-scale/i.test(alt)));
+  assert.equal(ottawaDiagram.localSha1, 'b1d86e38d9bab8eccd69b1d96b8dfcedd60e987d');
+  const canadianPixelCheckedDiagrams = [
+    '/assets/images/tripdistill-canada-banff-two-corridors.svg',
+    '/assets/images/tripdistill-canada-jasper-three-corridors.svg',
+    '/assets/images/tripdistill-canada-newfoundland-regions.svg'
+  ];
+  for (const assetPath of canadianPixelCheckedDiagrams) {
+    const diagram = photoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(diagram, `inventory must include ${assetPath}`);
+    assert.equal(diagram.assetType, 'original-planning-diagram');
+    assert.equal(diagram.visualReviewStatus, 'visually_reviewed_2026-10-12');
+    assert.equal(diagram.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(diagram.commercialReuseEligibility, 'unknown');
+  }
+  const retiredJohnston = photoRecords.find((item) => item.assetPath === '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp');
+  assert.ok(retiredJohnston, 'inventory must retain the mismatched Johnston source photo');
+  assert.equal(retiredJohnston.inventoryStatus, 'unused');
+  assert.equal(retiredJohnston.useCount, 0);
+  assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
+  assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 39, 'the merged inventory includes the four pixel-reviewed Adelaide/Perth planning schematics');
+  assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 473, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
+  assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
+  assert.ok(wadjemupDiagram.verificationDetail.includes('not a geographic map'));
+  assert.ok(wadjemupDiagram.verificationDetail.includes('not an independent source-page check'));
+  assert.ok(wadjemupDiagram.verificationDetail.includes('no separate reuse license declared'));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === wadjemupDiagramAssetPath), false);
+  const frenchAlpsDiagram = photoRecords.find((item) => item.assetPath === frenchAlpsDiagramAssetPath);
+  assert.ok(frenchAlpsDiagram, 'inventory must retain the original French Alps planning diagram');
+  assert.equal(frenchAlpsDiagram.sourceTitle, 'Grenoble Bastille route sequence — original schematic');
+  assert.equal(frenchAlpsDiagram.assetType, 'original-planning-diagram');
+  assert.equal(frenchAlpsDiagram.sourceUrl, 'https://tripdistill.com/assets/images/france-grenoble-bastille-route-sequence.svg');
+  assert.equal(frenchAlpsDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(frenchAlpsDiagram.license, null, 'the original French Alps SVG must not claim a public photo license');
+  assert.equal(frenchAlpsDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(frenchAlpsDiagram.useCount, 4);
+  assert.equal(report.counts.sourceMetadataConflicts, 0, 'retired Commons metadata must not conflict with the replacement original schematic');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === frenchAlpsDiagramAssetPath), false);
+  const lucerneDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.ok(lucerneDiagram, 'inventory must retain the Lucerne route-choice schematic');
+  assert.equal(lucerneDiagram.assetType, 'original-planning-diagram');
+  assert.equal(lucerneDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg');
+  assert.equal(lucerneDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(lucerneDiagram.license, null, 'the original Lucerne SVG must not claim a public reuse license');
+  assert.equal(lucerneDiagram.licenseUrl, null);
+  assert.equal(lucerneDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(lucerneDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(lucerneDiagram.localSha1, 'd4bb15e809a0cf876db15a4f7e0309cf5f8d7404');
+  assert.equal(lucerneDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(lucerneDiagram.inventoryStatus, 'used');
+  assert.equal(lucerneDiagram.useCount, 4);
+  assert.deepEqual(lucerneDiagram.routes, [
+    '/switzerland/lucerne-lake-mountains/',
+    '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+    '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+    '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/'
+  ]);
+  const retiredLucernePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp');
+  assert.ok(retiredLucernePhoto, 'inventory retains the former Bürgenstock photo record');
+  assert.equal(retiredLucernePhoto.inventoryStatus, 'unused');
+  assert.equal(retiredLucernePhoto.useCount, 0);
+  assert.deepEqual(retiredLucernePhoto.routes, []);
+  assert.match(retiredLucernePhoto.rightsStatus, /unverified metadata/i);
+  const zermattVillagePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp');
+  assert.ok(zermattVillagePhoto, 'inventory must include the pixel-reviewed Zermatt village photo');
+  assert.equal(zermattVillagePhoto.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg');
+  assert.equal(zermattVillagePhoto.creator, 'Ximonic (Simo Räsänen)');
+  assert.equal(zermattVillagePhoto.license, 'CC BY-SA 4.0');
+  assert.equal(zermattVillagePhoto.verificationStatus, 'source_page_checked');
+  assert.equal(zermattVillagePhoto.verificationDate, '2026-10-12');
+  assert.equal(zermattVillagePhoto.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(zermattVillagePhoto.verificationDetail, /1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope/i);
+  assert.match(zermattVillagePhoto.verificationDetail, /does not independently verify uploader authority/i);
+  const zermattStelliseePhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp');
+  assert.ok(zermattStelliseePhoto, 'inventory must include the pixel-reviewed Stellisee photo');
+  assert.equal(zermattStelliseePhoto.sourceUrl, 'https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg');
+  assert.equal(zermattStelliseePhoto.creator, 'Giles Laurent');
+  assert.equal(zermattStelliseePhoto.license, 'CC BY-SA 4.0');
+  assert.equal(zermattStelliseePhoto.verificationStatus, 'source_page_checked');
+  assert.equal(zermattStelliseePhoto.verificationDate, '2026-10-12');
+  assert.equal(zermattStelliseePhoto.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(zermattStelliseePhoto.verificationDetail, /1600 × 1066 local WebP pixels show the Matterhorn reflected in Stellisee beneath sunset clouds/i);
+  assert.match(zermattStelliseePhoto.verificationDetail, /does not independently verify uploader authority/i);
+  const zermattDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/tripdistill-zermatt-glacier-route-choice.svg');
+  assert.ok(zermattDiagram, 'inventory must include the original Zermatt route-choice schematic');
+  assert.equal(zermattDiagram.assetType, 'original-planning-diagram');
+  assert.equal(zermattDiagram.sourceUrl, 'https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg');
+  assert.equal(zermattDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(zermattDiagram.license, null);
+  assert.equal(zermattDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(zermattDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(zermattDiagram.localSha1, 'b46e68a1052e6b2bd783cd759da1d5332f8e7e01');
+  assert.equal(zermattDiagram.inventoryStatus, 'used');
+  const genevaDiagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.ok(genevaDiagram, 'inventory must include the original Geneva three-district route-choice schematic');
+  assert.equal(genevaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(genevaDiagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg');
+  assert.equal(genevaDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(genevaDiagram.license, null, 'the original Geneva SVG must not claim a public reuse license');
+  assert.equal(genevaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(genevaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(genevaDiagram.localSha1, '99bb9c2528ac2aec5a715df7e96c8edb53d6bba0');
+  assert.equal(genevaDiagram.commercialReuseEligibility, 'unknown');
+  assert.equal(genevaDiagram.inventoryStatus, 'used');
+  assert.equal(genevaDiagram.useCount, 6);
+  assert.deepEqual(genevaDiagram.routes, [
+    '/switzerland/',
+    '/switzerland/geneva-lake/',
+    '/switzerland/geneva-lake/carouge-arve/',
+    '/switzerland/geneva-lake/international-quarter/',
+    '/switzerland/geneva-lake/old-town-lakefront/'
+  ]);
+  assert.equal(genevaDiagram.verificationStatus, 'site_credit_or_metadata_only', 'project artwork URLs and site credits are not independent rights-chain verification');
+  assert.equal(genevaDiagram.verificationDetail.includes('not an independent source-page check'), true);
+  const switzerlandCh14Diagram = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-country-route-choice.svg');
+  assert.ok(switzerlandCh14Diagram, 'inventory must include the CH14 five-language Switzerland schematic');
+  assert.equal(switzerlandCh14Diagram.assetType, 'original-planning-diagram');
+  assert.equal(switzerlandCh14Diagram.sourceUrl, 'https://tripdistill.com/assets/images/switzerland-country-route-choice.svg');
+  assert.equal(switzerlandCh14Diagram.creator, 'TripDistill Editorial Team');
+  assert.equal(switzerlandCh14Diagram.license, null);
+  assert.equal(switzerlandCh14Diagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(switzerlandCh14Diagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(switzerlandCh14Diagram.commercialReuseEligibility, 'unknown');
+  assert.equal(switzerlandCh14Diagram.inventoryStatus, 'used');
+  assert.equal(switzerlandCh14Diagram.useCount, 1);
+  assert.deepEqual(switzerlandCh14Diagram.routes, ['/switzerland/']);
+  assert.equal(switzerlandCh14Diagram.verificationStatus, 'site_credit_or_metadata_only');
+  const retiredZermattPhoto = photoRecords.find((item) => item.assetPath === '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp');
+  assert.ok(retiredZermattPhoto, 'inventory must preserve the conflicted Zermatt source photo for provenance');
+  assert.deepEqual(retiredZermattPhoto.sourceDeclaredLicenses, ['Public domain', 'CC BY-SA 4.0']);
+  assert.equal(retiredZermattPhoto.license, null, 'conflicting source-page declarations are not treated as permission');
+  assert.equal(retiredZermattPhoto.inventoryStatus, 'unused');
+  assert.equal(retiredZermattPhoto.useCount, 0);
+  assert.deepEqual(retiredZermattPhoto.routes, []);
+  assert.match(retiredZermattPhoto.rightsStatus, /records both Public domain and CC BY-SA 4\.0 declarations/i);
+  assert.match(retiredZermattPhoto.rightsStatus, /relationship and the image reuse status have not been independently determined/i);
+  assert.match(retiredZermattPhoto.retirementNote, /not a finding of infringement or that the declarations are incompatible/i);
+
+  const melakaDiagram = photoRecords.find((item) => item.assetPath === melakaDiagramAssetPath);
+  assert.ok(melakaDiagram, 'inventory must include the original Melaka route schematic');
+  assert.equal(melakaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(melakaDiagram.sourceUrl, melakaDiagramSourceUrl);
+  assert.equal(melakaDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(melakaDiagram.license, null, 'the original Melaka SVG must not claim a public photo license');
+  assert.equal(melakaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(melakaDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(melakaDiagram.inventoryStatus, 'used');
+  assert.equal(melakaDiagram.useCount, 6);
+  assert.deepEqual(melakaDiagram.routes, [
+    '/malaysia/melaka/',
+    '/malaysia/melaka/bandar-hilir-portuguese-settlement/',
+    '/malaysia/melaka/dutch-square-st-pauls/',
+    '/malaysia/melaka/jonker-harmony-street/',
+    '/malaysia/melaka/melaka-river-kampung-morten/'
+  ]);
+  assert.ok(melakaDiagram.altTexts.some((alt) => /non-scale/i.test(alt)));
+  assert.match(melakaDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.ok(melakaDiagram.verificationDetail.includes('not a geographic map'));
+  assert.ok(melakaDiagram.verificationDetail.includes('no separate reuse license declared'));
+  const melakaRetired = photoRecords.find((item) => item.assetPath === melakaRetiredAssetPath);
+  assert.ok(melakaRetired, 'inventory must retain the conflicted Melaka photo for provenance');
+  assert.equal(fs.existsSync(path.join(root, melakaRetiredAssetPath.slice(1))), true, 'retired Melaka photo file must remain in the repository');
+  assert.equal(melakaRetired.sourceUrl, melakaRetiredSourceUrl);
+  assert.equal(melakaRetired.sourceTitle, 'Waiting for iftar at Kampung Morten');
+  assert.equal(melakaRetired.creator, 'Scrivenshaft');
+  assert.equal(melakaRetired.license, null, 'the conflicting source-page license statement must not be recorded as permission');
+  assert.match(melakaRetired.rightsStatus, /CC BY-SA 4\.0.*EXIF.*Copyright 2019/i);
+  assert.equal(melakaRetired.inventoryStatus, 'unused');
+  assert.equal(melakaRetired.useCount, 0);
+  assert.deepEqual(melakaRetired.routes, []);
+  assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
+  assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
+  assert.equal(report.counts.expectedBuildImageCount, 825, 'the four Adelaide/Perth schematics are included while rights-review photos stay excluded');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
+  const malaysiaChildDiagrams = [
+    { assetPath: '/assets/images/tripdistill-dayang-bunting-chain.svg', sourceUrl: 'https://tripdistill.com/assets/images/tripdistill-dayang-bunting-chain.svg', route: '/malaysia/langkawi/dayang-bunting-island/', localSha1: '4fa1aa4f07e34d186ee6527ccb68aaf464371778' },
+    { assetPath: '/assets/images/tripdistill-kellies-castle-transfer.svg', sourceUrl: 'https://tripdistill.com/assets/images/tripdistill-kellies-castle-transfer.svg', route: '/malaysia/ipoh-kinta-valley/batu-gajah-kellies-castle/', localSha1: 'e940d32c9085a71ef5b4ca3f52ef8eea2fc2b13f' }
+  ];
+  for (const diagram of malaysiaChildDiagrams) {
+    const record = photoRecords.find((item) => item.assetPath === diagram.assetPath);
+    assert.ok(record, `inventory must include the original Malaysia planning diagram ${diagram.assetPath}`);
+    assert.equal(fs.existsSync(path.join(root, diagram.assetPath.slice(1))), true);
+    assert.equal(record.assetType, 'original-planning-diagram');
+    assert.equal(record.sourceUrl, diagram.sourceUrl);
+    assert.equal(record.creator, 'TripDistill Editorial Team');
+    assert.equal(record.license, null, 'a project-original planning diagram must not claim an unapproved public license');
+    assert.equal(record.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(record.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+    assert.equal(record.commercialReuseEligibility, 'unknown');
+    assert.equal(record.inventoryStatus, 'used');
+    assert.equal(record.useCount, 1);
+    assert.deepEqual(record.routes, [diagram.route]);
+    assert.ok(record.altTexts.some((alt) => /not to scale/i.test(alt)));
+    assert.equal(record.localSha1, diagram.localSha1);
+    assert.equal(record.verificationStatus, 'site_credit_or_metadata_only');
+    assert.ok(record.verificationDetail.includes('not an independent source-page check'));
+    assert.ok(record.verificationDetail.includes('no separate reuse license declared'));
+    assert.equal(report.unmatchedAssets.some((item) => item.src === diagram.assetPath), false);
+  }
+  const chinaLhasaRetired = photoRecords.find((item) => item.assetPath === chinaLhasaRetiredAssetPath);
+  assert.ok(chinaLhasaRetired, 'inventory must retain the challenged Lhasa photo for provenance');
+  assert.equal(fs.existsSync(path.join(root, chinaLhasaRetiredAssetPath.slice(1))), true);
+  assert.equal(chinaLhasaRetired.sourceUrl, chinaLhasaRetiredSourceUrl);
+  assert.equal(chinaLhasaRetired.sourceTitle, 'File:Potala Palace HQ.jpg');
+  assert.equal(chinaLhasaRetired.license, null, 'the unresolved Commons license label must not be recorded as permission');
+  assert.equal(chinaLhasaRetired.inventoryStatus, 'unused');
+  assert.equal(chinaLhasaRetired.useCount, 0);
+  assert.deepEqual(chinaLhasaRetired.routes, []);
+  assert.equal(chinaLhasaRetired.verificationDate, '2026-10-11');
+  assert.match(chinaLhasaRetired.verificationDetail, /unresolved deletion nomination/i);
+  assert.match(chinaLhasaRetired.retirementNote, /no evidence that the image was released under the given license/i);
+  assert.equal(report.unmatchedAssets.some((item) => item.src === chinaLhasaRetiredAssetPath), false, 'an intentionally unlicensed retired file is documented, not counted as an active attribution gap');
+  const franceVimyRetired = photoRecords.find((item) => item.assetPath === franceVimyRetiredAssetPath);
+  assert.ok(franceVimyRetired, 'inventory must retain the Vimy photograph with the unresolved NoFoP-France warning');
+  assert.equal(fs.existsSync(path.join(root, franceVimyRetiredAssetPath.slice(1))), true, 'the original Vimy WebP remains in the repository');
+  assert.equal(franceVimyRetired.sourceUrl, franceVimyRetiredSourceUrl);
+  assert.equal(franceVimyRetired.sourceTitle, 'File:2017-05 Canadian National Vimy Memorial 01.jpg');
+  assert.equal(franceVimyRetired.creator, '0x010C');
+  assert.equal(franceVimyRetired.license, 'CC BY-SA 3.0', 'preserve the Commons declaration as metadata, not as a clearance conclusion');
+  assert.equal(franceVimyRetired.localSha1, '2012cdfb09da624b118ecd75a372cc6165497853');
+  assert.equal(franceVimyRetired.inventoryStatus, 'unused');
+  assert.equal(franceVimyRetired.useCount, 0);
+  assert.deepEqual(franceVimyRetired.routes, []);
+  assert.equal(franceVimyRetired.verificationStatus, 'source_page_checked');
+  assert.equal(franceVimyRetired.verificationDate, '2026-10-12');
+  assert.equal(franceVimyRetired.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.match(franceVimyRetired.rightsStatus, /NoFoP-France.*do not reuse/i);
+  assert.match(franceVimyRetired.retirementNote, /not treated as reuse permission/i);
+  assert.match(franceVimyRetired.verificationDetail, /NoFoP-France/i);
+  assert.equal(report.unmatchedAssets.some((item) => item.src === franceVimyRetiredAssetPath), false, 'the documented retired Vimy photograph is not an active attribution gap');
+  const franceVimyDiagram = photoRecords.find((item) => item.assetPath === franceVimyDiagramAssetPath);
+  assert.ok(franceVimyDiagram, 'inventory must include the original five-language Vimy sequence diagram');
+  assert.equal(franceVimyDiagram.assetType, 'original-planning-diagram');
+  assert.equal(franceVimyDiagram.sourceUrl, franceVimyDiagramSourceUrl);
+  assert.equal(franceVimyDiagram.creator, 'TripDistill Editorial Team');
+  assert.equal(franceVimyDiagram.license, null, 'original SVG must not claim a third-party license');
+  assert.equal(franceVimyDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(franceVimyDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+  assert.equal(franceVimyDiagram.inventoryStatus, 'used');
+  assert.equal(franceVimyDiagram.useCount, 4);
+  assert.deepEqual(franceVimyDiagram.routes, [
+    '/france/lille-french-flanders/',
+    '/france/lille-french-flanders/arras-vimy-remembrance/',
+    '/france/lille-french-flanders/old-lille-roubaix/',
+    '/france/lille-french-flanders/opal-coast-headlands/'
+  ]);
+  assert.equal(franceVimyDiagram.localSha1, 'f0d98e0797bcff135af3e4997f6795428fd82615');
+  assert.equal(franceVimyDiagram.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(franceVimyDiagram.visualReviewStatus, 'visually_reviewed_2026-10-12');
+  assert.ok(franceVimyDiagram.altTexts.some((alt) => /not a geographic map.*not to scale.*not a live timetable/i.test(alt)));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === franceVimyDiagramAssetPath), false);
+  const chinaLhasaDiagram = photoRecords.find((item) => item.assetPath === chinaLhasaDiagramAssetPath);
+  assert.ok(chinaLhasaDiagram, 'inventory must include the original Lhasa SVG');
+  assert.equal(chinaLhasaDiagram.assetType, 'original-planning-diagram');
+  assert.equal(chinaLhasaDiagram.inventoryStatus, 'used');
+  assert.equal(chinaLhasaDiagram.license, null, 'the SVG must not claim a public license');
+  assert.equal(chinaLhasaDiagram.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.match(chinaLhasaDiagram.localSha1, /^[a-f0-9]{40}$/);
+  assert.match(chinaLhasaDiagram.verificationDetail, /not a geographic map/i);
+  const chinaXinjiang = photoRecords.find((item) => item.assetPath === chinaXinjiangAssetPath);
+  assert.ok(chinaXinjiang, 'inventory must include the Xinjiang corridor photo');
+  assert.equal(chinaXinjiang.sourceUrl, chinaXinjiangSourceUrl);
+  assert.equal(chinaXinjiang.sourceTitle, 'File:Hëytgah Mosque, Kashi (20230923100109).jpg');
+  assert.equal(chinaXinjiang.creator, 'N509FZ');
+  assert.equal(chinaXinjiang.sourcePhotoDate, '2023-09-23');
+  assert.equal(chinaXinjiang.license, 'CC BY-SA 4.0');
+  assert.equal(chinaXinjiang.licenseUrl, 'https://creativecommons.org/licenses/by-sa/4.0/');
+  assert.equal(chinaXinjiang.verificationStatus, 'source_page_checked');
+  assert.equal(chinaXinjiang.verificationDate, '2026-10-11');
+  assert.equal(chinaXinjiang.visualReviewStatus, 'visually_reviewed_2026-10-11');
+  assert.match(chinaXinjiang.verificationDetail, /4,990 × 3,327/);
+  assert.ok(chinaXinjiang.editHistory.includes('shared under CC BY-SA 4.0'));
+  assert.ok(chinaXinjiang.rawVisibleCredits.some((credit) => credit.includes('N509FZ') && credit.includes('CC BY-SA 4.0')));
+  assert.equal(report.unmatchedAssets.some((item) => item.src === chinaXinjiangAssetPath), false);
+  const ukKeswickOld = photoRecords.find((item) => item.assetPath === ukKeswickOldAssetPath);
+  assert.ok(ukKeswickOld, 'inventory must retain the retired Keswick photo record');
+  assert.equal(ukKeswickOld.inventoryStatus, 'unused', 'retired Keswick photo must be explicitly marked unused');
+  assert.equal(ukKeswickOld.useCount, 0, 'retired Keswick photo must have no live English references');
+  assert.match(ukKeswickOld.retirementNote, /private-use-only assertion/i, 'Keswick metadata conflict must remain visible without a rights conclusion');
+  const ukCarlisleOld = photoRecords.find((item) => item.assetPath === ukCarlisleOldAssetPath);
+  assert.ok(ukCarlisleOld, 'inventory must retain the retired Carlisle photo record');
+  assert.equal(ukCarlisleOld.inventoryStatus, 'unused', 'retired Carlisle photo must be explicitly marked unused');
+  assert.equal(ukCarlisleOld.useCount, 0, 'retired Carlisle photo must have no live English references');
+  assert.match(ukCarlisleOld.retirementNote, /independent source verification/i, 'Carlisle verification limitation must remain visible');
+  for (const assetPath of ukLakeDiagramPaths) {
+    const diagram = photoRecords.find((item) => item.assetPath === assetPath);
+    assert.ok(diagram, `inventory must include original UK diagram ${assetPath}`);
+    assert.equal(diagram.assetType, 'original-planning-diagram');
+    assert.equal(diagram.inventoryStatus, 'used');
+    assert.ok(diagram.useCount > 0);
+    assert.equal(diagram.creator, 'TripDistill Editorial Team');
+    assert.equal(diagram.license, null, 'original UK diagrams must not claim a public license');
+    assert.equal(diagram.rightsStatus, 'Project original; no separate reuse license declared');
+    assert.equal(diagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
+    assert.match(diagram.localSha1, /^[a-f0-9]{40}$/);
+    assert.ok(diagram.verificationDetail.includes('not a geographic map'));
+    assert.equal(report.unmatchedAssets.some((item) => item.src === assetPath), false);
+  }
+  const ayutthayaPhotos = [
+    { assetPath: '/assets/images/thailand-ayutthaya-station.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creator: 'Jr8825', license: 'CC BY-SA 3.0', sourcePhotoDate: '2013-02-13', revision: '1070665767' },
+    { assetPath: '/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creator: 'Nayika C.', license: 'CC BY-SA 3.0', sourcePhotoDate: '2014-06-03', revision: '1243205521' },
+    { assetPath: '/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', creator: 'Kriengsak Jirasirirojanakorn', license: 'CC BY-SA 4.0', sourcePhotoDate: '2023-12-26', revision: '1192944501' }
+  ];
+  for (const image of ayutthayaPhotos) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Ayutthaya inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/${image.license === 'CC BY-SA 3.0' ? 'by-sa/3.0' : 'by-sa/4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.metadataOrigin, 'explicit_asset_credit_match');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-09');
+    assert.ok(record.verificationDetail.includes(`revision ${image.revision}`));
+    assert.ok(record.verificationDetail.includes('does not independently establish worldwide rights clearance'));
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-09');
+    assert.ok(record.editHistory.includes(`adaptation shared under ${image.license}`));
+  }
+  for (const image of koreaPhotoRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `Seoul/Busan photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.sourcePhotoDate, image.sourceDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', 'source-page checks must not imply local pixel review');
+    assert.ok(record.verificationDetail.includes('pixels were not inspected') || record.verificationDetail.includes('pixels were not inspected in this pass'), 'source-page notes must state that local pixels were not inspected');
+  }
+  const namsan = photoRecords.find((item) => item.assetPath === '/assets/images/korea-namsan-tower.webp');
+  assert.equal(namsan.creator, 'kallerna');
+  assert.equal(namsan.license, 'CC BY-SA 4.0');
+  assert.equal(namsan.sourceTitle, 'File:N Seoul Tower view 2.jpg');
+  assert.equal(namsan.sourcePhotoDate, '2022-11-30');
+  assert.equal(namsan.verificationStatus, 'source_page_checked');
+  assert.equal(namsan.verificationDate, '2026-10-08');
+  assert.equal(namsan.visualReviewStatus, 'visually_reviewed_2026-10-08');
+  assert.ok(namsan.verificationDetail.includes('local WebP pixels were inspected'));
+  assert.deepEqual(report.openCreditReviews, []);
+  for (const image of [...thailandImageRecords, ...danangImageRecords]) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `source audit must retain ${image.assetPath}`);
+    assert.equal(record.sourcePhotoDate, image.sourceDate, `${image.assetPath} must retain the Commons photograph date`);
+    assert.equal(record.verificationStatus, 'source_page_checked', `${image.assetPath} must record the checked Commons source page`);
+    assert.equal(record.verificationDate, '2026-10-08', `${image.assetPath} Commons page check date must be retained`);
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', `${image.assetPath} local pixel review date must be retained`);
+    if (image.license) assert.equal(record.license, image.license, `${image.assetPath} must retain the exact license version`);
+  }
+  const lumphini = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-lumphini.webp');
+  assert.equal(lumphini.creator, 'User: (WT-shared) Adestro at wts wikivoyage');
+  assert.equal(lumphini.licenseUrl, null, 'Lumphini public-domain claim must not gain a fabricated license URL');
+  assert.ok(lumphini.attributionTerms.includes('released this work into the public domain worldwide'));
+  assert.ok(lumphini.verificationDetail.includes('no separate license URL is present'));
+
+  for (const image of chiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, 'source audit must retain ' + image.assetPath);
+    assert.equal(record.sourcePhotoDate, image.sourceDate, image.assetPath + ' must retain the Commons photograph date');
+    assert.equal(record.verificationStatus, 'source_page_checked', image.assetPath + ' must record its checked Commons source page');
+    assert.equal(record.verificationDate, '2026-10-08', image.assetPath + ' Commons page check date must be retained');
+    assert.equal(record.visualReviewStatus, 'not_individually_visually_reviewed', image.assetPath + ' must not claim a prohibited local pixel review');
+    assert.equal(record.license, image.license, image.assetPath + ' must retain the exact license version');
+    assert.ok(record.verificationDetail.includes('local WebP pixels were not compared'), image.assetPath + ' must state the source-only visual-review limit');
+  }
+  for (const image of reviewedChiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `reviewed Chiang Mai photo inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, `https://creativecommons.org/licenses/by-sa/${image.license.endsWith('3.0') ? '3.0' : '4.0'}/`);
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08');
+    assert.match(record.verificationDetail, /local WebP pixels/i);
+  }
+  for (const image of newChiangMaiImageRecords) {
+    const record = photoRecords.find((item) => item.assetPath === image.assetPath);
+    assert.ok(record, `inventory must retain ${image.assetPath}`);
+    assert.equal(record.sourceUrl, image.sourceUrl);
+    assert.equal(record.sourceTitle, image.sourceTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.licenseUrl, 'https://creativecommons.org/licenses/by-sa/4.0/');
+    assert.equal(record.sourcePhotoDate, image.sourcePhotoDate, 'unresolved source date must remain null');
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-08');
+    assert.equal(record.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08');
+    assert.match(record.verificationDetail, /local WebP pixels were inspected/i);
+    assert.ok(record.editHistory.includes('converted to WebP'));
+  }
+  const maeSaValley = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-chiang-mai-mae-rim.webp');
+  assert.ok(maeSaValley.verificationDetail.includes('20 December 2025'));
+  assert.ok(maeSaValley.verificationDetail.includes('20 December 2024'));
+  assert.ok(maeSaValley.verificationDetail.includes('unresolved'));
+  const thailandRoutes = [
+    'thailand',
+    'thailand/bangkok',
+    'thailand/bangkok/rattanakosin-grand-palace',
+    'thailand/bangkok/yaowarat-talat-noi',
+    'thailand/bangkok/siam-ratchaprasong',
+    'thailand/bangkok/silom-sathorn',
+    'thailand/bangkok/sukhumvit-thong-lo',
+    'thailand/bangkok/thonburi-khlong-bang-luang'
+  ];
+  const noteBySource = new Map([
+    ['https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', 'Resized to 1,920 × 1,278 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', 'Converted from JPEG to WebP at the original 960 × 1,280 dimensions.'],
+    ['https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', 'Resized to 1,920 × 1,282 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', 'Resized to 1,920 × 1,440 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', 'Resized to 1,920 × 1,280 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', 'Resized to 1,920 × 568 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', 'Resized to 1,920 × 1,440 and converted to WebP; proportions retained.'],
+    ['https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', 'Converted from JPEG to WebP at the original 1,440 × 1,080 dimensions.']
+  ]);
+  const localeDirs = { en: '', 'zh-Hant': 'zh', ja: 'ja', ko: 'ko', th: 'th' };
+  const chiangMaiPhotoPages = [
+    { route: 'thailand/chiang-mai/doi-inthanon/', ...reviewedChiangMaiImageRecords[0] },
+    { route: 'thailand/chiang-mai/mae-kampong/', ...reviewedChiangMaiImageRecords[1] },
+    { route: 'thailand/chiang-mai/nimman-university/', ...reviewedChiangMaiImageRecords[2] },
+    ...newChiangMaiImageRecords
+  ];
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    for (const image of chiangMaiPhotoPages) {
+      const document = parse(fs.readFileSync(path.join(root, prefix, image.route, 'index.html'), 'utf8'));
+      const shownImage = findAll(document, (node) => node.tagName === 'img' && attrs(node).src === image.assetPath);
+      assert.equal(shownImage.length, 1, `${locale} ${image.route} must use the reviewed local image`);
+      const exactCredit = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === image.sourceUrl).length > 0);
+      assert.equal(exactCredit.length, 1, `${locale} ${image.route} must link the exact Commons file page`);
+      assert.ok(textContent(exactCredit[0]).includes(image.creator), `${locale} ${image.route} must retain creator attribution`);
+      assert.ok(textContent(exactCredit[0]).includes(image.license), `${locale} ${image.route} must retain the exact license version`);
+      assert.ok(findAll(exactCredit[0], (link) => link.tagName === 'a' && attrs(link).href === `https://creativecommons.org/licenses/by-sa/${image.license.endsWith('3.0') ? '3.0' : '4.0'}/`).length, `${locale} ${image.route} must link the commercial-use license`);
+      assert.ok(textContent(exactCredit[0]).length > 50, `${locale} ${image.route} must retain a visible adaptation and share-alike credit`);
+    }
+  }
+  const localeBatch = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99zzzl-thailand-photo-edits-20261008.json'), 'utf8')).translations]));
+  const seoulSourceNote = 'Original source: Seoul Tourism Archive 10341.';
+  const seoulSourceNoteTranslations = Object.fromEntries(Object.entries(localeDirs).filter(([code]) => code !== 'en').map(([code]) => [code, JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', code, '99y-south-korea-seoul-20261007.json'), 'utf8')).translations[seoulSourceNote]]));
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    const document = parse(fs.readFileSync(path.join(root, prefix, 'south-korea', 'seoul', 'index.html'), 'utf8'));
+    const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === 'https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg').length > 0);
+    assert.equal(credits.length, 1, `${locale} Seoul hub must retain the Gwanghwamun source credit`);
+    const expectedNote = locale === 'en' ? seoulSourceNote : seoulSourceNoteTranslations[locale];
+    assert.ok(expectedNote, `${locale} must translate the Seoul Tourism Archive source note`);
+    const notes = findAll(credits[0], (node) => node.tagName === 'span' && attrs(node).class === 'photo-source-note' && textContent(node).trim() === expectedNote);
+    assert.equal(notes.length, 1, `${locale} Seoul hub must display the source note in its reviewed language`);
+  }
+  const chatuchakRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-chatuchak.webp');
+  assert.equal(chatuchakRecord.useCount, 1);
+  assert.deepEqual(chatuchakRecord.routes, ['/thailand/bangkok/chatuchak-ari/']);
+  assert.equal(chatuchakRecord.sourceUrl, 'https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg');
+  assert.equal(chatuchakRecord.sourceTitle, 'File:Chatuchak Weekend Market 2.jpg');
+  assert.equal(chatuchakRecord.sourcePhotoDate, '2018-05-12');
+  assert.equal(chatuchakRecord.creator, 'Christophe95');
+  assert.equal(chatuchakRecord.license, 'CC BY-SA 4.0');
+  assert.equal(chatuchakRecord.verificationStatus, 'source_page_checked');
+  assert.equal(chatuchakRecord.verificationDate, '2026-10-08');
+  assert.equal(chatuchakRecord.visualReviewStatus, 'visually_reviewed_2026-10-08');
+  const talatNoiRecord = photoRecords.find((item) => item.assetPath === '/assets/images/thailand-talat-noi.webp');
+  assert.ok(fs.existsSync(path.join(root, 'assets', 'images', 'thailand-talat-noi.webp')), 'Talat Noi orphan asset remains present but unused');
+  assert.equal(talatNoiRecord.useCount, 0);
+  assert.deepEqual(talatNoiRecord.routes, []);
+  assert.equal(talatNoiRecord.sourceUrl, null);
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    const document = parse(fs.readFileSync(path.join(root, prefix, 'thailand', 'bangkok', 'chatuchak-ari', 'index.html'), 'utf8'));
+    assert.equal(findAll(document, (node) => node.tagName === 'img' && attrs(node).src === '/assets/images/thailand-chatuchak.webp').length, 1, `${locale} Chatuchak route must retain its own market photo`);
+    const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === 'https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg').length > 0);
+    assert.equal(credits.length, 1, `${locale} Chatuchak route must retain its visible Commons credit`);
+    assert.ok(textContent(credits[0]).includes('Christophe95') && textContent(credits[0]).includes('CC BY-SA 4.0'), `${locale} Chatuchak route must preserve creator and license`);
+    assert.equal(findAll(credits[0], (link) => link.tagName === 'a' && attrs(link).href === 'https://creativecommons.org/licenses/by-sa/4.0/').length, 1, `${locale} Chatuchak route must link the CC BY-SA 4.0 license`);
+  }
+  for (const [locale, prefix] of Object.entries(localeDirs)) {
+    for (const route of thailandRoutes) {
+      const page = path.join(root, prefix, route, 'index.html');
+      const document = parse(fs.readFileSync(page, 'utf8'));
+      const imageSources = findAll(document, (node) => node.tagName === 'img').map((node) => attrs(node).src || '');
+      assert.equal(imageSources.some((src) => src.includes('thailand-chatuchak.webp')), false, `${locale} ${route} must not restore Chatuchak imagery`);
+      assert.equal(imageSources.some((src) => src.includes('thailand-talat-noi.webp')), false, `${locale} ${route} must not restore Talat Noi imagery`);
+      for (const [sourceUrl, englishNote] of noteBySource) {
+        const credits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (child) => child.tagName === 'a' && attrs(child).href === sourceUrl).length > 0);
+        for (const credit of credits) {
+          const note = locale === 'en' ? englishNote : localeBatch[locale][englishNote];
+          const matches = findAll(credit, (node) => node.tagName === 'span' && attrs(node).class === 'photo-edit-note' && textContent(node).trim() === note);
+          assert.equal(matches.length, 1, `${locale} ${route} must disclose the exact per-image edit for ${sourceUrl}`);
+        }
+      }
+    }
+  }
+  assert.equal(fs.existsSync(path.join(root, removedUnverifiedVictoriaAsset.slice(1).split('/').join(path.sep))), false, 'removed Sooke image must not remain in the active asset directory');
+  assert.ok(fs.readFileSync(path.join(root, 'reports', 'canada-victoria-sooke-photo-status.md'), 'utf8').includes('not independently verified'), 'historical Sooke license claim must remain explicitly unverified');
+  assert.equal(report.entries.flatMap((group) => group.sourceRecords).some((record) => record.assetPath === removedUnverifiedVictoriaAsset), false, 'removed Sooke image must not reappear as an active inventory record');
+  const legacyHueTomb = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === legacyHueTombAssetPath);
+  assert.ok(legacyHueTomb, 'inventory must retain the superseded Hue tomb asset record');
+  assert.equal(legacyHueTomb.useCount, 0, 'superseded tomb image must not remain in any published page');
+  assert.deepEqual(legacyHueTomb.routes, [], 'superseded tomb image must not be mapped to a published route');
+  const hueRoutes = [
+    'vietnam/hue/',
+    'vietnam/hue/imperial-city-citadel/',
+    'vietnam/hue/royal-tombs/',
+    'vietnam/hue/thien-mu-perfume-river/',
+    'vietnam/hue/thanh-toan-rural-loop/',
+    'vietnam/hue/bach-ma-national-park/',
+    'vietnam/hue/lang-co-lap-an-lagoon/'
+  ];
+  const hueLocales = [
+    { locale: 'en', prefix: '' },
+    { locale: 'zh-Hant', prefix: 'zh' },
+    { locale: 'ja', prefix: 'ja' },
+    { locale: 'ko', prefix: 'ko' },
+    { locale: 'th', prefix: 'th' }
+  ];
+  for (const { locale, prefix } of hueLocales) {
+    for (const route of hueRoutes) {
+      const document = parse(fs.readFileSync(path.join(root, prefix, route, 'index.html'), 'utf8'));
+      const exactCredits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === hueTombSourceUrl).length > 0);
+      assert.equal(exactCredits.length, 1, `${locale} ${route} must expose the exact tomb-photo source once`);
+      const credit = exactCredits[0];
+      assert.ok(findAll(credit, (link) => link.tagName === 'a' && attrs(link).href === hueTombLicenseUrl).length, `${locale} ${route} must link CC BY-SA 2.0`);
+      assert.ok(textContent(credit).includes('CC BY-SA 2.0'), `${locale} ${route} must retain the exact license version`);
+      const editNotes = findAll(credit, (node) => node.tagName === 'span' && attrs(node).translate !== 'no');
+      assert.equal(editNotes.length, 1, `${locale} ${route} must contain one visible adaptation note`);
+      assert.ok(textContent(editNotes[0]).length > 24, `${locale} ${route} must retain a visible edit and share-alike note`);
+      const legacyCredits = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === legacyHueTombSourceUrl).length > 0);
+      assert.equal(legacyCredits.length, 0, `${locale} ${route} must not expose the superseded tomb photo`);
+    }
+  }
+  for (const route of ['vietnam/hue/thanh-toan-rural-loop/', 'vietnam/hue/bach-ma-national-park/', 'vietnam/hue/lang-co-lap-an-lagoon/']) {
+    const document = parse(fs.readFileSync(path.join(root, route, 'index.html'), 'utf8'));
+    const bodyText = textContent(findAll(document, (node) => node.tagName === 'body')[0]);
+    assert.ok(bodyText.includes('Editorial review: 8 October 2026'), `${route} must show the current substantive editorial review date`);
+    const schema = findAll(document, (node) => node.tagName === 'script' && attrs(node).type === 'application/ld+json').flatMap((node) => {
+      try { const parsed = JSON.parse(textContent(node)); return parsed['@graph'] || [parsed]; } catch { return []; }
+    });
+    const article = schema.find((item) => item['@type'] === 'Article');
+    assert.equal(article?.dateModified, '2026-10-08', `${route} substantive rewrite must advance Article.dateModified`);
+  }
+  const row = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === assetPath);
+  assert.ok(row, 'inventory regeneration must retain the Osaka sakura record');
+  assert.equal(row.sourceUrl, sourceUrl);
+  assert.equal(row.sourceTitle, 'Osaka Castle cherry blossom, 2018');
+  assert.equal(row.creator, 'Luka Peternel');
+  assert.equal(row.license, 'CC BY-SA 4.0');
+  assert.equal(row.licenseUrl, 'https://creativecommons.org/licenses/by-sa/4.0/');
+  assert.equal(row.metadataOrigin, 'explicit_asset_credit_match');
+  assert.equal(row.verificationStatus, 'source_page_checked');
+  assert.equal(row.verificationDate, '2026-10-06');
+  assert.equal(row.visualReviewStatus, 'not_individually_visually_reviewed', 'source-page review must not imply visual review');
+  assert.equal(report.unmatchedAssets.some((item) => item.src === assetPath), false, 'the credited asset must not return as unmatched');
+  const yongduam = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === yongduamAssetPath);
+  assert.ok(yongduam, 'inventory regeneration must retain the Jeju Yongduam asset record');
+  assert.equal(yongduam.sourceUrl, yongduamSourceUrl, 'Yongduam pixels must not inherit the separate Seongsan photo credit');
+  assert.equal(yongduam.sourceTitle, '용두암.jpg', 'inventory should preserve the exact Commons original title');
+  assert.equal(yongduam.creator, 'Ahn Beom-jin');
+  assert.equal(yongduam.license, 'CC BY-SA 4.0');
+  assert.equal(yongduam.licenseUrl, 'https://creativecommons.org/licenses/by-sa/4.0/');
+  assert.equal(yongduam.commercialReuseEligibility, 'permitted_under_source_page_checked_license_terms');
+  assert.equal(yongduam.metadataOrigin, 'explicit_asset_credit_match');
+  assert.equal(yongduam.verificationStatus, 'source_page_checked');
+  assert.equal(yongduam.verificationDate, '2026-10-07');
+  assert.equal(yongduam.visualReviewStatus, 'visually_reviewed_2026-10-07');
+  assert.ok(yongduam.verificationDetail.includes('안범진'), 'verification note should retain the Commons author name');
+  assert.ok(yongduam.editHistory.includes('Jeju hub states'), 'image edits should follow the site disclosure without claiming an unsupported crop');
+  assert.equal(yongduam.creditMatchNote.includes('separate Seongsan Ilchulbong photo credit'), true);
+  assert.equal(yongduam.altTexts.some((alt) => /Yongduam/i.test(alt)), true, 'the image alternatives must identify Yongduam, not Seongsan');
+  const localizedJejuRoutes = [
+    { locale: 'en', prefix: '' },
+    { locale: 'zh-Hant', prefix: 'zh' },
+    { locale: 'ja', prefix: 'ja' },
+    { locale: 'ko', prefix: 'ko' },
+    { locale: 'th', prefix: 'th' }
+  ];
+  const sourceAltKeys = {
+    hub: "Dark volcanic rock and waves around Yongduam on Jeju's north coast",
+    guide: 'Dark volcanic rock and waves around Yongduam on the north coast of Jeju'
+  };
+  for (const { locale, prefix } of localizedJejuRoutes) {
+    const translations = locale === 'en'
+      ? null
+      : JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'reviewed', locale, '11-jeju.json'), 'utf8'));
+    const target = (key) => translations ? (translations.translations || translations)[key] : key;
+    for (const [segment, route] of [['hub', 'south-korea/jeju/'], ['guide', 'south-korea/jeju/jeju-city-yongduam/']]) {
+      const pagePath = path.join(root, prefix, route, 'index.html');
+      const document = parse(fs.readFileSync(pagePath, 'utf8'));
+      const expectedAlt = target(sourceAltKeys[segment]);
+      assert.ok(expectedAlt, `${locale} must have a reviewed ${segment} alt string`);
+      const image = findAll(document, (node) => node.tagName === 'img' && attrs(node).src === yongduamAssetPath);
+      assert.equal(image.length, 1, `${locale} ${route} must contain exactly one Yongduam image`);
+      assert.equal(attrs(image[0]).alt, expectedAlt, `${locale} ${route} must describe the actual Yongduam image`);
+      const exactSourceCredit = findAll(document, (node) => node.tagName === 'li' && findAll(node, (link) => link.tagName === 'a' && attrs(link).href === yongduamSourceUrl).length > 0);
+      assert.equal(exactSourceCredit.length, 1, `${locale} ${route} must link the exact Yongduam Commons file page`);
+      const creditText = textContent(exactSourceCredit[0]);
+      assert.ok(creditText.includes('Ahn Beom-jin'), `${locale} ${route} must retain the credited photographer`);
+      assert.ok(creditText.includes('CC BY-SA 4.0'), `${locale} ${route} must retain the declared license version`);
+    }
+  }
+  assert.equal(report.countInterpretation.includes('do not count pages never researched'), true);
+  console.log('Photo inventory regression passed: the Perhentian/Redang and Kota Kinabalu WebPs retain pixel checks, source declarations, selected license versions and hashes without implying independent rights clearance; multiple offered license versions are not treated as conflicts; Semporna, Sandakan and site-wide photo records retain their review limits; original diagrams retain their project-rights status.');
+} finally {
+  // The audit command is read-only with respect to committed generated reports.
+  for (const [file, content] of originalArtifacts) fs.writeFileSync(file, content);
+}

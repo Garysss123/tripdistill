@@ -1,0 +1,12 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "paris-island-crossing": "巴黎島嶼橫越路線",
+    "paris-gallery-axis": "巴黎畫廊軸線",
+    "paris-western-field": "巴黎西側區域"
+  }
+}

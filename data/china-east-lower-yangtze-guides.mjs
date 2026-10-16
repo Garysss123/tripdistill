@@ -60,7 +60,7 @@ export const guides = [
       { url: 'https://english.suzhou.gov.cn/szsenglish/szyllm/sz_en_list.shtml', label: 'Suzhou Municipal People’s Government — official classical-garden directory' },
       { url: 'https://visitsz.wglj.suzhou.com.cn/en/venue-detail.aspx?id=37', label: 'Suzhou culture and tourism service — Suzhou Museum visitor information' }
     ],
-    image: { path: '/assets/images/china-destination-suzhou.webp', alt: 'Lotus pond, rockery and traditional pavilions inside a classical Suzhou garden', caption: 'Suzhou / framed garden views, inhabited canal streets and one deliberate outer branch', source: 'https://commons.wikimedia.org/wiki/File:Classical_Gardens_of_Suzhou-111927.jpg', creditTitle: 'Classical Gardens of Suzhou', creator: 'Francesco Bandarin', license: 'CC BY-SA 3.0 IGO' },
+    image: { path: '/assets/images/china-destination-suzhou.webp', src: '/assets/images/china-destination-suzhou.webp', alt: 'Lotus pond, rockery and traditional pavilions inside a classical Suzhou garden', caption: 'Suzhou / framed garden views, inhabited canal streets and one deliberate outer branch', source: 'https://commons.wikimedia.org/wiki/File:Classical_Gardens_of_Suzhou-111927.jpg', commonsTitle: 'File:Classical Gardens of Suzhou-111927.jpg', sourceDate: '2004-07-01', creditTitle: 'Classical Gardens of Suzhou', creator: 'Francesco Bandarin', license: 'CC BY-SA 3.0 IGO', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/igo/', editNote: 'Resized, cropped to the 3:2 display frame and converted to WebP; distributed under the same license version.', attributionTerms: 'Credit Francesco Bandarin and the work title, link the exact source and license, indicate changes, and distribute this adaptation under the same or compatible license.' },
     search: { type: 'Garden and canal city guide', summary: 'Choose two contrasting Suzhou gardens, reserve the museum, then connect canal streets and one deliberate outer-city branch.', keywords: ['suzhou', 'suzhou gardens', 'suzhou museum', 'pingjiang road', 'tiger hill', 'suzhou itinerary'] }
   },
   {
@@ -128,6 +128,7 @@ export const guides = [
   },
   {
     slug: 'huangshan',
+    dateModified: '2026-10-11',
     name: 'Huangshan',
     title: 'Huangshan Travel Guide (2026): Weather, Cableways and Mountain Routes',
     metaDescription: 'Plan Mount Huangshan by gate, timed direction, cableway status and weather, with summit lodging and Anhui villages treated as separate decisions.',
@@ -155,7 +156,7 @@ export const guides = [
       { label: 'LOWLAND CONTOUR', title: 'Hongcun and Xidi are a separate heritage branch', text: 'The Anhui villages are not at the summit or automatically included in a Huangshan transfer. Their settlement history, resident life, tickets and road access deserve a distinct day or onward route. Choose a village chapter only after the mountain descent and onward luggage plan remain resilient.' }
     ],
     decisions: [
-      { label: 'FORMAT', title: 'Choose day hike, summit night or lowland base', text: 'A day route demands an early confirmed ascent and firm descent cutoff; a summit night adds cost and weather exposure; a lowland-focused visit may suit limited mobility. Decide the format before buying disconnected rail and hotel products.' },
+      { label: 'FORMAT', title: 'Choose Tunxi, Tangkou or a summit night by the booked gate', text: 'Tunxi fits a late arrival at Huangshan North, city food and an indoor weather day; Tangkou is the practical lowland base for an early South Gate start. A summit night may reduce the same-day descent but adds stair-based luggage, cold and weather exposure. Do not buy a station arrival, hotel and timed entry as disconnected products.' },
       { label: 'DIRECTION', title: 'Commit to one gate-and-cableway logic', text: 'Plan the sequence from shuttle to upper station to trail and descent. Reversing direction mid-trip can strand a traveler far from the intended bus or hotel, especially when operating hours or weather shorten the day.' },
       { label: 'WEATHER', title: 'Define the cancellation threshold in advance', text: 'Check the official scenic-area notice and current forecast, then decide what wind, lightning, ice, heavy rain or poor visibility will trigger a lower route or rest day. A sunk reservation never makes an exposed trail safe.' }
     ],
@@ -163,10 +164,10 @@ export const guides = [
     itineraryTitle: 'A Huangshan plan that closes the loop before dark',
     itineraryIntro: 'The example keeps gateway, mountain and lowland heritage on different levels so a delayed descent does not break an irreplaceable train.',
     itinerary: [
-      { label: 'DAY 1 / GATEWAY', title: 'Arrive, identify the interchange and recheck notices', text: 'Settle in Tunxi or Tangkou according to the booked entrance, confirm the official transfer and cableway status and prepare a small weather-ready pack. Do not add a late remote village.' },
-      { label: 'DAY 2 / ASCENT', title: 'Follow one reserved direction', text: 'Enter in the booked window, use the operating shuttle and cableway or planned foot ascent and keep the selected trail within fitness and daylight. Descend early enough to absorb queues.' },
-      { label: 'DAY 3 / WEATHER', title: 'Use a summit morning or protected alternative', text: 'If staying high, treat sunrise as optional and follow every closure. If based below, use the buffer for a shorter approved route, Tunxi context or recovery rather than forcing the same exposed plan.' },
-      { label: 'DAY 4 / LOWLAND', title: 'Add one Anhui village only after the mountain', text: 'Travel with confirmed road transport and luggage, choose one settlement for a focused visit and avoid an inflexible evening rail departure immediately after the farthest branch.' }
+      { label: 'DAY 1 / STATION + BASE', title: 'Separate Huangshan North, Tunxi and Tangkou', text: 'Use the exact Huangshan North station on the rail ticket, then arrange the onward ground leg before choosing a hotel. If arriving late or wanting city time, sleep in Tunxi and travel to Tangkou the next day; if South Gate is already booked and the transfer is confirmed, base in Tangkou near its official interchange. Do not schedule a summit entry off the train arrival.' },
+      { label: 'DAY 2 / SOUTH GATE ASCENT', title: 'Join the booked shuttle and climb one direction', text: 'For a South Gate plan, reach Tangkou’s official scenic-area transfer center and use the operator-designated shuttle for the reserved entrance. Recheck the gate, time window and cableway status against the current official notice; the shuttle, upper station and trail are separate legs. Keep the descent on the same planned corridor and within daylight.' },
+      { label: 'DAY 3 / WEATHER OR REST', title: 'Let cloud, wind and stairs choose the lower plan', text: 'If the mountain is open and conditions fit, take a shorter managed route or a summit morning already covered by your booking. If wind, lightning, ice, heavy rain, closures or mobility limits rule out the climb, stay low in Tunxi, use an indoor culture stop listed by the official Huangshan visitor portal, or rest. Do not treat a cableway as guaranteed access.' },
+      { label: 'DAY 4 / RETURN + LOWLAND', title: 'Close the transport loop before adding a village', text: 'From the booked exit, follow the official shuttle back to the named interchange. A dated Huangshan municipal notice lists a bus connection between the South Gate transfer center and Huangshan North, but its schedule is not a live promise: verify the current official route and operating notice before relying on it, and arrange a road transfer or overnight if it cannot be confirmed. A train the same evening is brittle after a mountain descent. Add Hongcun or Xidi only on a separate road day with a confirmed luggage and onward plan.' }
     ],
     practicalTitle: 'Mountain weather can invalidate a perfect diagram',
     practical: [
@@ -183,13 +184,16 @@ export const guides = [
     sources: [
       { url: 'https://whc.unesco.org/en/list/547/', label: 'UNESCO World Heritage Centre — Mount Huangshan' },
       { url: 'https://www.huangshan.gov.cn/English/Huangshanscenicplaces/TravelGuide/index.html', label: 'Huangshan Municipal People’s Government — official scenic-area travel guide' },
-      { url: 'https://www.huangshan.gov.cn/zwgk/public/column/6615714?action=list&catId=6723462&type=4', label: 'Huangshan Scenic Area Administrative Committee — current operating and closure notices' }
+      { url: 'https://www.huangshan.gov.cn/zwgk/public/6615714/12001518.html', label: 'Huangshan Municipal People’s Government — dated notice listing South Gate transfer center and Huangshan North bus endpoints; verify current service' },
+      { url: 'https://www.huangshan.gov.cn/zwgk/public/column/6615714?action=list&catId=6723462&type=4', label: 'Huangshan Scenic Area Administrative Committee — current operating and closure notices' },
+      { url: 'https://www.huangshan.com.cn/', label: 'Huangshan official tourism platform — current destination, visitor and booking information' }
     ],
-    image: { path: '/assets/images/china-destination-huangshan.webp', alt: 'Granite Huangshan peaks and wind-shaped pines emerging through mountain mist', caption: 'Huangshan / a vertical route governed by gate, cloud, cableway and final descent', source: 'https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', creditTitle: 'Mount Huangshan in mist', creator: 'eviltomthai', license: 'CC BY 2.0' },
-    search: { type: 'Mountain weather and route guide', summary: 'Solve Huangshan’s gateway, reserved direction, cableway and descent before adding a summit night or Anhui village branch.', keywords: ['huangshan', 'mount huangshan', 'yellow mountain', 'huangshan cableway', 'tangkou', 'huangshan itinerary'] }
+    image: { path: '/assets/images/china-destination-huangshan.webp', alt: 'Granite Huangshan peaks and wind-shaped pines emerging through mountain mist', caption: 'Huangshan / a vertical route governed by gate, cloud, cableway and final descent', source: 'https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', creditTitle: 'Mount Huangshan in mist', creator: 'eviltomthai', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/' },
+    search: { type: 'Mountain weather and route guide', summary: 'Connect Huangshan North to Tunxi or Tangkou, then match the reserved gate, shuttle, cableway and weather fallback to a safe train return.', keywords: ['huangshan', 'huangshan north', 'tunxi', 'tangkou', 'south gate huangshan', 'mount huangshan', 'yellow mountain', 'huangshan cableway', 'huangshan itinerary'] }
   },
   {
     slug: 'qingdao',
+    dateModified: '2026-10-11',
     name: 'Qingdao',
     title: 'Qingdao Travel Guide (2026): Waterfront, Architecture and Laoshan',
     metaDescription: 'Plan Qingdao across the old harbor, documented architecture, safe bathing beaches, beer history and one separate Laoshan day.',
@@ -197,12 +201,12 @@ export const guides = [
     themeColor: '#155d76',
     visual: 'harbor-tide-postcard',
     extraStylesheet,
-    eyebrow: 'Shandong / harbor, red roofs, beach flags and hills',
+    eyebrow: 'Shandong / harbor, red roofs, bathing beaches and hills',
     titleAccent: 'read the coast by tide, hill and harbor',
     intro: 'Qingdao is a long coastal city, not one boardwalk. The old harbor, steep lanes, documented foreign-era architecture, living religious buildings, bathing beaches, brewery history, modern east waterfront and Laoshan occupy different distances and seasons. Plan it like a tide-marked postcard strip: name the bay, keep the hill behind the photograph and treat sea conditions as live information rather than blue background.',
     nights: '4–5 nights',
     coreLogic: 'old harbor + coast + one hill',
-    watchFirst: 'beach flags and east–west distance',
+    watchFirst: 'beach operating notices and east–west distance',
     motifs: ['Harbor', 'Roof', 'Tide', 'Hill'],
     orientationTitle: 'Divide the coast into west, central, east and mountain',
     orientationIntro: 'The eight postcards below move from Zhanqiao and the old city through Badaguan and bathing coast to the modern east waterfront, then reserve Laoshan as a full branch. Beer and seafood stay connected to production, health and moderation rather than becoming the whole city identity.',
@@ -212,12 +216,12 @@ export const guides = [
       { label: 'HILL CARD', title: 'Old-city streets are steeper than the map suggests', text: 'Signal Hill, Xiaoyushan and connecting lanes offer orientation but add stairs, slopes and one-way roads. Select one elevation, check the park entrance and move through ordinary neighborhoods without blocking gates or photographing residents as scenery.' },
       { label: 'BADAGUAN CARD', title: 'Badaguan is a residential landscape, not an open studio', text: 'Tree-lined roads, villas and coves reward a slow walk, yet many buildings are private, institutional or separately ticketed. Follow signs, keep portrait sessions out of traffic and entrances and distinguish public coastal space from restricted compounds.' },
       { label: 'BREWERY CARD', title: 'Beer history belongs to an industrial museum', text: 'The Tsingtao Beer Museum uses the historic brewery site and operates its own ticket and identity procedures. Check the official visitor notice, understand which tasting is included and provide a non-alcoholic plan for minors, drivers, pregnancy, medication or personal choice. Drinking volume is not cultural depth.' },
-      { label: 'BEACH CARD', title: 'Swim only at an operating bathing beach', text: 'A sandy shoreline is not automatically a supervised swimming area. Use current municipal information, obey green, yellow and red warning flags, stay out during closure or severe weather and keep children within direct adult supervision. Water quality, temperature and sea state can differ across bays.' },
+      { label: 'BEACH CARD', title: 'Swim only at an operating bathing beach', text: 'A sandy shoreline is not automatically a supervised swimming area. Check the current municipal bathing-beach notice and follow on-site lifeguard instructions; stay out during closure or severe weather and keep children within direct adult supervision. Water quality, temperature and sea state can differ across bays.' },
       { label: 'EAST COAST CARD', title: 'Fushan Bay and the museum district form another center', text: 'The Olympic Sailing Centre, civic skyline and eastern museums sit far from the old station district. Choose a coherent waterfront-and-museum day, confirm each venue’s current reservation status and avoid crossing the whole city repeatedly for one night photograph.' },
       { label: 'LAOSHAN CARD', title: 'Laoshan is a full mountain-and-sea branch', text: 'The scenic area has multiple approaches and route products rather than one universal gate. Select a corridor through the official information, verify bus, ticket and cableway status and respect active religious and protected natural areas. Weather and return time must control the day.' }
     ],
     decisions: [
-      { label: 'BASE', title: 'Choose west history or east waterfront', text: 'A base near the old station favors Zhanqiao, architecture and market streets; an eastern base favors Fushan Bay, modern museums and some beaches. Use metro access and accept one planned cross-city day instead of commuting end to end repeatedly.' },
+      { label: 'BASE', title: 'Match the exact arrival station to the coast you want', text: 'A stay around Qingdao Railway Station suits Zhanqiao, old-town slopes and west-side history; Qingdao North is a separate rail arrival, so check its onward journey before booking the same hotel. An eastern base works for Fushan Bay, the modern museum district and some beaches. For Jiaodong International Airport, the airport’s official transport page places rail and metro connections at GTC level B1; follow current terminal signs, then check Qingdao Metro’s live route and last service to your base or railway station before choosing a late transfer.' },
       { label: 'SEASON', title: 'Decide whether the sea is view, walk or swim', text: 'Beach operations and safe swimming are seasonal and weather-dependent. Build a museum-and-hill alternative, check municipal notices and never infer permission from other people entering the water.' },
       { label: 'BRANCH', title: 'Keep Laoshan separate from the old-city circuit', text: 'A mountain day needs a named approach, ticket, weather and return plan. Choose it instead of another distant coastal district, not as a late add-on after the brewery or Badaguan.' }
     ],
@@ -225,14 +229,14 @@ export const guides = [
     itineraryTitle: 'A Qingdao route paced by distance and sea state',
     itineraryIntro: 'The sequence limits east–west backtracking and keeps swimming or mountain exposure dependent on live conditions.',
     itinerary: [
-      { label: 'DAY 1 / WEST BAY', title: 'Zhanqiao, one hill and the old-city slope', text: 'Arrive at the correct station, orient at Qingdao Bay and choose one public elevation. Read a named architectural site and finish without racing east for a skyline.' },
-      { label: 'DAY 2 / URBAN COAST', title: 'Badaguan, a supervised beach and civic shoreline', text: 'Walk the residential landscape respectfully, use only an operating beach under current flags and continue along one coherent coastal section according to weather and mobility.' },
-      { label: 'DAY 3 / INDUSTRY', title: 'Brewery history, market context and an alcohol-safe evening', text: 'Visit the museum in its booked window, separate production history from tasting and choose seafood or another local meal with clear pricing, responsible consumption and a planned return.' },
-      { label: 'DAY 4 / BRANCH', title: 'Laoshan or the east waterfront', text: 'Use the full day for one named mountain corridor when weather permits; otherwise choose eastern museums and Fushan Bay. Do not attempt both at checklist speed.' }
+      { label: 'DAY 1 / WEST BAY', title: 'Use the station on your ticket, then walk the old harbor', text: 'Rail tickets distinguish Qingdao from Qingdao North. Choose your base after checking the full onward journey to it; the west-side station area puts Zhanqiao, the old-city slope and historic streets together. Follow one public hill and a named architecture stop, then return to the same base instead of adding the eastern skyline.' },
+      { label: 'DAY 2 / URBAN COAST', title: 'Badaguan, one operating beach and a weather exit', text: 'Walk the residential landscape respectfully and check the current municipal bathing notice and on-site lifeguard instructions before entering the water. If a beach is closed or the sea is rough, replace swimming with a shorter coastal walk and an indoor museum or old-city stop; do not switch to an unsupervised cove.' },
+      { label: 'DAY 3 / INDUSTRY', title: 'Book the brewery visit, then keep dinner near the route home', text: 'Use the Tsingtao Beer Museum’s current visitor notice for entry and ticket details, separate production history from tasting, and choose seafood only after checking how it is priced. Keep the evening close to your chosen base or confirm the current return service before crossing districts.' },
+      { label: 'DAY 4 / LAOSHAN OR EAST', title: 'Choose one area-specific mountain ticket or city alternative', text: 'For Laoshan, check the official channel for the advance-booking rules of the ticket product you plan to use; its booking notice shows area-and-time selection for the annual-card workflow. Match the selected area to the current access, shuttle and cableway/weather notice rather than assuming a universal gate. If the area is closed, weather is poor or stairs exceed your comfort, spend the day at the eastern museums and Fushan Bay instead. Leave the coast for a separate cross-city day.' }
     ],
     practicalTitle: 'Sea, slope and long coastlines defeat postcard timing',
     practical: [
-      { label: 'WATER SAFETY', title: 'Flags and closures outrank a sunny photograph', text: 'Swim only in an officially operating bathing area, follow lifeguards and warning flags and stay out in rough seas, storms or closure. Protect children directly and avoid rocks, piers and breakwaters as improvised swimming entries.' },
+      { label: 'WATER SAFETY', title: 'Beach notices and closures outrank a sunny photograph', text: 'Swim only in an officially operating bathing area, follow on-site lifeguard instructions and stay out in rough seas, storms or closure. Protect children directly and avoid rocks, piers and breakwaters as improvised swimming entries.' },
       { label: 'DISTANCE', title: 'A coastal address can still be far away', text: 'Qingdao stretches across multiple bays and districts. Check the full metro, bus or road time, retain the Chinese destination name and group each day geographically rather than measuring everything from the waterline.' },
       { label: 'FOOD AND ALCOHOL', title: 'Confirm price, freshness and the return home', text: 'Ask how seafood is priced before ordering, choose busy reputable businesses and treat tap beer as alcohol with variable strength. Never drink before swimming, hiking or driving, and keep a non-alcoholic route fully normal.' }
     ],
@@ -244,11 +248,14 @@ export const guides = [
     ],
     sources: [
       { url: 'https://www.qingdao.gov.cn/yfqd/', label: 'Qingdao Municipal People’s Government — official culture and tourism guide' },
-      { url: 'https://www.qingdao.gov.cn/zwgk/xxgk/csgl/ywfl/hygl/202511/t20251104_10354086.shtml', label: 'Qingdao Municipal People’s Government — official bathing-beach safety guidance' },
+      { url: 'https://www.qingdao.gov.cn/zwgk/xxgk/csgl/ywfl/hygl/202604/t20260430_10581742.shtml', label: 'Qingdao Municipal People’s Government — dated 2026 seasonal bathing-beach safety notice; consult newer live notices' },
+      { url: 'https://qd-metro.com/', label: 'Qingdao Metro — official route and operating-status lookup' },
+      { url: 'https://www.qdairport.com/cms/front/articlePage/228/%E4%BA%A4%E9%80%9A', label: 'Qingdao Jiaodong International Airport — official ground transport and GTC B1 transfer information' },
+      { url: 'https://qdlaoshan.cn/News-info-nid-2784.html', label: 'Laoshan Scenic Area — official area-selection and booking-workflow example; page is dated, verify current booking and access notice' },
       { url: 'https://www.tsingtaomuseum.com/', label: 'Tsingtao Beer Museum — official visitor information' },
       { url: 'https://www.qingdaomuseum.cn/', label: 'Qingdao Municipal Museum — official exhibitions and visitor notices' }
     ],
-    image: { path: '/assets/images/china-destination-qingdao.webp', alt: 'Qingdao waterfront, sandy beach and red-roofed historic city seen across the bay', caption: 'Qingdao / old harbor, documented roofs, operating beaches and one mountain branch', source: 'https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', creditTitle: 'Qingdao waterfront and Zhanqiao', creator: 'Vitsuha', license: 'CC BY-SA 4.0' },
-    search: { type: 'Coastal city and mountain guide', summary: 'Plan Qingdao by west and east coast, respect beach flags, read brewery and architectural history, then give Laoshan a full day.', keywords: ['qingdao', 'zhanqiao', 'badaguan', 'tsingtao beer museum', 'laoshan', 'qingdao itinerary'] }
+    image: { path: '/assets/images/china-destination-qingdao.webp', alt: 'Qingdao waterfront, sandy beach and red-roofed historic city seen across the bay', caption: 'Qingdao / old harbor, documented roofs, operating beaches and one mountain branch', source: 'https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', creditTitle: 'Qingdao waterfront and Zhanqiao', creator: 'Vitsuha', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+    search: { type: 'Coastal city and mountain guide', summary: 'Choose Qingdao or Qingdao North correctly, link Jiaodong Airport to the right base, check beach operating notices and plan one current-rule Laoshan corridor.', keywords: ['qingdao', 'qingdao north', 'jiaodong international airport', 'zhanqiao', 'badaguan', 'tsingtao beer museum', 'laoshan', 'qingdao itinerary'] }
   }
 ];

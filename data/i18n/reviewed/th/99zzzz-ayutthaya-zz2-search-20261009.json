@@ -1,0 +1,14 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya by Rail: Station, Chao Phrom and the River Transfer": "อยุธยาด้วยรถไฟ: สถานี ตลาดเจ้าพรหม และการเดินทางข้ามแม่น้ำ",
+    "Check the SRT service and terminal for your date, settle bags, then choose a confirmed Pa Sak crossing or road transfer. Chao Phrom is an island-side market stop; the rail station is across the river on the east bank.": "ตรวจขบวนรถและสถานีต้นทางของ SRT ให้ตรงกับวันเดินทาง จัดการสัมภาระ แล้วเลือกจุดข้ามแม่น้ำป่าสักหรือรถทางถนนที่ยืนยันแล้ว ตลาดเจ้าพรหมอยู่บนเกาะเมือง ส่วนสถานีรถไฟอยู่ฝั่งตะวันออกของแม่น้ำ",
+    "Wat Lokayasutharam: 42-Metre Reclining Buddha and West Island": "วัดโลกยสุธาราม: พระพุทธไสยาสน์ยาว 42 เมตรและเส้นทางฝั่งตะวันตก",
+    "Read the 42-metre image, lotus head support, lost shelter, 24-pillar traces and nearby pagoda; the exact temple foundation date is unknown. Plan one shaded west-island loop and a separate return transfer.": "ชมองค์พระยาว 42 เมตร ฐานดอกบัวรองรับพระเศียร ร่องรอยอาคารคลุมที่สูญหาย แนวเสา 24 ต้น และเจดีย์ใกล้เคียง โดยไม่ทราบปีสร้างวัดที่แน่ชัด วางแผนเที่ยววงรอบฝั่งตะวันตกพร้อมจุดพักในร่ม และจัดการเดินทางกลับแยกต่างหาก",
+    "Follow Wat Yai’s central chedi, Buddha rows and Naresuan chronicle tradition, then meet Luang Pho To at Phanan Choeng. Link the Highway 3477 road stops and leave room for worship.": "เดินตามแนวเจดีย์ประธานและแถวพระพุทธรูปของวัดใหญ่ พร้อมอ่านเรื่องเล่าจากพงศาวดารเกี่ยวกับสมเด็จพระนเรศวร แล้วไปสักการะหลวงพ่อโตที่วัดพนัญเชิง เชื่อมจุดแวะทางถนนบนทางหลวง 3477 และเผื่อเวลาสำหรับการสักการะ"
+  }
+}

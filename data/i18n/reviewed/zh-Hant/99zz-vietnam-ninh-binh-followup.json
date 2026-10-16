@@ -1,0 +1,15 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+    "/vietnam/ninh-binh/van-long-wetland/",
+    "/vietnam/ninh-binh/cuc-phuong-conservation/"
+  ],
+  "translations": {
+    "RIVER GORGES / TEMPLE VALLEY / KARST": "河谷峽谷／寺廟谷地／喀斯特地形",
+    "Ninh Binh is a limestone and river landscape with a long human history: UNESCO records cave evidence reaching back more than 30,000 years and the 10th-century capital of Hoa Lu.": "寧平是一片由石灰岩與河流構成、承載悠久人類歷史的地景：UNESCO 記錄的洞穴人類活動證據可追溯至 30,000 多年前，而華閭則是 10 世紀的首都。",
+    "From Hanoi, compare current train and road options against the actual hotel and first…": "從河內出發，請將目前的火車與公路交通選項，對照實際住宿地點與第一…"
+  }
+}

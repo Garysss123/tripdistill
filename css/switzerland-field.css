@@ -22,6 +22,10 @@
 .ch-field-hero figure { position:relative; margin:0; min-height:100%; overflow:hidden; }
 .ch-field-hero figure img { width:100%; height:100%; object-fit:cover; }
 .ch-field-hero figcaption { position:absolute; right:1rem; bottom:1rem; padding:.4rem .6rem; max-width:calc(100% - 2rem); color:#fff; background:rgba(20,33,43,.78); font-size:.68rem; }
+.ch-field-hero figure.ch-diagram-figure { display:flex; flex-direction:column; justify-content:center; background:#f1efe7; }
+.ch-field-hero figure.ch-diagram-figure img { flex:1 1 auto; min-height:0; object-fit:contain; }
+.ch-field-hero figure.ch-diagram-figure figcaption { position:static; flex:none; max-width:100%; padding:.55rem .85rem; color:var(--ch-ink); background:#fff; border-top:1px solid rgba(20,33,43,.14); font-size:.72rem; }
+.ch-field-hero figure.ch-diagram-figure .ch-diagram-note { flex:none; margin:0; padding:.8rem .95rem 1rem; color:var(--ch-ink); background:#fff; border-top:1px solid rgba(20,33,43,.1); font-size:.78rem; line-height:1.55; }
 .ch-ticket { position:absolute; left:50%; bottom:1.2rem; transform:translateX(-50%); z-index:3; width:min(360px,42%); padding:.95rem 1.1rem; background:var(--ch-ink); color:#fff; border-left:5px solid var(--ch-accent); }
 .ch-ticket small,.ch-ticket strong,.ch-ticket span { display:block; }
 .ch-ticket small { font:.68rem/1.2 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; opacity:.7; }
@@ -45,6 +49,7 @@
 .ch-regional-context > header h2 { margin:0; font:700 clamp(2rem,3.5vw,3.5rem)/1 Georgia,serif; }
 .ch-regional-context > header p { margin:0; line-height:1.72; }
 .ch-regional-context > div { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(20,33,43,.14); border:1px solid rgba(20,33,43,.14); }
+.ch-local-context > div { grid-template-columns:repeat(3,1fr); }
 .ch-regional-context article { padding:1.5rem; background:var(--ch-soft); }
 .ch-regional-context small { color:var(--ch-secondary); font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
 .ch-regional-context p { line-height:1.65; }
@@ -77,6 +82,7 @@
 .ch-related small { color:var(--ch-secondary); font:750 .68rem/1.3 ui-monospace,monospace; text-transform:uppercase; }
 .ch-related h3 { margin:.5rem 0; font:700 1.5rem/1.08 Georgia,serif; }
 .ch-related p { line-height:1.55; }
+.ch-related .ch-diagram-card-note { display:block; margin:.7rem 0; padding:.65rem .75rem; color:var(--ch-ink); background:#f1efe7; border-left:3px solid var(--ch-accent); font:500 .78rem/1.5 system-ui,sans-serif; text-transform:none; letter-spacing:0; }
 .ch-related strong { color:var(--ch-accent); }
 
 /* Eight structural families turn the same editorial contract into visibly different planning instruments. */
@@ -102,6 +108,7 @@
 .ch-field[data-ch-variant="5"] .ch-orientation { grid-template-columns:1fr; }
 .ch-field[data-ch-variant="6"] .ch-field-hero { grid-template-columns:1.2fr .8fr; }
 .ch-field[data-ch-variant="6"] .ch-field-hero figure { margin:3rem 3rem 3rem 0; min-height:auto; border-radius:50% 50% 3% 3%; }
+.ch-field[data-ch-variant="6"] .ch-field-hero figure.ch-diagram-figure { margin:1.5rem 1.5rem 1.5rem 0; border-radius:0; }
 .ch-field[data-ch-variant="6"] .ch-route ol { grid-template-columns:repeat(2,1fr); }
 .ch-field[data-ch-variant="7"] .ch-field-hero { grid-template-columns:.75fr 1.25fr; }
 .ch-field[data-ch-variant="7"] .ch-field-hero figure { order:-1; }
@@ -115,12 +122,52 @@
 @media (max-width:980px) {
   .ch-field[data-ch-variant] .ch-field-hero { grid-template-columns:1fr; min-height:auto; }
   .ch-field[data-ch-variant] .ch-field-hero figure { position:relative; inset:auto; order:initial; margin:0; min-height:320px; clip-path:none; border-radius:0; }
+  .ch-field[data-ch-variant] .ch-field-hero figure.ch-diagram-figure { min-height:390px; }
   .ch-field[data-ch-variant="5"] .ch-field-hero::after { display:none; }
   .ch-field[data-ch-variant="5"] .ch-field-copy { color:var(--ch-ink); background:#fff; }
   .ch-ticket { left:auto; right:1rem; bottom:1rem; transform:none; width:min(350px,75%); }
   .ch-choice-deck,.ch-orientation,.ch-watch > div { grid-template-columns:1fr; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"],
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] * { min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] { overflow-wrap:anywhere; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-watch,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-faq,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-watch *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related *,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-faq * { min-width:0; max-width:100%; overflow-wrap:anywhere; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch > div { grid-template-columns:minmax(0,1fr); min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck article,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch article { min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck h2,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-choice-deck p,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch h3,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-field[data-ch-variant="3"] .ch-watch p { overflow-wrap:anywhere; }
   .ch-regional-context > header { grid-template-columns:1fr; }
   .ch-regional-context > div { grid-template-columns:repeat(2,1fr); }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation {
+    grid-template-columns:minmax(0,1fr);
+    min-width:0;
+    max-width:100%;
+  }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation > div,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation > aside {
+    min-width:0;
+    max-width:100%;
+  }
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation h2,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation p,
+  body[data-country="switzerland"][data-region="zurich-lake"] .ch-field .ch-orientation .ch-label {
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
   .ch-choice-deck article,.ch-field[data-ch-variant="7"] .ch-choice-deck article { display:block; transform:none !important; border-right:0; border-bottom:1px solid rgba(20,33,43,.14); }
   .ch-field[data-ch-variant="2"] .ch-route ol,.ch-route ol,.ch-field[data-ch-variant="6"] .ch-route ol { grid-template-columns:repeat(2,1fr); }
   .ch-field[data-ch-variant="2"] .ch-route li { display:block; min-height:280px; }
@@ -138,4 +185,16 @@
   .ch-orientation,.ch-regional-context,.ch-route,.ch-fallback,.ch-watch,.ch-related,.ch-faq { padding:3.2rem 1rem; }
   .ch-regional-context > div { grid-template-columns:1fr; }
   .ch-field[data-ch-variant="8"] .ch-orientation aside { display:block; }
+}
+
+
+@media (max-width:620px) {
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-regional-context > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route ol,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related a { grid-template-columns:minmax(0,1fr); min-width:0; max-width:100%; }
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-route li,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-fallback > div,
+  body[data-page="ch-zurich-lake-zurich-west-museums"] .ch-related a > div { min-width:0; max-width:100%; }
 }

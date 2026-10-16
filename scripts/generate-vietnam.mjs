@@ -5,10 +5,14 @@ import { vietnamClusters, vietnamGuides, vietnamCountrySources } from '../data/v
 const root = path.resolve(import.meta.dirname, '..');
 const reviewDate = '31 August 2026';
 const isoDate = '2026-08-31';
-const siteCss = '/css/site.css?v=20260926-1';
+const countryReviewDate = '12 October 2026';
+const countryIsoDate = '2026-10-12';
+const countryDescription = 'Plan Vietnam with 7-, 12- and 14-night routes, north-to-south rail anchors, regional weather checks and practical transfer buffers.';
+const siteCss = '/css/site.css?v=20261016-1';
 const countryCss = '/css/vietnam.css?v=20260831-2';
-const fieldCss = '/css/vietnam-field.css?v=20260831-1';
-const mainJs = '/js/main.js?v=20260911-1';
+const countryRouteCss = '/css/vietnam-overview-routes.css?v=20261012-1';
+const fieldCss = '/css/vietnam-field.css?v=20261012-1';
+const mainJs = '/js/main.js?v=20261016-1';
 const vietnamNavStart = '<!-- VIETNAM_NAV_START -->';
 const vietnamNavEnd = '<!-- VIETNAM_NAV_END -->';
 const vietnamChaptersStart = '<!-- VIETNAM_CHAPTERS_START -->';
@@ -27,6 +31,40 @@ const escapeHtml = (value = '') => String(value)
 
 const absolute = (route) => `https://tripdistill.com${route}`;
 const routeFile = (route) => path.join(root, route.replace(/^\//, ''), 'index.html');
+
+function updateHueSiblingPhotoCredits(cluster) {
+  const photo = cluster.guides.find((guide) => guide.slug === 'royal-tombs')?.image;
+  if (!photo) throw new Error('Hue sibling credit update requires the current royal-tomb image.');
+  const previousAsset = '/assets/images/vietnam-hue-minh-mang-tomb.webp';
+  const previousSource = 'https://commons.wikimedia.org/wiki/File:Minh-Mang-Royal-Tomb.jpg';
+  const previousSourcePattern = previousSource.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const previousCredit = new RegExp(`<li(?: data-photo-asset="[^"]+")?><a href="${previousSourcePattern}"[^>]*>.*?<\\/li>`);
+  const newCredit = imageCredit(photo);
+  for (const slug of ['thanh-toan-rural-loop', 'bach-ma-national-park', 'lang-co-lap-an-lagoon']) {
+    const file = routeFile(`/vietnam/hue/${slug}/`);
+    const html = fs.readFileSync(file, 'utf8');
+    const start = html.indexOf('<section class="section sources"');
+    const end = html.indexOf('</section>', start);
+    if (start < 0 || end < 0) throw new Error(`Missing bounded source section on Hue sibling ${slug}.`);
+    let section = html.slice(start, end + '</section>'.length);
+    if (section.includes(photo.source)) {
+      const refreshed = html.replace(/\/css\/vietnam-hue\.css\?v=20261008-[12]/g, '/css/vietnam-hue.css?v=20261008-3');
+      if (refreshed !== html) fs.writeFileSync(file, refreshed);
+      continue;
+    }
+    const oldMatches = [...section.matchAll(new RegExp(previousCredit.source, 'g'))];
+    if (oldMatches.length !== 1) throw new Error(`Expected one previous Hue tomb credit in ${slug}, found ${oldMatches.length}.`);
+    const oldRow = oldMatches[0][0];
+    const markedOldRow = oldRow.startsWith(`<li data-photo-asset="${previousAsset}"`)
+      ? oldRow
+      : oldRow.replace('<li>', `<li data-photo-asset="${previousAsset}">`);
+    section = section.replace(oldRow, markedOldRow);
+    if (!section.includes(photo.source)) section = section.replace(markedOldRow, `${markedOldRow}${newCredit}`);
+    const updated = (html.slice(0, start) + section + html.slice(end + '</section>'.length))
+      .replace(/\/css\/vietnam-hue\.css\?v=20261008-[12]/g, '/css/vietnam-hue.css?v=20261008-3');
+    if (updated !== html) fs.writeFileSync(file, updated);
+  }
+}
 
 function ensureMetaDescription(summary) {
   let value = String(summary).trim();
@@ -58,20 +96,55 @@ function sourceList(sources) {
   return sources.map(([href, label]) => `<li><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>.</li>`).join('');
 }
 
-function imageCredit(image) {
-  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(image.label)}</a> — ${escapeHtml(image.creator)}, ${escapeHtml(image.license)}. ${escapeHtml(image.editNote)}</li>`;
+function imageCredit(image, humanTitle = false) {
+  const title = humanTitle || image.useAltAsCreditTitle ? image.alt : image.label;
+  if (image.licenseUrl) {
+    return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(title)}</a><span translate="no"> — ${escapeHtml(image.creator)}, </span><a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener" translate="no">${escapeHtml(image.license)}</a><span>. ${escapeHtml(image.editNote)}</span></li>`;
+  }
+  return `<li><a href="${escapeHtml(image.source)}" target="_blank" rel="noopener">${escapeHtml(humanTitle ? image.alt : image.label)}</a> — ${escapeHtml(image.creator)}, ${escapeHtml(image.license)}. ${escapeHtml(image.editNote)}</li>`;
+}
+
+function imageFigureCaption(image, humanTitle = false) {
+  if (image.licenseUrl) {
+    const title = humanTitle || image.useAltAsCreditTitle ? image.alt : image.label;
+    return `<span>${escapeHtml(title)}</span><span aria-hidden="true"> · </span><a href="${escapeHtml(image.licenseUrl)}" target="_blank" rel="noopener" translate="no">${escapeHtml(image.license)}</a>`;
+  }
+  return humanTitle ? escapeHtml(image.alt) : `${escapeHtml(image.label)} · ${escapeHtml(image.license)}`;
 }
 
 function uniqueImages(guides) {
   return [...new Map(guides.map((guide) => [guide.image.src, guide.image])).values()];
 }
 
-function relatedCards(cluster, currentSlug) {
+function relatedCards(cluster, currentSlug, summaryOverrides = {}) {
   return cluster.guides.filter((guide) => guide.slug !== currentSlug).map((guide) => `
           <a class="vn-related-card" href="/vietnam/${cluster.slug}/${guide.slug}/">
             <img src="${guide.image.src}" width="1600" height="1066" loading="lazy" decoding="async" alt="${escapeHtml(guide.image.alt)}">
-            <span><small>${escapeHtml(guide.instrument)}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(guide.motif)}</em></span>
+            <span><small>${escapeHtml(guide.instrumentLabel)}</small><strong>${escapeHtml(guide.name)}</strong><em>${escapeHtml(summaryOverrides[guide.slug] || guide.motif)}</em></span>
           </a>`).join('');
+}
+
+function routeDiagramMarkup(diagram) {
+  if (!diagram) return '';
+  if (!['flow', 'compare'].includes(diagram.kind) || !Array.isArray(diagram.steps) || diagram.steps.length < 2 || diagram.steps.length > 4) {
+    throw new Error(`Invalid Vietnam route diagram: ${diagram.title || '(untitled)'}`);
+  }
+  const steps = diagram.steps.map(([label, heading, copy], index) => `
+            <li><span class="vn-route-map-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><div><small>${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></div></li>`).join('');
+  return `<section class="vn-route-map vn-route-map--${diagram.kind}" aria-labelledby="vn-route-map-title"><header><span class="vn-section-label">Route decision</span><h2 id="vn-route-map-title">${escapeHtml(diagram.title)}</h2><p>${escapeHtml(diagram.intro)}</p></header><ol>${steps}
+      </ol><aside><strong>${escapeHtml(diagram.fallbackTitle)}</strong><p>${escapeHtml(diagram.fallback)}</p></aside></section>`;
+}
+
+function nightPlanMarkup(plan, format = 'regional') {
+  if (!plan) return '';
+  const isGuide = format === 'guide';
+  const sectionClass = isGuide ? 'vn-stay-plan vn-night-plan' : 'vn-mui-ne-plan vn-night-plan';
+  const cardsClass = isGuide ? 'vn-stay-plan__cards vn-night-plan__cards' : 'vn-mui-ne-plan__cards vn-night-plan__cards';
+  const titleId = isGuide ? 'vn-stay-plan-title' : 'vn-mui-ne-plan-title';
+  const options = plan.options.map(([label, heading, copy]) => `
+        <article><small>${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
+  return `      <section class="${sectionClass}" aria-labelledby="${titleId}"><header><span class="vn-section-label">${escapeHtml(plan.kicker)}</span><h2 id="${titleId}">${escapeHtml(plan.title)}</h2><p>${escapeHtml(plan.intro)}</p></header><div class="${cardsClass}">${options}
+      </div><aside><strong>${escapeHtml(plan.footerTitle)}</strong><p>${escapeHtml(plan.footer)}</p></aside></section>`;
 }
 
 function guideSchema(guide) {
@@ -85,7 +158,7 @@ function guideSchema(guide) {
         description: guide.summary,
         url: absolute(guide.url),
         inLanguage: 'en',
-        dateModified: isoDate,
+        dateModified: guide.isoDate || isoDate,
         image: absolute(guide.image.src),
         about: { '@type': 'TouristDestination', name: guide.name, containedInPlace: { '@type': 'Country', name: 'Vietnam' } },
         publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' }
@@ -112,10 +185,16 @@ function guideSchema(guide) {
 }
 
 function guidePage(guide, cluster) {
+  const guideReviewDate = guide.reviewDate || reviewDate;
   const decisions = guide.decisions.map(([label, copy]) => `<article><small>${escapeHtml(label)}</small><p>${escapeHtml(copy)}</p></article>`).join('');
   const route = guide.route.map(([phase, heading, copy], index) => `<article class="vn-route-step"><span>${String(index + 1).padStart(2, '0')}</span><small>${escapeHtml(phase)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const checks = guide.checks.map(([label, copy], index) => `<article class="vn-check"><span>${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(label)}</h3><p>${escapeHtml(copy)}</p></article>`).join('');
   const faq = guide.faq.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><div class="faq-answer"><p>${escapeHtml(answer)}</p></div></details>`).join('');
+  const routeLead = guide.hideSequenceLead ? '' : `<p>${escapeHtml(guide.routeLead || guide.sequence)}</p>`;
+  const checksIntro = guide.presentation?.checksLead ?? guide.checksIntro ?? 'Conditions change faster than an editorial page. Verify the named official source, actual operator and local weather close to travel.';
+  const checksActionText = guide.presentation?.checksActionText ?? cluster.presentation?.checksActionText ?? 'Check the weak points';
+  const checksIntroMarkup = checksIntro ? `<p>${escapeHtml(checksIntro)}</p>` : '';
+  const boundary = guide.hideBoundaryBlock ? '' : `<div class="vn-boundary"><small>${escapeHtml(guide.decisions[2][0])}</small><strong>${escapeHtml(guide.presentation?.boundaryTitle || 'Protect this boundary')}</strong>${guide.presentation?.boundaryTitle ? '' : `<p>${escapeHtml(guide.decisions[2][1])}</p>`}</div>`;
   const description = ensureMetaDescription(guide.summary);
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
@@ -124,26 +203,26 @@ function guidePage(guide, cluster) {
   <title>${escapeHtml(guide.name)} | TripDistill</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(guide.url)}">${hreflang(guide.url)}
   <meta name="theme-color" content="#8d2f25"><meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(guide.name)} — ${escapeHtml(guide.motif)}"><meta property="og:description" content="${escapeHtml(guide.summary)}"><meta property="og:url" content="${absolute(guide.url)}"><meta property="og:image" content="${absolute(guide.image.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}"><link rel="stylesheet" href="${fieldCss}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}"><link rel="stylesheet" href="${fieldCss}">${guide.countryCss ? `<link rel="stylesheet" href="${escapeHtml(guide.countryCss)}">` : ""}
   <script src="/js/adsense.js?v=20260826-9" defer></script><script type="application/ld+json">${JSON.stringify(guideSchema(guide))}</script>
 </head>
 <body data-page="${escapeHtml(guide.slug)}" data-parent-page="vietnam" data-country="vietnam" data-region="${escapeHtml(cluster.slug)}" data-vn-family="${escapeHtml(cluster.family)}" data-vn-instrument="${escapeHtml(guide.instrument)}">
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content vn-field">
       <section class="vn-field-hero" aria-labelledby="vn-field-title">
-        <div class="vn-field-copy"><nav class="vn-breadcrumb" aria-label="Breadcrumb"><a href="/vietnam/">Vietnam</a><span>/</span><a href="/vietnam/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="vn-kicker">${escapeHtml(cluster.label)} · chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${reviewDate}</span><h1 id="vn-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the sequence</a><a class="button secondary" href="#checks">Check the weak points</a></div></div>
-        <figure class="vn-field-image"><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${escapeHtml(guide.image.label)} · ${escapeHtml(guide.image.license)}</figcaption></figure>
-        <div class="vn-field-stamp" aria-hidden="true"><small>${escapeHtml(guide.instrument)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>${escapeHtml(cluster.region)}</span></div>
+        <div class="vn-field-copy"><nav class="vn-breadcrumb" aria-label="Breadcrumb"><a href="/vietnam/">Vietnam</a><span>/</span><a href="/vietnam/${cluster.slug}/">${escapeHtml(cluster.name)}</a><span>/</span><strong>${escapeHtml(guide.name)}</strong></nav><span class="vn-kicker">${escapeHtml(guide.kickerLabel || cluster.label)} · chapter ${String(guide.chapter).padStart(2, '0')} · reviewed ${guideReviewDate}</span><h1 id="vn-field-title">${escapeHtml(guide.name)} <span>${escapeHtml(guide.motif)}.</span></h1><p>${escapeHtml(guide.summary)}</p><div class="hero-actions"><a class="button primary" href="#route">Follow the sequence</a><a class="button secondary" href="#checks">${escapeHtml(checksActionText)}</a></div></div>
+        <figure class="vn-field-image"><img src="${guide.image.src}" width="1600" height="1066" alt="${escapeHtml(guide.image.alt)}" fetchpriority="high"><figcaption>${imageFigureCaption(guide.image, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang' || cluster.slug === 'ninh-binh')}</figcaption></figure>
+        <div class="vn-field-stamp" aria-hidden="true"><small>${escapeHtml(guide.instrumentLabel)}</small><strong>${String(guide.chapter).padStart(2, '0')}</strong><span>${escapeHtml(cluster.region)}</span></div>
       </section>
 
       <section class="vn-decision-strip" aria-label="Three planning decisions">${decisions}</section>
-      <section class="vn-reading" aria-labelledby="vn-reading-title"><div><span class="vn-section-label">Read the place</span><h2 id="vn-reading-title">Keep the local logic visible.</h2><p>${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
-      <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
-      <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">Let sequence do the editing.</h2></div><p>${escapeHtml(guide.sequence)}</p></div><div class="vn-route">${route}</div></section>
-      <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">Before committing</span><h2 id="vn-checks-title">Three weak points to solve.</h2></div><p>Conditions change faster than an editorial page. Verify the named official source, actual operator and local weather close to travel.</p></div><div class="vn-check-grid">${checks}</div><div class="vn-boundary"><small>${escapeHtml(guide.decisions[2][0])}</small><strong>Protect this boundary</strong><p>${escapeHtml(guide.decisions[2][1])}</p></div></section>
-      <section class="vn-field-section" aria-labelledby="vn-faq-title"><div class="vn-section-head"><div><span class="vn-section-label">Planning answers</span><h2 id="vn-faq-title">${escapeHtml(guide.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
-      <section class="vn-field-section" aria-labelledby="vn-related-title"><div class="vn-section-head"><div><span class="vn-section-label">Continue in ${escapeHtml(cluster.name)}</span><h2 id="vn-related-title">Choose the next chapter by purpose.</h2></div><p>Return to the hub before joining distant branches into one day.</p></div><div class="vn-related">${relatedCards(cluster, guide.slug)}</div><p class="vn-back"><a href="/vietnam/${cluster.slug}/">← Return to the complete ${escapeHtml(cluster.name)} guide</a></p></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${reviewDate}. Schedules, access, tickets, weather and operator terms change; verify directly before travel.</p><ul>${sourceList(cluster.sources)}${uniqueImages(cluster.guides).map(imageCredit).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+      <section class="vn-reading" aria-labelledby="vn-reading-title"><div><span class="vn-section-label">Read the place</span><h2 id="vn-reading-title">${escapeHtml(guide.presentation?.readingTitle || 'Keep the local logic visible.')}</h2><p>${escapeHtml(guide.lead)}</p></div><aside><small>Orientation note</small><p>${escapeHtml(guide.orientation)}</p></aside></section>
+${guide.routeDiagram ? `      ${routeDiagramMarkup(guide.routeDiagram)}\n` : ''}${guide.nightPlan ? `${nightPlanMarkup(guide.nightPlan, 'guide')}\n` : ''}      <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
+      <section class="vn-field-section" id="route" aria-labelledby="vn-route-title"><div class="vn-section-head"><div><span class="vn-section-label">Four-stage route</span><h2 id="vn-route-title">${escapeHtml(guide.presentation?.routeTitle || 'Let sequence do the editing.')}</h2></div>${routeLead}</div><div class="vn-route">${route}</div></section>
+      <section class="vn-field-section" id="checks" aria-labelledby="vn-checks-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.checksLabel || 'Before committing')}</span><h2 id="vn-checks-title">${escapeHtml(guide.presentation?.checksTitle || 'Three weak points to solve.')}</h2></div>${checksIntroMarkup}</div><div class="vn-check-grid">${checks}</div>${boundary}</section>
+      <section class="vn-field-section" aria-labelledby="vn-faq-title"><div class="vn-section-head"><div><span class="vn-section-label">${escapeHtml(guide.presentation?.faqLabel || 'Planning answers')}</span><h2 id="vn-faq-title">${escapeHtml(guide.presentation?.faqTitle || (guide.name + ' FAQ'))}</h2></div></div><div class="faq-list">${faq}</div></section>
+      <section class="vn-field-section" aria-labelledby="vn-related-title"><div class="vn-section-head"><div><span class="vn-section-label">Continue in ${escapeHtml(cluster.name)}</span><h2 id="vn-related-title">Choose the next chapter by purpose.</h2></div><p>Return to the hub before joining distant branches into one day.</p></div><div class="vn-related">${relatedCards(cluster, guide.slug, guide.relatedMotifOverrides)}</div><p class="vn-back"><a href="/vietnam/${cluster.slug}/">← Return to the complete ${escapeHtml(cluster.name)} guide</a></p></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>${escapeHtml(guide.sourceReviewText || `Planning facts and image licenses were reviewed on ${guideReviewDate}. Schedules, access, tickets, weather and operator terms change; verify directly before travel.`)}</p><ul>${sourceList(guide.sources || cluster.sources)}${uniqueImages(cluster.guides).map((image) => imageCredit(image, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang')).join('')}</ul><span class="review-note">Editorial review: ${guideReviewDate} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>
@@ -156,7 +235,7 @@ function hubSchema(cluster) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${absolute(route)}#guide`, name: `${cluster.name} Travel Guide`, description: cluster.hubIntro, url: absolute(route), inLanguage: 'en', dateModified: isoDate, image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name, containedInPlace: { '@type': 'Country', name: 'Vietnam' } }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': `${absolute(route)}#guide`, name: `${cluster.name} Travel Guide`, description: cluster.hubIntro, url: absolute(route), inLanguage: 'en', dateModified: cluster.isoDate || isoDate, image: absolute(cluster.guides[0].image.src), about: { '@type': 'TouristDestination', name: cluster.name, containedInPlace: { '@type': 'Country', name: 'Vietnam' } }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tripdistill.com/' }, { '@type': 'ListItem', position: 2, name: 'Vietnam', item: 'https://tripdistill.com/vietnam/' }, { '@type': 'ListItem', position: 3, name: cluster.name, item: absolute(route) }] },
       { '@type': 'FAQPage', mainEntity: cluster.guides.map((guide) => ({ '@type': 'Question', name: guide.faq[0][0], acceptedAnswer: { '@type': 'Answer', text: guide.faq[0][1] } })) }
     ]
@@ -168,29 +247,35 @@ function hubCards(cluster) {
 }
 
 function hubPage(cluster, index) {
+  const hubReviewDate = cluster.reviewDate || reviewDate;
   const route = `/vietnam/${cluster.slug}/`;
   const description = ensureMetaDescription(cluster.hubIntro);
   const hero = cluster.guides[0].image;
   const faq = cluster.guides.map((guide) => `<details><summary>${escapeHtml(guide.faq[0][0])}</summary><div class="faq-answer"><p>${escapeHtml(guide.faq[0][1])}</p></div></details>`).join('');
+  const planner = cluster.planner?.map(([label, heading, copy], plannerIndex) => `<article><small>0${plannerIndex + 1} / ${escapeHtml(label)}</small><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(copy)}</p></article>`).join("") || "";
   return `<!doctype html>
 <html lang="en" data-adsense-client="ca-pub-1732059148394592">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(cluster.name)} Guide | TripDistill</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${absolute(route)}">${hreflang(route)}
   <meta name="theme-color" content="#8d2f25"><meta property="og:type" content="article"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="${escapeHtml(cluster.name)} — ${escapeHtml(cluster.tagline)}"><meta property="og:description" content="${escapeHtml(cluster.hubIntro)}"><meta property="og:url" content="${absolute(route)}"><meta property="og:image" content="${absolute(hero.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}"><link rel="stylesheet" href="${fieldCss}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}"><link rel="stylesheet" href="${fieldCss}">${cluster.hubCss ? `<link rel="stylesheet" href="${escapeHtml(cluster.hubCss)}">` : ""}
   <script src="/js/adsense.js?v=20260826-9" defer></script><script type="application/ld+json">${JSON.stringify(hubSchema(cluster))}</script>
 </head>
 <body data-page="${escapeHtml(cluster.slug)}" data-parent-page="vietnam" data-country="vietnam" data-region="${escapeHtml(cluster.slug)}" data-vn-family="${escapeHtml(cluster.family)}">
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content vn-hub">
-      <section class="vn-hub-hero" aria-labelledby="vn-hub-title"><div class="vn-hub-copy"><span class="vn-kicker">${escapeHtml(cluster.label)} · reviewed ${reviewDate}</span><h1 id="vn-hub-title">${escapeHtml(cluster.name)} <span>${escapeHtml(cluster.tagline)}</span></h1><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#area-guides">Choose a chapter</a><a class="button secondary" href="#route-model">Read the route model</a></div><dl><div><dt>Useful stay</dt><dd>${escapeHtml(compactText(cluster.stay))}</dd></div><div><dt>Transfer logic</dt><dd>${escapeHtml(compactText(cluster.transfer))}</dd></div></dl></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="vn-hub-index" aria-hidden="true"><small>Vietnam field atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>06 chapters</span></div></section>
+      <section class="vn-hub-hero" aria-labelledby="vn-hub-title"><div class="vn-hub-copy"><span class="vn-kicker">${escapeHtml(cluster.label)} · reviewed ${hubReviewDate}</span><h1 id="vn-hub-title">${escapeHtml(cluster.name)} <span>${escapeHtml(cluster.tagline)}</span></h1><p>${escapeHtml(cluster.hubIntro)}</p><div class="hero-actions"><a class="button primary" href="#area-guides">Choose a chapter</a><a class="button secondary" href="#route-model">Read the route model</a></div><dl><div><dt>Useful stay</dt><dd>${escapeHtml(compactText(cluster.stay))}</dd></div><div><dt>Transfer logic</dt><dd>${escapeHtml(compactText(cluster.transfer))}</dd></div></dl></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${imageFigureCaption(hero, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang' || cluster.slug === 'ninh-binh')}</figcaption></figure><div class="vn-hub-index" aria-hidden="true"><small>Vietnam field atlas</small><strong>${String(index + 1).padStart(2, '0')}</strong><span>06 chapters</span></div></section>
+
+${nightPlanMarkup(cluster.nightPlan)}
+
+${planner ? `      <section class="vn-hanoi-planner" aria-labelledby="vn-hanoi-planner-title"><div class="vn-hanoi-planner-heading"><span>Choose a day shape</span><h2 id="vn-hanoi-planner-title">Three plans with different clocks.</h2></div><div class="vn-hanoi-planner-grid">${planner}</div></section>` : ""}
       <section class="vn-hub-directory" id="area-guides" aria-labelledby="vn-directory-title"><div class="vn-hub-heading"><div><span>Six independent field guides</span><h2 id="vn-directory-title">Open the place at the right scale.</h2></div><p>Each card solves a different transport, access or conduct problem. None is a placeholder.</p></div><div class="vn-hub-grid">${hubCards(cluster)}</div></section>
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
-      <section class="vn-hub-section" aria-labelledby="vn-contract-title"><div class="vn-hub-heading"><div><span>Operating contracts</span><h2 id="vn-contract-title">Six chapters, six different conditions.</h2></div><p>Distance, weather, sacred space, working neighborhoods and protected landscapes cannot share one generic checklist.</p></div><div class="vn-contract-grid">${cluster.guides.map((guide, guideIndex) => `<article><small>0${guideIndex + 1} / ${escapeHtml(guide.instrument)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.arrival)}</p><strong>${escapeHtml(guide.decisions[2][0])}</strong><span>${escapeHtml(guide.boundary)}</span></article>`).join('')}</div></section>
-      <section class="vn-hub-section" id="route-model" aria-labelledby="vn-hub-route-title"><div class="vn-hub-heading"><div><span>Six-chapter route model</span><h2 id="vn-hub-route-title">Protect the transfer before adding the view.</h2></div><p>This is an editorial sequence, not a promise that every activity operates every day.</p></div><div class="vn-hub-route">${cluster.guides.map((guide, guideIndex) => `<a href="/vietnam/${cluster.slug}/${guide.slug}/"><span>Chapter ${String(guideIndex + 1).padStart(2, '0')}</span><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.sequence)}</p></a>`).join('')}</div></section>
-      <section class="vn-hub-section" aria-labelledby="vn-hub-faq-title"><div class="vn-hub-heading"><div><span>Planning answers</span><h2 id="vn-hub-faq-title">${escapeHtml(cluster.name)} FAQ</h2></div></div><div class="faq-list">${faq}</div></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${reviewDate}. Recheck transport, entry, weather, park and operator conditions before travel.</p><ul>${sourceList(cluster.sources)}${uniqueImages(cluster.guides).map(imageCredit).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+      <section class="vn-hub-section" aria-labelledby="vn-contract-title"><div class="vn-hub-heading"><div><span>${escapeHtml(cluster.presentation?.conditionsKicker || 'Operating contracts')}</span><h2 id="vn-contract-title">${escapeHtml(cluster.presentation?.conditionsTitle || 'Six chapters, six different conditions.')}</h2></div><p>${escapeHtml(cluster.presentation?.conditionsLead || 'Distance, weather, sacred space, working neighborhoods and protected landscapes cannot share one generic checklist.')}</p></div><div class="vn-contract-grid">${cluster.guides.map((guide, guideIndex) => `<article><small>0${guideIndex + 1} / ${escapeHtml(guide.instrumentLabel)}</small><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.arrival)}</p><strong>${escapeHtml(guide.decisions[2][0])}</strong><span>${escapeHtml(guide.boundary)}</span></article>`).join('')}</div></section>
+      <section class="vn-hub-section" id="route-model" aria-labelledby="vn-hub-route-title"><div class="vn-hub-heading"><div><span>Six-chapter route model</span><h2 id="vn-hub-route-title">${escapeHtml(cluster.routeModelHeading || "Protect the transfer before adding the view.")}</h2></div><p>${escapeHtml(cluster.routeModelLead || "This is an editorial sequence, not a promise that every activity operates every day.")}</p></div><div class="vn-hub-route">${cluster.guides.map((guide, guideIndex) => `<a href="/vietnam/${cluster.slug}/${guide.slug}/"><span>Chapter ${String(guideIndex + 1).padStart(2, '0')}</span><h3>${escapeHtml(guide.name)}</h3><p>${escapeHtml(guide.sequence)}</p></a>`).join('')}</div></section>
+      <section class="vn-hub-section" aria-labelledby="vn-hub-faq-title"><div class="vn-hub-heading"><div><span>${escapeHtml(cluster.presentation?.faqKicker || 'Planning answers')}</span><h2 id="vn-hub-faq-title">${escapeHtml(cluster.presentation?.faqTitle || (cluster.name + ' FAQ'))}</h2></div></div><div class="faq-list">${faq}</div></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Planning facts and image licenses were reviewed on ${hubReviewDate}. Recheck transport, entry, weather, park and operator conditions before travel.</p><ul>${sourceList(cluster.hubSources || cluster.sources)}${uniqueImages(cluster.guides).map((image) => imageCredit(image, cluster.slug === 'hanoi' || cluster.slug === 'ha-giang')).join('')}</ul><span class="review-note">Editorial review: ${hubReviewDate} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>
@@ -202,12 +287,13 @@ function countrySchema() {
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': 'https://tripdistill.com/vietnam/#guide', name: 'Vietnam Travel Guide', description: 'Plan Vietnam through fourteen complete city and regional hubs, each opening six focused guides with transport, weather, access and responsible-visit checks.', url: 'https://tripdistill.com/vietnam/', inLanguage: 'en', dateModified: isoDate, image: absolute(vietnamClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Vietnam' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
+      { '@type': 'Article', '@id': 'https://tripdistill.com/vietnam/#guide', name: 'Vietnam Travel Guide', description: countryDescription, url: 'https://tripdistill.com/vietnam/', inLanguage: 'en', dateModified: countryIsoDate, image: absolute(vietnamClusters[0].guides[0].image.src), about: { '@type': 'Country', name: 'Vietnam' }, publisher: { '@type': 'Organization', name: 'TripDistill', url: 'https://tripdistill.com/' } },
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://tripdistill.com/' }, { '@type': 'ListItem', position: 2, name: 'Vietnam', item: 'https://tripdistill.com/vietnam/' }] },
       { '@type': 'FAQPage', mainEntity: [
-        ['How much time does a first Vietnam route need?', 'Two focused weeks can connect a north, central and south argument, but three weeks gives weather and transfer buffers. A short trip should remain in one region.'],
+        ['How much time does a first Vietnam route need?', 'Seven nights suit Hanoi, Ninh Binh and one bay; twelve nights can add Hue, Hoi An and Ho Chi Minh City using an overnight train and a flight; fourteen nights make room for a two-night Can Tho extension. Keep transfer and weather buffers.'],
         ['Should I book every transfer before arrival?', 'Secure identity-bound flights, trains and regulated expeditions first. Keep local road and boat days flexible enough for weather and operator checks.'],
-        ['Does one season work for all of Vietnam?', 'No. Northern highlands, central coast and southern delta have different temperature, rain, flood and sea patterns. Check each region rather than applying one national label.']
+        ['Does one season work for all of Vietnam?', 'No. Northern highlands, central coast and southern delta have different temperature, rain, flood and sea patterns. Check each region rather than applying one national label.'],
+        ['Should I add Sapa or Ha Giang to a twelve-night north-to-south route?', 'Only by removing another region or adding nights. Each highland trip needs several road days, a daylight return plan and a weather buffer; do not compress it into a city-to-city transfer.']
       ].map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) }
     ]
   };
@@ -219,7 +305,7 @@ function countryCards(band) {
 
 function countryPage() {
   const hero = vietnamClusters[0].guides[0].image;
-  const description = ensureMetaDescription('Plan Vietnam through fourteen complete city and regional hubs, each opening six focused guides for transport, weather, heritage, nature and realistic route decisions.');
+  const description = ensureMetaDescription(countryDescription);
   const bands = [
     ['north', '01 · Northern Vietnam', 'Lakes, karst, highland roads and river approaches', 'The north changes scale quickly. Separate Hanoi walking chapters from mountain road days, regulated bays and conservation landscapes.'],
     ['central', '02 · Central Vietnam', 'Heritage rain, cave country, coast and highland cultivation', 'Central routes share a long coast but not one weather system. Rail, road, flood, marine and mountain conditions need separate clocks.'],
@@ -231,20 +317,25 @@ function countryPage() {
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Vietnam Travel Guide — 14 Complete Regional Hubs | TripDistill</title><meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="https://tripdistill.com/vietnam/">${hreflang('/vietnam/')}
   <meta name="theme-color" content="#9b3028"><meta property="og:type" content="website"><meta property="og:site_name" content="TripDistill"><meta property="og:title" content="Vietnam — the north–south field atlas"><meta property="og:description" content="Fourteen complete hubs and eighty-four focused guides from Hanoi to the southern islands."><meta property="og:url" content="https://tripdistill.com/vietnam/"><meta property="og:image" content="${absolute(hero.src)}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="${siteCss}"><link rel="stylesheet" href="${countryCss}"><link rel="stylesheet" href="${countryRouteCss}">
   <script src="/js/adsense.js?v=20260826-9" defer></script><script type="application/ld+json">${JSON.stringify(countrySchema())}</script>
 </head>
 <body data-page="vietnam" data-country="vietnam">
   <a class="skip-link" href="#main-content">Skip to content</a><div id="layout-header"></div><div class="site-shell"><div class="mobile-overlay" data-mobile-overlay aria-hidden="true"></div><aside id="layout-sidebar" class="sidebar" aria-label="TripDistill navigation"></aside>
     <main id="main-content" class="page-content vn-country">
-      <section class="vn-country-hero" aria-labelledby="vn-country-title"><div class="vn-country-copy"><span class="vn-kicker">North–south field atlas · reviewed ${reviewDate}</span><h1 id="vn-country-title">Vietnam <span>follow the curve, not a checklist.</span></h1><p>Build the trip as a geographic argument. Fourteen complete hubs separate city walking, highland roads, heritage thresholds, marine forecasts, cave permits and delta tides before they become one overloaded itinerary.</p><div class="hero-actions"><a class="button primary" href="#regions">Compare 14 hubs</a><a class="button secondary" href="#transport">Read the transfer spine</a></div><div class="vn-country-facts"><div><strong>14</strong><span>complete hubs</span></div><div><strong>84</strong><span>focused chapters</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="vn-spine" aria-hidden="true"><span>Hanoi</span><i></i><span>Central coast</span><i></i><span>Mekong</span></div></section>
+      <section class="vn-country-hero" aria-labelledby="vn-country-title"><div class="vn-country-copy"><span class="vn-kicker">North–south field atlas · reviewed ${countryReviewDate}</span><h1 id="vn-country-title">Vietnam <span>follow the curve, not a checklist.</span></h1><p>Build the trip as a geographic argument. Fourteen complete hubs separate city walking, highland roads, heritage thresholds, marine forecasts, cave permits and delta tides before they become one overloaded itinerary.</p><div class="hero-actions"><a class="button primary" href="#starter-routes">Choose a trip length</a><a class="button secondary" href="#regions">Compare 14 hubs</a><a class="button secondary" href="#transport">Read the transfer spine</a></div><div class="vn-country-facts"><div><strong>14</strong><span>complete hubs</span></div><div><strong>84</strong><span>focused chapters</span></div><div><strong>5</strong><span>static languages</span></div></div></div><figure><img src="${hero.src}" width="1600" height="1066" alt="${escapeHtml(hero.alt)}" fetchpriority="high"><figcaption>${escapeHtml(hero.label)} · ${escapeHtml(hero.license)}</figcaption></figure><div class="vn-spine" aria-hidden="true"><span>Hanoi</span><i></i><span>Central coast</span><i></i><span>Mekong</span></div></section>
       <section class="vn-country-intro" aria-label="Vietnam planning principles"><article><span>01</span><h2>Choose one regional clock.</h2><p>Northern winter, central rain, southern thunderstorms and island sea conditions do not obey one national “best season.”</p></article><article><span>02</span><h2>Protect identity-bound transport.</h2><p>Flights, trains, regulated cave programs and named boats deserve confirmed operators, stations, ports and cancellation rules.</p></article><article><span>03</span><h2>Keep living places alive.</h2><p>Markets, temples, farms, villages and memorial landscapes require consent and context, not a camera-first route.</p></article></section>
       <section class="section compact" aria-label="Advertisement"><div class="ad-slot" data-ad-slot><div><strong>Advertisement</strong><span>Responsive AdSense placement reserved</span></div></div></section>
+      <section class="vn-country-section vn-trip-models" id="starter-routes" aria-labelledby="vn-trip-models-title"><div class="vn-band-heading"><span>Count nights · protect the handoffs</span><h2 id="vn-trip-models-title">Three first-trip shapes with honest trade-offs.</h2><p>These are hotel-night plans, not promises of same-day connections. Arrival and departure are partial days; check the actual rail, flight and road handoffs before fixing tickets.</p></div><div class="vn-trip-model-grid">
+        <article class="vn-trip-model vn-trip-model--seven"><header><span>7 nights · stay north</span><h3>One compact karst corridor</h3><p>Choose either a Ha Long cruise base or Cat Ba island. Adding Sapa or Hà Giang would turn this into a transfer checklist.</p></header><ol class="vn-trip-stops"><li><small>2 nights</small><strong>Hanoi</strong><p>Arrive, recover and keep the first full day in the capital.</p></li><li><small>2 nights</small><strong>Ninh Binh</strong><p>Use a train or road transfer only after matching the arrival station to your lodging and last mile.</p></li><li><small>2 nights</small><strong>Ha Long <em>or</em> Cat Ba</strong><p>For Ha Long, match the named vessel to its confirmed pier. For Cat Ba, confirm every island, ferry or road leg.</p></li><li><small>1 night</small><strong>Hanoi</strong><p>Return before the departure day; do not put a boat or long road transfer against an international flight.</p></li></ol><aside><strong>Weather fallback</strong><p>If fog, heavy rain or a marine cancellation disrupts the bay, keep the extra time in Hanoi or Ninh Binh. Leave the far northern road loop for a longer trip.</p></aside></article>
+        <article class="vn-trip-model vn-trip-model--twelve"><header><span>12 nights · north to south</span><h3>Rail spine, then one flight</h3><p>Five bases are already active: avoid adding a highland loop unless you remove a region or extend the trip.</p></header><ol class="vn-trip-stops"><li><small>2 nights</small><strong>Hanoi</strong><p>Keep arrival day light; buy only a train whose station, date and berth suit your plan.</p></li><li><small>2 nights</small><strong>Ninh Binh</strong><p>Take the Hanoi–Ninh Binh rail link or a road transfer, then arrange the local ride to your actual stay.</p></li><li><small>1 night · train</small><strong>Ninh Binh → Hue</strong><p>Use an overnight sleeper only when the live timetable and berth are available; this night is travel, not sightseeing.</p></li><li><small>2 nights</small><strong>Hue</strong><p>Give the citadel and the river side their own daylight; do not force a same-day arrival tour.</p></li><li><small>3 nights</small><strong>Da Nang / Hoi An</strong><p>Choose a Hue–Da Nang train or road transfer, then confirm the separate road ride to Hoi An.</p></li><li><small>2 nights</small><strong>Ho Chi Minh City</strong><p>A Da Nang flight protects time; a rail alternative consumes a long leg, so drop a base or add nights.</p></li></ol><aside><strong>Do the arithmetic</strong><p>2 + 2 + 1 sleeper + 2 + 3 + 2 = 12 nights. If the train does not fit, move one night from a stop only when that still leaves a useful visit.</p></aside></article>
+        <article class="vn-trip-model vn-trip-model--fourteen"><header><span>14 nights · add the delta slowly</span><h3>Trade a city night for Can Tho</h3><p>Keep the north and central route, but split the southern finish so the river is not a rushed day trip.</p></header><ol class="vn-trip-stops"><li><small>2 nights</small><strong>Hanoi</strong><p>Use the same easy arrival base and reserve the chosen rail leg.</p></li><li><small>2 nights</small><strong>Ninh Binh</strong><p>Keep the local transfer separate from the main station arrival.</p></li><li><small>1 night · train</small><strong>Ninh Binh → Hue</strong><p>Count the sleeper as a night in transit only if the current service and berth match.</p></li><li><small>2 nights</small><strong>Hue</strong><p>Keep a weather or schedule margin around the central heritage visit.</p></li><li><small>3 nights</small><strong>Da Nang / Hoi An</strong><p>Move between the railway and lodging by a separately confirmed road transfer.</p></li><li><small>1 night</small><strong>Ho Chi Minh City</strong><p>Use a checked road or air link to Can Tho; confirm the next morning’s river operator directly.</p></li><li><small>2 nights</small><strong>Can Tho</strong><p>Choose a locally confirmed boat and tide window; a market or canal visit is not guaranteed by the hotel booking.</p></li><li><small>1 night</small><strong>Ho Chi Minh City</strong><p>Return the day before the international flight and keep the last transfer on land.</p></li></ol><aside><strong>Keep the buffer</strong><p>2 + 2 + 1 sleeper + 2 + 3 + 1 + 2 + 1 = 14 nights. If you cannot keep the final Ho Chi Minh City night, skip Can Tho this time.</p></aside></article>
+      </div><p class="vn-trip-source-note">For Hanoi–Ninh Binh–Hue–Da Nang–Saigon rail choices, compare the actual date, train, station, berth and current fare on <a href="https://giotaugiave.dsvn.vn/" target="_blank" rel="noopener">Vietnam Railways’ official timetable and ticket portal</a>. Watch the regional forecast on the <a href="https://kttv.gov.vn/kttv/" target="_blank" rel="noopener">National Center for Hydro-Meteorological Forecasting</a>; do not treat a seasonal average as a travel-day operating notice.</p></section>
       <div id="regions">${bands.map(([band, kicker, heading, copy]) => `<section class="vn-country-band" data-band="${band}" aria-labelledby="vn-${band}-title"><div class="vn-band-heading"><span>${kicker}</span><h2 id="vn-${band}-title">${heading}</h2><p>${copy}</p></div><div class="vn-country-grid">${countryCards(band)}</div></section>`).join('')}</div>
       <section class="vn-country-section" id="transport" aria-labelledby="vn-transport-title"><div class="vn-band-heading"><span>Transfer spine</span><h2 id="vn-transport-title">Match the vehicle to the geography.</h2><p>Verify current schedules on the named official operator. A map line does not prove a useful same-day connection.</p></div><div class="vn-transport-grid"><article><small>Rail</small><h3>Use stations as anchors</h3><p>The north–south railway can link Hanoi, Ninh Binh, Hue, Da Nang and Ho Chi Minh City, but each exact train, berth, station and arrival hour must be checked.</p></article><article><small>Flight</small><h3>Bridge only earned distance</h3><p>Flights can protect a north–central–south route. Airport transfer, terminal and weather margin belong to the ticket.</p></article><article><small>Road</small><h3>Separate city from mountain</h3><p>Highland loops, national parks and rural corridors require daylight, capable drivers, weather checks and realistic fuel or rest stops.</p></article><article><small>Water</small><h3>Name the port and operator</h3><p>Bay cruises, river boats, ferries and island transfers run on different permits, sea states, tides and return contracts.</p></article></div></section>
       <section class="vn-country-section" aria-labelledby="vn-season-title"><div class="vn-band-heading"><span>Three weather clocks</span><h2 id="vn-season-title">Do not reduce Vietnam to one monsoon.</h2></div><div class="vn-season-board"><article><strong>North</strong><p>Temperature, fog, mountain visibility, rainfall and road stability change by elevation as well as month.</p></article><article><strong>Central</strong><p>Coastal rain, flood, heat, cave water and mountain weather can interrupt different routes on the same day.</p></article><article><strong>South</strong><p>Heat, thunderstorms, delta water, tide and open-sea conditions shape urban, wetland and island plans differently.</p></article></div></section>
-      <section class="vn-country-section" aria-labelledby="vn-country-faq-title"><div class="vn-band-heading"><span>Planning answers</span><h2 id="vn-country-faq-title">Vietnam FAQ</h2></div><div class="faq-list"><details><summary>How much time does a first Vietnam route need?</summary><div class="faq-answer"><p>Two focused weeks can connect one northern, central and southern argument. Three weeks gives weather and transfer buffers. A short trip should remain in one region.</p></div></details><details><summary>Should I book every transfer before arrival?</summary><div class="faq-answer"><p>Secure identity-bound flights, trains and regulated expeditions first. Keep local road and boat days flexible enough for current weather and operator checks.</p></div></details><details><summary>Does one season work for all of Vietnam?</summary><div class="faq-answer"><p>No. Northern highlands, central coast and southern delta have different temperature, rain, flood and sea patterns. Check each region rather than applying one national label.</p></div></details></div></section>
-      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Country planning and image licenses were reviewed on ${reviewDate}. Immigration, transport, weather, park, marine and operator rules change; verify directly before travel.</p><ul>${sourceList(vietnamCountrySources)}${vietnamClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${reviewDate} · Recheck time-sensitive details before booking.</span></section>
+      <section class="vn-country-section" aria-labelledby="vn-country-faq-title"><div class="vn-band-heading"><span>Planning answers</span><h2 id="vn-country-faq-title">Vietnam FAQ</h2></div><div class="faq-list"><details><summary>How much time does a first Vietnam route need?</summary><div class="faq-answer"><p>Seven nights suit Hanoi, Ninh Binh and one bay. Twelve nights can add Hue, Hoi An and Ho Chi Minh City with an overnight train and a flight. Fourteen nights make room for two nights in Can Tho, provided you return to Ho Chi Minh City before the international flight.</p></div></details><details><summary>Should I book every transfer before arrival?</summary><div class="faq-answer"><p>Secure identity-bound flights, trains and regulated expeditions first. Keep local road and boat days flexible enough for current weather and operator checks.</p></div></details><details><summary>Does one season work for all of Vietnam?</summary><div class="faq-answer"><p>No. Northern highlands, central coast and southern delta have different temperature, rain, flood and sea patterns. Check each region rather than applying one national label.</p></div></details><details><summary>Should I add Sapa or Ha Giang to a twelve-night route?</summary><div class="faq-answer"><p>Only by removing another region or adding nights. Each highland trip needs several road days, a daylight return plan and a weather buffer; do not compress it into a city-to-city transfer.</p></div></details></div></section>
+      <section class="section sources" aria-labelledby="sources-title"><h2 id="sources-title">Official sources and photo credits</h2><p>Country planning was reviewed on ${countryReviewDate}. Image sources and licenses are credited individually; verify current travel rules before booking.</p><ul>${sourceList(vietnamCountrySources)}${vietnamClusters.map((cluster) => imageCredit(cluster.guides[0].image)).join('')}</ul><span class="review-note">Editorial review: ${countryReviewDate} · Recheck time-sensitive details before booking.</span></section>
     </main>
   </div><div id="layout-footer"></div><script src="${mainJs}" defer></script>
 </body>
@@ -294,20 +385,44 @@ function updateHeader() {
 function updateFooter() {
   const file = path.join(root, 'components', 'footer.html');
   let html = fs.readFileSync(file, 'utf8');
-  if (!html.includes('href="/vietnam/"')) {
-    const anchor = '<div class="footer-column"><h2>Explore</h2><div class="footer-links">';
-    const links = `<a href="/vietnam/">Vietnam</a>${vietnamClusters.map((cluster) => `<a href="/vietnam/${cluster.slug}/">${escapeHtml(cluster.name)}</a>`).join('')}`;
-    html = html.replace(anchor, `${anchor}${links}`);
-  }
+  const start = '<!-- VIETNAM_FOOTER_START -->';
+  const end = '<!-- VIETNAM_FOOTER_END -->';
+  if (!html.includes(start) || !html.includes(end)) throw new Error('Vietnam footer markers missing.');
+  const links = `<a href="/vietnam/">Vietnam</a>${vietnamClusters.map((cluster) => `<a href="/vietnam/${cluster.slug}/">${escapeHtml(cluster.name)}</a>`).join('')}`;
+  html = replaceMarked(html, start, end, `${start}${links}${end}`);
   fs.writeFileSync(file, html);
 }
 
-function updateSearch() {
+function updateSearch(routeFilter = null) {
   const file = path.join(root, 'data', 'search-index.json');
-  const current = JSON.parse(fs.readFileSync(file, 'utf8')).filter((item) => !item.url.startsWith('/vietnam/'));
+  const allRecords = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (routeFilter) {
+    const byUrl = new Map(allRecords.map((item) => [item.url, item]));
+    if (routeFilter.has('/vietnam/')) {
+      const country = byUrl.get('/vietnam/');
+      if (!country) throw new Error('Cannot update missing Vietnam country search record /vietnam/.');
+      country.summary = countryDescription;
+      country.keywords = ['vietnam', 'viet nam', 'hanoi', 'ninh binh', 'hue', 'da nang', 'hoi an', 'ho chi minh city', 'can tho', 'mekong delta', '7 night vietnam itinerary', '12 night vietnam itinerary', '14 night vietnam itinerary', 'vietnam railway schedule', 'vietnam travel guide'];
+    }
+    for (const cluster of vietnamClusters.filter((item) => routeFilter.has(`/vietnam/${item.slug}/`))) {
+      const record = byUrl.get(`/vietnam/${cluster.slug}/`);
+      if (!record) throw new Error(`Cannot update missing Vietnam hub search record /vietnam/${cluster.slug}/`);
+      record.summary = cluster.hubIntro;
+      if (cluster.slug === 'ha-long-cat-ba') record.keywords = ['ha long bay', 'bai tu long bay', 'ao tien port van don', 'tuan chau cruise port', 'ha long international passenger port', 'cat ba ferry dong bai cai vieng', 'cat ba town', 'ben beo lan ha pier', 'lan ha bay', 'cat ba national park', 'vietnam maritime karst route'];
+    }
+    for (const guide of vietnamGuides.filter((item) => routeFilter.has(item.url))) {
+      const record = byUrl.get(guide.url);
+      if (!record) throw new Error(`Cannot update missing Vietnam search record ${guide.url}`);
+      record.summary = guide.summary;
+      record.keywords = [...new Set([guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide', ...(guide.searchKeywords || [])])];
+    }
+    fs.writeFileSync(file, JSON.stringify(allRecords, null, 2) + '\n');
+    return;
+  }
+  const current = allRecords.filter((item) => !item.url.startsWith('/vietnam/'));
   const country = { title: 'Vietnam Travel Guide', url: '/vietnam/', parent: 'Asia', type: 'Country field atlas', summary: 'Fourteen complete hubs and eighty-four focused guides from Hanoi and the northern highlands to the central coast, delta and southern islands.', keywords: ['vietnam', 'viet nam', 'hanoi', 'ho chi minh city', 'hoi an', 'mekong delta', 'vietnam travel guide'] };
   const hubs = vietnamClusters.map((cluster) => ({ title: `${cluster.name} Travel Guide`, url: `/vietnam/${cluster.slug}/`, parent: `Vietnam · ${cluster.region}`, type: 'Complete regional hub with six field guides', summary: cluster.hubIntro, keywords: [cluster.name.toLowerCase(), cluster.slug.replaceAll('-', ' '), cluster.region.toLowerCase(), ...cluster.guides.map((guide) => guide.name.toLowerCase())] }));
-  const guides = vietnamGuides.map((guide) => ({ title: `${guide.name} Guide`, url: guide.url, parent: `Vietnam · ${guide.hubName}`, type: 'Focused area and decision guide', summary: guide.summary, keywords: [guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide'] }));
+  const guides = vietnamGuides.map((guide) => ({ title: `${guide.name} Guide`, url: guide.url, parent: `Vietnam · ${guide.hubName}`, type: 'Focused area and decision guide', summary: guide.summary, keywords: [...new Set([guide.name.toLowerCase(), guide.hubName.toLowerCase(), guide.slug.replaceAll('-', ' '), guide.motif.toLowerCase(), 'vietnam travel guide', ...(guide.searchKeywords || [])])] }));
   fs.writeFileSync(file, JSON.stringify([...current, country, ...hubs, ...guides], null, 2) + '\n');
 }
 
@@ -373,17 +488,51 @@ function updateEnglishMainScriptReferences() {
   return changed;
 }
 
-for (const [index, cluster] of vietnamClusters.entries()) {
+const hueOnly = process.argv.includes('--hue-only');
+const routeArgument = process.argv.find((value) => value.startsWith('--routes='))?.slice('--routes='.length);
+const requestedRoutes = routeArgument?.split(',').map((route) => route.trim()).filter(Boolean) || [];
+const targeted = routeArgument !== undefined;
+if (hueOnly && targeted) throw new Error('Use either --hue-only or --routes, not both.');
+if (targeted && (!requestedRoutes.length || new Set(requestedRoutes).size !== requestedRoutes.length)) throw new Error('--routes must contain unique, non-empty public route paths.');
+const guidesByRoute = new Map(vietnamGuides.map((guide) => [guide.url, guide]));
+const clustersByRoute = new Map(vietnamClusters.map((cluster) => [`/vietnam/${cluster.slug}/`, cluster]));
+const countryRouteRequested = requestedRoutes.includes('/vietnam/');
+const requestedHubRoutes = requestedRoutes.filter((route) => clustersByRoute.has(route));
+const requestedGuideRoutes = requestedRoutes.filter((route) => route !== '/vietnam/' && !clustersByRoute.has(route));
+const unknownRoutes = requestedGuideRoutes.filter((route) => !guidesByRoute.has(route));
+if (unknownRoutes.length) throw new Error(`Unknown Vietnam child routes: ${unknownRoutes.join(', ')}`);
+const unknownHubRoutes = requestedRoutes.filter((route) => route !== '/vietnam/' && route.endsWith('/') && route.split('/').filter(Boolean).length === 2 && !clustersByRoute.has(route));
+if (unknownHubRoutes.length) throw new Error(`Unknown Vietnam hub routes: ${unknownHubRoutes.join(', ')}`);
+const clustersToGenerate = hueOnly ? vietnamClusters.filter((cluster) => cluster.slug === 'hue') : targeted ? requestedHubRoutes.map((route) => clustersByRoute.get(route)) : vietnamClusters;
+const hueEditorialGuideSlugs = new Set(['imperial-city-citadel', 'royal-tombs', 'thien-mu-perfume-river']);
+const guidesToGenerate = hueOnly ? vietnamGuides.filter((guide) => guide.hubSlug === 'hue' && hueEditorialGuideSlugs.has(guide.slug)) : targeted ? requestedGuideRoutes.map((route) => guidesByRoute.get(route)) : vietnamGuides;
+if (hueOnly && clustersToGenerate.length !== 1) throw new Error('Hue-only generation requires exactly one Hue cluster.');
+if (hueOnly && guidesToGenerate.length !== hueEditorialGuideSlugs.size) throw new Error('Hue-only generation requires the three approved Hue guide refreshes.');
+
+for (const cluster of clustersToGenerate) {
+  const index = vietnamClusters.indexOf(cluster);
   const file = routeFile(`/vietnam/${cluster.slug}/`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, hubPage(cluster, index));
 }
-for (const guide of vietnamGuides) {
+for (const guide of guidesToGenerate) {
   const cluster = vietnamClusters.find((item) => item.slug === guide.hubSlug);
   const file = routeFile(guide.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, guidePage(guide, cluster));
 }
+if (targeted) {
+  if (countryRouteRequested) {
+    const countryFile = routeFile('/vietnam/');
+    fs.mkdirSync(path.dirname(countryFile), { recursive: true });
+    fs.writeFileSync(countryFile, countryPage());
+  }
+  updateSearch(new Set(requestedRoutes));
+  console.log(`Generated ${countryRouteRequested ? 'the Vietnam country page, ' : ''}${clustersToGenerate.length} requested Vietnam hubs, ${guidesToGenerate.length} requested Vietnam child pages, and synchronized only their search records: ${requestedRoutes.join(', ')}.`);
+} else if (hueOnly) {
+  updateHueSiblingPhotoCredits(clustersToGenerate[0]);
+  console.log('Generated Hue only: 1 hub and 3 refreshed guides; the remaining 3 Hue siblings received only the current tomb-photo credit. Country shell, shared navigation, search and other regions were not rewritten.');
+} else {
 const countryFile = routeFile('/vietnam/');
 fs.mkdirSync(path.dirname(countryFile), { recursive: true });
 fs.writeFileSync(countryFile, countryPage());
@@ -396,3 +545,4 @@ updateAbout();
 const updatedMainReferences = updateEnglishMainScriptReferences();
 
 console.log(`Generated Vietnam: 1 country hub, ${vietnamClusters.length} regional hubs, ${vietnamGuides.length} focused guides, synchronized English shell/search, and ${updatedMainReferences} script references.`);
+}

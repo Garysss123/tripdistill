@@ -1,0 +1,30 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kota kinabalu international airport": "コタキナバル国際空港",
+    "jesselton point south jetty": "ジェッセルトン・ポイント南桟橋",
+    "dbkk jetty": "DBKK Jetty（桟橋）",
+    "sabah state museum": "サバ州立博物館",
+    "tanjung aru beach": "タンジュンアル・ビーチ",
+    "metmalaysia marine forecast": "マレーシア気象局の海上予報",
+    "Malaysia - Kota Kinabalu & Tunku Abdul Rahman Park": "マレーシア — コタキナバルとトゥンク・アブドゥル・ラーマン公園",
+    "gaya street sunday market": "ガヤストリートの日曜市",
+    "atkinson clock tower": "アトキンソン時計台",
+    "kk heritage walk": "コタキナバルのヘリテージウォーク",
+    "sabah tourism building": "サバ観光局の建物",
+    "jesselton point waterfront": "ジェッセルトン・ポイント・ウォーターフロント",
+    "jalan muzium": "Jalan Muzium",
+    "perdana park": "ペルダナパーク",
+    "manukan island": "マヌカン島",
+    "mamutik island": "マムティック島",
+    "sabah parks island facilities": "サバ公園局の島内施設",
+    "sapi island": "サピ島",
+    "gaya island": "ガヤ島",
+    "gaya island resort": "ガヤ島のリゾート",
+    "sutera harbour marina": "スーテラ・ハーバーの桟橋"
+  }
+}

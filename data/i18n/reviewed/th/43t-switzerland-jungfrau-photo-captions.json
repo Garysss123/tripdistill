@@ -1,0 +1,23 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/switzerland/jungfrau-region/",
+    "/switzerland/jungfrau-region/lauterbrunnen-valley/",
+    "/switzerland/jungfrau-region/wengen-kleine-scheidegg/",
+    "/switzerland/jungfrau-region/grindelwald-first/"
+  ],
+  "translations": {
+    "Lauterbrunnen Valley and Staubbach Falls · Public domain": "หุบเขาเลาเทอร์บรุนเนนและน้ำตกชเตาบ์บัค · สาธารณสมบัติ",
+    "Lauterbrunnen Valley and Staubbach Falls": "หุบเขาเลาเทอร์บรุนเนนและน้ำตกชเตาบ์บัค",
+    "Snowbound Kleine Scheidegg below the Jungfrau massif": "ไคลเนอไชเดกที่ปกคลุมด้วยหิมะเบื้องล่างเทือกเขายุงเฟรา",
+    "Bachalpsee and the Grindelwald-First panorama": "ทะเลสาบบาคอัลป์ซีและทิวทัศน์ภูเขาจากเส้นทางกรินเดลวัลด์-เฟิร์สต์",
+    "Snowbound Kleine Scheidegg below the Jungfrau massif · CC BY-SA 3.0": "ไคลเนอไชเดกที่ปกคลุมด้วยหิมะเบื้องล่างเทือกเขายุงเฟรา · CC BY-SA 3.0",
+    "Bachalpsee and the Grindelwald-First panorama · CC BY-SA 4.0": "ทะเลสาบบาคอัลป์ซีและทิวทัศน์ภูเขาจากเส้นทางกรินเดลวัลด์-เฟิร์สต์ · CC BY-SA 4.0"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

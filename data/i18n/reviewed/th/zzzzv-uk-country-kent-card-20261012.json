@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/united-kingdom/"
+  ],
+  "translations": {
+    "Brighton, Canterbury, Dover and the Seven Sisters are four different days connected by different rail and bus legs. Brighton is a downhill city-and-seafront plan…": "ไบรตัน แคนเทอร์เบอรี โดเวอร์ และเซเวนซิสเตอร์สเป็นแผนคนละวันและใช้ช่วงรถไฟกับรถบัสต่างกัน จากสถานีไบรตันเดินลงสู่เมืองและชายทะเล…"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

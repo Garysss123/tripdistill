@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris/",
+    "/france/paris/seine-islands-latin-quarter/",
+    "/france/paris/louvre-tuileries-opera/",
+    "/france/paris/eiffel-invalides-montparnasse/"
+  ],
+  "translations": {
+    "It is an uphill branch beyond the lower Latin Quarter, so give it a separate time block and check current entry information. Cluny and Saint-Germain make a flatter finish; Cluny also includes visible remains of Lutetia’s Roman baths, including the monumental frigidarium. Check the museum’s current route and access page before assuming every archaeological space is open on your date.": "ラテン地区の低地から坂を上るルートになるため、別に時間を確保し、現在の入場情報を確認してください。クリュニーとサンジェルマン地区なら比較的平坦に歩いて締めくくれます。クリュニー美術館の敷地内には、記念碑的なフリギダリウムを含むルテティアのローマ浴場の遺構もあります。訪問日にすべての考古学的空間が公開されていると決めつけず、現在の見学ルートとアクセス案内を確認してください。",
+    "Choose a small connected group that matches your interest and energy. The museum’s official visitor trails and live gallery list help bound the walk. Room 345 for the Venus de Milo, the Daru staircase and room 703 for Winged Victory, and Salle des États / room 711 for the Mona Lisa are route examples, never promises of access; confirm the day’s rooms before choosing two neighboring areas.": "興味や体力に合う、つながりのよい展示エリアを少し選びましょう。美術館の公式見学コースと当日の公開展示室一覧を使うと、歩く範囲を決めやすくなります。ミロのヴィーナス（345号室）、サモトラケのニケ（ダリュ階段、703号室）、モナ・リザ（サル・デ・ゼタ／711号室）は順路を考えるための例で、入室を保証するものではありません。隣接する展示エリアを2つ選ぶ前に、当日の展示室一覧を確認してください。",
+    "Yes, if one is the primary interior. A tower ticket plus a short Champ de Mars walk can fit with an Invalides exterior; a focused Dôme and tomb visit with one museum section can fill a half-day. Several collection periods and a meal can take most of a day; six hours is an optional planning example, not a minimum. Check the live opening and ticket coverage before booking.": "はい。ただし屋内見学の中心はどちらかひとつにしましょう。エッフェル塔の入場券とシャン・ド・マルスの短い散策を組み合わせ、アンヴァリッドは外観を見る計画なら両方を回れます。ドームと墓、さらに美術館の展示部門をひとつじっくり見学するなら半日を見込みましょう。複数の時代のコレクションを巡り食事も取る場合は、一日の大半が必要です。6時間は任意の計画例で、最低所要時間ではありません。予約前に当日の開館状況とチケットの対象範囲を確認してください。"
+  }
+}

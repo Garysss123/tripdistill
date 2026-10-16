@@ -1,0 +1,277 @@
+/* Ottawa–Gatineau uses a civic corridor and river-crossing board, not the shared regional-card rhythm. */
+.ca-hub[data-ca-family="capital-axis"],
+.ca-field[data-ca-family="capital-axis"] {
+  --ca-family: #a32e37;
+  --ca-family-dark: #252f3a;
+  --ca-family-soft: #e8eff0;
+  --ca-line: #c5ced0;
+  --ca-paper: #fbfaf6;
+}
+
+.ca-ottawa-hub .ca-hub-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #8f2630;
+  background:
+    linear-gradient(114deg, #202c37 0 57%, #314653 57% 65%, #d9e5e3 65% 100%);
+  box-shadow: 0 1.8rem 4rem rgb(37 47 58 / 18%);
+}
+
+.ca-ottawa-hub .ca-hub-hero::before {
+  content: "OTTAWA  /  RIVER  /  GATINEAU";
+  position: absolute;
+  z-index: 2;
+  right: 1rem;
+  bottom: 1rem;
+  padding: .45rem .7rem;
+  color: #fff;
+  background: #252f3a;
+  border-left: .25rem solid #c95a54;
+  font: 800 .58rem/1.2 ui-monospace, monospace;
+  letter-spacing: .11em;
+}
+
+.ca-ottawa-hub .ca-hub-copy {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.ca-ottawa-hub .ca-hub-copy h1 {
+  max-width: 9ch;
+  font-size: clamp(3rem, 5.8vw, 6.2rem);
+  line-height: .86;
+  letter-spacing: -.065em;
+}
+
+.ca-ottawa-hub .ca-tagline {
+  color: #f1c5b7;
+  font-family: Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1.25;
+}
+
+.ca-ottawa-hub .ca-hub-copy > p:not(.ca-tagline) {
+  max-width: 48rem;
+  color: rgb(255 255 255 / 82%);
+}
+
+.ca-ottawa-hub .ca-hub-hero figure {
+  border-left: .55rem solid #b94348;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.ca-ottawa-hub .ca-hub-stats {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1.15fr;
+  margin-top: 1.1rem;
+  border: 1px solid #c5ced0;
+  background: #fbfaf6;
+}
+
+.ca-ottawa-hub .ca-hub-stats article {
+  min-width: 0;
+  padding: clamp(1rem, 2.3vw, 1.7rem);
+  border-right: 1px solid #c5ced0;
+  border-top: .35rem solid #a32e37;
+}
+
+.ca-ottawa-hub .ca-hub-stats article:last-child { border-right: 0; }
+.ca-ottawa-hub .ca-hub-stats small,
+.ca-ottawa-hub .ca-hub-heading > span,
+.ca-ottawa-hub .ca-route-compare > a > span {
+  color: #8f2630;
+  font: 900 .6rem/1.3 ui-monospace, monospace;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.ca-ottawa-hub .ca-hub-stats p,
+.ca-ottawa-hub .ca-route-compare p,
+.ca-ottawa-hub .ca-city-plan p { color: #4d5c63; }
+
+.ca-ottawa-hub .ca-hub-section { position: relative; }
+.ca-ottawa-hub .ca-hub-heading {
+  border-top: .35rem solid #252f3a;
+  padding-top: 1rem;
+}
+
+.ca-ottawa-hub .ca-hub-heading h2 {
+  max-width: 16ch;
+  color: #252f3a;
+  font: 950 clamp(2.3rem, 4.4vw, 4.6rem)/.9 Arial, sans-serif;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.ca-ottawa-hub .ca-hub-card {
+  border: 1px solid #c5ced0;
+  border-top: .5rem solid #a32e37;
+  background: #fbfaf6;
+  box-shadow: 0 .9rem 2rem rgb(37 47 58 / 8%);
+}
+
+.ca-ottawa-hub .ca-hub-card:nth-child(2) { border-top-color: #4c7881; }
+.ca-ottawa-hub .ca-hub-card:nth-child(3) { border-top-color: #517452; }
+.ca-ottawa-hub .ca-hub-card img { filter: saturate(.82); }
+
+.ca-ottawa-hub .ca-city-plan {
+  position: relative;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  align-items: stretch;
+}
+
+.ca-ottawa-hub .ca-city-plan article {
+  position: relative;
+  min-width: 0;
+  padding: 1.4rem;
+  background: #fbfaf6;
+  border: 1px solid #c5ced0;
+  border-left: .35rem solid #a32e37;
+}
+
+.ca-ottawa-hub .ca-city-plan article:nth-child(2) { border-left-color: #4c7881; }
+.ca-ottawa-hub .ca-city-plan article:nth-child(3) { border-left-color: #517452; }
+.ca-ottawa-hub .ca-city-plan article > span { color: #8f2630; }
+
+.ca-ottawa-hub .ca-route-compare {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.ca-ottawa-hub .ca-route-compare > a {
+  min-width: 0;
+  padding: 1.3rem;
+  border: 1px solid #c5ced0;
+  border-bottom: .35rem solid #a32e37;
+  background: #fbfaf6;
+}
+
+.ca-ottawa-hub .ca-route-compare > a:nth-child(2) { border-bottom-color: #4c7881; }
+.ca-ottawa-hub .ca-route-compare > a:nth-child(3) { border-bottom-color: #517452; }
+.ca-ottawa-hub .ca-route-compare h3 { color: #252f3a; }
+
+.ca-field[data-ca-family="capital-axis"] .ca-field-hero {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3.7rem, rgb(255 255 255 / 5%) 3.75rem 3.82rem),
+    linear-gradient(135deg, #252f3a, #374d5a 68%, #7c9291);
+  border-bottom: .65rem solid #a32e37;
+}
+
+.ca-field[data-ca-family="capital-axis"] .ca-field-hero figure {
+  border-left: .55rem solid #c75a54;
+}
+
+.ca-field[data-ca-family="capital-axis"][data-ca-layout="reservation-docket"] .ca-field-hero {
+  border-style: double;
+}
+
+.ca-field[data-ca-family="capital-axis"] .ca-route-step {
+  min-height: 23rem;
+  border-top: .32rem solid #a32e37;
+}
+
+.ca-field[data-ca-family="capital-axis"] .ca-route-step:nth-child(2) { border-top-color: #4c7881; }
+.ca-field[data-ca-family="capital-axis"] .ca-route-step:nth-child(3) { border-top-color: #517452; }
+.ca-field[data-ca-family="capital-axis"] .ca-route-step:nth-child(4) { border-top-color: #c7954b; }
+
+.ca-ottawa-instrument {
+  position: absolute;
+  z-index: 5;
+  top: 1rem;
+  right: 1rem;
+  width: 10rem;
+  padding: .9rem;
+  color: #fff;
+  background: rgb(37 47 58 / 92%);
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-top: .25rem solid #c75a54;
+  text-align: right;
+}
+
+.ca-ottawa-instrument span,
+.ca-ottawa-instrument small {
+  display: block;
+  font: 800 .55rem/1.35 ui-monospace, monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.ca-ottawa-instrument strong {
+  display: block;
+  margin: .35rem 0;
+  color: #f1c5b7;
+  font: 950 2.4rem/.9 Arial, sans-serif;
+}
+
+.ca-ottawa-brief {
+  display: grid;
+  grid-template-columns: minmax(15rem, .72fr) minmax(0, 1.28fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  margin: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(1.2rem, 3vw, 2.3rem);
+  color: #fff;
+  background: #252f3a;
+  border-left: .55rem solid #a32e37;
+}
+
+.ca-ottawa-brief .ca-section-label { color: #f1c5b7; }
+.ca-ottawa-brief h2 { color: #fff; font: 950 clamp(2rem, 3.5vw, 3.6rem)/.9 Arial, sans-serif; letter-spacing: -.05em; text-transform: uppercase; }
+.ca-ottawa-brief p { color: rgb(255 255 255 / 78%); }
+.ca-ottawa-quickfacts { display: grid; gap: .6rem; }
+.ca-ottawa-quickfacts article { padding: .8rem 1rem; border: 1px solid rgb(255 255 255 / 22%); background: rgb(255 255 255 / 5%); }
+.ca-ottawa-quickfacts small { color: #f1c5b7; font: 850 .58rem/1.25 ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.ca-ottawa-quickfacts p { margin: .4rem 0 0; }
+
+.ca-ottawa-route-diagram {
+  max-width: 1120px;
+  margin: clamp(1.5rem, 4vw, 3rem) auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.ca-ottawa-route-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #b8c5c7;
+  border-radius: .4rem 2rem .4rem .4rem;
+  background: #fbfaf6;
+  box-shadow: 0 1rem 2.5rem rgb(37 47 58 / 12%);
+}
+
+.ca-ottawa-route-diagram figcaption {
+  margin-top: .65rem;
+  color: #465a60;
+  font-size: .82rem;
+}
+
+.ca-ottawa-verify > p {
+  max-width: 68rem;
+  padding: 1rem 1.2rem;
+  color: #3f5259;
+  background: #e8eff0;
+  border-left: .35rem solid #4c7881;
+}
+
+.ca-ottawa-hub .ca-hub-faq,
+.ca-field[data-ca-family="capital-axis"] .faq-list { border-top: .3rem solid #252f3a; }
+
+@media (max-width: 1040px) {
+  .ca-ottawa-hub .ca-hub-stats { grid-template-columns: 1fr; }
+  .ca-ottawa-hub .ca-hub-stats article { border-right: 0; border-bottom: 1px solid #c5ced0; }
+  .ca-ottawa-hub .ca-city-plan,
+  .ca-ottawa-hub .ca-route-compare { grid-template-columns: 1fr; }
+  .ca-ottawa-brief { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .ca-ottawa-hub .ca-hub-hero { margin-inline: -.35rem; }
+  .ca-ottawa-hub .ca-hub-hero figure { min-height: 19rem; clip-path: none; border-left: 0; border-top: .45rem solid #a32e37; }
+  .ca-ottawa-hub .ca-hub-copy h1 { max-width: 100%; font-size: clamp(2.45rem, 11vw, 3.6rem); overflow-wrap: anywhere; }
+  .ca-ottawa-brief { margin-inline: -.2rem; padding: 1.1rem; }
+  .ca-ottawa-instrument { top: auto; right: .7rem; bottom: .7rem; width: 7rem; }
+  .ca-ottawa-route-diagram { padding-inline: .4rem; }
+  .ca-ottawa-route-diagram img { border-radius: .5rem; }
+}

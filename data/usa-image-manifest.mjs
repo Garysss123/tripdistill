@@ -512,7 +512,7 @@ export const usaImageManifest = {
   },
   "new-orleans/french-quarter": {
     "src": "/assets/images/usa-new-orleans-french-quarter-20260911.webp",
-    "alt": "French Quarter & Live Music",
+    "alt": "Jackson Square, the equestrian statue of Andrew Jackson and St. Louis Cathedral",
     "source": "https://commons.wikimedia.org/wiki/File:Jackson_Square_New_Orleans_Feb_2023.jpg",
     "label": "Jackson Square New Orleans Feb 2023.jpg",
     "creator": "Mussi Katz",
@@ -522,7 +522,7 @@ export const usaImageManifest = {
   },
   "new-orleans/garden-district": {
     "src": "/assets/images/usa-new-orleans-garden-district.webp",
-    "alt": "Garden District & Streetcars",
+    "alt": "Green St. Charles streetcar on the oak-lined tracks along St. Charles Avenue",
     "source": "https://commons.wikimedia.org/wiki/File:St_Charles_Avenue,_Lower_Garden_District,_New_Orleans,_July_2021_-_Streetcar_954.jpg",
     "label": "St Charles Avenue, Lower Garden District, New Orleans, July 2021 - Streetcar 954.jpg",
     "creator": "Infrogmation of New Orleans",
@@ -532,7 +532,7 @@ export const usaImageManifest = {
   },
   "new-orleans/river-wetlands": {
     "src": "/assets/images/usa-new-orleans-river-wetlands-20260911.webp",
-    "alt": "Mississippi River & Wetlands",
+    "alt": "Cypress trees and still water at Barataria Preserve; archived landscape photograph",
     "source": "https://commons.wikimedia.org/wiki/File:Jean_Lafitte_Park_Barataria_Preserve,_June_2021_-_Pretty_Swamp.jpg",
     "label": "Jean Lafitte Park Barataria Preserve, June 2021 - Pretty Swamp.jpg",
     "creator": "Jim Bahn",

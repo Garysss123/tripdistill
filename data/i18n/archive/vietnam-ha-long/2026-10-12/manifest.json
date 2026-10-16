@@ -1,0 +1,55 @@
+{
+  "reason": "Byte-preserved superseded Vietnam Ha Long reviewed translation batch snapshots before removing stale active source keys for the 2026-10-12 Ha Long/Cat Ba content refresh.",
+  "sourceBaseCommit": "10b3f39eb069646b8381bfe43767a0998f4ad2c8",
+  "archivedAt": "2026-10-12",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "name": "29d-vietnam-ha-long-cat-ba.json",
+      "sha256": "953bc60ac88f9f8185efebaec8809cdc648ea7c1614edeebff359bcd8d884304",
+      "bytes": 35685
+    },
+    {
+      "locale": "zh-Hant",
+      "name": "29o-vietnam-shell.json",
+      "sha256": "84f10c38d91c3bbda5f07950a84e031851c94fc487bf66208fc88c138c6dc317",
+      "bytes": 21353
+    },
+    {
+      "locale": "ja",
+      "name": "29d-vietnam-ha-long-cat-ba.json",
+      "sha256": "146fa70ff1f460622dd1017ba500ea928bf110b3b7f505cea12e06c7fdb05413",
+      "bytes": 40977
+    },
+    {
+      "locale": "ja",
+      "name": "29o-vietnam-shell.json",
+      "sha256": "0a286d107ee52caf062699e306fbb682dc2fa8c1bacb6a1b4a64b5061d687161",
+      "bytes": 25035
+    },
+    {
+      "locale": "ko",
+      "name": "29d-vietnam-ha-long.json",
+      "sha256": "b939b5cd78847cacb07fff6e71292e9b1ce3923bebba637e16fbf73f3eefe731",
+      "bytes": 40513
+    },
+    {
+      "locale": "ko",
+      "name": "29o-vietnam-shell.json",
+      "sha256": "5ec1048ae6174f41fa130dbd6af625b8b7eb0b35f1418d6e21e59cc437b2c8a8",
+      "bytes": 23365
+    },
+    {
+      "locale": "th",
+      "name": "29d-vietnam-ha-long.json",
+      "sha256": "e322816ab1b8360fc20dd52bc13a395079d6736ea25911ae82f3874a814637a5",
+      "bytes": 60950
+    },
+    {
+      "locale": "th",
+      "name": "29o-vietnam-shell.json",
+      "sha256": "6dc05ac0a21c1aa813749dc5b208885b6f9dda8d86bd3fa72cb46b11219aab47",
+      "bytes": 34346
+    }
+  ]
+}

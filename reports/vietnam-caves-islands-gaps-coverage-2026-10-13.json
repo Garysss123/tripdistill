@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-13",
+  "branch": "codex/sprint-vn-caves-islands-gaps-20261013",
+  "sourceBaseBranch": "codex/sprint-vn-southern-gaps-20261013",
+  "sourceBaseCommit": "d779848fbc247042561cfaa34773257122aa38d0",
+  "sourceBaseParent": "76bac54c6881348aabc9ec4c4e10299a705f1df9",
+  "initialAtlasCommit": "8a1ada3b4021d077fd468c9c318d91823177c0cb",
+  "scope": [
+    "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+    "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+    "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+    "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/"
+  ],
+  "bodyChecks": [
+    {
+      "url": "/vietnam/phong-nha-ke-bang/hang-en-expedition/",
+      "baseWords": 606,
+      "currentWords": 1257,
+      "wordDelta": 651,
+      "initialMainTextSha256": "ea830ec3944764b47113d8a20efc16f76e6785c3d2551ea102126b92b651be6d",
+      "baseMainTextSha256": "ea830ec3944764b47113d8a20efc16f76e6785c3d2551ea102126b92b651be6d",
+      "currentMainTextSha256": "11ad8418a43f6b1f7784a3f0b9f308892b2c73e40c81deb5943a29df2bf1a538"
+    },
+    {
+      "url": "/vietnam/phong-nha-ke-bang/son-doong-expedition/",
+      "baseWords": 609,
+      "currentWords": 1221,
+      "wordDelta": 612,
+      "initialMainTextSha256": "9514b0a24b95c1b67a4de71c9ce1a91991025e0dd7642227d68510a1a28b26da",
+      "baseMainTextSha256": "9514b0a24b95c1b67a4de71c9ce1a91991025e0dd7642227d68510a1a28b26da",
+      "currentMainTextSha256": "ca9386a1de32ddd69b207f06de98b1798a6564b405ec945c6e3169f0fa1594c8"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/",
+      "baseWords": 561,
+      "currentWords": 1175,
+      "wordDelta": 614,
+      "initialMainTextSha256": "eddc213a918116842c2a21dc6e0ca8ab24855e8d4dc8d4865e5b4c14d15868e4",
+      "baseMainTextSha256": "eddc213a918116842c2a21dc6e0ca8ab24855e8d4dc8d4865e5b4c14d15868e4",
+      "currentMainTextSha256": "940ce8d1ff27f9bc4955ee9b2e98ebcf147378d9ef413beb2fa88e00e68fa386"
+    },
+    {
+      "url": "/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/",
+      "baseWords": 550,
+      "currentWords": 1159,
+      "wordDelta": 609,
+      "initialMainTextSha256": "3da1181af58292df06ad0bc64b1dfed153b88f715679bded2a4c1abd317eb371",
+      "baseMainTextSha256": "3da1181af58292df06ad0bc64b1dfed153b88f715679bded2a4c1abd317eb371",
+      "currentMainTextSha256": "13cede8abfd076e06197c02ad61024a37ac412161307a6448f84cac302c98125"
+    }
+  ],
+  "coverage": {
+    "englishRoutes": 99,
+    "substantiveBefore": 87,
+    "addedByThisBatch": 4,
+    "substantiveAfter": 91,
+    "remainingBefore": 12,
+    "remainingAfter": 8,
+    "parallelCoastAndBayBatchesCounted": false
+  },
+  "localization": {
+    "locales": ["zh-Hant", "ja", "ko", "th"],
+    "freshPageKeysPerLocale": 203,
+    "freshSearchKeysPerLocale": 25,
+    "translationAuditRequiredStringsPerLocale": 59147,
+    "missing": 0,
+    "stale": 0,
+    "independentSecondModelReview": false,
+    "humanReview": false
+  },
+  "sitemap": {
+    "urlCountBefore": 4560,
+    "urlCountAfter": 4560,
+    "updatedPathsAcrossFiveEditions": 20,
+    "date": "2026-10-13"
+  },
+  "verification": {
+    "translationAudit": "passed",
+    "taskSpecificRegression": "passed",
+    "fullAudit": "passed",
+    "build": "passed",
+    "uiAcceptance": "not performed; user prohibited headless/CDP/server/crawler"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/genoa-liguria/",
+    "/italy/genoa-liguria/genoa-old-port-rolli/",
+    "/italy/genoa-liguria/cinque-terre-rail-trails/",
+    "/italy/genoa-liguria/camogli-portofino-san-fruttuoso/"
+  ],
+  "translations": {
+    "— Luca Aless,": "— Luca Aless,"
+  }
+}

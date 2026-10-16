@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Ipoh to Kellie’s Castle transfer planning diagram</title>
+  <desc id="desc">An original, non-geographic sequence diagram: Ipoh base, an exact-date rail or road leg to Batu Gajah, pre-arranged road transfer to the castle, then a confirmed return ride.</desc>
+  <metadata>TripDistill project original; no separate reuse license declared. Planning schematic only: not a geographic map and not to scale.</metadata>
+  <defs>
+    <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#f7f0d9"/><stop offset="1" stop-color="#e7efe3"/></linearGradient>
+    <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#97ad71"/><stop offset="1" stop-color="#557d60"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f37" flood-opacity=".16"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 12 6 0 12Z" fill="#a45b3b"/></marker>
+  </defs>
+  <rect width="960" height="640" rx="34" fill="url(#paper)"/>
+  <path d="M0 448q143-111 292-10 118-133 257-20 133-94 272 10 84-37 139 8v204H0Z" fill="#d8e5d1"/>
+  <path d="M0 500q120-96 244-10 103-98 215-17 138-114 294-3 99-58 207 8v162H0Z" fill="#a9c39d"/>
+  <path d="M86 340h792" stroke="#b8a579" stroke-width="7" stroke-dasharray="8 15"/>
+  <path d="M102 337h248m33 0h190m28 0h191" fill="none" stroke="#a45b3b" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(120 210)">
+      <rect width="154" height="117" rx="18" fill="#fffaf0" stroke="#d1c39b" stroke-width="3"/>
+      <path d="M32 75h90m-81-12h73M42 89h72" stroke="#59695a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M41 52V27h74v25M51 27V15h54v12" fill="#d8e8dd" stroke="#376454" stroke-width="5"/>
+      <circle cx="47" cy="102" r="5" fill="#a45b3b"/><circle cx="110" cy="102" r="5" fill="#a45b3b"/>
+    </g>
+    <g transform="translate(404 213)">
+      <rect width="154" height="114" rx="18" fill="#fffaf0" stroke="#d1c39b" stroke-width="3"/>
+      <path d="M30 73h94l-17 20H48Z" fill="#a45b3b"/><path d="M54 70V40h49v30m-25-30V27" fill="none" stroke="#376454" stroke-width="6"/>
+      <circle cx="54" cy="99" r="6" fill="#376454"/><circle cx="103" cy="99" r="6" fill="#376454"/>
+      <path d="M29 107h96" stroke="#8a7952" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(704 185)">
+      <path d="M0 142q22-95 105-121 86 25 112 121" fill="url(#hill)"/>
+      <path d="M70 115V64h34V34h38v30h33v51" fill="#f2dcac" stroke="#76563c" stroke-width="6"/>
+      <path d="M61 64 122 20l63 44M96 115V91h24v24m21-40h12v17h-12Z" fill="none" stroke="#76563c" stroke-width="6"/>
+      <path d="M26 144h171" stroke="#d8ba78" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" fill="#173f37">
+    <g><circle cx="197" cy="424" r="27" fill="#f1d992"/><text x="197" y="433">1</text></g>
+    <g><circle cx="481" cy="424" r="27" fill="#f1d992"/><text x="481" y="433">2</text></g>
+    <g><circle cx="822" cy="424" r="27" fill="#f1d992"/><text x="822" y="433">3</text></g>
+    <g><circle cx="480" cy="544" r="27" fill="#f1d992"/><text x="480" y="553">↶</text></g>
+  </g>
+  <path d="M824 469c-11 44-77 75-164 75h-5" fill="none" stroke="#a45b3b" stroke-width="6" stroke-dasharray="9 10" marker-end="url(#arrow)"/>
+</svg>

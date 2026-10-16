@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" fill="none">
+  <metadata>TripDistill project original; no separate reuse license declared. Planning schematic only: not a geographic map and not to scale.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M2 2 12 7 2 12" stroke="#3B6D69" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="grain" width="38" height="38" patternUnits="userSpaceOnUse"><circle cx="6" cy="8" r="1.2" fill="#D9D3C7" opacity=".42"/><circle cx="28" cy="29" r="1" fill="#D9D3C7" opacity=".32"/></pattern>
+  </defs>
+  <rect width="1600" height="1066" rx="48" fill="#F2EFE5"/>
+  <rect width="1600" height="1066" rx="48" fill="url(#grain)"/>
+  <path d="M70 145H1530M70 922H1530" stroke="#C8D7CF" stroke-width="3"/>
+  <rect x="78" y="224" width="266" height="618" rx="34" fill="#203D46"/>
+  <circle cx="211" cy="429" r="82" fill="#E5EEE7"/>
+  <g stroke="#203D46" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M169 452h84v-58l-42-34-42 34z" fill="#FFFDF8"/><path d="M188 452v-36h17v36m16-46h15v17h-15" fill="#BBD4C8"/>
+    <path d="M147 550h129M164 573h96"/>
+  </g>
+  <path d="M344 532C392 532 387 326 438 326M344 532H438M344 532C392 532 387 738 438 738" stroke="#3B6D69" stroke-width="7" stroke-linecap="round"/>
+  <g>
+    <rect x="430" y="220" width="1092" height="210" rx="30" fill="#FFFDF8" stroke="#D4DED4" stroke-width="3"/>
+    <rect x="430" y="428" width="1092" height="210" rx="30" fill="#E4ECE5" stroke="#C9D9D0" stroke-width="3"/>
+    <rect x="430" y="636" width="1092" height="210" rx="30" fill="#FFFDF8" stroke="#D4DED4" stroke-width="3"/>
+  </g>
+  <g fill="#D07854"><circle cx="484" cy="326" r="34"/><circle cx="484" cy="534" r="34"/><circle cx="484" cy="742" r="34"/></g>
+  <g fill="#FFFDF8" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle"><text x="484" y="337">1</text><text x="484" y="545">2</text><text x="484" y="753">3</text></g>
+  <g stroke="#3B6D69" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M532 326H652M798 326H925M1070 326H1214"/><path d="M532 534H652M798 534H925M1070 534H1214"/><path d="M532 742H652M798 742H925M1070 742H1214"/>
+  </g>
+  <g stroke="#203D46" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M674 347v-38a38 38 0 0 1 76 0v38M674 322h76M692 322v25m40-25v25" fill="#DCE9E1"/><path d="M674 347h76"/>
+    <path d="M950 352v-66h74v66M940 352h94M966 318h17m22 0h16" fill="#E7EEE7"/><path d="M964 286v-14h46v14"/>
+    <path d="M1245 356v-70h66v70M1234 356h88M1260 286v-17h37v17" fill="#D8E5DC"/><path d="M1261 309h13m18 0h12"/>
+    <path d="M674 555v-48l37-29 38 29v48z" fill="#DCE9E1"/><path d="M690 555v-27h18v27m21-42h13v15h-13"/><path d="M669 563h85"/>
+    <path d="M955 575c20-16 40-16 60 0m-60 17c20-16 40-16 60 0m-60 17c20-16 40-16 60 0"/><path d="M984 512v-30m-18 17 18-25 18 25"/>
+    <path d="M1243 564c18-16 36-16 54 0m-54 18c18-16 36-16 54 0m-54 18c18-16 36-16 54 0" fill="#E1EBE7"/>
+    <path d="M674 763v-48a38 38 0 0 1 76 0v48M674 738h76M692 738v25m40-25v25" fill="#DCE9E1"/>
+    <path d="M952 770c23-5 46-5 69 0m-57-30 17-25 17 25m-34 0h34"/><path d="M1016 698l15 0 9 15-9 15-15 0-9-15z" fill="#F1D4AE"/>
+    <path d="M1242 771v-55a35 35 0 0 1 70 0v55M1242 742h70M1259 742v29m36-29v29" fill="#F0D7BF"/><path d="M1242 771h70"/>
+  </g>
+  <g>
+    <circle cx="1355" cy="326" r="45" fill="#DCE9E1"/><circle cx="1355" cy="534" r="45" fill="#FFFDF8"/><circle cx="1355" cy="742" r="45" fill="#E4ECE5"/>
+    <g stroke="#203D46" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><rect x="1327" y="307" width="56" height="40" rx="7" fill="#FFFDF8"/><path d="M1335 317h40v16h-40zM1336 351h38"/><circle cx="1340" cy="348" r="4" fill="#203D46"/><circle cx="1370" cy="348" r="4" fill="#203D46"/><rect x="1327" y="515" width="56" height="40" rx="7" fill="#E4ECE5"/><path d="M1335 525h40v16h-40zM1336 559h38"/><circle cx="1340" cy="556" r="4" fill="#203D46"/><circle cx="1370" cy="556" r="4" fill="#203D46"/><rect x="1327" y="723" width="56" height="40" rx="7" fill="#FFFDF8"/><path d="M1335 733h40v16h-40zM1336 767h38"/><circle cx="1340" cy="764" r="4" fill="#203D46"/><circle cx="1370" cy="764" r="4" fill="#203D46"/></g>
+    <path d="M1405 326h72m-18-18 18 18-18 18M1405 534h72m-18-18 18 18-18 18M1405 742h72m-18-18 18 18-18 18" stroke="#D07854" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M1493 256v560" stroke="#C8D7CF" stroke-width="3" stroke-dasharray="10 16"/>
+</svg>

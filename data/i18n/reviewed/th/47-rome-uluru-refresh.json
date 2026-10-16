@@ -1,0 +1,42 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/",
+    "/australia/red-centre/",
+    "/australia/red-centre/uluru-cultural-landscape/"
+  ],
+  "translations": {
+    "ROME: THREE ROUTE CHAPTERS": "โรม: เส้นทางสามช่วง",
+    "Forum-to-Capitoline field notes": "บันทึกเส้นทางจากฟอรัมสู่คาปิโตลีน",
+    "ROME CITY AND TRANSPORT SERVICES": "บริการเมืองและการเดินทางในโรม",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and…": "ใช้ Yulara เป็นฐานเที่ยว Uluṟu และ Kata Tjuṯa; แยกวันและค้างคืนที่ Watarrka แล้วใช้ Mparntwe เป็นประตูสู่ Tjoritja เส้นทางเดินกลางแจ้งมีเงื่อนไขต่างกัน วางแผนช่วงเวลากลางวัน เชื้อเพลิง สภาพถนน และคำแนะนำจาก Aṉangu หรือ Arrernte ก่อนออกเดินทาง",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and Kata Tjuṯa have long exposed walks and their own access conditions, while fuel, daylight and road closures govern every remote leg. Begin with Aṉangu or Arrernte visitor guidance, then build each day around the current park and road information.": "ใช้ยูลาเรอเป็นฐานเที่ยวอุทยาน พักค้างคืนแยกสำหรับทริปขับรถไปวัตาร์กา และใช้มปาร์นต์เวเป็นประตูสู่ทจอริตจา ทั้งสามแห่งไม่ใช่ทริปวันเดียวที่ใช้แทนกันได้: อูลูรูและคาตาจูตาต้องเดินไกลกลางแจ้งและมีเงื่อนไขการเข้าถึงของตนเอง ส่วนเชื้อเพลิง ช่วงเวลากลางวัน และการปิดถนนเป็นตัวกำหนดการเดินทางทุกช่วงในพื้นที่ห่างไกล เริ่มจากคำแนะนำผู้มาเยือนของชาว Aṉangu หรือ Arrernte แล้ววางแผนแต่ละวันตามข้อมูลอุทยานและถนนล่าสุด",
+    "How many days should I give the Red Centre?": "ควรจัดเวลาเที่ยวเรดเซ็นเตอร์กี่วัน?",
+    "Use at least two full days from Yulara if you want both Uluṟu and Kata Tjuṯa. Add separate nights for Watarrka and Mparntwe when those chapters are in the route; do not turn the drive between them into an evening transfer.": "หากต้องการเที่ยวทั้งอูลูรูและคาตาจูตา ควรมีเวลาอย่างน้อย 2 วันเต็มจากยูลาเรอ เพิ่มคืนพักแยกสำหรับวัตาร์กาและมปาร์นต์เวเมื่อรวมสองช่วงนี้ในเส้นทาง อย่าขับรถระหว่างพื้นที่เหล่านี้เป็นการเดินทางช่วงค่ำ",
+    "Can I drive from Uluṟu to Watarrka and return after one walk?": "ขับรถจากอูลูรูไปวัตาร์กาแล้วกลับหลังเดินเที่ยวหนึ่งเส้นทางได้ไหม?",
+    "Keep those chapters on different days with an overnight near Watarrka. The long road leg plus an exposed canyon walk leaves too little daylight and recovery margin for a safe return.": "จัดเที่ยวสองช่วงนี้คนละวันและพักค้างคืนใกล้วัตาร์กา ระยะขับรถที่ยาวบวกกับการเดินแคนยอนกลางแจ้งทำให้มีเวลากลางวันและเวลาฟื้นตัวไม่พอสำหรับการขับกลับอย่างปลอดภัย",
+    "What should I recheck before leaving a base?": "ก่อนออกจากที่พักควรตรวจสอบอะไรอีก?",
+    "Check current park and cultural closures, heat or wind advice, road conditions, fuel, water, communications and the vehicle requirements for the actual route.": "ตรวจสอบการปิดอุทยานและพื้นที่ทางวัฒนธรรม คำแนะนำเรื่องความร้อนหรือลม สภาพถนน เชื้อเพลิง น้ำ การสื่อสาร และข้อกำหนดของรถสำหรับเส้นทางที่จะใช้จริง",
+    "Give Uluṟu–Kata Tjuṯa, Watarrka, Tjoritja and Mparntwe separate bases; let Country, distance and heat set the order.": "แยกฐานพักสำหรับอูลูรู–คาตาจูตา วัตาร์กา ทจอริตจา และมปาร์นต์เว ให้ผืนแผ่นดิน ระยะทาง และความร้อนเป็นตัวกำหนดลำดับ",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window.": "หากตั้งใจไปทั้งอูลูรูและคาตาจูตา ให้เผื่ออย่างน้อย 2 วันเต็มจากยูลาเรอ และจัดช่วงสภาพอากาศเหมาะสมให้แต่ละแห่งแยกกัน",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and…": "มีเที่ยวบินไปอลิซสปริงส์และยูลาเรอ แต่การเดินทางโดยเครื่องบินไม่ได้ทำให้ระยะขับรถไกลระหว่างอุทยาน วัตาร์กา และทจอริตจาสั้นลง",
+    "Road and rocky landscape at Anzac Hill in Alice Springs · CC BY-SA 4.0": "ถนนและภูมิประเทศหินบริเวณเนินแอนแซก เมืองอลิซสปริงส์ — CC BY-SA 4.0",
+    "Field 04 · surface, water and respect": "ภาคสนาม 04 — พื้นผิว น้ำ และความเคารพ",
+    "Uluṟu Cultural Landscape": "ภูมิทัศน์วัฒนธรรมอูลูรู",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window. Keep the Kings Canyon Rim Walk beside a Watarrka overnight; use Mparntwe for town services and a separate Tjoritja day. Moving bases is part of the itinerary, not spare time.": "หากตั้งใจไปทั้งอูลูรูและคาตาจูตา ให้เผื่ออย่างน้อย 2 วันเต็มจากยูลาเรอและจัดช่วงสภาพอากาศเหมาะสมให้แต่ละแห่งแยกกัน วางเส้นทาง Kings Canyon Rim Walk ไว้คู่กับคืนพักที่วัตาร์กา ใช้มปาร์นต์เวสำหรับบริการในเมืองและจัดวันเที่ยวทจอริตจาแยกต่างหาก การย้ายฐานพักเป็นส่วนหนึ่งของแผนเที่ยว ไม่ใช่เวลาว่าง",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and Tjoritja. Confirm vehicle suitability, fuel, communications and road notices before each departure; plan daylight and recovery rather than a night return.": "มีเที่ยวบินไปอลิซสปริงส์และยูลาเรอ แต่การเดินทางโดยเครื่องบินไม่ได้ทำให้ระยะขับรถไกลระหว่างอุทยาน วัตาร์กา และทจอริตจาสั้นลง ตรวจสอบความเหมาะสมของรถ เชื้อเพลิง การสื่อสาร และประกาศสภาพถนนก่อนออกเดินทางแต่ละครั้ง วางแผนให้เดินทางในเวลากลางวันและมีเวลาพักฟื้น แทนการขับกลับตอนกลางคืน",
+    "Uluṟu Cultural Landscape Travel Guide | TripDistill Australia": "คู่มือท่องเที่ยวภูมิทัศน์วัฒนธรรมอูลูรู | TripDistill Australia",
+    "Uluṟu Cultural Landscape — Australia field guide": "ภูมิทัศน์วัฒนธรรมอูลูรู — คู่มือภาคสนามออสเตรเลีย",
+    "surface, water and respect.": "พื้นผิว น้ำ และความเคารพ",
+    "Uluru rising from the central Australian desert · CC BY-SA 4.0": "อูลูรูโผล่ขึ้นเหนือทะเลทรายในออสเตรเลียตอนกลาง — CC BY-SA 4.0",
+    "On the public path": "บนเส้นทางสาธารณะ",
+    "Uluṟu Cultural Landscape FAQ": "คำถามที่พบบ่อย: ภูมิทัศน์วัฒนธรรมอูลูรู",
+    "Parks Australia – Kuniya walk and Muṯitjulu Waterhole": "Parks Australia — เส้นทางคูนิยาและแอ่งน้ำมูติตจูลู",
+    "Parks Australia – Mala walk": "Parks Australia — เส้นทางมาลา",
+    "Parks Australia – Tjukurpa": "Parks Australia — Tjukurpa"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/french-alps/",
+    "/france/french-alps/annecy-lake-old-town/",
+    "/france/french-alps/chamonix-mountain-systems/",
+    "/france/french-alps/grenoble-bastille-chartreuse/"
+  ],
+  "translations": {
+    ". Original editorial sequence diagram. It is schematic, not geographically scaled; no separate reuse license is declared.": ". 編集部作成のオリジナル順路図です。模式図であり、地理的な縮尺ではありません。別途の再利用ライセンスはありません。"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

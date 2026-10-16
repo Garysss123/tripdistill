@@ -29,7 +29,12 @@ export const unitedKingdomClusters = unitedKingdomSourceClusters.map((cluster) =
     const key = `${cluster.slug}/${guide.slug}`;
     const image = unitedKingdomImageManifest[key];
     if (!image) throw new Error(`Missing United Kingdom image manifest entry: ${key}`);
-    return { ...guide, image: { ...image, editNote: unitedKingdomImageEditNote } };
+    return {
+      ...guide,
+      image: image.assetType === 'original-planning-diagram'
+        ? { ...image }
+        : { ...image, editNote: unitedKingdomImageEditNote }
+    };
   })
 }));
 

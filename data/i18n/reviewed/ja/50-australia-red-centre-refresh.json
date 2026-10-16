@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/",
+    "/australia/red-centre/mparntwe-alice-springs/",
+    "/australia/red-centre/tjoritja-west-macdonnell/",
+    "/australia/red-centre/watarrka-kings-canyon/",
+    "/australia/red-centre/uluru-cultural-landscape/",
+    "/australia/red-centre/kata-tjuta/"
+  ],
+  "translations": {}
+}

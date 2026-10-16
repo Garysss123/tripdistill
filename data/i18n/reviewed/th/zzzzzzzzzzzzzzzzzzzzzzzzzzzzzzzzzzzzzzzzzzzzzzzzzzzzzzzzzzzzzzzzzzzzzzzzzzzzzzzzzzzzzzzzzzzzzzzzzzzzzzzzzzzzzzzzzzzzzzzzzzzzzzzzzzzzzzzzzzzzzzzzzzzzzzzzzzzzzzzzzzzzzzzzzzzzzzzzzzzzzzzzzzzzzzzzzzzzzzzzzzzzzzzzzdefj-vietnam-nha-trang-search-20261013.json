@@ -1,0 +1,28 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "tran phu beach public access": "ทางเข้าสาธารณะหาดจ่านฟู",
+    "nha trang beach swimming flags": "ธงเตือนว่ายน้ำที่หาดญาจาง",
+    "cam ranh airport transfer": "รถรับส่งสนามบินกามรัญ",
+    "nha trang train station": "สถานีรถไฟญาจาง",
+    "po nagar opening hours": "เวลาเปิดโพนคร",
+    "po nagar cham shrine": "ศาลเจ้าจามโพนคร",
+    "cu lao hill cai river": "เนินกู่ลาวและแม่น้ำก๊าย",
+    "hon chong viewpoint public access": "ทางเข้าสาธารณะจุดชมวิวห่อนจ่ง",
+    "hon mun reserve access": "การเข้าเขตอนุรักษ์ห่อนมุน",
+    "nha trang bay coral permit": "ใบอนุญาตกิจกรรมปะการังอ่าวญาจาง",
+    "hon mun boat pier": "ท่าเรือเรือไปห่อนมุน",
+    "nha trang marine forecast": "พยากรณ์ทะเลญาจาง"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search delta translated from the exact English search strings and checked for numbers, place names, access terminology and source scope. Same-model review is not independent or human review."
+  }
+}

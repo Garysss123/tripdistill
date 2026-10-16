@@ -1,0 +1,12 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "uluṟu cultural landscape": "ウルル（Uluṟu）の文化的景観",
+    "Uluṟu Cultural Landscape Guide": "ウルル（Uluṟu）の文化的景観ガイド",
+    "surface, water and respect": "岩肌・水・敬意"
+  }
+}

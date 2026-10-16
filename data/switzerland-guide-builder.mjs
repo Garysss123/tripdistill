@@ -1,4 +1,13 @@
+import { switzerlandCh10ClusterRefresh, switzerlandCh10GuideRefresh } from './switzerland-ch10-refresh.mjs';
+import { switzerlandCh11ClusterRefresh, switzerlandCh11GuideRefresh } from './switzerland-ch11-refresh.mjs';
+import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from './switzerland-ch12-refresh.mjs';
+import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from './switzerland-ch13-refresh.mjs';
+import { switzerlandCh14HubRefresh, switzerlandCh14IsoDate, switzerlandCh14ReviewDate } from './switzerland-ch14-refresh.mjs';
+import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate, switzerlandCh15ReviewDate } from './switzerland-ch15-refresh.mjs';
+import { switzerlandCh16GuideRefresh, switzerlandCh16IsoDate, switzerlandCh16ReviewDate } from './switzerland-ch16-refresh.mjs';
+
 const routeLabels = ['Arrive', 'Orient', 'Commit', 'Return'];
+const ch10BatchOneGuides = new Set(['old-town-rhine', 'art-museums', 'kleinbasel-border-rhine']);
 
 const guideEditorialExtensions = {
   'muottas-diavolezza': {
@@ -44,8 +53,77 @@ function applyEditorialExtensions(definition, extensions) {
   ]));
 }
 
+function applyCh10GuideRefresh(definition) {
+  if (!ch10BatchOneGuides.has(definition?.slug)) return definition;
+  const suffix = `/${definition?.slug}`;
+  const refresh = Object.entries(switzerlandCh10GuideRefresh).find(([key]) => key.endsWith(suffix))?.[1];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh10ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'basel-rhine') return cluster;
+  const refresh = switzerlandCh10ClusterRefresh[cluster?.slug];
+  return refresh ? { ...cluster, ...refresh } : cluster;
+}
+
+function applyCh11GuideRefresh(definition) {
+  const refresh = switzerlandCh11GuideRefresh[definition?.slug];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh11ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'st-moritz-engadin') return cluster;
+  return { ...cluster, ...switzerlandCh11ClusterRefresh };
+}
+
+function applyCh12GuideRefresh(definition) {
+  const refresh = switzerlandCh12GuideRefresh[definition?.slug];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh12ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'st-gallen-appenzell') return cluster;
+  return { ...cluster, ...switzerlandCh12ClusterRefresh };
+}
+
+function applyCh13GuideRefresh(definition) {
+  const refresh = switzerlandCh13GuideRefresh[definition?.slug];
+  return refresh ? { ...definition, ...refresh } : definition;
+}
+
+function applyCh13ClusterRefresh(cluster) {
+  if (cluster?.slug !== 'graubunden-corridors') return cluster;
+  return { ...cluster, ...switzerlandCh13ClusterRefresh };
+}
+
+function applyCh14HubRefresh(cluster) {
+  const refresh = switzerlandCh14HubRefresh[cluster?.slug];
+  if (!refresh) return cluster;
+  // Keep CH14 data off the base cluster so its three child pages retain their
+  // previously reviewed local context and dates.
+  return { ...cluster, hubOnly: { ...refresh, reviewDate: switzerlandCh14ReviewDate, isoDate: switzerlandCh14IsoDate } };
+}
+
+function applyCh15GuideRefresh(definition) {
+  const refresh = switzerlandCh15GuideRefresh[definition?.slug];
+  if (!refresh) return definition;
+  return { ...definition, ...refresh, reviewDate: switzerlandCh15ReviewDate, isoDate: switzerlandCh15IsoDate };
+}
+
+function applyCh16GuideRefresh(definition) {
+  const refresh = switzerlandCh16GuideRefresh[definition?.slug];
+  if (!refresh) return definition;
+  return { ...definition, ...refresh, reviewDate: switzerlandCh16ReviewDate, isoDate: switzerlandCh16IsoDate };
+}
+
 export function switzerlandGuide(definition) {
   definition = applyEditorialExtensions(definition, guideEditorialExtensions);
+  definition = applyCh10GuideRefresh(definition);
+  definition = applyCh11GuideRefresh(definition);
+  definition = applyCh12GuideRefresh(definition);
+  definition = applyCh13GuideRefresh(definition);
+  definition = applyCh15GuideRefresh(definition);
+  definition = applyCh16GuideRefresh(definition);
   const required = ['slug', 'name', 'instrument', 'layout', 'imageQuery', 'imageAlt', 'summary', 'access', 'tradeoff', 'fallback', 'duration', 'combine', 'verify'];
   for (const key of required) {
     if (!definition?.[key]) throw new Error(`Switzerland guide ${definition?.slug || '(unnamed)'} lacks ${key}.`);
@@ -59,11 +137,25 @@ export function switzerlandGuide(definition) {
   if (!Array.isArray(definition.watch) || definition.watch.length !== 3) {
     throw new Error(`Switzerland guide ${definition.slug} must define three watch points.`);
   }
+  if (definition.sources && (!Array.isArray(definition.sources) || definition.sources.length < 2 || definition.sources.some(([url, label]) => !/^https:\/\//.test(url) || !label))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define complete HTTPS local sources.`);
+  }
+  if (definition.fieldContext && (!definition.fieldContext.heading || !Array.isArray(definition.fieldContext.cards) || definition.fieldContext.cards.length < 2 || definition.fieldContext.cards.some((card) => !card.title || !card.copy || !Array.isArray(card.sources) || !card.sources.length || card.sources.some((index) => !definition.sources?.[index])))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define sourced local field context.`);
+  }
+  if (definition.faq && (!Array.isArray(definition.faq) || definition.faq.length !== 3 || definition.faq.some(([question, answer]) => !question || !answer))) {
+    throw new Error(`Switzerland guide ${definition.slug} must define three complete FAQs.`);
+  }
   return definition;
 }
 
 export function defineSwitzerlandCluster(cluster) {
   cluster = applyEditorialExtensions(cluster, clusterEditorialExtensions);
+  cluster = applyCh10ClusterRefresh(cluster);
+  cluster = applyCh11ClusterRefresh(cluster);
+  cluster = applyCh12ClusterRefresh(cluster);
+  cluster = applyCh13ClusterRefresh(cluster);
+  cluster = applyCh14HubRefresh(cluster);
   const required = ['slug', 'name', 'region', 'band', 'family', 'label', 'tagline', 'hubIntro', 'stay', 'transfer', 'season', 'fallback'];
   for (const key of required) {
     if (!cluster?.[key]) throw new Error(`Switzerland cluster ${cluster?.slug || '(unnamed)'} lacks ${key}.`);
@@ -87,7 +179,7 @@ export function defineSwitzerlandCluster(cluster) {
       family: cluster.family,
       url: `/switzerland/${cluster.slug}/${guide.slug}/`,
       route: guide.stages.map((stage, stageIndex) => [routeLabels[stageIndex], stage[0], stage[1]]),
-      faq: [
+      faq: guide.faq || [
         [`How much time should I give ${guide.name}?`, guide.duration],
         [`What should I combine with ${guide.name}?`, guide.combine],
         ['What should I verify before leaving?', guide.verify]

@@ -1,0 +1,10 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Taman Negara": "マレーシア — タマン・ネガラ"
+  }
+}

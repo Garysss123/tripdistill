@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/united-kingdom/"
+  ],
+  "translations": {
+    "Tenby, St Davids and Aberystwyth are three different bases linked by long road or rail legs, not one compact coastal loop. Tenby and Aberystwyth have rail…": "Tenby、St Davids、Aberystwythはそれぞれ別の滞在拠点です。長い道路または鉄道移動で結ばれており、海岸をひと回りするだけの旅程ではありません。TenbyとAberystwythには鉄道…"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

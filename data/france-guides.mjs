@@ -2,6 +2,7 @@ import { franceNorthWestClusters } from './france-north-west-guides.mjs';
 import { franceCentralEastClusters } from './france-central-east-guides.mjs';
 import { franceAtlanticSouthwestClusters } from './france-atlantic-southwest-guides.mjs';
 import { franceMediterraneanClusters } from './france-mediterranean-guides.mjs';
+import { parisHubEditorial, parisGuideEditorial } from './france-paris-editorial.mjs';
 import { franceImageManifest } from './france-image-manifest.mjs';
 import { franceImageEditNote } from './france-guide-builder.mjs';
 
@@ -25,11 +26,31 @@ if (franceSourceClusters.length !== 20) {
 
 export const franceClusters = franceSourceClusters.map((cluster) => ({
   ...cluster,
-  guides: cluster.guides.map((guide) => {
+  ...(cluster.slug === 'paris' ? parisHubEditorial : {}),
+  guides: cluster.guides.map((sourceGuide) => {
+    const editorial = cluster.slug === 'paris' ? parisGuideEditorial[sourceGuide.slug] : null;
+    if (cluster.slug === 'paris' && !editorial) throw new Error(`Missing Paris editorial record for ${cluster.slug}/${sourceGuide.slug}.`);
+    const guide = editorial ? { ...sourceGuide, ...editorial } : sourceGuide;
     const key = `${cluster.slug}/${guide.slug}`;
     const image = franceImageManifest[key];
     if (!image) throw new Error(`Missing France image manifest entry: ${key}`);
-    return { ...guide, image: { ...image, editNote: franceImageEditNote } };
+    return {
+      ...guide,
+      reviewDate: cluster.slug === 'paris'
+        ? parisHubEditorial.reviewDate
+        : (guide.reviewDate || cluster.reviewDate || undefined),
+      reviewDateISO: cluster.slug === 'paris'
+        ? parisHubEditorial.reviewDateISO
+        : (guide.reviewDateISO || cluster.reviewDateISO || undefined),
+      publishedDateISO: guide.publishedDateISO || cluster.publishedDateISO || undefined,
+      image: {
+        ...image,
+        ...(guide.imageOverride || {}),
+        ...(guide.imageOverride?.alt ? {} : guide.imageAlt ? { alt: guide.imageAlt } : {}),
+        ...(guide.imageCreditTitle ? { creditTitle: guide.imageCreditTitle } : {}),
+        editNote: guide.imageEditNote || guide.imageOverride?.editNote || image.editNote || franceImageEditNote
+      }
+    };
   })
 }));
 

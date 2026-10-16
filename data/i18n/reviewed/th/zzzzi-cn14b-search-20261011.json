@@ -1,0 +1,16 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Urumqi, Turpan and Kashgar as separate bases, leave a full transfer day, verify document-specific access and reserve a workable departure chain.": "วางแผนเที่ยว Urumqi, Turpan และ Kashgar โดยพักเป็นฐานแยกกัน เผื่อวันเต็มสำหรับการเดินทาง ตรวจสอบสิทธิ์เข้าพื้นที่ตามเอกสาร และยืนยันแผนเดินทางออกที่ทำได้จริง",
+    "identity checks": "การตรวจสอบเอกสารประจำตัว",
+    "corridor itinerary": "แผนเที่ยวตามเส้นทางเชื่อมเมือง",
+    "Confirm document-specific permission before booking; plan one Lhasa base, a gentle arrival and a separate access and return check for any higher corridor.": "ยืนยันใบอนุญาตตามประเภทเอกสารก่อนจอง; พักฐานเดียวที่ Lhasa วางแผนวันแรกให้เบา และตรวจสอบสิทธิ์เข้าพื้นที่กับแผนเดินทางกลับแยกต่างหากสำหรับทุกเส้นทางขึ้นที่สูง",
+    "potala palace reservation": "การจองเข้าชม Potala Palace",
+    "high altitude": "พื้นที่สูง",
+    "tibetan plateau access": "สิทธิ์เข้าพื้นที่บนที่ราบสูงทิเบต"
+  }
+}

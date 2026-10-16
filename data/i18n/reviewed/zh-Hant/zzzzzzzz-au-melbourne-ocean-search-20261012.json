@@ -1,0 +1,34 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Carlton Gardens and Melbourne Museum with one connected Fitzroy or Collingwood street. Choose two precincts, check the live tram return beyond the Free Tram Zone, and verify market or event dates before going.": "規劃 Carlton Gardens、Melbourne Museum 與一條相連的 Fitzroy 或 Collingwood 街道。選兩個街區，確認 Free Tram Zone 外的即時回程路線，出發前核對市場或活動日期。",
+    "melbourne museum": "墨爾本博物館",
+    "carlton gardens": "卡爾頓花園",
+    "brunswick street": "布倫斯威克街",
+    "smith street": "史密斯街",
+    "The Penguin Parade is a booked sunset event, not an easy Melbourne day trip: confirm the evening transport because V/Line serves Cowes but has no parade-end return. Add Nobbies only if current access and weather suit.": "Penguin Parade 是預約制的日落活動，不是輕鬆的墨爾本一日遊：先確認夜間交通，因為 V/Line 到 Cowes，但散場後沒有返回班車。只有在確認當日開放及天氣合適時才加上 Nobbies。",
+    "penguin parade": "企鵝遊行",
+    "nobbies boardwalk": "諾比斯海岸步道",
+    "cowes bus": "考斯巴士",
+    "phillip island wildlife": "菲利普島野生動物",
+    "From Lorne, choose Sheoak Falls for a short creek walk or Erskine Falls for a five-minute lookout plus optional 230 stairs. Separate the farther Hopetoun and Triplet Falls from this day.": "從 Lorne 出發，可選 Sheoak Falls 的短程溪畔步道，或前往 Erskine Falls 的五分鐘觀景點，再視情況挑戰 230 階樓梯。較遠的 Hopetoun 和 Triplet Falls 請另安排一天。",
+    "erskine falls stairs": "埃斯金瀑布階梯",
+    "sheoak falls walk": "西奧克瀑布步道",
+    "lorne coach": "洛恩長途巴士",
+    "great otway waterfall day": "大奧特威瀑布日",
+    "Use Halls Gap as a base for one Grampians subregion and choose only an open walk or lookout. Mackenzie Falls precinct is closed through end-2026; check the dated Parks Victoria alerts, fire risk and trail access.": "以 Halls Gap 為基地，選一個 Grampians 子區域，只走已開放的步道或前往開放觀景點。Mackenzie Falls 區域關閉至 2026 年底；查看標註日期的 Parks Victoria 公告、火災風險與步道狀況。",
+    "halls gap walks": "霍爾斯蓋普步道",
+    "boroka lookout": "博羅卡觀景台",
+    "reeds lookout": "里茲觀景台",
+    "mackenzie falls closure": "麥肯齊瀑布封閉"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Luna requested, exact runtime identity unverified",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime identity unverified",
+    "independentSecondModel": false
+  }
+}

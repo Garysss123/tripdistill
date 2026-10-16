@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use one Sanya bay base for three full days in four nights; check the airport or rail terminal, sea warning and Hainan entry rules before adding a second base.": "4박 일정이라면 싼야(Sanya)의 한 만을 거점으로 삼아 온전히 여행에 쓸 수 있는 3일을 보내세요. 두 번째 거점을 추가하기 전에 공항이나 철도 터미널, 해상 경보, 하이난(Hainan) 입국 규정을 확인하세요.",
+    "phoenix airport station": "펑황공항역(Phoenix Airport Station)",
+    "hainan visa-free scope": "하이난 무비자 입국 적용 범위",
+    "Reserve Mogao through Dunhuang Academy, use Dunhuang as one base for the caves and oasis, and give each Hexi Corridor city its own overnight.": "둔황연구원(Dunhuang Academy)을 통해 막고굴(Mogao)을 예약하세요. 동굴과 오아시스 일정은 둔황에 한 거점을 두고, 하서회랑(Hexi Corridor)의 도시마다 별도로 하룻밤씩 머무르세요.",
+    "mogao reservation": "막고굴(Mogao) 예약",
+    "dunhuang railway station": "둔황역(Dunhuang Railway Station)"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/toronto/",
+    "/canada/toronto/downtown-waterfront/",
+    "/canada/toronto/annex-kensington-museums/",
+    "/canada/toronto/toronto-islands/"
+  ],
+  "translations": {
+    "Choose Centre, Ward’s or Hanlan’s for its distinct park or beach. City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal; check the chosen landing’s seasonal timetable and keep a downtown Toronto alternative ready.": "可依目的選擇 Centre、Ward’s 或 Hanlan’s：各自通往不同的公園或海灘。多倫多市府渡輪票可搭往任一島上碼頭，回程也可從任一島上碼頭搭回 Jack Layton Ferry Terminal；請查所選碼頭的當季班表，並準備一個市區替代行程。",
+    "City of Toronto — Ferry Ticket & Passenger Information": "多倫多市府－渡輪票務與乘客資訊",
+    "Can I return to Jack Layton Ferry Terminal from a different Island dock?": "我可以從不同的島上碼頭搭船返回 Jack Layton Ferry Terminal 嗎？",
+    "Yes. City ferry tickets are valid for travel to any dock on the Islands and for the return trip from any island dock to Jack Layton Ferry Terminal. Check the actual operating schedule for your chosen dock and the next return boat; the landings follow separate timetables.": "可以。多倫多市府渡輪票可搭往群島上的任一碼頭，回程也可從任一島上碼頭搭回 Jack Layton Ferry Terminal。請查看所選碼頭實際營運的班表及下一班回程船；各碼頭的班次時間表不同。",
+    "Choose your return dock": "選擇返程碼頭",
+    "City ferry tickets are valid to any island dock and for the return trip from any island dock to Jack Layton Ferry Terminal. Before walking to another landing, check that dock’s actual operating schedule and the next departure; keep a downtown Toronto plan ready if service changes.": "多倫多市府渡輪票可搭往任一島上碼頭，回程也可從任一島上碼頭搭回 Jack Layton Ferry Terminal。走到另一個碼頭前，先查看該碼頭實際營運的班表和下一班船；若服務異動，請準備好改走市區行程。",
+    "If the wind, service notice or queue makes the crossing a poor choice, move the island day and choose a downtown Toronto or museum route instead. The ferry is the day’s commitment, not a small add-on after a timed booking.": "若風勢、服務公告或排隊情況讓搭船不合適，就把島上行程改到別天，改走多倫多市區或博物館路線。搭渡輪是當天的主要安排，別把它當成預約行程後順便加上的小插曲。",
+    "A ticket does not set the timetable": "票券不等於班表",
+    "A City ticket is valid to any island dock and for the return from any island dock to Jack Layton Ferry Terminal. Departures still vary by landing and season, so check the dock you plan to use and its next boat before a long walk.": "多倫多市府渡輪票可搭往任一島上碼頭，回程也可從任一島上碼頭搭回 Jack Layton Ferry Terminal。班次仍會因碼頭與季節而異，長距離步行前請先查看預計使用的碼頭及下一班船。"
+  }
+}

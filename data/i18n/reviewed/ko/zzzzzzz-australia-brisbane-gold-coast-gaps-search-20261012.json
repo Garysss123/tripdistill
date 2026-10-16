@@ -1,0 +1,18 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Start at New Farm Park by ferry or bus, choose a scheduled Powerhouse visit, then decide whether Fortitude Valley fits before the last practical train or a prearranged ride home.": "New Farm Park에는 페리나 버스로 가세요. 일정이 확정된 Powerhouse 방문을 선택한 뒤, 이용 가능한 막차나 미리 예약한 차량으로 귀가할 수 있는 시간 안에 Fortitude Valley까지 들를지 결정하세요.",
+    "Give QAG or GOMA a real visit, then decide whether the river edge and West End’s Boundary Street fit; the two galleries are 150m apart, but market dates and return transport are separate checks.": "QAG 또는 GOMA 한 곳을 충분히 둘러본 다음 강변과 West End의 Boundary Street까지 갈지 결정하세요. 두 갤러리는 150m 떨어져 있지만, 시장 운영 날짜와 귀가 교통편은 각각 따로 확인해야 합니다.",
+    "Choose Springbrook’s plateau and one grade-matched walk: Purling Brook Falls is a 4km grade-3 return, while Natural Bridge is a separate road section. Check park alerts, road conditions and mountain rain before driving.": "Springbrook 고원 지대와 체력에 맞는 산책로 하나를 선택하세요. Purling Brook Falls는 난이도 3등급, 왕복 4km이며 Natural Bridge는 별도의 도로 구간에 있습니다. 운전 전에 공원 경보, 도로 상황, 산악 지역의 강우를 확인하세요.",
+    "Choose Green Mountains or Binna Burra before leaving the coast: the two trailheads are separate road gateways with no public transport. Match a named grade-and-distance walk to the live severe-weather alert and road conditions.": "해안에서 출발하기 전에 Green Mountains 또는 Binna Burra를 선택하세요. 두 트레일 시작 지점은 서로 다른 도로 관문에 있으며 대중교통이 없습니다. 구체적인 난이도와 거리가 안내된 산책로를 실시간 악천후 경보와 도로 상황에 맞춰 선택하세요."
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna requested; runtime identity unverified",
+    "reviewer": "GPT-6 Luna requested; same-model self-review (non-independent); runtime identity unverified",
+    "independentSecondModel": false
+  }
+}

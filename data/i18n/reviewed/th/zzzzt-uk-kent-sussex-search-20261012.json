@@ -1,0 +1,41 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Brighton, Canterbury, Dover and Seven Sisters as separate rail and bus days. Compare a Brighton base with an east Kent overnight, then check hill, cliff, tide and return connections.": "วางแผนไบรตัน แคนเทอร์เบอรี โดเวอร์ และเซเวนซิสเตอร์สเป็นคนละวันเดินทางด้วยรถไฟและรถบัส เปรียบเทียบพักไบรตันกับค้างคืนอีสต์เคนต์ แล้วตรวจทางชัน หน้าผา น้ำขึ้นลง และขากลับ",
+    "Brighton": "ไบรตัน",
+    "Canterbury": "แคนเทอร์เบอรี",
+    "Dover Castle": "ปราสาทโดเวอร์",
+    "Seven Sisters": "เซเวนซิสเตอร์ส",
+    "Eastbourne": "อีสต์บอร์น",
+    "Seaford": "ซีฟอร์ด",
+    "Southeastern": "รถไฟ Southeastern",
+    "South Downs": "เซาท์ดาวน์ส",
+    "Plan Brighton from station to North Laine, Royal Pavilion and one seafront direction. Check seasonal Pavilion hours, then choose a bus or uphill walk back.": "วางแผนจากสถานีไบรตันไป North Laine, Royal Pavilion และชายทะเลเพียงทิศทางเดียว ตรวจเวลาเปิดตามฤดูกาลของพาวิลเลียน แล้วเลือกขึ้นรถบัสหรือเดินขึ้นกลับ",
+    "North Laine": "ย่าน North Laine",
+    "The Lanes": "ย่านเก่า The Lanes",
+    "Royal Pavilion": "Royal Pavilion",
+    "Brighton station": "สถานีไบรตัน",
+    "Old Steine": "ป้าย Old Steine",
+    "seafront": "ทางเดินชายทะเล",
+    "Choose Canterbury Cathedral or Dover Castle as the main visit. Match Canterbury East/West to the train; allow for Dover Castle’s hill, timed admission and last entry.": "เลือก Canterbury Cathedral หรือ Dover Castle เป็นจุดหลัก ใช้สถานี Canterbury East/West ให้ตรงกับรถไฟ และเผื่อทางขึ้นปราสาท รอบเข้าชมตามเวลา และรอบสุดท้าย",
+    "Canterbury West": "สถานี Canterbury West",
+    "Canterbury East": "สถานี Canterbury East",
+    "Canterbury Cathedral": "มหาวิหารแคนเทอร์เบอรี",
+    "Dover Priory": "สถานี Dover Priory",
+    "Plan Seven Sisters from Brighton, Seaford or Eastbourne via the date-checked Exceat bus. Pick a measured walk, check tide and cliff notices, and save daylight for the return.": "ไปเซเวนซิสเตอร์สจากไบรตัน ซีฟอร์ด หรืออีสต์บอร์นด้วยรถบัสไป Exceat ที่ยืนยันในวันเดินทาง เลือกระยะเดิน ตรวจน้ำขึ้นลงและประกาศหน้าผา แล้วเผื่อเวลากลับก่อนมืด",
+    "Exceat": "ศูนย์ผู้เยี่ยมชม Exceat",
+    "Cuckmere Haven": "ปากแม่น้ำ Cuckmere Haven",
+    "Coaster 12": "รถบัสชายฝั่ง Coaster 12",
+    "chalk cliffs": "หน้าผาหินชอล์ก",
+    "South Downs Way": "เส้นทาง South Downs Way"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

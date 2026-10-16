@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/"
+  ],
+  "translations": {
+    "NORTHEAST LOOP / KARST / COMMUNITIES": "เส้นทางวงรอบภาคตะวันออกเฉียงเหนือ / ภูมิประเทศคาสต์ / ชุมชน",
+    "Slow the Hà Giang loop into a chain of distinct places: Quản Bạ’s valley gate, Yên Minh’s pine hills, Đồng Văn’s preserved market quarter, then the northern Lũng Cú spur and Mã Pí Lèng canyon road.": "ค่อย ๆ สำรวจวงรอบ Hà Giang โดยแวะยังสถานที่ที่มีเอกลักษณ์แตกต่างกัน: ประตูหุบเขาแห่ง Quản Bạ เนินเขาสนของ Yên Minh ย่านตลาดเก่าแก่ที่ได้รับการอนุรักษ์ของ Đồng Văn จากนั้นมุ่งขึ้นเหนือไปยังเส้นทางแยกสู่ Lũng Cú และถนนผ่านหุบเขาลึก Mã Pí Lèng",
+    "Sleep in Hà Giang City before the loop, then use Yên Minh or Đồng Văn for the northern…": "พักค้างคืนใน Hà Giang City ก่อนออกเดินทางตามวงรอบ จากนั้นใช้ Yên Minh หรือ Đồng Văn เป็นฐานสำหรับเที่ยวพื้นที่ทางตอนเหนือของเส้นทาง",
+    "Vietnam Tourism describes Hanoi–Hà Giang City as about 300 km and roughly six hours by…": "ข้อมูลของ Vietnam Tourism ระบุว่าเส้นทางจาก Hanoi ไป Hà Giang City มีระยะทางประมาณ 300 กิโลเมตร และใช้เวลาเดินทางโดยรถยนต์ราวหกชั่วโมง"
+  }
+}

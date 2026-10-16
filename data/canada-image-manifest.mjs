@@ -22,7 +22,7 @@ export const canadaImageManifest = {
   },
   "vancouver-north-shore/sea-to-sky-whistler": {
     "src": "/assets/images/canada-vancouver-north-shore-sea-to-sky-whistler.webp",
-    "alt": "Sea-to-Sky mountain landscape near Whistler",
+    "alt": "Misty granite slope, conifers and utility lines along the Sea-to-Sky drive",
     "source": "https://commons.wikimedia.org/wiki/File:Sea_to_sky_Hwy,_going_to_Whistler_by_car_-_panoramio.jpg",
     "label": "Sea to sky Hwy, going to Whistler by car - panoramio.jpg",
     "creator": "bynyalcin",
@@ -32,33 +32,25 @@ export const canadaImageManifest = {
   },
   "victoria-south-island/inner-harbour-james-bay": {
     "src": "/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp",
-    "alt": "Victoria Inner Harbour and Parliament Buildings",
+    "alt": "Victoria's Inner Harbour, Parliament Buildings and boats at dusk",
     "source": "https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg",
-    "label": "Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
+    "label": "Victoria's Inner Harbour, Parliament Buildings and boats at dusk",
     "creator": "DXR",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Inner Harbour and British Columbia Parliament Buildings, Victoria, at dusk 20240827 1.jpg",
+    "sourceDate": "2024-08-27",
     "remoteSha1": "6984388f0d6ba649834c9010f33f2b526dd78c57"
   },
   "victoria-south-island/butchart-saanich": {
     "src": "/assets/images/canada-victoria-south-island-butchart-saanich.webp",
-    "alt": "Formal gardens on the Saanich Peninsula near Victoria",
+    "alt": "Formal garden beds and mature trees at Butchart Gardens",
     "source": "https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg",
-    "label": "Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
+    "label": "Formal garden beds and mature trees at Butchart Gardens",
     "creator": "Fyre Mael",
     "license": "CC BY 2.0",
     "commonsTitle": "File:Butchart Gardens - Victoria, British Columbia (28938334672).jpg",
+    "sourceDate": "2015-06-26",
     "remoteSha1": "495ab547a7fe6dbdefb7314ce62da6e165ee7991"
-  },
-  "victoria-south-island/sooke-juan-de-fuca": {
-    "src": "/assets/images/canada-victoria-south-island-sooke-juan-de-fuca.webp",
-    "alt": "Rocky Pacific shoreline near Sooke on Vancouver Island",
-    "source": "https://commons.wikimedia.org/wiki/File:Rocky_coast_between_Little_Kuitshe_Campsite_and_Payzant_Campsite,_Juan_de_Fuca_Trail,_Vancouver_Island,_Canada_39.jpg",
-    "label": "Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-    "creator": "Michal Klajban",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Rocky coast between Little Kuitshe Campsite and Payzant Campsite, Juan de Fuca Trail, Vancouver Island, Canada 39.jpg",
-    "remoteSha1": "9484598fa3f863ddce9582a560b76578737b494a"
   },
   "pacific-rim-tofino/long-beach-rainforest": {
     "src": "/assets/images/canada-pacific-rim-tofino-long-beach-rainforest.webp",
@@ -72,7 +64,7 @@ export const canadaImageManifest = {
   },
   "pacific-rim-tofino/ucluelet-wild-pacific": {
     "src": "/assets/images/canada-pacific-rim-tofino-ucluelet-wild-pacific.webp",
-    "alt": "Rocky Pacific coast and forest near Ucluelet",
+    "alt": "Bald eagle perched among Sitka spruce along the Wild Pacific Trail in Ucluelet",
     "source": "https://commons.wikimedia.org/wiki/File:Picea_sitchensis_Wild_Pacific_Trail,_Ucluelet_2.jpg",
     "label": "Picea sitchensis Wild Pacific Trail, Ucluelet 2.jpg",
     "creator": "Roland Tanglao from Vancouver, Canada",
@@ -92,7 +84,7 @@ export const canadaImageManifest = {
   },
   "banff-lake-louise/banff-town-bow-valley": {
     "src": "/assets/images/canada-banff-lake-louise-banff-town-bow-valley.webp",
-    "alt": "Banff town set below the Rocky Mountains",
+    "alt": "Cascade Mountain and avalanche signage on the Banff approach",
     "source": "https://commons.wikimedia.org/wiki/File:%27You_are_in_AVALANCHE_country%27_--_Cascade_Mountain_on_the_the_Road_to_Banff,_Alberta_(CA)_September_2019_(49559005101).jpg",
     "label": "'You are in AVALANCHE country' -- Cascade Mountain on the the Road to Banff, Alberta (CA) September 2019 (49559005101).jpg",
     "creator": "Ron Cogswell from Arlington, Virginia, USA",
@@ -118,11 +110,13 @@ export const canadaImageManifest = {
     "creator": "Amber Mac75",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Johnston Canyon Banff National Park.jpg",
-    "remoteSha1": "86651f4829a1254e188595ed426254144ff48898"
+    "remoteSha1": "86651f4829a1254e188595ed426254144ff48898",
+    "inventoryStatus": "unused",
+    "retirementNote": "Local pixels show a forest stream that does not match the Johnston Canyon and Lake Minnewanka route described by this page. Retained for provenance, removed from all live page references, and replaced by an original planning schematic. The source-page declaration and uploader authority were not independently verified in this review."
   },
   "jasper-icefields/jasper-town-maligne": {
     "src": "/assets/images/canada-jasper-icefields-jasper-town-maligne.webp",
-    "alt": "Mountain lake in Jasper National Park",
+    "alt": "Maligne Lake boathouse and mountain backdrop",
     "source": "https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg",
     "label": "Canada Boat House am Maligne Lake, Jasper NP, Alberta, CA.jpg",
     "creator": "Christianabend",
@@ -162,7 +156,7 @@ export const canadaImageManifest = {
   },
   "calgary-badlands/drumheller-royal-tyrrell": {
     "src": "/assets/images/canada-calgary-badlands-drumheller-royal-tyrrell.webp",
-    "alt": "Alberta badlands near Drumheller",
+    "alt": "Dinosaur displays inside the Royal Tyrrell Museum",
     "source": "https://commons.wikimedia.org/wiki/File:Albertosaurus_-_Canada%27s_Dinosaur_Museum._(12643048524).jpg",
     "label": "Albertosaurus - Canada's Dinosaur Museum. (12643048524).jpg",
     "creator": "Bernard Spragg. NZ from Christchurch, New Zealand",
@@ -232,7 +226,7 @@ export const canadaImageManifest = {
   },
   "niagara/niagara-on-the-lake": {
     "src": "/assets/images/canada-niagara-niagara-on-the-lake.webp",
-    "alt": "Heritage streetscape and wine country near Niagara-on-the-Lake",
+    "alt": "Historic Queen Street streetscape and Niagara Apothecary in Niagara-on-the-Lake",
     "source": "https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg",
     "label": "Niagara Apothecary - 5 Queen Street, Niagara-on-the-Lake, ON L0S 1J0, Canada.jpg",
     "creator": "Spudgun67",
@@ -262,7 +256,7 @@ export const canadaImageManifest = {
   },
   "ottawa-gatineau/gatineau-park": {
     "src": "/assets/images/canada-ottawa-gatineau-gatineau-park.webp",
-    "alt": "Forested hills and lookout in Gatineau Park",
+    "alt": "Autumn hills and valley seen from Champlain Lookout, Gatineau Park",
     "source": "https://commons.wikimedia.org/wiki/File:Fall_Sunset,_Champlain_Lookout,_Gatineau_Park_(10337741823).jpg",
     "label": "Fall Sunset, Champlain Lookout, Gatineau Park (10337741823).jpg",
     "creator": "tsaiproject from Canada",
@@ -281,14 +275,14 @@ export const canadaImageManifest = {
     "remoteSha1": "901bb923327efb1942ba3cdaf88b7e1d555666ca"
   },
   "montreal/plateau-mile-end": {
-    "src": "/assets/images/canada-montreal-plateau-mile-end.webp",
-    "alt": "Residential streets and exterior staircases in Montreal Plateau",
-    "source": "https://commons.wikimedia.org/wiki/File:Parc_Lahaie_@_Mile_End_@_Le_Plateau_@_Montr%C3%A9al_(30420821831).jpg",
-    "label": "Parc Lahaie @ Mile End @ Le Plateau @ Montréal (30420821831).jpg",
-    "creator": "Guilhem Vellut from Annecy, France",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Parc Lahaie @ Mile End @ Le Plateau @ Montréal (30420821831).jpg",
-    "remoteSha1": "65e57c1540ecea1912b936719cd69efd5485affe"
+    "src": "/assets/images/canada-montreal-plateau-mile-end-20261007.webp",
+    "alt": "Mile End street corner at Laurier and Henri-Julien, with apartment and storefront buildings",
+    "source": "https://commons.wikimedia.org/wiki/File:20181013_-_01_-_Montreal_(Mile_End).jpg",
+    "label": "20181013 - 01 - Montreal (Mile End).jpg",
+    "creator": "Andre Carrotflower",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:20181013 - 01 - Montreal (Mile End).jpg",
+    "remoteSha1": "6daa09e24d7cc1866d805d1cc5621f785f97a44f"
   },
   "montreal/mount-royal-museums": {
     "src": "/assets/images/canada-montreal-mount-royal-museums.webp",
@@ -302,7 +296,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/old-quebec": {
     "src": "/assets/images/canada-quebec-city-charlevoix-old-quebec.webp",
-    "alt": "Old Quebec and Château Frontenac above the St Lawrence River",
+    "alt": "A street in Old Québec looking toward Château Frontenac and neighbouring historic buildings",
     "source": "https://commons.wikimedia.org/wiki/File:Chateau_Frontenac_from_a_street_in_Old_Quebec.jpg",
     "label": "Chateau Frontenac from a street in Old Quebec.jpg",
     "creator": "Wilfredor",
@@ -312,7 +306,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/montmorency-orleans": {
     "src": "/assets/images/canada-quebec-city-charlevoix-montmorency-orleans.webp",
-    "alt": "Montmorency Falls near Quebec City",
+    "alt": "Montmorency Falls and its suspension bridge, with visitors on the riverside overlook",
     "source": "https://commons.wikimedia.org/wiki/File:Montmorency_Falls,_Quebec_City,_Canada.jpg",
     "label": "Montmorency Falls, Quebec City, Canada.jpg",
     "creator": "Didier Moïse",
@@ -322,7 +316,7 @@ export const canadaImageManifest = {
   },
   "quebec-city-charlevoix/charlevoix-baie-saint-paul": {
     "src": "/assets/images/canada-quebec-city-charlevoix-charlevoix-baie-saint-paul.webp",
-    "alt": "Charlevoix hills and St Lawrence landscape near Baie-Saint-Paul",
+    "alt": "Autumn forest and hills south of Baie-Saint-Paul in Charlevoix",
     "source": "https://commons.wikimedia.org/wiki/File:Charlevoix_2.jpg",
     "label": "Charlevoix 2.jpg",
     "creator": "LBM1948",
@@ -332,7 +326,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/tadoussac-marine": {
     "src": "/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp",
-    "alt": "St Lawrence estuary and forested shore near Tadoussac",
+    "alt": "Tadoussac harbor and waterfront beneath forested ridges across the water",
     "source": "https://commons.wikimedia.org/wiki/File:Tadoussac.jpg",
     "label": "Tadoussac.jpg",
     "creator": "Bodoklecksel",
@@ -342,7 +336,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/fjord-hiking": {
     "src": "/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp",
-    "alt": "Cliffs and water in Saguenay Fjord Quebec",
+    "alt": "Forest-covered ridges across Saguenay Fjord, framed by pine branches",
     "source": "https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG",
     "label": "SaguenayFjord.JPG",
     "creator": "Ajor933",
@@ -352,7 +346,7 @@ export const canadaImageManifest = {
   },
   "saguenay-tadoussac/saguenay-city-valley": {
     "src": "/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp",
-    "alt": "Saguenay River and urban landscape near Chicoutimi",
+    "alt": "Chicoutimi waterfront lights reflected on the Saguenay River at night",
     "source": "https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg",
     "label": "2016-10 Saguenay river - Chicoutimi at night 01.jpg",
     "creator": "0x010C",
@@ -362,7 +356,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/halifax-waterfront-citadel": {
     "src": "/assets/images/canada-halifax-nova-scotia-halifax-waterfront-citadel.webp",
-    "alt": "Halifax harbourfront and city in Nova Scotia",
+    "alt": "Halifax skyline from Alderney Landing across the harbour, with Citadel Hill just right of the towers",
     "source": "https://commons.wikimedia.org/wiki/File:TV-009-0290_(14193147898).jpg",
     "label": "TV-009-0290 (14193147898).jpg",
     "creator": "André Carrotflower",
@@ -372,7 +366,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/peggys-cove-lunenburg": {
     "src": "/assets/images/canada-halifax-nova-scotia-peggys-cove-lunenburg.webp",
-    "alt": "Granite Atlantic coastline and lighthouse landscape in Nova Scotia",
+    "alt": "Peggy’s Point Lighthouse above granite and the designated coastal viewing path at Peggy’s Cove",
     "source": "https://commons.wikimedia.org/wiki/File:Lighthouse_DSC01066_-_Peggy%27s_Cove_Lighthouse_(7612052968).jpg",
     "label": "Lighthouse DSC01066 - Peggy's Cove Lighthouse (7612052968).jpg",
     "creator": "Dennis G. Jarvis",
@@ -382,7 +376,7 @@ export const canadaImageManifest = {
   },
   "halifax-nova-scotia/cape-breton-cabot": {
     "src": "/assets/images/canada-halifax-nova-scotia-cape-breton-cabot.webp",
-    "alt": "Cabot Trail road and Atlantic highlands in Cape Breton",
+    "alt": "Cabot Trail winding through forested Cape Breton Highlands above the Atlantic coast",
     "source": "https://commons.wikimedia.org/wiki/File:Cabot_Trail_winding_through_Cape_Breton_Highlands_National_Park,_Nova_Scotia.jpg",
     "label": "Cabot Trail winding through Cape Breton Highlands National Park, Nova Scotia.jpg",
     "creator": "Elviroyage",
@@ -422,7 +416,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/st-johns-signal-hill": {
     "src": "/assets/images/canada-newfoundland-labrador-st-johns-signal-hill.webp",
-    "alt": "St. John’s harbour and colorful hillside houses in Newfoundland",
+    "alt": "Rocky Signal Hill headland above the Atlantic at St. John’s",
     "source": "https://commons.wikimedia.org/wiki/File:Signal_Hill_St_John_Harbour_Newfoundland_(41364638351).jpg",
     "label": "Signal Hill St John Harbour Newfoundland (41364638351).jpg",
     "creator": "Michel Rathwell from Cornwall, Canada",
@@ -432,7 +426,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/bonavista-trinity": {
     "src": "/assets/images/canada-newfoundland-labrador-bonavista-trinity.webp",
-    "alt": "North Atlantic coastal village in Newfoundland",
+    "alt": "St. Paul’s Anglican Church and graveyard in Trinity, Newfoundland",
     "source": "https://commons.wikimedia.org/wiki/File:Stpaulsanglican-trinitynewfoundland.jpg",
     "label": "Stpaulsanglican-trinitynewfoundland.jpg",
     "creator": "The original uploader was Staib at English Wikipedia .",
@@ -442,7 +436,7 @@ export const canadaImageManifest = {
   },
   "newfoundland-labrador/gros-morne": {
     "src": "/assets/images/canada-newfoundland-labrador-gros-morne.webp",
-    "alt": "Mountain and fjord landscape in Gros Morne National Park",
+    "alt": "Rocky shore and mountains at Western Brook Pond in Gros Morne National Park",
     "source": "https://commons.wikimedia.org/wiki/File:Western_Brook_Pond.jpg",
     "label": "Western Brook Pond.jpg",
     "creator": "Bigg(g)er",
@@ -452,7 +446,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/forks-exchange": {
     "src": "/assets/images/canada-winnipeg-churchill-forks-exchange.webp",
-    "alt": "The Forks and downtown Winnipeg near the rivers",
+    "alt": "Riverfront at The Forks in Winnipeg, with the riverside promenade and sculpture at dusk",
     "source": "https://commons.wikimedia.org/wiki/File:The_Forks_at_dusk,_Winnipeg,_Manitoba,_Canada.jpg",
     "label": "The Forks at dusk, Winnipeg, Manitoba, Canada.jpg",
     "creator": "Ethan Sahagun",
@@ -462,7 +456,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/human-rights-assiniboine": {
     "src": "/assets/images/canada-winnipeg-churchill-human-rights-assiniboine.webp",
-    "alt": "Canadian Museum for Human Rights in Winnipeg",
+    "alt": "An illuminated interior ramp inside the Canadian Museum for Human Rights in Winnipeg",
     "source": "https://commons.wikimedia.org/wiki/File:CMHR_-_Canadian_Museum_for_Human_Rights,_Winnipeg,_MB_(16763497237).jpg",
     "label": "CMHR - Canadian Museum for Human Rights, Winnipeg, MB (16763497237).jpg",
     "creator": "Erik Araújo from Sao Paulo, SP, Brazil",
@@ -472,7 +466,7 @@ export const canadaImageManifest = {
   },
   "winnipeg-churchill/churchill-hudson-bay": {
     "src": "/assets/images/canada-winnipeg-churchill-churchill-hudson-bay.webp",
-    "alt": "Subarctic tundra and Hudson Bay near Churchill Manitoba",
+    "alt": "Sea ice along Hudson Bay near Cape Churchill, Manitoba",
     "source": "https://commons.wikimedia.org/wiki/File:Flying_over_Cape_Churchill_(6360559653).jpg",
     "label": "Flying over Cape Churchill (6360559653).jpg",
     "creator": "Emma",
@@ -492,7 +486,7 @@ export const canadaImageManifest = {
   },
   "whitehorse-kluane/kluane-haines-junction": {
     "src": "/assets/images/canada-whitehorse-kluane-kluane-haines-junction.webp",
-    "alt": "Mountain landscape in Kluane National Park Yukon",
+    "alt": "Dall sheep on a rocky slope beneath a high mountain face in Kluane National Park",
     "source": "https://commons.wikimedia.org/wiki/File:Dall_sheep_in_Kluane_National_Park.JPG",
     "label": "Dall sheep in Kluane National Park.JPG",
     "creator": "Jsayre64",

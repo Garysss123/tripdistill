@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Oxford is a walkable base; choose Blenheim by Stagecoach S3 or S7, or plan one dated Pulhams 801 corridor from Moreton-in-Marsh. Give each rural area its own day.": "以 Oxford 為步行遊覽據點；搭 Stagecoach S3 或 S7 前往 Blenheim，或從 Moreton-in-Marsh 規劃一段符合指定日期班次的 Pulhams 801 路線。每個鄉間區域都另排一天。",
+    "Plan Oxford on foot from Carfax to Broad Street and Radcliffe Square, then choose one date-checked college or Bodleian visit and one museum collection.": "從 Carfax 步行至 Broad Street 和 Radcliffe Square，安排 Oxford 市區行程；再選一所已確認當日開放的學院或一項 Bodleian 參觀體驗，以及一間博物館。",
+    "Reach Blenheim from Oxford on Stagecoach S3 or S7 via Oxford Parkway, follow the Palace pedestrian approach, and choose State Rooms, gardens or parkland before planning the Woodstock return.": "從 Oxford 搭 Stagecoach S3，或經 Oxford Parkway 搭 S7 前往 Blenheim；依指示步行穿過園區前往宮殿，再從 State Rooms、花園或園區步道中選一項，並先規劃 Woodstock 回程。",
+    "No-car Cotswolds day: plan Moreton-in-Marsh rail and Pulhams 801 to a named Bourton or Stow stop; add a second town only if dated return services fit.": "無車遊 Cotswolds 一日行程：規劃火車至 Moreton-in-Marsh，再搭 Pulhams 801 前往 Bourton 或 Stow 的指定站點；只有旅行日期的回程班次可行時，才加遊第二個小鎮。"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "son river boat": "Son川の運航船",
+    "phong nha cave boat status": "Phong Nha洞窟の船の運航状況",
+    "dong hoi transfer": "Dong Hoiの送迎",
+    "cave water level": "洞窟の水位",
+    "chay river closure": "Chay川の閉鎖",
+    "dark cave tour status": "Dark Caveツアーの運営状況",
+    "water activity rules": "水上活動の規則",
+    "cave weather cancellation": "洞窟ツアーの天候中止",
+    "dong hoi road transfer": "Dong Hoiの道路送迎",
+    "nuoc mooc opening status": "Nuoc Moocの営業状況",
+    "nuoc mooc water rules": "Nuoc Moocの水域ルール",
+    "nuoc mooc road transfer": "Nuoc Moocへの道路送迎",
+    "forest route closure": "森林ルートの閉鎖",
+    "phong nha weather warning": "Phong Nhaの気象警報"
+  },
+  "reviewProvenance": {
+    "writer": "Codex model runtime; exact runtime/model identifier not exposed",
+    "reviewer": "Same-model self-review by the Codex model runtime; no independent second-model or human review",
+    "independentSecondModel": false
+  }
+}

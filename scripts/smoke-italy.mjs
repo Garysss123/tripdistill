@@ -31,10 +31,10 @@ for (const { language, prefix, route, localized } of pageRoutes) {
   if (!html) continue;
   if (!/<h1[ >]/i.test(html)) failures.push(`${localized}: missing H1`);
   if (!new RegExp(`<html[^>]+lang=["']${language}["']`, 'i').test(html)) failures.push(`${localized}: expected document language ${language}`);
-  if (!html.includes('/css/italy.css?v=20260926-1')) failures.push(`${localized}: Italy stylesheet missing`);
-  if (!html.includes('/css/site.css?v=20260926-1')) failures.push(`${localized}: shared stylesheet cache key is stale`);
+  if (!html.includes('/css/italy.css?v=20261004-2')) failures.push(`${localized}: Italy stylesheet missing`);
+  if (!html.includes('/css/site.css?v=20261016-1')) failures.push(`${localized}: shared stylesheet cache key is stale`);
   if (route.split('/').filter(Boolean).length === 3) {
-    if (!html.includes('/css/italy-field.css?v=20260926-1')) failures.push(`${localized}: Italy field stylesheet missing`);
+    if (!html.includes('/css/italy-field.css?v=20261004-3')) failures.push(`${localized}: Italy field stylesheet missing`);
     if (!/data-it-structure="[^"]+"/.test(html)) failures.push(`${localized}: Italy decision structure marker missing`);
   }
   if (!html.includes('data-ad-slot')) failures.push(`${localized}: ad placeholder missing`);
@@ -70,12 +70,17 @@ for (const [, prefix] of locales) {
 
 const { body: sitemap } = await request('/sitemap.xml');
 for (const { prefix, route, localized } of pageRoutes) {
-  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>2026-09-26</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
+  const expectedLastmod = route.startsWith('/italy/puglia/')
+    ? '2026-10-11'
+    : route === '/italy/rome/' || route.startsWith('/italy/rome/')
+      ? '2026-10-04'
+      : '2026-09-26';
+  if (sitemap && !sitemap.includes(`<loc>https://tripdistill.com${prefix}${route}</loc><lastmod>${expectedLastmod}</lastmod>`)) failures.push(`${localized}: sitemap route missing or stale`);
 }
 
-await request('/css/italy.css?v=20260926-1', 'Italy stylesheet');
-await request('/css/site.css?v=20260926-1', 'Shared stylesheet');
-await request('/css/italy-field.css?v=20260926-1', 'Italy field stylesheet');
+await request('/css/italy.css?v=20261004-2', 'Italy stylesheet');
+await request('/css/site.css?v=20261016-1', 'Shared stylesheet');
+await request('/css/italy-field.css?v=20261004-3', 'Italy field stylesheet');
 
 if (failures.length) {
   console.error(failures.join('\n'));

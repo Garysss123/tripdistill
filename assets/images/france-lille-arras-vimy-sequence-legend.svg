@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1066" role="img" aria-labelledby="title description">
+  <title id="title">Arras–Vimy visit sequence, in five languages</title>
+  <desc id="description">An original left-to-right planning sequence: Arras rail base, arranged last mile, visitor centre and signed paths, confirmed return. This is not a geographic map, not to scale, and not a live timetable.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7f0df"/>
+      <stop offset="1" stop-color="#e5e9df"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M1 1l8 5-8 5" fill="none" stroke="#c5553f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="1066" fill="url(#paper)"/>
+  <path d="M0 0h1600v18H0z" fill="#183b49"/>
+  <text x="82" y="99" fill="#b34c39" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">FIELD SEQUENCE · 01—04</text>
+  <text x="82" y="166" fill="#183b49" font-family="Georgia, serif" font-size="52" font-weight="700">A respectful Vimy visit starts with the return.</text>
+  <text x="82" y="211" fill="#47616a" font-family="Arial, sans-serif" font-size="23">One ordered planning sequence · five language labels · no geographic representation</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="264" width="350" height="570" rx="20" fill="#fffdf8" stroke="#bcc9c2" stroke-width="2"/>
+    <rect x="450" y="264" width="350" height="570" rx="20" fill="#fffdf8" stroke="#bcc9c2" stroke-width="2"/>
+    <rect x="830" y="264" width="350" height="570" rx="20" fill="#fffdf8" stroke="#bcc9c2" stroke-width="2"/>
+    <rect x="1210" y="264" width="320" height="570" rx="20" fill="#fffdf8" stroke="#bcc9c2" stroke-width="2"/>
+
+    <path d="M423 340h21M803 340h21M1183 340h21" stroke="#c5553f" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <circle cx="112" cy="316" r="26" fill="#183b49"/><text x="112" y="324" fill="#fff" text-anchor="middle" font-size="21" font-weight="700">01</text>
+    <text x="152" y="323" fill="#183b49" font-size="21" font-weight="700">ARRAS RAIL BASE</text>
+    <circle cx="492" cy="316" r="26" fill="#183b49"/><text x="492" y="324" fill="#fff" text-anchor="middle" font-size="21" font-weight="700">02</text>
+    <text x="532" y="323" fill="#183b49" font-size="20" font-weight="700">ARRANGED LAST MILE</text>
+    <circle cx="872" cy="316" r="26" fill="#183b49"/><text x="872" y="324" fill="#fff" text-anchor="middle" font-size="21" font-weight="700">03</text>
+    <text x="912" y="323" fill="#183b49" font-size="18" font-weight="700">VISITOR CENTRE + PATHS</text>
+    <circle cx="1252" cy="316" r="26" fill="#183b49"/><text x="1252" y="324" fill="#fff" text-anchor="middle" font-size="21" font-weight="700">04</text>
+    <text x="1292" y="323" fill="#183b49" font-size="20" font-weight="700">RETURN CONFIRMED</text>
+
+    <g fill="#b34c39" font-size="15" font-weight="700" letter-spacing="1">
+      <text x="94" y="390">EN</text><text x="94" y="477">繁</text><text x="94" y="564">日本語</text><text x="94" y="651">한국어</text><text x="94" y="738">ไทย</text>
+      <text x="474" y="390">EN</text><text x="474" y="477">繁</text><text x="474" y="564">日本語</text><text x="474" y="651">한국어</text><text x="474" y="738">ไทย</text>
+      <text x="854" y="390">EN</text><text x="854" y="477">繁</text><text x="854" y="564">日本語</text><text x="854" y="651">한국어</text><text x="854" y="738">ไทย</text>
+      <text x="1234" y="390">EN</text><text x="1234" y="477">繁</text><text x="1234" y="564">日本語</text><text x="1234" y="651">한국어</text><text x="1234" y="738">ไทย</text>
+    </g>
+    <g fill="#183b49" font-size="20" font-weight="600">
+      <text x="144" y="390">Arras rail base</text><text x="144" y="477">阿拉斯鐵路基地</text><text x="144" y="564">アラスの鉄道拠点</text><text x="144" y="651">아라스 철도 거점</text><text x="144" y="738">ฐานรถไฟอารัส</text>
+      <text x="524" y="390">Pre-arrange last mile</text><text x="524" y="477">預先安排最後一段接駁</text><text x="524" y="564" textLength="248" lengthAdjust="spacingAndGlyphs">最後の移動を事前手配</text><text x="524" y="651">마지막 구간을 사전 예약</text><text x="524" y="738" font-size="16" textLength="248" lengthAdjust="spacingAndGlyphs">จัดการช่วงเดินทางสุดท้ายล่วงหน้า</text>
+      <text x="904" y="390" textLength="248" lengthAdjust="spacingAndGlyphs">Visitor centre + signed paths</text><text x="904" y="477">訪客中心與標示步道</text><text x="904" y="564" textLength="248" lengthAdjust="spacingAndGlyphs">ビジターセンターと標識ルート</text><text x="904" y="651">방문자 센터와 표지 경로</text><text x="904" y="738" font-size="16" textLength="248" lengthAdjust="spacingAndGlyphs">ศูนย์ผู้เยี่ยมชมและเส้นทางที่มีป้าย</text>
+      <text x="1284" y="390">Confirmed return</text><text x="1284" y="477">確認返程</text><text x="1284" y="564">帰路を確認</text><text x="1284" y="651">복귀편 확인</text><text x="1284" y="738" font-size="16" textLength="224" lengthAdjust="spacingAndGlyphs">ยืนยันการเดินทางกลับ</text>
+    </g>
+    <g fill="#47616a" font-size="16">
+      <text x="94" y="790">Arrive in town first</text><text x="474" y="790">Record pickup + return</text><text x="854" y="790">Follow current site notices</text><text x="1234" y="790">Keep a later option</text>
+    </g>
+  </g>
+
+  <rect x="70" y="875" width="1460" height="152" rx="16" fill="#183b49"/>
+  <text x="98" y="917" fill="#f1c57b" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">IMPORTANT</text>
+  <text x="98" y="944" fill="#fffdf8" font-family="Arial, sans-serif" font-size="20">Illustrative visit sequence — not a geographic map, not to scale, and not a live timetable.</text>
+  <text x="98" y="969" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">參訪流程示意，非地理地圖、不按比例、非即時班表。 · 訪問順序の例で、地理地図・縮尺図・リアルタイム時刻表ではありません。</text>
+  <text x="98" y="994" fill="#dce7e9" font-family="Arial, sans-serif" font-size="16">방문 순서 예시이며 지리 지도·축척도·실시간 시간표가 아닙니다. · ลำดับการเยี่ยมชมเพื่อประกอบความเข้าใจ ไม่ใช่แผนที่ภูมิศาสตร์ ไม่ได้แสดงตามมาตราส่วน และไม่ใช่ตารางเวลาสด</text>
+</svg>

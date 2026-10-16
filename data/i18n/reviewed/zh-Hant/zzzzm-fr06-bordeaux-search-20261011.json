@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Gironde looks compact on a map but runs on three different systems: Bordeaux’s TBM tram network, TER rail to Saint-Émilion and Arcachon, then a separate last mile to a booked cellar or the shifting Dune du Pilat. Use Bordeaux Saint-Jean as the hinge, confirm both legs of every excursion, and choose either the dune or a bay crossing on the coastal day.": "Gironde 地圖上看似緊湊，實際上要銜接三套交通：波爾多 TBM 電車、前往 Saint-Émilion 與 Arcachon 的 TER 鐵路，以及通往已預約參訪的酒窖或地形不斷變動的 Dune du Pilat 的最後一段接駁。以 Bordeaux Saint-Jean 為交通樞紐，出發前確認每趟行程的去回程；海岸日則在沙丘與跨海灣行程之間擇一。",
+    "Follow Place de la Bourse and the Garonne quays once, then choose either a central heritage visit or tram B to La Cité du Vin. The night photograph shows the illuminated facade and river reflection, not daytime conditions.": "沿 Place de la Bourse 與加龍河岸走一趟，再選擇市中心的歷史景點，或搭乘 B 線電車前往 La Cité du Vin。夜景照片呈現的是燈光照亮的建築立面與河面倒影，並非白天景象。",
+    "The station sits below the medieval village and most vineyards are not walk-up cellar doors. Start at the tourist office, book one official monument tour or one estate appointment, and arrange any rural transfer before travel.": "車站位於中世紀村落下方，多數酒莊也不是可直接步入的酒窖。先到旅遊服務中心，再預約一場官方古蹟導覽或一次酒莊參訪；如需前往鄉間酒莊，請事先安排接駁。",
+    "The photograph shows low sun over bay water, not the dune. From Arcachon station, choose one separate route to Dune du Pilat or Cap Ferret; bus, staircase, boat, tide and weather conditions need date-specific checks.": "照片呈現低角度陽光照在海灣水面上，並未拍到沙丘。從 Arcachon 車站出發，請在 Dune du Pilat 與 Cap Ferret 兩條獨立路線中擇一；巴士、階梯、船班、潮汐與天候狀況都應依出行日期查核。"
+  }
+}

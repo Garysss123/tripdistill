@@ -1,0 +1,26 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Belfast–Coleraine rail itinerary": "ベルファスト～コールレーン鉄道ルート",
+    "Causeway Coast bus connection": "コーズウェー海岸のバス接続",
+    "Derry overnight base": "デリーの宿泊拠点",
+    "Belfast civic walking route": "ベルファスト行政地区の徒歩ルート",
+    "Titanic Quarter timed visit": "タイタニック・クォーターの時間指定入場",
+    "Belfast station choices": "ベルファストの駅選び",
+    "Coleraine to Giant’s Causeway": "コールレーンからジャイアンツ・コーズウェーへ",
+    "Causeway Coast seasonal bus": "コーズウェー海岸の季節運行バス",
+    "Causeway visitor-centre access": "ジャイアンツ・コーズウェーのビジターセンターアクセス",
+    "Derry wall walking route": "デリー城壁の徒歩ルート",
+    "Cityside and Waterside stay": "シティサイドとウォーターサイドの宿泊",
+    "Museum of Free Derry opening hours": "Free Derry Museumの開館時間"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

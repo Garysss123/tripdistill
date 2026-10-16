@@ -1,0 +1,11 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kata tjuṯa": "卡塔丘塔（Kata Tjuṯa）",
+    "Kata Tjuṯa Guide": "卡塔丘塔（Kata Tjuṯa）指南"
+  }
+}

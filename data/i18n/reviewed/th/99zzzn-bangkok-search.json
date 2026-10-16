@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use Asok, Phrom Phong, Thong Lo and Ekkamai as distinct rail stops for parks, connected malls and one neighborhood dining cluster.": "ใช้สถานีรถไฟ Asok, Phrom Phong, Thong Lo และ Ekkamai เป็นจุดแวะคนละแบบ ทั้งสวน ห้างที่เชื่อมต่อกัน และย่านร้านอาหารที่เลือกไว้หนึ่งกลุ่ม",
+    "Connect Lumphini Park and Sri Maha Mariamman Temple on Silom Road, then choose one Sathorn branch: the Mahanakhon skyline or Sathorn Pier.": "เชื่อมสวนลุมพินี (Lumphini Park) กับวัดพระศรีมหาอุมาเทวี (Sri Maha Mariamman Temple) บนถนนสีลม แล้วเลือกแผนต่อในสาทรเพียงทางเดียว: ชมวิวตึก Mahanakhon หรือไปท่าสาทร",
+    "Choose Chatuchak by market day and numbered section, then use Chatuchak Park for a garden break or the BTS to Ari for a neighborhood meal.": "เลือกวันและโซนหมายเลขของตลาดจตุจักร (Chatuchak Market) แล้วแวะสวนจตุจักรพักในสวน หรือขึ้น BTS ไป Ari เพื่อรับประทานอาหารในย่าน"
+  }
+}

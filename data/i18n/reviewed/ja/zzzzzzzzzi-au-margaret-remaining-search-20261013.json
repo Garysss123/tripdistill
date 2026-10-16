@@ -1,0 +1,42 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Busselton for the foreshore and a timed Jetty visit or Dunsborough for the Cape Naturaliste start. Match Transwa SW1 stops to a booked last-mile ride, and check Jetty ticket, luggage, accessibility and marine-weather rules before fixing the day.": "海辺と時間指定の桟橋訪問ならバッセルトン、Cape Naturalisteへ向かうならダンズボローを選びましょう。Transwa SW1の停留所に合わせた送迎を手配し、桟橋のチケット、荷物、アクセシビリティ、海況の条件を確認してから日程を決めます。",
+    "busselton jetty train underwater observatory booking": "バッセルトン桟橋の列車、水中展望台の予約",
+    "busselton dunsborough base choice nights": "バッセルトン・ダンズボローの宿泊拠点と泊数",
+    "transwa sw1 busselton dunsborough stop": "Transwa SW1 バッセルトン・ダンズボロー停留所",
+    "busselton foreshore luggage storage jetty": "バッセルトン海辺、荷物預かり、桟橋",
+    "dunsborough cape naturaliste transfer": "ダンズボロー・ナチュラリスト岬の送迎",
+    "busselton jetty weather wind access": "バッセルトン桟橋の天候、風、アクセス",
+    "Plan Cape Naturaliste by choosing the lighthouse, a short marked walk or the 3.4 km one-way Sugarloaf section. The return is about 6.8 km on foot without a confirmed pickup; check current track, fire, wind, lighthouse and road access.": "Cape Naturalisteでは、灯台、短い標識付き散策、片道3.4kmのSugarloaf区間から選びましょう。送迎を確保せず徒歩で戻るなら約6.8kmです。出発前にトレイル、火災、風、灯台、道路の最新情報を確認してください。",
+    "cape naturaliste sugarloaf rock walk 3.4 km one way": "ナチュラリスト岬・Sugarloaf Rock散策 片道3.4km",
+    "cape naturaliste lighthouse 59 steps visitor access": "ナチュラリスト岬灯台・59段・来訪者アクセス",
+    "cape naturaliste trail return shuttle dunsborough": "ナチュラリスト岬トレイルの帰りの送迎・ダンズボロー",
+    "leeuwin-naturaliste coast wind fire trail status": "リーウィン＝ナチュラリスト海岸の風・火災・トレイル状況",
+    "cape to cape track day section return plan": "Cape to Cape Trackの日帰り区間と折り返し計画",
+    "cape naturaliste whale lookout walk trail": "ナチュラリスト岬のクジラ展望散策路",
+    "Anchor the Augusta day on one booked Jewel Cave tour, then add only the cave-site karri walk or one open Boranup forest stop. Ngilgi is a separate northern route with 350 steps; verify cave access, fire notices, road and daylight before leaving.": "オーガスタの日は予約済みのJewel Caveツアーを軸にし、洞窟敷地のカリー林散策か開放中のBoranupの森を1か所だけ加えましょう。Ngilgiは北側の別ルートで階段350段です。出発前に洞窟のアクセス、火災情報、道路、日照時間を確認してください。",
+    "jewel cave augusta one-hour guided tour booking": "Jewel Cave・オーガスタ・1時間ガイドツアー予約",
+    "boranup forest park road fire access": "Boranup Forest・公園道路・火災アクセス",
+    "margaret river to augusta jewel cave transport": "マーガレット・リバーからオーガスタのJewel Caveへの交通",
+    "ngilgi cave 350 steps accessibility ancient lands": "Ngilgi Cave・350段・Ancient Landsのアクセシビリティ",
+    "augusta cape leeuwin overnight base": "オーガスタ・Cape Leeuwinの宿泊拠点",
+    "southwest wa cave booking and road closures": "西オーストラリア南西部の洞窟予約と道路通行止め",
+    "Treat Albany as a separate far-south region: use two nights minimum or three to separate the transfer, National Anzac Centre and Torndirrup. Choose the Gap platforms, Stony Hill short loop or Bald Head hike by effort and conditions; arrange a local park ride if arriving by coach.": "オールバニーは南端の独立した地域として計画しましょう。移動、National Anzac Centre、トンダラップを分けるには最低2泊、できれば3泊です。体力と状況に応じてThe Gapの展望台、Stony Hillの短い周回路、Bald Headのハイクを選び、バスで着く場合は公園への送迎を手配してください。",
+    "albany torndirrup two or three nights base": "オールバニー・トンダラップ 2泊または3泊の拠点",
+    "transwa gs1 gs2 gs3 albany coach route": "Transwa GS1・GS2・GS3 オールバニー行きバス",
+    "albany national anzac centre access visit": "オールバニーのNational Anzac Centre・アクセス・訪問",
+    "torndirrup the gap natural bridge stony hill bald head": "トンダラップのThe Gap・Natural Bridge・Stony Hill・Bald Head",
+    "albany coach transfer to torndirrup park": "オールバニーからトンダラップ公園へのバス送迎",
+    "albany coast wind swell fire park alerts": "オールバニー海岸の風・うねり・火災・公園警報"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

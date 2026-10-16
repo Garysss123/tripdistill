@@ -1,0 +1,34 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Carlton Gardens and Melbourne Museum with one connected Fitzroy or Collingwood street. Choose two precincts, check the live tram return beyond the Free Tram Zone, and verify market or event dates before going.": "Carlton GardensとMelbourne Museumに、FitzroyまたはCollingwoodの通りを一つ組み合わせて計画します。地区は二つに絞り、Free Tram Zone外から戻る最新のトラム経路を確認し、市場やイベントの日付も出発前に確かめてください。",
+    "melbourne museum": "メルボルン博物館",
+    "carlton gardens": "カールトン・ガーデンズ",
+    "brunswick street": "ブランズウィック・ストリート",
+    "smith street": "スミス・ストリート",
+    "The Penguin Parade is a booked sunset event, not an easy Melbourne day trip: confirm the evening transport because V/Line serves Cowes but has no parade-end return. Add Nobbies only if current access and weather suit.": "Penguin Paradeは予約制の夕暮れイベントで、メルボルンから気軽に行ける日帰り観光ではありません。V/LineはCowesまでで、パレード終了後に戻る便がないため、夜の交通手段を確認してください。Nobbiesは当日の開放状況と天候が適している場合だけ加えます。",
+    "penguin parade": "ペンギンパレード",
+    "nobbies boardwalk": "ノビーズの遊歩道",
+    "cowes bus": "カウズ行きバス",
+    "phillip island wildlife": "フィリップ島の野生動物",
+    "From Lorne, choose Sheoak Falls for a short creek walk or Erskine Falls for a five-minute lookout plus optional 230 stairs. Separate the farther Hopetoun and Triplet Falls from this day.": "Lorneからは、川沿いを短く歩くSheoak Fallsか、5分で着く展望所に加えて希望すれば230段の階段があるErskine Fallsを選びましょう。遠方のHopetoun FallsとTriplet Fallsは別の日に計画してください。",
+    "erskine falls stairs": "アースキン滝の階段",
+    "sheoak falls walk": "シーオーク滝の遊歩道",
+    "lorne coach": "ローン行き長距離バス",
+    "great otway waterfall day": "グレート・オトウェイの滝日帰り",
+    "Use Halls Gap as a base for one Grampians subregion and choose only an open walk or lookout. Mackenzie Falls precinct is closed through end-2026; check the dated Parks Victoria alerts, fire risk and trail access.": "Halls Gapを拠点にGrampiansの一区域を選び、開放中の散策路か展望地だけを訪れます。Mackenzie Falls地区は2026年末まで閉鎖予定です。日付入りのParks Victoria情報、火災危険、歩道の状況を確認してください。",
+    "halls gap walks": "ホールズ・ギャップの散策",
+    "boroka lookout": "ボロカ展望台",
+    "reeds lookout": "リーズ展望台",
+    "mackenzie falls closure": "マッケンジー滝の閉鎖"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; GPT-6 Luna requested, exact runtime identity unverified",
+    "reviewer": "Same task assistant; same-model self-review (non-independent); exact runtime identity unverified",
+    "independentSecondModel": false
+  }
+}

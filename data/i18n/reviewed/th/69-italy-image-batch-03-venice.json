@@ -1,0 +1,16 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/venice-lagoon/",
+    "/italy/venice-lagoon/cannaregio-dorsoduro-giudecca/",
+    "/italy/venice-lagoon/san-marco-rialto/",
+    "/italy/venice-lagoon/murano-burano-torcello/"
+  ],
+  "translations": {
+    "The Doge’s Palace and waterfront at San Marco in Venice · CC BY-SA 4.0": "พระราชวัง Doge และแนวริมน้ำที่ San Marco ใน Venice · CC BY-SA 4.0",
+    "— Mariordo (Mario Roberto Durán Ortiz),": "— Mariordo (Mario Roberto Durán Ortiz),",
+    "— Tony Hisgett from Birmingham, UK,": "— Tony Hisgett จาก Birmingham, UK,",
+    "A canal and residential street in Cannaregio, Venice · CC BY 2.0": "คลองและถนนในย่านที่พักอาศัย Cannaregio, Venice · CC BY 2.0"
+  }
+}

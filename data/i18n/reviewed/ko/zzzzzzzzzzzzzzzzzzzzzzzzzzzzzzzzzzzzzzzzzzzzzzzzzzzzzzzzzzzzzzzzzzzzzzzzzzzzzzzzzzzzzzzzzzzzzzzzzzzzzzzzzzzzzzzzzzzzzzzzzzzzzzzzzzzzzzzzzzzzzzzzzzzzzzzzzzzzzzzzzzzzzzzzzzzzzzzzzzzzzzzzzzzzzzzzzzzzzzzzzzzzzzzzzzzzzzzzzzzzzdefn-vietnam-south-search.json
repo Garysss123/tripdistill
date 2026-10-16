@@ -1,0 +1,40 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Saigon Waterbus Thu Thiem pier": "Saigon Waterbus Thu Thiem 선착장",
+    "Thao Dien pier": "Thao Dien 선착장",
+    "Bach Dang waterbus one-way ticket": "Bach Dang 수상버스 편도 승차권",
+    "Thu Thiem riverfront access": "Thu Thiem 강변 출입 정보",
+    "Ho Chi Minh City water bus return": "호찌민시 수상버스 귀환편",
+    "Thao Dien neighborhood route": "Thao Dien 동네 산책 경로",
+    "Can Gio mangrove reserve day trip": "Can Gio 맹그로브 보호구역 당일 여행",
+    "Binh Khanh ferry Cần Giờ": "Binh Khanh 페리와 Can Gio",
+    "Vam Sat visitor access": "Vam Sat 방문객 출입",
+    "Rung Sac mangrove forest": "Rung Sac 맹그로브 숲",
+    "Can Gio boat and boardwalk": "Can Gio 보트와 데크 산책로",
+    "Ho Chi Minh City wetland route": "호찌민시 습지 경로",
+    "My Tho Thoi Son island boat": "My Tho Thoi Son 섬 배편",
+    "Thoi Son pier operator": "Thoi Son 선착장 운영사",
+    "My Tho island tour return": "My Tho 섬 투어 귀환",
+    "My Tho to Can Tho coach transfer": "My Tho에서 Can Tho 버스 환승",
+    "Mekong Delta Thoi Son garden": "메콩델타 Thoi Son 정원",
+    "My Tho one night itinerary": "My Tho 1박 일정",
+    "Sa Dec flower village gardens": "Sa Dec 꽃마을 정원",
+    "Sa Dec Huynh Thuy Le house opening": "Sa Dec Huynh Thuy Le 저택 개방",
+    "Sa Dec market route": "Sa Dec 시장 산책 경로",
+    "Dong Thap flower village transfer": "Dong Thap 꽃마을 이동",
+    "Sa Dec one night itinerary": "Sa Dec 1박 일정",
+    "Sa Dec to Can Tho coach": "Sa Dec에서 Can Tho 버스"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the page route and translated with local names preserved. This is not independent model or human review."
+  }
+}

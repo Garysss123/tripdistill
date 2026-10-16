@@ -1,0 +1,28 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "MSY Route 202": "MSY Route 202",
+    "Jefferson Transit E1": "Jefferson Transit E1",
+    "airport fares": "空港交通の運賃",
+    "Neighborhood bases": "地区別の宿泊先",
+    "Jackson Square": "ジャクソン・スクエア",
+    "520 Royal Street": "520 Royal Street",
+    "Preservation Hall": "Preservation Hall",
+    "Quarter museum hours": "フレンチ・クォーター博物館の開館時間",
+    "St. Charles Route 12": "セント・チャールズ線 Route 12",
+    "Magazine Route 11": "マガジン通り Route 11",
+    "Lafayette Cemetery PRC tour": "ラファイエット墓地のPRCツアー",
+    "Wetland Trace": "Wetland Trace",
+    "Barataria closure": "バラタリアの閉鎖情報",
+    "Twin Canals": "Twin Canals"
+  },
+  "reviewProvenance": {
+    "writer": "Current Codex runtime; exact model variant not exposed",
+    "reviewer": "Same-runtime self-review; not independent",
+    "independentSecondModel": false
+  }
+}

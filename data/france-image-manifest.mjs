@@ -11,18 +11,18 @@ export const franceImageManifest = {
     "remoteSha1": "b800c96a980f8ad4c7dc1458859e1d6f392d637f"
   },
   "paris/louvre-tuileries-opera": {
-    "src": "/assets/images/france-paris-louvre-tuileries-opera.webp",
-    "alt": "The Louvre pyramid and palace courtyard in Paris",
-    "source": "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg",
-    "label": "Louvre Museum Wikimedia Commons.jpg",
-    "creator": "Benh LIEU SONG ( Flickr )",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Louvre Museum Wikimedia Commons.jpg",
-    "remoteSha1": "2eb38e70a2aaec38aaa3fdff7845734d9973b8b7"
+    "src": "/assets/images/france-paris-louvre-salle-mollien-20261006.webp",
+    "alt": "Red-walled Salle Mollien gallery with a skylight inside the Louvre palace",
+    "source": "https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg",
+    "label": "Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg",
+    "creator": "Shonagon",
+    "license": "CC0",
+    "commonsTitle": "File:Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg",
+    "remoteSha1": "b9a9f43a6a0cd0fd7f3b971b45a064efcb4fb2f8"
   },
   "paris/eiffel-invalides-montparnasse": {
     "src": "/assets/images/france-paris-eiffel-invalides-montparnasse.webp",
-    "alt": "The Eiffel Tower seen across the Seine from western Paris",
+    "alt": "View from the Eiffel Tower’s third floor across the Seine toward the Trocadéro gardens",
     "source": "https://commons.wikimedia.org/wiki/File:Paris_View_from_the_Eiffel_Tower_third_floor_Seine_upstream_00b_Jardins_du_Trocad%C3%A9ro.jpg",
     "label": "Paris View from the Eiffel Tower third floor Seine upstream 00b Jardins du Trocadéro.jpg",
     "creator": "Maxime Homme",
@@ -32,23 +32,23 @@ export const franceImageManifest = {
   },
   "paris-region-day-trips/versailles-palace-estate": {
     "src": "/assets/images/france-paris-region-day-trips-versailles-palace-estate.webp",
-    "alt": "The Palace of Versailles seen across its formal gardens",
-    "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_the_Ch%C3%A2teau_de_Versailles_(23673783164).jpg",
-    "label": "Panorama of the Château de Versailles (23673783164).jpg",
-    "creator": "Jorge Láscar from Melbourne, Australia",
-    "license": "CC BY 2.0",
-    "commonsTitle": "File:Panorama of the Château de Versailles (23673783164).jpg",
-    "remoteSha1": "b8b99395b95757d2338c57820817263b65a9428b"
+    "alt": "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Versailles_Garden.jpg",
+    "label": "Palace of Versailles Garden.jpg",
+    "creator": "Rlumstead",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Palace of Versailles Garden.jpg",
+    "remoteSha1": "841240ba29741e3f5501caf800e91bd3471d7054"
   },
   "paris-region-day-trips/fontainebleau-palace-forest": {
     "src": "/assets/images/france-paris-region-day-trips-fontainebleau-palace-forest.webp",
-    "alt": "The horseshoe staircase and courtyard at Château de Fontainebleau",
-    "source": "https://commons.wikimedia.org/wiki/File:2021-04-26_17-37-23_-_Fontainebleau_-_Cour_du_Cheval_Blanc.jpg",
-    "label": "2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg",
-    "creator": "Baidax",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg",
-    "remoteSha1": "e21d2d75b0517dd19ce88cc6526639b31d34622c"
+    "alt": "The Château de Fontainebleau’s horseshoe staircase framed by the Cour des Adieux wings",
+    "source": "https://commons.wikimedia.org/wiki/File:La_cour_du_cheval_blanc_(Ch%C3%A2teau_de_Fontainebleau).jpg",
+    "label": "La cour du cheval blanc (Château de Fontainebleau).jpg",
+    "creator": "Jean-Pierre Dalbéra",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:La cour du cheval blanc (Château de Fontainebleau).jpg",
+    "remoteSha1": "29b026aac3be816b26381545ab8d486ec605712a"
   },
   "paris-region-day-trips/giverny-monet-vernon": {
     "src": "/assets/images/france-paris-region-day-trips-giverny-monet-vernon.webp",
@@ -71,14 +71,17 @@ export const franceImageManifest = {
     "remoteSha1": "b20b00ca0d89208583be79b4809921f9b3ac982f"
   },
   "lille-french-flanders/arras-vimy-remembrance": {
-    "src": "/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp",
-    "alt": "The Canadian National Vimy Memorial rising above its preserved landscape",
-    "source": "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
-    "label": "2017-05 Canadian National Vimy Memorial 01.jpg",
-    "creator": "0x010C",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:2017-05 Canadian National Vimy Memorial 01.jpg",
-    "remoteSha1": "17cc1eacd347f2b54c2db9c64748103f92d953e5"
+    "src": "/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+    "alt": "Five-language visit-sequence diagram for Arras and the Vimy memorial; not a geographic map, not to scale, and not a live timetable",
+    "source": "https://tripdistill.com/assets/images/france-lille-arras-vimy-sequence-legend.svg",
+    "label": "Arras–Vimy visit sequence (original five-language SVG)",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "localSha1": "f0d98e0797bcff135af3e4997f6795428fd82615",
+    "editNote": "Original project SVG diagram; no third-party image content. A sequence schematic, not geography, scale or live service information."
   },
   "lille-french-flanders/opal-coast-headlands": {
     "src": "/assets/images/france-lille-french-flanders-opal-coast-headlands.webp",
@@ -152,13 +155,14 @@ export const franceImageManifest = {
   },
   "loire-valley/blois-chambord": {
     "src": "/assets/images/france-loire-valley-blois-chambord.webp",
-    "alt": "Château de Chambord and its formal grounds in the Loire Valley",
-    "source": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord,_Loire_Valley_-_FRANCE.jpg",
-    "label": "Château de Chambord, Loire Valley - FRANCE.jpg",
-    "creator": "Ignaz Wiradi",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Château de Chambord, Loire Valley - FRANCE.jpg",
-    "remoteSha1": "a7540b1bf94e30de27c11b918b67b8b7f3fe469a"
+    "alt": "The Loire at Blois, seen from the riverbank with the town beyond",
+    "source": "https://commons.wikimedia.org/wiki/File:Fleuve_Loire_-_Blois_(FR41)_-_2022-07-16_-_1.jpg",
+    "label": "Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg",
+    "creator": "Chabe01",
+    "license": "CC BY-SA 4.0",
+    "commonsTitle": "File:Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg",
+    "remoteSha1": "f9e48d94a3a2eb075cac6e6464825639bde77bcb",
+    "creditTitle": "The Loire at Blois"
   },
   "loire-valley/amboise-chenonceau": {
     "src": "/assets/images/france-loire-valley-amboise-chenonceau.webp",
@@ -168,21 +172,23 @@ export const franceImageManifest = {
     "creator": "SpottingHistory",
     "license": "CC BY-SA 4.0",
     "commonsTitle": "File:Château de Chenonceau, Loire Valley, France.jpg",
-    "remoteSha1": "66eace6df2efd43c3b7fe5c1a9e565f53655e1f5"
+    "remoteSha1": "66eace6df2efd43c3b7fe5c1a9e565f53655e1f5",
+    "creditTitle": "Château de Chenonceau over the Cher"
   },
   "loire-valley/tours-villandry-azay": {
     "src": "/assets/images/france-loire-valley-tours-villandry-azay.webp",
-    "alt": "Geometric gardens below Château de Villandry",
-    "source": "https://commons.wikimedia.org/wiki/File:Chateau_Villandry_garden,_Loire_Valley,_2004.JPG",
-    "label": "Chateau Villandry garden, Loire Valley, 2004.JPG",
-    "creator": "Daderot at en.wikipedia",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Chateau Villandry garden, Loire Valley, 2004.JPG",
-    "remoteSha1": "10ef86519df00f0789188d5872c1d1f851fd5507"
+    "alt": "A small boat on the Loire beside a riverside path",
+    "source": "https://commons.wikimedia.org/wiki/File:Loire_River,_France_(17376540539).jpg",
+    "label": "Loire River, France (17376540539).jpg",
+    "creator": "Larry from Charlottetown, PEI, Canada",
+    "license": "CC BY 2.0",
+    "commonsTitle": "File:Loire River, France (17376540539).jpg",
+    "remoteSha1": "b2a9562c88661b600ecdc0de3bb526aa0cee8e0f",
+    "creditTitle": "Loire River and riverside path"
   },
   "champagne/reims-cathedral-cellars": {
     "src": "/assets/images/france-champagne-reims-cathedral-cellars.webp",
-    "alt": "The sculpted façade of Reims Cathedral",
+    "alt": "Sculpted south-side buttresses of Notre-Dame de Reims Cathedral",
     "source": "https://commons.wikimedia.org/wiki/File:Panorama_view_of_notre_dame_de_reims.jpg",
     "label": "Panorama view of notre dame de reims.jpg",
     "creator": "danigmarx",
@@ -192,7 +198,7 @@ export const franceImageManifest = {
   },
   "champagne/epernay-avenue-vineyards": {
     "src": "/assets/images/france-champagne-epernay-avenue-vineyards.webp",
-    "alt": "Champagne vineyards near Épernay in northern France",
+    "alt": "Ornate entrance gate and brick façade of Château Perrier on Avenue de Champagne, Épernay",
     "source": "https://commons.wikimedia.org/wiki/File:Avenue_de_Champagne,_%C3%89pernay_(8132669246).jpg",
     "label": "Avenue de Champagne, Épernay (8132669246).jpg",
     "creator": "Michal Osmenda from Brussels, Belgium",
@@ -202,7 +208,7 @@ export const franceImageManifest = {
   },
   "champagne/troyes-southern-champagne": {
     "src": "/assets/images/france-champagne-troyes-southern-champagne.webp",
-    "alt": "Colorful half-timbered houses in the historic center of Troyes",
+    "alt": "Timber-framed shop façades along Rue Émile-Zola in Troyes",
     "source": "https://commons.wikimedia.org/wiki/File:Troyes_rue_Emile_Zola_maisons_pans_de_bois.jpg",
     "label": "Troyes rue Emile Zola maisons pans de bois.jpg",
     "creator": "Myrabella",
@@ -212,7 +218,7 @@ export const franceImageManifest = {
   },
   "alsace/strasbourg-grande-ile": {
     "src": "/assets/images/france-alsace-strasbourg-grande-ile.webp",
-    "alt": "Strasbourg Cathedral and historic center near the river",
+    "alt": "Ponts Couverts in Strasbourg’s Petite France, with the cathedral spire beyond the rooftops",
     "source": "https://commons.wikimedia.org/wiki/File:Two_towers_of_Ponts_Couverts_and_Strasbourg_Cathedral_in_the_distance.jpg",
     "label": "Two towers of Ponts Couverts and Strasbourg Cathedral in the distance.jpg",
     "creator": "Christina from Victoria, Canada",
@@ -232,7 +238,7 @@ export const franceImageManifest = {
   },
   "alsace/alsace-wine-route-villages": {
     "src": "/assets/images/france-alsace-alsace-wine-route-villages.webp",
-    "alt": "An Alsace wine-route village surrounded by vineyards",
+    "alt": "Alsace Wine Route road sign among the vineyards near Orschwihr",
     "source": "https://commons.wikimedia.org/wiki/File:Route_des_Vins_d%27Alsace.JPG",
     "label": "Route des Vins d'Alsace.JPG",
     "creator": "Florival fr",
@@ -272,7 +278,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/vieux-lyon-fourviere": {
     "src": "/assets/images/france-lyon-rhone-vieux-lyon-fourviere.webp",
-    "alt": "Fourvière hill and Vieux Lyon above the Saône",
+    "alt": "The stone towers of Notre-Dame de Fourvière Basilica against a clear blue sky",
     "source": "https://commons.wikimedia.org/wiki/File:Basilique_de_Fourvi%C3%A8re_from_Saone_(Lyon).jpg",
     "label": "Basilique de Fourvière from Saone (Lyon).jpg",
     "creator": "MickaëlG",
@@ -282,7 +288,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/presquile-croix-rousse": {
     "src": "/assets/images/france-lyon-rhone-presquile-croix-rousse.webp",
-    "alt": "Lyon city streets between Presqu’île and Croix-Rousse hill",
+    "alt": "A Croix-Rousse street junction with a TCL bus stop, route map, café terrace and trees",
     "source": "https://commons.wikimedia.org/wiki/File:Lyon_croix_rousse_01.jpg",
     "label": "Lyon croix rousse 01.jpg",
     "creator": "Olivier Aumage",
@@ -292,7 +298,7 @@ export const franceImageManifest = {
   },
   "lyon-rhone/beaujolais-perouges": {
     "src": "/assets/images/france-lyon-rhone-beaujolais-perouges.webp",
-    "alt": "Vineyards and stone villages in the Beaujolais countryside",
+    "alt": "Vineyards and the village of Juliénas among the Beaujolais hills",
     "source": "https://commons.wikimedia.org/wiki/File:Juli%C3%A9nas.jpg",
     "label": "Juliénas.jpg",
     "creator": "Sunappu-shashin",
@@ -332,7 +338,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/bordeaux-river-wine-city": {
     "src": "/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp",
-    "alt": "Place de la Bourse reflected beside the Garonne in Bordeaux",
+    "alt": "Place de la Bourse and its facade lights reflected in the Garonne at night",
     "source": "https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG",
     "label": "Bordeaux place de la bourse avec la Garonne-2015a.JPG",
     "creator": "Nataloche",
@@ -342,7 +348,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/saint-emilion-vineyards": {
     "src": "/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp",
-    "alt": "Saint-Émilion’s stone village surrounded by vineyards",
+    "alt": "Saint-Émilion’s main square and village seen from the monolithic church",
     "source": "https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg",
     "label": "Saint-Emilion 33 Place 2013.jpg",
     "creator": "JLPC",
@@ -352,7 +358,7 @@ export const franceImageManifest = {
   },
   "bordeaux-gironde/arcachon-dune-pilat": {
     "src": "/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp",
-    "alt": "Dune du Pilat between Atlantic water and pine forest",
+    "alt": "Low sun above open water in Arcachon Bay",
     "source": "https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg",
     "label": "Sunrise Cap Ferret Banc du Toulinguet - Arcachon - Océan Atlantique - Picture Image Photography - Sunset - Coucher de soleil - Dune du pilat pyla - Banc d'arguin water eau vagues waves beach plage sky colors red yellow (14501089751).jpg",
     "creator": "Grand Parc - Bordeaux, France from France",
@@ -362,7 +368,7 @@ export const franceImageManifest = {
   },
   "dordogne-perigord/sarlat-market-old-town": {
     "src": "/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp",
-    "alt": "Golden limestone buildings in Sarlat’s historic center",
+    "alt": "Market stalls beneath timber shelters on Sarlat’s Place de la Liberté",
     "source": "https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg",
     "label": "Sarlat 2008 05.jpg",
     "creator": "Manfred Heyde",
@@ -372,7 +378,7 @@ export const franceImageManifest = {
   },
   "dordogne-perigord/vezere-prehistory": {
     "src": "/assets/images/france-dordogne-perigord-vezere-prehistory.webp",
-    "alt": "Limestone cliffs and river landscape in the Vézère Valley",
+    "alt": "Limestone overhang rising above buildings in Les Eyzies-de-Tayac",
     "source": "https://commons.wikimedia.org/wiki/File:Les_Eyzies-de-Tayac_falaise_bourg_(2).jpg",
     "label": "Les Eyzies-de-Tayac falaise bourg (2).jpg",
     "creator": "Père Igor",
@@ -465,7 +471,7 @@ export const franceImageManifest = {
     "alt": "The Roman Pont du Gard aqueduct crossing the Gardon valley",
     "source": "https://commons.wikimedia.org/wiki/File:Pont_du_Gard_SE_Provence.jpg",
     "label": "Pont du Gard SE Provence.jpg",
-    "creator": "This Photo was taken by Wolfgang Moroder . Feel free to use my photos, but please mention me as the author and send me a message . This image is not in the public domain . Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media , if applicable terms of the licenses listed here not appropriate. Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved., Please if you think that any changes should be required, please inform the author., Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract .",
+    "creator": "Wolfgang Moroder",
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Pont du Gard SE Provence.jpg",
     "remoteSha1": "dced2570cac59b1075f451bff4370070e7b71155"
@@ -522,7 +528,7 @@ export const franceImageManifest = {
   },
   "marseille-calanques/calanques-access-choice": {
     "src": "/assets/images/france-marseille-calanques-calanques-access-choice.webp",
-    "alt": "White limestone cliffs and blue water in Calanques National Park",
+    "alt": "Aerial view of Port-Miou, Port-Pin and En-Vau along the Calanques limestone coast",
     "source": "https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg",
     "label": "Calanques National Park seen from the airplane.jpg",
     "creator": "MikkoNilssonCom",
@@ -532,7 +538,7 @@ export const franceImageManifest = {
   },
   "marseille-calanques/cassis-la-ciotat": {
     "src": "/assets/images/france-marseille-calanques-cassis-la-ciotat.webp",
-    "alt": "Cassis harbor below the cliffs of Cap Canaille",
+    "alt": "Cassis harbor seen from the waterfront, with boats and Cap Canaille beyond",
     "source": "https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg",
     "label": "Cap Canaille depuis le port de Cassis.jpg",
     "creator": "DJ Poldoc",
@@ -547,6 +553,7 @@ export const franceImageManifest = {
     "label": "Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
     "creator": "Lspigon",
     "license": "Public domain",
+    "sourceDate": "2006-01-01",
     "commonsTitle": "File:Nice, Quai des États-Unis and Promenade des Anglais FRANCE.jpg",
     "remoteSha1": "f9d3dc721bac76cad09f19a5a99dea71754f929a"
   },
@@ -557,6 +564,7 @@ export const franceImageManifest = {
     "label": "02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
     "creator": "Tim Adams",
     "license": "CC BY 3.0",
+    "sourceDate": "2022-04-27",
     "commonsTitle": "File:02 statue and view Jardin Exotique Èze Village French Riviera Copr 2022 by Tim Adams CC by 3.jpg",
     "remoteSha1": "f8f7b9db54d86a9a7a05d654d8559218b76260fb"
   },
@@ -567,6 +575,7 @@ export const franceImageManifest = {
     "label": "Port vauban vieille ville.jpg",
     "creator": "Abxbay",
     "license": "CC BY-SA 4.0",
+    "sourceDate": "2016-06-07",
     "commonsTitle": "File:Port vauban vieille ville.jpg",
     "remoteSha1": "6fc71cc32f320dc45d64134f1e3e94e30d4caf69"
   },
@@ -599,5 +608,27 @@ export const franceImageManifest = {
     "license": "CC BY-SA 3.0",
     "commonsTitle": "File:Bonifacio cliffs -Le Grain de Sable.JPG",
     "remoteSha1": "69a9a509b9cd468e8d83c34eeeb5213e1bda5b2a"
+  }
+};
+
+// Retired from live routes because the Commons file page carries a NoFoP-France
+// warning. The local WebP remains in the repository for provenance, not reuse.
+export const franceRetiredImageRecords = {
+  vimyNoFoPFrancePhoto: {
+    src: "/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp",
+    alt: "Former Vimy memorial photo, retained for rights-review provenance only",
+    source: "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
+    sourceTitle: "File:2017-05 Canadian National Vimy Memorial 01.jpg",
+    label: "2017-05 Canadian National Vimy Memorial 01.jpg",
+    creator: "0x010C",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    assetType: "photographic-raster",
+    localSha1: "2012cdfb09da624b118ecd75a372cc6165497853",
+    rightsStatus: "Unresolved: Commons file page carries the NoFoP-France warning; do not reuse pending rights review",
+    rightsStatusUrl: "https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg",
+    commercialReuseEligibility: "unknown",
+    inventoryStatus: "unused",
+    retirementNote: "The source page declares CC BY-SA 3.0 but also carries a NoFoP-France warning concerning the memorial artwork. The declaration is preserved as source-page metadata, not treated as reuse permission. Local source file retained for provenance only; removed from every active route and excluded from dist while the rights question remains unresolved."
   }
 };

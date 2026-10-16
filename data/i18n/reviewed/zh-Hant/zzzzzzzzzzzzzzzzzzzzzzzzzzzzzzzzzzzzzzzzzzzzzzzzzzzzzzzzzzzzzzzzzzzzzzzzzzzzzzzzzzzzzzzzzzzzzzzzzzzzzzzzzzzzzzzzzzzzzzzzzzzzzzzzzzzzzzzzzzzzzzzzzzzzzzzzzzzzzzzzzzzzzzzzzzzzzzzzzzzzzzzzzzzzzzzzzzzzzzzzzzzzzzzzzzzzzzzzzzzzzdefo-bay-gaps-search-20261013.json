@@ -1,0 +1,30 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "bai dai coast hotel base": "Bai Dai 海岸住宿基地",
+    "nha trang train station transfer": "芽莊火車站接送",
+    "bai dai public beach access": "Bai Dai 公共海灘入口",
+    "ba ho waterfall route ninh hoa": "寧和 Ba Ho 瀑布路線",
+    "ninh ich phu huu access": "Ninh Ích、Phú Hữu 交通",
+    "nha trang day trip driver": "芽莊一日遊司機",
+    "ba ho stream water safety": "Ba Ho 溪流水況安全",
+    "nha trang bay boat transfer": "芽莊灣船程接駁",
+    "hon mun current access": "Hon Mun 現行准入",
+    "nha trang marine reserve rules": "芽莊海洋保護區規則",
+    "nha trang pier operator safety": "芽莊碼頭與船家安全",
+    "con dao park registration": "Côn Đảo 國家公園登記",
+    "bay canh turtle tour booking": "Bay Canh 海龜行程預約",
+    "con dao flight ferry connection": "Côn Đảo 航班與渡輪銜接",
+    "con dao park consent rules": "Côn Đảo 國家公園許可規則",
+    "three stream pools inland": "內陸溪谷三水池"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Codex, current execution session",
+    "reviewer": "GPT-6 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/"
+  ],
+  "translations": {
+    "Roman Forum seen through the Arch of Septimius Severus": "셉티미우스 세베루스 개선문 너머로 바라본 포로 로마노",
+    "Roman Forum seen through the Arch of Septimius Severus · CC0": "셉티미우스 세베루스 개선문 너머로 바라본 포로 로마노 — CC0",
+    "Fountain in Piazza Santa Maria in Trastevere": "트라스테베레 산타 마리아 광장의 분수",
+    "— David Iliff (Diliff),": "© David Iliff (Diliff),",
+    "— Jensens,": "© Jensens,",
+    "Fountain in Piazza Santa Maria in Trastevere · Public domain": "트라스테베레 산타 마리아 광장의 분수 — Public domain"
+  }
+}

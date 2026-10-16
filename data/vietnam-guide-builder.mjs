@@ -25,17 +25,18 @@ export function defineVietnamCluster(cluster) {
       region: cluster.region,
       family: cluster.family,
       url: `/vietnam/${cluster.slug}/${guide.slug}/`,
+      instrumentLabel: guide.instrumentLabel || guide.instrument,
       decisions: [
-        ['Arrival contract', guide.arrival],
+        [guide.arrivalLabel || 'Arrival contract', guide.arrival],
         ['Route logic', guide.sequence],
-        ['Keep the boundary', guide.boundary]
+        [guide.boundaryLabel || 'Keep the boundary', guide.boundary]
       ],
       route: guide.stages.map((stage, stageIndex) => [stageLabels[stageIndex], stage[0], stage[1]]),
       checks: guide.risks,
       faq: [
         [`How much time should ${guide.name} receive?`, guide.duration],
         [`Can I combine ${guide.name} with another major chapter?`, guide.combine],
-        ['What should I verify before leaving?', guide.verify]
+        [guide.faqLastQuestion || 'What should I verify before leaving?', guide.verify]
       ]
     };
   });

@@ -1,0 +1,33 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Jasper around one walkable town base and separate driving days for Maligne Valley, the southbound falls and the 232 km Icefields Parkway to Lake Louise. Compare four or five nights, town lodging with campground transport, and a Lake Louise overnight for a through trip. The local campground shuttle is seasonal and does not serve Maligne Lake or Highway 93. Check open and closed facilities, road status, weather, fuel and daylight before setting out; keep a town day as the fallback.": "徒歩で回れるジャスパーの町を拠点にし、マリーン渓谷、南側の滝、レイク・ルイーズまでの232 kmのアイスフィールド・パークウェイを別日に分けます。4泊か5泊か、町の宿とキャンプ場の移動手段、通過日にレイク・ルイーズへ泊まるかを比較します。キャンプ場シャトルは季節運行で、マリーン湖や93号線には行きません。施設、道路、天気、燃料、日照を出発前に確認し、町の日を予備にします。",
+    "Jasper town": "ジャスパーの町",
+    "Maligne Valley": "マリーン渓谷",
+    "Jasper transit": "ジャスパーの交通",
+    "four nights": "4泊",
+    "road conditions": "道路状況",
+    "Walk Jasper’s central blocks and a signed Athabasca River path for an easy arrival loop, then set aside a separate road day for Maligne Valley. Maligne Lake and Maligne Canyon have different access and closure status. A confirmed vehicle or named operator is needed for the valley; the seasonal campground shuttle does not go there. Check Maligne Road, Parks Canada notices, daylight and the current cruise calendar before booking. The 2026 cruise season ended 11 October, weather dependent.": "到着日はジャスパー中心街と標識のあるアサバスカ川沿いを歩く軽い周回にし、別の日にマリーン渓谷へ向かいます。マリーン湖とマリーン渓谷ではアクセスと閉鎖状況が異なります。渓谷には確認済みの車か事業者名のわかる交通が必要で、季節運行のキャンプ場シャトルは行きません。予約前にマリーン・ロード、Parks Canadaのお知らせ、日照、最新のクルーズ日程を確認してください。2026年のクルーズは10月11日に終了し、天候に左右されました。",
+    "Jasper town walk": "ジャスパーの町歩き",
+    "Maligne Lake": "マリーン湖",
+    "Maligne Canyon": "マリーン渓谷",
+    "Maligne Road": "マリーン・ロード",
+    "Jasper shuttle": "ジャスパーのシャトル",
+    "Treat Highway 93 as a full-day 232 km road between Jasper and Lake Louise, not a quick transfer. Plan fuel, water, food, offline directions, a few stops and a fixed daylight endpoint. Athabasca Falls is 30 km south of Jasper, Sunwapta Falls 54 km and the Columbia Icefield Centre 104 km. Check Parks Canada, Alberta 511, seasonal services, snow and operator dates. The 2026 glacier products ended by 12 October; availability and departures are not promised.": "93号線をジャスパーとレイク・ルイーズ間の232 kmの終日ルートとして考え、短い移動区間とは見なさないでください。燃料、水、食料、オフライン地図、少数の立ち寄り、明るいうちの終点を計画します。アサバスカ滝はジャスパー南30 km、サンワプタ滝は54 km、コロンビア・アイスフィールド・センターは104 kmです。出発前にParks Canada、Alberta 511、季節施設、雪、事業者の日程を確認してください。2026年の氷河商品は10月12日までに終了しており、営業や出発便は保証されません。",
+    "Highway 93": "93号線",
+    "Jasper to Lake Louise": "ジャスパーからレイク・ルイーズ",
+    "fuel stops": "給油所",
+    "Columbia Icefield": "コロンビア大氷原",
+    "road closures": "道路閉鎖",
+    "Choose Athabasca Falls and, if conditions and daylight allow, Sunwapta Falls as a defined southbound day from Jasper. The road distances are 30 km and 54 km. Follow signed paths and barriers; spray, stairs, bridges, ice and gorge edges can make walking hazardous. Check current Parks Canada closures, trail and road conditions, fuel and weather before leaving. Turn back to Jasper rather than expanding this walk into an unplanned Icefields Parkway transfer.": "アサバスカ滝を選び、状況と日照がよければサンワプタ滝を加えてジャスパーから南へ向かう日を計画します。道路距離はそれぞれ30 kmと54 kmです。標識のある道と柵を守ってください。水しぶき、階段、橋、氷、渓谷の縁は危険です。出発前に最新のParks Canadaの閉鎖、トレイルと道路状況、燃料、天気を確認し、予定外にアイスフィールド・パークウェイの通過へ延ばさずジャスパーへ戻ります。",
+    "Athabasca Falls": "アサバスカ滝",
+    "Sunwapta Falls": "サンワプタ滝",
+    "Jasper waterfall walk": "ジャスパーの滝歩き",
+    "trail conditions": "トレイル状況",
+    "Jasper road trip": "ジャスパーのドライブ旅行"
+  }
+}

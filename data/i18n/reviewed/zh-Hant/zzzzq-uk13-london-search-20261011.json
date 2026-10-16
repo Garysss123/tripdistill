@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan London as one hotel base and three district days: Westminster/South Bank, Bloomsbury/Covent Garden, and Tower/City or Greenwich. Compare four, five and six nights; name the arrival station, transfer and return before adding another interior.": "倫敦住宿不換點，安排三個街區日：Westminster／South Bank、Bloomsbury／Covent Garden，以及 Tower／City 或 Greenwich。比較四、五、六晚的取捨；加第二個室內景點前，先確認抵達站、轉乘和回程。",
+    "Walk Parliament Square and Whitehall from a booked Parliament or Abbey entrance, cross the Thames once, and finish by Waterloo. Budget security time and do not add another timed interior.": "預約國會或西敏寺入口後步行經國會廣場和 Whitehall，只過一次泰晤士河，並在 Waterloo 附近收尾。預留安檢時間，不要再加另一個限時室內行程。",
+    "Use Russell Square or a south-side Tube station to reach the British Museum, select a bounded gallery plan, pause in Bloomsbury, then walk through Seven Dials to Covent Garden. Save other major museums for another day.": "搭 Russell Square 或南側地鐵站前往大英博物館，選一條範圍精簡的展廳路線，在 Bloomsbury 休息，再經 Seven Dials 步行至 Covent Garden。其他大型博物館留待別天。",
+    "Choose a Tower Hill and City day or a separate Greenwich day; do not plan both as one guaranteed transfer. Royal Museums Greenwich currently says the Observatory closes from 2 November 2026 for refurbishment, so verify the date-specific site status.": "選 Tower Hill 加 City 的一天，或另排一天遊格林威治；不要把兩者當成保證可順接的同日轉乘。依 Royal Museums Greenwich 目前公告，皇家天文台自 2026 年 11 月 2 日起整修關閉，請按旅遊日期確認各場館狀態。"
+  }
+}

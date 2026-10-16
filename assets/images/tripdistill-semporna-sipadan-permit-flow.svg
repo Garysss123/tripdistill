@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img" aria-labelledby="title desc">
+  <title id="title">Sipadan permit and diver-readiness checks</title>
+  <desc id="desc">An original non-scale verification sequence showing date and licensed operator, current Sabah Parks allocation, diver readiness and briefing, and a post-dive flight buffer. The five-language legend says this is not a permit or availability guarantee.</desc>
+  <defs>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#0e8994"/><stop offset="1" stop-color="#05384b"/></linearGradient>
+    <pattern id="waves" width="42" height="28" patternUnits="userSpaceOnUse"><path d="M0 12Q10 2 21 12T42 12" fill="none" stroke="#a4e7dd" stroke-opacity=".15" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1440" height="960" fill="url(#water)"/>
+  <rect width="1440" height="960" fill="url(#waves)"/>
+  <text x="72" y="72" fill="#ffe8a6" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="5">TRIPDISTILL · SIPADAN CHECK FLOW · NOT A PERMIT</text>
+  <text x="72" y="137" fill="#fff8e7" font-family="Georgia,serif" font-size="51">Verify each gate before committing the dive.</text>
+  <path d="M150 278H1290" fill="none" stroke="#f4d889" stroke-width="6" stroke-dasharray="12 12"/>
+  <g font-family="Arial,sans-serif">
+    <g transform="translate(72 192)">
+      <circle cx="90" cy="86" r="58" fill="#f4d889"/><text x="76" y="101" fill="#073749" font-size="39" font-weight="700">1</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">NAMED DATE</text>
+      <text x="0" y="214" fill="#cae4df" font-size="17">Licensed operator</text><text x="0" y="244" fill="#cae4df" font-size="17">Written allocation status</text>
+    </g>
+    <g transform="translate(420 192)">
+      <circle cx="90" cy="86" r="58" fill="#e97059"/><text x="76" y="101" fill="#fffaf0" font-size="39" font-weight="700">2</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">PARK CHECK</text>
+      <text x="0" y="214" fill="#cae4df" font-size="17">Current permit process</text><text x="0" y="244" fill="#cae4df" font-size="17">Required diver documents</text>
+    </g>
+    <g transform="translate(768 192)">
+      <circle cx="90" cy="86" r="58" fill="#b7ded4"/><text x="76" y="101" fill="#073749" font-size="39" font-weight="700">3</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">BRIEF &amp; DIVE</text>
+      <text x="0" y="214" fill="#cae4df" font-size="17">Conditions · signals · plan</text><text x="0" y="244" fill="#cae4df" font-size="17">Stay within training and limits</text>
+    </g>
+    <g transform="translate(1116 192)">
+      <circle cx="90" cy="86" r="58" fill="#fffaf0"/><text x="76" y="101" fill="#073749" font-size="39" font-weight="700">4</text>
+      <text x="0" y="178" fill="#fff8e7" font-size="22" font-weight="700">RETURN &amp; REST</text>
+      <text x="0" y="214" fill="#cae4df" font-size="17">Same named boat chain</text><text x="0" y="244" fill="#cae4df" font-size="17">Current no-fly guidance</text>
+    </g>
+  </g>
+  <rect x="0" y="514" width="1440" height="446" fill="#fffaf0"/>
+  <text x="72" y="562" fill="#b35648" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="3">VISIBLE FIVE-LANGUAGE KEY · 五語圖例 · 五言語の凡例 · 5개 언어 범례 · คำอธิบาย 5 ภาษา</text>
+  <g font-family="Arial,sans-serif" font-size="18" fill="#244b50">
+    <text x="72" y="611" font-weight="700" fill="#0b777e">EN</text><text x="132" y="611">Confirm your date, licensed operator and current Sabah Parks allocation in writing; no package guarantees access.</text>
+    <text x="72" y="661" font-weight="700" fill="#0b777e">繁體中文</text><text x="190" y="661">以書面確認日期、持牌業者及沙巴公園現行名額；任何套裝都不保證可入島。</text>
+    <text x="72" y="711" font-weight="700" fill="#0b777e">日本語</text><text x="166" y="711">日付・認可事業者・サバ州公園の現行割当を文書で確認。パッケージだけでは入島は保証されません。</text>
+    <text x="72" y="761" font-weight="700" fill="#0b777e">한국어</text><text x="166" y="761">날짜·허가 운영자·사바공원 현행 배정을 서면 확인하세요. 패키지만으로 입도가 보장되지 않습니다.</text>
+    <text x="72" y="811" font-weight="700" fill="#0b777e">ไทย</text><text x="132" y="811">ยืนยันวันที่ ผู้ประกอบการที่ได้รับอนุญาต และโควตาปัจจุบันของซาบาห์พาร์กเป็นลายลักษณ์อักษร แพ็กเกจไม่รับประกันสิทธิ์เข้า</text>
+  </g>
+  <rect x="72" y="844" width="1296" height="1" fill="#bfd2cc"/>
+  <text x="72" y="884" fill="#596e69" font-family="Arial,sans-serif" font-size="16">Conceptual and not to scale. Not a permit, current eligibility ruling, availability notice, dive plan or medical no-fly interval.</text>
+  <text x="72" y="916" fill="#596e69" font-family="Arial,sans-serif" font-size="16">Check current rules with Sabah Parks and the named licensed operator; use qualified dive-medicine guidance for the actual dive profile.</text>
+</svg>

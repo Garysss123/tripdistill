@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan London as one hotel base and three district days: Westminster/South Bank, Bloomsbury/Covent Garden, and Tower/City or Greenwich. Compare four, five and six nights; name the arrival station, transfer and return before adding another interior.": "พักโรงแรมแห่งเดียวและจัดวันเที่ยวสามย่าน: Westminster/South Bank, Bloomsbury/Covent Garden และ Tower/City หรือ Greenwich เปรียบเทียบการพัก 4, 5 และ 6 คืน ระบุสถานีที่มาถึง จุดเปลี่ยนสาย และขากลับก่อนเพิ่มสถานที่ในร่มอีกแห่ง",
+    "Walk Parliament Square and Whitehall from a booked Parliament or Abbey entrance, cross the Thames once, and finish by Waterloo. Budget security time and do not add another timed interior.": "เดินจากทางเข้ารัฐสภาหรือ Westminster Abbey ที่จองไว้ ผ่าน Parliament Square และ Whitehall ข้ามแม่น้ำเทมส์ครั้งเดียว แล้วจบใกล้ Waterloo เผื่อเวลาตรวจความปลอดภัยและอย่าเพิ่มสถานที่ในร่มที่ต้องเข้าตามเวลาอีกแห่ง",
+    "Use Russell Square or a south-side Tube station to reach the British Museum, select a bounded gallery plan, pause in Bloomsbury, then walk through Seven Dials to Covent Garden. Save other major museums for another day.": "ใช้ Russell Square หรือสถานีรถไฟใต้ดินฝั่งใต้ไป British Museum เลือกเส้นทางห้องจัดแสดงแบบกำหนดขอบเขต พักใน Bloomsbury แล้วเดินผ่าน Seven Dials ไป Covent Garden เก็บพิพิธภัณฑ์ใหญ่อื่นไว้วันอื่น",
+    "Choose a Tower Hill and City day or a separate Greenwich day; do not plan both as one guaranteed transfer. Royal Museums Greenwich currently says the Observatory closes from 2 November 2026 for refurbishment, so verify the date-specific site status.": "เลือกวันเที่ยว Tower Hill กับ City หรือแยกวันไป Greenwich อย่าวางแผนว่าต่อรถระหว่างทั้งสองแห่งในวันเดียวได้แน่นอน ขณะนี้ Royal Museums Greenwich แจ้งว่า Royal Observatory จะปิดปรับปรุงตั้งแต่ 2 พฤศจิกายน 2026 ให้ตรวจสถานะสถานที่แต่ละแห่งตามวันเดินทาง"
+  }
+}

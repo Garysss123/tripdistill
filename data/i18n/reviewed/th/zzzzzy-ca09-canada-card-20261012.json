@@ -1,0 +1,10 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "Calgary is a rail-served prairie city; Drumheller and Dinosaur Provincial Park are two separate road corridors. The Royal Tyrrell Museum is an indoor…": "คัลการีเป็นเมืองทุ่งหญ้าที่เดินทางด้วยรถไฟได้ ดรัมเฮลเลอร์กับสวนไดโนเสาร์เป็นคนละเส้นทาง Royal Tyrrell เป็นจุดในร่ม ส่วนสวนทางใต้ขับรถอีกราว 2 ชั่วโมง"
+  }
+}

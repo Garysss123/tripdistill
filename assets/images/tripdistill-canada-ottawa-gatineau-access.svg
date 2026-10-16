@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="835" viewBox="0 0 1200 835" role="img" aria-labelledby="title desc">
+  <title id="title">Ottawa–Gatineau access and park-sector schematic</title>
+  <desc id="desc">A conceptual, not-to-scale diagram separates Ottawa’s civic core, a date-checked Ottawa River crossing, Gatineau’s museum bank and Gatineau Park. It does not depict a specific bridge, transit service, road route or travel time.</desc>
+  <defs>
+    <pattern id="paperGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#c6d0ce" stroke-width="1" opacity=".34"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#303c45"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="780" fill="#f7f5ef"/>
+  <rect width="1200" height="780" fill="url(#paperGrid)"/>
+  <rect x="0" y="0" width="1200" height="88" fill="#252f3a"/>
+  <rect x="0" y="84" width="1200" height="4" fill="#a32e37"/>
+  <text x="54" y="38" fill="#f7f5ef" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="2">CAPITAL CORRIDOR / ACCESS DECISIONS</text>
+  <text x="56" y="65" fill="#c5d2d1" font-family="Arial, sans-serif" font-size="14">Concept schematic · not to scale · no route, service or travel time implied</text>
+
+  <rect x="46" y="116" width="300" height="285" rx="5" fill="#fbfaf6" stroke="#a32e37" stroke-width="3"/>
+  <rect x="46" y="116" width="300" height="48" fill="#a32e37"/>
+  <text x="66" y="147" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1">OTTAWA · ONTARIO</text>
+  <circle cx="84" cy="214" r="10" fill="#a32e37"/>
+  <text x="105" y="211" fill="#252f3a" font-family="Arial, sans-serif" font-size="18" font-weight="800">Downtown base</text>
+  <text x="105" y="233" fill="#58676d" font-family="Arial, sans-serif" font-size="14">Civic core · OC Transpo</text>
+  <path d="M 67 253 H 326" stroke="#ccd4d3" stroke-width="2"/>
+  <circle cx="84" cy="293" r="10" fill="#c7954b"/>
+  <text x="105" y="290" fill="#252f3a" font-family="Arial, sans-serif" font-size="17" font-weight="800">Parliament + canal locks</text>
+  <text x="105" y="312" fill="#58676d" font-family="Arial, sans-serif" font-size="14">One walkable civic day</text>
+  <circle cx="84" cy="358" r="10" fill="#4c7881"/>
+  <text x="105" y="355" fill="#252f3a" font-family="Arial, sans-serif" font-size="17" font-weight="800">Ottawa-side museums</text>
+  <text x="105" y="377" fill="#58676d" font-family="Arial, sans-serif" font-size="14">Choose one collection</text>
+
+  <path d="M 363 139 C 420 176 503 150 568 195 C 615 228 586 295 630 329 C 660 352 685 351 712 373 L 712 401 L 363 401 Z" fill="#d2e2e0" stroke="#4c7881" stroke-width="2"/>
+  <path d="M 376 183 C 428 209 475 188 533 224 M 377 243 C 426 269 480 248 540 282 M 393 317 C 449 339 491 320 554 353" fill="none" stroke="#729da0" stroke-width="3" opacity=".75"/>
+  <text x="444" y="145" fill="#315f67" font-family="Arial, sans-serif" font-size="17" font-weight="800" letter-spacing="1">OTTAWA RIVER</text>
+  <rect x="405" y="196" width="164" height="82" rx="4" fill="#fbfaf6" stroke="#303c45" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="429" y="224" fill="#252f3a" font-family="Arial, sans-serif" font-size="15" font-weight="800">ACCESS GATE</text>
+  <text x="421" y="249" fill="#58676d" font-family="Arial, sans-serif" font-size="12">Check current crossing</text>
+  <path d="M 346 237 H 397 M 579 237 H 631" fill="none" stroke="#303c45" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+
+  <rect x="646" y="116" width="252" height="285" rx="5" fill="#fbfaf6" stroke="#4c7881" stroke-width="3"/>
+  <rect x="646" y="116" width="252" height="48" fill="#4c7881"/>
+  <text x="666" y="147" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1">GATINEAU · QUÉBEC</text>
+  <circle cx="684" cy="218" r="10" fill="#4c7881"/>
+  <text x="705" y="215" fill="#252f3a" font-family="Arial, sans-serif" font-size="17" font-weight="800">History Museum</text>
+  <text x="705" y="237" fill="#58676d" font-family="Arial, sans-serif" font-size="14">Gatineau-side collection</text>
+  <path d="M 667 257 H 876" stroke="#ccd4d3" stroke-width="2"/>
+  <circle cx="684" cy="301" r="10" fill="#a32e37"/>
+  <text x="705" y="298" fill="#252f3a" font-family="Arial, sans-serif" font-size="17" font-weight="800">STO / Rapibus</text>
+  <text x="705" y="320" fill="#58676d" font-family="Arial, sans-serif" font-size="14">Use its own date planner</text>
+  <rect x="670" y="348" width="202" height="32" rx="3" fill="#e8eff0"/>
+  <text x="681" y="369" fill="#315f67" font-family="Arial, sans-serif" font-size="13" font-weight="700">Museum day ≠ park day</text>
+
+  <rect x="919" y="116" width="235" height="285" rx="5" fill="#f3f4e8" stroke="#517452" stroke-width="3"/>
+  <rect x="919" y="116" width="235" height="48" fill="#517452"/>
+  <text x="939" y="147" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="1">GATINEAU PARK</text>
+  <text x="943" y="190" fill="#435845" font-family="Arial, sans-serif" font-size="14" font-weight="700">Choose one sector</text>
+  <rect x="943" y="207" width="187" height="54" rx="4" fill="#fbfaf6" stroke="#b8c4b6"/>
+  <circle cx="964" cy="234" r="7" fill="#517452"/>
+  <text x="981" y="239" fill="#252f3a" font-family="Arial, sans-serif" font-size="16" font-weight="800">Pink Lake</text>
+  <rect x="943" y="273" width="187" height="54" rx="4" fill="#fbfaf6" stroke="#b8c4b6"/>
+  <circle cx="964" cy="300" r="7" fill="#517452"/>
+  <text x="981" y="305" fill="#252f3a" font-family="Arial, sans-serif" font-size="16" font-weight="800">Champlain Lookout</text>
+  <rect x="943" y="343" width="187" height="37" rx="3" fill="#dfe8d7"/>
+  <text x="953" y="367" fill="#435845" font-family="Arial, sans-serif" font-size="13" font-weight="700">Date-specific shuttle / road</text>
+  <path d="M 899 366 C 905 366 910 366 915 366" fill="none" stroke="#303c45" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+
+  <path d="M 46 430 H 1154" stroke="#252f3a" stroke-width="3"/>
+  <text x="54" y="465" fill="#252f3a" font-family="Arial, sans-serif" font-size="19" font-weight="900" letter-spacing="1">LEGEND / 圖例 / 凡例 / 범례 / คำอธิบาย</text>
+  <text x="68" y="505" fill="#58676d" font-family="Arial, sans-serif" font-size="13" font-weight="800">ENGLISH</text>
+  <text x="288" y="505" fill="#58676d" font-family="Arial, sans-serif" font-size="13" font-weight="800">繁體中文</text>
+  <text x="508" y="505" fill="#58676d" font-family="Arial, sans-serif" font-size="13" font-weight="800">日本語</text>
+  <text x="728" y="505" fill="#58676d" font-family="Arial, sans-serif" font-size="13" font-weight="800">한국어</text>
+  <text x="948" y="505" fill="#58676d" font-family="Arial, sans-serif" font-size="13" font-weight="800">ภาษาไทย</text>
+  <path d="M 54 518 H 1150 M 54 558 H 1150 M 54 598 H 1150 M 54 638 H 1150 M 54 678 H 1150" stroke="#c5ced0" stroke-width="1"/>
+  <rect x="54" y="527" width="15" height="15" fill="#a32e37"/>
+  <text x="82" y="541" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">City base</text>
+  <text x="288" y="541" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">城市住宿基地</text>
+  <text x="508" y="541" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">市内の宿泊拠点</text>
+  <text x="728" y="541" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">도시 숙박 거점</text>
+  <text x="948" y="541" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">ฐานที่พักในเมือง</text>
+  <rect x="54" y="567" width="15" height="15" fill="#4c7881"/>
+  <text x="82" y="581" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">River / crossing</text>
+  <text x="288" y="581" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">河流／跨河</text>
+  <text x="508" y="581" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">川／渡河</text>
+  <text x="728" y="581" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">강 / 강 건너기</text>
+  <text x="948" y="581" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">แม่น้ำ / ข้ามฝั่ง</text>
+  <path d="M 54 607 H 73" stroke="#303c45" stroke-width="3" stroke-dasharray="5 4"/>
+  <text x="82" y="621" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">Connection to verify</text>
+  <text x="288" y="621" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">需核實的交通</text>
+  <text x="508" y="621" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">要確認の接続</text>
+  <text x="728" y="621" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">확인할 연결편</text>
+  <text x="948" y="621" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">การเดินทางที่ต้องตรวจสอบ</text>
+  <rect x="54" y="647" width="15" height="15" fill="#517452"/>
+  <text x="82" y="661" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">Choose one park sector</text>
+  <text x="288" y="661" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">園區擇一區</text>
+  <text x="508" y="661" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">公園は一地区を選択</text>
+  <text x="728" y="661" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">공원은 한 구역 선택</text>
+  <text x="948" y="661" fill="#252f3a" font-family="Arial, sans-serif" font-size="14">เลือกพื้นที่สวนเพียงแห่งเดียว</text>
+
+  <text x="54" y="718" fill="#58676d" font-family="Arial, sans-serif" font-size="13">Schematic only · not to scale · dotted links do not identify a bridge, transit service, road or travel time.</text>
+  <text x="54" y="741" fill="#58676d" font-family="Arial, sans-serif" font-size="13">示意圖，非按比例；虛線不代表特定橋梁、大眾運輸、道路或行程時間。</text>
+  <text x="54" y="764" fill="#58676d" font-family="Arial, sans-serif" font-size="13">概念図・縮尺なし。点線は特定の橋、公共交通、道路、所要時間を示しません。</text>
+  <text x="54" y="787" fill="#58676d" font-family="Arial, sans-serif" font-size="13">개념도이며 축척에 맞지 않습니다. 점선은 특정 다리, 대중교통, 도로 또는 이동 시간을 나타내지 않습니다.</text>
+  <text x="54" y="810" fill="#58676d" font-family="Arial, sans-serif" font-size="13">เป็นแผนภาพแนวคิด ไม่ได้วาดตามมาตราส่วน เส้นประไม่ระบุสะพาน ขนส่งสาธารณะ ถนน หรือเวลาเดินทาง</text>
+</svg>

@@ -2,7 +2,8 @@
 export const switzerlandImageManifest = {
   "zurich-lake/old-town-lindenhof": {
     "src": "/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp",
-    "alt": "Zurich old town and the Limmat river",
+    "alt": "Limmat river and Zurich Old Town viewed from Schipfe on the west bank",
+    "displayTitle": "Limmat and Old Town from Schipfe",
     "source": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Limmat_panosphere_20220614.jpg",
     "label": "Zürich Limmat panosphere 20220614.jpg",
     "creator": "Daniel Kraft",
@@ -12,7 +13,8 @@ export const switzerlandImageManifest = {
   },
   "zurich-lake/lake-uetliberg": {
     "src": "/assets/images/switzerland-zurich-lake-lake-uetliberg.webp",
-    "alt": "Lake Zurich with the city and surrounding hills",
+    "alt": "Snowy Zurich and Lake Zurich viewed from Uetliberg under hazy skies",
+    "displayTitle": "Winter view of Zurich and Lake Zurich from Uetliberg",
     "source": "https://commons.wikimedia.org/wiki/File:Snowy_panorama_of_Zurich_from_Uetliberg_2026.JPG",
     "label": "Snowy panorama of Zurich from Uetliberg 2026.JPG",
     "creator": "Mike is Michi",
@@ -22,7 +24,8 @@ export const switzerlandImageManifest = {
   },
   "zurich-lake/zurich-west-museums": {
     "src": "/assets/images/switzerland-zurich-lake-zurich-west-museums.webp",
-    "alt": "Zurich West with converted industrial buildings and modern towers",
+    "alt": "Mobimo Tower and Zölly residential tower above Pfingstweidpark in Zurich West",
+    "displayTitle": "Mobimo and Zölly towers above Pfingstweidpark",
     "source": "https://commons.wikimedia.org/wiki/File:Mobimo_Tower._Z%C3%B6lly_Wohnhochhaus._Z%C3%BCrich_West.jpg",
     "label": "Mobimo Tower. Zölly Wohnhochhaus. Zürich West.jpg",
     "creator": "Photones",
@@ -51,18 +54,24 @@ export const switzerlandImageManifest = {
     "remoteSha1": "ad7f99569b2c56a87e227f4e958adcb11d78b102"
   },
   "lucerne-lake-mountains/rigi-lake-circuit": {
-    "src": "/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp",
-    "alt": "View from Mount Rigi over Lake Lucerne",
-    "source": "https://commons.wikimedia.org/wiki/File:View_from_Buergenstock-Resort_(Felsenweg)_to_Kuessnacht-Hertenstein-Weggis-Rigi_(Kulm)-lake_Lucerne-02ASD.jpg",
-    "label": "View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
-    "creator": "Asurnipal",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg",
-    "remoteSha1": "c5cf6f0c470949801198ed9d28458b45103c8db4"
+    "src": "/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+    "alt": "Original planning diagram comparing three Lake Lucerne and Rigi access chains; not a geographic map and not to scale",
+    "diagramNote": "Planning key: 1 boat from Lucerne to Vitznau, then the Vitznau–Rigi cogwheel railway; 2 SBB rail to Arth-Goldau, then the Arth-Rigi cogwheel railway; 3 keep to Lucerne’s old town and lakefront when summit visibility or operations do not suit. This schematic compares route shapes, not live departures, operating dates or geographic positions.",
+    "diagramCardNote": "Diagram key: 1 boat to Vitznau + cogwheel; 2 SBB to Arth-Goldau + cogwheel; 3 Lucerne old town/lakefront weather fallback. Concept only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-lucerne-lake-mountains-rigi-route-choice.svg",
+    "label": "Rigi and Lake Lucerne route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "d4bb15e809a0cf876db15a4f7e0309cf5f8d7404"
   },
   "bern-emmental/old-city-aare": {
     "src": "/assets/images/switzerland-bern-emmental-old-city-aare.webp",
     "alt": "Bern old town inside the Aare river bend",
+    "displayTitle": "Bern Old City and the Aare Bend",
     "source": "https://commons.wikimedia.org/wiki/File:Old_City_and_the_Aare_river_-_Bern,_Switzerland_-_panoramio.jpg",
     "label": "Old City and the Aare river - Bern, Switzerland - panoramio.jpg",
     "creator": "Sergey Ashmarin",
@@ -73,6 +82,7 @@ export const switzerlandImageManifest = {
   "bern-emmental/museums-rose-garden": {
     "src": "/assets/images/switzerland-bern-emmental-museums-rose-garden.webp",
     "alt": "View over Bern old town from the Rosengarten",
+    "displayTitle": "Bern Old City from the Rosengarten",
     "source": "https://commons.wikimedia.org/wiki/File:Bern_Altstadt_von_Rosengarten_20211007.jpg",
     "label": "Bern Altstadt von Rosengarten 20211007.jpg",
     "creator": "Daniel Kraft",
@@ -81,14 +91,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "ab23b4e482fb78033031acc5e2a1e8ad552d9c54"
   },
   "bern-emmental/emmental-day-trip": {
-    "src": "/assets/images/switzerland-bern-emmental-emmental-day-trip.webp",
-    "alt": "Green Emmental landscape with traditional farmhouses",
-    "source": "https://commons.wikimedia.org/wiki/File:Wintertime_in_Emmental,_Switzerland.jpg",
-    "label": "Wintertime in Emmental, Switzerland.jpg",
-    "creator": "Dirk Breer",
-    "license": "CC BY-SA 4.0",
-    "commonsTitle": "File:Wintertime in Emmental, Switzerland.jpg",
-    "remoteSha1": "3be08742a184c7861eeee6f5beb80c214fa9abc9"
+    "src": "/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+    "alt": "Original five-language Emmental planning diagram comparing Burgdorf, the Affoltern show-dairy transfer and a mapped countryside walk; conceptual and not to scale",
+    "diagramNote": "Five-language route key: 1 Burgdorf town and castle; 2 rail to Huttwil or Hasle-Rüegsau, then confirm the BLS bus or book mybuxi to Affoltern show dairy; 3 choose one locally signed walk from a verified rail gateway and return to that station. The branches compare planning choices, not geography, live timetables, operating dates or fare quotes.",
+    "diagramCardNote": "Diagram key: 1 Burgdorf; 2 Affoltern show dairy with a checked BLS/mybuxi feeder; 3 one mapped countryside walk from a confirmed rail gateway. Concept only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-bern-emmental-gateway-choices.svg",
+    "label": "Bern and Emmental gateway-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale. All gateway and feeder information requires an exact-date operator check.",
+    "localSha1": "e0111ab8ddc5345216d6cc4cec956dde4a0c6a6a"
   },
   "basel-rhine/old-town-rhine": {
     "src": "/assets/images/switzerland-basel-rhine-old-town-rhine.webp",
@@ -121,14 +136,19 @@ export const switzerlandImageManifest = {
     "remoteSha1": "d0d8ddd4d7b35e1565cbc215d15021f8be82e4de"
   },
   "geneva-lake/old-town-lakefront": {
-    "src": "/assets/images/switzerland-geneva-lake-old-town-lakefront.webp",
-    "alt": "Geneva lakefront and old town skyline",
-    "source": "https://commons.wikimedia.org/wiki/File:Geneva_-_Jet_d%27eau.jpg",
-    "label": "Geneva - Jet d'eau.jpg",
-    "creator": "Tiia Monto",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Geneva - Jet d'eau.jpg",
-    "remoteSha1": "6d83a31cc344200cc5ffe3eabbb56f39dd9341c9"
+    "src": "/assets/images/switzerland-geneva-lake-route-choices.svg",
+    "alt": "Original five-language route schematic for Geneva Old Town, Nations and Carouge; conceptual and not to scale",
+    "diagramNote": "Original planning schematic with a visible legend in English, Traditional Chinese, Japanese, Korean and Thai. The three lines show conceptual district access chains, not geographic distances, live departures, operating status or fares.",
+    "diagramCardNote": "Five-language route key: Old Town/lakefront; Nations quarter; Carouge neighborhood. Conceptual access chains only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-geneva-lake-route-choices.svg",
+    "label": "Geneva three-district route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "99bb9c2528ac2aec5a715df7e96c8edb53d6bba0"
   },
   "geneva-lake/international-quarter": {
     "src": "/assets/images/switzerland-geneva-lake-international-quarter.webp",
@@ -152,7 +172,7 @@ export const switzerlandImageManifest = {
   },
   "lausanne-lavaux/old-city-ouchy": {
     "src": "/assets/images/switzerland-lausanne-lavaux-old-city-ouchy.webp",
-    "alt": "Lausanne and Lake Geneva viewed from the hillside",
+    "alt": "Lake Geneva at Lausanne’s Ouchy waterfront, with a small boat near the shore",
     "source": "https://commons.wikimedia.org/wiki/File:Lake_Geneva_in_Lausanne.jpg",
     "label": "Lake Geneva in Lausanne.jpg",
     "creator": "OlhaSolodenko",
@@ -183,6 +203,7 @@ export const switzerlandImageManifest = {
   "montreux-riviera/montreux-chillon": {
     "src": "/assets/images/switzerland-montreux-riviera-montreux-chillon.webp",
     "alt": "Chillon Castle on Lake Geneva near Montreux",
+    "displayTitle": "Chillon Castle on Lake Geneva near Montreux",
     "source": "https://commons.wikimedia.org/wiki/File:Chateau_Chillon_Montreux,_Alps_Castle_Lake_L%C3%A9man.jpg",
     "label": "Chateau Chillon Montreux, Alps Castle Lake Léman.jpg",
     "creator": "Karim Kanoun Photography",
@@ -191,18 +212,24 @@ export const switzerlandImageManifest = {
     "remoteSha1": "a7fb692f7a6ed7304d155b93c50d58ce8e54190c"
   },
   "montreux-riviera/rochers-de-naye": {
-    "src": "/assets/images/switzerland-montreux-riviera-rochers-de-naye.webp",
-    "alt": "Mountain view from Rochers-de-Naye above Lake Geneva",
-    "source": "https://commons.wikimedia.org/wiki/File:Rochers-de-naye-train-at-montreux-station.jpg",
-    "label": "Rochers-de-naye-train-at-montreux-station.jpg",
-    "creator": "Cheeni",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Rochers-de-naye-train-at-montreux-station.jpg",
-    "remoteSha1": "a26de0727cdcacaf820a76f3b5b137f9bb615ac7"
+    "src": "/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+    "alt": "Original five-language schematic of the Montreux–Rochers-de-Naye railway, route order and closure fallback; conceptual and not to scale",
+    "diagramNote": "Original five-language planning schematic. It names Montreux, Glion, Haut-de-Caux and Rochers-de-Naye in route order, then separates an operating clear-weather day from a dated closure or cloud fallback. It is not a geographic map, live timetable, service promise or fare quote; check the current notice, mountain forecast and return before travel.",
+    "diagramCardNote": "Five-language route key: Montreux → Glion → Haut-de-Caux → Rochers-de-Naye. Route order only; verify service, visibility and return. Not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-montreux-riviera-rochers-de-naye-profile.svg",
+    "label": "Rochers-de-Naye five-language railway and return schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "fe4cdecbaa79a7c4f5e38e70383ada305f7efa5b"
   },
   "montreux-riviera/vevey-lakeside": {
     "src": "/assets/images/switzerland-montreux-riviera-vevey-lakeside.webp",
-    "alt": "Vevey waterfront on Lake Geneva",
+    "alt": "Vevey town and lakeside on Lake Geneva",
+    "displayTitle": "Vevey town and lakeside on Lake Geneva",
     "source": "https://commons.wikimedia.org/wiki/File:Vevey,_Switzerland.jpg",
     "label": "Vevey, Switzerland.jpg",
     "creator": "Marek Ślusarczyk ( Tupungato ) Photo gallery",
@@ -212,7 +239,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/interlaken-base": {
     "src": "/assets/images/switzerland-interlaken-lakes-interlaken-base.webp",
-    "alt": "Interlaken between Lake Thun and Lake Brienz",
+    "alt": "Interlaken and Lake Brienz below the Harder Kulm ridge",
+    "displayTitle": "Interlaken and Lake Brienz below Harder Kulm",
     "source": "https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg",
     "label": "View of Interlaken and Lake Brienz from Harder Kulm (Ank Kumar) 02.jpg",
     "creator": "Ank Kumar",
@@ -222,7 +250,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/brienz-giessbach": {
     "src": "/assets/images/switzerland-interlaken-lakes-brienz-giessbach.webp",
-    "alt": "Lake Brienz and surrounding mountains in Switzerland",
+    "alt": "Iseltwald village on Lake Brienz, looking toward Giessbach and Brienz",
+    "displayTitle": "Iseltwald on Lake Brienz looking toward Giessbach and Brienz",
     "source": "https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG",
     "label": "5498 - Brienzersee - Iseltwald looking toward Giessbach & Brienz.JPG",
     "creator": "Andrew Bossi",
@@ -232,7 +261,8 @@ export const switzerlandImageManifest = {
   },
   "interlaken-lakes/thun-spiez": {
     "src": "/assets/images/switzerland-interlaken-lakes-thun-spiez.webp",
-    "alt": "Spiez and Lake Thun with mountains",
+    "alt": "Spiez Castle on the shore of Lake Thun",
+    "displayTitle": "Spiez Castle and Lake Thun",
     "source": "https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg",
     "label": "Blick auf Schloss Spiez und Thunersee.jpg",
     "creator": "JoachimKohler-HB",
@@ -243,6 +273,7 @@ export const switzerlandImageManifest = {
   "jungfrau-region/lauterbrunnen-valley": {
     "src": "/assets/images/switzerland-jungfrau-region-lauterbrunnen-valley.webp",
     "alt": "Lauterbrunnen valley with waterfalls and high cliffs",
+    "displayTitle": "Lauterbrunnen Valley and Staubbach Falls",
     "source": "https://commons.wikimedia.org/wiki/File:Lauterbrunnen_Valley_with_Staubbach,_Bernese_Oberland,_Switzerland-LCCN2001701212.jpg",
     "label": "Lauterbrunnen Valley with Staubbach, Bernese Oberland, Switzerland-LCCN2001701212.jpg",
     "creator": "Photochrom Print Collection",
@@ -252,7 +283,8 @@ export const switzerlandImageManifest = {
   },
   "jungfrau-region/wengen-kleine-scheidegg": {
     "src": "/assets/images/switzerland-jungfrau-region-wengen-kleine-scheidegg.webp",
-    "alt": "Wengen and the Jungfrau mountains above Lauterbrunnen valley",
+    "alt": "Snowbound Kleine Scheidegg buildings below the Jungfrau massif",
+    "displayTitle": "Snowbound Kleine Scheidegg below the Jungfrau massif",
     "source": "https://commons.wikimedia.org/wiki/File:Kleine_Scheidegg_und_Jungfrau.jpg",
     "label": "Kleine Scheidegg und Jungfrau.jpg",
     "creator": "Albinfo",
@@ -262,7 +294,8 @@ export const switzerlandImageManifest = {
   },
   "jungfrau-region/grindelwald-first": {
     "src": "/assets/images/switzerland-jungfrau-region-grindelwald-first.webp",
-    "alt": "Grindelwald valley and mountains near First",
+    "alt": "Bachalpsee and the mountain panorama on the Grindelwald-First route",
+    "displayTitle": "Bachalpsee and the Grindelwald-First panorama",
     "source": "https://commons.wikimedia.org/wiki/File:Bachalpsee_in_Grindelwald.jpg",
     "label": "Bachalpsee in Grindelwald.jpg",
     "creator": "Barbara Steinemann",
@@ -272,7 +305,8 @@ export const switzerlandImageManifest = {
   },
   "zermatt-matterhorn/village-gornergrat": {
     "src": "/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp",
-    "alt": "Matterhorn viewed from the Gornergrat area above Zermatt",
+    "alt": "Matterhorn rising above the rocky grassy slope between Zermatt and Gornergrat",
+    "displayTitle": "Matterhorn above the slope between Zermatt and Gornergrat",
     "source": "https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg",
     "label": "Matterhorn from mountain side between Zermatt and Gornergrat, Wallis, Switzerland, 2012 August - 3.jpg",
     "creator": "Ximonic (Simo Räsänen)",
@@ -282,7 +316,8 @@ export const switzerlandImageManifest = {
   },
   "zermatt-matterhorn/sunnegga-five-lakes": {
     "src": "/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp",
-    "alt": "Matterhorn reflected in a lake above Zermatt near Sunnegga",
+    "alt": "Matterhorn reflected in Stellisee beneath sunset clouds",
+    "displayTitle": "Matterhorn reflected in Stellisee at sunset",
     "source": "https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg",
     "label": "043 Matterhorn reflecting in Stellisee at sunset Photo by Giles Laurent.jpg",
     "creator": "Giles Laurent",
@@ -291,18 +326,24 @@ export const switzerlandImageManifest = {
     "remoteSha1": "72d9783b9b99227cdd2a4f6a89c1697019dfa271"
   },
   "zermatt-matterhorn/glacier-paradise": {
-    "src": "/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp",
-    "alt": "High alpine cable car terrain near Klein Matterhorn above Zermatt",
-    "source": "https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg",
-    "label": "Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg",
-    "creator": "Sikander Iqbal",
-    "license": "Public domain",
-    "commonsTitle": "File:Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg",
-    "remoteSha1": "43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49"
+    "src": "/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
+    "alt": "Original schematic of the Zermatt village fallback and three mountain access chains; not a geographic map and not to scale",
+    "diagramNote": "Planning key: Mainline rail → Visp → MGB → Zermatt. At Zermatt, choose one branch: 1 Gornergrat Railway; 2 underground Sunnegga funicular → Blauherd → Five Lakes Trail → Sunnegga; 3 Furi → Schwarzsee → Trockener Steg → Klein Matterhorn / Matterhorn Glacier Paradise. When visibility or operations fail, use the village walk as a lower plan. The schematic compares access chains, not live departures, opening dates, fares or service status. Not to scale.",
+    "diagramCardNote": "Key: MGB to Zermatt; 1 Gornergrat rail; 2 Sunnegga funicular / Five Lakes; 3 Furi–Schwarzsee–Trockener Steg–Klein Matterhorn. The village walk is the lower fallback. Concept only; not to scale or live status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-zermatt-glacier-route-choice.svg",
+    "label": "Zermatt and Matterhorn mountain access-chain planning schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Planning schematic only; not a geographic map and not to scale.",
+    "localSha1": "b46e68a1052e6b2bd783cd759da1d5332f8e7e01"
   },
   "st-moritz-engadin/st-moritz-lakes": {
     "src": "/assets/images/switzerland-st-moritz-engadin-st-moritz-lakes.webp",
     "alt": "St Moritz and its lake in the Engadin valley",
+    "displayTitle": "Lake St Moritz and the Upper Engadin",
     "source": "https://commons.wikimedia.org/wiki/File:Switzerland-01761_-_Lake_St._Moritz_(22298240145).jpg",
     "label": "Switzerland-01761 - Lake St. Moritz (22298240145).jpg",
     "creator": "Dennis G. Jarvis",
@@ -313,6 +354,7 @@ export const switzerlandImageManifest = {
   "st-moritz-engadin/bernina-pontresina": {
     "src": "/assets/images/switzerland-st-moritz-engadin-bernina-pontresina.webp",
     "alt": "Rhaetian Railway train on the Bernina line in Switzerland",
+    "displayTitle": "Bernina Express crossing the upper Berninabach Bridge",
     "source": "https://commons.wikimedia.org/wiki/File:Rhb_Bernina-Express_%C3%BCberquert_obere_Berninabach-Br%C3%BCcke.jpg",
     "label": "Rhb Bernina-Express überquert obere Berninabach-Brücke.jpg",
     "creator": "Kabelleger / David Gubler ( http://www.bahnbilder.ch )",
@@ -322,7 +364,8 @@ export const switzerlandImageManifest = {
   },
   "st-moritz-engadin/muottas-diavolezza": {
     "src": "/assets/images/switzerland-st-moritz-engadin-muottas-diavolezza.webp",
-    "alt": "Upper Engadin panorama from Muottas Muragl",
+    "alt": "Muottas Muragl funicular station and track above the Upper Engadin",
+    "displayTitle": "Muottas Muragl funicular station and track",
     "source": "https://commons.wikimedia.org/wiki/File:Muottas_Muragl3.jpg",
     "label": "Muottas Muragl3.jpg",
     "creator": "Adrian Michael",
@@ -332,7 +375,8 @@ export const switzerlandImageManifest = {
   },
   "graubunden-corridors/chur-rhine-gorge": {
     "src": "/assets/images/switzerland-graubunden-corridors-chur-rhine-gorge.webp",
-    "alt": "Chur old town and Graubünden mountain landscape",
+    "alt": "Chur Old Town seen from above, with the urban railway and river edge",
+    "displayTitle": "Chur Old Town, railway and river edge",
     "source": "https://commons.wikimedia.org/wiki/File:Chur_(Altstadt).jpg",
     "label": "Chur (Altstadt).jpg",
     "creator": "Freaktalius",
@@ -340,9 +384,26 @@ export const switzerlandImageManifest = {
     "commonsTitle": "File:Chur (Altstadt).jpg",
     "remoteSha1": "1c1bd364fecea5f7ce64e4b0186db736af7d6eb9"
   },
+  "graubunden-corridors/corridor-choice-diagram": {
+    "src": "/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+    "alt": "Original schematic comparing the Rhine Gorge, Davos/Parsenn and Chur–Arosa corridors from Chur, with a low-elevation old-town fallback; conceptual route order, not to scale",
+    "displayTitle": "Graubünden corridor-choice schematic",
+    "diagramNote": "Five-language route and color key: red marks the Rhine Gorge rail or walking branch, gold marks the Davos/Parsenn elevation route, and teal marks the Chur–Arosa rail branch. Chur’s lower old town is the weather alternative. The branch order is conceptual, not geographic or to scale, and does not show live service status.",
+    "diagramCardNote": "Five-language key: red Rhine Gorge, gold Davos/Parsenn, teal Chur–Arosa; Chur old town is the low-weather fallback. Concept only, not to scale or live service status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-switzerland-graubunden-corridor-choice.svg",
+    "label": "Graubünden corridor-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Conceptual corridor-choice schematic only; not a geographic map and not to scale.",
+    "localSha1": "02f05c2b62f632289bef849a8cfb9d817c024b7f"
+  },
   "graubunden-corridors/davos-parsenn": {
     "src": "/assets/images/switzerland-graubunden-corridors-davos-parsenn.webp",
     "alt": "Davos valley and surrounding mountains in Graubünden",
+    "displayTitle": "Davos valley and mountains from Älplihorn",
     "source": "https://commons.wikimedia.org/wiki/File:Davos_as_seen_from_%C3%84lplihorn_(summer).jpg",
     "label": "Davos as seen from Älplihorn (summer).jpg",
     "creator": "Capricorn4049",
@@ -353,6 +414,7 @@ export const switzerlandImageManifest = {
   "graubunden-corridors/arosa-line": {
     "src": "/assets/images/switzerland-graubunden-corridors-arosa-line.webp",
     "alt": "Arosa mountain resort and lake in Graubünden",
+    "displayTitle": "Arosa resort and lake",
     "source": "https://commons.wikimedia.org/wiki/File:Arosa,_Switzerland_-_Lake_(2).jpg",
     "label": "Arosa, Switzerland - Lake (2).jpg",
     "creator": "Aileen's Pics",
@@ -363,6 +425,7 @@ export const switzerlandImageManifest = {
   "lugano-southern-ticino/lugano-lakefront": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp",
     "alt": "Lugano lakefront and mountains in Ticino",
+    "displayTitle": "Lugano waterfront and boat pier",
     "source": "https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg",
     "label": "Lakefront Lugano 2017-05-29 13.15.22.jpg",
     "creator": "Chris j wood",
@@ -372,7 +435,8 @@ export const switzerlandImageManifest = {
   },
   "lugano-southern-ticino/san-salvatore-morcote": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-san-salvatore-morcote.webp",
-    "alt": "Lake Lugano and mountains from Monte San Salvatore area",
+    "alt": "Flower-laden bicycle beside Lake Lugano with Monte San Salvatore behind",
+    "displayTitle": "A flower-laden bicycle beside Lake Lugano",
     "source": "https://commons.wikimedia.org/wiki/File:Monte_San_Salvatore_in_Lugano.jpg",
     "label": "Monte San Salvatore in Lugano.jpg",
     "creator": "Jean Schmitt",
@@ -383,6 +447,7 @@ export const switzerlandImageManifest = {
   "lugano-southern-ticino/mendrisiotto-generoso": {
     "src": "/assets/images/switzerland-lugano-southern-ticino-mendrisiotto-generoso.webp",
     "alt": "Monte Generoso landscape in southern Ticino",
+    "displayTitle": "Monte Generoso mountain railway trains at a station",
     "source": "https://commons.wikimedia.org/wiki/File:Trains_du_Monte_G%C3%A9n%C3%A9roso_(Suisse).jpg",
     "label": "Trains du Monte Généroso (Suisse).jpg",
     "creator": "trams aux fils.",
@@ -393,6 +458,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/locarno-ascona": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp",
     "alt": "Lake Maggiore waterfront near Ascona and Locarno",
+    "displayTitle": "Locarno and Ascona on Lake Maggiore",
     "source": "https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg",
     "label": "Locarno, Ascona & Lago Maggiore von Brione sopra M.jpg",
     "creator": "Glenn Steiger (Switzerland)",
@@ -403,6 +469,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/verzasca-valley": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-verzasca-valley.webp",
     "alt": "Stone bridge and turquoise river in the Verzasca Valley",
+    "displayTitle": "Ponte dei Salti bridge and river at Lavertezzo",
     "source": "https://commons.wikimedia.org/wiki/File:Verzasca_Lavertezzo_Ponte_dei_Salti.jpg",
     "label": "Verzasca Lavertezzo Ponte dei Salti.jpg",
     "creator": "Maureliusz",
@@ -413,6 +480,7 @@ export const switzerlandImageManifest = {
   "locarno-ascona-valleys/maggia-centovalli": {
     "src": "/assets/images/switzerland-locarno-ascona-valleys-maggia-centovalli.webp",
     "alt": "Centovalli railway and green Ticino valley landscape",
+    "displayTitle": "Stone viaduct in the Centovalli valley",
     "source": "https://commons.wikimedia.org/wiki/File:Centovalli_cassinam_33.jpg",
     "label": "Centovalli cassinam 33.jpg",
     "creator": "Cassinam",
@@ -423,6 +491,7 @@ export const switzerlandImageManifest = {
   "schaffhausen-rhine-falls/rhine-falls": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp",
     "alt": "Rhine Falls on the Rhine near Schaffhausen",
+    "displayTitle": "Visitors on a rock viewpoint amid the Rhine Falls",
     "source": "https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg",
     "label": "Caught in turbulent waters at the Rhine Falls, Neuhausen - panoramio.jpg",
     "creator": "More pics than views…",
@@ -432,7 +501,8 @@ export const switzerlandImageManifest = {
   },
   "schaffhausen-rhine-falls/schaffhausen-old-town": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-schaffhausen-old-town.webp",
-    "alt": "Schaffhausen old town and Munot fortress",
+    "alt": "Pedestrian Vordergasse in Schaffhausen with ornate old-town facades",
+    "displayTitle": "Painted facades along Schaffhausen's Vordergasse",
     "source": "https://commons.wikimedia.org/wiki/File:Schaffhausen_Vordergasse_2008_2.jpg",
     "label": "Schaffhausen Vordergasse 2008 2.jpg",
     "creator": "Photo: Andreas Praefcke",
@@ -443,6 +513,7 @@ export const switzerlandImageManifest = {
   "schaffhausen-rhine-falls/stein-am-rhein": {
     "src": "/assets/images/switzerland-schaffhausen-rhine-falls-stein-am-rhein.webp",
     "alt": "Painted facades in Stein am Rhein old town",
+    "displayTitle": "Painted façade in Stein am Rhein old town",
     "source": "https://commons.wikimedia.org/wiki/File:Stein_am_Rhein_Altstadt_03.JPG",
     "label": "Stein am Rhein Altstadt 03.JPG",
     "creator": "Zairon",
@@ -452,7 +523,8 @@ export const switzerlandImageManifest = {
   },
   "st-gallen-appenzell/st-gallen-abbey": {
     "src": "/assets/images/switzerland-st-gallen-appenzell-st-gallen-abbey.webp",
-    "alt": "Abbey District and old town of St Gallen",
+    "alt": "Baroque façade and towers of St Gallen Cathedral in the Abbey District",
+    "displayTitle": "St Gallen Cathedral façade in the Abbey District",
     "source": "https://commons.wikimedia.org/wiki/File:Kathedrale_St-Gallen.jpg",
     "label": "Kathedrale St-Gallen.jpg",
     "creator": "Pablodbds",
@@ -462,7 +534,8 @@ export const switzerlandImageManifest = {
   },
   "st-gallen-appenzell/appenzell-village": {
     "src": "/assets/images/switzerland-st-gallen-appenzell-appenzell-village.webp",
-    "alt": "Colorful Appenzell village with green hills",
+    "alt": "Ornamental painted houses on Appenzell’s Landsgemeindeplatz, with a construction crane and cars visible in the foreground",
+    "displayTitle": "Ornamental houses at Appenzell’s Landsgemeindeplatz during street works",
     "source": "https://commons.wikimedia.org/wiki/File:Appenzell_Landsgemeindeplatz_20210528.jpg",
     "label": "Appenzell Landsgemeindeplatz 20210528.jpg",
     "creator": "Daniel Kraft",
@@ -471,13 +544,128 @@ export const switzerlandImageManifest = {
     "remoteSha1": "1d3a12b33ffeb4572402166c15e2c8b38d2c9dac"
   },
   "st-gallen-appenzell/ebenalp-seealpsee": {
-    "src": "/assets/images/switzerland-st-gallen-appenzell-ebenalp-seealpsee.webp",
-    "alt": "Alpstein mountains near Ebenalp and Seealpsee",
-    "source": "https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg",
-    "label": "Ebenalp - panoramio (105).jpg",
-    "creator": "Patrick Nouhailler's…",
-    "license": "CC BY-SA 3.0",
-    "commonsTitle": "File:Ebenalp - panoramio (105).jpg",
-    "remoteSha1": "0a297066d568269168765eb0c4a4ec0bf8d3ec2b"
+    "src": "/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+    "alt": "Original conceptual access diagram comparing the Ebenalp cableway, the Wasserauen–Seealpsee walking loop and a lower village or city fallback; route order only, not to scale",
+    "displayTitle": "Ebenalp and Seealpsee access-choice schematic",
+    "diagramNote": "Five-language route and color key: red marks the checked rail/cableway access, gold the official signed Seealpsee walking line, and teal the lower village/city alternative. The place names and route order are conceptual, not geographic. Recheck current service, path status, weather and the official route figures before travel.",
+    "diagramCardNote": "Five-language key: red rail/cableway, gold signed Seealpsee path, teal low-elevation alternative. Conceptual route order only; not to scale or live status.",
+    "source": "https://tripdistill.com/assets/images/tripdistill-switzerland-ebenalp-seealpsee-access.svg",
+    "label": "Ebenalp and Seealpsee access-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Conceptual route-choice schematic only; not a geographic map and not to scale.",
+    "localSha1": "3065eeb3b048a025fece1bafb936d423b42048d5"
+  },
+  "switzerland-country/country-route-choice": {
+    "src": "/assets/images/switzerland-country-route-choice.svg",
+    "alt": "Conceptual five-language comparison of a Zurich–Lucerne city and lake route, a Lugano–Locarno Ticino route, and a Zurich–Schaffhausen Rhine Falls route; not to scale",
+    "displayTitle": "Switzerland route-choice schematic",
+    "diagramNote": "Planning schematic only; route labels are translated into English, Traditional Chinese, Japanese, Korean and Thai. It compares base choices and does not show geography, live service, exact journey time or fares.",
+    "diagramCardNote": "Three country-level rail route choices in five languages; conceptual only, not to scale or a live timetable.",
+    "source": "https://tripdistill.com/assets/images/switzerland-country-route-choice.svg",
+    "label": "Switzerland route-choice schematic",
+    "creator": "TripDistill Editorial Team",
+    "license": null,
+    "rightsStatus": "Project original; no separate reuse license declared",
+    "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+    "assetType": "original-planning-diagram",
+    "editNote": "Original five-language SVG planning schematic; not a geographic map and not to scale.",
+    "localSha1": "09aa3fca3edbb8fe02732a6483da595081cc7b2d"
+  }
+};
+
+// Preserve the retired file and its source-declared metadata for inventory and audit only.
+export const switzerlandRetiredImageRecords = {
+  bernEmmentalMismatch: {
+    src: '/assets/images/switzerland-bern-emmental-emmental-day-trip.webp',
+    alt: 'Green Emmental landscape with traditional farmhouses',
+    source: 'https://commons.wikimedia.org/wiki/File:Wintertime_in_Emmental,_Switzerland.jpg',
+    label: 'Wintertime in Emmental, Switzerland.jpg',
+    creator: 'Dirk Breer',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 4.0'],
+    commonsTitle: 'File:Wintertime in Emmental, Switzerland.jpg',
+    remoteSha1: '3be08742a184c7861eeee6f5beb80c214fa9abc9',
+    localSha1: 'cec21b3831e0d8421e32b36a142f973a64f55f47',
+    inventoryStatus: 'unused',
+    rightsStatus: 'The Commons page declares CC BY-SA 4.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed a sunset silhouette of two visitors beneath a bare tree, with no visible farmhouse or identifiable Emmental detail. The original WebP bytes and source metadata remain archived; this record does not independently verify the location, uploader authority or rights.'
+  },
+  stGallenEbenalpPhoto: {
+    src: '/assets/images/switzerland-st-gallen-appenzell-ebenalp-seealpsee.webp',
+    alt: 'Alpstein cliffs and forest above Seealpsee',
+    source: 'https://commons.wikimedia.org/wiki/File:Ebenalp_-_panoramio_(105).jpg',
+    label: 'Ebenalp - panoramio (105).jpg',
+    creator: "Patrick Nouhailler's…",
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: 'File:Ebenalp - panoramio (105).jpg',
+    remoteSha1: '0a297066d568269168765eb0c4a4ec0bf8d3ec2b',
+    localSha1: 'd1f18c04bea0a04a6e141f99e11106b0ad2650e4',
+    inventoryStatus: 'unused',
+    rightsStatus: 'The previous manifest recorded CC BY-SA 3.0 as source-declared metadata. The Commons page could not be independently opened in this environment; no license verification or rights clearance is claimed.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after the direct Commons page request was blocked by the execution network (HTTP 403). Local pixel review confirmed Seealpsee below the Alpstein cliffs, so the subject is relevant; however, the prior CC BY-SA 3.0 declaration could not be rechecked here. Original WebP bytes and the historical metadata remain archived without claiming independent licensing verification.'
+  },
+  lucerneRigiView: {
+    src: '/assets/images/switzerland-lucerne-lake-mountains-rigi-lake-circuit.webp',
+    alt: 'View from Mount Rigi over Lake Lucerne',
+    source: 'https://commons.wikimedia.org/wiki/File:View_from_Buergenstock-Resort_(Felsenweg)_to_Kuessnacht-Hertenstein-Weggis-Rigi_(Kulm)-lake_Lucerne-02ASD.jpg',
+    label: 'View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg',
+    creator: 'Asurnipal',
+    license: 'CC BY-SA 4.0',
+    commonsTitle: 'File:View from Buergenstock-Resort (Felsenweg) to Kuessnacht-Hertenstein-Weggis-Rigi (Kulm)-lake Lucerne-02ASD.jpg',
+    remoteSha1: 'c5cf6f0c470949801198ed9d28458b45103c8db4',
+    localSha1: 'f4d0669944063db98152960cb4a93581732ec470',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Source-page CC BY-SA 4.0 declaration retained as unverified metadata; no independent rights determination.',
+    retirementNote: 'Removed from live displays on 2026-10-12. The source identifies the viewpoint as Bürgenstock/Felsenweg, while the page alt described a view from Mount Rigi. The original WebP and recorded source metadata remain archived; neither the former credit nor this note establishes independent rights clearance.'
+  },
+  genevaOldTownMismatch: {
+    src: '/assets/images/switzerland-geneva-lake-old-town-lakefront.webp',
+    alt: 'Geneva lakefront and old town skyline',
+    source: 'https://commons.wikimedia.org/wiki/File:Geneva_-_Jet_d%27eau.jpg',
+    label: "Geneva - Jet d'eau.jpg",
+    creator: 'Tiia Monto',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: "File:Geneva - Jet d'eau.jpg",
+    remoteSha1: '6d83a31cc344200cc5ffe3eabbb56f39dd9341c9',
+    localSha1: '746024bc1f698e93e3ea867994c64bfca588529e',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the local image depicts the Jet d’Eau and open water, not the claimed Old Town skyline. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
+  },
+  montreuxRochersTrainMismatch: {
+    src: '/assets/images/switzerland-montreux-riviera-rochers-de-naye.webp',
+    alt: 'Mountain view from Rochers-de-Naye above Lake Geneva',
+    source: 'https://commons.wikimedia.org/wiki/File:Rochers-de-naye-train-at-montreux-station.jpg',
+    label: 'Rochers-de-naye-train-at-montreux-station.jpg',
+    creator: 'Cheeni',
+    license: null,
+    sourceDeclaredLicenses: ['CC BY-SA 3.0'],
+    commonsTitle: 'File:Rochers-de-naye-train-at-montreux-station.jpg',
+    remoteSha1: 'a26de0727cdcacaf820a76f3b5b137f9bb615ac7',
+    localSha1: 'fbc67b9ca4cb03eac6d46c69dd745110ae35041f',
+    inventoryStatus: 'unused',
+    rightsStatus: 'Commons source page declares CC BY-SA 3.0; retained as source metadata only. No independent rights or chain-of-title verification.',
+    retirementNote: 'Removed from live displays on 2026-10-12 after pixel review showed the train at Montreux station, not the claimed mountain view from Rochers-de-Naye. The train is destination-related, but it does not support the summit-view alt or the guide’s mountain-conditions decision. Original WebP bytes and source metadata remain archived; this record makes no independent rights determination.'
+  },
+  zermattGlacierParadiseMultipleLicenseDeclarations: {
+    src: '/assets/images/switzerland-zermatt-matterhorn-glacier-paradise.webp',
+    alt: 'Klein Matterhorn summit sign beside the viewing platform above the clouds',
+    source: 'https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_-_Zermatt_-_Switzerland_-_2005_-_04.jpg',
+    label: 'Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg',
+    creator: 'Sikander Iqbal',
+    license: null,
+    sourceDeclaredLicenses: ['Public domain', 'CC BY-SA 4.0'],
+    commonsTitle: 'File:Klein Matterhorn - Zermatt - Switzerland - 2005 - 04.jpg',
+    remoteSha1: '43dcc8fdd4bc2dd86f52eefb259ebc4fc5e87b49',
+    localSha1: '9a193f9dba679212c6d27a10df08fff47a3ba3fb',
+    inventoryStatus: 'unused',
+    rightsStatus: 'The Commons source page records both Public domain and CC BY-SA 4.0 declarations; their relationship and the image reuse status have not been independently determined.',
+    retirementNote: 'Removed from live displays on 2026-10-12 as a precaution because reuse status was not independently determined. The original WebP bytes and source metadata remain retained for provenance; this is not a finding of infringement or that the declarations are incompatible.'
   }
 };

@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare 7-, 10- and 14-day Thailand routes with matching hotel-night counts, Bangkok transfers, Chiang Mai or Andaman bases, and seasonal weather choices.": "여행 일수에 맞는 호텔 숙박 박수부터 방콕 환승, 치앙마이나 안다만 지역 거점, 계절별 날씨 선택까지 살펴 태국 7일·10일·14일 코스를 비교해 보세요."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan London as one hotel base and three district days: Westminster/South Bank, Bloomsbury/Covent Garden, and Tower/City or Greenwich. Compare four, five and six nights; name the arrival station, transfer and return before adding another interior.": "ロンドンはホテルを移さず、3つのエリアを各1日で巡る計画にします。ウェストミンスター／サウス・バンク、ブルームズベリー／コヴェント・ガーデン、ロンドン塔／シティまたはグリニッジです。4・5・6泊の違いを比べ、屋内施設を追加する前に到着駅、乗換、帰路を決めましょう。",
+    "Walk Parliament Square and Whitehall from a booked Parliament or Abbey entrance, cross the Thames once, and finish by Waterloo. Budget security time and do not add another timed interior.": "予約した国会議事堂またはウェストミンスター寺院の入口から、国会議事堂広場とホワイトホールを歩きます。テムズ川を一度だけ渡り、ウォータールー付近で終えましょう。保安検査の時間を見込み、別の時間指定の屋内見学を加えないでください。",
+    "Use Russell Square or a south-side Tube station to reach the British Museum, select a bounded gallery plan, pause in Bloomsbury, then walk through Seven Dials to Covent Garden. Save other major museums for another day.": "ラッセル・スクエアまたは南側の地下鉄駅から大英博物館へ行き、見学する展示室を絞ります。ブルームズベリーで休憩し、セブン・ダイアルズを通ってコヴェント・ガーデンまで歩きましょう。他の大規模博物館は別日に回します。",
+    "Choose a Tower Hill and City day or a separate Greenwich day; do not plan both as one guaranteed transfer. Royal Museums Greenwich currently says the Observatory closes from 2 November 2026 for refurbishment, so verify the date-specific site status.": "タワー・ヒルとシティを巡る日か、グリニッジの日かを選びます。両方を確実に乗り継げる同日プランとして扱わないでください。ロイヤル・ミュージアムズ・グリニッジは現在、王立天文台が改修のため2026年11月2日から閉館すると案内しています。旅行日に各施設の状況を確認してください。"
+  }
+}

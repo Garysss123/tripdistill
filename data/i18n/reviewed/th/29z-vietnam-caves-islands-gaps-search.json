@@ -1,0 +1,41 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "hang en guided expedition": "tริปสำรวจ Hang En พร้อมไกด์",
+    "hang en 2 days 1 night": "Hang En 2 วัน 1 คืน",
+    "hang en fitness requirement": "เกณฑ์ความฟิตสำหรับ Hang En",
+    "hang en tour booking": "จองทริป Hang En",
+    "phong nha cave alternatives": "เส้นทางถ้ำทางเลือกใน Phong Nha",
+    "cave access permit": "ใบอนุญาตเข้าถ้ำ",
+    "son doong expedition booking": "จองทริปสำรวจ Son Doong",
+    "son doong licensed operator": "ผู้ให้บริการที่ได้รับอนุญาตใน Son Doong",
+    "son doong 6 days 5 nights": "Son Doong 6 วัน 5 คืน",
+    "son doong fitness requirements": "เกณฑ์ความฟิตสำหรับ Son Doong",
+    "son doong age limits": "ข้อจำกัดอายุ Son Doong",
+    "phong nha public cave tours": "ทัวร์ถ้ำทั่วไปใน Phong Nha",
+    "Ganh Dau Phu Quoc road": "ถนนไป Ganh Dau บนเกาะ Phu Quoc",
+    "Rach Vem north island": "Rach Vem ทางเหนือของเกาะ",
+    "Bai Thom Phu Quoc": "Bai Thom เกาะ Phu Quoc",
+    "Phu Quoc north forest trail": "เส้นทางป่าทางเหนือ Phu Quoc",
+    "Phu Quoc north base nights": "จำนวนคืนพักทางเหนือ Phu Quoc",
+    "Ganh Dau access status": "สถานะการเข้า Ganh Dau",
+    "phu quoc forest & suoi tranh stream": "ป่า Phu Quoc และลำธาร Suoi Tranh",
+    "Suoi Tranh stream walk": "เส้นทางเดินริมลำธาร Suoi Tranh",
+    "Phu Quoc forest trail access": "การเข้าเส้นทางป่า Phu Quoc",
+    "Suoi Tranh opening status": "สถานะเปิด Suoi Tranh",
+    "Suoi Tranh water safety": "ความปลอดภัยทางน้ำ Suoi Tranh",
+    "Phu Quoc national park visitor routes": "เส้นทางผู้เยี่ยมชมอุทยานแห่งชาติ Phu Quoc",
+    "Phu Quoc rain forest walk": "เส้นทางเดินป่าฝน Phu Quoc"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex per-locale translation pass",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the four assigned routes and retained place names. The translation review is not independent model or human review."
+  }
+}

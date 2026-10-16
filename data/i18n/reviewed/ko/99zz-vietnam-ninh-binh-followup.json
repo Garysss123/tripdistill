@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/",
+    "/vietnam/ninh-binh/hang-mua-dragon-mountain/",
+    "/vietnam/ninh-binh/van-long-wetland/",
+    "/vietnam/ninh-binh/cuc-phuong-conservation/"
+  ],
+  "translations": {
+    "RIVER GORGES / TEMPLE VALLEY / KARST": "강 협곡 / 사원 계곡 / 카르스트 지형",
+    "Ninh Binh is a limestone and river landscape with a long human history: UNESCO records cave evidence reaching back more than 30,000 years and the 10th-century capital of Hoa Lu.": "닌빈은 석회암 지형과 강이 어우러지고 유구한 인류 역사를 간직한 지역입니다. UNESCO는 30,000년이 넘는 동굴의 인류 활동 흔적과 10세기 호아루 수도를 기록하고 있습니다.",
+    "From Hanoi, compare current train and road options against the actual hotel and first…": "하노이에서 이동할 때는 실제 숙소와 첫 방문지를 기준으로 현재 열차와 도로 이동편을 비교하세요…"
+  }
+}

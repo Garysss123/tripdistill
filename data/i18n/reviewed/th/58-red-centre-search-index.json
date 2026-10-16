@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "town, interpretation and preparation": "Alice Springs / Mparntwe: เมือง ศูนย์สื่อความหมาย และการเตรียมตัว",
+    "gorge road and water decisions": "Tjoritja: ถนนในหุบเขาและการตัดสินใจเรื่องน้ำ",
+    "canyon rim and heat gate": "Watarrka: สันขอบแคนยอนและเกณฑ์ความร้อน",
+    "gorge walk and valley loop": "Kata Tjuṯa: เส้นทางเดินในช่องเขาและวงรอบหุบเขา"
+  }
+}

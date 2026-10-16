@@ -1,0 +1,719 @@
+export const integrationSprintBaseline = 'a014412eceb30efae51894be3b6167debaa96ca3';
+
+export const integrationRouteGroups = Object.freeze({
+  unitedKingdom: Object.freeze([
+    '/united-kingdom/',
+    '/united-kingdom/scottish-highlands/',
+    '/united-kingdom/scottish-highlands/aviemore-cairngorms/',
+    '/united-kingdom/scottish-highlands/glencoe-fort-william/',
+    '/united-kingdom/scottish-highlands/inverness-loch-ness/',
+    '/united-kingdom/pembrokeshire-west-wales/',
+    '/united-kingdom/pembrokeshire-west-wales/aberystwyth-ceredigion/',
+    '/united-kingdom/pembrokeshire-west-wales/st-davids-coast/',
+    '/united-kingdom/pembrokeshire-west-wales/tenby-caldey-coast/'
+  ]),
+  australia: Object.freeze([
+    '/australia/melbourne-port-phillip/',
+    '/australia/melbourne-port-phillip/cbd-laneways-tram-grid/',
+    '/australia/melbourne-port-phillip/federation-square-southbank/',
+    '/australia/melbourne-port-phillip/st-kilda-foreshore/',
+    '/australia/adelaide-wine-island/',
+    '/australia/adelaide-wine-island/city-parklands-north-terrace/',
+    '/australia/adelaide-wine-island/barossa-valley/',
+    '/australia/adelaide-wine-island/fleurieu-mclaren-vale/',
+    '/australia/sydney-harbour-coast/',
+    '/australia/sydney-harbour-coast/circular-quay-rocks/',
+    '/australia/sydney-harbour-coast/opera-house-botanic-garden/',
+    '/australia/sydney-harbour-coast/bondi-coogee-coastal-walk/',
+    '/australia/brisbane-moreton-bay/',
+    '/australia/brisbane-moreton-bay/city-river-south-bank/',
+    '/australia/brisbane-moreton-bay/minjerribah-north-stradbroke/',
+    '/australia/brisbane-moreton-bay/mulgumpin-moreton-island/',
+    '/australia/blue-mountains-nsw-coast/',
+    '/australia/blue-mountains-nsw-coast/katoomba-echo-point/',
+    '/australia/blue-mountains-nsw-coast/wentworth-falls-tableland/',
+    '/australia/blue-mountains-nsw-coast/blackheath-grose-valley/',
+    '/australia/great-ocean-road-gariwerd/',
+    '/australia/great-ocean-road-gariwerd/torquay-bells-beach/',
+    '/australia/great-ocean-road-gariwerd/apollo-bay-otways/',
+    '/australia/great-ocean-road-gariwerd/port-campbell-twelve-apostles/',
+    '/australia/gold-coast-scenic-rim/',
+    '/australia/gold-coast-scenic-rim/surfers-paradise-broadbeach/',
+    '/australia/gold-coast-scenic-rim/burleigh-heads-tallebudgera/',
+    '/australia/gold-coast-scenic-rim/coolangatta-snapper-rocks/',
+    '/australia/cairns-wet-tropics/',
+    '/australia/cairns-wet-tropics/cairns-esplanade-reef-terminal/',
+    '/australia/cairns-wet-tropics/kuranda-rail-skyrail/',
+    '/australia/cairns-wet-tropics/northern-beaches-palm-cove/',
+    '/australia/sydney-harbour-coast/barangaroo-darling-harbour/',
+    '/australia/sydney-harbour-coast/manly-north-head/',
+    '/australia/blue-mountains-nsw-coast/royal-national-park-coast/',
+    '/australia/blue-mountains-nsw-coast/jervis-bay-booderee/',
+    '/australia/brisbane-moreton-bay/new-farm-fortitude-valley/',
+    '/australia/brisbane-moreton-bay/west-end-cultural-precinct/',
+    '/australia/gold-coast-scenic-rim/springbrook-national-park/',
+    '/australia/gold-coast-scenic-rim/lamington-national-park/',
+    '/australia/melbourne-port-phillip/fitzroy-carlton-collingwood/',
+    '/australia/melbourne-port-phillip/phillip-island/',
+    '/australia/great-ocean-road-gariwerd/lorne-waterfalls/',
+    '/australia/great-ocean-road-gariwerd/gariwerd-grampians/',
+    '/australia/adelaide-wine-island/adelaide-hills-hahndorf/',
+    '/australia/adelaide-wine-island/kangaroo-island/',
+    '/australia/perth-fremantle-rottnest/kings-park/',
+    '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
+  ]),
+  france: Object.freeze([
+    '/france/',
+    '/france/corsica/',
+    '/france/corsica/ajaccio-west-coast/',
+    '/france/corsica/bastia-cap-corse/',
+    '/france/corsica/bonifacio-porto-vecchio/',
+    '/france/french-alps/',
+    '/france/french-alps/annecy-lake-old-town/',
+    '/france/french-alps/chamonix-mountain-systems/',
+    '/france/french-alps/grenoble-bastille-chartreuse/',
+    '/france/languedoc-camargue/',
+    '/france/languedoc-camargue/arles-camargue/',
+    '/france/languedoc-camargue/montpellier-sete/',
+    '/france/languedoc-camargue/nimes-pont-du-gard/',
+    '/france/lille-french-flanders/',
+    '/france/lille-french-flanders/arras-vimy-remembrance/',
+    '/france/lille-french-flanders/old-lille-roubaix/',
+    '/france/lille-french-flanders/opal-coast-headlands/'
+  ]),
+  switzerland: Object.freeze([
+    '/switzerland/',
+    '/switzerland/basel-rhine/',
+    '/switzerland/basel-rhine/art-museums/',
+    '/switzerland/basel-rhine/kleinbasel-border-rhine/',
+    '/switzerland/basel-rhine/old-town-rhine/',
+    '/switzerland/bern-emmental/',
+    '/switzerland/bern-emmental/emmental-day-trip/',
+    '/switzerland/bern-emmental/museums-rose-garden/',
+    '/switzerland/bern-emmental/old-city-aare/',
+    '/switzerland/geneva-lake/',
+    '/switzerland/geneva-lake/carouge-arve/',
+    '/switzerland/geneva-lake/international-quarter/',
+    '/switzerland/geneva-lake/old-town-lakefront/',
+    '/switzerland/interlaken-lakes/',
+    '/switzerland/interlaken-lakes/brienz-giessbach/',
+    '/switzerland/interlaken-lakes/interlaken-base/',
+    '/switzerland/interlaken-lakes/thun-spiez/',
+    '/switzerland/jungfrau-region/',
+    '/switzerland/jungfrau-region/grindelwald-first/',
+    '/switzerland/jungfrau-region/lauterbrunnen-valley/',
+    '/switzerland/jungfrau-region/wengen-kleine-scheidegg/',
+    '/switzerland/lausanne-lavaux/',
+    '/switzerland/lausanne-lavaux/lavaux-terraces/',
+    '/switzerland/lausanne-lavaux/old-city-ouchy/',
+    '/switzerland/lausanne-lavaux/olympic-lake-cruise/',
+    '/switzerland/lucerne-lake-mountains/',
+    '/switzerland/lucerne-lake-mountains/old-town-lakefront/',
+    '/switzerland/lucerne-lake-mountains/pilatus-round-trip/',
+    '/switzerland/lucerne-lake-mountains/rigi-lake-circuit/',
+    '/switzerland/montreux-riviera/',
+    '/switzerland/montreux-riviera/montreux-chillon/',
+    '/switzerland/montreux-riviera/rochers-de-naye/',
+    '/switzerland/montreux-riviera/vevey-lakeside/',
+    '/switzerland/zermatt-matterhorn/',
+    '/switzerland/zermatt-matterhorn/glacier-paradise/',
+    '/switzerland/zermatt-matterhorn/sunnegga-five-lakes/',
+    '/switzerland/zermatt-matterhorn/village-gornergrat/',
+    '/switzerland/st-moritz-engadin/',
+    '/switzerland/st-moritz-engadin/st-moritz-lakes/',
+    '/switzerland/st-moritz-engadin/bernina-pontresina/',
+    '/switzerland/st-moritz-engadin/muottas-diavolezza/',
+    '/switzerland/st-gallen-appenzell/',
+    '/switzerland/st-gallen-appenzell/st-gallen-abbey/',
+    '/switzerland/st-gallen-appenzell/appenzell-village/',
+    '/switzerland/st-gallen-appenzell/ebenalp-seealpsee/',
+    '/switzerland/graubunden-corridors/',
+    '/switzerland/graubunden-corridors/chur-rhine-gorge/',
+    '/switzerland/graubunden-corridors/davos-parsenn/',
+    '/switzerland/graubunden-corridors/arosa-line/',
+    '/switzerland/lugano-southern-ticino/',
+    '/switzerland/locarno-ascona-valleys/',
+    '/switzerland/schaffhausen-rhine-falls/',
+    '/switzerland/lugano-southern-ticino/lugano-lakefront/',
+    '/switzerland/lugano-southern-ticino/mendrisiotto-generoso/',
+    '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
+    '/switzerland/locarno-ascona-valleys/locarno-ascona/',
+    '/switzerland/locarno-ascona-valleys/maggia-centovalli/',
+    '/switzerland/locarno-ascona-valleys/verzasca-valley/',
+    '/switzerland/schaffhausen-rhine-falls/rhine-falls/',
+    '/switzerland/schaffhausen-rhine-falls/schaffhausen-old-town/',
+    '/switzerland/schaffhausen-rhine-falls/stein-am-rhein/'
+  ]),
+  italy: Object.freeze([
+    '/italy/',
+    '/italy/basilicata-calabria/',
+    '/italy/basilicata-calabria/maratea-pollino/',
+    '/italy/basilicata-calabria/matera-sassi-murgia/',
+    '/italy/basilicata-calabria/tropea-scilla-reggio/',
+    '/italy/dolomites-trentino-south-tyrol/',
+    '/italy/dolomites-trentino-south-tyrol/bolzano-renon/',
+    '/italy/dolomites-trentino-south-tyrol/cortina-tre-cime/',
+    '/italy/dolomites-trentino-south-tyrol/trento-brenta-dolomites/',
+    '/italy/eastern-sicily/',
+    '/italy/eastern-sicily/catania-etna/',
+    '/italy/eastern-sicily/syracuse-noto-ragusa/',
+    '/italy/eastern-sicily/taormina-naxos-aeolian-gateway/',
+    '/italy/emilia-romagna/',
+    '/italy/emilia-romagna/bologna-porticoes-markets/',
+    '/italy/emilia-romagna/modena-parma-via-emilia/',
+    '/italy/emilia-romagna/ravenna-ferrara-po-delta/',
+    '/italy/genoa-liguria/',
+    '/italy/genoa-liguria/camogli-portofino-san-fruttuoso/',
+    '/italy/genoa-liguria/cinque-terre-rail-trails/',
+    '/italy/genoa-liguria/genoa-old-port-rolli/',
+    '/italy/italian-lakes/',
+    '/italy/italian-lakes/lake-como-central-lake/',
+    '/italy/italian-lakes/lake-garda-shores/',
+    '/italy/italian-lakes/lake-maggiore-islands/',
+    '/italy/marche-abruzzo/',
+    '/italy/marche-abruzzo/abruzzo-national-parks/',
+    '/italy/marche-abruzzo/ancona-conero/',
+    '/italy/marche-abruzzo/urbino-pesaro/',
+    '/italy/milan/',
+    '/italy/milan/duomo-brera/',
+    '/italy/milan/last-supper-castello/',
+    '/italy/milan/navigli-porta-nuova-design/',
+    '/italy/sardinia/',
+    '/italy/sardinia/cagliari-su-nuraxi/',
+    '/italy/sardinia/gulf-orosei-gennargentu/',
+    '/italy/sardinia/la-maddalena-gallura/',
+    '/italy/siena-southern-tuscany/',
+    '/italy/siena-southern-tuscany/maremma-park-coast/',
+    '/italy/siena-southern-tuscany/siena-civic-cathedral/',
+    '/italy/siena-southern-tuscany/val-dorcia-towns/',
+    '/italy/sorrento-amalfi-capri/',
+    '/italy/sorrento-amalfi-capri/capri-anacapri/',
+    '/italy/sorrento-amalfi-capri/positano-amalfi-ravello/',
+    '/italy/sorrento-amalfi-capri/sorrento-gateway/',
+    '/italy/turin-piedmont/',
+    '/italy/turin-piedmont/langhe-alba-asti/',
+    '/italy/turin-piedmont/royal-turin-egyptian-museum/',
+    '/italy/turin-piedmont/venaria-sacra-san-michele/',
+    '/italy/umbria/',
+    '/italy/umbria/assisi-franciscan-city/',
+    '/italy/umbria/orvieto-cliff-city/',
+    '/italy/umbria/perugia-ridge-city/',
+    '/italy/veneto-art-cities/',
+    '/italy/veneto-art-cities/padua-frescoes-basilica/',
+    '/italy/veneto-art-cities/verona-arena-river/',
+    '/italy/veneto-art-cities/vicenza-palladian-city/',
+    '/italy/western-sicily/',
+    '/italy/western-sicily/agrigento-selinunte/',
+    '/italy/western-sicily/palermo-monreale-cefalu/',
+    '/italy/western-sicily/trapani-erice-egadi/',
+  ]),
+  canada: Object.freeze([
+    '/canada/',
+    '/canada/ottawa-gatineau/',
+    '/canada/ottawa-gatineau/parliament-rideau/',
+    '/canada/ottawa-gatineau/national-museums/',
+    '/canada/ottawa-gatineau/gatineau-park/',
+    '/canada/pacific-rim-tofino/',
+    '/canada/pacific-rim-tofino/long-beach-rainforest/',
+    '/canada/pacific-rim-tofino/tofino-marine-day/',
+    '/canada/pacific-rim-tofino/ucluelet-wild-pacific/',
+    '/canada/banff-lake-louise/',
+    '/canada/banff-lake-louise/banff-town-bow-valley/',
+    '/canada/banff-lake-louise/johnston-minnewanka/',
+    '/canada/banff-lake-louise/lake-louise-moraine/',
+    '/canada/jasper-icefields/',
+    '/canada/jasper-icefields/jasper-town-maligne/',
+    '/canada/jasper-icefields/icefields-parkway/',
+    '/canada/jasper-icefields/athabasca-sunwapta/',
+    '/canada/calgary-badlands/',
+    '/canada/calgary-badlands/calgary-core/',
+    '/canada/calgary-badlands/drumheller-royal-tyrrell/',
+    '/canada/calgary-badlands/dinosaur-provincial-park/',
+    '/canada/newfoundland-labrador/',
+    '/canada/newfoundland-labrador/st-johns-signal-hill/',
+    '/canada/newfoundland-labrador/bonavista-trinity/',
+    '/canada/newfoundland-labrador/gros-morne/',
+    '/canada/niagara/',
+    '/canada/niagara/falls-parkway/',
+    '/canada/niagara/niagara-gorge/',
+    '/canada/niagara/niagara-on-the-lake/',
+    '/canada/saguenay-tadoussac/',
+    '/canada/saguenay-tadoussac/tadoussac-marine/',
+    '/canada/saguenay-tadoussac/fjord-hiking/',
+    '/canada/saguenay-tadoussac/saguenay-city-valley/',
+    '/canada/halifax-nova-scotia/',
+    '/canada/halifax-nova-scotia/halifax-waterfront-citadel/',
+    '/canada/halifax-nova-scotia/peggys-cove-lunenburg/',
+    '/canada/halifax-nova-scotia/cape-breton-cabot/',
+    '/canada/prince-edward-island/',
+    '/canada/prince-edward-island/charlottetown/',
+    '/canada/prince-edward-island/cavendish-north-shore/',
+    '/canada/prince-edward-island/coastal-drives/',
+    '/canada/winnipeg-churchill/',
+    '/canada/winnipeg-churchill/forks-exchange/',
+    '/canada/winnipeg-churchill/human-rights-assiniboine/',
+    '/canada/winnipeg-churchill/churchill-hudson-bay/',
+    '/canada/whitehorse-kluane/',
+    '/canada/whitehorse-kluane/whitehorse-river/',
+    '/canada/whitehorse-kluane/kluane-haines-junction/',
+    '/canada/whitehorse-kluane/miles-canyon-aurora/',
+    '/canada/yellowknife-great-slave/',
+    '/canada/yellowknife-great-slave/old-town-great-slave/',
+    '/canada/yellowknife-great-slave/aurora-dark-sky/',
+    '/canada/yellowknife-great-slave/ingraham-trail/'
+  ]),
+  malaysia: Object.freeze([
+    '/malaysia/semporna-tun-sakaran/',
+    '/malaysia/semporna-tun-sakaran/semporna-jetty-operator/',
+    '/malaysia/semporna-tun-sakaran/bohey-dulang-bodgaya/',
+    '/malaysia/semporna-tun-sakaran/mabul-kapalai/',
+    '/malaysia/semporna-tun-sakaran/sipadan-permit-day/',
+    '/malaysia/sandakan-kinabatangan/',
+    '/malaysia/sandakan-kinabatangan/sandakan-heritage-waterfront/',
+    '/malaysia/sandakan-kinabatangan/sepilok-conservation-centres/',
+    '/malaysia/sandakan-kinabatangan/sukau-kinabatangan/',
+    '/malaysia/sandakan-kinabatangan/gomantong-batu-puteh/',
+    '/malaysia/kuching-bako/',
+    '/malaysia/kuching-bako/kuching-waterfront-old-courthouse/',
+    '/malaysia/kuching-bako/borneo-cultures-museum/',
+    '/malaysia/kuching-bako/semenggoh-wildlife-centre/',
+    '/malaysia/kuching-bako/bako-national-park/',
+    '/malaysia/perhentian-redang/',
+    '/malaysia/perhentian-redang/kuala-besut-transfer/',
+    '/malaysia/perhentian-redang/perhentian-kecil/',
+    '/malaysia/perhentian-redang/perhentian-besar/',
+    '/malaysia/perhentian-redang/redang-merang-transfer/',
+    '/malaysia/kota-kinabalu-tunku-abdul-rahman/',
+    '/malaysia/kota-kinabalu-tunku-abdul-rahman/gaya-street-waterfront/',
+    '/malaysia/kota-kinabalu-tunku-abdul-rahman/tanjung-aru-museum/',
+    '/malaysia/kota-kinabalu-tunku-abdul-rahman/manukan-mamutik/',
+    '/malaysia/kota-kinabalu-tunku-abdul-rahman/sapi-gaya-islands/',
+    '/malaysia/gunung-mulu/',
+    '/malaysia/gunung-mulu/deer-lang-caves/',
+    '/malaysia/gunung-mulu/clearwater-wind-caves/',
+    '/malaysia/gunung-mulu/pinnacles-expedition/',
+    '/malaysia/gunung-mulu/canopy-night-walks/',
+    '/malaysia/kuala-lumpur-putrajaya/',
+    '/malaysia/kuala-lumpur-putrajaya/merdeka-chinatown/',
+    '/malaysia/kuala-lumpur-putrajaya/klcc-bukit-bintang/',
+    '/malaysia/kuala-lumpur-putrajaya/batu-caves/',
+    '/malaysia/kuala-lumpur-putrajaya/putrajaya-civic-core/',
+    '/malaysia/',
+    '/malaysia/kinabalu-park-kundasang/',
+    '/malaysia/kinabalu-park-kundasang/park-headquarters-botanical-garden/',
+    '/malaysia/kinabalu-park-kundasang/mount-kinabalu-summit/',
+    '/malaysia/kinabalu-park-kundasang/kundasang-ranau/',
+    '/malaysia/kinabalu-park-kundasang/poring-hot-springs/'
+  ]),
+  vietnam: Object.freeze([
+    '/vietnam/ha-long-cat-ba/core-cruise/',
+    '/vietnam/ha-long-cat-ba/',
+    '/vietnam/ha-long-cat-ba/bai-tu-long/',
+    '/vietnam/ha-long-cat-ba/lan-ha-town/',
+    '/vietnam/ha-long-cat-ba/national-park/',
+    '/vietnam/phong-nha-ke-bang/paradise-tien-son-caves/',
+    '/vietnam/ho-chi-minh-city/saigon-river-waterbus/',
+    '/vietnam/da-lat-central-highlands/da-lat-lake-railway-core/',
+    '/vietnam/',
+    '/vietnam/hanoi/west-lake-truc-bach/',
+    '/vietnam/sapa-northwest-highlands/o-quy-ho-waterfalls/',
+    '/vietnam/ha-giang/meo-vac-du-gia/'
+  ])
+});
+
+export const integrationRoutes = Object.freeze([
+  ...integrationRouteGroups.unitedKingdom,
+  ...integrationRouteGroups.australia,
+  ...integrationRouteGroups.france,
+  ...integrationRouteGroups.switzerland,
+  ...integrationRouteGroups.italy,
+  ...integrationRouteGroups.canada,
+  ...integrationRouteGroups.malaysia,
+  ...integrationRouteGroups.vietnam
+]);
+
+export const integrationSitemapRoutes = Object.freeze(
+  integrationRoutes.filter((route) => route !== '/united-kingdom/')
+);
+
+const integrationSearchOnlyRoutes = Object.freeze([
+  '/australia/perth-fremantle-rottnest/',
+  '/australia/perth-fremantle-rottnest/boorloo-city-elizabeth-quay/',
+  '/australia/perth-fremantle-rottnest/wadjemup-rottnest/',
+  '/australia/perth-fremantle-rottnest/walyalup-fremantle/'
+]);
+
+export const integrationSearchRoutes = Object.freeze([
+  ...integrationRoutes.filter((route) => ![
+    '/canada/halifax-nova-scotia/',
+    '/france/french-alps/annecy-lake-old-town/',
+    '/france/french-alps/chamonix-mountain-systems/',
+    '/france/french-alps/grenoble-bastille-chartreuse/',
+    '/france/languedoc-camargue/arles-camargue/',
+    '/france/languedoc-camargue/nimes-pont-du-gard/',
+    '/italy/basilicata-calabria/maratea-pollino/',
+    '/italy/basilicata-calabria/matera-sassi-murgia/',
+    '/italy/basilicata-calabria/tropea-scilla-reggio/',
+    '/italy/dolomites-trentino-south-tyrol/bolzano-renon/',
+    '/italy/dolomites-trentino-south-tyrol/cortina-tre-cime/',
+    '/italy/dolomites-trentino-south-tyrol/trento-brenta-dolomites/',
+    '/italy/eastern-sicily/catania-etna/',
+    '/italy/eastern-sicily/syracuse-noto-ragusa/',
+    '/italy/eastern-sicily/taormina-naxos-aeolian-gateway/',
+    '/italy/genoa-liguria/camogli-portofino-san-fruttuoso/',
+    '/italy/genoa-liguria/cinque-terre-rail-trails/',
+    '/italy/genoa-liguria/genoa-old-port-rolli/',
+    '/italy/italian-lakes/',
+    '/italy/marche-abruzzo/abruzzo-national-parks/',
+    '/italy/marche-abruzzo/ancona-conero/',
+    '/italy/marche-abruzzo/urbino-pesaro/',
+    '/italy/sardinia/cagliari-su-nuraxi/',
+    '/italy/sardinia/gulf-orosei-gennargentu/',
+    '/italy/sardinia/la-maddalena-gallura/',
+    '/italy/turin-piedmont/langhe-alba-asti/',
+    '/italy/turin-piedmont/royal-turin-egyptian-museum/',
+    '/italy/turin-piedmont/venaria-sacra-san-michele/',
+    '/italy/umbria/',
+    '/italy/veneto-art-cities/padua-frescoes-basilica/',
+    '/italy/veneto-art-cities/verona-arena-river/',
+    '/italy/veneto-art-cities/vicenza-palladian-city/',
+    '/italy/western-sicily/agrigento-selinunte/',
+    '/italy/western-sicily/palermo-monreale-cefalu/',
+    '/italy/western-sicily/trapani-erice-egadi/'
+  ].includes(route)),
+  ...integrationSearchOnlyRoutes
+]);
+
+// Later scoped refreshes can extend the comparison baseline without changing
+// the historical integration route inventory above.
+export const postIntegrationHawaiiRoutes = Object.freeze([
+  '/usa/hawaii/',
+  '/usa/hawaii/oahu/',
+  '/usa/hawaii/maui/',
+  '/usa/hawaii/hawaii-island/'
+]);
+
+// The next source-only U.S. refresh follows Hawaii; both sets are kept
+// separate so historical ledgers and exact per-batch checks remain explicit.
+export const postHawaiiNewOrleansRoutes = Object.freeze([
+  '/usa/new-orleans/',
+  '/usa/new-orleans/french-quarter/',
+  '/usa/new-orleans/garden-district/',
+  '/usa/new-orleans/river-wetlands/'
+]);
+
+// Atlanta source refresh after the New Orleans checkpoint; four more existing
+// English bodies extend the current-tree date/search scope.
+export const postNewOrleansAtlantaRoutes = Object.freeze([
+  '/usa/atlanta/',
+  '/usa/atlanta/king-historic-district/',
+  '/usa/atlanta/midtown-museums/',
+  '/usa/atlanta/beltline/'
+]);
+
+// Miami/Orlando source refresh after the Atlanta checkpoint; four more existing
+// English bodies extend the current-tree date/search scope.
+export const postAtlantaFloridaRoutes = Object.freeze([
+  '/usa/miami/south-beach/',
+  '/usa/miami/little-havana-wynwood/',
+  '/usa/orlando/theme-parks/',
+  '/usa/orlando/winter-park/'
+]);
+
+// Chicago source refresh after the Florida checkpoint; four existing city routes.
+export const postFloridaChicagoRoutes = Object.freeze([
+  '/usa/chicago/',
+  '/usa/chicago/loop-riverwalk/',
+  '/usa/chicago/museum-lakefront/',
+  '/usa/chicago/neighborhoods/'
+]);
+
+// New England source refresh after the Chicago checkpoint; four more existing
+// English bodies extend only the current-tree date/search scope.
+export const postChicagoNewEnglandRoutes = Object.freeze([
+  '/usa/new-england/',
+  '/usa/new-england/portland-maine/',
+  '/usa/new-england/acadia/',
+  '/usa/new-england/white-mountains-vermont/'
+]);
+
+// Arizona source refresh after the New England checkpoint; four untouched
+// routes extend the current-tree date/search scope without changing inventory.
+export const postNewEnglandArizonaRoutes = Object.freeze([
+  '/usa/arizona/',
+  '/usa/arizona/phoenix-scottsdale/',
+  '/usa/arizona/grand-canyon/',
+  '/usa/arizona/sedona/'
+]);
+
+// Los Angeles source refresh after the Arizona checkpoint; four untouched
+// routes extend only the current-tree date/search scope.
+export const postArizonaLosAngelesRoutes = Object.freeze([
+  '/usa/los-angeles/',
+  '/usa/los-angeles/downtown-arts/',
+  '/usa/los-angeles/hollywood-griffith/',
+  '/usa/los-angeles/santa-monica-venice/'
+]);
+
+// Boston & Cambridge source refresh after the Los Angeles checkpoint; four
+// existing routes extend only the current-tree date and search scope.
+export const postLosAngelesBostonRoutes = Object.freeze([
+  '/usa/boston/',
+  '/usa/boston/freedom-trail/',
+  '/usa/boston/cambridge-harvard/',
+  '/usa/boston/harbor-islands/'
+]);
+
+// San Diego source refresh after the Los Angeles terminal; Boston remains a
+// separate child source that follows this exact checkpoint.
+export const postLosAngelesSanDiegoRoutes = Object.freeze([
+  '/usa/san-diego/',
+  '/usa/san-diego/balboa-park/',
+  '/usa/san-diego/harbor-coronado/',
+  '/usa/san-diego/la-jolla/'
+]);
+
+// Australia final-content source batch: the overview plus four Tasmania
+// guides; the Tasmania hub itself remains unchanged at the exact source base.
+export const postAustraliaFinalRoutes = Object.freeze([
+  '/australia/',
+  '/australia/tasmania/cradle-freycinet/',
+  '/australia/tasmania/kunanyi-mount-wellington/',
+  '/australia/tasmania/launceston-tamar-valley/',
+  '/australia/tasmania/port-arthur-tasman-peninsula/'
+]);
+
+// Later source follow-up: both existing bodies and dates changed, but only
+// Juneau's English search summary changed.
+export const postBostonOverviewJuneauRoutes = Object.freeze([
+  '/usa/',
+  '/usa/alaska/juneau-southeast/'
+]);
+export const postBostonOverviewJuneauSearchRoutes = Object.freeze([
+  '/usa/alaska/juneau-southeast/'
+]);
+
+export const postIntegrationPhuQuocRoutes = Object.freeze([
+  '/vietnam/phu-quoc-southern-islands/',
+  '/vietnam/phu-quoc-southern-islands/duong-dong-long-beach/',
+  '/vietnam/phu-quoc-southern-islands/an-thoi-marine-park/',
+  '/vietnam/phu-quoc-southern-islands/ham-ninh-fishing-village/'
+]);
+export const followingVietnamPhuQuocRoutes = postIntegrationPhuQuocRoutes;
+
+export const followingVietnamNhaTrangRoutes = Object.freeze([
+  '/vietnam/nha-trang-khanh-hoa/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-city-beach/',
+  '/vietnam/nha-trang-khanh-hoa/po-nagar-hon-chong/',
+  '/vietnam/nha-trang-khanh-hoa/hon-mun-island-marine-route/'
+]);
+
+// Exact follow-up after Nha Trang: four existing Da Lat and Ha Long/Cat Ba routes.
+export const followingVietnamAfterNhaTrangRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/buon-ma-thuot-dray-nur/',
+  '/vietnam/da-lat-central-highlands/yok-don-buon-don/',
+  '/vietnam/ha-long-cat-ba/sung-sot-titov/',
+  '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
+]);
+
+// Southern Vietnam follow-up: four existing HCMC and Mekong guide bodies.
+export const followingVietnamSouthernGapsRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/can-gio-mangroves/',
+  '/vietnam/ho-chi-minh-city/thu-thiem-thao-dien/',
+  '/vietnam/mekong-delta/my-tho-thoi-son-island/',
+  '/vietnam/mekong-delta/sa-dec-flower-literary-quarter/'
+]);
+
+// Bay and island follow-up: four existing Nha Trang and Con Dao bodies.
+export const followingVietnamBayGapsRoutes = Object.freeze([
+  '/vietnam/nha-trang-khanh-hoa/ba-ho-waterfalls/',
+  '/vietnam/nha-trang-khanh-hoa/cam-ranh-bai-dai/',
+  '/vietnam/nha-trang-khanh-hoa/nha-trang-bay-conservation-transfer/',
+  '/vietnam/phu-quoc-southern-islands/con-dao-national-park/'
+]);
+
+// Cave and island follow-up: four existing Phong Nha and Phu Quoc guides.
+export const followingVietnamCavesIslandsGapsRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/hang-en-expedition/',
+  '/vietnam/phong-nha-ke-bang/son-doong-expedition/',
+  '/vietnam/phu-quoc-southern-islands/ganh-dau-bai-thom/',
+  '/vietnam/phu-quoc-southern-islands/national-park-suoi-tranh/'
+]);
+
+// Coastal follow-on: four existing southern Vietnam routes.
+export const followingVietnamCoastalGapsRoutes = Object.freeze([
+  '/vietnam/mekong-delta/ca-mau-u-minh-ha-cape/',
+  '/vietnam/mui-ne-binh-thuan/phan-thiet-poshanu-heritage/',
+  '/vietnam/mui-ne-binh-thuan/phu-quy-island/',
+  '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
+]);
+
+// Later existing-page body/date follow-up, outside the original integration sprint.
+export const postIntegrationTripDistillRoutes = Object.freeze([
+  '/australia/red-centre/',
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
+]);
+
+export const postIntegrationTripDistillReviewedPaths = Object.freeze(
+  ['ja', 'ko', 'th', 'zh-Hant'].flatMap((locale) => [
+    `data/i18n/reviewed/${locale}/${'z'.repeat(223)}-3p-1015.json`,
+    `data/i18n/reviewed/${locale}/44a-france-paris.json`,
+    `data/i18n/reviewed/${locale}/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json`
+  ])
+);
+
+export const postOctober13Routes = Object.freeze([
+  ...postAustraliaFinalRoutes,
+  ...postAtlantaFloridaRoutes,
+  ...postFloridaChicagoRoutes,
+  ...postChicagoNewEnglandRoutes,
+  ...postNewEnglandArizonaRoutes,
+  ...postArizonaLosAngelesRoutes,
+  ...postLosAngelesBostonRoutes,
+  ...postLosAngelesSanDiegoRoutes,
+  ...postIntegrationPhuQuocRoutes,
+  ...followingVietnamNhaTrangRoutes,
+  ...followingVietnamAfterNhaTrangRoutes,
+  ...followingVietnamSouthernGapsRoutes,
+  ...followingVietnamBayGapsRoutes,
+  ...followingVietnamCavesIslandsGapsRoutes,
+  ...followingVietnamCoastalGapsRoutes,
+  ...postBostonOverviewJuneauRoutes
+]);
+
+export const postOctober13SearchRoutes = Object.freeze([
+  ...postOctober13Routes.filter((route) => !postBostonOverviewJuneauRoutes.includes(route)),
+  ...postBostonOverviewJuneauSearchRoutes
+]);
+
+export const postIntegrationSourceRefreshRoutes = Object.freeze([
+  ...postIntegrationHawaiiRoutes,
+  ...postHawaiiNewOrleansRoutes,
+  ...postNewOrleansAtlantaRoutes,
+  ...postOctober13SearchRoutes
+]);
+
+export const postIntegrationSitemapRefreshRoutes = Object.freeze([
+  ...new Set([...postIntegrationSourceRefreshRoutes, ...postBostonOverviewJuneauRoutes])
+]);
+
+export const postIntegrationAustraliaRoutes = Object.freeze([
+  '/australia/darwin-top-end/darwin-waterfront-city/',
+  '/australia/darwin-top-end/katherine-nitmiluk/',
+  '/australia/whitsundays-great-barrier-reef/',
+  '/australia/whitsundays-great-barrier-reef/townsville-magnetic-island/'
+]);
+
+export const postIntegrationCanberraRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/',
+  '/australia/canberra-australian-alps/parliamentary-triangle/',
+  '/australia/canberra-australian-alps/lake-burley-griffin-national-museum/',
+  '/australia/canberra-australian-alps/war-memorial-mount-ainslie/'
+]);
+
+export const postIntegrationAlpsMargaretRoutes = Object.freeze([
+  '/australia/canberra-australian-alps/namadgi-national-park/',
+  '/australia/canberra-australian-alps/snowy-mountains-kosciuszko/',
+  '/australia/margaret-river-southwest/',
+  '/australia/margaret-river-southwest/margaret-river-wine-food/'
+]);
+
+export const postHaLongHCMCIntegrationRoutes = Object.freeze([
+  '/vietnam/ho-chi-minh-city/',
+  '/vietnam/ho-chi-minh-city/district-1-colonial-core/',
+  '/vietnam/ho-chi-minh-city/cho-lon-binh-tay/',
+  '/vietnam/ho-chi-minh-city/cu-chi-tunnels/'
+]);
+
+export const postMekongDeltaIntegrationRoutes = Object.freeze([
+  '/vietnam/mekong-delta/',
+  '/vietnam/mekong-delta/can-tho-cai-rang/',
+  '/vietnam/mekong-delta/chau-doc-sam-tra-su/',
+  '/vietnam/mekong-delta/ben-tre-coconut-islets/'
+]);
+
+export const followingVietnamDaLatRoutes = Object.freeze([
+  '/vietnam/da-lat-central-highlands/',
+  '/vietnam/da-lat-central-highlands/bidoup-nui-ba-national-park/',
+  '/vietnam/da-lat-central-highlands/cau-dat-coffee-farms/',
+  '/vietnam/da-lat-central-highlands/langbiang-kho-highlands/'
+]);
+
+export const postIntegrationMuiNeRoutes = Object.freeze([
+  '/vietnam/mui-ne-binh-thuan/',
+  '/vietnam/mui-ne-binh-thuan/bau-trang-white-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
+  '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
+]);
+
+export const postIntegrationPhongNhaRoutes = Object.freeze([
+  '/vietnam/phong-nha-ke-bang/',
+  '/vietnam/phong-nha-ke-bang/chay-river-dark-cave/',
+  '/vietnam/phong-nha-ke-bang/nuoc-mooc-forest-springs/',
+  '/vietnam/phong-nha-ke-bang/son-river-phong-nha-cave/'
+]);
+export const followingVietnamPhongNhaRoutes = postIntegrationPhongNhaRoutes;
+
+export const postIntegrationBroomeTasmaniaRoutes = Object.freeze([
+  '/australia/broome-kimberley/kununurra-lake-argyle/',
+  '/australia/broome-kimberley/purnululu-bungle-bungle/',
+  '/australia/tasmania/',
+  '/australia/tasmania/nipaluna-hobart-salamanca/'
+]);
+
+export const postNewEnglandIntegrationRoutes = postChicagoNewEnglandRoutes;
+
+export const postIntegrationMargaretRemainingRoutes = Object.freeze([
+  '/australia/margaret-river-southwest/busselton-dunsborough/',
+  '/australia/margaret-river-southwest/cape-naturaliste-coast/',
+  '/australia/margaret-river-southwest/boranup-caves-augusta/',
+  '/australia/margaret-river-southwest/albany-torndirrup/'
+]);
+
+export const postIntegrationBroomeRoutes = Object.freeze([
+  '/australia/broome-kimberley/',
+  '/australia/broome-kimberley/rubibi-broome-cable-beach/',
+  '/australia/broome-kimberley/dampier-peninsula/',
+  '/australia/broome-kimberley/gibb-river-road/'
+]);
+
+export const localizedIntegrationSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => integrationSitemapRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedPostIntegrationHawaiiSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationHawaiiRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedPostIntegrationAustraliaSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationAustraliaRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedPostIntegrationSourceRefreshSitemapRoutes = (prefixes) => new Set(
+  prefixes.flatMap((prefix) => postIntegrationSitemapRefreshRoutes.map((route) => `${prefix}${route}`))
+);
+
+export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
+  const routes = localizedIntegrationSitemapRoutes(prefixes);
+  for (const prefix of prefixes) {
+    routes.add(`${prefix}/thailand/`);
+    for (const route of postIntegrationSitemapRefreshRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationAustraliaRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationCanberraRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationAlpsMargaretRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postHaLongHCMCIntegrationRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postMekongDeltaIntegrationRoutes) routes.add(`${prefix}${route}`);
+    for (const route of followingVietnamDaLatRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postNewEnglandIntegrationRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationMargaretRemainingRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationBroomeRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationMuiNeRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationPhongNhaRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationPhuQuocRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationTripDistillRoutes) routes.add(`${prefix}${route}`);
+    for (const route of followingVietnamNhaTrangRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationBroomeTasmaniaRoutes) routes.add(`${prefix}${route}`);
+  }
+  return routes;
+};

@@ -1,0 +1,42 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Lugano station": "Lugano駅",
+    "Piazza Cioccaro": "Piazza Cioccaro",
+    "Via Nassa": "Via Nassa",
+    "Parco Ciani": "Parco Ciani",
+    "Lugano lake promenade": "Lugano湖畔の遊歩道",
+    "TPL funicular": "TPLケーブルカー",
+    "Monte San Salvatore": "Monte San Salvatore",
+    "Paradiso funicular": "Paradisoケーブルカー",
+    "Morcote": "Morcote",
+    "lake navigation": "湖船",
+    "Lugano mountain and village": "Luganoの山と湖畔の村",
+    "Locarno": "Locarno",
+    "Ascona": "Ascona",
+    "Locarno-Muralto station": "Locarno-Muralto駅",
+    "FART bus": "FARTバス",
+    "Lake Maggiore promenade": "マッジョーレ湖畔の遊歩道",
+    "Rhine Falls": "Rhine Falls",
+    "Neuhausen Rheinfall station": "Neuhausen Rheinfall駅",
+    "Schloss Laufen": "Schloss Laufen",
+    "north bank": "北岸",
+    "south bank": "南岸",
+    "Rhyfall Mändli boats": "Rhyfall Mändliの遊覧船",
+    "Schaffhausen old town": "Schaffhausen旧市街",
+    "Munot": "Munot",
+    "Vordergasse": "Vordergasse",
+    "Schaffhausen station": "Schaffhausen駅",
+    "Allerheiligen museum": "Allerheiligen博物館"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna was requested for translation; the runtime model identifier is not independently verifiable.",
+    "reviewer": "Same-session self-review and editorial sampling; no independent second-model or human review.",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-12"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "archivedOn": "2026-10-13",
+  "sourceBaseCommit": "d779848fbc247042561cfaa34773257122aa38d0",
+  "reason": "The first local filename sorted before later reviewed batches and therefore re-owned some shared source strings. These exact translated files are retained byte-for-byte here; the active successor is re-exported after every existing batch to reuse previously reviewed translations.",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29p-vietnam-caves-islands-gaps-pages.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/superseded-batches/zh-Hant/29p-vietnam-caves-islands-gaps-pages.json",
+      "successorPath": "data/i18n/reviewed/zh-Hant/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-caves-islands-gaps-pages.json",
+      "bytes": 54291,
+      "sha256": "b361d10e18893c3ca86301aaee0c85c81f23a8a6c48f5692fc12e726614b4a98",
+      "translations": 210
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29p-vietnam-caves-islands-gaps-pages.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/superseded-batches/ja/29p-vietnam-caves-islands-gaps-pages.json",
+      "successorPath": "data/i18n/reviewed/ja/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-caves-islands-gaps-pages.json",
+      "bytes": 65451,
+      "sha256": "1550f48df34b882afde8e5723719c621b7c5a0e4c6b6d4ea0dea33abfb91669d",
+      "translations": 210
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29p-vietnam-caves-islands-gaps-pages.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/superseded-batches/ko/29p-vietnam-caves-islands-gaps-pages.json",
+      "successorPath": "data/i18n/reviewed/ko/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-caves-islands-gaps-pages.json",
+      "bytes": 61824,
+      "sha256": "9d54172fc4e7a6b44914d4a8fa7c78244b09067c389e7aab88de5e750a5729ed",
+      "translations": 210
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29p-vietnam-caves-islands-gaps-pages.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/superseded-batches/th/29p-vietnam-caves-islands-gaps-pages.json",
+      "successorPath": "data/i18n/reviewed/th/zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-caves-islands-gaps-pages.json",
+      "bytes": 99100,
+      "sha256": "a49f2e925e75f76959589b4eba5630e8be1f806c39789402b3e410bcec4b959c",
+      "translations": 210
+    }
+  ]
+}

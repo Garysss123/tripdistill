@@ -1,11 +1,25 @@
 // Manually reviewed Wikimedia Commons file titles used when broad search terms
 // return historic artwork, a homonym, a detail shot, or the wrong destination.
 export const franceImageOverrides = {
-  'paris/louvre-tuileries-opera': 'File:Louvre Museum Wikimedia Commons.jpg',
-  'paris-region-day-trips/versailles-palace-estate': 'File:Panorama of the Château de Versailles (23673783164).jpg',
-  'paris-region-day-trips/fontainebleau-palace-forest': 'File:2021-04-26 17-37-23 - Fontainebleau - Cour du Cheval Blanc.jpg',
+  'paris/louvre-tuileries-opera': {
+    title: 'File:Salle Mollien (salle 700) - Palais du Louvre - 2024.jpg',
+    src: '/assets/images/france-paris-louvre-salle-mollien-20261006.webp'
+  },
+  'paris-region-day-trips/versailles-palace-estate': 'File:Palace of Versailles Garden.jpg',
+  'loire-valley/blois-chambord': {
+    title: 'File:Fleuve Loire - Blois (FR41) - 2022-07-16 - 1.jpg',
+    creditTitle: 'The Loire at Blois'
+  },
+  'loire-valley/amboise-chenonceau': {
+    title: 'File:Château de Chenonceau, Loire Valley, France.jpg',
+    creditTitle: 'Château de Chenonceau over the Cher'
+  },
+  'loire-valley/tours-villandry-azay': {
+    title: 'File:Loire River, France (17376540539).jpg',
+    creditTitle: 'Loire River and riverside path'
+  },
+  'paris-region-day-trips/fontainebleau-palace-forest': 'File:La cour du cheval blanc (Château de Fontainebleau).jpg',
   'lille-french-flanders/old-lille-roubaix': 'File:Lille grand Place 2012.jpg',
-  'lille-french-flanders/arras-vimy-remembrance': 'File:2017-05 Canadian National Vimy Memorial 01.jpg',
   'lille-french-flanders/opal-coast-headlands': 'File:0 Escalles - Le Cap Blanc-Nez (1).JPG',
   'normandy/bayeux-dday-landscape': 'File:Bayeux cathedral (498230954).jpg',
   'normandy/mont-saint-michel-bay': 'File:A view of the Abbey of Mont-Saint-Michel with the bay.jpg',

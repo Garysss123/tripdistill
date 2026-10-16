@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use Toulouse for the Capitole–Garonne core, then add Albi or Carcassonne as separate liO rail days. Compare 3, 4 and 5 nights, station last miles, venue bookings and the return before splitting bases.": "Toulouseを拠点にCapitole〜Garonne周辺を歩き、AlbiかCarcassonneはliOの別日鉄道行程にします。3・4・5泊を比べ、駅からの移動、施設予約、帰りの便を確認してから宿泊拠点を分けます。",
+    "Walk Capitole, Saint-Sernin, Jacobins, Daurade and Pont Neuf as one Toulouse day. Give Cité de l’espace or Montaudran its own day and check Tisséo/TER stops, dated admissions and return.": "Capitole、Saint-Sernin、Jacobins、Daurade、Pont NeufをToulouse一日の徒歩ルートにします。Cité de l’espaceかMontaudranには別の日を充て、Tisséo／TERの停留所、日付指定の入場、帰りを確認します。",
+    "Use liO to Albi-Ville, then walk the cathedral, Berbie/Toulouse-Lautrec Museum and Tarn loop. Reserve the collection block, check its seasonal closure, and do not add Cordes without a verified return.": "liOでAlbi-Villeへ行き、大聖堂、Berbie／Toulouse-Lautrec Museum、Tarn川のループを歩きます。コレクション見学の時間を確保し、季節休館を確認。帰りを確認できないままCordesを追加しません。",
+    "From Carcassonne station, choose the 30-minute walk or date-checked RTCA line 3 from Canal du Midi to Narbonnaise Gate. Separate the free Medieval City from the limited-slot Château Comtal, then return via Pont Vieux to the Bastide.": "Carcassonne駅から徒歩約30分か、日付指定で確認したRTCA 3番線（Canal du Midi〜Narbonnaise Gate）を選びます。無料の中世地区と定員制のChâteau Comtalを分けて計画し、Pont Vieux経由でBastideに戻ります。"
+  }
+}

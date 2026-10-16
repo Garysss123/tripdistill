@@ -1,0 +1,1759 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { parse } from 'parse5';
+import { missingPhotoAttributionFields, photoLicenseInventoryBlockingProblems } from './photo-license-inventory-guard.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const imageDir = path.join(root, 'assets', 'images');
+const retainedLocalOnlyAssetPaths = [
+  '/assets/images/malaysia-melaka-kampung-morten.webp',
+  '/assets/images/united-kingdom-scottish-highlands-aviemore-cairngorms.webp',
+  '/assets/images/united-kingdom-pembrokeshire-west-wales-st-davids-coast.webp',
+  '/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp',
+  '/assets/images/italy-emilia-romagna-bologna-porticoes-markets.webp',
+  '/assets/images/italy-emilia-romagna-modena-parma-via-emilia.webp',
+  '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp',
+];
+const countries = [
+  'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
+  'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
+];
+const verifiedOn = '2026-10-04';
+const verifiedBySourcePattern = [
+  { pattern: /Forum_Romanum_through_Arch_of_Septimius_Severus/i, detail: 'Commons source page checked for creator, CC0 status, source title, and match to the Roman Forum image.' },
+  { pattern: /St_Peter(?:%27|\x27)s_Square.*April_2007/i, detail: 'Commons source page checked for David Iliff (Diliff), CC BY-SA 3.0, and source title.' },
+  { pattern: /Santa_Maria_in_Trastevere_fountain/i, detail: 'Commons source page checked for Jensens, public-domain dedication, date, and subject match.' },
+  { pattern: /Nightview_of_the_Gwanghwamun_Square_2024/i, detail: 'Commons source page checked for Seoul Tourism Organization, KOGL Type 1, commercial use, adaptations, and source-attribution requirements.' },
+  { pattern: /ANZAC_Hill/i, detail: 'Commons source page checked for Genet (Diskussion), CC BY-SA 4.0, and subject match.' },
+  { pattern: /Ellery_Creek_Big_Hole/i, detail: 'Commons source page checked for Iambexta, CC BY-SA 4.0, and subject match.' },
+  { pattern: /Lascar|Watarrka/i, detail: 'Commons source page checked for Jorge Láscar, CC BY 2.0, and subject match.' },
+  { pattern: /Uluru,_Northern_Territory/i, detail: 'Commons source page checked for Philip Muir, CC BY-SA 4.0, and subject match.' },
+  { pattern: /ISS-65.*Kata_Tjuta/i, detail: 'Commons source page checked for NASA, public-domain status, and subject match.' },
+  { pattern: /Maratea_-_View_from_Camino_San_Biagio/i, detail: 'Commons source page checked for Benjamin Smith, image subject, and CC BY-SA 4.0; older alternative licenses are also listed.' },
+  { pattern: /Matera_gorge_south-2879/i, detail: 'Commons source page checked for Isiwal, image subject, and CC BY-SA 4.0.' },
+  { pattern: /Palaces_of_the_old_town_of_Tropea/i, detail: 'Commons source page checked for CC BY-SA 3.0 and the uploader credit Luigino; the description separately identifies the photo as Luigino C.' },
+  { pattern: /Tri_Cime_panorama_1/i, detail: 'Commons source page checked for Kallerna, Tre Cime subject, and CC BY-SA 4.0.' },
+  { pattern: /View_to_the_Brenta_Dolomites,_Molveno/i, detail: 'Commons source page checked for Zoran Kurelić Rabko, archived Panoramio source, bot license review, and CC BY-SA 3.0.' },
+  { pattern: /Etna,_Catania_\(Italy\)/i, detail: 'Commons source page checked for 1888-stefan, Etna subject, and CC0 1.0 commercial-use dedication.' },
+  { pattern: /Ortigia,_piazza_duomo,_palazzi/i, detail: 'Commons source page checked for Sailko and the CC BY 2.5 option declared in the inventory; CC BY-SA 3.0 and GFDL alternatives are also listed.' },
+  { pattern: /Taormina_-_Teatro_antico_di_Taormina/i, detail: 'Commons source page checked for 231286M, ancient theatre subject, and CC BY-SA 4.0.' },
+  { pattern: /Bologna_Piazza_Maggiore_11/i, detail: 'Commons source page checked for GennaroBologna, Piazza Maggiore subject, and CC BY-SA 4.0.' },
+  { pattern: /Modena_-_Piazza_Grande_-_Duomo/i, detail: 'Commons source page checked for Gerolamondo, Piazza Grande subject, and CC BY-SA 4.0.' },
+  { pattern: /Ravenna,_Emilia-Romagna_-_Basilica_di_San_Vitale/i, detail: 'Commons source page checked for Ingo Mehling, San Vitale subject, CC BY 2.0, and the Commons Flickr license review.' },
+  { pattern: /Firenze_-_Florence_-_Galleria_degli_Uffizi/i, detail: 'Commons source page checked for Txllxt TxllxT, Uffizi terrace and Florence view, and CC BY-SA 4.0.' },
+  { pattern: /Vista_de_Florencia_desde_Piazzale_Michelangelo/i, detail: 'Commons source page checked for Diego Delso and CC BY-SA 4.0; the creator specifies the visible credit Diego Delso, delso.photo, License CC BY-SA and prohibits Facebook uploads.' },
+  { pattern: /Abbey_of_San_Fruttuoso_Camogli_Liguria/i, detail: 'Commons source page checked for Hayden Soloviev, San Fruttuoso subject, and CC BY 4.0.' },
+  { pattern: /Manarola_NW_Cemetery_Corniglia_Monterosso_Cinque_Terre/i, detail: 'Commons source page checked for Timothy A. Gonsalves, Cinque Terre subject, and CC BY-SA 4.0. The author section separately says “Please contact me before commercial use”; the license section lists attribution and share-alike obligations, with no prior-contact condition. No contact was made.' },
+  { pattern: /Genova_panorama_Molo_Carignano/i, detail: 'Commons source page checked for Bbruno, Genoa panorama subject, and CC BY-SA 4.0.' },
+  { pattern: /Bellagio_and_Lake_Como_from_Menaggio-Varenna_ferry/i, detail: 'Commons source page checked for Daniel Case, Lake Como ferry viewpoint, and CC BY-SA 3.0.' },
+  { pattern: /MALCESINE_GARDA_LAKE_AND_SCALIGERO_CASTLE/i, detail: 'Commons source page checked for Avisadehh, Malcesine and Scaliger Castle subject, and CC0 1.0 commercial-use dedication.' },
+  { pattern: /Borromeo-P3P-20170530-010/i, detail: 'Commons source page checked for CucombreLibre, Isola Bella / Lake Maggiore subject, and CC BY 2.0.' },
+  { pattern: /Gran_Sasso_seen_from_East/i, detail: 'Commons source page checked for PaulFo, Gran Sasso subject, and CC0 1.0 dedication.' },
+  { pattern: /Monte_Conero_visto_dalla_spiaggia_Urbani/i, detail: 'Commons source page checked for Gabri307, Monte Conero subject, and CC BY-SA 4.0.' },
+  { pattern: /Urbino-palazzo_e_borgo/i, detail: 'Commons source page checked for Il conte di Luna, Urbino subject, and CC BY-SA 2.0; page records Flickr review.' },
+  { pattern: /Milan-duomo-front-facade/i, detail: 'Commons source page checked for Skarkkai, Milan Cathedral facade subject, and CC0 dedication.' },
+  { pattern: /Santa_Maria_delle_Grazie.jpg/i, detail: 'Commons source page checked for Masi27185 and Santa Maria delle Grazie subject under CC BY-SA 3.0.' },
+  { pattern: /Milano_Naviglio_Grande_am_Abend_1/i, detail: 'Commons source page checked for Zairon, Naviglio Grande subject, and CC BY-SA 4.0.' },
+  { pattern: /Herculaneum_\(39517905442\)/i, detail: 'Commons source page checked for Andrea Schaffer, Herculaneum subject, and CC BY 2.0; page records Flickr review.' },
+  { pattern: /Napoli_vista_dall%27alto._0009/i, detail: 'Commons source page checked for Giuseppe Guida, Naples subject, and CC BY-SA 4.0.' },
+  { pattern: /Ancient_Pompeii_\(LHS\).*52786653083/i, detail: 'Commons source page checked for Tracey Hind / Flickr account Tracey & Doug, Pompeii/Vesuvius subject, Flickr review, and CC BY-SA 2.0.' },
+  { pattern: /Alberobello,_trulli_\(13\)/i, detail: 'Commons source page checked for Palickap, Alberobello trulli subject, and CC BY-SA 4.0.' },
+  { pattern: /Puglia_bari_old-town/i, detail: 'Commons source page checked for Francesco Di Stefano 08, Bari subject, and CC BY-SA 4.0; no separate heritage reproduction notice was present on the checked page.' },
+  { pattern: /Lecce_from_the_air/i, detail: 'Commons source page checked for Joolz, Lecce aerial subject, and CC BY-SA 2.5; no separate heritage reproduction notice was present on the checked page.' },
+  { pattern: /Castello_\(Cagliari\)/i, detail: 'Commons source page checked for Municipality of Cagliari, Cagliari subject, and CC BY-SA 3.0 Italy.' },
+  { pattern: /Cala_Goloritz(?:%C3%A8|è)_13_sept._2017/i, detail: 'Commons source page checked for Nicola Secci, Cala Goloritzé subject, and CC BY-SA 4.0.' },
+  { pattern: /La_Maddalena_-_Isola_di_Budelli_\(01\)/i, detail: 'Commons source page checked for Gianni Careddu, Budelli subject, and CC BY-SA 3.0. The author separately asks for a credit next to the image, a source hyperlink, and an email; no email was sent.' },
+  { pattern: /Costa_parco_naturale_della_Maremma/i, detail: 'Commons source page checked for Denis Dascanio, Maremma Natural Park coast subject, and CC BY-SA 4.0.' },
+  { pattern: /Palaces_-_Piazza_del_Campo_-_Siena_2016/i, detail: 'Commons source page checked for José Luiz Bernardes Ribeiro (Jbribeiro1), Siena subject, and CC BY-SA 4.0. The page asks for a nearby author credit; that credit is present. Its email request was not acted on.' },
+  { pattern: /Val_D_Orcia_In_Autumn_\(179351679\)/i, detail: 'Commons source page checked for Fabrizio Lunardi, Val d’Orcia subject, and CC0 1.0 dedication.' },
+  { pattern: /Faraglioni_in_Capri_09/i, detail: 'Commons source page checked for Abxbay, Capri Faraglioni subject, and CC BY-SA 4.0.' },
+];
+const verifiedSourcePageDetails = new Map([
+  [
+    'https://commons.wikimedia.org/wiki/File:Canada_Boat_House_am_Maligne_Lake,_Jasper_NP,_Alberta,_CA.jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: Commons identifies Christianabend and a September 1998 Maligne Lake boathouse photograph. The page shows the original CC BY-SA 2.0 release and a later CC BY-SA 3.0 migration tag; both declarations are recorded as license-version variants, not treated as a direct conflict. The local 1600 × 1066 WebP pixels show the boathouse and mountain backdrop and match the Maligne Lake guide. Attribution, linked selected license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Icefields_Parkway_(18)_(9580641168).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies Mike from Vancouver, Canada, the Columbia Icefield subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show a glacier and mountain valley consistent with the Icefields Parkway page. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Athabasca_Falls,_Jasper_National_Park_(7635012912).jpg',
+    {
+      detail: 'Jasper photo review on 2026-10-12: the exact Commons page identifies InSapphoWeTrust from Los Angeles, California, USA, the Athabasca Falls subject, and CC BY-SA 2.0. The local 1600 × 1066 WebP pixels show the falls and visitor paths, matching the route. Attribution, linked license, edit disclosure and same-version share-alike notice are present. Page declarations are not independent uploader-authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:View_of_Interlaken_and_Lake_Brienz_from_Harder_Kulm_(Ank_Kumar)_02.jpg',
+    {
+      detail: 'Interlaken base photo review: the exact Commons page identifies Ank Kumar and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Interlaken and Lake Brienz below the Harder Kulm ridge, not both Lake Thun and Lake Brienz, so the alt and display title were corrected. The visible source credit and license link remain present with the WebP/crop disclosure. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:%27You_are_in_AVALANCHE_country%27_--_Cascade_Mountain_on_the_the_Road_to_Banff,_Alberta_(CA)_September_2019_(49559005101).jpg',
+    {
+      detail: 'Banff town/base image check: Commons file page identifies Ron Cogswell, 5 September 2019, 5324 × 3537 original pixels and CC BY 2.0; the local 1600 × 1066 pixels show Cascade Mountain beside avalanche warning signage on the Banff approach, not the town itself. The alt text now describes the visible scene. The page declaration and image match are recorded without asserting independent uploader authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:5498_-_Brienzersee_-_Iseltwald_looking_toward_Giessbach_%26_Brienz.JPG',
+    {
+      detail: 'Lake Brienz photo review: the exact Commons page identifies Andrew Bossi, describes the view from Iseltwald toward Giessbach and Brienz, and declares CC BY-SA 2.5 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show the Iseltwald shoreline and village, matching the corrected alt and display title. The visible credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Moraine_Lake_Alberta_Canada.jpg',
+    {
+      detail: 'Banff lake image check: Commons file page identifies Bede735, 19 June 2008, 3872 × 2592 original pixels and CC BY-SA 3.0; the local 1600 × 1066 pixels show Moraine Lake and the Ten Peaks. The WebP resize/crop is disclosed, its credit links the exact license version and states the same-version share-alike term. The page declaration is recorded without asserting independent uploader authority or rights-chain clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Blick_auf_Schloss_Spiez_und_Thunersee.jpg',
+    {
+      detail: 'Spiez photo review: the exact Commons page identifies JoachimKohler-HB, describes Spiez Castle at Lake Thun, and declares CC BY-SA 4.0 in its licensing section; the checked page lists one image license. The 1600 × 1066 local WebP pixels show Spiez Castle on the Lake Thun shore, matching the corrected alt and display title. The visible credit, linked license and WebP/crop disclosure remain present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Matterhorn_from_mountain_side_between_Zermatt_and_Gornergrat,_Wallis,_Switzerland,_2012_August_-_3.jpg',
+    {
+      detail: 'Zermatt village/Gornergrat photo review: the exact Commons page identifies Ximonic (Simo Räsänen) and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn above the rocky grassy slope between Zermatt and Gornergrat, matching the alt and caption. The visible credit links the source and license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:043_Matterhorn_reflecting_in_Stellisee_at_sunset_Photo_by_Giles_Laurent.jpg',
+    {
+      detail: 'Zermatt Stellisee photo review: the exact Commons page identifies Giles Laurent and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels show the Matterhorn reflected in Stellisee beneath sunset clouds, matching the alt and caption. The visible credit links the source and same-version license and discloses WebP conversion. This records the page declaration and pixel match; it does not independently verify uploader authority or chain of title.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:2017-05_Canadian_National_Vimy_Memorial_01.jpg',
+    {
+      detail: 'Commons page checked on 2026-10-12: it identifies creator 0x010C and declares CC BY-SA 3.0, while also displaying a French Freedom of Panorama copyright warning and the hidden NoFoP-France category. The warning says a substantial reproduction of protected French architecture/artwork cannot be covered by the free license and advises rights confirmation. The declaration is retained as source-page metadata, not treated as permission. Local 1600 × 1066 WebP pixels prominently frame the memorial artwork; the file is retained only for provenance, has no live-page references, and is excluded from dist while the rights issue remains unresolved.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Horseshoe_Falls_-_Niagara_Falls_Canada.JPG',
+    {
+      detail: 'Niagara Falls photo review on 2026-10-12: the exact Commons page identifies Gzzz, Horseshoe Falls and CC BY-SA 4.0. Local WebP pixels show the curved Horseshoe Falls brink and mist, matching the Falls guide. The site credit identifies the creator and links the source and license; the page declaration does not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Niagara_Falls_Whirlpool_aerial_view.jpg',
+    {
+      detail: 'Niagara Gorge photo review on 2026-10-12: the exact Commons page identifies Zwergelstern and an aerial view of the Niagara River gorge and whirlpool. It declares CC BY-SA 3.0 and also lists GFDL 1.2 or later; the site credit selects CC BY-SA 3.0. Local WebP pixels show the river bend and whirlpool within the gorge. Page declarations do not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Niagara_Apothecary_-_5_Queen_Street,_Niagara-on-the-Lake,_ON_L0S_1J0,_Canada.jpg',
+    {
+      detail: 'Niagara-on-the-Lake photo review on 2026-10-12: the exact Commons page identifies Spudgun67, 5 Queen Street Pharmacy (Niagara Apothecary) and CC BY-SA 4.0. Local WebP pixels show the historic Queen Street streetscape and pharmacy facade; the alt names the visible subject. Page declarations do not independently establish uploader authority or a rights chain.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Royal_Crescent_in_Bath_-_geograph.org.uk_-_7845942.jpg',
+    {
+      detail: 'Bath photo review: exact Commons page identifies Kevin Pearson and CC BY-SA 2.0; source title and photo terms for attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels were inspected and show the Royal Crescent façade and curve, matching the route subject.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Three_Sisters,_Blue_Mountains_(1).jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Alicia Brogan (Ali b at English Wikipedia), the Three Sisters at Echo Point, and CC BY-SA 3.0 terms; the original is 2,304 × 1,728. The local WebP pixels show the Three Sisters above Jamison Valley from the Echo Point area. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Wentworth_Falls_from_Princes_Rock.jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Lschoen, the view of Wentworth Falls from Princes Rock, and CC BY-SA 4.0 terms; the original is 2,157 × 1,440. The local WebP pixels show the waterfall and escarpment, matching the route subject. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Govetts_Leap_-_Blue_Mountains_-_panoramio.jpg',
+    {
+      detail: 'Blue Mountains photo review: the exact Commons page identifies Pavel Špindler, dates the photograph to 16 April 2005, and declares CC BY 3.0 terms; the original is 2,048 × 1,536. The local WebP pixels show the Govetts Leap lookout marker and Grose Valley view near Blackheath. Source-page attribution and license declarations are recorded separately from the pixel subject match; no independent rights clearance is claimed.',
+      checkedOn: '2026-10-12'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:View_of_coloured_houses_on_Cumberland_Road_from_Bristol_Harbour_-_geograph.org.uk_-_7678327.jpg',
+    {
+      detail: 'Bristol photo review: exact Commons page identifies Robert Lamb, 17 September 2023, and CC BY-SA 2.0; attribution, linked license, change disclosure and same-version sharing were checked on 2026-10-11. Local WebP pixels show coloured terraced houses above Cumberland Road rather than boats or a quay; the alt was corrected to match the image.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
+    'Xinjiang photo review: exact Commons title, N509FZ creator credit, 23 September 2023 photograph date, original dimensions of 4,990 × 3,327, and CC BY-SA 4.0 terms were checked on 2026-10-11. Local 960 × 640 WebP pixels were inspected and show Id Kah Mosque and its square in Kashgar. The page license permits reuse and adaptation subject to attribution, license link, change notice and same-version sharing; this records the declared terms and is not an independent rights clearance or a claim beyond those terms.',
+    '2026-10-11'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg',
+    'Lhasa legacy photo status checked on 2026-10-11. The Commons page has an unresolved deletion nomination opened 2026-06-04 citing no evidence that the image was released under the stated license. The page label is not treated as permission. The local asset is retained for provenance only and has no current live-page use.',
+    '2026-10-11'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Bordeaux_place_de_la_bourse_avec_la_Garonne-2015a.JPG',
+    {
+      detail: 'Bordeaux image review: the exact Commons page identifies Nataloche as creator, dates the Place de la Bourse and Garonne photograph to 18 February 2015, and declares CC BY-SA 4.0. The 1600 × 1066 local WebP pixels were inspected and show the illuminated Place de la Bourse facade and its night reflection in the Garonne. The alt and caption identify the night view; source, creator, linked license, WebP/crop disclosure and same-version share-alike terms are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Saint-Emilion_33_Place_2013.jpg',
+    {
+      detail: 'Saint-Émilion image review: the exact Commons page identifies JLPC as creator, dates the photograph to 27 May 2013, describes the village and main square as seen from the monolithic church, and declares CC BY-SA 3.0. The 1600 × 1066 local WebP pixels show Saint-Émilion village and main square as seen from the monolithic church. The alt and caption describe the visible angle; source, creator, linked license, WebP/crop disclosure and same-version share-alike terms are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Sunrise_Cap_Ferret_Banc_du_Toulinguet_-_Arcachon_-_Oc%C3%A9an_Atlantique_-_Picture_Image_Photography_-_Sunset_-_Coucher_de_soleil_-_Dune_du_pilat_pyla_-_Banc_d%27arguin_water_eau_vagues_waves_beach_plage_sky_colors_red_yellow_(14501089751).jpg',
+    {
+      detail: 'Arcachon Bay image review: the exact Commons page credits Grand Parc - Bordeaux, France from France, describes a low-sun water view in Arcachon Bay, and declares CC BY 2.0. The 1600 × 1066 local WebP pixels show the low orange sun above open bay water; they do not show Dune du Pilat or a forest. The alt and caption identify bay water, not the dune. Source, exact creator, linked license and WebP/crop disclosure are present. The page declaration is recorded without asserting independent rights clearance.',
+      checkedOn: '2026-10-11'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Wild_Himalayan_Cherry_blossoms_and_mountain_silhouette_at_Doi_Inthanon.jpg',
+    'Doi Inthanon photo review: exact Commons title, Nnthurber authorship, CC BY-SA 4.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and match wild Himalayan cherry blossoms framing a distant mountain ridge. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Mae_Kum_Pong_01.jpg',
+    'Mae Kampong photo review: exact Commons title, LannaPhoto authorship, CC BY-SA 3.0 terms and commercial/adaptation permissions were checked on 2026-10-08. Local WebP pixels were inspected and show a covered terrace overlooking a forested village valley, not a village street. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:One_Nimman_-_One_Street_P_20171220_130152.jpg',
+    'Nimman photo review: exact Commons title, FredTC authorship, 20 December 2017 source date, original dimensions and CC BY-SA 4.0 commercial/adaptation terms were checked on 2026-10-08. The downloaded 960 × 1,280 JPEG thumbnail and local WebP pixels match the covered One Street shopping arcade at One Nimman. Attribution, linked license, change notice and same-version share-alike terms are present.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Salle_Mollien_(salle_700)_-_Palais_du_Louvre_-_2024.jpg',
+    {
+      detail: 'Paris Louvre image review: exact Commons title, Shonagon creator credit, CC0 1.0 source-page declaration, and subject match were checked against the downloaded image and converted WebP. The source image depicts the Salle Mollien interior; the site crop does not show the Louvre pyramid. No legal-clearance conclusion is implied.',
+      checkedOn: '2026-10-06'
+    }
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Mount_Fuji_April_Cherry_Blossom.jpg',
+    'Japan overview photo review: the exact Commons file title, SRP1998 creator, Mount Fuji/cherry blossom subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Shibuya_crossing_at_night,_Tokyo,_Japan.jpg',
+    'Japan overview photo review: the exact Commons file title, Joli Rumi creator, Shibuya crossing subject, and CC BY-SA 4.0 license were checked on the live source page. The local WebP was visually checked against the described subject; attribution, linked license, change disclosure and same-version share-alike terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Yasaka-dori_early_morning_with_street_lanterns_and_the_Tower_of_Yasaka_(Hokan-ji_Temple),_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Streets_of_Gion,_Kyoto_-_Gion7708.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title and lumoplank creator credit checked; the page declares a CC0 1.0 dedication. Creator and source remain credited for provenance.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-07.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Basile Morin creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market,_Kyoto,_Japan.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Joli Rumi creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto_Station_November_2016_-03.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Martin Falbisoner creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Tetsugaku-no-michi_-_Philosopher%27s_Walk_-_Kyoto.jpg",
+    "Kyoto photo credit follow-up: exact Commons page title, Gzzz creator credit, and CC BY 4.0 terms checked. Attribution, license linking, and change disclosure were confirmed on the page.",
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Pontocho_Alley,_Kyoto_-_Flickr_-_Sergiy_Galyonkin.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Sergiy Galyonkin creator credit, and CC BY-SA 2.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Tenry%C5%AB-ji_Garten.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, Marco Almbauer creator credit, and CC BY-SA 4.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto_Fushimi_Horikawa01s4592.jpg',
+    'Kyoto photo credit follow-up: exact Commons page title, 663highland creator credit, and CC BY-SA 3.0 terms checked. Attribution, license linking, change disclosure, and same-license adaptation terms were confirmed on the page.',
+    '2026-10-06'
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Gries-Bozen_vom_Guntschnaberg_Richtung_S%C3%BCden.jpg",
+    "Source page checked for Bartleby08, the Bolzano view subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Lucca,_mura_e_campanila_San_Frediano.jpg",
+    "Source page checked for Palickap, Lucca walls and San Frediano bell tower subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Positano_panorama.jpg",
+    "Source page checked for Nicola Cerroni, Positano subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Sorrento_Cliff_2.jpg",
+    "Source page checked for Halley from Boston, Sorrento subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Langhe.jpg",
+    "Source page checked for Phalaenopsis Aphrodite, Langhe subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Piazza_Castello_di_Torino_e_scorcio_della_Piazzetta_Reale.jpg",
+    "Source page checked for Guglielmo di Rivoli, Piazza Castello subject, and CC0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Sacra_di_San_Michele_272.jpg",
+    "Source page checked for Cristian Buda, Sacra di San Michele subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Papal_Basilica_of_Saint_Francis_of_Assisi.jpg",
+    "Source page checked for Peter K Burian, Assisi basilica subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Orvieto_panorama.jpg",
+    "Source page checked for Hans Peter Schaefer, Orvieto panorama subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Perugia_-_Palazzo_dei_Priori_-_2025-09-07_21-53-14_001.JPG",
+    "Source page checked for Maddy16869, Palazzo dei Priori subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Prato_5_con_Santo.JPG",
+    "Source page checked for CC BY-SA 3.0. Its description names Piero tasso while the upload account is P tasso; both names are retained in the site credit."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Verona_Italy_Piazza_Bra_from_arena_DSC08039.JPG",
+    "Source page checked for David Monniaux, Piazza Bra subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Basilica_Palladiana_a_Vicenza_Italy_and_Piazza_dei_Signori_and_Loggia_del_Capitaniato_Palace.jpg",
+    "Source page checked for Federico, Vicenza landmarks subject, and CC BY-SA 4.0. The page has general Wiki Loves Monuments authorisation boilerplate but no separate explicit commercial-reproduction restriction."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Canale_di_Cannaregio_(7227730810).jpg",
+    "Source page checked for Tony Hisgett, Cannaregio canal subject, and CC BY 2.0; Commons records the Flickr review. No separate restriction was present on the checked file page."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Burano_-_canal_and_colourful_houses_(36071932225).jpg",
+    "Source page checked for Jorge Franganillo, Burano canal subject, and CC BY 2.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panorama_Piazza_San_Marco_Venezia_06_2017_2965.jpg",
+    "Source page checked for Mariordo (Mario Roberto Durán Ortiz), the San Marco waterfront panorama, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Valle_dei_Templi_%E2%80%93_Temple_of_Concordia_2024b.jpg",
+    "Source page checked for Cayambe, Temple of Concordia subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panoramica_Cattedrale_di_Palermo.jpg",
+    "Source page checked for Kiban, Palermo Cathedral panorama subject, and CC BY-SA 3.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Wind_mill_at_salt.pans.jpg",
+    "Source page checked for Malcanton, Trapani salt-pan windmill subject, and CC BY-SA 4.0."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Panorama_delle_Cinque_Terre_da_Monterosso.JPG",
+    "Replacement source page checked for Luca Aless, Cinque Terre coast viewed from Monterosso, and CC BY-SA 4.0. No pre-contact request was present on the checked file page."
+  ],
+  [
+    "https://commons.wikimedia.org/wiki/File:Santa_Maria_dell%27Isola_-_Tropea_-_Calabria_-_Italy_-_July_17th_2013_-_01.jpg",
+    "Replacement source page checked for Norbert Nagel, Santa Maria dell’Isola in Tropea, and CC BY-SA 3.0. The page says a specimen copy or link is a request, not a license condition; none was sent."
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Ninomaru_Palace,_November_2016.jpg',
+    'Kyoto district photo review: Commons source title, Martin Falbisoner authorship, and CC BY-SA 4.0 terms checked against the exact page; attribution, license link, change notice and share-alike terms confirmed.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:View_of_the_Five-storied_Pagoda_from_the_Lotus_Pond,_T%C5%8D-ji_Temple,_Kyoto,_20240821_1015_5226.jpg',
+    'Kyoto district photo review: exact English source title, Jakub Hałun authorship, and CC BY 4.0 terms checked against the page; attribution, license link and change notice confirmed.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Kyoto-Ryoan-Ji_MG_4512.jpg',
+    'Kyoto district photo review: exact Commons title, Cquest authorship, and CC BY-SA 2.5 terms checked; attribution, license link, change notice and same-version share-alike requirement confirmed. Replaced the prior Ryoanji file after its embedded metadata conflicted with the Commons licensing section.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:251213_Nanzen-ji_Suirokaku_Kyoto_Japan05s3.jpg',
+    'Kyoto district photo review: exact Commons title, 663highland authorship, and CC BY-SA 4.0 terms checked against the page; attribution, license link, change notice and share-alike terms confirmed.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Abeno_Harukas_20260223.jpg',
+    'Osaka source review: exact Commons title, ノボホショコロトソ authorship, Abeno Harukas subject and CC BY 4.0 terms checked. Credit, license link and crop/resize/conversion notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:A_plate_of_assorted_Takoyaki_in_Kuromon_Market_in_Osaka,_Japan.jpg',
+    'Osaka source review: exact Commons title, Gatorfan252525 authorship, Kuromon Market takoyaki subject and CC BY-SA 4.0 terms checked against the source page and pixels. Credit, license link, edit disclosure and same-license distribution notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Umeda_Sky_Building,_Osaka,_November_2016_-02.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Umeda Sky Building escalator subject and CC BY-SA 4.0 terms checked. Corrected a prior credit that described a different skyline photo; credit, license link, edit disclosure and same-license distribution notice are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg',
+    'Osaka source review: exact Commons title, Sakai Yayoi authorship, Shinsekai and Tsutenkaku subject, and CC0 1.0 dedication checked against the visible image. The page credits the creator for provenance.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Dotonbori canal and Ebisu Bridge subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-lions_head_theater.jpg',
+    'Osaka source review: exact Commons title, Immanuelle authorship, Namba Yasaka Shrine subject, and CC BY 4.0 terms checked against the visible image. Attribution, license link and change disclosure are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:20181013_-_01_-_Montreal_(Mile_End).jpg',
+    'Canada source review: exact Commons title, Andre Carrotflower authorship, Laurier/Henri-Julien street-corner subject, and CC BY-SA 4.0 terms checked against the source page. The image record and visible credit link to the source and license and state the same-license adaptation terms; the WebP pixels were not visually reviewed in this check.',
+    '2026-10-07'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka_Castle_Outer_Moat_and_Osaka_Business_Park,_November_2016.jpg',
+    'Osaka source review: exact Commons title, Martin Falbisoner authorship, Osaka Castle outer moat and Inui-yagura subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Tempozan_Ferris_Wheel_in_Osaka_at_Dusk.jpg',
+    'Osaka source review: exact Commons title, Tim Bray authorship, Tempozan Ferris Wheel at dusk subject, and CC BY-SA 4.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka_skyline_at_night_from_Umeda_Sky_Building.jpg',
+    'Osaka source review: exact Commons title, Kaiza96 authorship, Osaka night skyline from the Umeda Sky Building subject, and CC BY-SA 3.0 terms checked against the visible image. Attribution, license link, change disclosure and same-license terms are present. The page also carries a Japan architectural-work reproduction notice, recorded in the Osaka source report.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg',
+    'Osaka source review: exact Commons title, Luka Peternel authorship, Osaka Castle cherry blossom subject, and CC BY-SA 4.0 terms checked against the source page. Attribution, license link, edit disclosure and same-license terms are present; the image was not visually reviewed in this check.',
+    '2026-10-06'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg',
+    'Commons source-page check on 2026-10-08: the page names Jakub Hałun, dates the photograph 5 November 2017, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Pha_Lat_-_0001.jpg',
+    'Commons source-page check on 2026-10-08: the page names Stefan Fussan, dates the photograph 24 May 2014, and declares CC BY-SA 3.0. The page explicitly permits commercial use and derivative works with attribution, license link, change notice and share-alike. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
+  [
+    'https://commons.wikimedia.org/wiki/File:Ping_River_in_Chiang_Mai_3.jpg',
+    'Commons source-page check on 2026-10-08: the page names Christophe95, dates the photograph 6 September 2018, and declares CC BY-SA 4.0. Its terms permit reuse and adaptation with attribution, license link, change notice and same-license sharing. The local WebP pixels were not compared in this source-only check.',
+    '2026-10-08'
+  ],
+].map(([sourceUrl, detail, checkedOn]) => [sourceUrl, { checkedOn: checkedOn || '2026-10-05', detail }]));
+
+const genericTokens = new Set(('a an and at by from for in into of on or the to with through view photo image picture scene landscape city town lake river road street park guide travel at the a view panorama night day north south east west central main old new near beyond under over beside walk route district guide file webp jpg jpeg commons official').split(' '));
+
+function attrs(node) { return Object.fromEntries((node.attrs || []).map((a) => [a.name, a.value])); }
+function text(node) {
+  if (node.nodeName === '#text') return node.value;
+  return (node.childNodes || []).map(text).join('');
+}
+function all(node, predicate, out = []) {
+  if (predicate(node)) out.push(node);
+  for (const child of node.childNodes || []) all(child, predicate, out);
+  return out;
+}
+function walkFiles(dir) {
+  const out = [];
+  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, item.name);
+    if (item.isDirectory()) out.push(...walkFiles(full));
+    else if (item.isFile()) out.push(full);
+  }
+  return out;
+}
+function canonicalLicenseUrl(license) {
+  if (!license) return null;
+  if (/^KOGL Type 1$/i.test(license.trim())) return 'http://www.kogl.or.kr/info/licenseType1.do';
+  if (/^CC0(?:\s+1\.0)?$/i.test(license.trim())) return 'https://creativecommons.org/publicdomain/zero/1.0/';
+  const match = license.trim().match(/^CC\s+(BY(?:-SA)?)\s+(\d+(?:\.\d+)?)(?:\s+([a-z]{2}))?$/i);
+  if (!match) return null;
+  const family = match[1].toLowerCase();
+  const version = match[2];
+  const jurisdiction = match[3] ? match[3].toLowerCase() + '/' : '';
+  return 'https://creativecommons.org/licenses/' + family + '/' + version + '/' + jurisdiction;
+}
+function licenseTerms(license, verified) {
+  if (!license) return { commercialReuseEligibility: 'unknown', attributionTerms: 'unknown' };
+  if (/^KOGL Type 1$/i.test(license)) return {
+    commercialReuseEligibility: verified ? 'permitted_under_source_page_checked_license_terms' : 'permitted_by_stated_license_not_independently_checked',
+    attributionTerms: 'Specify the work source and credit the Seoul Tourism Organization. The source page states that commercial use and adaptations are permitted.'
+  };
+  if (/^CC\s+BY-SA\b/i.test(license)) {
+    return {
+      commercialReuseEligibility: verified ? 'permitted_under_source_page_checked_license_terms' : 'permitted_by_stated_license_not_independently_checked',
+      attributionTerms: 'Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.'
+    };
+  }
+  if (/^CC\s+BY\b/i.test(license)) {
+    return {
+      commercialReuseEligibility: verified ? 'permitted_under_source_page_checked_license_terms' : 'permitted_by_stated_license_not_independently_checked',
+      attributionTerms: 'Credit the creator and title where supplied, link to the source and license, and note changes.'
+    };
+  }
+  if (/^CC0\b/i.test(license)) {
+    return {
+      commercialReuseEligibility: verified ? 'permitted_under_source_page_checked_license_terms' : 'permitted_by_stated_license_not_independently_checked',
+      attributionTerms: 'Attribution is not required by CC0; the site retains source and creator credit as provenance.'
+    };
+  }
+  if (/public\s+domain/i.test(license)) {
+    return {
+      commercialReuseEligibility: verified ? 'public_domain_status_checked' : 'declared_public_domain_not_independently_checked',
+      attributionTerms: 'Attribution is not required for public-domain material; the site retains source and creator credit as provenance.'
+    };
+  }
+  return { commercialReuseEligibility: 'unknown', attributionTerms: 'unknown' };
+}
+function tokenSet(value) {
+  const normalized = String(value || '').normalize('NFKD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+  return new Set(normalized.split(/[^a-z0-9]+/).filter((token) => token.length > 2 && !genericTokens.has(token)));
+}
+function parseLicense(creditText) {
+  const match = creditText.match(/\bKOGL\s+Type\s+1\b|\bCC0(?:\s+1\.0)?\b|\bCC\s+BY(?:-SA)?\s+\d+(?:\.\d+)?(?:\s+[a-z]{2})?|\bpublic\s+domain\b/i);
+  if (!match) return null;
+  if (/^kogl/i.test(match[0])) return 'KOGL Type 1';
+  if (/^cc0/i.test(match[0])) return match[0].toUpperCase().replace(/\s+/g, ' ');
+  if (/^public/i.test(match[0])) return 'Public domain';
+  return match[0].replace(/\s+/g, ' ').replace(/\b([a-z]{2})$/i, (m) => m.toLowerCase());
+}
+function parseCredit(li) {
+  const itemAttrs = attrs(li);
+  const links = all(li, (node) => node.tagName === 'a').map((a) => ({ href: attrs(a).href || '', label: text(a).replace(/\s+/g, ' ').trim(), className: attrs(a).class || '' }));
+  const sourceLink = links.find((link) => /commons\.wikimedia\.org\/wiki\/File:/i.test(link.href));
+  if (!sourceLink) return null;
+  const creditText = text(li).replace(/\s+/g, ' ').trim();
+  const declaredLicenseLink = links.find((link) => /(?:^|\s)photo-license(?:\s|$)/.test(link.className)) || links.find((link) => /(?:creativecommons\.org\/(?:licenses|publicdomain)\/|kogl\.or\.kr\/info\/licenseType1)/i.test(link.href));
+  const license = itemAttrs['data-photo-license'] || declaredLicenseLink?.label || parseLicense(creditText);
+  const at = license ? creditText.toLowerCase().indexOf(license.toLowerCase()) : -1;
+  let before = at >= 0 ? creditText.slice(0, at) : creditText;
+  if (sourceLink.label) before = before.replace(sourceLink.label, '');
+  const parsedCreator = before.replace(/^[\s—–,:;.-]+|[\s—–,:;.-]+$/g, '').trim() || null;
+  const creatorFromLabel = sourceLink.label.match(/^.+?\s+\/\s+(.+)$/)?.[1]?.trim() || null;
+  const creator = parsedCreator || creatorFromLabel;
+  let editHistory = null;
+  if (at >= 0) {
+    const after = creditText.slice(at + license.length).replace(/^[\s.,;:—–-]+/, '').trim();
+    editHistory = after || null;
+  }
+  return {
+    assetPath: itemAttrs['data-photo-asset'] || null,
+    sourceUrl: sourceLink.href,
+    creditLabel: itemAttrs['data-photo-title'] || sourceLink.label || null,
+    creator: itemAttrs['data-photo-creator'] || creator,
+    license,
+    licenseUrl: itemAttrs['data-photo-license-url'] || declaredLicenseLink?.href || canonicalLicenseUrl(license),
+    creditText,
+    editHistory: itemAttrs['data-photo-edit-note'] || editHistory,
+    matching: null
+  };
+}
+function photoCreditsInDocument(document) {
+  const sourceSections = all(document, (node) => {
+    const classes = (attrs(node).class || '').split(/\s+/);
+    return (node.tagName === 'section' && classes.includes('sources')) || (node.tagName === 'details' && classes.includes('destination-credit-ledger'));
+  });
+  const listed = sourceSections.flatMap((section) => all(section, (node) => node.tagName === 'li').map(parseCredit).filter(Boolean));
+  const adjacent = all(document, (node) => {
+    const className = attrs(node).class || '';
+    const markedCredit = ['p', 'div'].includes(node.tagName) && /\bphoto-credit\b/.test(className);
+    const figureCredit = node.tagName === 'figcaption' && all(node, (child) => child.tagName === 'a').some((link) => /commons\.wikimedia\.org\/wiki\/File:/i.test(attrs(link).href || ''));
+    return markedCredit || figureCredit;
+  }).map(parseCredit).filter(Boolean);
+  return [...listed, ...adjacent];
+}
+function matchCredit(image, credits) {
+  const fileTokens = tokenSet(path.basename(image.src));
+  const altTokens = tokenSet(image.alt);
+  const routeTokens = tokenSet(image.route);
+  const scored = credits.map((credit) => {
+    const labelTokens = tokenSet(credit.creditLabel + ' ' + credit.creditText + ' ' + credit.sourceUrl);
+    const altHits = [...altTokens].filter((token) => labelTokens.has(token));
+    const fileHits = [...fileTokens].filter((token) => labelTokens.has(token));
+    const routeHits = [...routeTokens].filter((token) => labelTokens.has(token));
+    const distinctive = new Set([...altHits, ...fileHits]);
+    return { credit, score: altHits.length * 3 + fileHits.length * 2 + routeHits.length, distinctiveHits: [...distinctive] };
+  }).filter((item) => item.distinctiveHits.length >= 2 || item.distinctiveHits.some((token) => token.length >= 6)).sort((a, b) => b.score - a.score);
+  if (!scored.length) return null;
+  const top = scored[0];
+  const tied = scored.filter((item) => item.score === top.score);
+  const identities = new Set(tied.map((item) => [item.credit.sourceUrl, item.credit.license, item.credit.creator].join('|')));
+  if (identities.size > 1) return null;
+  return { ...top.credit, matching: 'page_credit_lexical_match', matchedTokens: top.distinctiveHits };
+}
+
+const recordsBySrc = new Map();
+const dataDir = path.join(root, 'data');
+const dataFiles = fs.readdirSync(dataDir).filter((name) => name.endsWith('.mjs'));
+function collect(value, moduleName, seen, depth = 0) {
+  if (!value || typeof value !== 'object' || depth > 24 || seen.has(value)) return;
+  seen.add(value);
+  if (!Array.isArray(value) && typeof value.src === 'string' && value.src.startsWith('/assets/images/')) {
+    const item = {
+      moduleName,
+      src: value.src,
+      assetType: value.assetType ?? null,
+      sourceUrl: value.source ?? value.sourceUrl ?? null,
+      sourceTitle: value.sourceTitle ?? value.commonsTitle ?? value.label ?? null,
+      sourceDate: value.sourceDate ?? null,
+      creator: value.creator ?? null,
+      license: value.license ?? null,
+      sourceDeclaredLicenses: value.sourceDeclaredLicenses ?? null,
+      rightsStatus: value.rightsStatus ?? null,
+      rightsStatusUrl: value.rightsStatusUrl ?? null,
+      licenseUrl: value.licenseUrl ?? value.licenseURL ?? canonicalLicenseUrl(value.license),
+      localSha1: value.localSha1 ?? null,
+      editHistory: value.editNote ?? null,
+      attributionTerms: value.attributionTerms ?? null,
+      commercialReuseEligibility: value.commercialReuseEligibility ?? null,
+      alt: value.alt ?? null,
+      inventoryStatus: value.inventoryStatus ?? null,
+      retirementNote: value.retirementNote ?? null
+    };
+    if (!recordsBySrc.has(item.src)) recordsBySrc.set(item.src, []);
+    recordsBySrc.get(item.src).push(item);
+  }
+  for (const child of Object.values(value)) collect(child, moduleName, seen, depth + 1);
+}
+const moduleErrors = [];
+for (const name of dataFiles) {
+  try {
+    const moduleUrl = pathToFileURL(path.join(dataDir, name)).href;
+    const module = await import(moduleUrl + '?photo-inventory=20261004');
+    const seen = new WeakSet();
+    for (const value of Object.values(module)) collect(value, name, seen);
+  } catch (error) {
+    moduleErrors.push({ module: name, error: error.message });
+  }
+}
+
+const assetPaths = walkFiles(imageDir).filter((file) => {
+  if (/\.webp$/i.test(file)) return true;
+  const src = '/' + path.relative(root, file).replaceAll('\\', '/');
+  return recordsBySrc.get(src)?.some((record) => record.assetType === 'original-planning-diagram') || false;
+});
+
+const usesBySrc = new Map();
+const creditsBySrc = new Map();
+const explicitCreditsByAsset = new Map();
+let englishPageCount = 0;
+for (const country of countries) {
+  const base = path.join(root, country);
+  if (!fs.existsSync(base)) continue;
+  const htmlFiles = walkFiles(base).filter((file) => path.basename(file).toLowerCase() === 'index.html');
+  for (const file of htmlFiles) {
+    const document = parse(fs.readFileSync(file, 'utf8'));
+    const rel = path.relative(base, path.dirname(file)).replaceAll('\\', '/');
+    const route = '/' + country + (rel ? '/' + rel : '') + '/';
+    englishPageCount += 1;
+    const imgs = all(document, (node) => node.tagName === 'img').map((node) => {
+      const a = attrs(node);
+      return { src: a.src?.split(/[?#]/)[0] || '', alt: a.alt || '', route };
+    }).filter((img) => img.src.startsWith('/assets/images/'));
+    const credits = photoCreditsInDocument(document);
+    for (const credit of credits) {
+      if (!creditsBySrc.has(credit.sourceUrl)) creditsBySrc.set(credit.sourceUrl, []);
+      creditsBySrc.get(credit.sourceUrl).push({ ...credit, route });
+      if (credit.assetPath) {
+        if (!explicitCreditsByAsset.has(credit.assetPath)) explicitCreditsByAsset.set(credit.assetPath, []);
+        explicitCreditsByAsset.get(credit.assetPath).push({ ...credit, route });
+      }
+    }
+    for (const image of imgs) {
+      if (!usesBySrc.has(image.src)) usesBySrc.set(image.src, []);
+      usesBySrc.get(image.src).push(image);
+    }
+  }
+}
+
+for (const [sourceUrl, creator, license, title] of [
+  ['https://commons.wikimedia.org/wiki/File:Blue_Pond_(Aoiike)_at_Biei,_Hokkaido,_Japan.jpg', 'OKJaguar', 'CC BY-SA 4.0', 'Blue Pond (Aoiike) at Biei, Hokkaido, Japan'],
+  ['https://commons.wikimedia.org/wiki/File:140724_Asahi-dake_and_Sugatami-no-ike_Hokkaido_Japan01bs3.jpg', '663highland', 'CC BY 2.5', 'Asahidake and Sugatami Pond'],
+  ['https://commons.wikimedia.org/wiki/File:Biei_landscape_(7662422372).jpg', 'Chi King', 'CC BY 2.0', 'Biei landscape'],
+  ['https://commons.wikimedia.org/wiki/File:140829_Ichiko_of_Shiretoko_Goko_Lakes_Hokkaido_Japan01s5.jpg', '663highland', 'CC BY 2.5', 'Shiretoko Five Lakes'],
+  ['https://commons.wikimedia.org/wiki/File:Hokkaido_Sapporo_Odori_Park.jpg', 'Nkns', 'CC BY-SA 3.0', 'Sapporo Odori Park'],
+  ['https://commons.wikimedia.org/wiki/File:Susukino-night_from_TV_Tower.JPG', 'Keith Blayney', 'CC BY-SA 3.0', 'Susukino night from TV Tower'],
+  ['https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E6%A8%BD%E9%9B%AA%E3%81%82%E3%81%8B%E3%82%8A%E3%81%AE%E8%B7%AF2013%EF%BC%88Otaru_Snow_Light_Path_2013%EF%BC%89_-_panoramio_(1).jpg', 't-konno', 'CC BY-SA 3.0', 'Otaru Snow Light Path'],
+  ['https://commons.wikimedia.org/wiki/File:130823_Cape_Kamui_Shakotan_Hokkaido_Japan04s3.jpg', '663highland', 'CC BY 2.5', 'Cape Kamui'],
+  ['https://commons.wikimedia.org/wiki/File:View_from_Mount_Hakodate_Japan01o.jpg', '663highland', 'CC BY 2.5', 'View from Mount Hakodate'],
+  ['https://commons.wikimedia.org/wiki/File:Komagatake_dusk.jpg', 'jonny-mt', 'CC BY-SA 3.0', 'Komagatake dusk at Onuma'],
+  ['https://commons.wikimedia.org/wiki/File:Lavender_fields,_Furano_(48254611081).jpg', 'Blondinrikard Fröberg', 'CC BY 2.0', 'Furano lavender fields'],
+  ['https://commons.wikimedia.org/wiki/File:Mount_Y%C5%8Dtei_from_Niseko_Annupuri_(33253188670).jpg', 'MIKI Yoshihito', 'CC BY 2.0', 'Mount Yōtei from Niseko Annupuri'],
+  ['https://commons.wikimedia.org/wiki/File:Jigokudani_(Hell_Valley),_Noboribetsu_Onsen,_Hokkaido,_April_2023_02.jpg', 'Calistemon', 'CC BY-SA 4.0', 'Jigokudani (Hell Valley), Noboribetsu Onsen, Hokkaido, April 2023 02'],
+  ['https://commons.wikimedia.org/wiki/File:130922_Lake_Toya_Toyako_Hokkaido_Japan01s5.jpg', '663highland', 'CC BY 2.5', '130922 Lake Toya Toyako Hokkaido Japan01s5'],
+  ['https://commons.wikimedia.org/wiki/File:Kushiro_Marsh.jpg', 'jetalone', 'CC BY 2.0', 'Kushiro Marsh'],
+  ['https://commons.wikimedia.org/wiki/File:Grus_japonensis_-Hokkaido,_Japan_-several-8_(1).jpg', 'Alastair Rae', 'CC BY-SA 2.0', 'Grus japonensis -Hokkaido, Japan -several-8 (1)'],
+  ['https://commons.wikimedia.org/wiki/File:Lake_Akan_Kushiro_Hokkaido_Japan04n.jpg', '663highland', 'CC BY 2.5', 'Lake Akan Kushiro Hokkaido Japan04n'],
+  ['https://commons.wikimedia.org/wiki/File:Hokkaido-Abashiri_Drift_Icebreaker_Ship_Aurora-xl.jpg', 'kkawamura', 'CC BY 4.0', 'Abashiri drift icebreaker'],
+  ['https://commons.wikimedia.org/wiki/File:Daisetsuzan_National_Park_(44720157870).jpg', 'Raita Futo', 'CC BY 2.0', 'Daisetsuzan National Park, north view from Mount Asahi’s summit'],
+  ['https://commons.wikimedia.org/wiki/File:Siripa-misaki7020429.jpg', '\u6211\u8def\u30fb\u5e4c\u5185\u753b\u50cf\u5009\u5eab', 'CC BY-SA 3.0', 'Siripa Cape, Yoichi']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, {
+    detail: `Hokkaido image review: exact Commons source title, ${creator} creator credit, and ${license} terms checked against the source page.`,
+    checkedOn: '2026-10-06'
+  });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Rouen_Old_Town_(30784770452).jpg', 'Normandy image review: the source page identifies Jorge Láscar as creator and CC BY 2.0 as the license. Its description says the image looks east along rue du Gros-Horloge with Rouen Cathedral in the distance; this matches the downloaded and visually reviewed WebP and its human title. Attribution, linked license and WebP/crop disclosure are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Bayeux_cathedral_(498230954).jpg', 'Normandy image review: the source page identifies Paul Holloway as creator and CC BY-SA 2.0 as the license. The downloaded and visually reviewed image depicts Bayeux Cathedral; the route labels it as a town landmark and does not present it as a D-Day scene. Attribution, linked license, WebP/crop disclosure and same-license adaptation terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:A_view_of_the_Abbey_of_Mont-Saint-Michel_with_the_bay.jpg', 'Normandy image review: the source page identifies Hammondtravels as creator and CC BY-SA 4.0 as the license. The downloaded and visually reviewed image shows the abbey wall and upper buildings above part of the bay; the route title and alt do not claim an unrestricted crossing or broad bay panorama. Attribution, linked license, WebP/crop disclosure and same-license adaptation terms are present.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chambord,_Loire_Valley_-_FRANCE.jpg', 'Loire image review: exact Commons title, Ignaz Wiradi creator credit, CC BY-SA 3.0 photo terms and visual match to the Chambord façade/roofline were checked on 2026-10-07. Separately considered the depicted building: the estate dates the royal project to 1519 and says the architect is unknown. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_de_Chenonceau,_Loire_Valley,_France.jpg', 'Loire image review: exact Commons title, SpottingHistory creator credit, CC BY-SA 4.0 photo terms and visual match to the château crossing the Cher were checked on 2026-10-07. Separately considered the depicted building: the estate dates the present château to 1513–1517. The photo license is not treated as a license to any separate work depicted; this note is not legal clearance.'],
+  ['https://commons.wikimedia.org/wiki/File:Loire_River,_France_(17376540539).jpg', 'Loire image review: exact Commons title, Larry (Flickr account Larry Tweed) creator credit, CC BY 2.0 photo terms and visual match to the river, small boat and riverside path were checked on 2026-10-07. The landscape image replaces a photo of Villandry’s designed garden after separating the photo license from the underlying work. The river photograph does not show the château or garden design; its image credit links the source and license and discloses the crop/WebP conversion.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg', 'Jeju image review: the exact Commons file page identifies 용두암.jpg (Yongduam), own work by 안범진 (Wikimedia user Kyleahn), dated 2015-12-26, with camera coordinates in Yongdamil-dong on Jeju’s north coast. The source page declares CC BY-SA 4.0. The local WebP pixels show the dragon-shaped volcanic rock and adjacent north-coast shoreline, matching Yongduam rather than Seongsan Ilchulbong; its separate hydrangea photograph and credit are not assigned to this asset.'],
+  ['https://commons.wikimedia.org/wiki/File:Hongdae_area_cityscape.jpg', 'Seoul image review: exact Commons page identifies Minseong Kim (IMKSv), the Hongdae cityscape, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Itaewon-dong.jpg', 'Seoul image review: exact Commons page identifies Live Studio Kim Hakri and the Itaewon-dong aerial; it declares Korea Open Government License Type 1. The official KOGL Type 1 terms permit commercial use and adaptations with source attribution. The site links both source and license and discloses WebP conversion.'],
+  ['https://commons.wikimedia.org/wiki/File:Quiet_alleyway_in_Seongsu-dong.jpg', 'Seoul image review: exact Commons page identifies CartoonChess, the Seongsu-dong alley, and CC BY-SA 4.0. Attribution, source/license links, WebP conversion notice and same-version share-alike terms are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Seoul_Forest_Walk_Path.jpg', 'Seoul image review: exact Commons page identifies Qhairy, the Seoul Forest walking path, and CC BY 4.0. Attribution, source/license links and crop/WebP conversion notice are present.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Vue_panoramique_sur_la_ville_de_Sapa,_Vietnam,_entour%C3%A9e_de_montagnes_majestueuses_et_de_rizi%C3%A8res_en_terrasse.jpg', 'Vietnam image review: the exact Commons page identifies Asmara Rodrigue, the Sa Pa town panorama, and CC BY 4.0. The visible credit links the source and license and discloses resizing and WebP conversion. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.'],
+  ['https://commons.wikimedia.org/wiki/File:Bac_Ha_Dinh_vua_meo.jpg', 'Vietnam image review: the exact Commons page identifies Velvet, Hoang A Tuong Mansion in Bac Ha, and CC BY-SA 4.0. The visible credit links the source and license and discloses resizing, WebP conversion and same-license distribution. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.'],
+  ['https://commons.wikimedia.org/wiki/File:Hanoi_-_Opera_House_02.jpg', 'Vietnam image review: the exact Commons page identifies P. Hughes, Hanoi Opera House, and CC BY 4.0. The visible credit links the source and license and discloses the resized WebP conversion. Source page, creator, license and subject were checked; the image pixels were not visually reviewed in this batch.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-07' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Royal_Tomb_of_Minh_Mang_(14720605126).jpg', 'Hue image review: the exact Commons file page identifies Erwin Verbruggen as creator, dates the photograph 25 June 2014, and declares CC BY-SA 2.0 Generic. The local WebP pixels show the Đại Hồng Môn entrance gate at Minh Mang Royal Tomb. The visible credit links the exact source and canonical version 2.0 license, discloses resize/crop/WebP adaptation and states that the adaptation is shared under the same license version. Source-page details and image subject were checked on 2026-10-08.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Z%C3%BCrich_Limmat_panosphere_20220614.jpg', 'Zurich Old Town image review: Commons identifies Daniel Kraft, the Limmat/Old Town panorama and CC BY-SA 3.0. The WebP pixels show the river and opposite-bank Old Town from the Schipfe side, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.'],
+  ['https://commons.wikimedia.org/wiki/File:Snowy_panorama_of_Zurich_from_Uetliberg_2026.JPG', 'Zurich Uetliberg image review: Commons identifies Mike is Michi, a 29 March 2026 snowy view from Uetliberg, and CC BY-SA 4.0. The WebP pixels show the snow-covered city and lake under haze, matching the revised alt. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.'],
+  ['https://commons.wikimedia.org/wiki/File:Mobimo_Tower._Z%C3%B6lly_Wohnhochhaus._Z%C3%BCrich_West.jpg', 'Zurich West image review: Commons identifies Photones, the Mobimo Tower/Zölly residential tower view in Zurich West, and CC BY-SA 4.0. The WebP pixels show the named towers above Pfingstweidpark; the revised alt describes that visible subject rather than unshown industrial buildings. The page credit links the exact source and license, discloses resize, display crop and WebP conversion, and states same-version share-alike. Checked 2026-10-08.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Inner_Harbour_and_British_Columbia_Parliament_Buildings,_Victoria,_at_dusk_20240827_1.jpg', 'Victoria Inner Harbour image review: the exact Commons page identifies DXR, a photograph dated 27 August 2024, and CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Inner Harbour and Parliament Buildings at dusk. Source and license links, resize, display-crop, WebP-conversion, and same-version adaptation disclosures are present.'],
+  ['https://commons.wikimedia.org/wiki/File:Butchart_Gardens_-_Victoria,_British_Columbia_(28938334672).jpg', 'Butchart Gardens image review: the exact Commons page identifies Fyre Mael, a photograph dated 26 June 2015, and CC BY 2.0; the page also records FlickrReview confirmation dated 10 April 2017. Local WebP pixels were inspected on 2026-10-08 and match the formal garden beds and mature trees. Source and license links and resize, display-crop, and WebP-conversion disclosures are present.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Han_River,_Da_Nang,_Vietnam_-_20230819.jpg', 'Han River, Da Nang — exact Commons page identifies Somerset999 and a photograph dated 19 August 2023 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the river and Da Nang waterfront. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Ch%C3%B9a_Tam_Thai,_Th%E1%BB%A7y_S%C6%A1n,_%C4%90%C3%A0_N%E1%BA%B5ng_(Tam_Thai_Pagoda,_Thuy_Son_Marble_Mountain)_-_img_01.jpg', 'Chùa Tam Thai, Thủy Sơn, Đà Nẵng (Tam Thai Pagoda, Thuy Son Marble Mountain) — exact Commons page identifies Chainwit. and a photograph dated 1 August 2024 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match the ornate pagoda courtyard and roof. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:My_Khe_Beach_18.jpg', 'My Khe Beach 18 — exact Commons page identifies Christophe95 and a photograph dated 30 July 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match My Khe Beach. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Son-Tra-Peninsula_Da-Nang_Vietnam_Linh-Ung-Pagoda-01.jpg', 'Son-Tra-Peninsula Da-Nang Vietnam Linh-Ung-Pagoda-01 — exact Commons page identifies CEphoto, Uwe Aranas and a photograph dated 14 May 2011 under CC BY-SA 3.0. Local WebP pixels were inspected on 2026-10-08 and match the Linh Ung pagoda entrance gate. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ancient_Town,_2020-01_CN-05.jpg', 'Hội An, Ancient Town, 2020-01 CN-05 — exact Commons page identifies Steffen Schmitz and a photograph dated 22 January 2020 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the historic shophouses and street. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:2024_-_M%E1%BB%B9_S%C6%A1n_Sanctuary_Temple_E7_-_img_01.jpg', '2024 - Mỹ Sơn Sanctuary Temple E7 - img 01 — exact Commons page identifies Chainwit. and a photograph dated 2 August 2024 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match Temple E7 at Mỹ Sơn Sanctuary. The source page, creator, date and license version were checked directly; this does not independently establish the full rights chain.'],
+  ['https://commons.wikimedia.org/wiki/File:Wat_Arun_across_Chao_Phraya_River.jpg', 'Wat Arun across Chao Phraya River — exact Commons page identifies Preecha.MJ and a photograph dated 19 June 2016 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match Wat Arun across the river. The original is 4,256 × 2,832; the local 1,920 × 1,278 WebP retains the source proportions.'],
+  ['https://commons.wikimedia.org/wiki/File:Sunset_view_of_Wat_Arun_in_Bangkok.jpg', 'Sunset view of Wat Arun in Bangkok — exact Commons page identifies VN.NguyenDucDuy and a photograph dated 22 October 2024 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match Wat Arun at sunset. The local WebP keeps the original 960 × 1,280 dimensions and proportions.'],
+  ['https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg', 'Temple of the Emerald Buddha — exact Commons page identifies Nawit science and a photograph dated 29 September 2019 under CC BY-SA 4.0. The source page includes a personality-rights warning. Local WebP pixels were inspected on 2026-10-08 and match a monk in front of Wat Phra Kaew in the Grand Palace complex; no conclusion is made about rights separate from the declared photo license. The source is 4,705 × 3,141 and local WebP is 1,920 × 1,282.'],
+  ['https://commons.wikimedia.org/wiki/File:Phra_Athit_Road_-_2017-01-26_(001).jpg', 'Phra Athit Road - 2017-01-26 (001) — exact Commons page identifies Iudexvivorum, a photograph dated 26 January 2017, and a CC0 1.0 worldwide public-domain dedication. Local WebP pixels were inspected on 2026-10-08 and match the wooden street-side building and tree. The page was reached through its Commons category after the direct link did not load.'],
+  ['https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg', 'Yaowarat Road at night — exact Commons page identifies Christophe95 and a photograph dated 10 May 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the illuminated Yaowarat street scene. The source is 4,032 × 3,024 and local WebP is 1,920 × 1,440.'],
+  ['https://commons.wikimedia.org/wiki/File:Bangkok_skyline_at_sunset_from_Siam_BTS_Skytrain_station,_Bangkok,_Thailand.jpg', 'Bangkok skyline at sunset from Siam BTS Skytrain station, Bangkok, Thailand — exact Commons page identifies Vyacheslav Argenberg and a photograph dated 20 January 2010 under CC BY 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Bangkok skyline from the station. The source is 4,032 × 2,688 and local WebP is 1,920 × 1,280.'],
+  ['https://commons.wikimedia.org/wiki/File:Night_Panorama_of_Sukhumvit,_Bangkok.jpg', 'Night Panorama of Sukhumvit, Bangkok — exact Commons page identifies Slyronit and a photograph dated 24 November 2018 under CC BY-SA 4.0. Local WebP pixels were inspected on 2026-10-08 and match the Sukhumvit night panorama. The source is 7,288 × 2,157 and local WebP is 1,920 × 568.'],
+  ['https://commons.wikimedia.org/wiki/File:Lumpini_Park,_Bangkok.jpg', 'Lumpini Park, Bangkok — exact Commons page identifies User: (WT-shared) Adestro at wts wikivoyage and a photograph dated 2 October 2006. It records that the author released the work into the public domain worldwide; no separate license URL is present on the page. Local WebP pixels were inspected on 2026-10-08 and match the park lake and Bangkok skyline. This records the source-page basis, not an independent rights-chain finding.'],
+  ['https://commons.wikimedia.org/wiki/File:Mouth_of_Khlong_Bangkok_Yai.jpg', 'Mouth of Khlong Bangkok Yai — exact Commons page identifies Phoebus 28, a photograph dated 13 February 2021, and CC BY-SA 4.0. The page describes the canal as Khlong Bangkok Yai, also known as Khlong Bang Luang. Local WebP pixels were inspected on 2026-10-08 and match the canal mouth. Source and local WebP are both 1,440 × 1,080.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg', 'Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Gyedong-gil_street_with_climbing_plants_at_golden_hour_in_Seoul_South_Korea.jpg', 'Exact Commons page checked for Basile Morin, the 3 June 2024 photograph date, and CC BY-SA 4.0 terms. The existing site credit links this source and license. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Nightview_of_the_Gwanghwamun_Square_2024.jpg', 'Exact Commons page checked for Seoul Tourism Organization, the 11 December 2024 photograph date, Seoul Tourism Archive 10341 source record, and KOGL Type 1 terms. The official license permits commercial use and adaptation with source attribution. The Commons-linked archive endpoint returned 404 on 8 October 2026. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:BIFF_Square_at_night.jpg', 'Exact Commons page checked for Christophe95, the 27 September 2018 photograph date, and CC BY-SA 4.0 terms. The adjacent same-route credit is explicitly attached to the BIFF hero image. Local WebP pixels were not inspected, so image-to-source identity remains unconfirmed.'],
+  ['https://commons.wikimedia.org/wiki/File:Busan_at_dusk._View_of_nurimaru_APEC_house_from_dongbaekseom_lighthouse.jpg', 'Exact Commons page checked for IsouM, the 11 October 2018 photograph date, and CC BY-SA 4.0 terms. The same-route figure caption explicitly credits this Commons file beside the image. Local WebP pixels were not inspected.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:N_Seoul_Tower_view_2.jpg', {
+  detail: 'N Seoul Tower photo review: the exact Commons page identifies kallerna, a 30 November 2022 photograph, and CC BY-SA 4.0. The downloaded original and local WebP pixels were inspected on 2026-10-08; both show Seoul at night from N Seoul Tower looking south, including the Han River and bridges, and the local file is a resized display crop. The site retains the linked source, creator, license, and resize/crop notice.',
+  checkedOn: '2026-10-08'
+});
+
+const allDistinctCredits = [...new Map([...creditsBySrc.values()].flat().map((credit) => [[credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|'), credit])).values()];
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', {
+  detail: 'Commons revision 1070665767 checked on 2026-10-09: Jr8825, a 13 February 2013 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show a shaded station platform and train. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', {
+  detail: 'Commons revision 1243205521 checked on 2026-10-09: Nayika C., a 3 June 2014 photograph, and CC BY-SA 3.0 are identified. Local WebP pixels show the reclining Buddha, brick remains and pagoda. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', {
+  detail: 'Commons revision 1192944501 checked on 2026-10-09: Kriengsak Jirasirirojanakorn, a 26 December 2023 photograph, and CC BY-SA 4.0 are identified. Local WebP pixels show the central chedi and two shadowed seated Buddha figures in the foreground. The display credit links the source and exact license and discloses conversion/cropping and same-version share-alike. This source-page check records the page declaration; it does not independently establish worldwide rights clearance.',
+  checkedOn: '2026-10-09'
+});
+
+// CN15 checked these exact Commons source pages and the corresponding local
+// WebP pixels on 2026-10-11. The declaration is limited to the listed pages;
+// it is not a claim of independent rights-chain or site-wide clearance.
+const chinaCn15CheckedSourceUrls = [
+  'https://commons.wikimedia.org/wiki/File:1_li_jiang_guilin_yangshuo_2011.jpg',
+  'https://commons.wikimedia.org/wiki/File:1_lijiang_old_town_2012.jpg',
+  'https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg',
+  'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg',
+  'https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg',
+  'https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_03.jpg',
+  'https://commons.wikimedia.org/wiki/File:27407-Luoyang,_Longmen_Grottoes.jpg',
+  'https://commons.wikimedia.org/wiki/File:67052-The-Great-Wall,_Mutianyu.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beaches_in_Sanya,_Hainan,_China13.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_798_Art_District.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_forbidden_city_Belvedere_of_Embodying_Benevolence-20071018-RM-142403.jpg',
+  'https://commons.wikimedia.org/wiki/File:Beijing_view_from_Jingshan_Park_-_Flickr.jpg',
+  'https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg',
+  "https://commons.wikimedia.org/wiki/File:City_wall_of_Xi'an_51550-Xian_(27959363326).jpg",
+  'https://commons.wikimedia.org/wiki/File:Classical_Gardens_of_Suzhou-111927.jpg',
+  'https://commons.wikimedia.org/wiki/File:Crescent_Lake_from_the_Singing_Sand_Dunes_(20230918101214).jpg',
+  'https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Liangzhu_Museum_2015.08.02_13-39-09.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hangzhou_Lingyin-Temple_20161003.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hefang_Street,_Hangzhou_-_9.jpg',
+  'https://commons.wikimedia.org/wiki/File:Hëytgah_Mosque,_Kashi_(20230923100109).jpg',
+  'https://commons.wikimedia.org/wiki/File:Longjing_tea_village_Hangzhou.jpg',
+  'https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg',
+  'https://commons.wikimedia.org/wiki/File:Pearl_River_Canton_Tower_(cropped).JPG',
+  'https://commons.wikimedia.org/wiki/File:Peking_Jonghe_Tempel_-20071022-RM-094926.jpg',
+  'https://commons.wikimedia.org/wiki/File:Pingyao_Yingxun_Gate.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shenzhen_Skyline_from_Futian_District2.jpg',
+  'https://commons.wikimedia.org/wiki/File:Shichahai_pic.jpg',
+  'https://commons.wikimedia.org/wiki/File:Summer_Palace_over_Kunming_Lake_and_Nanhu_Island.jpg',
+  'https://commons.wikimedia.org/wiki/File:Sunset_of_the_Forbidden_City_2006.JPG',
+  'https://commons.wikimedia.org/wiki/File:Three_round,_one_oval,_one_square_(16831811084).jpg',
+  'https://commons.wikimedia.org/wiki/File:View_from_Jiming_Temple,_Nanjing_City_Wall_%26_Lake_Xuanwu_(10150808176).jpg',
+  'https://commons.wikimedia.org/wiki/File:West_lake_and_Leifeng_pagoda_-Hangzhou-China_-_panoramio.jpg',
+  'https://commons.wikimedia.org/wiki/File:Xixi_Wetlands_Park-_endless_beauty_(36443645132).jpg',
+  'https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61416-Wuhan_(49150676682).jpg',
+  'https://commons.wikimedia.org/wiki/File:Yungang11_2010.JPG',
+  'https://commons.wikimedia.org/wiki/File:五华区与盘龙区天际线_-_航拍_-_2025-05-16_03.jpg',
+  'https://commons.wikimedia.org/wiki/File:大理洱海及苍山_01.jpg',
+  'https://commons.wikimedia.org/wiki/File:爱晚亭（秋-侧面）.jpg',
+  'https://commons.wikimedia.org/wiki/File:黄果树瀑布_2026-07-31_01.jpg'
+];
+for (const sourceUrl of chinaCn15CheckedSourceUrls) {
+  // Preserve any richer exact-source review already recorded for a reused China image (CN14B Xinjiang).
+  if (verifiedSourcePageDetails.has(sourceUrl)) continue;
+  verifiedSourcePageDetails.set(sourceUrl, {
+    detail: `CN15 photo review: exact Commons file page checked on 2026-10-11 for the source title, named author, and exact declared license/version. Local WebP pixels were inspected against that file page and match its named China place or subject; the local resize, display crop, or WebP conversion is disclosed in the visible credit. This records the source-page declaration, not an independent rights-chain finding.`,
+    checkedOn: '2026-10-11'
+  });
+}
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market_2.jpg', {
+  detail: 'Exact Commons page checked for the title Chatuchak Weekend Market, Christophe95 as author, the 12 May 2018 photograph date, and CC BY-SA 4.0 terms. The downloaded 4,032 x 3,024 source and local WebP pixels were inspected on 2026-10-08; both show a covered Chatuchak aisle with shoppers, flower stalls and souvenir stalls. The local copy is resized, cropped for display and converted to WebP; the route links both source and license.',
+  checkedOn: '2026-10-08'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Warorot_market_4.jpg', {
+  detail: 'Warorot Market photo review: exact Commons file title, Christophe95 authorship, 6 September 2018 source date, and CC BY-SA 4.0 commercial/adaptation terms checked on 2026-10-08. Local WebP pixels were inspected and show a covered market aisle with packaged foods, stalls and shoppers, matching Warorot Market. The displayed credit links the source and license and states the resize, display crop, WebP conversion and same-version share-alike adaptation.',
+  checkedOn: '2026-10-08'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:View_of_Mae_Sa_Valley,_Chiang_Mai,_Thailand.jpg', {
+  detail: 'Mae Sa Valley photo review: exact Commons title, VN.NguyenDucDuy authorship, and CC BY-SA 4.0 commercial/adaptation terms checked on 2026-10-08. Local WebP pixels were inspected and match a cultivated hillside and valley landscape in Mae Rim District. The Commons page records 20 December 2025, while embedded EXIF records 20 December 2024; the source photograph date is unresolved and is intentionally left null in the inventory. The displayed credit links the source and license and states the resize, display crop, WebP conversion and same-version share-alike adaptation.',
+  checkedOn: '2026-10-08'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:The_beach_in_St._Ives_harbour,_Cornwall_-_geograph.org.uk_-_2273997.jpg', {
+  detail: 'Cornwall photo review: exact Commons title, nick macneill authorship, 15 September 1991 photograph date, original dimensions 1,024 × 693, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show St Ives harbour at low tide with fishing boats on the sand, matching the source-page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Ferry_to_Falmouth_%26_sailing_boats,_St_Mawes_Harbour,_Cornwall_-_June_2025.jpg', {
+  detail: 'Cornwall photo review: exact Commons title, Mutney authorship, 28 June 2025 photograph date, original dimensions 4,032 × 2,198, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show a passenger boat with sailing craft at St Mawes Harbour, matching the source title and location. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Exeter_,_Exeter_Cathedral_%5E_Green_-_geograph.org.uk_-_3144068.jpg', {
+  detail: 'Cornwall/Devon photo review: exact Commons title, Lewis Clarke authorship, 21 September 2012 photograph date, original dimensions 4,288 × 2,848, and CC BY-SA 2.0 terms checked on 2026-10-11. Local WebP pixels were inspected and show Exeter Cathedral and Cathedral Green with restoration scaffolding visible, matching the source page description. The site asset is a 1,600 × 1,066 WebP resize/display crop; visible attribution links the exact source and license and discloses the changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Blenheim_Palace_from_the_Water_Terraces_October_2016.jpg', {
+  detail: 'Oxford/Cotswolds photo review: the exact Commons file page identifies DeFacto as author, 9 October 2016 as the photograph date, original dimensions 4,896 × 3,264, and CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-11 and show Blenheim Palace from the Water Terraces, matching the source; the copy is resized and display-cropped. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Oxford_-_Catte_Street_-_View_SSW_on_the_Radcliffe_Camera_1737-48_by_James_Gibbs_-_University_Church_of_St_Mary_the_Virgin_%26_Brasenose_College_in_the_back.jpg', {
+  detail: 'Oxford/Cotswolds photo review: the exact Commons file page identifies Txllxt TxllxT as author, 18 June 2011 as the photograph date, original dimensions 5,921 × 3,947, and CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-11 and show Catte Street, Radcliffe Camera, St Mary the Virgin and Brasenose College in the background, matching the source; the copy is resized and display-cropped. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Chatsworth_House_-_geograph.org.uk_-_2191619.jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Trevor Rickard as author, 22 October 2010 as the photograph date, original dimensions 1,024 × 768, and CC BY-SA 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Chatsworth House across the lawn, matching the source-page subject. The visible credit links the source and versioned license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Mam_Tor_from_the_Ridge_path_-_Flickr_-_Donnchadh_H.jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Donnchadh H as author, 17 April 2025 as the photograph date, original dimensions 5,568 × 3,712, and CC BY 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Great Ridge footpath and open moorland described by the source. The visible credit links the source and license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Dovedale_-_River_Dove_-_Thorpe_Cloud_-_Stepping_Stones_(15041656340).jpg', {
+  detail: 'Peak District photo review: the exact Commons page identifies Elliott Brown from Birmingham as author, 5 September 2014 as the photograph date, original dimensions 3,072 × 2,304, and CC BY-SA 2.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the River Dove stepping stones with Thorpe Cloud behind, matching the source. The visible credit links the source and versioned license and discloses resizing, display crop and WebP conversion. This records the page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', {
+  detail: 'Cameron Highlands photo review: exact Commons title, Jakub Hałun authorship, 29 August 2025 photograph date, original dimensions 5,439 × 3,631, and CC BY 4.0 terms checked on 2026-10-11. Local WebP pixels show tea rows across Cameron Highlands slopes with a road in the foreground, matching the source page. The displayed asset is resized, center-cropped and converted to WebP; its visible credit links the exact source and license and discloses those changes. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Big_Mossy_Tree_at_Mossy_Forest,_Cameron_Highlands.jpg', {
+  detail: 'Cameron Highlands photo review: exact Commons title, Pro QueeNia authorship, 15 October 2019 photograph date, original dimensions 2,448 × 3,264, and CC BY-SA 4.0 terms checked on 2026-10-11. Local WebP pixels show a moss-covered tree and the visitor boardwalk railing, matching the source page. The displayed asset is resized, center-cropped and converted to WebP; its visible credit links the exact source and versioned license, discloses those changes and says the adaptation remains under CC BY-SA 4.0. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', {
+  detail: 'China CN12 photo review: the exact Commons file page identifies Amarespeco as author, 14 July 2017 as the photograph date, original dimensions 4,000 × 6,000, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show Saint Sophia Cathedral’s domes and crosses against a summer sky, matching the source; the portrait source is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', {
+  detail: 'China CN12 photo review: the exact Commons file page identifies Emmazzye as author, 15 July 2018 as the photograph date, original dimensions 4,213 × 3,160, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show rolling green Hulun Buir grassland beneath blue sky, matching the source; the image is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', {
+  detail: 'China CN12 photo review: the exact Commons file page identifies eviltomthai as author, 28 September 2009 as the photograph date, original dimensions 3,888 × 2,592, and CC BY 2.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show Huangshan granite peaks and pines emerging through mist, matching the source; the image is resized and converted to WebP at the same aspect ratio. The visible credit links the exact source and CC BY 2.0 license and discloses the site edits. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', {
+  detail: 'China CN12 photo review: the exact Commons file page identifies Vitsuha as author, 19 July 2021 as the photograph date, original dimensions 3,648 × 2,736, and CC BY-SA 4.0. The local 960 × 640 WebP pixels were inspected on 2026-10-11 and show the Zhanqiao waterfront, sandy shore and Qingdao bayfront, matching the source; the image is resized and display-cropped to landscape. The visible credit links the exact source and CC BY-SA 4.0 license, discloses the edits and states that the adaptation is shared under the same license. This records the source page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Nice,_Quai_des_%C3%89tats-Unis_and_Promenade_des_Anglais_FRANCE.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Lspigon, dates the photograph to 1 January 2006, records a 2,848 × 2,144 original, and declares public-domain status. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Nice seafront and old-town waterfront described by the credit and alt text. The visible credit retains source and creator, links the declaration and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:02_statue_and_view_Jardin_Exotique_%C3%88ze_Village_French_Riviera_Copr_2022_by_Tim_Adams_CC_by_3.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Tim Adams, dates the photograph to 27 April 2022, records a 4,928 × 3,280 original, and declares CC BY 3.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the statue, Èze village and Mediterranean view named by the source and matched by the alt text. The visible credit links source and license and discloses resize, display crop and WebP conversion. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Port_vauban_vieille_ville.jpg', {
+  detail: 'Côte d’Azur photo review: the exact Commons page identifies Abxbay, dates the photograph to 7 June 2016, records a 4,000 × 3,000 original, and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Port Vauban, boats and the Antibes old town described by the source and matched by the alt text. The visible credit links source and license, discloses resize, display crop and WebP conversion, and states the adaptation is shared under CC BY-SA 4.0. The page declaration is recorded without asserting independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Banana_beach_Phuket_2017_-_01.jpg', 'Commons file page revision 824730361 checked 2026-10-08: page title, Anton Zelenov attribution, CC BY-SA 4.0 commercial/adaptation terms, and 9 December 2017 photo date recorded. Local WebP pixels show the cove, forested headland and offshore rock. Commons attribution and embedded EXIF creator field differ (Anton Zelenov / Tony Zelenoff); this remains unresolved.'],
+  ['https://commons.wikimedia.org/wiki/File:Phuket_old_town_(52549766215).jpg', 'Commons file page revision 1163644968 checked 2026-10-08: Mussi Katz, CC0 1.0 public-domain dedication, and 30 November 2022 photo date recorded. Page identifies the old Phuket Municipality Police Station; local WebP pixels show the historic yellow building.'],
+  ['https://commons.wikimedia.org/wiki/File:Sunrise,_Koh_Yao_Noi_(island),_Phang_Nga_Bay,_Thailand.jpg', 'Commons file page revision 1274322840 checked 2026-10-08: Vyacheslav Argenberg, CC BY 4.0 commercial/adaptation terms, and 1 March 2007 photo date recorded. Local WebP pixels show sunrise light over the Phang Nga Bay islands.'],
+  ['https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Thailand.jpg', 'Commons file page revision 1195639962 checked 2026-10-08: Vyacheslav Argenberg, CC BY 4.0 commercial/adaptation terms, and 24 February 2007 photo date recorded. Local WebP pixels show Railay limestone karsts, shore, sea and swimmers.'],
+  ['https://commons.wikimedia.org/wiki/File:Playa_Maya,_Ko_Phi_Phi,_Tailandia,_2013-08-19,_DD_13.JPG', 'Commons file page revision 1077017531 checked 2026-10-08: Diego Delso, CC BY-SA 3.0 commercial/adaptation terms, 19 August 2013 photo date, and nearby-attribution/new-filename change requests recorded. Local WebP pixels show long-tail boats at Maya Bay below limestone cliffs.'],
+  ['https://commons.wikimedia.org/wiki/File:2016_Prowincja_Krabi,_Ko_Lanta_Yai,_Pla%C5%BCa_Klong_Khong_(16).jpg', 'Commons file page revision 959006442 checked 2026-10-08: Marcin Konsek, CC BY-SA 4.0 commercial/adaptation terms, and 29 February 2016 photo date recorded. Local WebP pixels show a long Ko Lanta beach with low-rise businesses and boats.'],
+  ['https://commons.wikimedia.org/wiki/File:2016_Prowincja_Trang,_Ko_Kradan_(01).jpg', 'Commons file page revision 754685434 checked 2026-10-08: Marcin Konsek, CC BY-SA 4.0 commercial/adaptation terms, and 2 March 2016 photo date recorded. Local WebP pixels show Ko Kradan pale sand and shallow turquoise water.'],
+  ['https://commons.wikimedia.org/wiki/File:Koh_Lipe_(island),_Thailand.jpg', 'Commons file page revision 1195639404 checked 2026-10-08: Vyacheslav Argenberg, CC BY 4.0 commercial/adaptation terms, and 12 March 2007 photo date recorded. Local WebP pixels show Ko Lipe beach, palms and turquoise sea.'],
+  ['https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg', 'Commons file page revision 1252055214 checked 2026-10-08: Sgroey, CC BY 4.0 commercial/adaptation terms, panorama source and creator recorded. Local WebP pixels show the Similan cove, granite formations and boats. Commons structured date is 1 July 2016 while embedded EXIF says 12 November 2016; sourcePhotoDate remains null pending resolution.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-08' });
+}
+
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', {
+  detail: 'Sandakan/Kinabatangan photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 25 May 2014, original 5,434 × 3,623 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show green longboats tied to a wooden landing on the brown river, two people at the jetty and trees behind; the revised alt describes those visible details. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Sepilok-Orangutan-Rehabilitation-Centre-01a.jpg', {
+  detail: 'Sandakan/Sepilok photo review: the exact Commons page identifies CEphoto, Uwe Aranas, own work dated 9 February 2013, original 5,760 × 3,840 pixels and CC BY-SA 3.0. The 1,440 × 960 local WebP pixels show the centre entrance sign and buildings with visitors; the revised alt describes the visible subject. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the page’s license declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Proboscis_monkey_and_its_baby_-_Kinabatangan_area_-_Sabah_-_Borneo_-_Malaysia_-_panoramio.jpg', {
+  detail: 'Sandakan/Kinabatangan photo review: the exact Commons page identifies diego_cue, a 6 March 2010 photograph, original 3,872 × 2,592 pixels and a Panoramio bot review dated 7 November 2016 recording the CC BY-SA 3.0 source terms. The 1,440 × 960 local WebP pixels show small primates among branches; individual age is not asserted in the alt. The visible credit links the exact source and license, describes resize/center crop/WebP conversion, and states same-version sharing. This records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Buhey_Dulang,Semporna,_Sabah.jpg', {
+  detail: 'Semporna photo review: the exact Commons page identifies Redzuan Bohari and declares CC BY-SA 4.0. Local WebP pixels show the Bohey Dulang ridge above the turquoise Tun Sakaran lagoon, matching the route subject and alt. The visible credit links the exact source and declared license. This records the page statement, not independent rights or uploader-authority clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Semporna_Sabah_Water-taxi-01.jpg', {
+  detail: 'Semporna photo review: the exact Commons page identifies CEphoto, Uwe Aranas and declares CC BY-SA 3.0. Local WebP pixels show a small Semporna water taxi with passengers, matching the credited image; the picture does not establish a public route, current operator or timetable. The visible credit links the exact source and declared license. This records the page statement, not independent rights or uploader-authority clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Semporna_-_Tun_Sakaran_Marine_Park.jpg', {
+  detail: 'Semporna image mismatch review: the exact Commons page identifies Adznee Abas and declares CC BY 2.0. Local pixels match Tun Sakaran island silhouettes viewed from Semporna at sunset, but do not depict Mabul, Kapalai or Sipadan. The unchanged WebP is marked unused and removed from all Semporna page displays. This records the page statement and visual mismatch, not independent rights or uploader-authority clearance.',
+  checkedOn: '2026-10-12'
+});
+
+const explicitCreditMappings = new Map([
+  ['/assets/images/malaysia-kinabatangan.webp', { sourceTitle: 'File:Sukau Sabah Malaysia Kinabatangan-River-at-Sukau-01.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sukau_Sabah_Malaysia_Kinabatangan-River-at-Sukau-01.jpg', creditLabel: 'Kinabatangan River at Sukau', creator: 'CEphoto, Uwe Aranas', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-05-25', editHistory: 'Resized, center-cropped and converted to WebP; no other material edits. The adapted image is shared under CC BY-SA 3.0.', note: 'Exact Commons source page, creator, photo date, CC BY-SA 3.0 declaration and local WebP pixels checked on 2026-10-12; visible photo-credit list discloses the resize/crop/WebP changes and share-alike terms.' }],
+  ['/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', { sourceTitle: 'File:Marseille - Vieux Port - MUCEM.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', creditLabel: 'Marseille - Vieux Port - MUCEM.jpg', creator: 'Remi Mathis', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2011-08-07', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local subject match checked 2026-10-12. The historic photograph shows scaffolding, not the completed Mucem; the page declaration is not independent rights clearance.' }],
+  ['/assets/images/france-marseille-calanques-calanques-access-choice.webp', { sourceTitle: 'File:Calanques National Park seen from the airplane.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', creditLabel: 'Calanques National Park seen from the airplane.jpg', creator: 'MikkoNilssonCom', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-02-13', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, license declaration and local aerial subject match checked 2026-10-12; an aircraft/window reflection remains visible. The page declaration is not independent rights clearance.' }],
+  ['/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', { sourceTitle: 'File:Cap Canaille depuis le port de Cassis.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', creditLabel: 'Cap Canaille depuis le port de Cassis.jpg', creator: 'DJ Poldoc', license: 'CC0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', sourcePhotoDate: '2013-10-05', editHistory: 'Resized, display-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page, creator, date, CC0 declaration and local Cassis harbor subject match checked 2026-10-12. The page declaration is not independent rights clearance.' }],
+  ['/assets/images/malaysia-cameron-highlands.webp', { sourceTitle: 'File:Cameron Bharat Tea Plantation, Cameron Highlands, Malaysia, 20250829 1535 4120.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Cameron_Bharat_Tea_Plantation,_Cameron_Highlands,_Malaysia,_20250829_1535_4120.jpg', creditLabel: 'Cameron Bharat tea landscape', creator: 'Jakub Hałun', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', sourcePhotoDate: '2025-08-29', editHistory: 'Resized, center-cropped and converted to WebP; no other material edits.', note: 'Exact Commons source page and local WebP pixels checked on 2026-10-11; tea rows, road foreground and forest ridge match the named Cameron Highlands subject.' }],
+  ['/assets/images/malaysia-cameron-mossy-forest.webp', { sourceTitle: 'File:Big Mossy Tree at Mossy Forest, Cameron Highlands.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Big_Mossy_Tree_at_Mossy_Forest,_Cameron_Highlands.jpg', creditLabel: 'Mossy Forest tree', creator: 'Pro QueeNia', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2019-10-15', editHistory: 'Resized, center-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons source page and local WebP pixels checked on 2026-10-11; the moss-covered tree and boardwalk rail match the named Cameron Highlands subject.' }],
+  ['/assets/images/china-hangzhou-leifeng.webp', { sourceTitle: 'File:Hangzhou Leifeng Pagoda 20161006.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hangzhou_Leifeng_Pagoda_20161006.jpg', creditLabel: 'Leifeng Pagoda', creator: 'Tyg728', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized and converted to WebP; responsive display may crop the frame; the adaptation is shared under the same CC BY-SA 4.0 license.', note: 'CN15 pixel review confirmed that this local file shows the close view of Leifeng Pagoda and trees, distinct from the West Lake panorama. The exact Commons credit identifies Tyg728 and CC BY-SA 4.0.' }],
+  ['/assets/images/thailand-ayutthaya-station.webp', { sourceTitle: 'File:Ayutthaya railway station.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ayutthaya_railway_station.jpg', creditLabel: 'Ayutthaya railway station', creator: 'Jr8825', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2013-02-13', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1070665767 and local pixels reviewed on 2026-10-09. The frame shows a shaded station platform and train; no claim about current services or equipment is made.' }],
+  ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', { sourceTitle: 'File:Wat Lokayasutharam (Temple) Ayuthaya, Thailand.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lokayasutharam_(Temple)_Ayuthaya,_Thailand.jpg', creditLabel: 'Wat Lokayasutharam', creator: 'Nayika C.', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-06-03', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 3.0.', note: 'Commons revision 1243205521 and local pixels reviewed on 2026-10-09. The frame shows the reclining Buddha, brick remains and pagoda.' }],
+  ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', { sourceTitle: 'File:วัดใหญ่ชัยมงคล_1_จังหวัดพระนครศรีอยุธยา.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%87%E0%B8%84%E0%B8%A5_1_%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%Bนคร%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B8%E0%B8%98%E0%B8%A2%E0%B8%B2.jpg', creditLabel: 'Wat Yai Chai Mongkhon', creator: 'Kriengsak Jirasirirojanakorn', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2023-12-26', editHistory: 'Resized and converted to WebP; display crop; adaptation shared under CC BY-SA 4.0.', note: 'Commons revision 1192944501 and local pixels reviewed on 2026-10-09. The frame shows the central chedi and two shadowed seated Buddha figures in the foreground.' }],
+  ['/assets/images/thailand-chiang-mai-warorot.webp', { sourceTitle: 'File:Warorot market 4.jpg', creditLabel: 'Warorot Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, 6 September 2018 source date, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. The image shows the covered Warorot market aisle with packaged foods, stalls and shoppers.' }],
+  ['/assets/images/thailand-chiang-mai-mae-rim.webp', { sourceTitle: 'File:View of Mae Sa Valley, Chiang Mai, Thailand.jpg', creditLabel: 'Mae Sa Valley', creator: 'VN.NguyenDucDuy', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, creator, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08. Pixels match the Mae Rim valley landscape. Commons page date is 20 December 2025 while embedded EXIF says 20 December 2024; the discrepancy remains unresolved, so sourcePhotoDate stays null.' }],
+  ['/assets/images/thailand-chatuchak.webp', { sourceTitle: 'File:Chatuchak Weekend Market 2.jpg', creditLabel: 'Chatuchak Weekend Market', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-05-12', editHistory: 'Resized, cropped for display and converted to WebP.', note: 'The exact Commons source page and downloaded original were checked against the local WebP pixels on 2026-10-08. Both show the same covered market aisle, flower stalls, souvenir stalls and shoppers.' }],
+  ['/assets/images/korea-namsan-tower.webp', { sourceTitle: 'File:N Seoul Tower view 2.jpg', creditLabel: 'N Seoul Tower panorama / kallerna', creator: 'kallerna', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2022-11-30', note: 'The exact Commons page and downloaded original were checked against the local WebP pixels on 2026-10-08; the resized crop shows Seoul at night from N Seoul Tower looking south. The linked source, creator, license, and resize/crop notice are present.' }],
+  ['/assets/images/korea-jeju-yongduam.webp', { sourceTitle: '용두암.jpg', creditLabel: 'Yongduam photo', creator: 'Ahn Beom-jin', editHistory: 'The Jeju hub states that site copies are resized, cropped to fit display frames where needed and converted to WebP; it gives no further per-image edit details.', note: 'Matched the dragon-shaped north-coast rock in the local WebP to the exact Yongduam Commons credit and file page; this hub also contains a separate Seongsan Ilchulbong photo credit.' }],
+  ['/assets/images/china-destination-xian.webp', { creditLabel: "Xi'an City Wall", creator: 'xiquinhosilva', note: 'Matched the image subject to the identically named, same-page Commons credit.' }],
+  ['/assets/images/china-hangzhou-grand-canal.webp', { creditLabel: 'Gongchen Bridge', creator: 'Windmemories', note: 'Matched the image alt and subject to the identically named Commons credit on both Hangzhou routes.' }],
+  ['/assets/images/biei-landscape.webp', { creditLabel: 'Biei landscape photo', creator: 'Chi King', note: 'Corrected a previous Blue Pond credit match; the displayed image is the agricultural landscape shown in the Commons source page.' }],
+  ['/assets/images/hokkaido-sapporo-odori.webp', { creditLabel: 'Hokkaido Sapporo Odori Park photo', creator: 'Nkns', note: 'Matched the central Sapporo Odori image to its exact Commons photo credit.' }],
+  ['/assets/images/hokkaido-susukino-night.webp', { creditLabel: 'Susukino night from TV Tower photo', creator: 'Keith Blayney', note: 'Corrected an earlier false match to the adjacent Odori Park credit; matched the night image to its exact Commons title and creator.' }],
+  ['/assets/images/korea-busan-cityscape.webp', { creditLabel: 'Busan cityscape', creator: 'Hoil Ryu', note: 'Matched the hero image description to the same-route Busan cityscape credit.' }],
+  ['/assets/images/korea-busan-gwangalli-music.webp', { creditLabel: 'Gwangalli waterfront musicians', creator: 'Christophe95', note: 'Matched the musicians in the image alt to the same-route credit.' }],
+  ['/assets/images/korea-bukchon-blue-hour.webp', { sourceTitle: 'File:Bukchon-ro 11-gil street with hanok houses at blue hour in Bukchon Hanok Village Seoul.jpg', creditLabel: 'Bukchon lane at blue hour / Basile Morin', creator: 'Basile Morin', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2024-06-03', note: 'The existing Seoul credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-gyedong-alley.webp', { sourceTitle: 'File:Gyedong-gil street with climbing plants at golden hour in Seoul South Korea.jpg', creditLabel: 'Gyedong alley / Basile Morin', creator: 'Basile Morin', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2024-06-03', note: 'The existing Bukchon credit associates this asset with the exact Commons source, creator, date and CC BY-SA 4.0 terms. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-gwanghwamun-night.webp', { sourceTitle: 'File:Nightview of the Gwanghwamun Square 2024.jpg', creditLabel: 'Gwanghwamun Square at night / Seoul Tourism Organization', creator: 'Seoul Tourism Organization', license: 'KOGL Type 1', licenseUrl: 'https://www.kogl.or.kr/info/licenseType1.do', sourcePhotoDate: '2024-12-11', attributionTerms: 'Specify Seoul Tourism Archive 10341 as the source and credit Seoul Tourism Organization. The Commons source page states that commercial use and adaptations are permitted.', note: 'The exact Commons page confirms the 11 December 2024 source, Seoul Tourism Organization author, Seoul Tourism Archive 10341 source record, and KOGL Type 1 commercial/adaptation terms. The linked archive endpoint returned 404 on 8 October 2026. Local pixels were not inspected, so image-to-source visual identity remains unconfirmed.' }],
+  ['/assets/images/korea-busan-biff-night.webp', { sourceTitle: 'File:BIFF Square at night.jpg', creditLabel: 'BIFF Square at night', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-27', note: 'The same-route hero has an adjacent photo-credit paragraph explicitly naming this exact Commons file, Christophe95, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.' }],
+  ['/assets/images/korea-busan-dongbaek.webp', { sourceTitle: 'File:Busan at dusk. View of nurimaru APEC house from dongbaekseom lighthouse.jpg', creditLabel: 'Dongbaekseom at dusk', creator: 'IsouM', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-10-11', note: 'The same-route figure caption explicitly links this image to the exact Commons file, IsouM, CC BY-SA 4.0, and the WebP derivative edits. Local pixels were not inspected in this pass.' }],
+
+  ['/assets/images/korea-hongdae-night.webp', { creditLabel: 'Hongdae night photo', creator: 'lumoplank', note: 'Matched the route and night-street image alt to the same-route Hongdae credit.' }],
+  ['/assets/images/thailand-phuket-beach.webp', { sourceTitle: 'File:Banana beach Phuket 2017 - 01.jpg', creditLabel: 'Banana Beach, Phuket', creator: 'Anton Zelenov', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-12-09', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons file page revision 824730361 checked 2026-10-08; local WebP pixels show the Banana Beach cove, forested headland and offshore rock. Commons page credits Anton Zelenov, while embedded EXIF names Tony Zelenoff; that creator-field discrepancy remains unresolved.' }],
+  ['/assets/images/thailand-andaman-phuket-old-town.webp', { sourceTitle: 'File:Phuket old town (52549766215).jpg', creditLabel: 'Phuket Old Town', creator: 'Mussi Katz', license: 'CC0 1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', sourcePhotoDate: '2022-11-30', editHistory: 'Resized, display-cropped and converted to WebP.', note: 'Exact Commons file page revision 1163644968 checked 2026-10-08; page identifies the yellow historic Phuket Municipality Police Station. Local pixels show that building.' }],
+  ['/assets/images/thailand-andaman-ko-lanta.webp', { sourceTitle: 'File:2016 Prowincja Krabi, Ko Lanta Yai, Plaża Klong Khong (16).jpg', creditLabel: 'Klong Khong Beach, Ko Lanta', creator: 'Marcin Konsek', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2016-02-29', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons file page revision 959006442 checked 2026-10-08; local pixels show a long Ko Lanta beach with low-rise businesses and boats.' }],
+  ['/assets/images/thailand-andaman-phang-nga.webp', { sourceTitle: 'File:Sunrise, Koh Yao Noi (island), Phang Nga Bay, Thailand.jpg', creditLabel: 'Ko Yao Noi sunrise', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', sourcePhotoDate: '2007-03-01', editHistory: 'Resized, display-cropped and converted to WebP.', note: 'Exact Commons file page revision 1274322840 checked 2026-10-08; local pixels show sunrise light over low-tide limestone island silhouettes in Phang Nga Bay.' }],
+  ['/assets/images/thailand-andaman-phi-phi.webp', { sourceTitle: 'File:Playa Maya, Ko Phi Phi, Tailandia, 2013-08-19, DD 13.JPG', creditLabel: 'Maya Bay, Phi Phi', creator: 'Diego Delso', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2013-08-19', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 3.0.', note: 'Exact Commons file page revision 1077017531 checked 2026-10-08; local pixels show long-tail boats at Maya Bay below limestone cliffs. The Commons page requests clear nearby attribution and asks that edits use a new filename; this site uses a separate WebP derivative and retains the source credit.' }],
+  ['/assets/images/thailand-andaman-railay.webp', { sourceTitle: 'File:Railay, Krabi, Thailand.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Thailand.jpg', creditLabel: 'Railay Beach', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', sourcePhotoDate: '2007-02-24', editHistory: 'Resized, display-cropped and converted to WebP.', note: 'Exact Commons file page revision 1195639962 checked 2026-10-08; local pixels rechecked 2026-10-09 and show Railay limestone karsts, beach, sea and swimmers.' }],
+  ['/assets/images/thailand-andaman-trang-islands.webp', { sourceTitle: 'File:2016 Prowincja Trang, Ko Kradan (01).jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:2016_Prowincja_Trang,_Ko_Kradan_(01).jpg', creditLabel: 'Ko Kradan, Trang', creator: 'Marcin Konsek', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2016-03-02', editHistory: 'Resized, display-cropped and converted to WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons file page revision 754685434 checked 2026-10-08; local pixels rechecked 2026-10-09 and show pale sand and shallow turquoise water at Ko Kradan.' }],
+  ['/assets/images/thailand-andaman-ko-lipe.webp', { sourceTitle: 'File:Koh Lipe (island), Thailand.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Koh_Lipe_(island),_Thailand.jpg', creditLabel: 'Ko Lipe beach', creator: 'Vyacheslav Argenberg', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', sourcePhotoDate: '2007-03-12', editHistory: 'Resized, display-cropped and converted to WebP.', note: 'Exact Commons file page revision 1195639404 checked 2026-10-08; local pixels rechecked 2026-10-09 and show Ko Lipe white beach, palms and turquoise sea.' }],
+  ['/assets/images/thailand-andaman-similan.webp', { sourceTitle: 'File:Ko similan panorama from sailboat rock.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ko_similan_panorama_from_sailboat_rock.jpg', creditLabel: 'Ko Similan panorama from Sailboat Rock', creator: 'Sgroey', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/', editHistory: 'Resized, display-cropped and converted to WebP.', note: 'Exact Commons file page revision 1252055214 checked 2026-10-08; local pixels rechecked 2026-10-09 and match the panoramic Similan cove, granite formations and boats. Commons structured page date is 1 July 2016 but embedded EXIF says 12 November 2016; sourcePhotoDate remains null until this discrepancy is resolved.' }],
+  ['/assets/images/thailand-chiang-mai-doi-inthanon.webp', { sourceTitle: 'File:Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon.jpg', creditLabel: 'Wild Himalayan Cherry blossoms and mountain silhouette at Doi Inthanon', creator: 'Nnthurber', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', editHistory: 'Resized and converted to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, CC BY-SA 4.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08; the image shows wild Himalayan cherry blossoms framing a distant mountain ridge.' }],
+  ['/assets/images/thailand-chiang-mai-mae-kampong.webp', { sourceTitle: 'File:Mae Kum Pong 01.jpg', creditLabel: 'Mae Kum Pong 01', creator: 'LannaPhoto', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', editHistory: 'Resized and converted to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, CC BY-SA 3.0 commercial reuse terms and local WebP pixels were checked on 2026-10-08; the image shows a covered terrace overlooking a forested village valley, not a village street.' }],
+  ['/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', { sourceTitle: 'File:One Nimman - One Street P 20171220 130152.jpg', creditLabel: 'One Nimman - One Street P 20171220 130152', creator: 'FredTC', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-12-20', editHistory: 'Converted from a 960 × 1,280 Commons JPEG thumbnail to WebP; adaptation shared under the same license version.', note: 'Exact Commons title, creator, 20 December 2017 date, original dimensions and CC BY-SA 4.0 commercial reuse terms were checked on 2026-10-08. Local pixels match the covered One Street shopping arcade at One Nimman.' }],
+  ['/assets/images/thailand-chiang-mai-old-city.webp', { sourceTitle: 'File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg', creditLabel: 'Wat Chedi Luang', creator: 'Jakub Hałun', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-11-05', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
+  ['/assets/images/thailand-chiang-mai-wat-pha-lat.webp', { sourceTitle: 'File:Chiang Mai - Wat Pha Lat - 0001.jpg', creditLabel: 'Wat Pha Lat', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/', sourcePhotoDate: '2014-05-24', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and commercial-use terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
+  ['/assets/images/thailand-chiang-mai-ping-river.webp', { sourceTitle: 'File:Ping River in Chiang Mai 3.jpg', creditLabel: 'Ping River from Chansom Memorial Bridge', creator: 'Christophe95', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-09-06', editHistory: 'Resized and converted to WebP; display crop.', note: 'Exact source URL and existing credit were matched. Commons source page, creator, photograph date, license version and reuse terms were checked on 2026-10-08. Local WebP pixels were not visually inspected.' }],
+  ['/assets/images/china-destination-harbin.webp', { sourceTitle: 'File:Harbin Saint Sophia Cathedral 2017 summer.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Harbin_Saint_Sophia_Cathedral_2017_summer.jpg', creditLabel: 'Saint Sophia Cathedral, Harbin', creator: 'Amarespeco', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2017-07-14', editHistory: 'Resized and display-cropped from a 4,000 × 6,000 portrait original to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, Amarespeco authorship, 14 July 2017 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Saint Sophia Cathedral’s domes and crosses beneath a summer sky.' }],
+  ['/assets/images/china-destination-inner-mongolia.webp', { sourceTitle: 'File:Hulun Buir.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hulun_Buir.jpg', creditLabel: 'Hulun Buir grassland', creator: 'Emmazzye', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2018-07-15', editHistory: 'Resized and display-cropped to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, Emmazzye authorship, 15 July 2018 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show rolling green Hulun Buir grassland beneath a blue sky.' }],
+  ['/assets/images/china-destination-huangshan.webp', { sourceTitle: 'File:Huangshan pic 6.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Huangshan_pic_6.jpg', creditLabel: 'Mount Huangshan in mist', creator: 'eviltomthai', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', sourcePhotoDate: '2009-09-28', editHistory: 'Resized to 960 × 640 and converted to WebP at the source aspect ratio.', note: 'Exact Commons title, eviltomthai authorship, 28 September 2009 photograph date, original dimensions and CC BY 2.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Huangshan peaks and pines emerging through mountain mist.' }],
+  ['/assets/images/china-destination-qingdao.webp', { sourceTitle: 'File:Qingdao Zhanqiao.jpg', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Qingdao_Zhanqiao.jpg', creditLabel: 'Qingdao waterfront and Zhanqiao', creator: 'Vitsuha', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/', sourcePhotoDate: '2021-07-19', editHistory: 'Resized and display-cropped to 960 × 640 WebP; adaptation shared under CC BY-SA 4.0.', note: 'Exact Commons title, Vitsuha authorship, 19 July 2021 photograph date, original dimensions and CC BY-SA 4.0 terms were checked on 2026-10-11. Local WebP pixels were inspected and show Zhanqiao, Qingdao’s sandy waterfront and bayfront.' }]
+]);
+const visuallyReviewedAssetPaths = new Set([
+  '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp',
+  '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp',
+  '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp',
+  '/assets/images/malaysia-semporna.webp',
+  '/assets/images/malaysia-semporna-water-taxi.webp',
+  '/assets/images/malaysia-tun-sakaran.webp',
+  '/assets/images/thailand-chiang-mai-warorot.webp',
+  '/assets/images/thailand-chiang-mai-mae-rim.webp',
+  '/assets/images/thailand-chiang-mai-doi-inthanon.webp',
+  '/assets/images/thailand-chiang-mai-mae-kampong.webp',
+  '/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp',
+  '/assets/images/korea-namsan-tower.webp',
+  '/assets/images/vietnam-hue-minh-mang-20261008.webp',
+  '/assets/images/france-paris-louvre-salle-mollien-20261006.webp',
+  '/assets/images/italy-rome-ancient-rome-capitoline.webp',
+  '/assets/images/italy-rome-historic-centre-trastevere.webp',
+  '/assets/images/australia-red-centre-mparntwe-alice-springs.webp',
+  '/assets/images/australia-red-centre-tjoritja-west-macdonnell.webp',
+  '/assets/images/australia-red-centre-watarrka-kings-canyon.webp',
+  '/assets/images/australia-red-centre-uluru-cultural-landscape.webp',
+  '/assets/images/australia-red-centre-kata-tjuta.webp',
+  '/assets/images/thailand-andaman-phang-nga.webp',
+  '/assets/images/thailand-andaman-ko-lanta.webp',
+  '/assets/images/thailand-andaman-similan.webp',
+  '/assets/images/thailand-phuket-beach.webp',
+  '/assets/images/thailand-andaman-phuket-old-town.webp',
+  '/assets/images/thailand-andaman-phi-phi.webp',
+  '/assets/images/thailand-andaman-railay.webp',
+  '/assets/images/thailand-andaman-trang-islands.webp',
+  '/assets/images/thailand-andaman-ko-lipe.webp',
+  '/assets/images/italy-naples-pompeii-vesuvius-pompeii-city-route.webp',
+  '/assets/images/italy-naples-pompeii-vesuvius-herculaneum-vesuvius.webp',
+  '/assets/images/italy-puglia-alberobello-itria-valley.webp',
+  '/assets/images/italy-puglia-bari-trani-castel-del-monte.webp',
+  '/assets/images/italy-puglia-lecce-otranto-gallipoli.webp',
+  '/assets/images/italy-sardinia-gulf-orosei-gennargentu.webp',
+  '/assets/images/italy-siena-southern-tuscany-maremma-park-coast.webp',
+  '/assets/images/italy-siena-southern-tuscany-siena-civic-cathedral.webp',
+  '/assets/images/takoyaki.webp',
+  '/assets/images/tennoji-harukas.webp',
+  '/assets/images/shinsekai.webp',
+  '/assets/images/dotonbori-night.webp',
+  '/assets/images/namba-yasaka.webp',
+  '/assets/images/osaka-castle-moat.webp',
+  '/assets/images/tempozan-dusk.webp',
+  '/assets/images/osaka-skyline.webp',
+  '/assets/images/hokkaido-asahidake.webp',
+  '/assets/images/biei-landscape.webp',
+  '/assets/images/hokkaido-shiretoko-five-lakes.webp',
+  '/assets/images/hokkaido-sapporo-odori.webp',
+  '/assets/images/hokkaido-susukino-night.webp',
+  '/assets/images/hokkaido-otaru-canal.webp',
+  '/assets/images/hokkaido-cape-kamui.webp',
+  '/assets/images/hokkaido-hakodate-night.webp',
+  '/assets/images/hokkaido-onuma-komagatake.webp',
+  '/assets/images/hokkaido-furano-lavender.webp',
+  '/assets/images/hokkaido-niseko-yotei.webp',
+  '/assets/images/hokkaido-noboribetsu-jigokudani.webp',
+  '/assets/images/hokkaido-kushiro-marsh.webp',
+  '/assets/images/hokkaido-abashiri-drift-ice.webp',
+  '/assets/images/hokkaido-daisetsuzan-north-view.webp',
+  '/assets/images/hokkaido-yoichi-coast.webp',
+  '/assets/images/france-normandy-rouen-seine-cathedral.webp',
+  '/assets/images/france-normandy-bayeux-dday-landscape.webp',
+  '/assets/images/france-normandy-mont-saint-michel-bay.webp',
+  '/assets/images/france-loire-valley-blois-chambord.webp',
+  '/assets/images/france-loire-valley-amboise-chenonceau.webp',
+  '/assets/images/france-loire-valley-tours-villandry-azay.webp'
+]);
+const visualReviewDateByAsset = new Map([
+  ['/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp', '2026-10-12'],
+  ['/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp', '2026-10-12'],
+  ['/assets/images/australia-adelaide-hills-route-choice.svg', '2026-10-12'],
+  ['/assets/images/australia-kangaroo-island-regional-days.svg', '2026-10-12'],
+  ['/assets/images/australia-kings-park-entry-choice.svg', '2026-10-12'],
+  ['/assets/images/australia-perth-coast-transit-choice.svg', '2026-10-12'],
+  ['/assets/images/australia-blue-mountains-nsw-coast-katoomba-echo-point.webp', '2026-10-12'],
+  ['/assets/images/australia-blue-mountains-nsw-coast-wentworth-falls-tableland.webp', '2026-10-12'],
+  ['/assets/images/australia-blue-mountains-nsw-coast-blackheath-grose-valley.webp', '2026-10-12'],
+  ['/assets/images/canada-niagara-falls-parkway.webp', '2026-10-12'],
+  ['/assets/images/canada-niagara-niagara-gorge.webp', '2026-10-12'],
+  ['/assets/images/canada-niagara-niagara-on-the-lake.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-jasper-town-maligne.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-icefields-parkway.webp', '2026-10-12'],
+  ['/assets/images/canada-jasper-icefields-athabasca-sunwapta.webp', '2026-10-12'],
+  ['/assets/images/tripdistill-canada-jasper-three-corridors.svg', '2026-10-12'],
+  ['/assets/images/tripdistill-canada-newfoundland-regions.svg', '2026-10-12'],
+  ['/assets/images/tripdistill-canada-banff-two-corridors.svg', '2026-10-12'],
+  ['/assets/images/france-lille-french-flanders-arras-vimy-remembrance.webp', '2026-10-12'],
+  ['/assets/images/france-lille-arras-vimy-sequence-legend.svg', '2026-10-12'],
+  ['/assets/images/malaysia-kinabatangan.webp', '2026-10-12'],
+  ['/assets/images/malaysia-sepilok.webp', '2026-10-12'],
+  ['/assets/images/malaysia-kinabatangan-proboscis.webp', '2026-10-12'],
+  ['/assets/images/switzerland-zermatt-matterhorn-village-gornergrat.webp', '2026-10-12'],
+  ['/assets/images/switzerland-zermatt-matterhorn-sunnegga-five-lakes.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-banff-town-bow-valley.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-lake-louise-moraine.webp', '2026-10-12'],
+  ['/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp', '2026-10-12'],
+  ['/assets/images/switzerland-lugano-southern-ticino-lugano-lakefront.webp', '2026-10-12'],
+  ['/assets/images/switzerland-locarno-ascona-valleys-locarno-ascona.webp', '2026-10-12'],
+  ['/assets/images/switzerland-schaffhausen-rhine-falls-rhine-falls.webp', '2026-10-12'],
+  ['/assets/images/france-provence-inland-avignon-papal-city.webp', '2026-10-12'],
+  ['/assets/images/france-provence-inland-aix-markets-cezanne.webp', '2026-10-12'],
+  ['/assets/images/france-provence-inland-luberon-villages-abbey.webp', '2026-10-12'],
+  ['/assets/images/france-marseille-calanques-old-port-panier-mucem.webp', '2026-10-12'],
+  ['/assets/images/france-marseille-calanques-calanques-access-choice.webp', '2026-10-12'],
+  ['/assets/images/france-marseille-calanques-cassis-la-ciotat.webp', '2026-10-12'],
+  ['/assets/images/thailand-chatuchak.webp', '2026-10-08'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-bakewell-chatsworth.webp', '2026-10-12'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-hope-valley-edale.webp', '2026-10-12'],
+  ['/assets/images/united-kingdom-peak-district-derbyshire-dovedale-ashbourne.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-nice-old-town-hills.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-eze-monaco-menton.webp', '2026-10-12'],
+  ['/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp', '2026-10-12'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-oxford-colleges-museums.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-blenheim-woodstock.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-oxford-cotswolds-cotswold-towns-without-car.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-bath-bristol-somerset-bath-roman-georgian-city.webp', '2026-10-11'],
+  ['/assets/images/united-kingdom-bath-bristol-somerset-bristol-harbourside-clifton.webp', '2026-10-11'],
+  ...[...visuallyReviewedAssetPaths].map((assetPath) => [assetPath, verifiedOn]),
+  ...[
+    '/assets/images/thailand-phuket-beach.webp',
+    '/assets/images/thailand-andaman-phuket-old-town.webp',
+    '/assets/images/thailand-andaman-phang-nga.webp',
+    '/assets/images/thailand-andaman-phi-phi.webp',
+    '/assets/images/thailand-andaman-ko-lanta.webp',
+    '/assets/images/thailand-andaman-similan.webp'
+  ].map((assetPath) => [assetPath, '2026-10-08']),
+  ['/assets/images/thailand-andaman-railay.webp', '2026-10-09'],
+  ['/assets/images/thailand-andaman-trang-islands.webp', '2026-10-09'],
+  ['/assets/images/thailand-andaman-ko-lipe.webp', '2026-10-09'],
+  ['/assets/images/thailand-andaman-similan.webp', '2026-10-09'],
+  ['/assets/images/thailand-chiang-mai-warorot.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-mae-rim.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-doi-inthanon.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-mae-kampong.webp', '2026-10-08'],
+  ['/assets/images/thailand-chiang-mai-one-nimman-street-20261008.webp', '2026-10-08'],
+  ['/assets/images/korea-namsan-tower.webp', '2026-10-08'],
+  ['/assets/images/vietnam-hue-minh-mang-20261008.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-old-town-lindenhof.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-lake-uetliberg.webp', '2026-10-08'],
+  ['/assets/images/switzerland-zurich-lake-zurich-west-museums.webp', '2026-10-08'],
+  ['/assets/images/france-paris-louvre-salle-mollien-20261006.webp', '2026-10-06'],
+  ['/assets/images/france-bordeaux-gironde-bordeaux-river-wine-city.webp', '2026-10-11'],
+  ['/assets/images/france-bordeaux-gironde-saint-emilion-vineyards.webp', '2026-10-11'],
+  ['/assets/images/france-bordeaux-gironde-arcachon-dune-pilat.webp', '2026-10-11'],
+  ['/assets/images/italy-venice-lagoon-san-marco-rialto.webp', '2026-10-05'],
+  ['/assets/images/italy-venice-lagoon-cannaregio-dorsoduro-giudecca.webp', '2026-10-05'],
+  ['/assets/images/italy-genoa-liguria-cinque-terre-rail-trails.webp', '2026-10-05'],
+  ['/assets/images/italy-basilicata-calabria-tropea-scilla-reggio.webp', '2026-10-05'],
+  ['/assets/images/korea-jeju-yongduam.webp', '2026-10-07'],
+  ['/assets/images/takoyaki.webp', '2026-10-06'],
+  ['/assets/images/tennoji-harukas.webp', '2026-10-06'],
+  ['/assets/images/shinsekai.webp', '2026-10-06'],
+  ['/assets/images/dotonbori-night.webp', '2026-10-06'],
+  ['/assets/images/namba-yasaka.webp', '2026-10-06'],
+  ['/assets/images/osaka-castle-moat.webp', '2026-10-06'],
+  ['/assets/images/tempozan-dusk.webp', '2026-10-06'],
+  ['/assets/images/osaka-skyline.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-noboribetsu-jigokudani.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-lake-toya.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-kushiro-marsh.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-red-crowned-cranes.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-lake-akan.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-abashiri-drift-ice.webp', '2026-10-06'],
+  ['/assets/images/hokkaido-shiretoko-five-lakes.webp', '2026-10-06'],
+  ['/assets/images/france-normandy-rouen-seine-cathedral.webp', '2026-10-07'],
+  ['/assets/images/france-normandy-bayeux-dday-landscape.webp', '2026-10-07'],
+  ['/assets/images/france-normandy-mont-saint-michel-bay.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-blois-chambord.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-amboise-chenonceau.webp', '2026-10-07'],
+  ['/assets/images/france-loire-valley-tours-villandry-azay.webp', '2026-10-07'],
+  ['/assets/images/vietnam-da-nang-han-river.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-marble-mountains.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-my-khe.webp', '2026-10-08'],
+  ['/assets/images/vietnam-da-nang-son-tra.webp', '2026-10-08'],
+  ['/assets/images/vietnam-hoi-an-ancient-town.webp', '2026-10-08'],
+  ['/assets/images/vietnam-my-son-sanctuary.webp', '2026-10-08'],
+  ['/assets/images/thailand-wat-arun-river.webp', '2026-10-08'],
+  ['/assets/images/thailand-wat-arun-sunset.webp', '2026-10-08'],
+  ['/assets/images/thailand-grand-palace.webp', '2026-10-08'],
+  ['/assets/images/thailand-phra-athit.webp', '2026-10-08'],
+  ['/assets/images/thailand-yaowarat-night.webp', '2026-10-08'],
+  ['/assets/images/thailand-siam-skyline.webp', '2026-10-08'],
+  ['/assets/images/thailand-sukhumvit-night.webp', '2026-10-08'],
+  ['/assets/images/thailand-lumphini.webp', '2026-10-08'],
+  ['/assets/images/thailand-khlong-bang-luang.webp', '2026-10-08'],
+  ['/assets/images/canada-victoria-south-island-inner-harbour-james-bay.webp', '2026-10-08'],
+  ['/assets/images/canada-victoria-south-island-butchart-saanich.webp', '2026-10-08'],
+  ['/assets/images/thailand-ayutthaya-station.webp', '2026-10-09'],
+  ['/assets/images/thailand-ayutthaya-wat-lokayasutharam.webp', '2026-10-09'],
+  ['/assets/images/thailand-ayutthaya-wat-yai-chai-mongkhon.webp', '2026-10-09']
+]);
+for (const assetPath of [
+  '/assets/images/malaysia-perhentian.webp',
+  '/assets/images/malaysia-perhentian-coral-bay.webp',
+  '/assets/images/malaysia-redang-beach.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+for (const assetPath of [
+  '/assets/images/malaysia-kota-kinabalu.webp',
+  '/assets/images/malaysia-kota-kinabalu-jetty.webp',
+  '/assets/images/malaysia-kota-kinabalu-islands.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+for (const assetPath of [
+  '/assets/images/france-dordogne-perigord-sarlat-market-old-town.webp',
+  '/assets/images/france-dordogne-perigord-vezere-prehistory.webp',
+  '/assets/images/france-dordogne-perigord-dordogne-castles-villages.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+for (const assetPath of [
+  '/assets/images/united-kingdom-cornwall-devon-st-ives-penwith.webp',
+  '/assets/images/united-kingdom-cornwall-devon-falmouth-roseland.webp',
+  '/assets/images/united-kingdom-cornwall-devon-exeter-dartmoor-edge.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+for (const assetPath of [
+  '/assets/images/malaysia-cameron-highlands.webp',
+  '/assets/images/malaysia-cameron-mossy-forest.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+for (const assetPath of [
+  '/assets/images/china-destination-harbin.webp',
+  '/assets/images/china-destination-inner-mongolia.webp',
+  '/assets/images/china-destination-huangshan.webp',
+  '/assets/images/china-destination-qingdao.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+const chinaCn15PhotoAssetPaths = [
+  '/assets/images/china-beijing-798.webp',
+  '/assets/images/china-beijing-forbidden-city-sunset.webp',
+  '/assets/images/china-beijing-jingshan-view.webp',
+  '/assets/images/china-beijing-mutianyu.webp',
+  '/assets/images/china-beijing-palace-detail.webp',
+  '/assets/images/china-beijing-shichahai.webp',
+  '/assets/images/china-beijing-summer-palace.webp',
+  '/assets/images/china-beijing-temple-heaven.webp',
+  '/assets/images/china-beijing-yonghe.webp',
+  '/assets/images/china-destination-changsha.webp',
+  '/assets/images/china-destination-chengdu.webp',
+  '/assets/images/china-destination-chongqing.webp',
+  '/assets/images/china-destination-dali.webp',
+  '/assets/images/china-destination-datong.webp',
+  '/assets/images/china-destination-dunhuang.webp',
+  '/assets/images/china-destination-fujian-tulou.webp',
+  '/assets/images/china-destination-guangzhou.webp',
+  '/assets/images/china-destination-guilin.webp',
+  '/assets/images/china-destination-guizhou.webp',
+  '/assets/images/china-destination-hangzhou.webp',
+  '/assets/images/china-destination-harbin.webp',
+  '/assets/images/china-destination-huangshan.webp',
+  '/assets/images/china-destination-inner-mongolia.webp',
+  '/assets/images/china-destination-kunming.webp',
+  '/assets/images/china-destination-lijiang.webp',
+  '/assets/images/china-destination-luoyang.webp',
+  '/assets/images/china-destination-nanjing.webp',
+  '/assets/images/china-destination-pingyao.webp',
+  '/assets/images/china-destination-qingdao.webp',
+  '/assets/images/china-destination-sanya.webp',
+  '/assets/images/china-destination-shenzhen.webp',
+  '/assets/images/china-destination-suzhou.webp',
+  '/assets/images/china-destination-wuhan.webp',
+  '/assets/images/china-destination-xian.webp',
+  '/assets/images/china-destination-xinjiang.webp',
+  '/assets/images/china-destination-zhangjiajie.webp',
+  '/assets/images/china-great-wall-country.webp',
+  '/assets/images/china-hangzhou-broken-bridge.webp',
+  '/assets/images/china-hangzhou-grand-canal.webp',
+  '/assets/images/china-hangzhou-hefang.webp',
+  '/assets/images/china-hangzhou-leifeng.webp',
+  '/assets/images/china-hangzhou-liangzhu.webp',
+  '/assets/images/china-hangzhou-lingyin.webp',
+  '/assets/images/china-hangzhou-longjing.webp',
+  '/assets/images/china-hangzhou-west-lake.webp',
+  '/assets/images/china-hangzhou-xixi.webp',
+  '/assets/images/china-shanghai-huangpu-panorama.webp'
+];
+const chinaCn15PhotoAssetPathSet = new Set(chinaCn15PhotoAssetPaths);
+const chinaCn15TargetRoutes = new Set(['/china/', '/china/beijing/', '/china/hangzhou/', '/china/beijing/summer-palace/']);
+for (const assetPath of chinaCn15PhotoAssetPaths) visualReviewDateByAsset.set(assetPath, '2026-10-11');
+visualReviewDateByAsset.set('/assets/images/china-lhasa-preparation.svg', '2026-10-11');
+for (const assetPath of [
+  '/assets/images/malaysia-semporna.webp',
+  '/assets/images/malaysia-semporna-water-taxi.webp',
+  '/assets/images/malaysia-tun-sakaran.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Castle_and_church_(left)_of_Beynac_along_the_Dordogneriver_-_panoramio.jpg', {
+  detail: 'Dordogne photo review: exact Commons page checked for Henk Monster, the Beynac castle/church viewpoint, source date 16 October 2011, original 4,342 × 3,257 dimensions and CC BY 3.0 declaration. Local WebP pixels match the castle and village across the Dordogne. Attribution, linked license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sarlat_2008_05.jpg', {
+  detail: 'Dordogne photo review: exact Commons page checked for Manfred Heyde, the south end of Sarlat market square, source date May 2008, original 2,892 × 1,976 dimensions and CC BY-SA 3.0 declaration. Local WebP pixels match the market square and stall shelters. Attribution, linked same-version license and WebP edit note are present; this documents the page declaration, not an independent rights clearance.',
+  checkedOn: '2026-10-11'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Marseille_-_Vieux_Port_-_MUCEM.jpg', {
+  detail: 'Marseille photo review: the exact Commons page lists Remi Mathis, 7 August 2011, original 2,560 × 1,920 pixels, and CC BY-SA 3.0. The local 1,600 × 1,066 WebP shows an older harbor-side stone building under restoration scaffolding; it is not a current view of the completed Mucem. Source SHA-1 7d381ee1748237e9db100c3e84e36d09c2180ddb matches the recorded manifest value. Attribution, source/license links and WebP/crop disclosure are present. This records the page declaration and image match, not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Calanques_National_Park_seen_from_the_airplane.jpg', {
+  detail: 'Marseille photo review: the exact Commons page lists MikkoNilssonCom, 13 February 2018, original 3,008 × 2,000 pixels, and CC BY-SA 4.0. The local 1,600 × 1,066 WebP shows the aerial limestone inlets including Port-Miou, Port-Pin and En-Vau; an upper-left aircraft/window reflection remains visible. Source SHA-1 684c46cd9c74d508c0c51324e6533f545ad4b904 matches the recorded manifest value. Attribution, source/license links and WebP/crop disclosure are present. This records the page declaration and image match, not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Cap_Canaille_depuis_le_port_de_Cassis.jpg', {
+  detail: 'Marseille photo review: the exact Commons page lists DJ Poldoc, 5 October 2013, original 3,872 × 2,592 pixels, and a CC0 1.0 declaration. The local 1,600 × 1,066 WebP shows Cassis harbor with boats in the foreground and Cap Canaille beyond; a mast/pole partly crosses the cliff view. Source SHA-1 4c262f89d1eaa0d52a65b8d2593f0a972257f6fd matches the recorded manifest value. The visible credit retains source and creator provenance, though CC0 does not require attribution. This records the page declaration and image match, not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Avignon_-_%C3%8Ele_de_Piot_-_Chemin_des_Berges_-_Panorama_View_from_the_Rh%C3%B4ne_river_bank_towards_Pont_Saint_B%C3%A9n%C3%A9zet_(Pont_d%27Avignon),_Jardin_des_doms,_Avignon_Cathedral,_Palais_des_Papes_%26_Pont_%C3%89douard_Daladier_02.jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Txllxt TxllxT and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show distant walled Avignon skyline and Palace of the Popes from the Rhône bank at Île de Piot, consistent with the source subject and current route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:France-002438_-_Cours_Mirabeau_Fountain_(15867627856).jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Dennis G. Jarvis and CC BY-SA 2.0. The local 1,600 × 1,066 WebP pixels were inspected and show Fontaine de la Rotonde and plane-tree avenue on Cours Mirabeau in Aix-en-Provence, consistent with the source subject and current route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Village_of_Gordes.jpg', {
+  detail: 'Provence inland photo review: the exact Commons page lists Einaz80 and CC BY-SA 4.0. The local 1,600 × 1,066 WebP pixels were inspected and show Gordes hillside village and stone buildings in the Luberon, consistent with the route image description. The visible source credit and linked license declaration are present. This records the page declaration and image match; it is not independent rights clearance or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Canal_@_Old_Town_@_Annecy_(35501456545).jpg', {
+  detail: 'French Alps photo review: the exact Commons page identifies Guilhem Vellut, the Annecy old-town canal subject, and CC BY 2.0. The page lists the original 5,472 × 3,648 source and SHA-1 67906f432c94821646db902c7f98a1ce8b0294fe. Local WebP pixels match the canals and old-town waterfront; this records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Valley_of_Chamonix_towards_the_north_from_Aiguille_du_Midi,_Chamonix-Mont-Blanc,_2007.jpg', {
+  detail: 'French Alps photo review: the exact Commons page identifies DimiTalen, the Chamonix valley/Mont Blanc subject, and a CC0 1.0 dedication. The page lists the original 2,982 × 1,983 file and SHA-1 c24f0e9cc3f6d43563b34e716073879879e145ae. Local WebP pixels show the valley from Aiguille du Midi; this records the source-page declaration, not independent rights clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:T%C3%A9l%C3%A9ph%C3%A9rique_de_Grenoble_Bastille_-_Grenoble-Bastille_cable_car_-_%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D9%84%D8%A7%D8%AA_%D8%BA%D8%B1%D9%88%D9%86%D9%88%D8%A8%D9%84-%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%AA%D9%8A%D9%84.jpg', {
+  detail: 'French Alps retired-photo source review: the exact Commons page identifies Sami Mlouhi and declares CC BY-SA 4.0. Local pixels show a close-up of the Grenoble Bastille cable-car cabin/support, not the basin panorama named by the old guide alt text. The unchanged derivative is retained but no longer used; the source-page declaration is not independent rights or chain-of-title verification.',
+  checkedOn: '2026-10-12'
+});
+visualReviewDateByAsset.set('/assets/images/france-french-alps-annecy-lake-old-town.webp', '2026-10-12');
+visualReviewDateByAsset.set('/assets/images/france-french-alps-chamonix-mountain-systems.webp', '2026-10-12');
+visualReviewDateByAsset.set('/assets/images/france-french-alps-grenoble-bastille-chartreuse.webp', '2026-10-12');
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Perhentian_Kecil_Island,_Malaysia,_Beach.jpg', {
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Vyacheslav Argenberg and CC BY 4.0. Local 1,440 × 960 WebP pixels were inspected and show a palm-lined Perhentian beach with clear water and a small shoreline; the subject matches the route image description. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Coral_Bay,_Perhentian_Kecil.JPG', {
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit DTravel AU and CC BY-SA 3.0. Local 1,440 × 960 WebP pixels were inspected and show Coral Bay shoreline, boats and a palm-lined coast; the subject matches the route image description. The selected CC BY-SA 3.0 version is credited and its adaptation remains under that version. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Pulau_Redang_-_White_sandy_beach.jpg', {
+  detail: 'Perhentian/Redang photo review: the existing route review records the exact Commons page credit Azreey and CC BY-SA 4.0. Local 1,440 × 960 WebP pixels were inspected and show the white-sand Redang shore, turquoise water and a rocky headland; the subject matches the route image description. The selected CC BY-SA 4.0 version is credited and its adaptation remains under that version. This is a source-page and pixel record, not independent uploader-authority, rights-chain or legal clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page lists Garysawjuntiek, 25 August 2018, 4,160 × 3,120 original pixels and CC BY-SA 4.0. The local 1,440 × 960 WebP pixels show the Kota Kinabalu waterfront, sea, islands and sunset, consistent with the image description. The exact source, creator and license version appear in the page credits; the page also discloses resizing, center-cropping and WebP conversion. This records the page declaration and local subject match, not independent rights or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page identifies Stefan Fussan, 1 January 2012, 1,200 × 729 original pixels and a CC BY-SA 3.0 declaration among its listed license versions; the author text also names CC BY-SA 4.0 as a later option. The local 1,440 × 960 WebP pixels show passenger boats moored at the Kota Kinabalu waterfront, matching the route image description. The visible credit selects CC BY-SA 3.0 and links to the exact page; the page discloses resizing, center-cropping and WebP conversion. This records the page declarations and local subject match, not independent rights or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Manukan,_Mamutik_%26_Sulug_-_Happy_Islands.jpg', {
+  detail: 'Kota Kinabalu photo review: the exact Commons page lists Thien Zie Yung, 16 December 2008, 3,648 × 2,736 original pixels and CC BY 2.0. The local 1,440 × 960 WebP pixels show the Sabah coast and several islands from the air, consistent with the Tunku Abdul Rahman Park image description. The exact source, creator and license appear in the page credits; the page discloses resizing, center-cropping and WebP conversion. This records the page declaration and local subject match, not independent rights or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+for (const assetPath of [
+  '/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp',
+  '/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp',
+  '/assets/images/canada-saguenay-tadoussac-saguenay-city-valley.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Tadoussac.jpg', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies Bodoklecksel and declares CC BY-SA 3.0. The local WebP pixels show harbor and waterfront below a forested ridge across the water; no whale is visible, so the image is not evidence of a wildlife sighting. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies Ajor933 and declares CC BY-SA 3.0. The local WebP pixels show forest-covered ridges across the fjord framed by pine branches; no hiker or prominent cliff face is visible. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:2016-10_Saguenay_river_-_Chicoutimi_at_night_01.jpg', {
+  detail: 'Saguenay–Tadoussac photo review: the exact Commons page identifies 0x010C and declares CC BY-SA 4.0. The local WebP pixels show Chicoutimi waterfront lights reflected on the Saguenay River at night. The English credit links the exact source and license and states the resize, display crop, WebP conversion and same-license adaptation. This records the source-page declaration and pixel match; it does not independently establish uploader authority or a rights chain.',
+  checkedOn: '2026-10-12'
+});
+for (const assetPath of [
+  '/assets/images/australia-gold-coast-scenic-rim-surfers-paradise-broadbeach.webp',
+  '/assets/images/australia-gold-coast-scenic-rim-burleigh-heads-tallebudgera.webp',
+  '/assets/images/australia-gold-coast-scenic-rim-coolangatta-snapper-rocks.webp'
+]) visualReviewDateByAsset.set(assetPath, '2026-10-12');
+for (const [sourceUrl, detail] of [
+  ['https://commons.wikimedia.org/wiki/File:Surfers_Paradise_Beach_with_skyline.jpg', 'Gold Coast photo review: the exact Commons page identifies Bernard Spragg. NZ from Christchurch, New Zealand and declares a CC0 1.0 dedication. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Surfers Paradise beach, surf and skyline, matching the route image and alt. The visible credit links the source and license and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Burleigh_Heads_and_Tallebudgera_Creek_2.JPG', 'Gold Coast photo review: the exact Commons page identifies Shiftchange and declares the photograph public domain. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show the Tallebudgera Creek shoreline and nearby beach, matching the route image and alt. The visible credit links the source and discloses resize, display crop and WebP conversion. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.'],
+  ['https://commons.wikimedia.org/wiki/File:Snapper_Rocks,_Coolangatta,_Gold_Coast,_Queensland_03.jpg', 'Gold Coast photo review: the exact Commons page identifies Kgbo and declares CC BY-SA 4.0. Local 1,600 × 1,066 WebP pixels were inspected on 2026-10-12 and show Snapper Rocks surf breaking across the rocky coast, matching the route image and alt. The visible credit links the source and versioned license, discloses resize, display crop and WebP conversion, and keeps the adaptation under CC BY-SA 4.0. The source-page declaration and pixel subject review are recorded separately; no independent rights clearance is claimed.']
+]) {
+  verifiedSourcePageDetails.set(sourceUrl, { detail, checkedOn: '2026-10-12' });
+}
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Lakefront_Lugano_2017-05-29_13.15.22.jpg', {
+  detail: 'Switzerland CH14 Lugano photo review: the exact Commons page identifies Chris j wood, the SNV Ceresio at Lugano landing stage, and declares CC BY-SA 4.0. Local WebP pixels were inspected and match the ferry at the Lugano lakefront. Visible source credit, linked license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Locarno,_Ascona_%26_Lago_Maggiore_von_Brione_sopra_M.jpg', {
+  detail: 'Switzerland CH14 Locarno photo review: the exact Commons page describes the Lake Maggiore view from Brione sopra Minusio, identifies Glenn Steiger, and lists GFDL and CC BY 3.0. Local WebP pixels were inspected and match the Locarno/Ascona and lake view. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+verifiedSourcePageDetails.set('https://commons.wikimedia.org/wiki/File:Caught_in_turbulent_waters_at_the_Rhine_Falls,_Neuhausen_-_panoramio.jpg', {
+  detail: 'Switzerland CH14 Rhine Falls photo review: the exact Commons page identifies “More pics than views…”, records 4 July 2014 and declares CC BY 3.0 with a bot license review. Local WebP pixels were inspected and match the Rhine Falls viewing platform and waterfall. Visible source credit, linked CC BY 3.0 license and WebP/crop disclosure are present. This records the page declaration and pixel match, not independent uploader authority or chain-of-title clearance.',
+  checkedOn: '2026-10-12'
+});
+const entries = [];
+const sourceConflicts = [];
+const unmatchedByAsset = [];
+for (const fullPath of assetPaths) {
+  const relativePath = '/' + path.relative(root, fullPath).replaceAll('\\', '/');
+  const src = relativePath;
+  const dataRecords = recordsBySrc.get(src) || [];
+  const uniqueValues = (key) => [...new Set(dataRecords.map((record) => record[key]).filter(Boolean))];
+  const sourceDeclaredLicenses = [...new Set(dataRecords.flatMap((record) => Array.isArray(record.sourceDeclaredLicenses) ? record.sourceDeclaredLicenses : []))];
+  const conflicts = ['sourceUrl', 'sourceTitle', 'sourceDate', 'creator', 'license', 'rightsStatus', 'editHistory'].filter((key) => uniqueValues(key).length > 1);
+  if (conflicts.length) sourceConflicts.push({ src, fields: conflicts });
+  const uses = usesBySrc.get(src) || [];
+  const cn15RouteCreditsFor = (source) => chinaCn15PhotoAssetPathSet.has(src) && source
+    ? (creditsBySrc.get(source) || []).filter((credit) => chinaCn15TargetRoutes.has(credit.route) && uses.some((use) => use.route === credit.route))
+    : [];
+  let creditMatch = null;
+  const exactDataSource = uniqueValues('sourceUrl')[0] || null;
+  const candidateCredits = exactDataSource ? (creditsBySrc.get(exactDataSource) || []) : [];
+  const cn15RouteCredits = cn15RouteCreditsFor(exactDataSource);
+  const explicitPageCredits = explicitCreditsByAsset.get(src) || [];
+  const explicitPageIdentities = new Set(explicitPageCredits.map((credit) => [credit.sourceUrl, credit.license, credit.creator, credit.creditLabel].join('|')));
+  if (explicitPageIdentities.size === 1 && explicitPageCredits.length) {
+    creditMatch = { ...explicitPageCredits[0], matching: 'explicit_asset_credit_match', matchNote: 'The English photo-credit row explicitly identifies this exact image asset and links to the source page.' };
+  } else if (candidateCredits.length) {
+    creditMatch = { ...(cn15RouteCredits[0] || candidateCredits[0]), matching: 'source_url_match' };
+  } else if (!dataRecords.length) {
+    const scored = uses.map((use) => {
+      const pageFile = path.join(root, use.route.slice(1), 'index.html');
+      const document = parse(fs.readFileSync(pageFile, 'utf8'));
+      const pageCredits = photoCreditsInDocument(document);
+      return matchCredit(use, pageCredits);
+    }).filter(Boolean);
+    const identities = new Set(scored.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
+    if (identities.size === 1 && scored.length) creditMatch = scored[0];
+    else if (uses.length) creditMatch = matchCredit({ ...uses[0], route: '' }, allDistinctCredits.map((credit) => ({ ...credit, route: '' })));
+    const targetRouteCredit = creditMatch?.sourceUrl ? cn15RouteCreditsFor(creditMatch.sourceUrl)[0] : null;
+    if (targetRouteCredit && targetRouteCredit.license === creditMatch.license && targetRouteCredit.creator === creditMatch.creator) {
+      creditMatch = { ...targetRouteCredit, matching: creditMatch.matching, matchNote: creditMatch.matchNote };
+    }
+  }
+  const explicit = explicitCreditMappings.get(src);
+  if (explicit?.sourceUrl) {
+    const exactSourceCredits = (creditsBySrc.get(explicit.sourceUrl) || []).filter((credit) => (credit.license === explicit.license || credit.license === `${explicit.license} International`) && (!explicit.creator || credit.creator === explicit.creator || credit.creditText.includes(explicit.creator)));
+    const exactSourceIdentities = new Set(exactSourceCredits.map((credit) => [credit.sourceUrl, credit.license, explicit.creator || credit.creator].join('|')));
+    if (exactSourceIdentities.size === 1 && exactSourceCredits.length) {
+      const selectedCredit = cn15RouteCreditsFor(explicit.sourceUrl)[0] || exactSourceCredits[0];
+      creditMatch = { ...selectedCredit, creditLabel: explicit.creditLabel || selectedCredit.creditLabel, creator: explicit.creator || selectedCredit.creator, editHistory: explicit.editHistory || selectedCredit.editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    }
+  } else if (explicit) {
+    const candidates = allDistinctCredits.filter((credit) => credit.creditLabel === explicit.creditLabel && (!credit.creator || credit.creator === explicit.creator));
+    const identities = new Set(candidates.map((item) => [item.sourceUrl, item.license, item.creator].join('|')));
+    if (identities.size === 1 && candidates.length && candidates[0].creator && candidates[0].creator !== explicit.creator) {
+      throw new Error(`Explicit photo mapping creator disagrees with visible credit for ${src}`);
+    }
+    if (identities.size === 1 && candidates.length) {
+      const scopedCandidate = cn15RouteCreditsFor(candidates[0].sourceUrl).find((credit) => credit.license === candidates[0].license && credit.creator === candidates[0].creator);
+      const selectedCredit = scopedCandidate || candidates[0];
+      creditMatch = { ...selectedCredit, creator: selectedCredit.creator || explicit.creator, editHistory: explicit.editHistory || selectedCredit.editHistory, matching: 'explicit_asset_credit_match', matchNote: explicit.note };
+    }
+  }
+  const sourceUrl = uniqueValues('sourceUrl')[0] || explicit?.sourceUrl || creditMatch?.sourceUrl || null;
+  const sourceTitle = uniqueValues('sourceTitle')[0] || explicit?.sourceTitle || creditMatch?.creditLabel || null;
+  const sourcePhotoDate = uniqueValues('sourceDate')[0] || explicit?.sourcePhotoDate || creditMatch?.sourceDate || null;
+  const creator = uniqueValues('creator')[0] || explicit?.creator || creditMatch?.creator || null;
+  const license = uniqueValues('license')[0] || explicit?.license || creditMatch?.license || null;
+  const rightsStatus = uniqueValues('rightsStatus')[0] || null;
+  const rightsStatusUrl = uniqueValues('rightsStatusUrl')[0] || null;
+  const licenseUrl = uniqueValues('licenseUrl')[0] || explicit?.licenseUrl || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
+  const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
+  const authoredDiagram = dataRecords.some((record) => record.assetType === 'original-planning-diagram');
+  const rawVerification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
+  const verificationDetail = typeof rawVerification?.detail === 'string'
+    ? rawVerification.detail
+    : typeof rawVerification?.detail?.detail === 'string'
+      ? rawVerification.detail.detail
+      : null;
+  const verificationDate = rawVerification?.detail?.checkedOn || rawVerification?.checkedOn || verifiedOn;
+  const verification = rawVerification ? { detail: verificationDetail, checkedOn: verificationDate } : null;
+  const terms = licenseTerms(license, Boolean(verification));
+  const commercialReuseEligibility = uniqueValues('commercialReuseEligibility')[0] || terms.commercialReuseEligibility;
+  const attributionTerms = uniqueValues('attributionTerms')[0] || explicit?.attributionTerms || terms.attributionTerms;
+  const cn15VisibleCredits = cn15RouteCreditsFor(sourceUrl).filter((credit) => credit.license === license && credit.creator === creator).map((credit) => credit.creditText);
+  const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
+  const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
+  const inventoryStatus = imageUses.length ? 'used' : 'unused';
+  if (imageUses.length && uniqueValues('inventoryStatus').includes('unused')) {
+    throw new Error(`Asset ${src} is declared unused but remains referenced by a current English page.`);
+  }
+  const row = {
+    sha256: hash,
+    assetPath: src,
+    byteLength: fs.statSync(fullPath).size,
+    assetType: uniqueValues('assetType')[0] || 'photographic-raster',
+    sourceUrl,
+    sourceTitle,
+    sourcePhotoDate,
+    creditLabel: creditMatch?.creditLabel || null,
+    creator,
+    license,
+    sourceDeclaredLicenses: sourceDeclaredLicenses.length ? sourceDeclaredLicenses : null,
+    rightsStatus,
+    rightsStatusUrl,
+    licenseUrl,
+    commercialReuseEligibility,
+    attributionTerms,
+    editHistory: editHistory || 'No per-image edit note found in the source record or matched English photo credit.',
+    metadataOrigin: dataRecords.length ? 'structured_data_record' : creditMatch ? creditMatch.matching : 'unmatched',
+    creditMatchNote: creditMatch?.matchNote || (creditMatch?.matching === 'page_credit_lexical_match' ? 'Unique same-page label/alt match.' : null),
+    visualReviewStatus: visualReviewDateByAsset.has(src) ? `visually_reviewed_${visualReviewDateByAsset.get(src)}` : 'not_individually_visually_reviewed',
+    verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
+    verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
+    verificationDetail: verification?.detail || (authoredDiagram ? 'TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),
+    inventoryStatus,
+    retirementNote: uniqueValues('retirementNote')[0] || null,
+    useCount: imageUses.length,
+    routes: [...new Set(imageUses.map((use) => use.route))],
+    altTexts: [...new Set(imageUses.map((use) => use.alt).filter(Boolean))],
+    moduleSources: [...new Set(dataRecords.map((record) => record.moduleName))],
+    rawVisibleCredits: cn15VisibleCredits.length ? [...new Set(cn15VisibleCredits)] : creditMatch?.creditText ? [creditMatch.creditText] : []
+  };
+  const missingFields = missingPhotoAttributionFields(row);
+  if (missingFields.length) unmatchedByAsset.push({ src, missing: missingFields, useCount: row.useCount, routes: row.routes });
+  entries.push(row);
+}
+
+const hashGroups = new Map();
+for (const row of entries) {
+  if (!hashGroups.has(row.sha256)) hashGroups.set(row.sha256, []);
+  hashGroups.get(row.sha256).push(row);
+}
+const grouped = [...hashGroups.entries()].map(([sha256, rows]) => ({
+  sha256,
+  assetPaths: rows.map((row) => row.assetPath).sort(),
+  byteLength: rows[0].byteLength,
+  sourceRecords: rows.map((row) => ({
+    sha256: row.sha256,
+    assetPath: row.assetPath,
+    assetType: row.assetType,
+    sourceUrl: row.sourceUrl,
+    sourceTitle: row.sourceTitle,
+    sourcePhotoDate: row.sourcePhotoDate,
+    creditLabel: row.creditLabel,
+    creator: row.creator,
+    license: row.license,
+    sourceDeclaredLicenses: row.sourceDeclaredLicenses,
+    rightsStatus: row.rightsStatus,
+    rightsStatusUrl: row.rightsStatusUrl,
+    inventoryStatus: row.inventoryStatus,
+    retirementNote: row.retirementNote,
+    licenseUrl: row.licenseUrl,
+    commercialReuseEligibility: row.commercialReuseEligibility,
+    attributionTerms: row.attributionTerms,
+    editHistory: row.editHistory,
+    localSha1: (recordsBySrc.get(row.assetPath) || []).find((record) => record.localSha1)?.localSha1 || null,
+    metadataOrigin: row.metadataOrigin,
+    creditMatchNote: row.creditMatchNote,
+    visualReviewStatus: row.visualReviewStatus,
+    verificationStatus: row.verificationStatus,
+    verificationDate: row.verificationDate,
+    verificationDetail: row.verificationDetail,
+    useCount: row.useCount,
+    routes: row.routes,
+    altTexts: row.altTexts,
+    rawVisibleCredits: row.rawVisibleCredits
+  }))
+}));
+
+const assetImageExtras = fs.readdirSync(imageDir)
+  .filter((file) => /\.(?:svg|png|jpe?g|gif|avif)$/i.test(file) && !assetPaths.includes(path.join(imageDir, file)));
+const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
+const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
+const retainedLocalOnlyAssets = retainedLocalOnlyAssetPaths.filter((assetPath) => fs.existsSync(path.join(root, assetPath.slice(1))));
+const publishedWebpCount = assetPaths.length - retainedLocalOnlyAssets.length;
+const counts = {
+  assetFileCount: assetPaths.length,
+  completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
+  completeProjectOriginalRightsRecords: entries.filter((row) => row.assetType === 'original-planning-diagram' && row.sourceUrl && row.creator && row.rightsStatus).length,
+  licenseClaimsNotIndependentlyVerified: entries.filter((row) => row.assetType === 'photographic-raster' && row.verificationStatus === 'site_credit_or_metadata_only').length,
+  currentKnownUnsuitableImages: 0,
+  previouslyMisplacedImageReplaced: 2,
+  buildImageFilesOutsidePhotoInventory: buildImageExtras.length,
+  buildImageFilesExcludedForRightsReview: retainedLocalOnlyAssets.length,
+  expectedBuildImageCount: publishedWebpCount + buildImageExtras.length,
+  deduplicatedImageCount: grouped.length,
+  exactDuplicateFileCount: assetPaths.length - grouped.length,
+  englishCountryPagesScanned: englishPageCount,
+  imageReferencesScanned: [...usesBySrc.values()].reduce((total, items) => total + items.length, 0),
+  assetsUsedByScannedEnglishPages: entries.filter((row) => row.useCount > 0).length,
+  unusedAssetCount: entries.filter((row) => row.inventoryStatus === 'unused').length,
+  assetsWithStructuredSourceRecords: entries.filter((row) => row.metadataOrigin === 'structured_data_record').length,
+  assetsWithMatchedEnglishCreditOnly: entries.filter((row) => row.metadataOrigin === 'page_credit_lexical_match').length,
+  assetsWithExplicitEnglishCreditMatch: entries.filter((row) => row.metadataOrigin === 'explicit_asset_credit_match').length,
+  assetsVisuallyReviewed: entries.filter((row) => row.visualReviewStatus.startsWith('visually_reviewed_')).length,
+  assetsWithOnlyRecordedSourceUrlMatch: entries.filter((row) => row.metadataOrigin === 'source_url_match').length,
+  sourcePageChecked: entries.filter((row) => row.verificationStatus === 'source_page_checked').length,
+  metadataOrCreditOnly: entries.filter((row) => row.verificationStatus === 'site_credit_or_metadata_only').length,
+  usedAssetsWithoutIndependentSourcePageCheck: entries.filter((row) => row.useCount > 0 && row.verificationStatus === 'site_credit_or_metadata_only').length,
+  missingSourceCreditMatch: entries.filter((row) => row.verificationStatus === 'missing_source_credit_match').length,
+  incompleteAttributionFields: unmatchedByAsset.length,
+  activeMissingSourceCreditMatch: entries.filter((row) => row.useCount > 0 && row.verificationStatus === 'missing_source_credit_match').length,
+  unreferencedMissingSourceCreditMatch: entries.filter((row) => row.useCount === 0 && row.verificationStatus === 'missing_source_credit_match').length,
+  activeIncompleteAttributionFields: unmatchedByAsset.filter((item) => item.useCount > 0).length,
+  unreferencedIncompleteAttributionFields: unmatchedByAsset.filter((item) => item.useCount === 0).length,
+  sourceMetadataConflicts: sourceConflicts.length,
+  moduleErrors: moduleErrors.length
+};
+const openCreditReviews = [];
+counts.openCreditReviewCount = openCreditReviews.length;
+const openCreditReviewSummary = openCreditReviews.length
+  ? openCreditReviews.map((review) => review.assetPath || review.summary || 'Unspecified review').join('; ')
+  : 'none';
+const report = {
+  generatedAt: new Date().toISOString(),
+  scope: 'Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
+  counts,
+  verificationMethod: {
+    structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
+    visibleCredits: 'Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.',
+    sourcePageChecks: 'Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
+    imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
+    buildImageCountReconciliation: `The ${publishedWebpCount} published WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files. ${retainedLocalOnlyAssets.length} retained rights-review source file(s) stay in the repository but are excluded from the build.`
+  },
+  knownHistoricalMismatch: {
+    status: 'removed_from_current_inventory',
+    assetPath: '/assets/images/italy-rome-historic-centre-trastevere.webp',
+    previousIssue: 'The prior image showed Piazza Navona while labeling the Trastevere route.',
+    correction: 'Replaced with a visually checked photograph of the fountain in Piazza Santa Maria in Trastevere.',
+    currentFile: 'The current replacement remains included as the current asset at the same path.'
+  },
+  boundedImageReview: {
+    checkedOn: '2026-10-12',
+    route: '/canada/banff-lake-louise/johnston-minnewanka/',
+    mismatch: 'The retained Johnston Canyon source WebP shows a forest stream, not the represented canyon/lake corridor subject. It is unreferenced by current English pages and replaced by an original schematic with visible SVG source and Terms links.',
+    remainingPhotoPageCheck: 'The exact Commons page for the retired Johnston Canyon source could not be fetched. Its listed creator and CC BY-SA 4.0 declaration are preserved as metadata only; no source-page verification or independent rights clearance is claimed.',
+    licenseVersionNote: 'CC BY 2.0, CC BY-SA 3.0 and CC BY-SA 4.0 are separate declared license versions, but different versions alone are not a metadata conflict. Each active photo is credited against its own exact source-page declaration.'
+  },
+  entries: grouped,
+  countInterpretation: 'licenseClaimsNotIndependentlyVerified counts photographic-raster records without an independently checked source page; original diagrams declare no separate reuse license and are excluded. metadataOrCreditOnly counts all asset records without an independent source-page check. These metrics do not count pages never researched: separate source-review logs can record page reach, exceptions, or other evidence for overlapping assets, and the figures are not additive.',
+  unmatchedAssets: unmatchedByAsset,
+  openCreditReviews,
+  sourceMetadataConflicts: sourceConflicts
+};
+const outDir = path.join(root, 'reports');
+fs.mkdirSync(outDir, { recursive: true });
+fs.writeFileSync(path.join(outDir, 'photo-license-inventory.json'), JSON.stringify(report, null, 2) + '\n');
+const summaryLines = [
+  '# Photo license inventory',
+  '',
+  'Generated by node scripts/audit-photo-license-inventory.mjs.',
+  '',
+  '| Measure | Count |',
+  '|---|---:|',
+  ...Object.entries(counts).map(([key, value]) => '| ' + key.replaceAll(/([A-Z])/g, ' $1').toLowerCase() + ' | ' + value + ' |'),
+  '',
+  '## Verification limits',
+  '',
+  'Source-page verification counts are computed per file record. Every independently checked source is tagged with the date and finding; unverified claims are reported separately and must not be treated as confirmed permission. Commercial reuse is described only as allowed by the stated license; that claim does not independently confirm the source rights or attribution details.',
+  'The inventory status `licenseClaimsNotIndependentlyVerified` means this inventory has no independent source-page check recorded for the current asset record; it is not a count of pages never researched. Separate source-review logs record page reach and unresolved cases for overlapping assets, so the counts answer different questions and must not be added together.',
+  '',
+  'The inventory records share-alike rows with the same-license adaptation term. Review row-level attributionTerms and editHistory before reusing an asset.',
+  '',
+  'Build image count: ' + publishedWebpCount + ' published WebP photos plus ' + buildImageExtras.length + ' additional build image file(s) (' + buildImageExtras.join(', ') + ') = ' + counts.expectedBuildImageCount + '. ' + retainedLocalOnlyAssets.length + ' retained rights-review source file(s) are excluded from dist.',
+  '',
+  '## Current mismatches',
+  '',
+  'The former Trastevere hero showed Piazza Navona and has been replaced. On 12 October 2026, the Banff Johnston/Minnewanka page photo was also found to show a forest stream; its file and metadata remain in the inventory but it is no longer referenced by a current page and is excluded from dist. An original two-corridor SVG replaces it. The exact Commons page for that retired photo could not be fetched, so its source-page claim remains unverified. Active Banff photo pixels and their two exact Commons pages were checked; declared license versions differ by image and are not treated as a conflict. ' + counts.assetsVisuallyReviewed + ' of ' + assetPaths.length + ' current images have direct visual review across the recorded passes; the other ' + (assetPaths.length - counts.assetsVisuallyReviewed) + ' inventory rows were not individually checked for subject fit, so this report does not claim a full visual audit.',
+  '',
+  'Missing source/creator/license fields: ' + unmatchedByAsset.length + ' (' + counts.activeIncompleteAttributionFields + ' active, ' + counts.unreferencedIncompleteAttributionFields + ' unused). Independently unverified license claims: ' + counts.licenseClaimsNotIndependentlyVerified + '. Metadata conflicts: ' + sourceConflicts.length + '. Open source-to-image reviews: ' + openCreditReviewSummary + '.'
+];
+fs.writeFileSync(path.join(outDir, 'photo-license-inventory.md'), summaryLines.join('\n') + '\n');
+console.log(JSON.stringify({ counts, unmatchedSamples: unmatchedByAsset.slice(0, 30), sourceConflictSamples: sourceConflicts.slice(0, 10), output: ['reports/photo-license-inventory.json', 'reports/photo-license-inventory.md'] }, null, 2));
+const blockingProblems = photoLicenseInventoryBlockingProblems(unmatchedByAsset);
+if (blockingProblems.length) {
+  console.error('Photo license inventory audit failed:');
+  for (const problem of blockingProblems) console.error(`- ${problem}`);
+  process.exitCode = 1;
+}

@@ -1,0 +1,86 @@
+{
+  "createdFromCommit": "92996ef6631fb3775f1bf4f996292059b4aeca83",
+  "reason": "Preserve reviewed translation batches before pruning source keys no longer present in the current route corpus; translation drafts were not included.",
+  "files": [
+    {
+      "originalPath": "data/i18n/reviewed/zh-Hant/26b-malaysia-penang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/zh-Hant/26b-malaysia-penang.json",
+      "sha256": "d1be686e116d7f35e6c510d519988eeb4bf153e7b1afe8223402c0ffa0df64d1"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/zh-Hant/26c-malaysia-melaka.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/zh-Hant/26c-malaysia-melaka.json",
+      "sha256": "920c0a2de9497065926f687435230aab5907225028efa2058f4dcb5c96900d08"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/zh-Hant/29f-vietnam-phong-nha-ke-bang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/zh-Hant/29f-vietnam-phong-nha-ke-bang.json",
+      "sha256": "6ed9f8dc304095bb12179bdf007d433b90ece26d93c921aa82dc4ee1e7e571ac"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/zh-Hant/29l-vietnam-ho-chi-minh-city.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/zh-Hant/29l-vietnam-ho-chi-minh-city.json",
+      "sha256": "1b7e708579b874389f3c8f9b38a5056cd0051fcc31abb66da484ebfa82f99675"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ja/26b-malaysia-penang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ja/26b-malaysia-penang.json",
+      "sha256": "0328d5a3cf05c0cda9b8f6066091b996cab2f6b56271a45ec3873b47ac7439bd"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ja/26c-malaysia-melaka.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ja/26c-malaysia-melaka.json",
+      "sha256": "c276462bae1d728771a1495f27245c65ef3f2fb234040af72b8e5269f5a96ac2"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ja/29f-vietnam-phong-nha-ke-bang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ja/29f-vietnam-phong-nha-ke-bang.json",
+      "sha256": "8508cd54cd4a74d551ff390ade2906e96e110e61c52781f322674bafc6da0e00"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ja/29l-vietnam-ho-chi-minh-city.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ja/29l-vietnam-ho-chi-minh-city.json",
+      "sha256": "0704aa683e8e30f98b99e5ec88575060f62393ed69917a5fd1a29f1d838b42a2"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ko/26b-malaysia-penang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ko/26b-malaysia-penang.json",
+      "sha256": "4a2e62aaa6b4772b94c73575521046a52da755c8c2e9c81f61f654c5b5695a0e"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ko/26c-malaysia-melaka.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ko/26c-malaysia-melaka.json",
+      "sha256": "86276bb40d6b9a260f4415252342f9f0f5f62d6f9db07e17c22244a360508e63"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ko/29f-vietnam-phong-nha.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ko/29f-vietnam-phong-nha.json",
+      "sha256": "c06993bf4c49a208837b559e8e5fffcf311dc4c8486896692545ef80e19c4beb"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/ko/29l-vietnam-hcmc.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/ko/29l-vietnam-hcmc.json",
+      "sha256": "64b2958364d8fdb2e3cc0f520cac336855fadc0a5b2d8cdf8f62ae7386c165ee"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/th/28b-malaysia-penang.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/th/28b-malaysia-penang.json",
+      "sha256": "60b6c34321a168b479523122fd88f3cce5388bc12df052e31ac2598f82d0788e"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/th/28c-malaysia-melaka.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/th/28c-malaysia-melaka.json",
+      "sha256": "9aa2257a060cba6bd6edde14e4df9b102d87739f10c7d3743d49b2b654ea55c9"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/th/29f-vietnam-phong-nha.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/th/29f-vietnam-phong-nha.json",
+      "sha256": "c75fff8f5288482cac0c1507e2a5bfaf53ec9c874d87f6c8706e5eb7576c9157"
+    },
+    {
+      "originalPath": "data/i18n/reviewed/th/29l-vietnam-hcmc.json",
+      "archivePath": "data/i18n/archive/translation-key-prune/2026-10-13/th/29l-vietnam-hcmc.json",
+      "sha256": "56a912c52f6d6bd2768e947115aaf48b856b665938520c69f75f75999a9d1d2e"
+    }
+  ]
+}

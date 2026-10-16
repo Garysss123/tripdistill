@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { collectTranslationWork, localeConfigs, root } from './i18n-lib.mjs';
 import {wrongLocaleScriptReason} from './i18n-locale-script-check.mjs';
+import {globalApprovalBlockers, inspectGlobalMergeCoverage} from './i18n-merge-coverage.mjs';
 
 const requestedLocale = process.argv.find((argument) => argument.startsWith('--locale='))?.split('=')[1];
 const approve = process.argv.includes('--approve');
@@ -41,7 +42,6 @@ for (const locale of selected) {
     for (const [source, target] of Object.entries(batch.translations)) {
       const wrongScript=wrongLocaleScriptReason(locale.code,source,target);
       if(wrongScript)problems.push(`${relativePath}: ${wrongScript}: ${source}`);
-      if (!required.has(source)) problems.push(`${relativePath}: stale or unknown source key "${source}"`);
       if (!target?.trim()) problems.push(`${relativePath}: empty translation for "${source}"`);
       if (source in translations && translations[source] !== target) problems.push(`${relativePath}: conflicts with ${owners.get(source)} for "${source}"`);
       if (source in translations && translations[source] === target) problems.push(`${relativePath}: duplicates ${owners.get(source)} for "${source}"; keep the earlier owner only`);
@@ -52,8 +52,12 @@ for (const locale of selected) {
     }
   }
 
-  const missing = [...required].filter((source) => !translations[source]);
-  if (approve && missing.length) problems.push(`Cannot approve ${locale.code}: ${missing.length} required translations are missing`);
+  const { stale, missing } = inspectGlobalMergeCoverage(required, translations);
+  for (const source of stale) problems.push(`${owners.get(source) || `data/i18n/reviewed/${locale.code}`}: stale or unknown source key "${source}"`);
+  if (approve) {
+    const approvalBlockers = globalApprovalBlockers(locale.code, missing);
+    problems.push(...approvalBlockers);
+  }
   if (problems.length) {
     console.error(`${locale.code} batch merge failed with ${problems.length} problem(s):`);
     for (const problem of problems.slice(0, 100)) console.error(`- ${problem}`);

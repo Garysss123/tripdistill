@@ -1,0 +1,27 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 4 October 2026. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.": "ข้อมูลวางแผนและการอนุญาตใช้ภาพได้รับการทบทวนเมื่อ 4 ตุลาคม 2026 ตรวจสอบตั๋ว รถไฟ ถนน เขต ZTL เส้นทางเดิน เรือข้ามฟาก และการเข้าถึงสถานที่ล่าสุดก่อนเดินทาง",
+    "Editorial review: 4 October 2026 · Recheck time-sensitive details before booking.": "ทบทวนบรรณาธิการ: 4 ตุลาคม 2026 · ตรวจสอบข้อมูลที่อาจเปลี่ยนแปลงก่อนจอง",
+    "What was the Tabularium?": "Tabularium คืออะไร?",
+    "How this route reads the city": "เส้นทางนี้ช่วยให้อ่านเมืองอย่างไร",
+    "Plan for a change": "เตรียมแผนสำรองเมื่อมีการเปลี่ยนแปลง",
+    "reviewed 4 October 2026": "ทบทวนเมื่อ 4 ตุลาคม 2026",
+    "Starting point": "จุดเริ่มต้น",
+    "Match the first doorway to the place you will read.": "เลือกประตูแรกให้ตรงกับสถานที่ที่ต้องการทำความเข้าใจ",
+    "Save for another day": "เก็บอีกภูมิทัศน์ไว้เที่ยววันอื่น",
+    "Keep a second landscape for a separate visit.": "แยกภูมิทัศน์อีกแห่งไว้สำหรับการมาเยือนครั้งถัดไป",
+    "Time to allow": "เวลาที่ควรเผื่อ",
+    "A nearby pairing": "จุดเที่ยวใกล้เคียงที่ไปต่อกันได้",
+    "When the day shifts": "เมื่อแผนเที่ยวของวันเปลี่ยน",
+    "Choose a nearby alternative before crossing town.": "เลือกสถานที่ใกล้เคียงไว้เป็นทางเลือกก่อนเดินทางข้ามเมือง",
+    "Planning facts and image licensing were reviewed on 4 October 2026. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.": "ข้อมูลวางแผนและการอนุญาตใช้ภาพได้รับการทบทวนเมื่อ 4 ตุลาคม 2026 ข้อมูลการเข้าชม รถไฟ ถนน เขต ZTL เส้นทางเดิน เรือข้ามฟาก สภาพอากาศ และการเข้าถึงในพื้นที่อาจเปลี่ยนได้ โปรดเปิดตรวจสอบข้อมูลจากหน่วยงานหรือผู้ให้บริการที่ลิงก์ไว้ก่อนเดินทาง"
+  }
+}

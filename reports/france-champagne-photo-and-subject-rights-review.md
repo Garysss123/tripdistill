@@ -1,0 +1,11 @@
+# Champagne photo and subject-rights review
+
+Reviewed 7 October 2026 for the Champagne hub and its three existing guides. Each local WebP was inspected alongside its exact Wikimedia Commons source page. The retained images match the place or building named in the new alt text. The website credits the human-readable image title, links to the Commons file and license, and discloses resizing, display cropping and WebP conversion.
+
+| Guide | Source and creator | Source-page license | Subject match and treatment |
+| --- | --- | --- | --- |
+| Reims Cathedral | [Panorama view of Notre-Dame de Reims](https://commons.wikimedia.org/wiki/File:Panorama_view_of_notre_dame_de_reims.jpg), danigmarx | CC BY-SA 3.0 Unported | The local image shows the south side of the Cathedral; Commons also categorizes it as the south side. Alt text now names the sculpted south-side buttresses. Resized, display-cropped and converted to WebP; adaptation is identified as shared under the same license. |
+| Avenue de Champagne / Château Perrier | [Avenue de Champagne, Épernay](https://commons.wikimedia.org/wiki/File:Avenue_de_Champagne,_%C3%89pernay_(8132669246).jpg), Michal Osmenda | CC BY 2.0 | The Commons description identifies the entrance of Château Perrier on Avenue de Champagne, Épernay. The local photo shows its ornate gate and brick frontage, not vineyards; the guide alt text and visible credit were corrected to match. Resized, display-cropped and converted to WebP. |
+| Troyes | [Troyes rue Émile-Zola maisons pans de bois](https://commons.wikimedia.org/wiki/File:Troyes_rue_Emile_Zola_maisons_pans_de_bois.jpg), Myrabella | CC BY-SA 4.0 International | The Commons description places timber-framed houses at 47–55 Rue Émile-Zola. The local photo shows timber façades on that street; alt text now names the street. Resized, display-cropped and converted to WebP; adaptation is identified as shared under the same license. |
+
+The review records the source-page creator and license labels and updates the page attribution. It is not legal advice or clearance of every possible subject, property, trademark or personality right. The Troyes photograph contains small distant pedestrians; their identity and any separate rights were not assessed. No permission request or contact was made.

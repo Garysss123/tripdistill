@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/"
+  ],
+  "translations": {},
+  "reviewProvenance": {
+    "writer": "GPT-6.1 Codex",
+    "reviewer": "GPT-6.1 Codex; single-model translation and self-review",
+    "independentSecondModel": false
+  }
+}

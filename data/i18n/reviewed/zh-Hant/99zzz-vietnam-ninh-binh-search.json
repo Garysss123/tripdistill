@@ -1,0 +1,12 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "a boat route through the karst-water maze": "喀斯特水域迷宮船程",
+    "ngo dong river, three caves and a cliff pagoda": "吳同河、三座洞穴與崖邊寺廟",
+    "the capital valley through its temple compounds": "穿行古都谷地，走訪寺廟群"
+  }
+}

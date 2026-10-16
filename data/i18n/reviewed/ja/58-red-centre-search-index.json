@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "town, interpretation and preparation": "アリススプリングス（Mparntwe）：町・文化解説・出発準備",
+    "gorge road and water decisions": "トジョリチャ（Tjoritja）：渓谷・道路・水場の判断",
+    "canyon rim and heat gate": "ワタルカ（Watarrka）：渓谷の縁・暑さの制限",
+    "gorge walk and valley loop": "カタ・ジュタ（Kata Tjuṯa）：渓谷散策・谷の周回路"
+  }
+}

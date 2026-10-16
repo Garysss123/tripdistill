@@ -1,0 +1,15 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Malaysia - Semporna & Tun Sakaran": "มาเลเซีย · เซมปอร์นาและตุนซาการัน"
+  },
+  "reviewProvenance": {
+    "writer": "Codex GPT-6",
+    "reviewer": "Codex GPT-6; same-model self-review",
+    "independentSecondModel": false
+  }
+}

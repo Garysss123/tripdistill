@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/basilicata-calabria/",
+    "/italy/basilicata-calabria/matera-sassi-murgia/",
+    "/italy/basilicata-calabria/maratea-pollino/",
+    "/italy/basilicata-calabria/tropea-scilla-reggio/"
+  ],
+  "translations": {
+    "— Norbert Nagel,": "— Norbert Nagel,"
+  }
+}

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const BUILD_VERSION = '20260911-1';
+  const BUILD_VERSION = '20261016-1';
   const LOCALES = {
     en: { prefix: '', short: 'EN', nativeName: 'English' },
     'zh-Hant': { prefix: '/zh', short: '繁中', nativeName: '繁體中文' },
@@ -17,7 +17,7 @@
           : 'en';
   const LOCALE_PREFIX = LOCALES[LOCALE].prefix;
   const LANGUAGE_CHOICE_KEY = 'tripdistill-language-choice-v1';
-  const SIDEBAR_STATE_KEY = 'tripdistill-sidebar-state-v1';
+  const SIDEBAR_STATE_KEY = 'tripdistill-sidebar-state-v2';
   const COMPONENTS = [
     ['layout-header', LOCALE_PREFIX + '/components/header.html'],
     ['layout-sidebar', LOCALE_PREFIX + '/components/sidebar.html'],
@@ -405,7 +405,6 @@
     document.querySelectorAll('#layout-sidebar details[data-sidebar-id]').forEach(function (details) {
       const id = details.dataset.sidebarId;
       if (Object.prototype.hasOwnProperty.call(state, id)) details.open = Boolean(state[id]);
-      else if (id === 'asia') details.open = true;
     });
     if (currentCountry) {
       const country = document.querySelector('#layout-sidebar details[data-sidebar-id="' + currentCountry + '"]');

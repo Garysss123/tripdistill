@@ -1,0 +1,28 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "MSY Route 202": "MSY 202 號線",
+    "Jefferson Transit E1": "Jefferson Transit E1",
+    "airport fares": "機場交通票價",
+    "Neighborhood bases": "街區住宿選擇",
+    "Jackson Square": "傑克遜廣場",
+    "520 Royal Street": "520 Royal Street",
+    "Preservation Hall": "Preservation Hall",
+    "Quarter museum hours": "法國區博物館開放時間",
+    "St. Charles Route 12": "聖查爾斯街車 12 號線",
+    "Magazine Route 11": "Magazine 街公車 11 號線",
+    "Lafayette Cemetery PRC tour": "Lafayette 公墓 PRC 導覽",
+    "Wetland Trace": "Wetland Trace",
+    "Barataria closure": "Barataria 封閉資訊",
+    "Twin Canals": "Twin Canals"
+  },
+  "reviewProvenance": {
+    "writer": "Current Codex runtime; exact model variant not exposed",
+    "reviewer": "Same-runtime self-review; not independent",
+    "independentSecondModel": false
+  }
+}

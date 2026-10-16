@@ -9,6 +9,14 @@
   --fr-line: rgba(23, 51, 66, .18);
 }
 
+/* France region layouts must fit the usable viewport when a classic scrollbar takes 15 px. */
+body[data-country="france"][data-region]:not([data-region="paris"]),
+body[data-country="france"][data-region]:not([data-region="paris"]) .site-shell,
+body[data-country="france"][data-region]:not([data-region="paris"]) .page-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .fr-country,
 .fr-hub {
   --fr-accent: var(--fr-red);

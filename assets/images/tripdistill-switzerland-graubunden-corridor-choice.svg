@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Graubünden corridor choices from Chur</title>
+  <desc id="desc">A conceptual route-choice schematic from Chur: choose the Rhine Gorge, Davos and Parsenn, or the Chur–Arosa rail branch as separate days. Chur’s old town is the lower-elevation fallback. The lines show choices, not geographic position, live timetable or operating status.</desc>
+  <rect x="0" y="0" width="1600" height="1066" fill="#f3efe4" />
+  <rect x="56" y="48" width="1488" height="185" rx="22" fill="#182b39" />
+  <text x="96" y="100" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#d7a94b" letter-spacing="2">GRAUBÜNDEN · ONE CORRIDOR PER DAY</text>
+  <text x="96" y="157" font-family="Arial, sans-serif" font-size="39" font-weight="700" fill="#fffaf0">Chur is the hinge. Choose one branch.</text>
+  <text x="96" y="202" font-family="Arial, sans-serif" font-size="19" fill="#e0e6e7">Conceptual route order · not geographic · not to scale · check live service and trail status</text>
+
+  <rect x="76" y="310" width="390" height="430" rx="22" fill="#fffaf0" stroke="#b8c4c4" stroke-width="3" />
+  <rect x="76" y="310" width="390" height="62" rx="22" fill="#182b39" />
+  <text x="106" y="350" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#fffaf0" letter-spacing="1">RAIL HINGE · START / RETURN</text>
+  <circle cx="150" cy="455" r="26" fill="#d71920" stroke="#182b39" stroke-width="3" />
+  <text x="199" y="463" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#182b39">Chur station</text>
+  <text x="108" y="519" font-family="Arial, sans-serif" font-size="19" fill="#344c59">RhB branches into separate valleys.</text>
+  <text x="108" y="551" font-family="Arial, sans-serif" font-size="19" fill="#344c59">Save the exact return before leaving.</text>
+  <line x1="150" y1="493" x2="150" y2="594" stroke="#182b39" stroke-width="5" />
+  <circle cx="150" cy="620" r="25" fill="#416d75" stroke="#182b39" stroke-width="3" />
+  <text x="199" y="628" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#182b39">Chur Old Town</text>
+  <text x="108" y="680" font-family="Arial, sans-serif" font-size="18" fill="#344c59">Low-elevation weather fallback</text>
+  <text x="108" y="710" font-family="Arial, sans-serif" font-size="17" fill="#647883">Confirm indoor openings separately.</text>
+
+  <line x1="466" y1="520" x2="542" y2="520" stroke="#182b39" stroke-width="5" />
+  <line x1="542" y1="390" x2="542" y2="650" stroke="#182b39" stroke-width="5" />
+  <line x1="542" y1="390" x2="615" y2="390" stroke="#d71920" stroke-width="7" />
+  <line x1="542" y1="520" x2="615" y2="520" stroke="#d7a94b" stroke-width="7" />
+  <line x1="542" y1="650" x2="615" y2="650" stroke="#416d75" stroke-width="7" />
+  <circle cx="542" cy="390" r="13" fill="#d71920" stroke="#182b39" stroke-width="3" />
+  <circle cx="542" cy="520" r="13" fill="#d7a94b" stroke="#182b39" stroke-width="3" />
+  <circle cx="542" cy="650" r="13" fill="#416d75" stroke="#182b39" stroke-width="3" />
+
+  <rect x="615" y="300" width="905" height="176" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <rect x="615" y="300" width="16" height="176" rx="8" fill="#d71920" />
+  <circle cx="680" cy="348" r="24" fill="#d71920" />
+  <text x="680" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">01</text>
+  <text x="721" y="356" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#182b39">RHINE GORGE · rail or signed walk</text>
+  <text x="680" y="400" font-family="Arial, sans-serif" font-size="19" fill="#344c59">RhB between Reichenau-Tamins and Ilanz; choose a named entry and exit.</text>
+  <text x="680" y="432" font-family="Arial, sans-serif" font-size="18" fill="#344c59">A train ride is a valid low-walking plan; a path needs its own status check.</text>
+  <text x="680" y="460" font-family="Arial, sans-serif" font-size="16" fill="#647883">Red branch · protect the return station before entering the gorge.</text>
+
+  <rect x="615" y="482" width="905" height="176" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <rect x="615" y="482" width="16" height="176" rx="8" fill="#d7a94b" />
+  <circle cx="680" cy="530" r="24" fill="#d7a94b" />
+  <text x="680" y="538" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#182b39">02</text>
+  <text x="721" y="538" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#182b39">DAVOS / PARSENN · elevation gate</text>
+  <text x="680" y="582" font-family="Arial, sans-serif" font-size="19" fill="#344c59">Use the Landquart rail corridor; match Dorf or Platz to your hotel and lift.</text>
+  <text x="680" y="614" font-family="Arial, sans-serif" font-size="18" fill="#344c59">Choose one open winter or summer route after the exact operator check.</text>
+  <text x="680" y="642" font-family="Arial, sans-serif" font-size="16" fill="#647883">Gold branch · lift operation does not certify the trail or snow route.</text>
+
+  <rect x="615" y="664" width="905" height="176" rx="20" fill="#fffaf0" stroke="#92a9aa" stroke-width="3" />
+  <rect x="615" y="664" width="16" height="176" rx="8" fill="#416d75" />
+  <circle cx="680" cy="712" r="24" fill="#416d75" />
+  <text x="680" y="720" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">03</text>
+  <text x="721" y="720" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#182b39">AROSA · Chur–Arosa rail branch</text>
+  <text x="680" y="764" font-family="Arial, sans-serif" font-size="19" fill="#344c59">Count both rail legs, then choose village/lake or one open mountain area.</text>
+  <text x="680" y="796" font-family="Arial, sans-serif" font-size="18" fill="#344c59">Return to Chur on the service saved before you leave the station.</text>
+  <text x="680" y="824" font-family="Arial, sans-serif" font-size="16" fill="#647883">Teal branch · keep Davos and the Rhine Gorge for another day.</text>
+
+  <rect x="56" y="865" width="1488" height="176" rx="20" fill="#e2e9e5" stroke="#b8c4c4" stroke-width="2" />
+  <text x="800" y="893" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#182b39" letter-spacing="1">FIVE-LANGUAGE CORRIDOR / COLOR KEY</text>
+  <line x1="353" y1="906" x2="353" y2="1027" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="649" y1="906" x2="649" y2="1027" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="945" y1="906" x2="945" y2="1027" stroke="#b8c4c4" stroke-width="2" />
+  <line x1="1241" y1="906" x2="1241" y2="1027" stroke="#b8c4c4" stroke-width="2" />
+
+  <text x="205" y="923" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="en">ENGLISH</text>
+  <circle cx="83" cy="946" r="6" fill="#d71920" /><text x="99" y="952" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="en">Red · Rhine Gorge rail / walk</text>
+  <circle cx="83" cy="971" r="6" fill="#d7a94b" /><text x="99" y="977" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="en">Gold · Davos / Parsenn</text>
+  <circle cx="83" cy="996" r="6" fill="#416d75" /><text x="99" y="1002" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="en">Teal · Chur–Arosa rail</text>
+  <text x="99" y="1027" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="en">Fallback · Chur Old Town</text>
+
+  <text x="501" y="923" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="zh-Hant">繁體中文</text>
+  <circle cx="379" cy="946" r="6" fill="#d71920" /><text x="395" y="952" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="zh-Hant">紅色 · 萊茵峽谷鐵路／步行</text>
+  <circle cx="379" cy="971" r="6" fill="#d7a94b" /><text x="395" y="977" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="zh-Hant">金色 · 達沃斯／Parsenn</text>
+  <circle cx="379" cy="996" r="6" fill="#416d75" /><text x="395" y="1002" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="zh-Hant">藍綠色 · 庫爾—阿羅薩鐵路</text>
+  <text x="395" y="1027" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="zh-Hant">備案 · 庫爾舊城</text>
+
+  <text x="797" y="923" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="ja">日本語</text>
+  <circle cx="675" cy="946" r="6" fill="#d71920" /><text x="691" y="952" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ja">赤・ライン峡谷の鉄道／徒歩</text>
+  <circle cx="675" cy="971" r="6" fill="#d7a94b" /><text x="691" y="977" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ja">金・ダボス／パルゼン</text>
+  <circle cx="675" cy="996" r="6" fill="#416d75" /><text x="691" y="1002" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ja">青緑・クール—アローザ線</text>
+  <text x="691" y="1027" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ja">代替案・クール旧市街</text>
+
+  <text x="1093" y="923" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="ko">한국어</text>
+  <circle cx="971" cy="946" r="6" fill="#d71920" /><text x="987" y="952" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ko">빨강 · 라인 협곡 철도/도보</text>
+  <circle cx="971" cy="971" r="6" fill="#d7a94b" /><text x="987" y="977" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ko">금색 · 다보스/파르젠</text>
+  <circle cx="971" cy="996" r="6" fill="#416d75" /><text x="987" y="1002" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ko">청록 · 쿠어–아로자 철도</text>
+  <text x="987" y="1027" font-family="Arial, sans-serif" font-size="14" fill="#344c59" data-language="ko">대안 · 쿠어 구시가지</text>
+
+  <text x="1389" y="923" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#182b39" data-language="th">ภาษาไทย</text>
+  <circle cx="1267" cy="946" r="6" fill="#d71920" /><text x="1283" y="952" font-family="Arial, sans-serif" font-size="12" fill="#344c59" data-language="th">สีแดง · รถไฟ/ทางเดินไรน์กอร์จ</text>
+  <circle cx="1267" cy="971" r="6" fill="#d7a94b" /><text x="1283" y="977" font-family="Arial, sans-serif" font-size="12" fill="#344c59" data-language="th">สีทอง · ดาวอส/พาร์เซนน์</text>
+  <circle cx="1267" cy="996" r="6" fill="#416d75" /><text x="1283" y="1002" font-family="Arial, sans-serif" font-size="12" fill="#344c59" data-language="th">สีเขียวอมฟ้า · รถไฟคูร์–อาโรซา</text>
+  <text x="1283" y="1027" font-family="Arial, sans-serif" font-size="12" fill="#344c59" data-language="th">แผนสำรอง · เมืองเก่าคูร์</text>
+</svg>

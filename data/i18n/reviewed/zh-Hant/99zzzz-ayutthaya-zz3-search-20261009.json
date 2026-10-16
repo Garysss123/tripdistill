@@ -1,0 +1,21 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya's Foreign Settlements: Japanese, Portuguese and Dutch Riverbank Sites": "大城外國聚落：湄南河畔的日本、葡萄牙與荷蘭遺址",
+    "Compare the Japanese Village's modern memorial grounds on the east bank with St Peter's Portuguese excavation opposite; trace Dutch VOC dates, plan the separate Baan Hollanda stop and road transfers.": "比較東岸現代日本村紀念園區與對岸聖彼得葡萄牙考古遺址；整理荷蘭 VOC 年代，另行規劃 Baan Hollanda 景點及陸路接駁。",
+    "portuguese village": "葡萄牙村",
+    "st peter church": "聖彼得教堂",
+    "dutch voc": "荷蘭東印度公司（VOC）",
+    "Bang Pa-In Palace: Thai, Khmer, Chinese and European Architecture": "邦巴茵宮：泰式、柬埔寨式、中式與歐式建築",
+    "Follow Hema Monthian Thewarat, Aisawan Thiphya-at, Warophat Phiman, Withun Tasana and Wehat Chamrun in a south-of-island route; compare rail with its road last mile and verify current palace and Wat Niwet access.": "沿著南島路線參觀黑瑪蒙天提瓦拉特、艾薩萬提帕雅、瓦羅帕特披曼宮、威吞塔薩納塔與威哈特查姆倫宮；比較火車加最後一段陸路接駁，並確認目前邦巴茵宮與尼維塔瑪帕萬寺的開放情況。",
+    "bang pa-in palace": "邦巴茵宮",
+    "aisawan thiphya-at": "艾薩萬提帕雅",
+    "wat niwet thamma prawat": "尼維塔瑪帕萬寺",
+    "bang pa-in station": "邦巴茵車站",
+    "royal estate": "王室園區"
+  }
+}

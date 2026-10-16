@@ -116,6 +116,7 @@ function entryFrom(candidate, job) {
   return {
     src: `/assets/images/switzerland-${job.cluster.slug}-${job.guide.slug}.webp`,
     alt: job.guide.imageAlt,
+    ...(job.guide.imageTitle ? { displayTitle: job.guide.imageTitle } : {}),
     source: info.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title).replaceAll('%3A', ':').replaceAll('%20', '_')}`,
     label: page.title.replace(/^File:/, '').replaceAll('_', ' '),
     creator,
@@ -164,6 +165,15 @@ try {
   for (const [index, job] of jobs.entries()) {
     let candidate;
     let entry = manifest[job.key];
+    if (entry?.assetType === 'original-planning-diagram') {
+      const diagram = path.resolve(root, entry.src.replace(/^\//, ''));
+      if (!diagram.startsWith(imageRoot) || path.extname(diagram).toLowerCase() !== '.svg' || !fs.existsSync(diagram)) {
+        throw new Error(`${job.key}: registered original planning diagram is missing or outside the image directory`);
+      }
+      verified += 1;
+      console.log(`[${index + 1}/${jobs.length}] preserved original planning diagram ${job.key}`);
+      continue;
+    }
     const override = switzerlandImageOverrides[job.key];
     const needsSelection = force || !entry || (override && normalizeFileTitle(override) !== entry.commonsTitle);
     if (needsSelection) {
@@ -173,6 +183,7 @@ try {
       usedTitles.add(entry.commonsTitle);
     } else {
       if (entry.alt !== job.guide.imageAlt) entry = manifest[job.key] = { ...entry, alt: job.guide.imageAlt };
+      if (job.guide.imageTitle && entry.displayTitle !== job.guide.imageTitle) entry = manifest[job.key] = { ...entry, displayTitle: job.guide.imageTitle };
       candidate = await validateEntry(entry, job);
       usedTitles.add(entry.commonsTitle);
     }

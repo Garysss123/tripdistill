@@ -1,0 +1,17 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/utah-parks/",
+    "/usa/utah-parks/bryce/",
+    "/usa/utah-parks/moab-arches-canyonlands/"
+  ],
+  "translations": {
+    "NPS: Arches traffic, temporary entry holds and preparation": "NPS：アーチーズの交通、一時的な入園待ちと事前準備",
+    "A Bryce NPS alert posted 29 September 2026 reports Wall Street closed until further notice; it says the park’s other trails are open but muddy and hikers should use caution. The closure does not mean the whole Navajo Loop is closed. NPS identifies the Two Bridges side as open year-round and recommends descending Queen’s Garden, ascending the Navajo side and returning along the rim. Treat that as a possible route only after checking active conditions and the exact current closure status before travel.": "2026年9月29日付のブライス国立公園NPS警報によると、ウォール・ストリートは追って通知があるまで閉鎖中です。公園内のほかのトレイルは開いていますが、ぬかるんでいるため注意して歩くよう案内されています。この閉鎖はナバホ・ループ全体の閉鎖を意味しません。NPSはツー・ブリッジズ側を通年開放とし、クイーンズ・ガーデンを下り、ナバホ側を登ってリム沿いに戻るルートを推奨しています。このルートは、出発前に現地の状況と最新の閉鎖範囲を確認したうえで候補にしてください。",
+    "NPS: Bryce current conditions and trail alerts": "NPS：ブライスの最新状況とトレイル警報",
+    "NPS: Queen’s Garden and Navajo Loop combination route": "NPS：クイーンズ・ガーデンとナバホ・ループの組み合わせルート",
+    "During peak spring–fall visitation, congestion and full parking between 8 a.m. and 3 p.m. can trigger temporary entry holds, and vehicles may be diverted from the entrance. NPS says a hold may last 3–5 hours; that is a possible duration, not a guaranteed wait. Vehicles may not queue by the entrance sign or on the roadway. Before heading toward the entrance, use a restroom, bring food and water, and have a full fuel tank. Check NPS webcams and current conditions plus UDOT traffic. If the delay would disrupt a short Moab connection, re-time the visit or consider a suitable nearby alternative.": "春から秋の繁忙期は、午前8時から午後3時の間に混雑や駐車場の満車が重なると、一時的な入園待ちとなり、車両が入口から迂回させられることがあります。NPSによると、待機措置は3〜5時間続く場合がありますが、これは起こりうる長さであり、待ち時間の保証ではありません。入口標識のそばや道路上に車列を作ることはできません。入口へ向かう前にトイレを済ませ、食料と水を持ち、燃料を満タンにしてください。NPSのウェブカメラと最新状況、UDOTの交通情報を確認しましょう。遅れでモアブへの短い移動行程に支障が出る場合は、訪問時刻を調整するか、近隣の適切な代替先を検討してください。",
+    "If Moab is a short stay or Arches falls on a fixed-transfer day, the lack of a timed-entry reservation does not make arrival timing reliable. Protect a movable park day or a suitable nearby alternative; the Moab guide covers live-condition checks and how to respond if access is disrupted.": "モアブの滞在が短い場合や、アーチーズを訪れる日が移動予定の固定された日に当たる場合、時間指定入園予約が不要でも、到着時刻が確実になるわけではありません。日程を動かせる公園訪問日、または近隣の適切な代替先を確保しておきましょう。モアブのガイドでは、最新状況の確認方法とアクセスが中断された場合の対応を説明しています。"
+  }
+}

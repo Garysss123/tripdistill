@@ -1,0 +1,48 @@
+{
+  "topic": "Shared reviewed translation stale-key cleanup required for Vietnam integration-sprint audit",
+  "sourceBaseCommit": "cab3f51a6229db30da1fbbea6ef0a728d5afe66a",
+  "archivedOn": "2026-10-13",
+  "reason": "Archived exact integration-base blobs before removing the stale Water safety source key from the four affected reviewed batches. No other translations were changed.",
+  "files": [
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29c-vietnam-ha-giang.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/shared-prune/ja/29c-vietnam-ha-giang.json",
+      "sha256": "ded405e3a4de1716fdd80fb24d08b812da21d9b1efe10ddc36ffc12372154897",
+      "bytes": 4037,
+      "removedSourceKeys": [
+        "Water safety"
+      ]
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29c-vietnam-ha-giang.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/shared-prune/ko/29c-vietnam-ha-giang.json",
+      "sha256": "f3d3cceddbc8af153fd784a145f55764ca02c740c9b7f6fab37deb954095a522",
+      "bytes": 3917,
+      "removedSourceKeys": [
+        "Water safety"
+      ]
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29c-vietnam-ha-giang.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/shared-prune/th/29c-vietnam-ha-giang.json",
+      "sha256": "f262a239b50957478403f04b3ef76879fff15b5e77e785463013374e0a7d59f6",
+      "bytes": 5666,
+      "removedSourceKeys": [
+        "Water safety"
+      ]
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29c-vietnam-ha-giang.json",
+      "archivePath": "data/i18n/archive/vietnam-southern-gaps/2026-10-13/shared-prune/zh-Hant/29c-vietnam-ha-giang.json",
+      "sha256": "2e2d9888ac1b59b95d8d5173d009e6ae019f46c4edb02e9dd6b01da07d1405f9",
+      "bytes": 3495,
+      "removedSourceKeys": [
+        "Water safety"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/veneto-art-cities/",
+    "/italy/veneto-art-cities/verona-arena-river/",
+    "/italy/veneto-art-cities/vicenza-palladian-city/",
+    "/italy/veneto-art-cities/padua-frescoes-basilica/",
+    "/italy/dolomites-trentino-south-tyrol/",
+    "/italy/dolomites-trentino-south-tyrol/bolzano-renon/",
+    "/italy/dolomites-trentino-south-tyrol/cortina-tre-cime/",
+    "/italy/dolomites-trentino-south-tyrol/trento-brenta-dolomites/"
+  ],
+  "translations": {
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit clock.…": "維洛納、維琴察與帕多瓦以鐵路相連，但競技場、帕拉迪奧建築與斯克羅威尼禮拜堂需要不同的參觀時程。三晚可住一處基地……",
+    "Verona Porta Nuova, Vicenza and Padova connect on the east–west rail spine, but the Arena, Palladian interiors and Scrovegni Chapel each set a different visit clock. Three nights can support one base and two selective city days; four or five nights makes a Verona–Padua split practical without turning station moves into sightseeing. Choose one controlled door per day and check its official calendar before fixing the train.": "維洛納新門站、維琴察與帕多瓦透過東西向鐵路主幹相連，但競技場、帕拉迪奧建築內部與斯克羅威尼禮拜堂各有不同參觀時程。三晚可選一處住宿、排各安排一天精選參觀；四或五晚則可分住維洛納與帕多瓦，不必把搬行李當觀光。每天只選一個需控時的入口，先查官方日曆再定火車。",
+    "For three nights, keep one base in Verona or Padua and take a single rail day to Vicenza. Four nights can split two-and-two between Verona and Padua; add a Vicenza overnight only if a villa or evening performance earns the move. Stay near the historic core for walking or near the station for early departures, then compare the actual door-to-platform route.": "住三晚，選維洛納或帕多瓦一處為基地，再搭一次火車去維琴察。四晚可以維洛納與帕多瓦各住兩晚；若別墅或晚間演出值得移宿，再加一晚維琴察。想步行選歷史中心，想趕早車則住站旁；再比較住宿到月台的實際路線。",
+    "Use Trenitalia between Verona Porta Nuova, Vicenza and Padova, then finish locally: Verona city bus or walk from Porta Nuova; Vicenza station to Corso Palladio; Padova tram or walk toward Eremitani and the central squares. A Palladian villa, Arena event entrance and timed Scrovegni reporting point are separate last miles; check each on the date rather than quoting a generic interval.": "搭 Trenitalia 往返維洛納新門站、維琴察與帕多瓦，抵達後再接當地步行或交通：從維洛納新門站搭市區公車或步行、從維琴察車站前往科爾索・帕拉迪奧、從帕多瓦站搭電車或步行到埃雷米塔尼與中央廣場。帕拉迪奧別墅、維洛納競技場的活動入口、斯克羅威尼禮拜堂的預約報到點，各是不同的最後一段路；按實際日期查核，不要引用泛化的班距。",
+    "If a booked door or rural villa fails, keep the whole day in its city: Verona’s Piazza Bra–Castelvecchio–Adige line, Vicenza’s central Palladian walk, or Padua’s civic squares and one open collection. Do not rescue one closure by gambling on a second city’s same-day timetable.": "若預約場館或郊區別墅臨時無法前往，整天留在原城市：走維洛納的布拉廣場—舊城堡—阿迪傑河線、維琴察中央帕拉迪奧建築步行線，或帕多瓦公共廣場與一座當日開放的館藏。不要為了補一個取消行程，就冒險接上另一座城市未查證的當日班次。",
+    "Give Verona, Vicenza and Padua separate clocks, doors and returns.": "讓維洛納、維琴察與帕多瓦各自擁有不同的節奏、入口與返程。",
+    "Arena performances and security can replace ordinary entry; Padua chapel slots are date-specific; civic museums and villas publish their own closing days. Summer heat lengthens the exposed river and villa walks, while rain favors a shorter, booked interior sequence. Recheck the 2026 venue notice, reporting instructions and the return train before purchase; no ticket or connection is assumed available.": "競技場演出和安檢可能取代一般參觀；帕多瓦禮拜堂時段依日期而定；市立博物館與別墅各有閉館日。夏季高溫會拉長河岸與別墅步行時間，雨天則適合較短、已預約的室內路線。購票前重查 2026 年場館公告、報到須知和返程列車；不保證有票或可接上交通。",
+    "Build the route around one booking and one return": "以一個預約入口和一趟返程來安排路線",
+    "Set a base for the route": "替這條路線選住宿基地",
+    "Walk it as one geographic line": "沿著連續的地理路線步行",
+    "Porta Nuova → Piazza Bra and the Arena → Via Mazzini → Piazza delle Erbe → choose Castelvecchio and Ponte della Vittoria or the Roman theatre and Ponte Pietra → return toward the station. Treat this as a six-to-eight-hour city day, not a measured walking distance.": "維洛納新門站 → 布拉廣場與競技場 → 馬志尼街 → 香草廣場 → 選走舊城堡與勝利橋，或羅馬劇院與石橋 → 朝車站方向返回。若安排一座主要室內場館，整天抓六到八小時；這不是實測步行距離。",
+    "Confirm this threshold first": "先確認這個入場條件",
+    "Shift the plan with conditions": "依照現場條件調整路線",
+    "Vicenza station → Corso Palladio → Piazza dei Signori and Basilica Palladiana → Teatro Olimpico or Palazzo Chiericati → Santa Corona → station. For La Rotonda, replace the final centre segment with its verified bus, taxi or walk approach.": "維琴察車站 → 科爾索・帕拉迪奧 → 主人廣場與帕拉迪奧大教堂 → 奧林匹克劇院或奇里卡蒂宮 → 聖科羅納教堂 → 車站。若去圓廳別墅，就以已確認的公車、計程車或步行路線取代最後一段市區行程。",
+    "Padova station → Eremitani and the chapel reporting point → Piazza delle Erbe and Piazza della Frutta around Palazzo della Ragione → choose the Basilica of Saint Anthony or Prato della Valle → tram or walk back north.": "帕多瓦站 → 埃雷米塔尼與禮拜堂報到點 → 穿過草藥廣場、蔬果廣場及理性宮周邊 → 選擇聖安多尼大教堂或普拉托草地廣場 → 搭電車或步行向北返回。",
+    "Bolzano, Trento, Dobbiaco and Calalzo are distinct rail gateways; Cortina and the Brenta valleys add bus or road legs, and lifts and trailheads keep separate…": "波爾查諾、特倫托、多比亞科與卡拉爾佐是不同鐵路轉乘點；科爾蒂納和布倫塔山谷還要接駁公車或道路，纜車與登山口也各有營運日曆……",
+    "Bolzano, Trento, Dobbiaco and Calalzo are distinct rail gateways; Cortina and the Brenta valleys add bus or road legs, and lifts and trailheads keep separate operating calendars. Four nights in one valley can support two mountain days with one lower route; five to seven nights gives a weather reserve. Choose the valley before buying a lift or excursion, and keep the return on the same operating system.": "波爾查諾、特倫托、多比亞科與卡拉爾佐是不同鐵路轉乘點；科爾蒂納和布倫塔山谷還要接駁公車或道路，纜車與登山口也各有營運日曆。單一山谷住四晚，可安排兩個山區日和一段低海拔路線；住五到七晚可保留天候備案。先選山谷再買纜車或行程，返程也沿同一交通系統安排。",
+    "Three nights is a compact Bolzano or Trento city-and-valley stay; four or five nights supports one focused mountain corridor; six or seven nights can absorb a split between South Tyrol and Cortina or Trentino and Brenta. Do not change hotels each night to connect famous peaks. Select a base with the exact bus, rail or lift gateway your main route uses.": "在波爾查諾或特倫托住三晚，可安排城市與山谷短遊；四或五晚適合專注一條山區走廊；住六或七晚才適合分住南提洛與科爾蒂納，或特倫蒂諾與布倫塔。不要為了追名峰夜夜換旅館。依主要路線使用的公車、火車或纜車選基地。",
+    "Trenitalia reaches Bolzano and Trento; regional trains and buses serve other valley gateways. In Bolzano, the Renon cableway and narrow-gauge railway form a vertical link; Cortina and Tre Cime use date-specific bus or road access; Brenta routes begin from their own valley towns. Verify both the outward and last descent on South Tyrol or Trentino mobility sources.": "Trenitalia 可抵達波爾查諾與特倫托；區域火車與公車另通往山谷入口。在波爾查諾，雷農纜車和高原窄軌小火車形成垂直接駁；科爾蒂納與拉瓦雷多三尖峰依日期採公車或道路進入；布倫塔各路線則從不同山谷城鎮出發。依南提洛或特倫蒂諾官方交通資訊，同時查去程和最後下山方式。",
+    "Keep a complete low-altitude day in the same base: Bolzano’s museum and arcades, Trento’s MUSE and historic centre, or Cortina’s town and open lower paths. If the first lift, bus or trailhead is closed, use that plan instead of driving across a pass under the same weather system.": "在同一基地留一個完整的低海拔日：波爾查諾的博物館與拱廊、特倫托的 MUSE 和歷史中心，或科爾蒂納市區與開放的低海拔步道。若第一段纜車、公車或登山口關閉，就改用這套行程，不要在同一片天候系統下開車跨山口碰運氣。",
+    "Choose one valley, one vertical system and a weather reserve.": "選一座山谷、一套上下山交通，並預留天候備案。",
+    "Summer lift and trail dates do not match hotel opening dates, and shoulder-season snow or maintenance can close a high route. Afternoon storms, wind and short autumn daylight change safe turnarounds. Check the lift operator, park or refuge notice, local bus service and mountain forecast on the same day; never infer access from a clear valley forecast.": "纜車與登山步道的夏季營運日不等於旅館開放日；肩季可能下雪或維修，即使谷地晴朗，高山路線也可能無法通行。午後雷雨、強風與秋季提早日落會改變折返時機。當天查纜車業者、國家公園或山屋公告、當地公車及高山預報；不可只因谷地放晴就認定高處可走。",
+    "Bolzano station → South Tyrol Museum of Archaeology or Piazza Walther → arcades and Piazza delle Erbe → Bolzano cableway → Soprabolzano → Renon narrow-gauge railway or one signed plateau walk → return by the same vertical chain.": "波爾查諾車站 → 南提洛考古博物館或瓦爾特廣場 → 拱廊與水果廣場 → 波爾查諾纜車 → 上波爾查諾 → 雷農窄軌小火車或一段有標示的高原步道 → 沿同一垂直交通線返回。",
+    "Cortina centre → Corso Italia and the parish-square area → choose a signed lower walk or the verified Tre Cime gateway → follow only the open trail segment → return to the same bus stop, parking zone or town base.": "科爾蒂納市中心 → 科爾索・義大利與教堂廣場 → 選擇有標示的低海拔步道，或前往已確認開放的三尖峰入口 → 只走當日開放路段 → 返回原公車站、停車區或市區基地。",
+    "Trento station → Piazza Duomo and the historic centre → MUSE or Buonconsiglio as the booked interior → return to station or transfer to the selected Brenta gateway for a separate mountain day.": "特倫托車站 → 主教座堂廣場與歷史中心 → 預約參觀 MUSE 或布翁孔西利奧城堡 → 返回車站，或另日轉往選定的布倫塔山谷入口。",
+    "Piazza Bra’s arcaded façades viewed from the Verona Arena · CC BY-SA 3.0": "從維洛納競技場望向布拉廣場的拱廊立面 · CC BY-SA 3.0",
+    "Piazza Bra’s arcaded façades viewed from the Verona Arena": "從維洛納競技場望向布拉廣場的拱廊立面"
+  }
+}

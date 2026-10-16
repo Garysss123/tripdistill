@@ -5,7 +5,6 @@
     "/data/search-index.json"
   ],
   "translations": {
-    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "透過 20 個完整區域指南與 60 篇專題路線規劃法國行程，涵蓋城市、宮殿、葡萄園、海岸、山區與科西嘉島。",
     "French travel": "法國旅遊",
     "France rail": "法國鐵路",
     "Île-de-France": "法蘭西島大區",
@@ -29,6 +28,12 @@
     "mediterranean-island": "地中海沿岸與島嶼",
     "Bouches-du-Rhône, Provence": "羅訥河口省，普羅旺斯",
     "Alpes-Maritimes": "濱海阿爾卑斯省",
-    "Corsica": "科西嘉島"
+    "Corsica": "科西嘉島",
+    "Choose two or three France bases by nights, prove the full rail and rural last mile, then protect a nearby weather or closure fallback across twenty regional hubs.": "依住宿夜數選擇2或3個法國基地，確認完整鐵路與鄉間最後一段交通，再為20個區域中心各留附近的天候或關閉備案。",
+    "base nights": "住宿基地與夜數",
+    "Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.": "以里爾為城市基地住2至3晚，安排市區與一趟近郊行程；前往維米須確認阿拉斯出發的最後一段交通，歐泊海岸則須另行確認巴士、導覽團、自行車或汽車的回程。",
+    "Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.": "依車票所列車站抵達 Lille-Flandres 或 Lille-Europe；Ilévia 地鐵2號線可前往 Roubaix–Grand-Place，再步行到 La Piscine，出發前須確認當日路線與博物館開放時間。",
+    "Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.": "以阿拉斯作為前往維米的鐵路與住宿基地；另行預訂或確認鄉間接駁及回程接送，再查閱 Veterans Affairs Canada 訪客中心開放時間與園區進入資訊。",
+    "Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.": "前往布洛涅與 Nausicaá 選 Boulogne-Ville；若另排 Cap Blanc-Nez，則選 Calais-Ville。走上空曠海岸前，先確認當日海岸巴士、導覽或自駕路段與回程。"
   }
 }

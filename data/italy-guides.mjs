@@ -2,6 +2,7 @@ import { italyCentralCampaniaClusters } from './italy-central-campania-guides.mj
 import { italyCentralNortheastClusters } from './italy-central-northeast-guides.mjs';
 import { italyNorthwestAdriaticClusters } from './italy-northwest-adriatic-guides.mjs';
 import { italySouthIslandsClusters } from './italy-south-islands-guides.mjs';
+import { italyCountryIt12, italyIt12Refresh } from './italy-it12-content.mjs';
 import { italyImageManifest } from './italy-image-manifest.mjs';
 import { italyImageEditNote } from './italy-guide-builder.mjs';
 
@@ -12,12 +13,41 @@ export const italyCountrySources = [
   ['https://www.it-alert.gov.it/en/how-it-works/', 'IT-alert — official public warning information']
 ];
 
-export const italySourceClusters = [
+const italyBaseSourceClusters = [
   ...italyCentralCampaniaClusters,
   ...italyCentralNortheastClusters,
   ...italyNorthwestAdriaticClusters,
   ...italySouthIslandsClusters
 ];
+
+export const italySourceClusters = italyBaseSourceClusters.map((cluster) => {
+  const { guides: guideUpdates, ...clusterUpdate } = italyIt12Refresh[cluster.slug] || {};
+  if (!guideUpdates) return cluster;
+  const knownGuides = new Set(cluster.guides.map((guide) => guide.slug));
+  for (const slug of Object.keys(guideUpdates)) {
+    if (!knownGuides.has(slug)) throw new Error(`IT12 refresh references unknown ${cluster.slug} guide ${slug}.`);
+  }
+  const mergedCluster = { ...cluster, ...clusterUpdate };
+  return {
+    ...mergedCluster,
+    guides: mergedCluster.guides.map((guide) => {
+      const update = guideUpdates[guide.slug];
+      if (!update) throw new Error(`IT12 refresh omitted ${cluster.slug}/${guide.slug}.`);
+      const merged = { ...guide, ...update };
+      // Share the checked cluster logistics verbatim across its three focused pages;
+      // keep the route-specific walk sequence as the child-level plan.
+      return { ...merged, localPlan: {
+        ...merged.localPlan,
+        intro: mergedCluster.tagline,
+        stay: mergedCluster.stay,
+        booking: mergedCluster.season,
+        season: mergedCluster.fallback
+      } };
+    })
+  };
+});
+
+export { italyCountryIt12 };
 
 if (italySourceClusters.length !== 20) {
   throw new Error(`Expected 20 Italy hubs, found ${italySourceClusters.length}.`);
@@ -29,7 +59,7 @@ export const italyClusters = italySourceClusters.map((cluster) => ({
     const key = `${cluster.slug}/${guide.slug}`;
     const image = italyImageManifest[key];
     if (!image) throw new Error(`Missing Italy image manifest entry: ${key}`);
-    return { ...guide, image: { ...image, editNote: italyImageEditNote } };
+    return { ...guide, image: { ...image, editNote: image.editNote || italyImageEditNote } };
   })
 }));
 

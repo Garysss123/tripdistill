@@ -1,0 +1,21 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya's Foreign Settlements: Japanese, Portuguese and Dutch Riverbank Sites": "아유타야 외국인 정착지: 일본·포르투갈·네덜란드 강변 유적",
+    "Compare the Japanese Village's modern memorial grounds on the east bank with St Peter's Portuguese excavation opposite; trace Dutch VOC dates, plan the separate Baan Hollanda stop and road transfers.": "동쪽 강변의 현대 일본인 마을 기념 공간과 맞은편 성 베드로 성당의 포르투갈인 발굴 유적을 비교하세요. 네덜란드 VOC의 연대를 살펴보고 반 홀란다는 별도 방문지로 계획하며 도로 이동을 마련하세요.",
+    "portuguese village": "포르투갈인 마을",
+    "st peter church": "성 베드로 성당",
+    "dutch voc": "네덜란드 동인도 회사(VOC)",
+    "Bang Pa-In Palace: Thai, Khmer, Chinese and European Architecture": "방파인 궁전: 태국·크메르·중국·유럽 건축",
+    "Follow Hema Monthian Thewarat, Aisawan Thiphya-at, Warophat Phiman, Withun Tasana and Wehat Chamrun in a south-of-island route; compare rail with its road last mile and verify current palace and Wat Niwet access.": "섬 남쪽 경로에서 헤마 몬티안 테와랏, 아이사완 티파야앗, 워라폿 피만, 위툰 타사나와 웨핫 참룬을 차례로 둘러보세요. 철도와 마지막 구간 도로 이동을 비교하고 궁전과 왓 니웻의 현재 출입 여부를 확인하세요.",
+    "bang pa-in palace": "방파인 궁전",
+    "aisawan thiphya-at": "아이사완 티파야앗",
+    "wat niwet thamma prawat": "왓 니웻 탐마쁘라왓",
+    "bang pa-in station": "방파인역",
+    "royal estate": "왕실 영지"
+  }
+}

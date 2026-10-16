@@ -1,0 +1,43 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/ha-giang/",
+    "/vietnam/ha-giang/quan-ba-heavens-gate/",
+    "/vietnam/ha-giang/yen-minh-pine-forest/",
+    "/vietnam/ha-giang/dong-van-old-quarter/",
+    "/vietnam/ha-giang/lung-cu-flag-tower/",
+    "/vietnam/ha-giang/ma-pi-leng-nho-que/",
+    "/vietnam/ha-giang/meo-vac-du-gia/"
+  ],
+  "translations": {
+    "How much time should Meo Vac to Du Gia Southbound Link receive?": "ควรเผื่อเวลาให้เส้นทางจาก Meo Vac ลงใต้สู่ Du Gia เท่าไร?",
+    "Plan at least two days and one overnight; never advertise Meo Vac and Du Gia as a guaranteed same-day loop.": "วางแผนอย่างน้อยสองวันหนึ่งคืน อย่านำเสนอ Meo Vac กับ Du Gia ว่าเป็นวงรอบวันเดียวที่รับประกันได้",
+    "Mountain valley landscape around Du Gia in Ha Giang": "ภูมิทัศน์หุบเขารอบ Du Gia ใน Ha Giang",
+    "market finish and village recovery": "ปิดท้ายที่ตลาดและพักฟื้นในหมู่บ้าน",
+    "Meo Vac to Du Gia Southbound Link": "เส้นทางจาก Meo Vac ลงใต้สู่ Du Gia",
+    "A deliberately multi-day southbound chapter joining Meo Vac’s highland market area with Du Gia’s valley, waterfalls and homestay rhythm.": "แผนเดินทางลงใต้หลายวันที่เชื่อมพื้นที่ตลาดบนที่สูงของ Meo Vac กับหุบเขา น้ำตก และจังหวะโฮมสเตย์ของ Du Gia",
+    "01 / compass": "01 / เข็มทิศ",
+    "02 / roadbook": "02 / สมุดเส้นทาง",
+    "03 / zine": "03 / สมุดบันทึก",
+    "04 / atlas": "04 / แผนที่",
+    "05 / contour": "05 / แนวระดับ",
+    "06 / signal": "06 / สัญญาณ",
+    "Leave Meo Vac with fuel, cash, water and a confirmed destination. Road conditions and signal coverage vary; a local driver or legal tour is preferable for the southbound section.": "ออกจาก Meo Vac พร้อมน้ำมัน เงินสด น้ำ และจุดหมายที่ยืนยันแล้ว สภาพถนนกับสัญญาณแตกต่างกัน การใช้คนขับท้องถิ่นหรือทัวร์ถูกกฎหมายเหมาะกว่าสำหรับช่วงมุ่งลงใต้",
+    "Do not enter farms, homes or bathing areas without invitation. Waterfalls and homestays need the same respect as heritage sites.": "ห้ามเข้าไปในฟาร์ม บ้าน หรือพื้นที่อาบน้ำโดยไม่ได้รับคำเชิญ น้ำตกและโฮมสเตย์ต้องได้รับความเคารพเช่นเดียวกับแหล่งมรดก",
+    "Observe Meo Vac in the morning, travel only in daylight, reach Du Gia with enough time for a quiet village or waterfall visit, and keep the next transfer defensive.": "สำรวจ Meo Vac ตอนเช้า เดินทางเฉพาะกลางวัน ไปถึง Du Gia ให้มีเวลาพอสำหรับหมู่บ้านเงียบ ๆ หรือน้ำตก และเผื่อขากลับอย่างปลอดภัย",
+    "— trungydang, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits.": "— trungydang, CC BY 3.0. ปรับขนาด ครอบภาพสำหรับการแสดงผล และแปลงเป็น WebP โดยไม่มีการแก้ไขเนื้อหาอื่น",
+    "compass": "เข็มทิศ",
+    "Northeast Vietnam": "เวียดนามตะวันออกเฉียงเหนือ",
+    "signal": "สัญญาณ",
+    "Stairs and exposure": "บันไดและการเผชิญแดดลม",
+    "Rain and rockfall": "ฝนและหินตก",
+    "Water safety": "ความปลอดภัยทางน้ำ",
+    "Meo Vac to Du Gia Southbound Link | TripDistill": "เส้นทางจาก Meo Vac ลงใต้สู่ Du Gia | TripDistill",
+    "Meo Vac to Du Gia Southbound Link — market finish and village recovery": "เส้นทางจาก Meo Vac ลงใต้สู่ Du Gia — ปิดท้ายตลาดและพักฟื้นในหมู่บ้าน",
+    "Meo Vac to Du Gia Southbound Link Travel Guide": "คู่มือเที่ยวเส้นทางจาก Meo Vac ลงใต้สู่ Du Gia",
+    "Can I combine Meo Vac to Du Gia Southbound Link with another major chapter?": "ควรจัดเส้นทางจาก Meo Vac ลงใต้สู่ Du Gia ไว้ร่วมกับเส้นทางหลักอื่นในทริปเดียวไหม?",
+    "market finish and village recovery.": "ปิดท้ายตลาดและพักฟื้นในหมู่บ้าน",
+    "Meo Vac to Du Gia Southbound Link FAQ": "คำถามที่พบบ่อยเกี่ยวกับเส้นทางจาก Meo Vac ลงใต้สู่ Du Gia"
+  }
+}

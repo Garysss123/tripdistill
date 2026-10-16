@@ -3,6 +3,11 @@ import { australiaSouthClusters } from './australia-south-guides.mjs';
 import { australiaNorthClusters } from './australia-north-guides.mjs';
 import { australiaWestIslandClusters } from './australia-west-islands-guides.mjs';
 import { australiaImageManifest } from './australia-image-manifest.mjs';
+import { australiaSydneyDiagram } from './australia-sydney-diagram.mjs';
+import { australiaBlueMountainsDiagram } from './australia-blue-mountains-diagram.mjs';
+import { australiaGreatOceanRoadDiagram } from './australia-great-ocean-road-diagram.mjs';
+import { australiaGoldCoastDiagram } from './australia-gold-coast-diagram.mjs';
+import { australiaAdelaidePerthDiagrams } from './australia-adelaide-perth-diagrams.mjs';
 import { australiaImageEditNote } from './australia-guide-builder.mjs';
 
 const bySlug = new Map([
@@ -36,11 +41,19 @@ export const australiaClusters = orderedSlugs.map((slug) => {
   if (!cluster) throw new Error(`Missing Australia cluster ${slug}.`);
   return {
     ...cluster,
+    ...(cluster.slug === 'sydney-harbour-coast' ? { diagram: australiaSydneyDiagram } : {}),
+    ...(cluster.slug === 'blue-mountains-nsw-coast' ? { diagram: australiaBlueMountainsDiagram } : {}),
+    ...(cluster.slug === 'great-ocean-road-gariwerd' ? { diagram: australiaGreatOceanRoadDiagram } : {}),
+    ...(cluster.slug === 'gold-coast-scenic-rim' ? { diagram: australiaGoldCoastDiagram } : {}),
     guides: cluster.guides.map((guide) => {
       const key = `${cluster.slug}/${guide.slug}`;
       const image = australiaImageManifest[key];
       if (!image) throw new Error(`Missing verified Australia image manifest entry: ${key}`);
-      return { ...guide, image: { ...image, editNote: australiaImageEditNote } };
+      return {
+        ...guide,
+        ...(australiaAdelaidePerthDiagrams[key] ? { diagram: australiaAdelaidePerthDiagrams[key] } : {}),
+        image: { ...image, editNote: image.editNote || australiaImageEditNote }
+      };
     })
   };
 });
@@ -63,6 +76,10 @@ if (assetSet.size !== australiaGuides.length) throw new Error('Australia guide i
 export const australiaCountrySources = [
   ['https://www.australia.com/en/places.html', 'Tourism Australia — destinations, states and territories'],
   ['https://www.australia.com/en/facts-and-planning/getting-around.html', 'Tourism Australia — getting around and continental distances'],
+  ['https://www.australia.com/en/places/tasmania.html', 'Tourism Australia — Tasmania flight gateways, Geelong–Devonport ferry and regional travel'],
+  ['https://www.spiritoftasmania.com.au/', 'Spirit of Tasmania — current terminals, sailings, check-in and vehicle conditions'],
+  ['https://transportnsw.info/travel-info/ways-to-get-around/regional-trains-and-coaches/regional-trains', 'Transport for NSW — regional train routes and current journey planning'],
+  ['https://parks.tas.gov.au/explore-our-parks/know-before-you-go/alerts', 'Parks and Wildlife Service Tasmania — current park, track and visitor-site alerts'],
   ['https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder', 'Australian Department of Home Affairs — visa finder'],
   ['https://www.bom.gov.au/australia/index.shtml', 'Australian Bureau of Meteorology — national weather and warnings'],
   ['https://parksaustralia.gov.au/', 'Parks Australia — Commonwealth national parks']

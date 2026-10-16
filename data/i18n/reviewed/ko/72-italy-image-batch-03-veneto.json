@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/veneto-art-cities/",
+    "/italy/veneto-art-cities/verona-arena-river/",
+    "/italy/veneto-art-cities/vicenza-palladian-city/",
+    "/italy/veneto-art-cities/padua-frescoes-basilica/"
+  ],
+  "translations": {
+    "— Piero tasso (P tasso),": "— Piero tasso (P tasso),"
+  }
+}

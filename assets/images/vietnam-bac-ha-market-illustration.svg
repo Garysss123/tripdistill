@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Bac Ha market and courtyard illustration</title>
+  <desc id="desc">An original, text-free vector illustration of a highland market roofline, open courtyard, and mountain terraces, with no people depicted.</desc>
+  <metadata>Original TripDistill editorial vector illustration. Creator: TripDistill. Released under CC0 1.0. No reference photograph, identifiable people, or third-party artwork used. Architectural forms are symbolic, not a measured depiction of Hoang A Tuong Mansion or the market.</metadata>
+  <defs>
+    <linearGradient id="dawn" x2="0" y2="1"><stop stop-color="#f4d4a9"/><stop offset="1" stop-color="#f6ead4"/></linearGradient>
+    <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#819c7e"/><stop offset="1" stop-color="#3a6256"/></linearGradient>
+    <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#f3dfbd"/><stop offset="1" stop-color="#d1ae84"/></linearGradient>
+    <pattern id="woven" width="36" height="30" patternUnits="userSpaceOnUse"><path d="M0 8h36M0 22h36M9 0v30M27 0v30" stroke="#a44d38" stroke-width="2" opacity=".25"/></pattern>
+  </defs>
+  <rect width="1600" height="1066" fill="url(#dawn)"/>
+  <circle cx="1250" cy="223" r="98" fill="#d18452" opacity=".82"/>
+  <path d="M0 497 192 326l136 81 178-221 174 246 146-163 175 182 175-207 179 182 128-116 117 97v653H0Z" fill="#a4b4a0"/>
+  <path d="m0 596 201-136 163 88 191-178 154 197 173-107 143 147 191-165 164 111 114-51 206 113v451H0Z" fill="url(#hill)"/>
+  <g fill="none" stroke="#d8c99e" stroke-width="8" opacity=".83">
+    <path d="M0 627q183-44 339 0t336 0q177-43 336 0t327 0q129-35 262 5"/>
+    <path d="M0 692q172-46 340 0t336 0q176-45 337 0t327 0q132-39 260 4"/>
+    <path d="M0 758q170-45 338 0t339 0q174-45 337 0t327 0q132-37 259 3"/>
+  </g>
+  <path d="M0 807q222-61 435 4t422-3q218-61 407 0t336 1v257H0Z" fill="#264f4a"/>
+  <g transform="translate(319 337)" stroke="#775a43" stroke-width="10" stroke-linejoin="round">
+    <path d="M0 177 464 0l465 177v39H0Z" fill="#a54836"/>
+    <path d="M51 216h827v333H51z" fill="url(#wall)"/>
+    <path d="M111 277h707v182H111z" fill="#eddfc8"/>
+    <path d="M0 548h929v75H0z" fill="#d1ae84"/>
+    <path d="M0 623h929" fill="none" stroke="#a54836" stroke-width="16"/>
+    <g fill="#46685d">
+      <path d="M158 319h86v140h-86zm164 0h86v140h-86zm195 0h86v140h-86zm164 0h86v140h-86z"/>
+      <path d="M402 221h125v88H402z"/>
+    </g>
+    <g fill="#f4e4c6"><path d="M178 356q25-42 50 0v63h-50zm164 0q25-42 50 0v63h-50zm195 0q25-42 50 0v63h-50zm164 0q25-42 50 0v63h-50z"/></g>
+    <path d="M424 459V338q43-60 86 0v121" fill="#a54836"/>
+    <path d="M445 459v-90q22-34 44 0v90" fill="#46685d"/>
+    <path d="M-35 225h999M-22 641h972" fill="none" stroke="#775a43" stroke-width="11"/>
+  </g>
+  <path d="M0 880q172-54 347 0t348 0q174-54 348 0t349 0q114-40 208 0v186H0Z" fill="#ead7b8"/>
+  <path d="M0 880q172-54 347 0t348 0q174-54 348 0t349 0q114-40 208 0v186H0Z" fill="url(#woven)"/>
+  <g fill="#a54836" opacity=".9"><path d="m118 911 37-32 36 32v104h-73zm150 22 31-27 31 27v82h-62zm104-18 38-33 38 33v100h-76zm747 10 37-32 36 32v104h-73zm150 22 31-27 31 27v82h-62zm104-18 38-33 38 33v100h-76z"/></g>
+</svg>

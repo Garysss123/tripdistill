@@ -1,0 +1,42 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/",
+    "/australia/red-centre/",
+    "/australia/red-centre/uluru-cultural-landscape/"
+  ],
+  "translations": {
+    "ROME: THREE ROUTE CHAPTERS": "로마: 세 가지 여정",
+    "Forum-to-Capitoline field notes": "포룸에서 카피톨리노까지: 현장 메모",
+    "ROME CITY AND TRANSPORT SERVICES": "로마 시내 및 교통 안내",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and…": "율라라를 국립공원 거점으로, 왓타르카를 별도의 도로 여행 숙박지로, 음파른트웨를 트조리타로 향하는 관문으로 삼으세요. 이 지역들은 서로 바꿔 끼울 수 있는 당일치기 목적지가 아닙니다. 울루루(Uluṟu)와",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and Kata Tjuṯa have long exposed walks and their own access conditions, while fuel, daylight and road closures govern every remote leg. Begin with Aṉangu or Arrernte visitor guidance, then build each day around the current park and road information.": "율라라를 국립공원 거점으로, 왓타르카를 별도의 도로 여행 숙박지로, 음파른트웨를 트조리타로 향하는 관문으로 삼으세요. 이 지역들은 서로 바꿔 끼울 수 있는 당일치기 목적지가 아닙니다. 울루루(Uluṟu)와 카타츄타(Kata Tjuṯa)에는 햇빛에 노출되는 긴 산책로와 각기 다른 출입 조건이 있습니다. 외딴 지역의 모든 이동은 연료, 일조 시간과 도로 폐쇄 여부에 좌우됩니다. 아난구(Aṉangu) 또는 아런테 방문객 안내를 먼저 확인한 뒤, 최신 공원 및 도로 정보를 바탕으로 하루 일정을 짜세요.",
+    "How many days should I give the Red Centre?": "레드 센터에는 며칠을 배정해야 하나요?",
+    "Use at least two full days from Yulara if you want both Uluṟu and Kata Tjuṯa. Add separate nights for Watarrka and Mparntwe when those chapters are in the route; do not turn the drive between them into an evening transfer.": "울루루(Uluṟu)와 카타츄타(Kata Tjuṯa)를 모두 보려면 율라라에서 최소 이틀을 온전히 보내세요. 왓타르카와 음파른트웨를 일정에 넣는다면 각각 별도의 숙박일을 더하세요. 두 곳 사이의 운전을 저녁 이동으로 처리하지 마세요.",
+    "Can I drive from Uluṟu to Watarrka and return after one walk?": "울루루(Uluṟu)에서 왓타르카까지 운전해 산책한 뒤 당일 돌아올 수 있나요?",
+    "Keep those chapters on different days with an overnight near Watarrka. The long road leg plus an exposed canyon walk leaves too little daylight and recovery margin for a safe return.": "두 지역 방문은 서로 다른 날로 나누고 왓타르카 근처에서 숙박하세요. 긴 도로 이동에 햇빛에 노출되는 협곡 산책까지 더하면 안전하게 돌아올 일조 시간과 충분한 휴식 시간이 부족합니다.",
+    "What should I recheck before leaving a base?": "거점을 떠나기 전에 무엇을 다시 확인해야 하나요?",
+    "Check current park and cultural closures, heat or wind advice, road conditions, fuel, water, communications and the vehicle requirements for the actual route.": "현재 공원 및 문화 관련 폐쇄, 폭염이나 강풍 안내, 도로 상태, 연료, 물, 통신 가능 여부, 실제 주행 경로에 필요한 차량 조건을 확인하세요.",
+    "Give Uluṟu–Kata Tjuṯa, Watarrka, Tjoritja and Mparntwe separate bases; let Country, distance and heat set the order.": "울루루(Uluṟu)·카타츄타(Kata Tjuṯa), 왓타르카, 트조리타, 음파른트웨를 각각 다른 거점으로 두세요. 컨트리(Country), 거리와 더위에 따라 순서를 정하세요.",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window.": "울루루(Uluṟu)와 카타츄타(Kata Tjuṯa)를 모두 우선 방문지로 꼽는다면 율라라에서 최소 이틀을 확보하고 각각에 알맞은 날씨 시간을 배정하세요.",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and…": "앨리스스프링스와 율라라에는 항공편이 있지만, 비행기로 도착해도 국립공원과 왓타르카,",
+    "Road and rocky landscape at Anzac Hill in Alice Springs · CC BY-SA 4.0": "앨리스스프링스 앤잭 힐의 바위 지형과 도로 풍경 — CC BY-SA 4.0",
+    "Field 04 · surface, water and respect": "현장 기록 04 — 지표와 물, 존중",
+    "Uluṟu Cultural Landscape": "울루루(Uluṟu) 문화 경관",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window. Keep the Kings Canyon Rim Walk beside a Watarrka overnight; use Mparntwe for town services and a separate Tjoritja day. Moving bases is part of the itinerary, not spare time.": "울루루(Uluṟu)와 카타츄타(Kata Tjuṯa)를 모두 우선 방문지로 꼽는다면 율라라에서 최소 이틀을 확보하고 각각에 알맞은 날씨 시간을 배정하세요. 킹스캐니언 림 워크는 왓타르카 숙박 일정과 묶으세요. 음파른트웨에서는 도시의 편의시설을 이용하고 트조리타는 별도의 하루 일정으로 둘러보세요. 거점을 옮기는 시간도 여정의 일부입니다.",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and Tjoritja. Confirm vehicle suitability, fuel, communications and road notices before each departure; plan daylight and recovery rather than a night return.": "앨리스스프링스와 율라라에 항공편이 있지만, 비행기로 도착해도 국립공원과 왓타르카, 트조리타 사이의 긴 도로 이동은 줄어들지 않습니다. 출발할 때마다 차량 적합성, 연료, 통신 수단과 도로 공지를 확인하세요. 야간 귀가 대신 충분한 일조 시간과 휴식 시간을 계획하세요.",
+    "Uluṟu Cultural Landscape Travel Guide | TripDistill Australia": "울루루(Uluṟu) 문화 경관 여행 가이드 | TripDistill Australia",
+    "Uluṟu Cultural Landscape — Australia field guide": "울루루(Uluṟu) 문화 경관 — 오스트레일리아 현장 가이드",
+    "surface, water and respect.": "지표와 물, 존중.",
+    "Uluru rising from the central Australian desert · CC BY-SA 4.0": "오스트레일리아 중부 사막 위로 솟은 울루루(Uluṟu) — CC BY-SA 4.0",
+    "On the public path": "일반 공개 산책로에서",
+    "Uluṟu Cultural Landscape FAQ": "울루루(Uluṟu) 문화 경관 FAQ",
+    "Parks Australia – Kuniya walk and Muṯitjulu Waterhole": "파크스 오스트레일리아 — 쿠니야(Kuniya) 산책로와 무티줄루(Muṯitjulu) 워터홀",
+    "Parks Australia – Mala walk": "파크스 오스트레일리아 — 말라(Mala) 산책로",
+    "Parks Australia – Tjukurpa": "파크스 오스트레일리아 — 투쿠르파(Tjukurpa)"
+  }
+}

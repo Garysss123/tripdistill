@@ -1,0 +1,21 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya's Foreign Settlements: Japanese, Portuguese and Dutch Riverbank Sites": "ชุมชนชาวต่างชาติในอยุธยา: สถานที่ริมแม่น้ำของชาวญี่ปุ่น โปรตุเกส และดัตช์",
+    "Compare the Japanese Village's modern memorial grounds on the east bank with St Peter's Portuguese excavation opposite; trace Dutch VOC dates, plan the separate Baan Hollanda stop and road transfers.": "เปรียบเทียบพื้นที่อนุสรณ์หมู่บ้านญี่ปุ่นสมัยใหม่ทางฝั่งตะวันออก กับแหล่งขุดค้นโปรตุเกสของโบสถ์เซนต์ปีเตอร์ฝั่งตรงข้าม ตามรอยวันที่สำคัญของ VOC ดัตช์ วางแผนแวะบ้านฮอลันดา (Baan Hollanda) แยกต่างหากและการเดินทางทางถนน",
+    "portuguese village": "หมู่บ้านโปรตุเกส",
+    "st peter church": "โบสถ์เซนต์ปีเตอร์",
+    "dutch voc": "VOC ดัตช์",
+    "Bang Pa-In Palace: Thai, Khmer, Chinese and European Architecture": "พระราชวังบางปะอิน: สถาปัตยกรรมไทย เขมร จีน และยุโรป",
+    "Follow Hema Monthian Thewarat, Aisawan Thiphya-at, Warophat Phiman, Withun Tasana and Wehat Chamrun in a south-of-island route; compare rail with its road last mile and verify current palace and Wat Niwet access.": "ตามลำดับเที่ยวหอเหมมณเฑียรเทวราช พระที่นั่งไอศวรรย์ทิพยอาสน์ พระที่นั่งวโรภาษพิมาน หอวิทัศนทัศน์ และพระที่นั่งเวหาศน์จำรูญ ในเส้นทางทางใต้ของเกาะเมือง เปรียบเทียบรถไฟต่อรถช่วงสุดท้ายกับการเดินทางทางถนน และตรวจการเข้าชมพระราชวังกับวัดนิเวศธรรมประวัติปัจจุบัน",
+    "bang pa-in palace": "พระราชวังบางปะอิน",
+    "aisawan thiphya-at": "พระที่นั่งไอศวรรย์ทิพยอาสน์",
+    "wat niwet thamma prawat": "วัดนิเวศธรรมประวัติ",
+    "bang pa-in station": "สถานีบางปะอิน",
+    "royal estate": "เขตพระราชฐาน"
+  }
+}

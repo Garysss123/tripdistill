@@ -1,0 +1,30 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Tofino accommodation base": "ฐานที่พักใน Tofino",
+    "Nanaimo ferry": "เรือเฟอร์รีไป Nanaimo",
+    "Highway 4 west coast Vancouver Island": "ทางหลวงหมายเลข 4 ฝั่งตะวันตกของ Vancouver Island",
+    "VI Connector not operating": "VI Connector หยุดให้บริการ",
+    "Long Beach tide and surf": "น้ำขึ้นน้ำลงและคลื่นที่ Long Beach",
+    "Rainforest Trail A 1 km": "Rainforest Trail A ระยะ 1 กม.",
+    "Shorepine Bog no stairs": "เส้นทาง Shorepine Bog ไม่มีบันได",
+    "Schooner Cove closed": "Schooner Cove ปิด",
+    "Amphitrite Point Lighthouse": "Amphitrite Point Lighthouse",
+    "Wild Pacific Trail Lighthouse Loop": "Wild Pacific Trail Lighthouse Loop",
+    "Lighthouse Loop 2.6 km": "Lighthouse Loop ระยะ 2.6 กม.",
+    "Ucluelet walk no stairs": "ทางเดินไม่มีบันไดใน Ucluelet",
+    "Jamie’s Whaling Station": "Jamie’s Whaling Station",
+    "Tofino licensed boat operator": "ผู้ประกอบการเรือที่มีใบอนุญาตใน Tofino",
+    "wildlife sighting not guaranteed": "ไม่รับประกันว่าจะพบสัตว์ป่า",
+    "marine trip cancellation sea state": "การยกเลิกทริปเรือตามสภาพทะเล"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Codex",
+    "reviewer": "GPT-6 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

@@ -19,6 +19,42 @@ body[data-region="ayutthaya"] {
   background-size: 2rem 2rem;
 }
 
+/* A classic scrollbar can leave these reviewed routes a 305px layout viewport at 320px.
+   Release the shared 320px floor and let the existing shell/navigation size naturally. */
+body[data-region="ayutthaya"][data-page="ayutthaya"],
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"],
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"],
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"],
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"],
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"],
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"],
+body[data-region="ayutthaya"][data-page="foreign-settlements-south-river"],
+body[data-region="ayutthaya"][data-page="bang-pa-in-palace"] {
+  min-width: 0;
+  max-width: 100%;
+}
+body[data-region="ayutthaya"][data-page="ayutthaya"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .site-shell,
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .site-shell,
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"] .site-shell,
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"] .site-shell,
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .site-shell,
+body[data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .site-shell,
+body[data-region="ayutthaya"][data-page="bang-pa-in-palace"] .site-shell,
+body[data-region="ayutthaya"][data-page="ayutthaya"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-mahathat-ratchaburana"] .page-content,
+body[data-region="ayutthaya"][data-page="palace-quarter-wat-phra-si-sanphet"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-chaiwatthanaram-west-bank"] .page-content,
+body[data-region="ayutthaya"][data-page="railway-station-chao-phrom"] .page-content,
+body[data-region="ayutthaya"][data-page="west-island-wat-lokayasutharam"] .page-content,
+body[data-region="ayutthaya"][data-page="wat-yai-chai-mongkhon-phanan-choeng"] .page-content,
+body[data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .page-content,
+body[data-region="ayutthaya"][data-page="bang-pa-in-palace"] .page-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .ayu-breadcrumbs { border-bottom-color: rgba(97,39,31,.18); }
 .ayu-breadcrumbs a { color: var(--ayu-brick-dark); }
 .ayu-kicker { display: block; color: var(--ayu-brick); font-size: .69rem; font-weight: 950; letter-spacing: .14em; text-transform: uppercase; }
@@ -131,10 +167,10 @@ body[data-region="ayutthaya"] {
 .axis-plan p { color: rgba(255,255,255,.72); }
 
 /* 04: west-island shade register. */
-.shade-register-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 42rem; color: var(--ayu-ink); background: #d7c7a4; }
-.shade-register-photo { display: grid; place-items: center; padding: 2rem; }
+.shade-register-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); min-height: 42rem; color: var(--ayu-ink); background: #d7c7a4; }
+.shade-register-photo { display: grid; min-width: 0; place-items: center; padding: 2rem; }
 .shade-register-photo img { width: min(44rem,100%); aspect-ratio: 1.35; object-fit: cover; object-position: 10% 65%; border: .85rem solid rgba(255,250,240,.72); border-radius: 50%; box-shadow: 0 0 0 1px var(--ayu-brick-dark); }
-.shade-register-copy { position: relative; padding: clamp(2.5rem,6vw,5.2rem); align-self: center; }
+.shade-register-copy { position: relative; min-width: 0; padding: clamp(2.5rem,6vw,5.2rem); align-self: center; }
 .shade-register-copy::after { content: "SHADE\A CLOCK"; white-space: pre; position: absolute; top: 1.2rem; right: 1.2rem; color: rgba(97,39,31,.45); font-size: .62rem; font-weight: 950; letter-spacing: .16em; text-align: center; }
 .shade-register-copy h1 { margin: .8rem 0 1rem; color: var(--ayu-ink); font: 500 clamp(3.8rem,7vw,6.6rem)/.8 Georgia, serif; }
 .shade-register-copy h1 span { display: block; color: var(--ayu-brick); font-size: .54em; }
@@ -176,11 +212,11 @@ body[data-region="ayutthaya"] {
 .living-thresholds h2, .living-thresholds h3 { color: var(--ayu-ink); font: 500 1.42rem/1 Georgia, serif; }
 
 /* 07: historic international quarter as a cargo manifest. */
-.cargo-manifest-hero { display: grid; grid-template-columns: .82fr 1.18fr; min-height: 42rem; color: #fff; background: #26383a; }
+.cargo-manifest-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); min-height: 42rem; color: #fff; background: #26383a; }
 .cargo-manifest-photo { position: relative; margin: 1rem 0 1rem 1rem; overflow: hidden; }
 .cargo-manifest-photo img { width: 100%; height: 100%; object-fit: cover; }
 .cargo-manifest-photo::after { content: "SOUTH RIVER / JAPANESE VILLAGE"; position: absolute; inset: auto .8rem .8rem; padding: .8rem; border: 1px dashed rgba(255,255,255,.65); color: #fff; background: rgba(38,56,58,.82); font-size: .62rem; font-weight: 950; letter-spacing: .11em; }
-.cargo-manifest-copy { padding: clamp(2.7rem,6vw,5.4rem); align-self: center; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 100% 3rem; }
+.cargo-manifest-copy { min-width: 0; padding: clamp(2.7rem,6vw,5.4rem); align-self: center; background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px); background-size: 100% 3rem; }
 .cargo-manifest-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(3.7rem,7vw,6.5rem)/.79 Georgia, serif; }
 .cargo-manifest-copy h1 span { display: block; color: var(--ayu-gold); font-size: .54em; }
 .cargo-manifest-copy p { color: rgba(255,255,255,.73); }
@@ -192,11 +228,11 @@ body[data-region="ayutthaya"] {
 .port-ledger p { color: inherit; opacity: .76; }
 
 /* 08: Bang Pa-In as a formal garden cabinet outside the island. */
-.garden-cabinet-hero { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 43rem; color: #fff; background: #395443; }
+.garden-cabinet-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); min-height: 43rem; color: #fff; background: #395443; }
 .garden-cabinet-photo { position: relative; margin: 1rem; overflow: hidden; border: 1px solid rgba(255,255,255,.5); border-radius: 10rem 10rem .4rem .4rem; }
 .garden-cabinet-photo img { width: 100%; height: 100%; object-fit: cover; }
 .garden-cabinet-photo::after { content: "PALACE GARDEN / SOUTH OF THE ISLAND"; position: absolute; left: 1rem; bottom: 1rem; padding: .75rem .9rem; color: #fff; background: rgba(57,84,67,.88); font-size: .62rem; font-weight: 950; letter-spacing: .11em; }
-.garden-cabinet-copy { position: relative; padding: clamp(2.7rem,6vw,5.4rem); align-self: center; }
+.garden-cabinet-copy { position: relative; min-width: 0; padding: clamp(2.7rem,6vw,5.4rem); align-self: center; }
 .garden-cabinet-copy::before { content: "ROYAL ESTATE"; position: absolute; top: 1.5rem; right: 1.5rem; color: var(--ayu-gold); font-size: .61rem; font-weight: 950; letter-spacing: .18em; }
 .garden-cabinet-copy h1 { margin: .8rem 0 1rem; color: #fff; font: 500 clamp(3.8rem,7vw,6.7rem)/.79 Georgia, serif; }
 .garden-cabinet-copy h1 span { display: block; color: #f0c45a; font-size: .54em; }
@@ -216,6 +252,7 @@ body[data-region="ayutthaya"] {
 
 @media (max-width: 760px) {
   .confluence-hero, .arrival-signal-hero, .strata-hero, .shade-register-hero, .sunset-aperture-hero, .threshold-hero, .cargo-manifest-hero, .garden-cabinet-hero, .river-loop { grid-template-columns: 1fr; }
+  .shade-register-hero { grid-template-columns: minmax(0,1fr); }
   .confluence-hero, .arrival-signal-hero, .strata-hero, .shade-register-hero, .sunset-aperture-hero, .threshold-hero, .cargo-manifest-hero, .garden-cabinet-hero { min-height: 0; }
   .confluence-image { min-height: 30rem; order: -1; }
   .confluence-copy h1, .arrival-signal-copy h1, .strata-copy h1, .royal-axis-copy h1, .shade-register-copy h1, .sunset-aperture-copy h1, .threshold-copy h1, .cargo-manifest-copy h1, .garden-cabinet-copy h1 { font-size: clamp(3.2rem,15vw,5.2rem); }
@@ -240,4 +277,29 @@ body[data-region="ayutthaya"] {
   .shade-clock { border-radius: 2rem; }
   .shade-clock article { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
   .sunset-aperture-copy h1 { font-size: clamp(2.35rem,10.2vw,3rem); }
+  .shade-register-copy h1, .cargo-manifest-copy h1, .garden-cabinet-copy h1 { font-size: clamp(2.2rem,11vw,2.8rem); }
+}
+
+/* Keep the condensed display treatment in English; translated CJK and Thai headings need room for their native glyph metrics. */
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1,
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 {
+  line-height: 1.18;
+}
+
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="foreign-settlements-south-river"] .cargo-manifest-copy h1 span,
+html[lang="zh-Hant"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="ja"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="ko"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span,
+html[lang="th"] body[data-country="thailand"][data-region="ayutthaya"][data-page="bang-pa-in-palace"] .garden-cabinet-copy h1 span {
+  margin-block-start: .15em;
+  line-height: 1.28;
 }

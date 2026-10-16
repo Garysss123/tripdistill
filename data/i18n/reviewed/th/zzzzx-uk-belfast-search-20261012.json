@@ -1,0 +1,26 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Belfast–Coleraine rail itinerary": "เส้นทางรถไฟเบลฟาสต์–โคลเรน",
+    "Causeway Coast bus connection": "รถบัสเชื่อมต่อชายฝั่งคอสเวย์",
+    "Derry overnight base": "ที่พักค้างคืนในเดอร์รี",
+    "Belfast civic walking route": "เส้นทางเดินย่านราชการเบลฟาสต์",
+    "Titanic Quarter timed visit": "เข้าชม Titanic Quarter ตามเวลานัด",
+    "Belfast station choices": "ตัวเลือกสถานีรถไฟในเบลฟาสต์",
+    "Coleraine to Giant’s Causeway": "จากโคลเรนไป Giant’s Causeway",
+    "Causeway Coast seasonal bus": "รถบัสชายฝั่งคอสเวย์ตามฤดูกาล",
+    "Causeway visitor-centre access": "ข้อมูลการเข้าชมศูนย์บริการ Giant’s Causeway",
+    "Derry wall walking route": "เส้นทางเดินกำแพงเมืองเดอร์รี",
+    "Cityside and Waterside stay": "ที่พักย่าน Cityside และ Waterside",
+    "Museum of Free Derry opening hours": "เวลาเปิด Museum of Free Derry"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

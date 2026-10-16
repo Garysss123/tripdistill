@@ -1,0 +1,19 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/",
+    "/australia/red-centre/uluru-cultural-landscape/",
+    "/australia/red-centre/kata-tjuta/",
+    "/australia/red-centre/watarrka-kings-canyon/",
+    "/australia/red-centre/tjoritja-west-macdonnell/",
+    "/australia/red-centre/mparntwe-alice-springs/"
+  ],
+  "translations": {
+    "Kata Tjuṯa": "卡塔丘塔（Kata Tjuṯa）",
+    "Parks Australia — Uluṟu–Kata Tjuṯa National Park": "澳洲國家公園署（Parks Australia）— Uluṟu–Kata Tjuṯa 國家公園",
+    "Kata Tjuṯa Travel Guide | TripDistill Australia": "卡塔丘塔（Kata Tjuṯa）旅遊指南｜TripDistill Australia",
+    "Kata Tjuṯa — Australia field guide": "卡塔丘塔（Kata Tjuṯa）— 澳洲實地指南",
+    "Kata Tjuṯa FAQ": "卡塔丘塔（Kata Tjuṯa）常見問題"
+  }
+}

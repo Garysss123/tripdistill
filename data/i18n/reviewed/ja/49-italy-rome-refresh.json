@@ -1,0 +1,27 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 4 October 2026. Verify current tickets, rail, roads, ZTLs, paths, ferries and site access before travel.": "計画情報と画像ライセンスは2026年10月4日に確認しました。旅行前に、チケット、鉄道、道路、ZTL（進入規制区域）、散策路、フェリー、各施設へのアクセスの最新情報を確認してください。",
+    "Editorial review: 4 October 2026 · Recheck time-sensitive details before booking.": "編集確認：2026年10月4日 — 予約前に、変更される可能性のある情報を再確認してください。",
+    "What was the Tabularium?": "タブラリウムとは何ですか？",
+    "How this route reads the city": "このルートから読み解くローマ",
+    "Plan for a change": "予定変更に備える",
+    "reviewed 4 October 2026": "2026年10月4日確認",
+    "Starting point": "出発地点",
+    "Match the first doorway to the place you will read.": "訪れて読み解く場所に合わせて、最初の入口を選びましょう。",
+    "Save for another day": "別の日に回す場所",
+    "Keep a second landscape for a separate visit.": "もう一つの景観は別の日に訪れる計画にしましょう。",
+    "Time to allow": "所要時間の目安",
+    "A nearby pairing": "近くで組み合わせるなら",
+    "When the day shifts": "予定が変わったら",
+    "Choose a nearby alternative before crossing town.": "街を横断する前に、近くの代替案を選びましょう。",
+    "Planning facts and image licensing were reviewed on 4 October 2026. Admission, rail, roads, ZTLs, paths, ferries, weather and local access can change; reopen the linked authority or operator before travel.": "計画情報と画像ライセンスは2026年10月4日に確認しました。入場条件、鉄道、道路、ZTL（進入規制区域）、散策路、フェリー、天候、現地のアクセス情報は変わることがあります。旅行前に、リンク先の管理機関や運行事業者の最新情報を改めて確認してください。"
+  }
+}

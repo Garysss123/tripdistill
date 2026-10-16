@@ -1,0 +1,13 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "The Loire is not one château district with interchangeable stops. Blois places four centuries of royal building inside a walkable town, while Chambord sits beyond the station in a forest estate. Amboise pairs a Loire promontory and Leonardo’s last home; Chenonceau crosses the Cher from its own rail stop. West of Tours, Villandry is a garden visit with a seasonal château calendar, and Azay-le-Rideau is a separate branch-line town. Choose the corridor before choosing the number of tickets.": "ロワール渓谷は、城の訪問先を入れ替えれば済むような一つの城めぐりエリアではありません。ブロワでは徒歩で巡れる町に4世紀にわたる王室建築の変遷が残り、シャンボール城は駅から離れた森の広大な敷地にあります。アンボワーズではロワール川を見下ろす高台と、レオナルド・ダ・ヴィンチが晩年を過ごした家を訪ねられます。シュノンソー駅から向かうシュノンソー城はシェール川に架かっています。トゥールの西にあるヴィランドリーは庭園見学が主役で、城の公開日程は季節ごとに異なります。アゼ＝ル＝リドーは支線沿いにある別の町です。入場券の数を決める前に、まず訪問する地域の軸を選びましょう。",
+    "Blois is an urban palace whose wings record changing dynasties; Chambord is a 1519 royal project surrounded by an estate. The 35-minute Rémi line 2 ride from Blois-Chambord station makes the pair possible, but the return timetable decides whether it is sensible.": "ブロワは町中にある宮殿で、翼棟には王朝の変遷が刻まれています。シャンボールは広大な領地に囲まれ、1519年に始まった王室の建設事業です。ブロワ・シャンボール駅からRémi 2番系統で約35分移動すれば両方を巡れますが、無理のない行程かどうかは帰りの時刻表次第です。",
+    "Amboise’s château rises above a Loire town and its station; Clos Lucé is a 400 m walk away. Chenonceau is another rail stop: the station stands roughly 400 m from the estate ticket office, so the river château can be visited without inventing a long last mile.": "アンボワーズ城はロワール川沿いの町と駅を見下ろす高台にあり、クロ・リュセまでは徒歩400 mです。シュノンソーは別の鉄道駅が最寄りです。シュノンソー駅から城のチケット窓口までは約400 mなので、長い徒歩区間を想定しなくても川沿いの城を訪問できます。",
+    "Villandry sells separate garden-only and château-plus-garden admissions; its garden calendar lasts longer than the château’s. Azay-le-Rideau pairs a French-Italian Renaissance interior with an eight-hectare water-framed park, but the station is 2.1 km away.": "ヴィランドリーでは庭園のみの入場券と、城と庭園の共通券を別々に販売しています。庭園は城より長い期間公開されます。アゼ＝ル＝リドーではフランスとイタリアのルネサンス様式を取り入れた城内と、8ヘクタールに広がる水辺の公園を見学できますが、駅から城までは2.1 km離れています。"
+  }
+}

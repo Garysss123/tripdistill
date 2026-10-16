@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+  <rect width="1200" height="700" rx="36" fill="#f5f1e8"/>
+  <path d="M164 350h150m0 0 106-150h455m-561 150 106 150h455" fill="none" stroke="#38565a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M382 183l26 17-27 16zM382 483l27 17-27 16zM770 184l27 16-27 16zM770 484l27 16-27 16z" fill="#38565a"/>
+  <rect x="48" y="280" width="116" height="140" rx="20" fill="#cf7548"/>
+  <path d="M73 382V323h24v59m14 0v-75h28v75" fill="none" stroke="#fff8ec" stroke-width="9" stroke-linejoin="round"/>
+  <rect x="428" y="95" width="260" height="190" rx="28" fill="#fffaf1" stroke="#d7cdbb" stroke-width="4"/>
+  <rect x="428" y="415" width="260" height="190" rx="28" fill="#fffaf1" stroke="#d7cdbb" stroke-width="4"/>
+  <rect x="478" y="148" width="152" height="70" rx="12" fill="#78a8aa"/>
+  <path d="M463 216h182l-20 27H483z" fill="#38565a"/>
+  <circle cx="500" cy="245" r="13" fill="#293d40"/><circle cx="607" cy="245" r="13" fill="#293d40"/>
+  <path d="M495 173h46v24h-46zm64 0h46v24h-46z" fill="#f5f1e8"/>
+  <path d="M478 511h158l27 20-21 31H470l-19-23z" fill="#c8794f"/>
+  <path d="M500 509h43v28h-43zm61 0h42v28h-42z" fill="#fff8ec"/>
+  <circle cx="499" cy="563" r="13" fill="#293d40"/><circle cx="619" cy="563" r="13" fill="#293d40"/>
+  <rect x="908" y="110" width="244" height="180" rx="26" fill="#f1e4d3" stroke="#d8b895" stroke-width="4"/>
+  <path d="m943 213 87-66 87 66v42H943z" fill="#c8794f"/>
+  <path d="M982 213v-36h36v36m42 42v-53h35v53" fill="#fff8ec"/>
+  <rect x="908" y="410" width="244" height="180" rx="26" fill="#e8efdf" stroke="#99b08c" stroke-width="4"/>
+  <path d="M1030 548v-72m0 17-36-30m36 44 39-34" fill="none" stroke="#496c54" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="993" cy="455" r="25" fill="#91ad7f"/><circle cx="1070" cy="465" r="31" fill="#77966b"/><circle cx="1029" cy="447" r="34" fill="#a6bd8d"/>
+  <path d="M934 559h190" stroke="#d5dfc8" stroke-width="8" stroke-linecap="round"/>
+</svg>

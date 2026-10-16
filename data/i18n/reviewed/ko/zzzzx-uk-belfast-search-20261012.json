@@ -1,0 +1,26 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Belfast–Coleraine rail itinerary": "벨파스트–콜레인 철도 일정",
+    "Causeway Coast bus connection": "코즈웨이 해안 버스 연결",
+    "Derry overnight base": "데리 숙박 거점",
+    "Belfast civic walking route": "벨파스트 시정 구역 도보 경로",
+    "Titanic Quarter timed visit": "타이타닉 쿼터 시간 지정 입장",
+    "Belfast station choices": "벨파스트 역 선택",
+    "Coleraine to Giant’s Causeway": "콜레인에서 자이언츠 코즈웨이까지",
+    "Causeway Coast seasonal bus": "코즈웨이 해안 계절 버스",
+    "Causeway visitor-centre access": "자이언츠 코즈웨이 방문자 센터 접근",
+    "Derry wall walking route": "데리 성벽 도보 경로",
+    "Cityside and Waterside stay": "Cityside와 Waterside 숙박",
+    "Museum of Free Derry opening hours": "Museum of Free Derry 운영 시간"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

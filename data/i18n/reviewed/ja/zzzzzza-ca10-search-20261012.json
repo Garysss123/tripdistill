@@ -1,0 +1,22 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "regional bases": "地域ごとの宿泊拠点",
+    "Signal Hill": "Signal Hill（シグナル・ヒル）",
+    "Cape Spear": "Cape Spear（ケープ・スピア）",
+    "Bonavista Peninsula": "Bonavista Peninsula（ボナビスタ半島）",
+    "Ryan Premises": "Ryan Premises（ライアン・プレミシズ）",
+    "Western Brook Pond": "Western Brook Pond（ウェスタン・ブルック・ポンド）",
+    "Tablelands": "Tablelands（テーブルランズ）",
+    "Gros Morne Mountain": "Gros Morne Mountain（グロス・モーン山）"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

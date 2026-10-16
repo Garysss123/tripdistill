@@ -26,6 +26,7 @@
 .uk-country-band > header > span,
 .uk-country-section > header > span,
 .uk-operating-board > header > span,
+.uk-hub-day-sequence > header > span,
 .uk-hub-guides > header > span,
 .uk-comparison-docket > header > span,
 .uk-hub-live span,
@@ -332,6 +333,19 @@
 .uk-operating-board h3 { margin: 1.1rem 0 .75rem; font: 700 1.35rem/1.08 Georgia, serif; }
 .uk-operating-board p { line-height: 1.64; }
 
+.uk-hub-day-sequence { padding: clamp(4rem, 7vw, 6.5rem) clamp(1.5rem, 5vw, 5rem); background: var(--uk-fog); }
+.uk-hub-day-sequence > header { max-width: 1080px; margin: 0 auto 2.5rem; }
+.uk-hub-day-sequence > header h2 { max-width: 18ch; margin: .7rem 0; font: 700 clamp(2.3rem, 4.5vw, 4.2rem)/.96 Georgia, serif; letter-spacing: -.04em; }
+.uk-hub-day-sequence > header p { max-width: 55rem; line-height: 1.65; }
+.uk-hub-day-sequence > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 1080px; margin: 0 auto; }
+.uk-hub-day-sequence article { min-width: 0; padding: 1.5rem; border-top: 4px solid var(--uk-signal); border-right: 1px solid rgba(22,43,58,.16); background: var(--uk-white); }
+.uk-hub-day-sequence article:nth-child(2) { border-top-color: var(--uk-brass); }
+.uk-hub-day-sequence article:nth-child(3) { border-top-color: var(--uk-water); }
+.uk-hub-day-sequence article:nth-child(4) { border-top-color: var(--uk-moss); }
+.uk-hub-day-sequence small { color: var(--uk-signal); font: 800 .68rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .1em; }
+.uk-hub-day-sequence h3 { margin: .9rem 0 .7rem; font: 700 1.25rem/1.08 Georgia, serif; }
+.uk-hub-day-sequence p { line-height: 1.62; }
+
 .uk-hub-guides { background: var(--uk-slate); color: #fff; }
 .uk-hub-guides h2,
 .uk-hub-guides h3 { color: #fff; }
@@ -371,7 +385,8 @@
   .uk-country-grid { grid-template-columns: repeat(2, 1fr); }
   .uk-network-grid,
   .uk-season-grid,
-  .uk-operating-board > div { grid-template-columns: repeat(2, 1fr); }
+  .uk-operating-board > div,
+  .uk-hub-day-sequence > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .uk-country-facts { grid-template-columns: repeat(2, 1fr); }
   .uk-comparison-docket article { grid-template-columns: 1fr 1fr; }
 }
@@ -402,6 +417,7 @@
   .uk-country-band,
   .uk-country-section,
   .uk-operating-board,
+  .uk-hub-day-sequence,
   .uk-hub-guides,
   .uk-comparison-docket,
   .uk-hub-live,
@@ -410,7 +426,8 @@
   .uk-country-card { min-height: 0; }
   .uk-network-grid,
   .uk-season-grid,
-  .uk-operating-board > div { grid-template-columns: 1fr; }
+  .uk-operating-board > div,
+  .uk-hub-day-sequence > div { grid-template-columns: 1fr; }
   .uk-hub-live,
   .uk-hub-faq { grid-template-columns: 1fr; }
   .uk-hub-live ul { columns: 1; }

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "integrationBaseCommit": "d5b9b0f542540d52a6eb051454fe75774820407e",
+  "reason": "Archive post-d779 integration-base entries that are now stale, while the original Caves manifest retains its source-base snapshot and 340-key accounting.",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29i-vietnam-nha-trang-khanh-hoa.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/zh-Hant-29i-vietnam-nha-trang-khanh-hoa.json",
+      "bytes": 16508,
+      "sha256": "3a2348292c6138e7e1527c8c40a6d09f2c82ef3fec579201231942c4dd1b446b",
+      "removedKeys": [
+        "Remote support"
+      ]
+    },
+    {
+      "locale": "zh-Hant",
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29n-vietnam-phu-quoc-southern-islands.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/zh-Hant-29n-vietnam-phu-quoc-southern-islands.json",
+      "bytes": 18068,
+      "sha256": "3ed2a9e3f31ba1c75f20d9c8ff726027bef292d691a85498f1cdd6252777f95f",
+      "removedKeys": [
+        "Vietnam Tourism — Phu Quoc",
+        "Vietnam Tourism — Phu Quoc for Nature Lovers",
+        "UNESCO — Kien Giang Biosphere Reserve",
+        "Phu Quoc National Park — Official overview",
+        "Con Dao National Park — Official visitor information"
+      ]
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29i-vietnam-nha-trang-khanh-hoa.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/ja-29i-vietnam-nha-trang-khanh-hoa.json",
+      "bytes": 19050,
+      "sha256": "f5038b199cfdd8b765fb646a9e4c2d63c0c5c35aa41fe746404bc327abe6758e",
+      "removedKeys": [
+        "Remote support"
+      ]
+    },
+    {
+      "locale": "ja",
+      "sourcePath": "data/i18n/reviewed/ja/29n-vietnam-phu-quoc-southern-islands.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/ja-29n-vietnam-phu-quoc-southern-islands.json",
+      "bytes": 20364,
+      "sha256": "b69444ec331ec107e93967889f5fa6b205395c114dc4cb3cce203afaa36fbb80",
+      "removedKeys": [
+        "Vietnam Tourism — Phu Quoc",
+        "Vietnam Tourism — Phu Quoc for Nature Lovers",
+        "UNESCO — Kien Giang Biosphere Reserve",
+        "Phu Quoc National Park — Official overview",
+        "Con Dao National Park — Official visitor information"
+      ]
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29i-vietnam-nha-trang.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/ko-29i-vietnam-nha-trang.json",
+      "bytes": 18249,
+      "sha256": "3acc78d1bdf9d363b1ac5299211d683fe8ad067f82dcfa862acd846a61f531b6",
+      "removedKeys": [
+        "Remote support"
+      ]
+    },
+    {
+      "locale": "ko",
+      "sourcePath": "data/i18n/reviewed/ko/29n-vietnam-phu-quoc.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/ko-29n-vietnam-phu-quoc.json",
+      "bytes": 20236,
+      "sha256": "cf499e1b24706cb4130445d11adb26354bbbed8737fa48dcf55f9dd33e13571c",
+      "removedKeys": [
+        "Vietnam Tourism — Phu Quoc",
+        "Vietnam Tourism — Phu Quoc for Nature Lovers",
+        "UNESCO — Kien Giang Biosphere Reserve",
+        "Phu Quoc National Park — Official overview",
+        "Con Dao National Park — Official visitor information"
+      ]
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29i-vietnam-nha-trang.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/th-29i-vietnam-nha-trang.json",
+      "bytes": 28201,
+      "sha256": "7c6c58209407cc1cff9605e4994379b247b3eadad0214e3262e738e4c714ea49",
+      "removedKeys": [
+        "Remote support"
+      ]
+    },
+    {
+      "locale": "th",
+      "sourcePath": "data/i18n/reviewed/th/29n-vietnam-phu-quoc.json",
+      "archivePath": "data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/integration-followup/th-29n-vietnam-phu-quoc.json",
+      "bytes": 32529,
+      "sha256": "32f3fabb968b9834daf94f144edc64b0a4c3aa68e3dfe62841b1cc65b8689c27",
+      "removedKeys": [
+        "Vietnam Tourism — Phu Quoc",
+        "Vietnam Tourism — Phu Quoc for Nature Lovers",
+        "UNESCO — Kien Giang Biosphere Reserve",
+        "Phu Quoc National Park — Official overview",
+        "Con Dao National Park — Official visitor information"
+      ]
+    }
+  ]
+}

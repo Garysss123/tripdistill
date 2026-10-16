@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kata tjuṯa": "カタ・ジュタ（Kata Tjuṯa）",
+    "Kata Tjuṯa Guide": "カタ・ジュタ（Kata Tjuṯa）ガイド"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "topic": "Vietnam Da Lat translation batch before body refresh",
+  "archivedOn": "2026-10-13",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "source": "data/i18n/reviewed/zh-Hant/29j-vietnam-da-lat-central-highlands.json",
+      "destination": "data/i18n/archive/vietnam-da-lat/2026-10-13/zh-Hant/29j-vietnam-da-lat-central-highlands.json",
+      "bytes": 36696,
+      "sha256": "130652012ce372933d7ffd012387fd5add49bf39e8daa662a101bff96a1ce277"
+    },
+    {
+      "locale": "ja",
+      "source": "data/i18n/reviewed/ja/29j-vietnam-da-lat-central-highlands.json",
+      "destination": "data/i18n/archive/vietnam-da-lat/2026-10-13/ja/29j-vietnam-da-lat-central-highlands.json",
+      "bytes": 41950,
+      "sha256": "bce509985c90913cd094bfe3c3a40d2dea2d153cb15e8f9a5a16fbcbf43da2ad"
+    },
+    {
+      "locale": "ko",
+      "source": "data/i18n/reviewed/ko/29j-vietnam-da-lat.json",
+      "destination": "data/i18n/archive/vietnam-da-lat/2026-10-13/ko/29j-vietnam-da-lat.json",
+      "bytes": 41510,
+      "sha256": "76c8763fc237362f044b9abf10f8b38d54835462043e06a18cce5e74f47d9cbe"
+    },
+    {
+      "locale": "th",
+      "source": "data/i18n/reviewed/th/29j-vietnam-da-lat.json",
+      "destination": "data/i18n/archive/vietnam-da-lat/2026-10-13/th/29j-vietnam-da-lat.json",
+      "bytes": 65283,
+      "sha256": "4b5633d99c5dfed91b876417430bbba9c33fd29541161db54e7f4624bb719e29"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use one Sanya bay base for three full days in four nights; check the airport or rail terminal, sea warning and Hainan entry rules before adding a second base.": "4泊で三亜に丸3日滞在するなら、湾を1か所拠点にしましょう。2つ目の拠点を加える前に、空港または鉄道駅、海況警報、海南省の入境規則を確認してください。",
+    "phoenix airport station": "鳳凰空港駅",
+    "hainan visa-free scope": "海南省のビザ免除の適用範囲",
+    "Reserve Mogao through Dunhuang Academy, use Dunhuang as one base for the caves and oasis, and give each Hexi Corridor city its own overnight.": "敦煌研究院を通じて莫高窟を予約し、窟とオアシスは敦煌を1か所の拠点にして訪ね、河西回廊の各都市ではそれぞれ宿泊しましょう。",
+    "mogao reservation": "莫高窟の予約",
+    "dunhuang railway station": "敦煌駅"
+  }
+}

@@ -516,3 +516,12 @@ body[data-country="malaysia"] .section-kicker { color: var(--my-hibiscus); }
   .malaysia-hero-atlas { min-height: 20rem; }
   .malaysia-jump-nav { display: none; }
 }
+
+/* Penang routes must shrink below the shared 320px floor when a classic
+   scrollbar narrows the layout viewport. Keep any real wide content visible. */
+body[data-country="malaysia"][data-cluster="malaysia-straits"][data-page="george-town-penang"],
+body[data-country="malaysia"][data-region="george-town-penang"] { min-width: 0; }
+body[data-country="malaysia"][data-cluster="malaysia-straits"][data-page="george-town-penang"] .site-shell,
+body[data-country="malaysia"][data-region="george-town-penang"] .site-shell,
+body[data-country="malaysia"][data-cluster="malaysia-straits"][data-page="george-town-penang"] .page-content,
+body[data-country="malaysia"][data-region="george-town-penang"] .page-content { min-width: 0; }

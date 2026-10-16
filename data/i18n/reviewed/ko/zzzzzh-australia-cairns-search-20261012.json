@@ -1,0 +1,18 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Cairns nights around a reef vessel, the Cairns–Kuranda crossing or Palm Cove, then separate Port Douglas and Daintree roads by their transport, weather and return requirements.": "케언스 숙박일은 리프 크루즈, 케언스–쿠란다 횡단 또는 팜코브를 중심으로 정하고, 포트더글러스와 데인트리 도로 일정은 교통편·날씨·귀환 조건을 고려해 별도로 계획하세요.",
+    "Distinguish the Cairns Lagoon from tidal water, confirm the booked reef operator’s own check-in and berth, and keep an overnight buffer before the vessel.": "케언스 라군과 조간대 수역을 구분하고, 예약한 리프 운영사의 체크인 장소와 선석을 확인한 뒤 크루즈 전날 케언스에서 숙박해 여유를 두세요.",
+    "Compare the Kuranda Scenic Railway and Skyrail ticket direction, Cairns or Freshwater station, Smithfield coach transfer, luggage limits and service notices before a full-day visit.": "하루 일정으로 다녀오기 전에 Kuranda Scenic Railway와 Skyrail의 승차 방향, 케언스 또는 Freshwater 역, Smithfield 버스 환승, 수하물 제한과 운행 공지를 확인하세요.",
+    "Plan a Palm Cove day from Cairns around a date-specific Translink or booked transfer return, local beach advice, shade and a no-swim fallback.": "케언스에서 팜코브에 다녀올 때는 날짜별 Translink 시간표나 예약 차량의 귀환편을 먼저 확인하고, 현지 해변 안내와 그늘을 살피며 수영할 수 없을 때의 대안도 마련하세요."
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Luna",
+    "reviewer": "GPT-6 Luna; same-model self-review",
+    "independentSecondModel": false
+  }
+}

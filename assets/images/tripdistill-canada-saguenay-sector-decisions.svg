@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Choose a Saguenay sector by the day you want</title>
+  <desc id="desc">A planning decision diagram, not a map. It compares Baie-Éternité hiking, land-based beluga viewing in Baie-Sainte-Marguerite, and a shorter Tadoussac shoreline walk. Check the exact trail and current access before leaving.</desc>
+  <rect id="background" x="0" y="0" width="1200" height="700" fill="#0b2731"/>
+  <path id="top-accent" d="M0 0H1200V8H0Z" fill="#55c7bb"/>
+  <text id="main-heading" x="48" y="52" fill="#fff5df" font-family="Arial, sans-serif" font-size="30" font-weight="700">Choose a sector by the day you want</text>
+  <text id="subheading" x="50" y="80" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="16">Three separate access decisions around a fjord · choose one, then verify its current trail and return.</text>
+
+  <rect id="decision-box" x="405" y="98" width="390" height="56" rx="16" fill="#f6eddb"/>
+  <text id="decision-label" x="600" y="133" text-anchor="middle" fill="#14323a" font-family="Arial, sans-serif" font-size="21" font-weight="700">What kind of day fits?</text>
+  <path id="choice-branches" d="M600 154V169H205V184M600 169V184M600 169H995V184" fill="none" stroke="#8ba9a3" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle id="branch-dot-left" cx="205" cy="176" r="6" fill="#55c7bb"/>
+  <circle id="branch-dot-center" cx="600" cy="176" r="6" fill="#f3c76b"/>
+  <circle id="branch-dot-right" cx="995" cy="176" r="6" fill="#ee9476"/>
+
+  <g id="sector-eternite">
+    <rect id="card-eternite" x="38" y="188" width="334" height="218" rx="18" fill="#153d47" stroke="#55c7bb" stroke-width="2"/>
+    <path id="band-eternite" d="M56 188H354Q372 188 372 206V218H38V206Q38 188 56 188Z" fill="#55c7bb"/>
+    <text id="num-eternite" x="59" y="207" fill="#0b2731" font-family="Arial, sans-serif" font-size="13" font-weight="700">01 · HIKE</text>
+    <text id="title-eternite" x="60" y="253" fill="#fff5df" font-family="Arial, sans-serif" font-size="23" font-weight="700">Baie-Éternité</text>
+    <text id="detail-eternite-1" x="60" y="286" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">Choose a signed trail for a</text>
+    <text id="detail-eternite-2" x="60" y="309" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">fjord-side walk and viewpoints.</text>
+    <path id="divider-eternite" d="M60 330H350" stroke="#527078"/>
+    <text id="check-eternite-label" x="60" y="357" fill="#79d5ca" font-family="Arial, sans-serif" font-size="13" font-weight="700">CHECK</text>
+    <text id="check-eternite-1" x="60" y="380" fill="#fff5df" font-family="Arial, sans-serif" font-size="15">Trail grade · weather · return</text>
+  </g>
+  <g id="sector-sainte-marguerite">
+    <rect id="card-sainte-marguerite" x="433" y="188" width="334" height="218" rx="18" fill="#153d47" stroke="#f3c76b" stroke-width="2"/>
+    <path id="band-sainte-marguerite" d="M451 188H749Q767 188 767 206V218H433V206Q433 188 451 188Z" fill="#f3c76b"/>
+    <text id="num-sainte-marguerite" x="454" y="207" fill="#0b2731" font-family="Arial, sans-serif" font-size="13" font-weight="700">02 · LAND-BASED WILDLIFE</text>
+    <text id="title-sainte-marguerite" x="455" y="253" fill="#fff5df" font-family="Arial, sans-serif" font-size="21" font-weight="700">Baie-Sainte-Marguerite</text>
+    <text id="detail-sainte-marguerite-1" x="455" y="286" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">Consider the beluga trail only</text>
+    <text id="detail-sainte-marguerite-2" x="455" y="309" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">when its date and access fit.</text>
+    <path id="divider-sainte-marguerite" d="M455 330H745" stroke="#527078"/>
+    <text id="check-sainte-marguerite-label" x="455" y="357" fill="#f3c76b" font-family="Arial, sans-serif" font-size="13" font-weight="700">CHECK</text>
+    <text id="check-sainte-marguerite-1" x="455" y="380" fill="#fff5df" font-family="Arial, sans-serif" font-size="15">Season dates · viewing rules</text>
+  </g>
+  <g id="sector-tadoussac">
+    <rect id="card-tadoussac" x="828" y="188" width="334" height="218" rx="18" fill="#153d47" stroke="#ee9476" stroke-width="2"/>
+    <path id="band-tadoussac" d="M846 188H1144Q1162 188 1162 206V218H828V206Q828 188 846 188Z" fill="#ee9476"/>
+    <text id="num-tadoussac" x="849" y="207" fill="#0b2731" font-family="Arial, sans-serif" font-size="13" font-weight="700">03 · SHORE WALK</text>
+    <text id="title-tadoussac" x="850" y="253" fill="#fff5df" font-family="Arial, sans-serif" font-size="23" font-weight="700">Tadoussac shore</text>
+    <text id="detail-tadoussac-1" x="850" y="286" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">Check Pointe-de-l’Islet for a</text>
+    <text id="detail-tadoussac-2" x="850" y="309" fill="#c8d8d3" font-family="Arial, sans-serif" font-size="16">short walk by the wharf.</text>
+    <path id="divider-tadoussac" d="M850 330H1140" stroke="#527078"/>
+    <text id="check-tadoussac-label" x="850" y="357" fill="#eea28a" font-family="Arial, sans-serif" font-size="13" font-weight="700">CHECK</text>
+    <text id="check-tadoussac-1" x="850" y="380" fill="#fff5df" font-family="Arial, sans-serif" font-size="15">Path access · daylight · wind</text>
+  </g>
+
+  <rect id="recheck-bar" x="38" y="427" width="1124" height="47" rx="13" fill="#224c54"/>
+  <text id="recheck-text" x="600" y="457" text-anchor="middle" fill="#fff5df" font-family="Arial, sans-serif" font-size="17" font-weight="700">Before leaving: confirm the exact trail, date, conditions and return.</text>
+
+  <text id="legend-heading" x="42" y="511" fill="#79d5ca" font-family="Arial, sans-serif" font-size="14" font-weight="700">FIVE-LANGUAGE LEGEND</text>
+  <path id="legend-divider" d="M42 522H1158" stroke="#527078"/>
+  <g id="legend-en" font-family="Arial, sans-serif" fill="#fff5df" font-size="13">
+    <text id="legend-en-title" x="48" y="548" fill="#bbd0cc" font-size="12" font-weight="700">ENGLISH</text>
+    <text id="legend-en-1" x="48" y="572">Hike / fjord views</text><text id="legend-en-2" x="48" y="595">Land-based beluga</text><text id="legend-en-3" x="48" y="618">Short shore walk</text>
+  </g>
+  <g id="legend-zh" font-family="Arial, sans-serif" fill="#fff5df" font-size="13">
+    <text id="legend-zh-title" x="278" y="548" fill="#bbd0cc" font-size="12" font-weight="700">繁體中文</text>
+    <text id="legend-zh-1" x="278" y="572">健行／峽灣景觀</text><text id="legend-zh-2" x="278" y="595">陸上觀察白鯨</text><text id="legend-zh-3" x="278" y="618">短程海岸步行</text>
+  </g>
+  <g id="legend-ja" font-family="Arial, sans-serif" fill="#fff5df" font-size="13">
+    <text id="legend-ja-title" x="508" y="548" fill="#bbd0cc" font-size="12" font-weight="700">日本語</text>
+    <text id="legend-ja-1" x="508" y="572">ハイキング／フィヨルド眺望</text><text id="legend-ja-2" x="508" y="595">陸上からベルーガ観察</text><text id="legend-ja-3" x="508" y="618">短い海辺の散策</text>
+  </g>
+  <g id="legend-ko" font-family="Arial, sans-serif" fill="#fff5df" font-size="13">
+    <text id="legend-ko-title" x="738" y="548" fill="#bbd0cc" font-size="12" font-weight="700">한국어</text>
+    <text id="legend-ko-1" x="738" y="572">하이킹 / 피오르 전망</text><text id="legend-ko-2" x="738" y="595">육상 벨루가 관찰</text><text id="legend-ko-3" x="738" y="618">짧은 해안 산책</text>
+  </g>
+  <g id="legend-th" font-family="Arial, sans-serif" fill="#fff5df" font-size="13">
+    <text id="legend-th-title" x="968" y="548" fill="#bbd0cc" font-size="12" font-weight="700">ภาษาไทย</text>
+    <text id="legend-th-1" x="968" y="572">เดินป่า / ชมฟยอร์ด</text><text id="legend-th-2" x="968" y="595">ชมวาฬเบลูกาจากฝั่ง</text><text id="legend-th-3" x="968" y="618">เดินเลียบชายฝั่งระยะสั้น</text>
+  </g>
+
+  <path id="footer-divider" d="M42 642H1158" stroke="#527078"/>
+  <text id="scope-en" x="48" y="666" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="10">Schematic · no scale · no actual routes</text>
+  <text id="scope-zh" x="278" y="666" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="10">僅示意・無比例・非實際路線</text>
+  <text id="scope-ja" x="508" y="666" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="9">概念図・縮尺なし・実際の経路ではない</text>
+  <text id="scope-ko" x="738" y="666" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="10">개념도 · 축척 없음 · 실제 경로 아님</text>
+  <text id="scope-th" x="968" y="666" fill="#bbd0cc" font-family="Arial, sans-serif" font-size="9">แผนภาพ · ไม่ตามสเกล · ไม่ใช่เส้นทางจริง</text>
+</svg>

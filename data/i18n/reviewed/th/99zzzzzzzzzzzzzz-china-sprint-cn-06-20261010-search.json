@@ -1,0 +1,12 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose Puxi or Pudong by the day’s route; use Airport Link for Hongqiao–Pudong airport transfers, not a hotel-door ride.": "เลือกเที่ยวฝั่ง Puxi หรือ Pudong ให้เหมาะกับเส้นทางของวันนั้น ใช้ Airport Link เมื่อต้องต่อรถระหว่างสนามบิน Hongqiao–Pudong ไม่ใช่สำหรับเดินทางตรงถึงโรงแรม",
+    "Choose one Lujiazui deck or Shanghai Museum East; East access is by B1 gate, named Metro exits and current admission rules.": "เลือกจุดชมวิวบนตึกในลู่เจียจุ่ยหรือ Shanghai Museum East เพียงแห่งเดียว การเข้าชม Shanghai Museum East ใช้ประตูชั้น B1 ทางออกสถานีรถไฟใต้ดินที่ระบุไว้ และกฎการเข้าชมปัจจุบัน",
+    "Use Line 17 Exit 1, then the town’s visitor-center bus or named-street walk; trace the tea house, post office and bridges.": "ใช้ทางออก 1 ของรถไฟใต้ดินสาย 17 จากนั้นเลือกรถบัสไปศูนย์บริการนักท่องเที่ยวของเมืองหรือเดินตามถนนที่ระบุไว้ แวะโรงน้ำชา ที่ทำการไปรษณีย์ และสะพานต่าง ๆ"
+  }
+}

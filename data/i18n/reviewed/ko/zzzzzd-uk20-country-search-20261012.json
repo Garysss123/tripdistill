@@ -1,0 +1,15 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan UK nights and bases across England, Scotland, Wales and Northern Ireland. Compare 5–7-, 8–10- and 14-night routes, open-jaw airport choices, rail, coach, car and rural last-mile trade-offs.": "잉글랜드, 스코틀랜드, 웨일스, 북아일랜드를 잇는 숙박 일수와 거점을 계획하세요. 5~7박, 8~10박, 14박 일정과 오픈조 공항 선택, 철도, 장거리 버스, 렌터카, 지방의 마지막 연결 구간을 비교합니다.",
+    "United Kingdom itinerary nights": "영국 일정 숙박 일수",
+    "UK trip length": "영국 여행 기간",
+    "UK open-jaw flights": "영국 오픈조 항공편",
+    "UK train or coach": "영국 기차 또는 버스",
+    "UK self-drive": "영국 자가 운전"
+  }
+}

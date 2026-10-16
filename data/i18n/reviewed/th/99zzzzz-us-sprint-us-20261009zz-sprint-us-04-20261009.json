@@ -1,0 +1,17 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/utah-parks/",
+    "/usa/utah-parks/bryce/",
+    "/usa/utah-parks/moab-arches-canyonlands/"
+  ],
+  "translations": {
+    "NPS: Arches traffic, temporary entry holds and preparation": "NPS: การจราจรใน Arches การพักรับรถเข้าชั่วคราว และการเตรียมตัว",
+    "A Bryce NPS alert posted 29 September 2026 reports Wall Street closed until further notice; it says the park’s other trails are open but muddy and hikers should use caution. The closure does not mean the whole Navajo Loop is closed. NPS identifies the Two Bridges side as open year-round and recommends descending Queen’s Garden, ascending the Navajo side and returning along the rim. Treat that as a possible route only after checking active conditions and the exact current closure status before travel.": "ประกาศเตือนของ NPS ที่ Bryce ซึ่งเผยแพร่เมื่อ 29 กันยายน 2026 แจ้งว่า Wall Street ปิดจนกว่าจะมีประกาศเพิ่มเติม ส่วนเส้นทางเดินป่าอื่น ๆ ในอุทยานยังเปิดแต่มีโคลน และควรเดินด้วยความระมัดระวัง การปิดนี้ไม่ได้หมายความว่า Navajo Loop ทั้งเส้นปิด NPS ระบุว่าฝั่ง Two Bridges เปิดตลอดทั้งปี และแนะนำให้เดินลงทาง Queen’s Garden ขึ้นทางฝั่ง Navajo แล้วกลับตามขอบผา ให้ถือว่านี่เป็นเพียงตัวเลือกเส้นทางหลังจากตรวจสภาพเส้นทางและสถานะการปิดล่าสุดที่แน่ชัดก่อนเดินทางแล้วเท่านั้น",
+    "NPS: Bryce current conditions and trail alerts": "NPS: สภาพปัจจุบันและประกาศเตือนเส้นทางของ Bryce",
+    "NPS: Queen’s Garden and Navajo Loop combination route": "NPS: เส้นทางต่อเนื่อง Queen’s Garden และ Navajo Loop",
+    "During peak spring–fall visitation, congestion and full parking between 8 a.m. and 3 p.m. can trigger temporary entry holds, and vehicles may be diverted from the entrance. NPS says a hold may last 3–5 hours; that is a possible duration, not a guaranteed wait. Vehicles may not queue by the entrance sign or on the roadway. Before heading toward the entrance, use a restroom, bring food and water, and have a full fuel tank. Check NPS webcams and current conditions plus UDOT traffic. If the delay would disrupt a short Moab connection, re-time the visit or consider a suitable nearby alternative.": "ในช่วงที่มีผู้มาเที่ยวมากตั้งแต่ฤดูใบไม้ผลิถึงฤดูใบไม้ร่วง ความแออัดและที่จอดรถเต็มระหว่าง 8 a.m. ถึง 3 p.m. อาจทำให้ต้องพักการรับรถเข้าชั่วคราว และอาจเบี่ยงรถออกจากทางเข้า NPS ระบุว่าการพักรับรถอาจนาน 3–5 ชั่วโมง ซึ่งเป็นระยะเวลาที่อาจเกิดขึ้นได้ ไม่ใช่การรับประกันเวลารอ ห้ามรถต่อคิวใกล้ป้ายทางเข้าหรือบนถนน ก่อนมุ่งหน้าไปทางเข้า ควรเข้าห้องน้ำ เตรียมอาหารและน้ำ และเติมน้ำมันให้เต็ม ตรวจเว็บแคมและสภาพปัจจุบันของ NPS รวมถึงสภาพจราจรจาก UDOT หากความล่าช้าจะกระทบแผนแวะ Moab ระยะสั้น ให้ปรับเวลาเที่ยวหรือพิจารณาสถานที่อื่นใกล้เคียงที่เหมาะสม",
+    "If Moab is a short stay or Arches falls on a fixed-transfer day, the lack of a timed-entry reservation does not make arrival timing reliable. Protect a movable park day or a suitable nearby alternative; the Moab guide covers live-condition checks and how to respond if access is disrupted.": "หากแวะ Moab เพียงช่วงสั้น ๆ หรือวันที่ไป Arches เป็นวันที่ต้องเดินทางต่อโดยมีเวลาเปลี่ยนพาหนะกำหนดไว้แน่นอน การไม่ต้องจองเวลาเข้าล่วงหน้าไม่ได้ทำให้คาดเวลาไปถึงได้อย่างแน่นอน ควรเผื่อวันเที่ยวอุทยานที่ปรับเปลี่ยนได้ หรือเตรียมทางเลือกอื่นใกล้เคียงที่เหมาะสม คู่มือ Moab อธิบายวิธีตรวจสภาพล่าสุดและรับมือหากการเข้าอุทยานติดขัด"
+  }
+}

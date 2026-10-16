@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from 'parse5';
-import {localizeHtml,root} from './i18n-lib.mjs';
+import {collectTranslationWork,localizeHtml,root} from './i18n-lib.mjs';
 
 function allNodes(html){const out=[];function walk(n){out.push(n);for(const c of n.childNodes||[])walk(c);}walk(parse(html));return out;}
 const attr=(n,name)=>n.attrs?.find(a=>a.name===name)?.value;
@@ -26,4 +26,17 @@ for(const locale of ['zh-Hant','ja','ko','th'])for(const name of ['header','foot
  const link=nodes.find(n=>n.tagName==='a'&&attr(n,'class')==='brand');
  assert.equal(attr(link,'href'),'/'+prefix+'/');
 }
-console.log('i18n literal tests passed: brand preservation, inherited translate=no, nested translate=yes and localized links.');
+const metadataSample='<html><head><meta property="og:image:alt" content="Diagram alt"><meta name="twitter:image:alt" content="Diagram alt"></head><body><script type="application/ld+json">{"@graph":[{"@type":"ImageObject","name":"Diagram title","description":"Diagram alt","caption":"Diagram caption","creditText":"Diagram provenance"}]}</script></body></html>';
+const metadataTranslations={'Diagram alt':'非比例圖示替代文字','Diagram title':'原創示意圖','Diagram caption':'非比例原創示意圖','Diagram provenance':'原創圖來源說明'};
+const localizedMetadata=allNodes(localizeHtml(metadataSample,metadataTranslations,'zh-Hant','/malaysia/melaka/'));
+assert.equal(attr(localizedMetadata.find(n=>n.tagName==='meta'&&attr(n,'property')==='og:image:alt'),'content'),'非比例圖示替代文字');
+assert.equal(attr(localizedMetadata.find(n=>n.tagName==='meta'&&attr(n,'name')==='twitter:image:alt'),'content'),'非比例圖示替代文字');
+const localizedJson=JSON.parse(text(localizedMetadata.find(n=>n.tagName==='script'&&attr(n,'type')==='application/ld+json')));
+const imageObject=localizedJson['@graph'][0];
+assert.equal(imageObject.name,'原創示意圖');
+assert.equal(imageObject.description,'非比例圖示替代文字');
+assert.equal(imageObject.caption,'非比例原創示意圖');
+assert.equal(imageObject.creditText,'原創圖來源說明');
+const sourceUnits=new Set(collectTranslationWork().flatMap(record=>record.units));
+for(const key of ['Non-scale route schematic: follow one confirmed public Melaka River bank from the historic core, check a public bridge before entering Kampung Morten’s public streets, then return on verified paths; an opposite-bank leg is optional only when open.','Original TripDistill route schematic · not to scale. It shows route choices, not exact streets; confirm today’s public paths, bridge access and return.','Project-original SVG route diagram; not a map and not to scale. No separate reuse license is declared.'])assert.ok(sourceUnits.has(key),`missing Melaka image translation unit: ${key}`);
+console.log('i18n literal tests passed: brand preservation, localized attributes and image metadata, inherited translate=no, nested translate=yes and localized links.');

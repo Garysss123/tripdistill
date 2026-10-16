@@ -1,0 +1,23 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare a 14-night Sydney–Melbourne–Cairns flight route with an 18-night mainland and Tasmania ferry circuit, including nights, bases, terminal links, last-mile checks and weather or closure decisions.": "เปรียบเทียบทริปบิน 14 คืน ซิดนีย์–เมลเบิร์น–แคนส์ กับวงเส้นทาง 18 คืนที่เชื่อมแผ่นดินใหญ่และแทสเมเนียด้วยเรือเฟอร์รี ครอบคลุมจำนวนคืน ฐานพัก การต่อรถจากท่าเรือ การเดินทางช่วงสุดท้าย และการตัดสินใจเมื่ออากาศไม่ดีหรือเส้นทางปิด",
+    "australia itinerary 14 nights": "แผนเที่ยวออสเตรเลีย 14 คืน",
+    "18 night Australia Tasmania ferry route": "เส้นทางเรือเฟอร์รีออสเตรเลีย–แทสเมเนีย 18 คืน",
+    "Sydney Melbourne Cairns flights itinerary": "แผนเที่ยวบินซิดนีย์ เมลเบิร์น แคนส์",
+    "Geelong Devonport ferry Tasmania route": "เส้นทางเรือเฟอร์รีจีลอง เดวอนพอร์ต แทสเมเนีย",
+    "Tasmania gateway bases Cradle Freycinet Hobart": "ฐานพักแทสเมเนีย แครเดิล ฟรีซิเนต์ โฮบาร์ต",
+    "Australia route nights and transfers": "จำนวนคืนและการเดินทางตามเส้นทางออสเตรเลีย",
+    "Australia weather closure transport alternative": "ทางเลือกการเดินทางเมื่ออากาศไม่ดีหรือเส้นทางออสเตรเลียปิด",
+    "first trip to Australia regional itinerary": "แผนเที่ยวภูมิภาคสำหรับเที่ยวออสเตรเลียครั้งแรก"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant; exact runtime model ID unavailable in the selected execution environment.",
+    "reviewer": "Same task assistant self-review; non-independent; exact runtime model ID unavailable.",
+    "independentSecondModel": false
+  }
+}

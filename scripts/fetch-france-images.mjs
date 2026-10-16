@@ -59,6 +59,17 @@ function normalizeFileTitle(value) {
   return `File:${title}`;
 }
 
+function overrideTitle(override) {
+  return typeof override === 'string' ? override : override?.title;
+}
+
+function assetPath(job) {
+  const override = franceImageOverrides[job.key];
+  return (typeof override === 'object' && override?.src)
+    ? override.src
+    : `/assets/images/france-${job.cluster.slug}-${job.guide.slug}.webp`;
+}
+
 async function api(params) {
   const url = new URL('https://commons.wikimedia.org/w/api.php');
   url.search = new URLSearchParams({ action: 'query', format: 'json', formatversion: '2', origin: '*', ...params }).toString();
@@ -122,21 +133,25 @@ async function searchImage(query, usedTitles) {
 
 function entryFrom(candidate, job) {
   const { info, page, license, creator } = candidate;
+  const override = franceImageOverrides[job.key];
   return {
-    src: `/assets/images/france-${job.cluster.slug}-${job.guide.slug}.webp`,
+    src: assetPath(job),
     alt: job.guide.imageAlt,
     source: info.descriptionurl || `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title).replaceAll('%3A', ':').replaceAll('%20', '_')}`,
     label: page.title.replace(/^File:/, '').replaceAll('_', ' '),
     creator,
     license,
     commonsTitle: page.title,
-    remoteSha1: info.sha1
+    remoteSha1: info.sha1,
+    ...(typeof override === 'object' && override.creditTitle ? { creditTitle: override.creditTitle } : {})
   };
 }
 
 async function validateEntry(entry, job) {
+  const override = franceImageOverrides[job.key];
+  if (typeof override === 'object' && override.creditTitle) entry.creditTitle = override.creditTitle;
   const candidate = await metadataForTitle(entry.commonsTitle);
-  const expectedSrc = `/assets/images/france-${job.cluster.slug}-${job.guide.slug}.webp`;
+  const expectedSrc = assetPath(job);
   if (entry.src !== expectedSrc) throw new Error(`${job.key}: asset path mismatch ${entry.src}`);
   if (entry.alt !== job.guide.imageAlt) throw new Error(`${job.key}: manifest alt is stale`);
   if (entry.license !== candidate.license || entry.creator !== candidate.creator || entry.remoteSha1 !== candidate.info.sha1) {
@@ -174,9 +189,10 @@ try {
     let candidate;
     let entry = manifest[job.key];
     const override = franceImageOverrides[job.key];
-    const needsSelection = force || !entry || (override && normalizeFileTitle(override) !== entry.commonsTitle);
+    const title = overrideTitle(override);
+    const needsSelection = force || !entry || (override && normalizeFileTitle(title) !== entry.commonsTitle);
     if (needsSelection) {
-      candidate = override ? await metadataForTitle(override) : await searchImage(job.guide.imageQuery, usedTitles);
+      candidate = override ? await metadataForTitle(title) : await searchImage(job.guide.imageQuery, usedTitles);
       entry = entryFrom(candidate, job);
       manifest[job.key] = entry;
       usedTitles.add(entry.commonsTitle);

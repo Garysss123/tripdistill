@@ -1,0 +1,36 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/naples-pompeii-vesuvius/herculaneum-vesuvius/",
+    "/italy/naples-pompeii-vesuvius/pompeii-city-route/",
+    "/italy/puglia/alberobello-itria-valley/",
+    "/italy/puglia/bari-trani-castel-del-monte/",
+    "/italy/puglia/lecce-otranto-gallipoli/",
+    "/italy/sardinia/gulf-orosei-gennargentu/",
+    "/italy/siena-southern-tuscany/maremma-park-coast/",
+    "/italy/siena-southern-tuscany/siena-civic-cathedral/"
+  ],
+  "translations": {
+    "Excavated buildings and courtyard inside Herculaneum": "赫庫蘭尼姆（Herculaneum）發掘出的建築與庭院",
+    "Excavated buildings and courtyard inside Herculaneum · CC BY 2.0": "赫庫蘭尼姆（Herculaneum）發掘出的建築與庭院 · CC BY 2.0",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view": "古龐貝（Pompeii）、現代龐貝與維蘇威火山同框",
+    "— Tracey Hind from Aups, France,": "— 攝影：Tracey Hind，來自法國 Aups，",
+    "— Andrea Schaffer from Sydney, Australia,": "— 攝影：Andrea Schaffer，來自澳洲雪梨，",
+    "Ancient Pompeii, modern Pompeii and Vesuvius in one view · CC BY-SA 2.0": "古龐貝（Pompeii）、現代龐貝與維蘇威火山同框 · CC BY-SA 2.0",
+    "Stone trulli dwellings and conical roofs in Alberobello": "阿爾貝羅貝洛（Alberobello）的石造 trulli 民居與圓錐形屋頂",
+    "Stone trulli dwellings and conical roofs in Alberobello · CC BY-SA 4.0": "阿爾貝羅貝洛（Alberobello）的石造 trulli 民居與圓錐形屋頂 · CC BY-SA 4.0",
+    "A view over historic buildings in Bari": "巴里（Bari）歷史建築景觀",
+    "Aerial view over Lecce’s rooftops and streets": "萊切（Lecce）屋頂與街道的空拍景觀",
+    "— Francesco Di Stefano 08,": "— Francesco Di Stefano 08，",
+    "— Joolz,": "— Joolz，",
+    "A view over historic buildings in Bari · CC BY-SA 4.0": "巴里（Bari）歷史建築景觀 · CC BY-SA 4.0",
+    "Aerial view over Lecce’s rooftops and streets · CC BY-SA 2.5": "萊切（Lecce）屋頂與街道的空拍景觀 · CC BY-SA 2.5",
+    "— Nicola Secci,": "— Nicola Secci，",
+    "Mediterranean coast and wild landscape in Maremma Natural Park · CC BY-SA 4.0": "馬雷瑪自然公園的地中海海岸與原野景觀 · CC BY-SA 4.0",
+    "— José Luiz Bernardes Ribeiro,": "— José Luiz Bernardes Ribeiro，",
+    "— Denis Dascanio,": "— Denis Dascanio，",
+    "Medieval palaces surrounding Siena’s Piazza del Campo": "錫耶納（Siena）田野廣場（Piazza del Campo）周邊的中世紀宮殿",
+    "Medieval palaces surrounding Siena’s Piazza del Campo · CC BY-SA 4.0": "錫耶納（Siena）田野廣場（Piazza del Campo）周邊的中世紀宮殿 · CC BY-SA 4.0"
+  }
+}

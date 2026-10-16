@@ -1,0 +1,25 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/usa/texas/",
+    "/usa/texas/austin/",
+    "/usa/texas/san-antonio/",
+    "/usa/texas/houston/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare an Austin–San Antonio Texas Eagle trip with Houston’s separate Amtrak Connection option, hotel transfers and a shorter two-city plan.": "比較搭乘 Texas Eagle 往返奧斯汀與聖安東尼奧的行程、另行安排的休士頓 Amtrak Connection 選項、飯店接駁，以及較精簡的兩城行程。",
+    "Austin and San Antonio can form a focused central-to-south Texas journey when the actual road or intercity service fits. The Amtrak Texas Eagle route page lists Austin and San Antonio; on that same page, Houston and Galveston appear separately under Amtrak Connection service. Treat the latter as a connecting transportation option, not evidence of a continuous direct Texas Eagle train to Houston. Houston adds a separate eastward portion and deserves its own usable days. Compare the complete transport arrangement before adding it, rather than treating three city names as one metropolitan area.": "若實際道路或城際交通安排合適，奧斯汀與聖安東尼奧可組成一趟聚焦德州中部至南部的旅程。Amtrak 的 Texas Eagle 路線頁列有奧斯汀與聖安東尼奧；同一頁則將休士頓與加爾維斯頓另列於 Amtrak Connection 服務。請把後者視為轉接交通選項，不要據此認定 Texas Eagle 有直通休士頓的連續列車。休士頓位於更東側，應另安排足夠的遊覽時間。將它納入行程前，先比較完整的交通安排，別把三座城市當成同一個都會區。",
+    "Amtrak: Texas Eagle route and separate Houston / Galveston Connection service": "Amtrak：Texas Eagle 路線，以及另行提供的休士頓／加爾維斯頓 Connection 服務",
+    "Amtrak: date- and station-specific timetable lookup": "Amtrak：依日期與車站查詢時刻表",
+    "For a rail plan, enter the actual date and city/station pair in Amtrak’s timetable or booking lookup. Check whether a Houston itinerary includes an Amtrak Connection segment, the precise stations or pickup points, mode, transfer time and final arrival. Compare that full journey from hotel door to hotel door with driving or other intercity options. A train station is not the sightseeing destination or hotel; include the local trip at both ends. If driving, include parking and the hotel’s vehicle terms as well as the road journey.": "規劃鐵路行程時，請在 Amtrak 的時刻表或訂票查詢中輸入實際日期與城市／車站組合。確認前往休士頓的行程是否包含 Amtrak Connection 路段，並查明確切車站或接送地點、交通方式、轉乘時間及最終抵達地點。請以飯店門口到飯店門口的完整行程，與自駕或其他城際交通方式比較。車站並非觀光景點或飯店所在地，兩端都要計入當地接駁。如果自駕，也要把道路行程、停車安排及飯店的車輛規定一併納入。",
+    "Source information checked on 10 October 2026. Route order, comparisons and suggested pacing are TripDistill editorial judgments; they are not official operator itineraries.": "資料查核日期：2026 年 10 月 10 日。路線順序、比較內容與建議步調均為 TripDistill 的編輯判斷，並非營運業者的官方行程。",
+    "Plan Austin from the airport or Texas Eagle station, then match local transport and hotel to Capitol, lake or neighborhood, and music stops.": "從機場或 Texas Eagle 車站出發規劃奧斯汀行程，再依州議會大廈、湖畔或各街區景點與音樂活動，安排市內交通及住宿。",
+    "For an intercity arrival, Amtrak lists Austin on the Texas Eagle route. Compare the exact date’s station arrival and local ride or walk to the hotel with the complete airport or road alternative; the train’s city name alone does not make the last mile direct.": "若搭乘城際列車抵達，Amtrak 將奧斯汀列於 Texas Eagle 路線。請確認指定日期的車站抵達時間，並把前往飯店的當地車程或步行路段，與從機場或公路出發的完整替代方案比較；列車停靠某座城市，不代表最後一段路程無須接駁。",
+    "Plan San Antonio from its Texas Eagle station to downtown or separate southern missions; compare last-mile travel and reservations.": "從聖安東尼奧的 Texas Eagle 車站出發，規劃前往市中心或南側各傳教站的行程；比較最後一段交通方式並預先確認預約。",
+    "Amtrak lists San Antonio on the Texas Eagle route. For an arrival from Austin, check the travel date, San Antonio station, arrival time and the separate last-mile journey to the hotel before fixing a Church reservation or evening plan. For the southern missions, price and confirm the additional local transport from the chosen base; the intercity train does not remove that leg.": "Amtrak 將聖安東尼奧列於 Texas Eagle 路線。若從奧斯汀搭車前來，請先確認搭乘日期、聖安東尼奧車站與抵達時間，以及另行安排的車站至飯店交通，再敲定教堂預約或晚間行程。若要前往南側傳教站，請估算費用並確認從住宿據點出發的額外市內交通；搭乘城際列車並不會省去這一段路程。",
+    "Choose Space Center Houston or a Museum District visit, with hotel transfers and Amtrak’s separately labeled Houston Connection checked for your date.": "選擇參觀休士頓太空中心或博物館區，並安排飯店接駁，同時依旅行日期查核 Amtrak 另行標示的 Houston Connection 服務。",
+    "Amtrak’s Texas Eagle route page lists Houston and Galveston under its separate Amtrak Connection service, while naming Austin and San Antonio on the Texas Eagle route. If Houston is part of an Amtrak itinerary, check the exact date and station pair in the timetable, identify the Connection leg’s pickup/drop-off and transfer details, then compare both ends of the trip to your hotel. Do not plan around a direct Texas Eagle train to Houston.": "Amtrak 的 Texas Eagle 路線頁將休士頓與加爾維斯頓列於另一項 Amtrak Connection 服務下，Texas Eagle 路線則列有奧斯汀與聖安東尼奧。若打算搭乘 Amtrak 前往休士頓，請在時刻表中查詢確切日期與車站組合，確認 Connection 路段的上下車地點及轉乘細節，再比較行程兩端往返飯店的交通方式。請勿以為有 Texas Eagle 列車直通休士頓。"
+  }
+}

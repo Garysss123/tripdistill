@@ -1,0 +1,13 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "town, interpretation and preparation": "愛麗斯泉（Mparntwe）：城鎮解說與行前準備",
+    "gorge road and water decisions": "Tjoritja：峽谷道路與水域規劃",
+    "canyon rim and heat gate": "Watarrka：峽谷邊緣步道與高溫限制",
+    "gorge walk and valley loop": "Kata Tjuṯa：峽谷步道與山谷環線"
+  }
+}

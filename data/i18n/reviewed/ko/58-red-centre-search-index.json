@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "town, interpretation and preparation": "앨리스스프링스(Mparntwe) 시내·해설·여행 준비",
+    "gorge road and water decisions": "Tjoritja 협곡·도로·물놀이 계획",
+    "canyon rim and heat gate": "Watarrka 협곡 림 워크·더위 시간 제한",
+    "gorge walk and valley loop": "Kata Tjuṯa 협곡 산책·계곡 순환 코스"
+  }
+}

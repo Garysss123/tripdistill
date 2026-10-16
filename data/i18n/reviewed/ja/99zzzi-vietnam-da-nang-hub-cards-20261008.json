@@ -1,0 +1,11 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/da-nang-hoi-an/"
+  ],
+  "translations": {
+    "01 / riverfront": "01 / 川沿い",
+    "04 / shore": "04 / 海岸"
+  }
+}

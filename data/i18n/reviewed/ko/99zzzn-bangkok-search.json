@@ -1,0 +1,12 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Use Asok, Phrom Phong, Thong Lo and Ekkamai as distinct rail stops for parks, connected malls and one neighborhood dining cluster.": "아속, 프롬퐁, 통로, 에까마이를 각각 다른 전철역으로 보고 공원과 연결된 쇼핑몰, 동네 식당가 한 곳을 둘러보세요.",
+    "Connect Lumphini Park and Sri Maha Mariamman Temple on Silom Road, then choose one Sathorn branch: the Mahanakhon skyline or Sathorn Pier.": "룸피니 공원과 실롬 거리의 스리 마하 마리암만 사원을 둘러본 뒤, 사톤에서는 마하나콘 스카이라인이나 사톤 선착장 중 한 곳을 선택하세요.",
+    "Choose Chatuchak by market day and numbered section, then use Chatuchak Park for a garden break or the BTS to Ari for a neighborhood meal.": "짜뚜짝 시장은 운영 요일과 구역 번호를 확인해 둘러보고, 정원에서 쉬려면 짜뚜짝 공원으로, 동네 식사를 원하면 BTS로 아리까지 이동하세요."
+  }
+}

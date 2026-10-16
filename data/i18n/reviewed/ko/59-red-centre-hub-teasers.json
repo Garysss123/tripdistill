@@ -1,0 +1,13 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/red-centre/"
+  ],
+  "translations": {
+    "Give the Telegraph precinct and Desert Park separate blocks, allowing for their different locations and…": "텔레그래프 스테이션 구역과 데저트 파크는 위치가 다르니 일정을 나눠 계획하세요…",
+    "For a short outing, choose Simpsons Gap and one of its named walks.": "짧게 다녀오려면 Simpsons Gap과 지정 산책로 중 하나를 고르세요.",
+    "Sleep near the park, check the Watarrka forecast and walk status at first light, then choose one route.": "공원 인근에서 묵고, 동틀 무렵 Watarrka의 예보와 산책로 상태를 확인한 뒤 코스 하나를 선택하세요.",
+    "Decide between Waḻpa and the Valley before leaving Yulara, then check the forecast and access status.": "Yulara를 떠나기 전에 Waḻpa와 Valley 중 하나를 정하고, 예보와 출입 상태를 확인하세요."
+  }
+}

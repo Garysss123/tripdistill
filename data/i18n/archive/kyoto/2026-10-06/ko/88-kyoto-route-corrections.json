@@ -1,0 +1,14 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/",
+    "/japan/kyoto/fushimi-inari-sake-district/"
+  ],
+  "translations": {
+    "Start at Kiyomizudera and work downhill through the preserved Higashiyama lanes to Yasaka Shrine and Maruyama Park. Stay in Gion for dinner on the east bank, or cross the Kamo River once to Pontocho on the west bank; if hills or crowds stretch the morning, keep the rest of the day on the shrine side instead of doubling back.": "기요미즈데라에서 출발해 보존된 히가시야마 골목을 따라 내리막길로 야사카 신사와 마루야마 공원까지 이동하세요. 저녁은 강 동쪽의 기온에서 먹거나, 가모가와를 한 번 건너 서쪽의 폰토초로 가세요. 언덕이나 인파 때문에 오전 일정이 길어지면, 되돌아가는 대신 남은 일정도 신사 쪽에서 보내세요.",
+    "Stay in the lower precinct: pass the Romon and main hall, walk through Senbon Torii to the Okusha Hohaisho, then return along the same gates. This is a satisfying shorter visit to the lower shrine precinct, without committing to the mountain climb.": "하부 경내에서 짧게 둘러보세요. 로몬과 본전을 지나 센본 도리이를 따라 오쿠샤 호하이쇼까지 간 다음, 같은 도리이 길을 따라 돌아오면 됩니다. 산행까지 하지 않아도 하부 경내를 둘러보는 것만으로 만족스러운 짧은 참배가 됩니다.",
+    "Optional mountain stop: Kumatakasha": "선택 산행 지점: 구마타카샤",
+    "If you want a longer climb, add the optional uphill visit to Kumatakasha, a named mountain sanctuary on the shrine map. Treat it as a choice, not the standard midpoint or a required stage; from there, decide whether to return or continue on the mapped route.": "더 긴 산행을 원한다면 지도에 표시된 산중 신사인 구마타카샤까지 오르는 구간을 추가해 보세요. 이를 정해진 중간 지점이나 필수 단계로 여기지 말고 선택지로 보세요. 그곳에서 되돌아갈지 지도에 표시된 길을 따라 계속 갈지 정하면 됩니다."
+  }
+}

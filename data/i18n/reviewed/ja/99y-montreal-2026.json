@@ -1,0 +1,34 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/montreal/",
+    "/canada/montreal/old-montreal-old-port/",
+    "/canada/montreal/plateau-mile-end/",
+    "/canada/montreal/mount-royal-museums/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 7 October 2026. Recheck transport, weather, park, marine, reservation and operator conditions before travel.": "旅の情報と写真のライセンスは2026年10月7日に確認しました。出発前に交通、天気、公園、船舶、予約、運営状況を各公式情報で再確認してください。",
+    "STM — Métro network, map, service status and elevator alerts": "STM — メトロ路線図、運行状況、エレベーター情報",
+    "Ville de Montréal — Mount Royal Park, trails and current access notices": "モントリオール市 — モン・ロワイヤル公園、散策路、通行情報",
+    "Ville de Montréal — Kondiaronk lookout access and facilities": "モントリオール市 — Kondiaronk展望台のアクセスと設備",
+    "Tourisme Montréal — Mount Royal Park history and visitor orientation": "Tourisme Montréal — モン・ロワイヤル公園の歴史と歩き方",
+    "Pointe-à-Callière — Fort Ville-Marie archaeological site": "Pointe-à-Callière — ヴィル・マリー砦の考古学遺跡",
+    "Pointe-à-Callière — Memory Collector sewer exhibition": "Pointe-à-Callière — 幹線下水道の展示「Memory Collector」",
+    "Pointe-à-Callière — current hours and visit conditions": "Pointe-à-Callière — 最新の開館時間と見学案内",
+    "Old Port of Montréal — seasonal waterfront activities and notices": "モントリオール旧港 — 季節のウォーターフロント催しとお知らせ",
+    "Tourisme Montréal — Plateau-Mont-Royal neighborhood overview": "Tourisme Montréal — プラトー・モン・ロワイヤル地区案内",
+    "Quebec · survey 01 · reviewed 7 October 2026": "ケベック・ルート 01・2026年10月7日確認",
+    "Planning facts and image licensing were reviewed on 7 October 2026. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.": "旅の情報と写真のライセンスは2026年10月7日に確認しました。交通、公園、天気、予約、運営状況は変わることがあります。出発前にリンク先を確認してください。",
+    "Quebec · survey 02 · reviewed 7 October 2026": "ケベック・ルート 02・2026年10月7日確認",
+    "Quebec · survey 03 · reviewed 7 October 2026": "ケベック・ルート 03・2026年10月7日確認",
+    ". Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms.": "。サイズ調整、表示用トリミング、WebP変換を行いましたが、その他の実質的な編集はありません。この改作画像も同じCC BY-SA 3.0の条件で公開しています。",
+    ". Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 4.0 terms.": "。サイズ調整、表示用トリミング、WebP変換を行いましたが、その他の実質的な編集はありません。この改作画像も同じCC BY-SA 4.0の条件で公開しています。",
+    "First-visit plan": "初めての訪問プラン",
+    "Tourisme Montréal — Mile End boundaries and street life": "Tourisme Montréal — マイル・エンドの範囲と街並み",
+    "Pointe-à-Callière — The Lives and Times of the Plateau (2013 exhibition release)": "Pointe-à-Callière — 展覧会「The Lives and Times of the Plateau」（2013年の発表資料）",
+    "Mile End street corner at Laurier and Henri-Julien, with apartment and storefront buildings": "Laurier通りとHenri-Julien通りの交差点にあるマイル・エンドの集合住宅と店舗",
+    "20181013 - 01 - Montreal (Mile End).jpg": "20181013 - 01 - モントリオール（Mile End）の街角.jpg",
+    "— Andre Carrotflower,": "— アンドレ・キャロットフラワー (Andre Carrotflower),"
+  }
+}

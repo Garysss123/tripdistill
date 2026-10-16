@@ -1,0 +1,11 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Walk Thalang Road, Soi Romanee, Dibuk Road and Thai Hua or Chinpracha House, then use a separate road day for Wat Chalong and Karon Viewpoint.": "เดินถนนถลาง ซอยรมณีย์ และถนนดีบุก เลือกแวะพิพิธภัณฑ์ไทยหัวหรือบ้านชินประชา แล้วแยกอีกวันเดินทางทางถนนไปวัดฉลองและจุดชมวิวกะรน",
+    "Compare Ko Tapu, Ko Phing Kan, Tham Lot and Ko Panyi by bay boat, the inland Wat Bang Riang road day, and Ko Yao Noi’s named pier connection.": "เปรียบเทียบเส้นทางเรือชมอ่าวไปเกาะตาปู เกาะพิงกัน ถ้ำลอด และเกาะปันหยี กับวันเดินทางทางถนนไปวัดบางเหรียง และเส้นทางท่าเรือที่ระบุไปเกาะยาวน้อย"
+  }
+}

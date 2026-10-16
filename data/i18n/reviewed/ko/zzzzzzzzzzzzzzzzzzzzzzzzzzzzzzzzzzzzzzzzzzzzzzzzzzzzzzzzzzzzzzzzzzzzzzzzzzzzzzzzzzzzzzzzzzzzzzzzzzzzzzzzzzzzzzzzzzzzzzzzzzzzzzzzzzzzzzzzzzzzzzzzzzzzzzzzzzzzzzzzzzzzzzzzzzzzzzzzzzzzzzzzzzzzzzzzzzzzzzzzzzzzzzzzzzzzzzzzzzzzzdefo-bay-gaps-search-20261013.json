@@ -1,0 +1,30 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "bai dai coast hotel base": "Bai Dai 해안 숙소 거점",
+    "nha trang train station transfer": "나트랑 기차역 이동",
+    "bai dai public beach access": "Bai Dai 공공 해변 접근",
+    "ba ho waterfall route ninh hoa": "닌호아 Ba Ho 폭포 경로",
+    "ninh ich phu huu access": "Ninh Ích·Phú Hữu 접근",
+    "nha trang day trip driver": "나트랑 출발 당일치기 운전자",
+    "ba ho stream water safety": "Ba Ho 계곡물 안전",
+    "nha trang bay boat transfer": "나트랑 만 보트 이동",
+    "hon mun current access": "Hon Mun 현재 접근",
+    "nha trang marine reserve rules": "나트랑 해양보호구역 규칙",
+    "nha trang pier operator safety": "나트랑 선착장과 업체 안전",
+    "con dao park registration": "Côn Đảo 국립공원 등록",
+    "bay canh turtle tour booking": "Bay Canh 거북이 투어 예약",
+    "con dao flight ferry connection": "Côn Đảo 항공·페리 연결",
+    "con dao park consent rules": "Côn Đảo 국립공원 승인 규칙",
+    "three stream pools inland": "내륙 계곡의 세 물웅덩이"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Codex, current execution session",
+    "reviewer": "GPT-6 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

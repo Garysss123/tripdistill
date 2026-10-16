@@ -1,0 +1,35 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Canberra’s civic institutions as separate city days, then move to Jindabyne or another alpine gateway for the Snowy Mountains. Check city buses, bridge detours, booked coaches, park access and weather before fixing the sequence.": "วางแผนเที่ยวสถาบันต่าง ๆ ในแคนเบอร์ราแยกเป็นวัน ๆ แล้วจึงย้ายไปจินดาไบน์หรือประตูสู่เขตภูเขาแอลป์แห่งอื่นเพื่อเที่ยวเทือกเขาสโนวี ตรวจรถประจำทางในเมือง ทางเบี่ยงสะพาน รถโค้ชที่ต้องจอง การเข้าถึงอุทยาน และสภาพอากาศก่อนกำหนดลำดับการเดินทาง",
+    "canberra city itinerary": "แผนเที่ยวตัวเมืองแคนเบอร์รา",
+    "canberra bus routes 53 54 57 58": "เส้นทางรถประจำทางแคนเบอร์รา 53 54 57 58",
+    "canberra to jindabyne coach 775": "รถโค้ช 775 จากแคนเบอร์ราไปจินดาไบน์",
+    "snowy mountains seasonal shuttle": "รถรับส่งตามฤดูกาลในเทือกเขาสโนวี",
+    "Pair Parliament House with one inner-south institution, not a checklist of museums. Check sitting hours, screening, Routes 57/58 and current Commonwealth Avenue Bridge detours before choosing the walk.": "จับคู่อาคารรัฐสภากับสถาบันหนึ่งแห่งในย่านตอนใต้ด้านใน แทนการไล่เที่ยวพิพิธภัณฑ์เป็นรายการ ตรวจเวลาเปิดในวันประชุม การตรวจความปลอดภัย Routes 57/58 และทางเบี่ยงปัจจุบันที่สะพาน Commonwealth Avenue Bridge ก่อนเลือกเส้นทางเดิน",
+    "parliament house canberra opening hours": "เวลาเปิดอาคารรัฐสภาแคนเบอร์รา",
+    "bus 57 58 parliament house": "รถประจำทาง 57 58 ไปอาคารรัฐสภา",
+    "federation mall canberra walking route": "เส้นทางเดิน Federation Mall แคนเบอร์รา",
+    "commonwealth avenue bridge shared path detour": "ทางเบี่ยงทางใช้ร่วมกันที่สะพาน Commonwealth Avenue Bridge",
+    "Route 53 serves the National Museum on Acton Peninsula. Plan one museum block and a short shoreline out-and-back; check Commonwealth Avenue Bridge paths and site-specific lake water notices before extending.": "Route 53 ให้บริการไปพิพิธภัณฑสถานแห่งชาติบนคาบสมุทรแอกตัน วางแผนเที่ยวพิพิธภัณฑ์หนึ่งช่วงและเดินเลียบฝั่งระยะสั้นไปกลับ ตรวจทางเดินบริเวณสะพาน Commonwealth Avenue Bridge และประกาศคุณภาพน้ำเฉพาะจุดก่อนขยายเส้นทาง",
+    "national museum of australia bus 53": "รถประจำทาง 53 ไปพิพิธภัณฑสถานแห่งชาติออสเตรเลีย",
+    "acton peninsula west basin walk": "เส้นทางเดินคาบสมุทรแอกตัน เวสต์เบซิน",
+    "lake burley griffin bridge to bridge walk": "เส้นทางเดิน Bridge-to-Bridge ทะเลสาบเบอร์ลีย์ กริฟฟิน",
+    "lake burley griffin water-quality closure": "การปิดพื้นที่ตามประกาศคุณภาพน้ำทะเลสาบเบอร์ลีย์ กริฟฟิน",
+    "R54 serves the Australian War Memorial stop. Allow time for the collection and 4:30pm Last Post Ceremony; add the 4.5km return Mount Ainslie walk only when track status, daylight, fire risk and fitness fit.": "R54 จอดที่อนุสรณ์สถานสงครามออสเตรเลีย เผื่อเวลาเที่ยวคอลเล็กชันและพิธี Last Post เวลา 4:30pm เพิ่มเส้นทางเดินขึ้นเมาท์ไอน์สลีระยะไปกลับ 4.5km เฉพาะเมื่อสถานะทางเดิน ช่วงเวลากลางวัน ความเสี่ยงไฟป่า และสภาพร่างกายเอื้อ",
+    "canberra r54 war memorial": "แคนเบอร์รา R54 อนุสรณ์สถานสงคราม",
+    "last post ceremony time": "เวลาพิธี Last Post",
+    "mount ainslie summit walk 4.5 km": "เส้นทางเดินขึ้นยอด Mount Ainslie 4.5 km",
+    "kokoda track canberra fire closure": "Kokoda Track แคนเบอร์รา ปิดเนื่องจากไฟป่า",
+    "mount ainslie drive lookout": "จุดชมวิว Mount Ainslie Drive"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant and locale workers; GPT-6 Codex execution family, exact runtime model ID unverified; no Luna runtime exposed in the selected environment",
+    "reviewer": "Same task/model-family review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

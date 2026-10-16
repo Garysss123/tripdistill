@@ -1,0 +1,15 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/china/hangzhou/west-lake-north-broken-bridge/",
+    "/china/hangzhou/west-lake-south-leifeng/",
+    "/china/hangzhou/hefang-southern-song/"
+  ],
+  "translations": {
+    "For a Broken Bridge start, use Fengqi Road station (Line 1) as the general metro gateway. The official autumn guide lists a seasonal shuttle from there to Broken Bridge only on 2026 weekends from September through November and during the Mid-Autumn and National Day holidays; check the bus authority’s current route and stop notices for the day. Outside those dates, plan with the metro and a walk or use a live route planner; do not assume a routine shuttle.": "若從斷橋出發，可搭乘地鐵至鳳起路站（1號線）作為一般轉乘入口。官方秋季指南列出從該站前往斷橋的季節性接駁車，僅於2026年9月至11月的週末，以及中秋節與國慶假期行駛；請於當日查閱公車主管機關最新路線與停靠站公告。上述日期以外，請規劃搭乘地鐵並步行，或使用即時路線規劃工具；不要假設有常態接駁車。",
+    "For the south shore, Wushan Square station (Line 7) and Longxiangqiao station (Line 1) are metro gateways. The official autumn guide lists seasonal shuttles from these stations to Leifeng Pagoda only on 2026 weekends from September through November and during the Mid-Autumn and National Day holidays; check the bus authority’s current routes and stops for the day. The north- and south-shore chapters have different start and finish points, so do not assume a seasonal shuttle connects them. Outside those dates, use a live route planner.": "前往西湖南岸，可將吳山廣場站（7號線）與龍翔橋站（1號線）作為地鐵入口。官方秋季指南列出從這些站前往雷峰塔的季節性接駁車，僅於2026年9月至11月的週末，以及中秋節與國慶假期行駛；請於當日查閱公車主管機關最新路線與停靠站公告。南北岸篇章的起點和終點不同，請勿假設有季節性接駁車連接兩地。上述日期以外，請使用即時路線規劃工具。",
+    "Wushan Square station (Line 7) is a metro gateway; choose the walking connection from the station to the street endpoint you actually plan to visit. For 2026 weekends from September through November and the Mid-Autumn and National Day holidays, the autumn West Lake guide lists seasonal shuttles for Broken Bridge, Leifeng Pagoda, Su Causeway, Lingyin and Manjuelong, but does not list Hefang Street. Do not assume a West Lake shuttle serves this street; check current pedestrian routing and bus notices if combining the visits.": "吳山廣場站（7號線）是地鐵入口；請依實際計畫造訪的街道位置，選擇從車站步行前往的路線。西湖秋季指南指出，僅於2026年9月至11月的週末，以及中秋節與國慶假期期間，設有前往斷橋、雷峰塔、蘇堤、靈隱及滿覺隴的季節性接駁車；指南未列河坊街。請勿假設西湖接駁車會停靠河坊街；若安排同日走訪，請確認最新步行路線與公車公告。",
+    "Hangzhou.com.cn — 2026 autumn West Lake shuttle guide, published 7 September; specific bus routes and stops follow transit-authority notices": "Hangzhou.com.cn（杭州網）— 2026年西湖秋季接駁指南（9月7日發布）；具體公車路線與停靠站資訊請以交通主管機關公告為準"
+  }
+}

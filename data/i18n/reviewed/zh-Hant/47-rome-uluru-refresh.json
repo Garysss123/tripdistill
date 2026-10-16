@@ -1,0 +1,42 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/rome/",
+    "/italy/rome/ancient-rome-capitoline/",
+    "/italy/rome/vatican-borgo-prati/",
+    "/italy/rome/historic-centre-trastevere/",
+    "/australia/red-centre/",
+    "/australia/red-centre/uluru-cultural-landscape/"
+  ],
+  "translations": {
+    "ROME: THREE ROUTE CHAPTERS": "羅馬：三段路線篇章",
+    "Forum-to-Capitoline field notes": "古羅馬廣場至卡比托利歐山行程筆記",
+    "ROME CITY AND TRANSPORT SERVICES": "羅馬市區與交通服務",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and…": "以尤拉拉為國家公園據點，在瓦塔卡安排另一晚住宿，並以姆帕恩特韋作為前往特喬里查的門戶。這些地方不能互相替代成為一日遊：烏魯魯與……",
+    "Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and Kata Tjuṯa have long exposed walks and their own access conditions, while fuel, daylight and road closures govern every remote leg. Begin with Aṉangu or Arrernte visitor guidance, then build each day around the current park and road information.": "以尤拉拉為國家公園據點，在瓦塔卡安排另一晚住宿，並以姆帕恩特韋作為前往特喬里查的門戶。這些地方不能互相替代成為一日遊：烏魯魯與卡塔丘塔有漫長且曝曬的步道，也各有入場條件；偏遠路段則都受燃油、日照時數與道路封閉情況影響。先參考 Aṉangu 或 Arrernte 族群的訪客指引，再依最新園區與道路資訊安排每天行程。",
+    "How many days should I give the Red Centre?": "紅色中心應安排幾天？",
+    "Use at least two full days from Yulara if you want both Uluṟu and Kata Tjuṯa. Add separate nights for Watarrka and Mparntwe when those chapters are in the route; do not turn the drive between them into an evening transfer.": "若想同時遊覽烏魯魯與卡塔丘塔，從尤拉拉出發至少安排兩個完整白天。若行程還包括瓦塔卡與姆帕恩特韋，請分別安排住宿；不要把兩地之間的長途車程排成傍晚的接駁。",
+    "Can I drive from Uluṟu to Watarrka and return after one walk?": "我可以從烏魯魯開車到瓦塔卡，走完一條步道後再開回來嗎？",
+    "Keep those chapters on different days with an overnight near Watarrka. The long road leg plus an exposed canyon walk leaves too little daylight and recovery margin for a safe return.": "把這兩個行程安排在不同日子，並在瓦塔卡附近住一晚。漫長車程加上曝曬的峽谷步道，會讓安全返回所需的日照時間與休息餘裕都不足。",
+    "What should I recheck before leaving a base?": "離開據點前應再次確認哪些資訊？",
+    "Check current park and cultural closures, heat or wind advice, road conditions, fuel, water, communications and the vehicle requirements for the actual route.": "確認最新的園區與文化場域封閉資訊、炎熱或強風指引、道路狀況、燃油、飲水、通訊，以及實際路線所需的車輛規格。",
+    "Give Uluṟu–Kata Tjuṯa, Watarrka, Tjoritja and Mparntwe separate bases; let Country, distance and heat set the order.": "為烏魯魯—卡塔丘塔、瓦塔卡、特喬里查與姆帕恩特韋分別安排據點；依照原野、距離與炎熱程度決定順序。",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window.": "若烏魯魯與卡塔丘塔都是重點，從尤拉拉至少安排兩個完整白天，並為每處各留一個適合天氣的時段。",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and…": "可搭機前往愛麗斯泉與尤拉拉，但搭飛機抵達並不會縮短國家公園、瓦塔卡與……之間的漫長公路路程。",
+    "Road and rocky landscape at Anzac Hill in Alice Springs · CC BY-SA 4.0": "愛麗斯泉安扎克山的道路與岩石地景 — CC BY-SA 4.0",
+    "Field 04 · surface, water and respect": "田野筆記 04 — 地表、水與尊重",
+    "Uluṟu Cultural Landscape": "烏魯魯文化景觀",
+    "If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window. Keep the Kings Canyon Rim Walk beside a Watarrka overnight; use Mparntwe for town services and a separate Tjoritja day. Moving bases is part of the itinerary, not spare time.": "若烏魯魯與卡塔丘塔都是重點，從尤拉拉至少安排兩個完整白天，並為每處各留一個適合天氣的時段。國王峽谷環形步道應搭配瓦塔卡住宿；姆帕恩特韋可作為城鎮補給據點，並另安排一天前往特喬里查。更換住宿據點是行程的一部分，不是可挪用的空檔。",
+    "Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and Tjoritja. Confirm vehicle suitability, fuel, communications and road notices before each departure; plan daylight and recovery rather than a night return.": "可搭機前往愛麗斯泉與尤拉拉，但搭飛機抵達並不會縮短國家公園、瓦塔卡與特喬里查之間的漫長公路路程。每次出發前確認車輛是否適用、燃油、通訊及道路公告；安排足夠日照與休息時間，不要夜間開車返回。",
+    "Uluṟu Cultural Landscape Travel Guide | TripDistill Australia": "烏魯魯文化景觀旅遊指南｜TripDistill 澳洲",
+    "Uluṟu Cultural Landscape — Australia field guide": "烏魯魯文化景觀 — 澳洲實地指南",
+    "surface, water and respect.": "地表、水與尊重。",
+    "Uluru rising from the central Australian desert · CC BY-SA 4.0": "烏魯魯聳立於澳洲中部沙漠 — CC BY-SA 4.0",
+    "On the public path": "走在開放步道上",
+    "Uluṟu Cultural Landscape FAQ": "烏魯魯文化景觀常見問題",
+    "Parks Australia – Kuniya walk and Muṯitjulu Waterhole": "澳洲國家公園署 — 庫尼亞步道與穆蒂朱魯水潭",
+    "Parks Australia – Mala walk": "澳洲國家公園署 — 馬拉步道",
+    "Parks Australia – Tjukurpa": "澳洲國家公園署 — Tjukurpa"
+  }
+}

@@ -22,7 +22,7 @@ export const switzerlandClusters = switzerlandSourceClusters.map((cluster) => ({
     const key = `${cluster.slug}/${guide.slug}`;
     const image = switzerlandImageManifest[key];
     if (!image) throw new Error(`Missing Switzerland image manifest entry: ${key}`);
-    return { ...guide, image: { ...image, editNote: switzerlandImageEditNote } };
+    return { ...guide, image: { ...image, editNote: image.editNote || switzerlandImageEditNote } };
   })
 }));
 

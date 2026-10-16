@@ -1,0 +1,18 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/australia/",
+    "/australia/cairns-wet-tropics/",
+    "/australia/red-centre/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Choose one Top End operating region around your nights, not a pin for every day.": "เลือกพื้นที่เที่ยวในท็อปเอนด์หนึ่งแห่งโดยยึดตามที่พัก แทนการปักหมุดสถานที่สำหรับทุกวัน",
+    "cooinda cruise-day plan": "แผนเที่ยววันล่องเรือที่ Cooinda",
+    "Cross in daylight, select a small number of open managed stops such as Dubuji Boardwalk, and reach…": "ข้ามในช่วงกลางวัน เลือกแวะเพียงไม่กี่แห่งที่เปิดให้เข้าชมและมีการดูแลจัดการ เช่น Dubuji Boardwalk แล้วไปถึง…",
+    "falls, access and swim choice": "น้ำตก การเดินทางเข้า และการเลือกจุดว่ายน้ำ",
+    "Reach the Centre early enough to use the shuttle and complete one suitable walk, then return to Port…": "ไปถึง Centre แต่เนิ่น ๆ เพื่อใช้รถรับส่งและเดินเส้นทางที่เหมาะสมให้จบหนึ่งเส้นทาง จากนั้นกลับไปยัง Port…",
+    "two separate art-country walks": "เส้นทางเดินแยกกันสองเส้นเพื่อชมศิลปะและผืนดินดั้งเดิมของชนพื้นเมือง"
+  }
+}

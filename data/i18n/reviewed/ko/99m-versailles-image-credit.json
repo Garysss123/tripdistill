@@ -1,0 +1,14 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/france/paris-region-day-trips/versailles-palace-estate/"
+  ],
+  "translations": {
+    "The Orangerie parterre at Versailles, with clipped hedges, potted trees and a central fountain": "Versailles의 Orangerie 정형 화단: 다듬은 생울타리와 화분에 심은 나무, 중앙 분수",
+    "The Orangerie parterre, clipped lawns and central fountain at Versailles": "Versailles의 Orangerie 정형 화단, 다듬은 잔디밭과 중앙 분수",
+    "Versailles Orangerie parterre and fountain": "Versailles Orangerie 정형 화단과 분수",
+    "— Rlumstead,": "— Rlumstead,",
+    ". Cropped and resized from the original to WebP; this adaptation is shared under CC BY-SA 4.0.": ". 원본을 잘라 크기를 조정한 뒤 WebP로 변환했으며, 이 수정본은 CC BY-SA 4.0에 따라 공유됩니다."
+  }
+}

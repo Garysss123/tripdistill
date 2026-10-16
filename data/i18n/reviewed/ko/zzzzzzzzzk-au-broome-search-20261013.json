@@ -1,0 +1,35 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan three Broome nights around one town-history route and one coast choice. Compare Cable Beach with Gantheaume Point’s tide-dependent tracks, check the official Broome tide table and local path notices, and confirm the current town bus or a booked last-mile ride.": "브룸에서 3박하며 시내 역사 코스 하나와 해안 일정 하나를 잡으세요. 케이블 비치와 조수 때만 가능한 간텀 포인트 길을 비교하고 공식 브룸 조수표와 현지 길 안내를 확인한 뒤 현재 시내버스나 예약한 마지막 구간 이동편을 확정하세요.",
+    "broome rubibi three nights base town cable beach": "브룸 루비비 3박 시내 케이블 비치 거점",
+    "broome bus route cable beach current timetable": "브룸 버스 케이블 비치 현재 시간표",
+    "broome gantheaume point dinosaur footprints tide table": "브룸 간텀 포인트 공룡 발자국 조수표",
+    "broome yawuru country cultural visitor guidance": "브룸 야우루 전통 영토 문화 방문 안내",
+    "broome beach driving legal access zones": "브룸 해변 운전 허용 구역 표지",
+    "broome town route wet weather coast alternative": "브룸 시내 도보 코스 우천 시 해안 대안",
+    "Plan one or two Dampier Peninsula nights around a confirmed Cygnet Bay stay or local Bardi-led tour. Check permission, the 3 km final driveway, vehicle clearance, road and fire status; current local visitor guidance says the Kooljaman access road/private northern tip is not open to casual visitors.": "확인된 Cygnet Bay 숙박이나 현지 바르디 주도 투어를 중심으로 댐피어 반도에서 1~2박을 계획하세요. 방문 허가, 마지막 3km 진입로, 차량 지상고, 도로·화재 상태를 확인하세요. 현재 현지 방문 안내는 Kooljaman 진입로/북쪽 사유지가 일반 방문객에게 개방되지 않는다고 합니다.",
+    "dampier peninsula broome overnight cygnet bay": "댐피어 반도 브룸 숙박 Cygnet Bay",
+    "cygnet bay borrgoron coast to creek tour booking": "Cygnet Bay Borrgoron Coast to Creek 투어 예약",
+    "dampier peninsula visitor permit community access": "댐피어 반도 방문 허가 공동체 접근",
+    "cape leveque road road report 2wd 4wd clearance": "Cape Leveque Road 도로 보고 2WD 4WD 지상고",
+    "kooljaman private native title access restriction": "Kooljaman 사유 Native Title 접근 제한",
+    "dampier peninsula fire weather road closure fallback": "댐피어 반도 화재 날씨 도로 폐쇄 대안",
+    "Build a 14-day-or-longer Gibb River Road plan from Derby to Kununurra with booked station/camp nights, a high-clearance 4WD or guided tour, fuel and communications. Check Main Roads, both Shires, each park, BOM and Emergency WA; unknown status means do not depart.": "깁 리버 로드를 더비에서 쿠누누라까지 14일 이상 일정으로 잡고 목장/캠프 숙박을 예약하세요. 높은 지상고의 4WD 또는 가이드 투어를 선택하고 연료와 통신을 준비하세요. Main Roads, 양쪽 샤이어, 각 공원, BOM, Emergency WA를 확인하고 상태를 모르면 출발하지 마세요.",
+    "gibb river road 14 day itinerary nights stations": "깁 리버 로드 14일 일정 목장 숙박",
+    "gibb river road derby kununurra 4wd high clearance rental": "깁 리버 로드 더비 쿠누누라 높은 지상고 4WD 렌터카",
+    "gibb river road current road closure travel map": "깁 리버 로드 현재 폐쇄 Travel Map",
+    "kimberley gibb river road river crossing unknown depth": "킴벌리 깁 리버 로드 깊이 불명 하천 도강",
+    "gibb river road fire danger park closure emergency wa": "깁 리버 로드 화재 위험 공원 폐쇄 Emergency WA",
+    "gibb river road fuel camps tour alternative": "깁 리버 로드 연료 캠프 투어 대안"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

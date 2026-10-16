@@ -1,0 +1,10 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/"
+  ],
+  "translations": {
+    "Calgary is a rail-served prairie city; Drumheller and Dinosaur Provincial Park are two separate road corridors. The Royal Tyrrell Museum is an indoor…": "캘거리는 철도 이용이 가능한 프레리 도시입니다. 드럼헬러와 공룡 주립공원은 별도 도로 구간이며, 로열 티렐은 실내 거점, 남부 공원은 차로 약 2시간 더 가야 합니다."
+  }
+}

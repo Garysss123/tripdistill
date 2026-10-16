@@ -1,0 +1,43 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/vietnam/ha-giang/",
+    "/vietnam/ha-giang/quan-ba-heavens-gate/",
+    "/vietnam/ha-giang/yen-minh-pine-forest/",
+    "/vietnam/ha-giang/dong-van-old-quarter/",
+    "/vietnam/ha-giang/lung-cu-flag-tower/",
+    "/vietnam/ha-giang/ma-pi-leng-nho-que/",
+    "/vietnam/ha-giang/meo-vac-du-gia/"
+  ],
+  "translations": {
+    "How much time should Meo Vac to Du Gia Southbound Link receive?": "메오박에서 두지아로 남하하는 연결 구간에는 어느 정도 시간을 잡아야 할까요?",
+    "Plan at least two days and one overnight; never advertise Meo Vac and Du Gia as a guaranteed same-day loop.": "최소 2일과 1박을 계획하세요. 메오박과 두지아를 확실한 당일 순환 코스처럼 소개하지 마세요.",
+    "Mountain valley landscape around Du Gia in Ha Giang": "하장 두지아 주변의 산골짜기 풍경",
+    "market finish and village recovery": "시장 마무리와 마을에서의 회복",
+    "Meo Vac to Du Gia Southbound Link": "메오박–두지아 남하 연결",
+    "A deliberately multi-day southbound chapter joining Meo Vac’s highland market area with Du Gia’s valley, waterfalls and homestay rhythm.": "메오박의 고원 시장 지역과 두지아의 계곡·폭포·홈스테이 리듬을 잇는, 의도적으로 여러 날에 걸친 남하 챕터입니다.",
+    "01 / compass": "01 / 나침반",
+    "02 / roadbook": "02 / 로드북",
+    "03 / zine": "03 / 진",
+    "04 / atlas": "04 / 지도책",
+    "05 / contour": "05 / 윤곽",
+    "06 / signal": "06 / 신호",
+    "Leave Meo Vac with fuel, cash, water and a confirmed destination. Road conditions and signal coverage vary; a local driver or legal tour is preferable for the southbound section.": "연료·현금·물과 확정된 목적지를 준비해 메오박을 떠나세요. 도로 상태와 통신 범위는 달라지므로 남하 구간에는 현지 운전기사나 합법적인 투어가 더 안전합니다.",
+    "Do not enter farms, homes or bathing areas without invitation. Waterfalls and homestays need the same respect as heritage sites.": "초대 없이 농장·주택·물놀이 공간에 들어가지 마세요. 폭포와 홈스테이도 유산지와 같은 존중이 필요합니다.",
+    "Observe Meo Vac in the morning, travel only in daylight, reach Du Gia with enough time for a quiet village or waterfall visit, and keep the next transfer defensive.": "아침에 메오박을 둘러보고 낮에만 이동하세요. 조용한 마을이나 폭포를 둘러볼 시간을 남겨 두고 두지아에 도착한 뒤, 다음 이동도 안전 여유를 두고 계획하세요.",
+    "— trungydang, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits.": "— trungydang, CC BY 3.0. 크기 조정·표시용 크롭·WebP 변환만 했으며, 그 밖의 수정은 없습니다.",
+    "compass": "나침반",
+    "Northeast Vietnam": "베트남 북동부",
+    "signal": "신호",
+    "Stairs and exposure": "계단과 노출",
+    "Rain and rockfall": "비와 낙석",
+    "Water safety": "물 안전",
+    "Meo Vac to Du Gia Southbound Link | TripDistill": "메오박–두지아 남하 연결 | TripDistill",
+    "Meo Vac to Du Gia Southbound Link — market finish and village recovery": "메오박–두지아 남하 연결 — 시장 마무리와 마을에서의 회복",
+    "Meo Vac to Du Gia Southbound Link Travel Guide": "메오박–두지아 남하 연결 여행 가이드",
+    "Can I combine Meo Vac to Du Gia Southbound Link with another major chapter?": "메오박에서 두지아로 남하하는 연결 구간을 다른 주요 챕터와 함께 둘러봐도 될까요?",
+    "market finish and village recovery.": "시장 마무리와 마을에서의 회복.",
+    "Meo Vac to Du Gia Southbound Link FAQ": "메오박–두지아 남하 연결 FAQ"
+  }
+}

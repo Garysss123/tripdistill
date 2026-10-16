@@ -1,0 +1,16 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/italy/",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan Emilia-Romagna as three operating zones rather than a checklist: Bologna’s walkable portico centre, the Via Emilia rail pair of Modena and Parma, and the…": "에밀리아로마냐는 세 개의 이동 권역으로 계획하세요. 걸어서 둘러보는 볼로냐 포르티코 중심가, 비아 에밀리아 철도축의 모데나·파르마, 라벤나·페라라·별도 예약이 필요한 포강 삼각주 중 하나입니다."
+  },
+  "reviewProvenance": {
+    "writer": "single-model translation",
+    "reviewer": "same-model self-review",
+    "independentSecondModel": false
+  }
+}

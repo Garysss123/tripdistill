@@ -8,12 +8,35 @@ import { australiaClusters, australiaGuides } from '../data/australia-guides.mjs
 import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
+import { hasVisibleOriginalProjectProvenance } from './site-image-provenance-guard.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
+const vietnamFieldCssVersions = [
+  '/css/vietnam-field.css?v=20260831-1',
+  '/css/vietnam-field.css?v=20261012-1'
+];
+const thailandBangkokCssRoutes = new Set([
+  '/thailand/bangkok/',
+  '/thailand/bangkok/rattanakosin-grand-palace/',
+  '/thailand/bangkok/banglamphu-phra-athit/',
+  '/thailand/bangkok/yaowarat-talat-noi/',
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/',
+  '/thailand/bangkok/siam-ratchaprasong/',
+  '/thailand/bangkok/thonburi-khlong-bang-luang/'
+]);
+const thailandBangkokCssV3Routes = new Set([
+  '/thailand/bangkok/chatuchak-ari/',
+  '/thailand/bangkok/silom-sathorn/',
+  '/thailand/bangkok/sukhumvit-thong-lo/',
+  '/thailand/bangkok/siam-ratchaprasong/',
+  '/thailand/bangkok/thonburi-khlong-bang-luang/'
+]);
 const problems = [];
 const notes = [];
-const siteCssVersions = ['/css/site.css?v=20260926-1', '/css/site.css?v=20261005-2', '/css/site.css?v=20261006-1', '/css/site.css?v=20261006-2', '/css/site.css?v=20261008-1'];
-const mainJsVersion = '/js/main.js?v=20260911-1';
+const siteCssVersions = ['/css/site.css?v=20261016-1'];
+const mainJsVersion = '/js/main.js?v=20261016-1';
 const adsenseJsVersion = '/js/adsense.js?v=20260826-9';
 const chinaExpansionByRoute = new Map(chinaExpansionGuides.map((guide) => [`/china/${guide.slug}/`, guide]));
 const malaysiaDepthByRoute = new Map(malaysiaDepthGuides.map((guide) => [guide.url, guide]));
@@ -136,6 +159,18 @@ if (!Number.isFinite(thaiGyeongjuSubtitleMarginTop) || thaiGyeongjuSubtitleMargi
   problems.push('css/gyeongju.css: Thai Gyeongju hero subtitle needs at least .15em top spacing');
 }
 
+// Guard the exact Traditional Chinese itinerary sentence reported as reversing the JR arrival direction.
+const tokyoShibuyaZhHant = read('zh/japan/tokyo/shibuya-harajuku/index.html');
+const reversedTokyoJrSentence = '從原宿站搭乘 JR，可由明治神宮主要參道或 Takeshita 一側開始行程。';
+const correctedTokyoJrSentence = '搭乘 JR 抵達原宿站後，依第一站選擇出口，步行前往明治神宮參道或竹下通。';
+if (tokyoShibuyaZhHant.includes(reversedTokyoJrSentence)) {
+  problems.push('zh-Hant Tokyo Shibuya itinerary still contains the reversed JR arrival sentence');
+} else if ((tokyoShibuyaZhHant.split(correctedTokyoJrSentence).length - 1) !== 1) {
+  problems.push('zh-Hant Tokyo Shibuya itinerary must contain the corrected JR arrival sentence exactly once');
+} else {
+  console.log('Tokyo zh-Hant JR arrival wording regression check passed: reversed sentence absent; corrected sentence appears once.');
+}
+
 const sitemap = read('sitemap.xml');
 const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => {
   const entry = match[1];
@@ -248,7 +283,8 @@ for (const absoluteUrl of publishedUrls) {
   }
   const hasVisibleKoglLicense = /href=["']https:\/\/www\.kogl\.or\.kr\/info\/licenseType1\.do["']/i.test(html)
     && /class=["'][^"']*\bphoto-license\b[^"']*["']/i.test(html);
-  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense) {
+  const hasVisibleOriginalProjectProvenanceException = hasVisibleOriginalProjectProvenance(html, absoluteUrl);
+  if (images.length && !/(?:CC0|CC BY(?:-SA)?|public domain|open-government|site-owned|generated (?:image|imagery))/i.test(html) && !hasVisibleKoglLicense && !hasVisibleOriginalProjectProvenanceException) {
     problems.push(`${relativePath}: image page lacks a visible commercial-use license or provenance entry`);
   }
 
@@ -259,18 +295,41 @@ for (const absoluteUrl of publishedUrls) {
 
   if (baseRoute.startsWith('/south-korea/jeju/') && !html.includes('/css/jeju.css?v=20261007-1')) problems.push(`${relativePath}: missing Jeju responsive stylesheet`);
   if (baseRoute.startsWith('/south-korea/gyeongju/') && !html.includes('/css/gyeongju.css?v=20261010-2')) problems.push(`${relativePath}: missing Gyeongju hero spacing stylesheet version`);
-  if (baseRoute.startsWith('/malaysia/') && !html.includes('/css/malaysia.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
-  if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes('/css/malaysia-straits.css?v=20260829-1')) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
+  const expectedMalaysiaCss = baseRoute.startsWith('/malaysia/george-town-penang/')
+    ? '/css/malaysia.css?v=20261008-1'
+    : '/css/malaysia.css?v=20260829-1';
+  if (baseRoute.startsWith('/malaysia/') && !html.includes(expectedMalaysiaCss)) problems.push(`${relativePath}: missing Malaysia straits-and-rainforest stylesheet`);
+  const expectedMalaysiaStraitsCss = baseRoute === '/malaysia/melaka/'
+    ? '/css/malaysia-straits.css?v=20261012-3'
+    : '/css/malaysia-straits.css?v=20260829-1';
+  if (/^\/malaysia\/(?:kuala-lumpur-putrajaya|george-town-penang|melaka|ipoh-kinta-valley)\/$/.test(baseRoute) && !html.includes(expectedMalaysiaStraitsCss)) problems.push(`${relativePath}: missing Malaysia Strait Cities stylesheet`);
   if (/^\/malaysia\/(?:langkawi|cameron-highlands|taman-negara|perhentian-redang)\/$/.test(baseRoute) && !html.includes('/css/malaysia-peninsula-wild.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Peninsula Wild stylesheet`);
-  if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sabah.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
+  const expectedMalaysiaSabahCss = baseRoute === '/malaysia/semporna-tun-sakaran/'
+    ? '/css/malaysia-sabah.css?v=20261012-1'
+    : '/css/malaysia-sabah.css?v=20260830-1';
+  if (/^\/malaysia\/(?:kota-kinabalu-tunku-abdul-rahman|kinabalu-park-kundasang|sandakan-kinabatangan|semporna-tun-sakaran)\/$/.test(baseRoute) && !html.includes(expectedMalaysiaSabahCss)) problems.push(`${relativePath}: missing Malaysia Sabah stylesheet`);
   if (malaysiaHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia field-guide directory stylesheet`);
+    const expectedMalaysiaDepthCss = baseRoute === '/malaysia/melaka/'
+      ? '/css/malaysia-depth.css?v=20261012-1'
+      : '/css/malaysia-depth.css?v=20260830-1';
+    if (baseRoute === '/malaysia/george-town-penang/') {
+      if (html.includes('/css/malaysia-depth.css?v=20260830-1')
+        || !html.includes('/css/malaysia-straits.css?v=20260829-1')
+        || !read('css/malaysia-straits.css').includes('.penang-guide .md-hub-card')) {
+        problems.push(`${relativePath}: Penang hub must use its focused chapter-card styles in the Strait Cities stylesheet`);
+      }
+    } else if (!html.includes(expectedMalaysiaDepthCss)) {
+      problems.push(`${relativePath}: missing Malaysia field-guide directory stylesheet`);
+    }
     if ((html.match(/class="md-hub-card"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia hub does not contain four linked field-guide cards`);
   }
-  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !html.includes('/css/malaysia-sarawak.css?v=20260830-2')) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
+  if (/^\/malaysia\/(?:kuching-bako|gunung-mulu)\/$/.test(baseRoute) && !/\/css\/malaysia-sarawak\.css\?v=\d{8}-\d+/.test(html)) problems.push(`${relativePath}: missing Malaysia Sarawak field-cabinet stylesheet`);
   const malaysiaDepthGuide = malaysiaDepthByRoute.get(baseRoute);
   if (malaysiaDepthGuide) {
-    if (!html.includes('/css/malaysia-depth.css?v=20260830-1')) problems.push(`${relativePath}: missing Malaysia field-guide stylesheet`);
+    const expectedMalaysiaDepthCss = baseRoute.startsWith('/malaysia/melaka/')
+      ? '/css/malaysia-depth.css?v=20261012-1'
+      : '/css/malaysia-depth.css?v=20260830-1';
+    if (!html.includes(expectedMalaysiaDepthCss)) problems.push(`${relativePath}: missing Malaysia field-guide stylesheet`);
     if (!html.includes(`data-depth-family="${malaysiaDepthGuide.family}"`)) problems.push(`${relativePath}: missing ${malaysiaDepthGuide.family} field-family marker`);
     if (!html.includes(`data-depth-instrument="${malaysiaDepthGuide.instrument}"`)) problems.push(`${relativePath}: missing ${malaysiaDepthGuide.instrument} field-instrument marker`);
     if ((html.match(/class="md-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Malaysia field guide does not contain four route stages`);
@@ -282,47 +341,49 @@ for (const absoluteUrl of publishedUrls) {
   if (baseRoute.startsWith('/vietnam/') && baseRoute !== '/vietnam/' && !/<body\b[^>]*\bdata-parent-page="vietnam"/i.test(html)) problems.push(`${relativePath}: Vietnam primary navigation parent is not set`);
   if (baseRoute === '/vietnam/' && (html.match(/class="vn-country-card"/g) || []).length !== 14) problems.push(`${relativePath}: Vietnam country hub does not contain fourteen linked regional cards`);
   if (vietnamHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/vietnam-field.css?v=20260831-1')) problems.push(`${relativePath}: missing Vietnam regional field-guide stylesheet`);
+    if (!vietnamFieldCssVersions.some((href) => html.includes(href))) problems.push(`${relativePath}: missing Vietnam regional field-guide stylesheet`);
     if ((html.match(/class="vn-hub-card"/g) || []).length !== 6) problems.push(`${relativePath}: Vietnam regional hub does not contain six linked field-guide cards`);
   }
   const vietnamGuide = vietnamByRoute.get(baseRoute);
   if (vietnamGuide) {
-    if (!html.includes('/css/vietnam-field.css?v=20260831-1')) problems.push(`${relativePath}: missing Vietnam child-guide stylesheet`);
+    if (!vietnamFieldCssVersions.some((href) => html.includes(href))) problems.push(`${relativePath}: missing Vietnam child-guide stylesheet`);
     if (!html.includes(`data-vn-family="${vietnamGuide.family}"`)) problems.push(`${relativePath}: missing ${vietnamGuide.family} Vietnam family marker`);
     if (!html.includes(`data-vn-instrument="${vietnamGuide.instrument}"`)) problems.push(`${relativePath}: missing ${vietnamGuide.instrument} Vietnam instrument marker`);
     if ((html.match(/class="vn-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Vietnam child guide does not contain four route stages`);
     if ((html.match(/class="vn-check"/g) || []).length !== 3) problems.push(`${relativePath}: Vietnam child guide does not contain three weak-point checks`);
   }
-  if (baseRoute.startsWith('/australia/') && !html.includes('/css/australia.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia continental field-atlas stylesheet`);
+  if (baseRoute.startsWith('/australia/') && !html.includes('/css/australia.css?v=20261004-1')) problems.push(`${relativePath}: missing Australia continental field-atlas stylesheet`);
   if (baseRoute.startsWith('/australia/') && !html.includes('"@type":"Article"')) problems.push(`${relativePath}: missing valid Australia Article JSON-LD`);
   if (baseRoute.startsWith('/australia/') && baseRoute !== '/australia/' && !/<body\b[^>]*\bdata-parent-page="australia"/i.test(html)) problems.push(`${relativePath}: Australia primary navigation parent is not set`);
   if (baseRoute === '/australia/' && (html.match(/class="au-country-card"/g) || []).length !== 16) problems.push(`${relativePath}: Australia country hub does not contain sixteen linked regional cards`);
   if (australiaHubRoutes.has(baseRoute)) {
-    if (!html.includes('/css/australia-field.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia regional field stylesheet`);
+    if (!html.includes('/css/australia-field.css?v=20261004-4')) problems.push(`${relativePath}: missing Australia regional field stylesheet`);
     if ((html.match(/class="au-hub-card"/g) || []).length !== 5) problems.push(`${relativePath}: Australia regional hub does not contain five linked field-guide cards`);
   }
   const australiaGuide = australiaByRoute.get(baseRoute);
   if (australiaGuide) {
-    if (!html.includes('/css/australia-field.css?v=20260904-1')) problems.push(`${relativePath}: missing Australia child-guide stylesheet`);
+    if (!html.includes('/css/australia-field.css?v=20261004-4')) problems.push(`${relativePath}: missing Australia child-guide stylesheet`);
     if (!html.includes(`data-au-family="${australiaGuide.family}"`)) problems.push(`${relativePath}: missing ${australiaGuide.family} Australia family marker`);
     if (!html.includes(`data-au-instrument="${australiaGuide.instrument}"`)) problems.push(`${relativePath}: missing ${australiaGuide.instrument} Australia instrument marker`);
     if ((html.match(/class="au-route-step"/g) || []).length !== 4) problems.push(`${relativePath}: Australia child guide does not contain four route stages`);
     if ((html.match(/class="au-check"/g) || []).length !== 3) problems.push(`${relativePath}: Australia child guide does not contain three weak-point checks`);
   }
-  if (baseRoute.startsWith('/france/') && !html.includes('/css/france.css?v=20260919-1')) problems.push(`${relativePath}: missing France correspondence-atlas stylesheet`);
+  const expectedFranceCss = '/css/france.css?v=20261007-3';
+  if (baseRoute.startsWith('/france/') && !html.includes(expectedFranceCss)) problems.push(`${relativePath}: missing France correspondence-atlas stylesheet`);
   if (baseRoute.startsWith('/france/') && baseRoute !== '/france/' && !/<body\b[^>]*\bdata-parent-page="france"/i.test(html)) problems.push(`${relativePath}: France primary navigation parent is not set`);
   if (baseRoute === '/france/' && (html.match(/class="fr-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: France country hub does not contain twenty linked regional cards`);
   if (franceHubRoutes.has(baseRoute)) {
-    if ((html.match(/class="fr-guide-card"/g) || []).length !== 3) problems.push(`${relativePath}: France regional hub does not contain three linked route cards`);
+    if ((html.match(/class="[^"]*\bfr-guide-card\b[^"]*"/g) || []).length !== 3) problems.push(`${relativePath}: France regional hub does not contain three linked route cards`);
     if (!/data-fr-family="[^"]+"/.test(html)) problems.push(`${relativePath}: France regional hub is missing its family marker`);
   }
   const franceGuide = franceByRoute.get(baseRoute);
   if (franceGuide) {
-    if (!html.includes('/css/france-field.css?v=20260919-1')) problems.push(`${relativePath}: missing France route-file stylesheet`);
+    const expectedFieldCss = '/css/france-field.css?v=20261007-3';
+    if (!html.includes(expectedFieldCss)) problems.push(`${relativePath}: missing France route-file stylesheet`);
     if (!html.includes(`data-fr-family="${franceGuide.family}"`)) problems.push(`${relativePath}: missing ${franceGuide.family} France family marker`);
     if (!html.includes(`data-fr-instrument="${franceGuide.instrument}"`)) problems.push(`${relativePath}: missing ${franceGuide.instrument} France instrument marker`);
     if (!html.includes('class="fr-purpose"')) problems.push(`${relativePath}: France route is missing its independent reader purpose`);
-    if (!html.includes('class="fr-live-check"')) problems.push(`${relativePath}: France route is missing near-claim official sources`);
+    if (!/class="[^"]*\bfr-live-check\b[^"]*"/.test(html)) problems.push(`${relativePath}: France route is missing near-claim official sources`);
     if ((html.match(/<li><span>0[1-4]<\/span><small>/g) || []).length !== 4) problems.push(`${relativePath}: France route does not contain four operating stages`);
   }
   if (baseRoute.startsWith('/united-kingdom/') && !html.includes('/css/united-kingdom.css?v=20260920-1')) problems.push(`${relativePath}: missing United Kingdom signal-book stylesheet`);
@@ -341,7 +402,7 @@ for (const absoluteUrl of publishedUrls) {
     if (!html.includes('class="uk-live-desk"')) problems.push(`${relativePath}: United Kingdom route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: United Kingdom route does not contain four operating stages`);
   }
-  if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
+  if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20261004-2')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
   if (baseRoute.startsWith('/italy/') && baseRoute !== '/italy/' && !/<body\b[^>]*\bdata-parent-page="italy"/i.test(html)) problems.push(`${relativePath}: Italy primary navigation parent is not set`);
   if (baseRoute === '/italy/' && (html.match(/class="it-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: Italy country hub does not contain twenty linked regional cards`);
   if (italyHubRoutes.has(baseRoute)) {
@@ -350,27 +411,39 @@ for (const absoluteUrl of publishedUrls) {
   }
   const italyGuide = italyByRoute.get(baseRoute);
   if (italyGuide) {
-    if (!html.includes('/css/italy-field.css?v=20260926-1')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
+    if (!html.includes('/css/italy-field.css?v=20261004-3')) problems.push(`${relativePath}: missing Italy route-folio stylesheet`);
     if (!html.includes(`data-it-family="${italyGuide.family}"`)) problems.push(`${relativePath}: missing ${italyGuide.family} Italy family marker`);
     if (!html.includes(`data-it-layout="${italyGuide.layout}"`)) problems.push(`${relativePath}: missing ${italyGuide.layout} Italy layout marker`);
     if (!html.includes(`data-it-structure="${italyGuide.structure}"`)) problems.push(`${relativePath}: missing ${italyGuide.structure} Italy structure marker`);
-    if (!html.includes(`data-it-instrument="${italyGuide.instrument}"`)) problems.push(`${relativePath}: missing ${italyGuide.instrument} Italy instrument marker`);
+    const expectedItalyInstrument = italyGuide.instrument.replaceAll("&", "&amp;");
+    if (!html.includes(`data-it-instrument="${expectedItalyInstrument}"`)) problems.push(`${relativePath}: missing ${italyGuide.instrument} Italy instrument marker`);
     if (!html.includes('class="it-purpose"')) problems.push(`${relativePath}: Italy route is missing its independent reader purpose`);
     if (!html.includes('class="it-decision-instrument')) problems.push(`${relativePath}: Italy route is missing its decision renderer`);
     if (!html.includes('class="it-live-desk"')) problems.push(`${relativePath}: Italy route is missing near-claim official sources`);
     if ((html.match(/<li><b>0[1-4]<\/b><small>/g) || []).length !== 4) problems.push(`${relativePath}: Italy route does not contain four operating stages`);
   }
-  if (baseRoute.startsWith('/thailand/') && !html.includes('/css/thailand.css?v=20260826-1')) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
-  if (baseRoute.startsWith('/thailand/chiang-mai/') && !html.includes('/css/lanna.css?v=20260826-1')) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
-  if (baseRoute.startsWith('/thailand/andaman/') && !html.includes('/css/andaman.css?v=20260826-1')) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
-  if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes('/css/ayutthaya.css?v=20260826-1')) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
+  const expectedThailandStylesheet = thailandBangkokCssV3Routes.has(baseRoute)
+    ? '/css/thailand.css?v=20261008-3'
+    : thailandBangkokCssRoutes.has(baseRoute) ? '/css/thailand.css?v=20261008-1' : '/css/thailand.css?v=20260826-1';
+  if (baseRoute.startsWith('/thailand/') && !html.includes(expectedThailandStylesheet)) problems.push(`${relativePath}: missing Thailand responsive stylesheet`);
+  if (baseRoute.startsWith('/thailand/chiang-mai/') && !/<link\b[^>]*href="\/css\/lanna\.css(?:\?[^\"]*)?"/i.test(html)) problems.push(`${relativePath}: missing Chiang Mai Lanna stylesheet`);
+  const andamanStylesheet = ['/thailand/andaman/', '/thailand/andaman/krabi-railay/', '/thailand/andaman/phi-phi-islands/', '/thailand/andaman/ko-lanta/', '/thailand/andaman/trang-islands/', '/thailand/andaman/ko-lipe-tarutao/', '/thailand/andaman/similan-surin/'].includes(baseRoute)
+    ? '/css/andaman.css?v=20261009-1'
+    : '/css/andaman.css?v=20260826-1';
+  if (baseRoute.startsWith('/thailand/andaman/') && !html.includes(andamanStylesheet)) problems.push(`${relativePath}: missing Andaman chart-room stylesheet`);
+  const ayutthayaNarrowFixRoutes = ['/thailand/ayutthaya/', '/thailand/ayutthaya/wat-mahathat-ratchaburana/', '/thailand/ayutthaya/palace-quarter-wat-phra-si-sanphet/', '/thailand/ayutthaya/wat-chaiwatthanaram-west-bank/', '/thailand/ayutthaya/railway-station-chao-phrom/', '/thailand/ayutthaya/west-island-wat-lokayasutharam/', '/thailand/ayutthaya/wat-yai-chai-mongkhon-phanan-choeng/', '/thailand/ayutthaya/foreign-settlements-south-river/', '/thailand/ayutthaya/bang-pa-in-palace/'];
+  const ayutthayaHeadingSpacingRoutes = ['/thailand/ayutthaya/foreign-settlements-south-river/', '/thailand/ayutthaya/bang-pa-in-palace/'];
+  const expectedAyutthayaStylesheet = ayutthayaHeadingSpacingRoutes.includes(baseRoute)
+    ? '/css/ayutthaya.css?v=20261009-4'
+    : ayutthayaNarrowFixRoutes.includes(baseRoute) ? '/css/ayutthaya.css?v=20261009-3' : '/css/ayutthaya.css?v=20260826-1';
+  if (baseRoute.startsWith('/thailand/ayutthaya/') && !html.includes(expectedAyutthayaStylesheet)) problems.push(`${relativePath}: missing Ayutthaya river-atlas stylesheet`);
   const chinaStylesheet = baseRoute === '/china/' ? '/css/china.css?v=20260828-4' : '/css/china.css?v=20260827-3';
   if (baseRoute.startsWith('/china/') && !html.includes(chinaStylesheet)) problems.push(`${relativePath}: missing China lacquer-and-ink stylesheet`);
   if (baseRoute.startsWith('/china/shanghai/') && !html.includes('/css/shanghai.css?v=20260827-2')) problems.push(`${relativePath}: missing Shanghai Huangpu-fold stylesheet`);
   if (baseRoute.startsWith('/china/hangzhou/') && !html.includes('/css/hangzhou.css?v=20260828-1')) problems.push(`${relativePath}: missing Hangzhou West Lake compass stylesheet`);
   const expansionGuide = chinaExpansionByRoute.get(baseRoute);
   if (expansionGuide) {
-    if (!html.includes('/css/china-expansion.css?v=20260828-1')) problems.push(`${relativePath}: missing China destination-system stylesheet`);
+    if (!['/css/china-expansion.css?v=20260828-1', '/css/china-expansion.css?v=20261011-1'].some((version) => html.includes(version))) problems.push(`${relativePath}: missing China destination-system stylesheet`);
     if (expansionGuide.extraStylesheet && !html.includes(expansionGuide.extraStylesheet)) problems.push(`${relativePath}: missing ${expansionGuide.extraStylesheet} visual-system stylesheet`);
     if (!html.includes(`data-visual="${expansionGuide.visual}"`)) problems.push(`${relativePath}: missing ${expansionGuide.visual} visual-system marker`);
     if ((html.match(/<article id="chapter-\d+">/g) || []).length !== 8) problems.push(`${relativePath}: China destination guide does not contain eight planning chapters`);
@@ -466,15 +539,35 @@ const mainScript = read('js/main.js');
 for (const marker of ['tripdistill-language-choice-v1', 'browserPreferredLocale', 'data-language-accept', 'data-language-stay', 'The site will not redirect automatically.', '網站不會自動重新導向。', '日本語版に切り替えますか？', '한국어판으로 전환할까요?', 'เปลี่ยนเป็นภาษาไทยหรือไม่']) {
   if (!mainScript.includes(marker)) problems.push(`js/main.js: missing language-suggestion safeguard "${marker}"`);
 }
+if (!mainScript.includes('tripdistill-sidebar-state-v2')) problems.push('js/main.js: missing versioned sidebar state key');
+if (/else if \(id === ['"]asia['"]\) details\.open = true/.test(mainScript)) problems.push('js/main.js: Asia must not open by default');
 for (const component of ['components/header.html', 'components/footer.html']) {
   const html = read(component);
   for (const locale of allLocales) if (!html.includes(`data-language-option="${locale.code}"`)) problems.push(`${component}: missing ${locale.code} manual language option`);
+}
+
+const footerRegionIds = ['asia', 'europe', 'north-america', 'oceania'];
+const footerCountryRoutes = ['/australia/', '/canada/', '/china/', '/france/', '/italy/', '/japan/', '/malaysia/', '/south-korea/', '/switzerland/', '/thailand/', '/united-kingdom/', '/usa/', '/vietnam/'];
+for (const locale of allLocales) {
+  const relativePath = locale.prefix ? `${locale.dir}/components/footer.html` : 'components/footer.html';
+  const footer = read(relativePath);
+  const destinationBlock = footer.match(/<!-- FOOTER_DESTINATIONS_START -->([\s\S]*?)<!-- FOOTER_DESTINATIONS_END -->/)?.[1];
+  if (!destinationBlock) {
+    problems.push(`${relativePath}: missing grouped footer destinations`);
+    continue;
+  }
+  for (const region of footerRegionIds) if (!destinationBlock.includes(`data-footer-region="${region}"`)) problems.push(`${relativePath}: missing ${region} destination group`);
+  const routes = [...destinationBlock.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1].replace(/^\/(?:zh|ja|ko|th)(?=\/|$)/, '') || '/');
+  if (routes.length !== 76) problems.push(`${relativePath}: expected 76 featured destination links, found ${routes.length}`);
+  if (new Set(routes).size !== routes.length) problems.push(`${relativePath}: duplicate featured destination links`);
+  for (const route of footerCountryRoutes) if (!routes.includes(route)) problems.push(`${relativePath}: missing country entry ${route}`);
 }
 
 notes.push(`${publishedUrls.length} published routes (${allLocales.map((locale) => `${routesByLocale[locale.code].length} ${locale.code}`).join(' + ')})`);
 notes.push(`${englishSearchIndex.length} search records per language`);
 notes.push(`${hokkaidoSearchAliases.length * allLocales.length} Hokkaido search aliases resolve across five languages`);
 notes.push('Thai Gyeongju hero line-height and subtitle spacing regression passed');
+notes.push('76 grouped featured destination links per footer edition');
 notes.push(`${allLocales.reduce((sum, locale) => sum + titles[locale.code].size, 0)} unique localized page titles`);
 
 if (problems.length) {

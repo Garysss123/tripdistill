@@ -13,7 +13,7 @@ export const englishLocale = Object.freeze({ code: 'en', dir: '', prefix: '', na
 export const allLocales = Object.freeze([englishLocale, ...localeConfigs]);
 
 const skippedTextParents = new Set(['script', 'style', 'svg', 'code', 'pre', 'noscript']);
-const jsonLdKeys = new Set(['name', 'description', 'text']);
+const jsonLdKeys = new Set(['name', 'description', 'text', 'caption', 'creditText']);
 const translatableAttributes = new Set(['alt', 'aria-label', 'placeholder', 'title']);
 const publicAssetPrefixes = ['/assets/', '/css/', '/js/', '/components/', '/data/', '/favicon.'];
 
@@ -101,7 +101,7 @@ function collectDocumentUnits(document) {
       if (node.tagName === 'meta') {
         const name = (getAttribute(node, 'name') || '').toLowerCase();
         const property = (getAttribute(node, 'property') || '').toLowerCase();
-        if (name === 'description' || property === 'og:title' || property === 'og:description' || name === 'twitter:title' || name === 'twitter:description') {
+        if (name === 'description' || property === 'og:title' || property === 'og:description' || property === 'og:image:alt' || name === 'twitter:title' || name === 'twitter:description' || name === 'twitter:image:alt') {
           const content = getAttribute(node, 'content') || '';
           if (shouldTranslate(content)) units.add(normalizeText(content));
         }
@@ -256,7 +256,7 @@ function localizeDocument(document, translations, config, route) {
         const name = (getAttribute(node, 'name') || '').toLowerCase();
         const property = (getAttribute(node, 'property') || '').toLowerCase();
         const content = getAttribute(node, 'content') || '';
-        if (name === 'description' || property === 'og:title' || property === 'og:description' || name === 'twitter:title' || name === 'twitter:description') {
+        if (name === 'description' || property === 'og:title' || property === 'og:description' || property === 'og:image:alt' || name === 'twitter:title' || name === 'twitter:description' || name === 'twitter:image:alt') {
           if(translate)setAttribute(node, 'content', translateValue(content, translations));
         } else if (property === 'og:url') {
           setAttribute(node, 'content', localizedAbsoluteUrl(content, config));

@@ -1,0 +1,30 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Tofino accommodation base": "Tofino 住宿據點",
+    "Nanaimo ferry": "Nanaimo 渡輪",
+    "Highway 4 west coast Vancouver Island": "Vancouver Island 西岸 Highway 4",
+    "VI Connector not operating": "VI Connector 停運",
+    "Long Beach tide and surf": "Long Beach 潮汐與浪況",
+    "Rainforest Trail A 1 km": "Rainforest Trail A 1 公里",
+    "Shorepine Bog no stairs": "Shorepine Bog 無階梯步道",
+    "Schooner Cove closed": "Schooner Cove 關閉",
+    "Amphitrite Point Lighthouse": "Amphitrite Point 燈塔",
+    "Wild Pacific Trail Lighthouse Loop": "Wild Pacific Trail 燈塔環線",
+    "Lighthouse Loop 2.6 km": "燈塔環線 2.6 公里",
+    "Ucluelet walk no stairs": "Ucluelet 無階梯步行",
+    "Jamie’s Whaling Station": "Jamie’s Whaling Station",
+    "Tofino licensed boat operator": "Tofino 持牌船遊業者",
+    "wildlife sighting not guaranteed": "不保證目擊野生動物",
+    "marine trip cancellation sea state": "海況不佳時的船遊取消"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Codex",
+    "reviewer": "GPT-6 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Compare 7-, 10- and 14-day Thailand routes with matching hotel-night counts, Bangkok transfers, Chiang Mai or Andaman bases, and seasonal weather choices.": "ホテル泊数、バンコクでの乗り継ぎ、チェンマイまたはアンダマン沿岸の拠点、季節ごとの天候に応じた選択肢を踏まえて、タイ旅行の7日間・10日間・14日間プランを比較できます。"
+  }
+}

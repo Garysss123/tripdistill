@@ -5,7 +5,6 @@
     "/data/search-index.json"
   ],
   "translations": {
-    "Plan France through twenty complete regional hubs and sixty focused guides for cities, palaces, vineyards, coasts, mountains and Corsica.": "วางแผนเที่ยวฝรั่งเศสผ่านศูนย์รวมเส้นทางภูมิภาคครบถ้วน 20 แห่ง และคู่มือเฉพาะเรื่อง 60 รายการ ครอบคลุมเมือง พระราชวัง ไร่องุ่น ชายฝั่ง ภูเขา และคอร์ซิกา",
     "French travel": "เที่ยวฝรั่งเศส",
     "France rail": "รถไฟในฝรั่งเศส",
     "Île-de-France": "อีล-เดอ-ฟร็องส์",
@@ -29,6 +28,12 @@
     "mediterranean-island": "mediterranean-island",
     "Bouches-du-Rhône, Provence": "บุช-ดู-โรน, พรอวองซ์",
     "Alpes-Maritimes": "อาลป์-มารีตีม",
-    "Corsica": "คอร์ซิกา"
+    "Corsica": "คอร์ซิกา",
+    "Choose two or three France bases by nights, prove the full rail and rural last mile, then protect a nearby weather or closure fallback across twenty regional hubs.": "เลือกฐานพักในฝรั่งเศส 2 หรือ 3 แห่งตามจำนวนคืน ตรวจเส้นทางรถไฟและการต่อรถช่วงสุดท้ายในชนบทให้ครบ แล้วเตรียมแผนใกล้เคียงเผื่อสภาพอากาศหรือสถานที่ปิดไว้สำหรับศูนย์ภูมิภาคทั้ง 20 แห่ง",
+    "base nights": "ฐานพักและจำนวนคืน",
+    "Plan Lille as a 2–3-night urban base for the city and one excursion; Vimy needs a confirmed Arras last mile, while the Opal Coast needs a separately checked bus, tour, bicycle or car return.": "พักลีล 2–3 คืนเป็นฐานเที่ยวเมืองและไปใกล้เมืองหนึ่งแห่ง ส่วนวีมีต้องยืนยันการเดินทางช่วงสุดท้ายจากอารัส ขณะที่ชายฝั่งโอปาลต้องตรวจรถบัส ทัวร์ จักรยาน หรือรถยนต์ขากลับแยกต่างหาก",
+    "Use Lille-Flandres or Lille-Europe as the rail arrival stated on your ticket; Ilévia Métro line 2 serves Roubaix–Grand-Place for La Piscine, subject to the dated route and museum opening check.": "ไปลง Lille-Flandres หรือ Lille-Europe ตามที่ระบุบนตั๋ว รถไฟใต้ดินสาย 2 ของ Ilévia ไป Roubaix–Grand-Place แล้วเดินต่อไป La Piscine ได้ ตรวจเส้นทางตามวันและวันเปิดพิพิธภัณฑ์ก่อนเดินทาง",
+    "Arras is the rail and overnight base for Vimy; book or confirm the rural last mile and return pickup independently, then check Veterans Affairs Canada visitor-centre hours and site access.": "ใช้อารัสเป็นฐานรถไฟและที่พักสำหรับไปวีมี จองหรือยืนยันการเดินทางช่วงสุดท้ายในชนบทและจุดรับกลับแยกต่างหาก จากนั้นตรวจเวลาเปิดศูนย์ผู้เยี่ยมชมและการเข้าพื้นที่ของ Veterans Affairs Canada",
+    "Choose Boulogne-Ville for Boulogne and Nausicaá or Calais-Ville for a separately planned Blanc-Nez day; check the date-specific coastal bus, tour or car leg and a return before walking onto exposed ground.": "ใช้ Boulogne-Ville สำหรับเที่ยวบูโลญและ Nausicaá หรือ Calais-Ville สำหรับวันที่วางแผนไป Cap Blanc-Nez แยกต่างหาก ก่อนเดินบนพื้นที่ชายฝั่งโล่ง ให้ตรวจรถบัส ทัวร์ หรือรถยนต์ตามวันและเที่ยวกลับ"
   }
 }

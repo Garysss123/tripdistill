@@ -1,0 +1,11 @@
+# Liverpool–Manchester photo review — 12 October 2026
+
+I opened the local WebP files at image scale and compared the visible subject with the Commons file page and the UK image manifest. The three retained images match their page subjects:
+
+| Route | Local image and visible subject | Commons source-page attribution | License declared on source page |
+| --- | --- | --- | --- |
+| Liverpool Waterfront & Cathedrals | assets/images/united-kingdom-liverpool-manchester-liverpool-waterfront-cathedrals.webp; a domed white-stone Port of Liverpool Building at Pier Head. The prior alt implied a wider view of the Three Graces; the precise building alt now matches the visible frame. | [Elliott Brown, “The Three Graces - Liverpool Waterfront - Port of Liverpool Building (10731141643).jpg”](https://commons.wikimedia.org/wiki/File:The_Three_Graces_-_Liverpool_Waterfront_-_Port_of_Liverpool_Building_(10731141643).jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| Manchester Industrial City & Collections | assets/images/united-kingdom-liverpool-manchester-manchester-industrial-city.webp; the red-brick Merchants’ Warehouse beside the Castlefield canal. | [David Dixon, “Merchants' Warehouse, Castlefield”](https://commons.wikimedia.org/wiki/File:Merchants%27_Warehouse,_Castlefield_-_geograph.org.uk_-_6377127.jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| Chester Walls & Roman City | assets/images/united-kingdom-liverpool-manchester-chester-walls-roman-city.webp; Chester Cathedral seen from the city wall. | [Rosser1954, “Chester Cathedral, Cheshire, England - view from the city walls”](https://commons.wikimedia.org/wiki/File:Chester_Cathedral,_Cheshire,_England_-_view_from_the_city_walls.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+The manifest records the creator, file title, license, source URL and remote SHA-1 for each asset. The source-page declarations and visible attribution/license terms were checked; the image subject and filename match were inspected from the local rendered pixels. The images were not replaced. This source-page review does not independently establish the upstream photographer’s chain of rights or constitute legal clearance.

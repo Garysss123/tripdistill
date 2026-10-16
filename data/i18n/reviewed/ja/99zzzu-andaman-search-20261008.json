@@ -1,0 +1,23 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Walk Phi Phi Don from Tonsai Pier and plan a permitted Phi Phi Leh route through Maya Bay, Ao Pi Le and Ao Lo Sama.": "ピピ・ドン島ではトンサイ桟橋から歩いて回り、マヤ湾、アオ・ピレー、アオ・ロサマを通るピピ・レ島の許可されたルートを計画します。",
+    "ao pi le": "アオ・ピレー",
+    "ao lo sama": "アオ・ロサマ",
+    "tonsai pier": "トンサイ桟橋",
+    "Cross to Ko Lanta Yai, choose a north or west-coast base, then route Thung Yee Peng, Lanta Old Town and Tanod Cape on separate days.": "ランタ・ヤイ島へ渡り、北部または西海岸の宿を選びます。トゥン・イーペン、ランタ旧市街、タノッド岬は日を分けて回りましょう。",
+    "saladan": "サラダン",
+    "klong nin": "クロン・ニン",
+    "thung yee peng": "トゥン・イーペン",
+    "tanod cape": "タノッド岬",
+    "Choose the Similan or Surin park by port and current access; plan one seasonal boat day and approach Ao Bon as a lived-in Moken community.": "出発港と現在の入域状況でシミラン諸島またはスリン諸島を選び、季節運航の船旅を1日計画します。アオボンではモーケンの人びとの暮らしに敬意を払って訪問しましょう。",
+    "thap lamu": "タップラムー",
+    "ko miang": "ミアン島",
+    "ao bon": "アオボン",
+    "moken community": "モーケンの人びとのコミュニティ"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Plan a four-night Nice base: one Nice city day, one eastbound TER day and one westbound day, leaving arrival and departure margins. TER connects the coast; check the dated return, while Èze Village needs an extra bus or hill climb beyond Èze-sur-Mer.": "พักนีซ 4 คืนเป็นฐาน: เที่ยวในเมืองหนึ่งวัน ขึ้น TER ไปตะวันออกหนึ่งวันและตะวันตกอีกหนึ่งวัน โดยเผื่อเวลาวันมาถึงและกลับ TER เชื่อมเมืองตามชายฝั่ง แต่ควรตรวจเที่ยวกลับตามวันที่ Èze Village ต้องต่อรถบัสหรือเดินขึ้นเขาจาก Èze-sur-Mer",
+    "Walk Nice from Place Masséna through Cours Saleya and Vieux Nice, then choose Castle Hill or Cimiez. Use tram lines 1/2 for cross-city links; check current hill access, beach flags and museum hours.": "เดินจาก Place Masséna ผ่าน Cours Saleya และ Vieux Nice แล้วเลือก Castle Hill หรือ Cimiez ใช้รถรางสาย 1/2 เมื่อต้องข้ามเมือง ตรวจทางขึ้นเนิน ธงชายหาด และเวลาเปิดพิพิธภัณฑ์ปัจจุบัน",
+    "Choose Èze Village by confirmed bus, Monaco by one district, or a selective Monaco–Menton TER pair. Èze-sur-Mer is the coastal station, not the hilltop village; verify the exact bus and rail return.": "เลือก Èze Village โดยรถบัสที่ยืนยันแล้ว โมนาโกหนึ่งย่าน หรือ TER โมนาโก–ม็องตงแบบเลือกจุด Èze-sur-Mer เป็นสถานีริมทะเล ไม่ใช่หมู่บ้านบนเขา ตรวจจุดหมายรถบัสและรถไฟเที่ยวกลับ",
+    "Use TER for Antibes or Cannes from Nice. Walk Antibes station→Marché Provençal→Picasso Museum/ramparts/Port Vauban, or Cannes station→Forville→Le Suquet→Palais des Festivals/Croisette; islands or Cap d’Antibes replace the town pair.": "จากนีซขึ้น TER ไปอ็องตีบหรือคานส์ เดินจากสถานีอ็องตีบไป Marché Provençal พิพิธภัณฑ์ปิกัสโซ/กำแพงเมืองและ Port Vauban หรือจากสถานีคานส์ไป Forville, Le Suquet, Palais des Festivals/Croisette การไปเกาะหรือ Cap d’Antibes ควรแทนทริปสองเมือง"
+  }
+}

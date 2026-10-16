@@ -1,0 +1,34 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/canada/montreal/",
+    "/canada/montreal/old-montreal-old-port/",
+    "/canada/montreal/plateau-mile-end/",
+    "/canada/montreal/mount-royal-museums/"
+  ],
+  "translations": {
+    "Planning facts and image licensing were reviewed on 7 October 2026. Recheck transport, weather, park, marine, reservation and operator conditions before travel.": "ตรวจข้อมูลการเดินทางและสัญญาอนุญาตภาพถ่ายเมื่อ 7 ตุลาคม 2026 ก่อนออกเดินทางให้ตรวจบริการขนส่ง สภาพอากาศ สวนสาธารณะ กิจกรรมทางน้ำ การจอง และประกาศของผู้ให้บริการจากแหล่งทางการอีกครั้ง",
+    "STM — Métro network, map, service status and elevator alerts": "STM — แผนที่รถไฟใต้ดิน สถานะบริการ และประกาศลิฟต์",
+    "Ville de Montréal — Mount Royal Park, trails and current access notices": "เมืองมอนทรีออล — Mount Royal Park เส้นทางเดิน และประกาศการเข้าถึงล่าสุด",
+    "Ville de Montréal — Kondiaronk lookout access and facilities": "เมืองมอนทรีออล — การเข้าถึงและสิ่งอำนวยความสะดวกที่จุดชมวิว Kondiaronk",
+    "Tourisme Montréal — Mount Royal Park history and visitor orientation": "Tourisme Montréal — ประวัติและแนวทางเที่ยว Mount Royal Park",
+    "Pointe-à-Callière — Fort Ville-Marie archaeological site": "Pointe-à-Callière — แหล่งโบราณคดี Fort Ville-Marie",
+    "Pointe-à-Callière — Memory Collector sewer exhibition": "Pointe-à-Callière — นิทรรศการท่อระบายน้ำ Memory Collector",
+    "Pointe-à-Callière — current hours and visit conditions": "Pointe-à-Callière — เวลาเปิดและเงื่อนไขเข้าชมล่าสุด",
+    "Old Port of Montréal — seasonal waterfront activities and notices": "Old Port of Montréal — กิจกรรมริมน้ำตามฤดูกาลและประกาศ",
+    "Tourisme Montréal — Plateau-Mont-Royal neighborhood overview": "Tourisme Montréal — ภาพรวมย่าน Plateau-Mont-Royal",
+    "Quebec · survey 01 · reviewed 7 October 2026": "ควิเบก · เส้นทาง 01 · ทบทวน 7 ตุลาคม 2026",
+    "Planning facts and image licensing were reviewed on 7 October 2026. Transport, park, weather, reservation and operator status can change; verify the linked source before travel.": "ตรวจข้อมูลการเดินทางและสัญญาอนุญาตภาพถ่ายเมื่อ 7 ตุลาคม 2026 บริการขนส่ง สวน อากาศ การจอง และสถานะผู้ให้บริการเปลี่ยนได้ โปรดตรวจลิงก์ก่อนเดินทาง",
+    "Quebec · survey 02 · reviewed 7 October 2026": "ควิเบก · เส้นทาง 02 · ทบทวน 7 ตุลาคม 2026",
+    "Quebec · survey 03 · reviewed 7 October 2026": "ควิเบก · เส้นทาง 03 · ทบทวน 7 ตุลาคม 2026",
+    ". Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 3.0 terms.": "ปรับขนาด ครอปสำหรับแสดงผล และแปลงเป็น WebP โดยไม่มีการแก้ไขสาระอื่น ภาพดัดแปลงนี้เผยแพร่ภายใต้เงื่อนไข CC BY-SA 3.0 เดียวกัน",
+    ". Resized, display-cropped and converted to WebP; no other material edits. This resized, display-cropped WebP adaptation is offered under the same CC BY-SA 4.0 terms.": "ปรับขนาด ครอปสำหรับแสดงผล และแปลงเป็น WebP โดยไม่มีการแก้ไขสาระอื่น ภาพดัดแปลงนี้เผยแพร่ภายใต้เงื่อนไข CC BY-SA 4.0 เดียวกัน",
+    "First-visit plan": "แผนสำหรับการมาเที่ยวครั้งแรก",
+    "Tourisme Montréal — Mile End boundaries and street life": "Tourisme Montréal — ขอบเขตย่านและชีวิตบนถนนของ Mile End",
+    "Pointe-à-Callière — The Lives and Times of the Plateau (2013 exhibition release)": "Pointe-à-Callière — ข่าวนิทรรศการ “The Lives and Times of the Plateau” (2013)",
+    "Mile End street corner at Laurier and Henri-Julien, with apartment and storefront buildings": "อาคารอพาร์ตเมนต์และร้านค้าบริเวณหัวมุม Laurier กับ Henri-Julien ใน Mile End",
+    "20181013 - 01 - Montreal (Mile End).jpg": "20181013 - 01 - มุมถนนในมอนทรีออล (Mile End).jpg",
+    "— Andre Carrotflower,": "— อ็องเดร แคร์รอตฟลาวเวอร์ (Andre Carrotflower),"
+  }
+}

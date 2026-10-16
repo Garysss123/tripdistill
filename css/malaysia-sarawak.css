@@ -79,6 +79,29 @@
 .sr-route p { color:#60746e; font-size:.87rem; }
 .sarawak-guide .faq-list details { background:var(--sr-paper); border-color:var(--sr-line); }
 
+.kuching-plan .sr-heading h2 { max-width:19ch; }
+.kuching-base-note { display:grid; grid-template-columns:minmax(10rem,.32fr) 1fr; gap:1.2rem; align-items:start; margin:0 0 1.2rem; padding:1.5rem 1.7rem; color:#fffaf0; background:var(--sr-night); border-left:.3rem solid var(--sr-copper); }
+.kuching-base-note strong { color:#efb679; font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
+.kuching-base-note p { margin:0; color:rgba(255,255,255,.83); }
+.kuching-plan-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.kuching-plan-card { padding:1.6rem; background:var(--sr-paper); border:1px solid var(--sr-line); box-shadow:0 1rem 2.8rem rgba(21,65,51,.06); }
+.kuching-plan-card > span, .kuching-season-grid article > span { color:var(--sr-copper); font-size:.69rem; font-weight:900; letter-spacing:.11em; text-transform:uppercase; }
+.kuching-plan-card > p { min-height:3.2rem; color:#587068; }
+.kuching-plan-card ol { margin:1.3rem 0 0; padding:0; list-style:none; border-top:1px solid var(--sr-line); }
+.kuching-plan-card li { padding:.85rem 0; border-bottom:1px solid var(--sr-line); }
+.kuching-plan-card li:last-child { border-bottom:0; }
+.kuching-plan-card li strong { color:var(--sr-night); font:700 1rem/1.2 Georgia,serif; }
+.kuching-plan-card li p { margin:.3rem 0 0; color:#5b7069; font-size:.87rem; }
+.kuching-walk-block { margin-top:clamp(3rem,6vw,5rem); padding-top:2rem; border-top:1px solid var(--sr-line); }
+.kuching-walk-chain { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.75rem; margin:0; padding:0; list-style:none; counter-reset:walk; }
+.kuching-walk-chain li { min-height:13rem; padding:1.1rem; background:rgba(255,250,240,.72); border-top:2px solid var(--sr-copper); }
+.kuching-walk-chain b { display:block; color:var(--sr-copper); font-size:.7rem; letter-spacing:.12em; }
+.kuching-walk-chain strong { display:block; margin:.9rem 0 .45rem; color:var(--sr-night); font:700 1.05rem/1.1 Georgia,serif; }
+.kuching-walk-chain p { margin:0; color:#5b7069; font-size:.83rem; }
+.kuching-season-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:1.2rem; }
+.kuching-season-grid article { padding:1.4rem; background:#e8eee7; }
+.kuching-season-grid article p { margin:.7rem 0 0; color:#405e54; font-size:.9rem; }
+
 @media (max-width:900px) {
   .sr-hero { min-height:0; grid-template-columns:1fr; border-radius:.4rem 2rem .4rem 2rem; }
   .sr-hero-copy { padding:2.2rem 1.4rem 2.6rem; }
@@ -91,6 +114,11 @@
   .sr-route a:nth-child(even) { transform:none; }
   .sr-route a:nth-child(2) { border-right:0; }
   .sr-route a:nth-child(-n+2) { border-bottom:1px solid var(--sr-line); }
+  .kuching-plan-grid { grid-template-columns:1fr; }
+  .kuching-plan-card > p { min-height:0; }
+  .kuching-walk-chain { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .kuching-walk-chain li:last-child { grid-column:1 / -1; }
+  .kuching-season-grid { grid-template-columns:1fr; }
 }
 
 @media (max-width:620px) {
@@ -103,4 +131,7 @@
   .sr-route a, .sr-route a:nth-child(2) { min-height:15rem; border-right:0; border-bottom:1px solid var(--sr-line); }
   .sr-route a:last-child { border-bottom:0; }
   .sr-route h3 { margin:2.7rem 0 .65rem; }
+  .kuching-base-note { grid-template-columns:1fr; gap:.65rem; padding:1.2rem; }
+  .kuching-walk-chain { grid-template-columns:1fr; }
+  .kuching-walk-chain li, .kuching-walk-chain li:last-child { grid-column:auto; min-height:0; }
 }

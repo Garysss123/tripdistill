@@ -12,13 +12,16 @@ export const italySouthIslandsClusters = [
     family: 'limestone-two-coast-logbook',
     label: 'Adriatic-to-Ionian route book',
     tagline: 'Choose one rail spine or one coast before the heel widens around you.',
-    hubIntro: 'Puglia looks linear on a national rail map, but its useful journeys split between the Adriatic main line, FS Sud Est branches, inland UNESCO sites and two very different coasts. A workable visit chooses Bari, the Itria Valley or Lecce as a base, then treats every castle, trullo town and beach as a named connection rather than a nearby map pin.',
-    stay: 'Four to six nights supports Bari and one northern excursion, a separate Itria Valley day and a Lecce-based southern branch. With fewer nights, choose either Bari plus the Itria Valley or Lecce plus one Salento coast instead of changing accommodation after every town.',
-    transfer: 'Trenitalia serves the Adriatic spine, while FS Sud Est operates many inland and Salento branches. Station names, replacement buses and seasonal patterns matter; Castel del Monte, trullo towns and beaches often add a bus, walk or booked transfer beyond the railway.',
-    season: 'Summer heat makes exposed stone towns and midday station changes demanding, while coastal services and visitor pressure peak. Winter and shoulder seasons reduce heat but can thin branch-line, bus and attraction schedules, so the dated operating day matters more than a generic season label.',
-    fallback: 'Keep one complete base-city route for every rural or coastal excursion. If a branch train, bus or protected-site gate fails, stay in Bari, Lecce, Trani or the first Itria town rather than building an unverified taxi chain across the region.',
+    reviewDate: '11 October 2026',
+    reviewIsoDate: '2026-10-11',
+    hubIntro: 'Plan Puglia as two rail-and-street systems with a deliberate handover: Bari and the Adriatic main line in the north, then Lecce and one chosen Salento coast in the south. Alberobello and the Itria Valley sit on a different branch network; Castel del Monte and many beaches add a last mile that a map pin cannot solve. Choose the base first, then verify the exact operator, station and return for each day.',
+    stay: 'For four to six nights, use two bases rather than moving every night: stay around Bari Centrale or the Murat grid for rail arrivals and the Bari Vecchia walk, then move to Lecce’s historic centre for its evening streets and one coast day. With three nights, choose the north (Bari, Trani and one Itria day) or the south (Lecce and one coast). An Alberobello or Locorotondo overnight earns its luggage move only when an early or late town visit matters; a countryside masseria needs a confirmed car or transfer plan.',
+    transfer: 'Trenitalia is the first check for the Adriatic corridor and Trani; FS Sud Est serves branch routes toward Alberobello and the Salento, including Otranto and Gallipoli. Treat operator, station, replacement bus and ticket as separate checks. Castel del Monte is an inland last-mile commitment, while coastal beaches may sit beyond the rail stop: confirm the onward link and return before reserving a timed visit or leaving the base.',
+    season: 'In July and August, put the exposed stone-town walk in the cooler part of the day, keep an indoor or shaded pause for midday and expect the coast to attract heavier visitor demand. Outside the main beach season, do not assume a bus, beach facility or attraction keeps its summer pattern. Weekday, Sunday, holiday and works notices can change the useful branch connection in any month; build the day from the dated operator journey planner.',
+    fallback: 'Keep a complete walkable day in the current base. From Bari, use the old town, castle area and waterfront; from Lecce, link the central squares and Baroque streets. If a rural bus or branch return does not work, drop the excursion instead of inventing a taxi connection or crossing to the other coast.',
     sources: [
-      ['https://www.viaggiareinpuglia.it/', 'Viaggiare in Puglia — official Regione Puglia destination portal'],
+      ['https://www.italia.it/en/puglia', 'Italia.it — official Puglia destination overview'],
+      ['https://www.italia.it/en/puglia/bari', 'Italia.it — official Bari, Trani and Alberobello destination information'],
       ['https://www.fssudest.it/', 'FS Sud Est — official rail and bus service information'],
       ['https://www.trenitalia.com/en.html', 'Trenitalia — official national and regional rail planning']
     ],
@@ -30,34 +33,53 @@ export const italySouthIslandsClusters = [
         layout: 'port-fortress-hinge',
         structure: 'rail-to-street-braid',
         imageQuery: 'Bari old town waterfront Basilica San Nicola Puglia',
-        imageAlt: 'Bari old town and the Basilica of San Nicola beside the Adriatic waterfront',
+        imageAlt: 'A view over historic buildings in Bari',
         purpose: 'Decide whether the day belongs to Bari, rail-linked Trani or the inland fortress, then expose the transfer that makes the chosen branch possible instead of advertising all three as an effortless circuit.',
-        summary: 'Begin at Bari Centrale or a confirmed northern rail stop, give one city or fortress the long interpretive block, and return on the same transport spine with no speculative final connection.',
+        summary: 'Choose a Bari street day, a Trani rail-and-harbour walk or a separate Castel del Monte commitment; one return spine cannot make all three a relaxed circuit.',
+        localPlan: {
+          title: 'Sleep beside the walk or beside the railway',
+          intro: 'Bari is the flexible base; Trani is a complete rail day, while the fortress needs a separate last-mile contract.',
+          stayTitle: 'Choose a Bari arrival zone',
+          stay: 'The Murat grid around Bari Centrale suits luggage, rail changes and a quick start; it trades the intimate old-town evening for broader streets. A Bari Vecchia or waterfront stay puts the Basilica of San Nicola, Cathedral and seafront closer on foot, but check the actual door-to-car access and route with bags before booking. Choose Trani overnight only if you want a slower harbour evening; it does not remove the separate journey to Castel del Monte.',
+          walkTitle: 'Keep the city walks on their own axes',
+          walk: 'In Bari, make one old-town loop through the Basilica of San Nicola, Bari Cathedral and the Swabian Castle, then finish along the waterfront or return through the Murat grid. In Trani, connect the station arrival to the cathedral by the harbour and return to that same station. The fortress is not a third leg of this walk: its remote approach needs a verified onward service or arranged transfer.',
+          bookingTitle: 'Verify each entrance separately',
+          booking: 'The Swabian Castle, religious interiors and Castel del Monte have separate visitor rules. Reopen the official venue notices for the intended date and check whether a timed admission or reservation is actually offered before fixing transport around it. Confirm any coach or local transfer to the fortress in both directions; a train to a nearby town is not a completed visit.',
+          seasonTitle: 'Protect the exposed hours and the return',
+          season: 'Bari Vecchia and Trani’s harbour streets are most comfortable outside the hottest part of a summer day; keep a shaded meal or indoor visit between walks. Sunday and holiday rail patterns can differ from a weekday search. Choose the outbound and return in Trenitalia’s date-specific planner, then verify any separate local connection through its own operator.'
+        },
         choices: [
-          ['Bari city depth', 'Stay with Bari Vecchia, the Basilica of San Nicola, the Norman-Swabian Castle and the seafront. This gives the strongest living-port context but gives up the distant octagonal fortress.'],
-          ['Trani rail day', 'Use the Adriatic railway for Trani cathedral, harbour and historic streets. The branch is easy to understand, but Castel del Monte still requires a separate inland connection and should not be implied.'],
-          ['Castel del Monte commitment', 'Make the fortress the fixed destination and secure the current station-to-site link before leaving Bari. This gains architectural focus but sacrifices a relaxed coastal-city sequence.']
+          ['Bari: harbour and old-town circuit', 'Start from a Bari base and connect the Basilica of San Nicola, Cathedral, Swabian Castle and waterfront on foot. Choose this for the least transfer risk; leave Trani and the inland fortress for other days.'],
+          ['Trani: cathedral and working harbour', 'Take the date-confirmed Adriatic service, read the cathedral’s seafront setting, then follow the harbour and historic streets before returning to the same station. This gives a coherent day without the fortress transfer.'],
+          ['Castel del Monte: one inland anchor', 'Make the UNESCO-listed fortress the day’s fixed visit. Confirm the usable gateway, admission conditions and both last-mile directions first; leave Bari and Trani for a separate rail-and-walk day.']
         ],
-        access: 'Bari Centrale is the hub, Bari Vecchia lies beyond a city walk, and Trani has its own main-line station. Castel del Monte is not beside the railway: identify the usable rail or bus gateway, the onward operator, the park or drop-off point and the return before treating the monument as booked.',
-        tradeoff: 'Bari and Trani reward unhurried street reading, while Castel del Monte consumes a last-mile window. Adding the fortress to a two-city day replaces interpretation and meal time with transfers; choose which city depth you are willing to sacrifice.',
+        access: 'Use Bari Centrale for the city or the exact Trenitalia calling point for Trani; save the return before starting the walk. Castel del Monte is inland and not beside a rail platform. Identify the date-valid rail or bus gateway, who operates the onward leg, where it leaves you and how it returns before treating the monument as reachable.',
+        tradeoff: 'Bari and Trani reward a walk joined by their own station and street grids. Castel del Monte changes the day into a timed rural transfer and a site visit. Adding it to both cities would trade the cathedral, harbour and meal for connection risk, so select one operating system.',
         stages: [
-          ['Fix the hinge', 'Start at Bari Centrale for the city or board the confirmed northbound service for Trani or the inland gateway. Save the return and any separate bus stop before leaving the staffed station.'],
-          ['Read one urban threshold', 'In Bari, move from the seafront into Bari Vecchia through a single church-and-castle line; in Trani, connect the station, cathedral and harbour without detouring inland. Fortress visitors continue only on the verified last mile.'],
-          ['Give the anchor real time', 'Use one controlled interior or monument as the central block. Do not cut a castle or cathedral visit short merely to collect another place name on the opposite branch.'],
-          ['Close on the same spine', 'Return to the known station or stop with one workable service in reserve. A Bari evening belongs after a secure arrival, not before a risky rural connection.']
+          ['Choose the day before leaving Bari', 'Set the destination first: the Bari Vecchia loop needs no intercity leg; Trani begins with a confirmed Trenitalia service; Castel del Monte needs an onward connection that you have checked separately.'],
+          ['Walk one city sequence', 'For Bari, join Basilica di San Nicola, the Cathedral and Castello Svevo before the waterfront. For Trani, keep the cathedral and harbour together. For the fortress, follow the official approach and do not add a coastal city.'],
+          ['Cross only the gate you planned', 'Check each church, museum or fortress entrance on its own official page. Keep lunch and a rest within the chosen town so an opening notice or slow visit does not force a missed rural connection.'],
+          ['Return through the verified gateway', 'Reach the named station or local stop with reserve time. Recheck the return and any replacement service; make dinner or a second town optional until the base is secure.']
         ],
-        fallback: 'If the Castel del Monte connection is unavailable, keep the northern rail line and complete Trani, or remain in Bari for the castle, basilica and waterfront. If rail disruption affects Trani, Bari still supports a full urban day without a replacement-car assumption.',
+        fallback: 'If the fortress transfer or admission does not work, stay in Bari for the old-town and waterfront circuit. If the Trani rail day becomes unreliable, give Bari’s cathedral, Basilica and castle area their own full walk instead of substituting an unplanned car hire.',
         watch: [
-          ['The fortress is not a station sight', 'A rail result for Andria, Corato or Barletta does not complete the trip. The onward service and final pedestrian approach must be confirmed for the exact date.'],
-          ['Sacred and museum hours diverge', 'Basilicas, state museums and castles can close or restrict entry for different reasons. Verify each intended interior rather than applying one city-wide opening pattern.'],
-          ['ZTL streets reject improvised driving', 'Historic cores use restricted traffic zones and scarce parking. A rental car solves a rural last mile only when its legal approach and parking plan are known.']
+          ['A nearby station is not the fortress entrance', 'A rail search to a town in the area does not identify the onward operator, drop-off or return. Confirm all three for the exact date before making the fortress the anchor.'],
+          ['The city has several independent doors', 'A basilica, cathedral, municipal museum and state site can each have their own access and worship notices. Check the actual intended interior rather than assuming one city-wide opening pattern.'],
+          ['Old-town car access needs its own plan', 'Bari and Trani streets are not a simple hotel drop-off grid. Ask the accommodation about the permitted approach and luggage handoff; do not drive into a restricted area because a map route appears shorter.']
         ],
-        duration: 'Allow a full six-to-eight-hour day for Bari depth, Trani, or a Castel del Monte commitment. A carefully timed Bari–Trani pair can fill a long day; adding the fortress usually requires a separate day or private transport.',
-        combine: 'Combine Bari with its waterfront or Trani with its harbour because each stays on one walkable axis. Pair Castel del Monte only with a confirmed nearby stop, not with both coastal cities.',
-        verify: 'Check Trenitalia status, the current inland operator and stop for Castel del Monte, official monument admission notices, church access and the final practical return before departure.',
+        duration: 'Guide estimates: keep a full day for Bari, Trani or Castel del Monte. Bari and Trani can fill one long day only if the date-specific trains leave time for the cathedral and harbour walk; do not add the fortress to that pair. Treat these as planning estimates, not measured visits.',
+        combine: 'Pair Basilica di San Nicola, Bari Cathedral and the nearby castle area on the Bari walk. In Trani, keep the cathedral, harbour and historic streets together. Give Castel del Monte its own day unless a verified private transfer is the point of the itinerary.',
+        verify: 'Before setting out, check the selected train’s exact stop and return, each venue’s current admission and closure notice, and both directions of any separate transfer to Castel del Monte. Do not assume an advertised bus connection operates on your weekday or season.',
+        whatToSee: [
+          ['BARI VECCHIA · LIVING CENTRE', 'Read three civic thresholds', 'Follow the Basilica of San Nicola, Bari Cathedral and Castello Svevo as separate places within the old street fabric. Treat worship as active use: if a church is closed to visitors during a service, continue through the lanes and return only if the notice permits.'],
+          ['MURAT & WATERFRONT · BASE GRID', 'Use the city plan as a second walk', 'The Murat grid around the station and the older lanes serve different needs. Link the waterfront and a chosen civic or cultural stop rather than doubling back through the same crowded old-town streets. This is the practical return route for a rail-based stay.'],
+          ['TRANI · CATHEDRAL TO HARBOUR', 'Let the seafront set the route', 'Trani Cathedral stands beside the harbour, so the station-to-cathedral-to-quays walk reads as one compact city day. Return to Trani station along the known street line; do not treat this as a launch point for the inland fortress.']
+        ],
         sources: [
-          ['https://mobile.viaggiareinpuglia.it/en/area/bari-costa', 'Viaggiare in Puglia — official Bari and coast destination information'],
-          ['https://cultura.gov.it/luogo/castel-del-monte', 'Italian Ministry of Culture — Castel del Monte official record']
+          ['https://www.italia.it/en/puglia/bari', 'Italia.it — official Bari, Swabian Castle and Trani destination information'],
+          ['https://www.italia.it/en/puglia/trani', 'Italia.it — official Trani cathedral and destination information'],
+          ['https://cultura.gov.it/luogo/castel-del-monte', 'Italian Ministry of Culture — Castel del Monte official visitor record'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — date-specific official rail planning']
         ]
       }),
       g({
@@ -67,34 +89,52 @@ export const italySouthIslandsClusters = [
         layout: 'trulli-bus-radius-grid',
         structure: 'ztl-threshold-ring',
         imageQuery: 'Alberobello Aia Piccola trulli Puglia panorama',
-        imageAlt: 'Whitewashed trulli roofs in Alberobello’s Aia Piccola district',
+        imageAlt: 'Stone trulli dwellings and conical roofs in Alberobello',
         purpose: 'Choose one realistic public-transport radius around Alberobello, Locorotondo, Martina Franca or Ostuni and prevent the Itria Valley from becoming a string of white towns with invisible transfers.',
-        summary: 'Enter through one verified branch-line or bus gateway, read one trullo district beyond its shopfronts, make a single onward move if the timetable supports it, and protect the return to the chosen base.',
+        summary: 'Choose a home base and one station-to-street sequence: read Alberobello’s trulli districts first, then add one other valley town only when the dated return works.',
+        localPlan: {
+          title: 'Choose one trulli base and one outward radius',
+          intro: 'Alberobello rewards a slower visit across its two historic districts; the next town is a separate transport decision.',
+          stayTitle: 'Sleep in town or commit to a rural stay',
+          stay: 'Stay near Alberobello’s centre when the priority is walking Rione Monti and Aia Piccola without a final transfer. Locorotondo or Martina Franca works better as an overnight base only when its own train or bus connection fits the rest of the trip. A countryside masseria offers quiet and open space but needs a car or a host-confirmed transfer; do not assume a train station is nearby.',
+          walkTitle: 'Separate the commercial and residential districts',
+          walk: 'Start at the Santa Lucia belvedere, read the Rione Monti slopes around Largo Martellotta, then cross to Aia Piccola and the Territorial Museum if it is open. The two areas tell different stories: one is visitor-facing, the other includes inhabited trulli. Keep photographs and pauses on public routes and do not enter private doorways or yards.',
+          bookingTitle: 'Book the actual interior, not the roofline',
+          booking: 'The UNESCO value is the settlement and dry-stone building system, not a promise that each trullo is a public museum. Check the Territorial Museum and any house-museum or guided visit separately for current opening and admission terms. Confirm the chosen branch or bus journey for both directions before reserving a second-town visit.',
+          seasonTitle: 'Plan shade, opening days and the branch return',
+          season: 'The stone lanes and viewpoints offer little dependable midday shade in summer; make the longer open-air walk early or later and keep water and a rest stop in the plan. Weekends and local events can change the feel of the main streets, while rail and bus patterns vary by date. Do not add a second hill town until the onward and return connections are both published for your day.'
+        },
         choices: [
-          ['Alberobello depth', 'Give Aia Piccola, Rione Monti and the town’s museum evidence a complete visit. It is the strongest architecture-first choice but sacrifices a second hill town.'],
-          ['Locorotondo or Martina Franca pair', 'Use one confirmed FS Sud Est corridor to compare a compact white town with a larger baroque centre. The reward is contrast; the cost is strict dependence on the dated connection.'],
-          ['Ostuni from the Adriatic spine', 'Approach Ostuni from its outlying station with the official onward link already known. It suits a coast-based itinerary but does not naturally combine with every trullo town.']
+          ['Alberobello in depth', 'Walk the belvedere, Rione Monti and Aia Piccola, then visit one interpretation space if its current opening works. This gives the settlement real context but leaves another town for a separate day.'],
+          ['Locorotondo or Martina Franca', 'Choose one as a second town only after matching the FS Sud Est service and the return. Locorotondo adds a compact circular centre; Martina Franca changes the scale toward a baroque civic core. The connection decides whether the comparison is worthwhile.'],
+          ['Ostuni as a main-line arrival plus last mile', 'Ostuni’s railway arrival is outside its hill town. Select this for a separate white-town day only when the local link in both directions is confirmed; do not append it automatically to Alberobello.']
         ],
-        access: 'Alberobello, Locorotondo and Martina Franca sit on FS Sud Est branches; Ostuni’s main-line station is outside its hilltop core. Confirm whether the selected journey is a train, operator bus or replacement service, and identify the town-centre stop plus final return for the exact weekday.',
-        tradeoff: 'Public transport preserves a car-free itinerary but limits the number and order of towns. A car expands reach yet introduces ZTL, parking and designated-driver duties; neither mode turns the entire valley into one easy day.',
+        access: 'Alberobello, Locorotondo and Martina Franca use the FS Sud Est network; Ostuni’s Trenitalia station is outside its hilltop centre. Match the operator, exact station, bus stop or replacement service, and final return for the date. In Alberobello, the viewpoint, two trulli districts and museum are a town walk rather than three independent transfers.',
+        tradeoff: 'A rail-and-bus day keeps the driver out of the picture but limits how many towns fit and in what order. A car can connect the rural stops only if the driver also plans parking, any ZTL approach and the old-town walk; neither choice turns the whole valley into one effortless loop.',
         stages: [
-          ['Enter through one branch', 'Leave Bari, Brindisi or another base on the service that actually reaches the chosen first town. Save the platform or bus bay for the return before walking uphill.'],
-          ['Read the lived district', 'In Alberobello, separate more commercial Rione Monti from quieter Aia Piccola and use the territorial museum when open. In another town, follow one civic, church and street sequence instead of photographing only façades.'],
-          ['Make one proven move', 'Continue to a second town only when the dated connection and return both work. Locate the onward stop before lunch so an unsigned roadside halt does not become the day’s crisis.'],
-          ['Return before the gap', 'Reach the branch station or bus stop with reserve time and keep the base-city evening optional. Do not depend on an unbooked taxi after the useful service window.']
+          ['Choose the first gateway', 'For Alberobello, save the actual FS Sud Est or bus departure point and return before leaving Bari or the coast. If you are sleeping locally, use the first walk for orientation rather than stacking towns.'],
+          ['Read Alberobello by district', 'From the Santa Lucia overlook, descend toward Rione Monti and its public-facing streets. Cross to Aia Piccola for a quieter residential context and use the Territorial Museum only after checking its visitor notice.'],
+          ['Add one valley town only if the clock works', 'Before lunch, check the onward stop and the connection back to your base. If there is no useful service window, stay in Alberobello for a slower meal, museum or street loop instead of improvising a taxi.'],
+          ['Leave on the route you checked', 'Return to the exact station or bus stop with time to spare. Confirm whether the service is a regular train, bus or replacement coach and do not transfer to a second operator on an assumed through-ticket.']
         ],
-        fallback: 'If the onward service fails, remain in the first town for its museum, churches, belvedere and a proper meal. If the branch itself is disrupted, use Bari or Lecce rather than substituting a multi-town car transfer at the platform.',
+        fallback: 'If the second-town service fails, stay in Alberobello for both trulli districts, the museum if open and a proper meal. If the branch itself is disrupted, use the complete walk in Bari or Lecce rather than trying to rescue the day with several unbooked rural transfers.',
         watch: [
-          ['Operator identity can change', 'FS Sud Est rail, regular bus and replacement coach information may appear in different channels. Match the service number and stop, not only the destination name.'],
-          ['Sunday is a separate timetable', 'A weekday screenshot does not establish Sunday or holiday travel. Check the exact date and both directions before committing to the route.'],
-          ['White towns are working communities', 'Aia Piccola and residential lanes require quiet, respectful movement. Do not enter doorways or private rooftops for photographs.']
+          ['The town districts are not open-air sets', 'Aia Piccola is inhabited. Photograph from public lanes, keep voices low and never enter a trullo or courtyard unless it is explicitly open to visitors.'],
+          ['A two-town plan has two timetable edges', 'The outbound service alone is not enough. Verify the onward leg and the last practical return for the same day, including Sunday, holiday or replacement-bus notices.'],
+          ['An attractive countryside stay can be isolated', 'A masseria or trullo accommodation may sit away from a town station. Confirm its exact arrival, luggage and evening transport with the host before booking a car-free stay.']
         ],
-        duration: 'Allow five to seven hours for one town in depth and seven to nine for a verified two-town pair. More than two public-transport stops should become an overnight circuit or booked tour, not a day-plan promise.',
-        combine: 'Combine only towns sharing the same dated corridor. Keep Bari, Castel del Monte and the Salento coasts as separate route days.',
-        verify: 'Check FS Sud Est journey notices, replacement buses, station-to-centre directions, museum or worship closures, weather and the final service back to the base.',
+        duration: 'Guide estimate: allow most of a day for Alberobello’s two districts, interpretation space and meal. A second town can turn it into a long day once the actual train or bus gaps are counted; do not plan a fixed number of hours from a generic route search.',
+        combine: 'Pair Rione Monti and Aia Piccola on foot. Add Locorotondo or Martina Franca only when both branches and the return leave you time in the town, not just time between platforms. Keep Ostuni, Bari and Castel del Monte on distinct days.',
+        verify: 'Check FS Sud Est’s date-specific journey and disruption notices, the exact stop and return, the museum’s current visitor terms, and any transfer from a rural lodging. No branch timetable or attraction hours are guaranteed by this editorial plan.',
+        whatToSee: [
+          ['SANTA LUCIA · OVERLOOK', 'Orient before descending', 'Use the belvedere to read the settlement as a whole: the conical roofs are part of a working town rather than isolated monuments. Choose the descent that keeps you on public streets and avoids repeating the same steep lane.'],
+          ['RIONE MONTI · VISITOR DISTRICT', 'Notice the roof and street together', 'Italia.it identifies this slope as the district most dedicated to tourism. Look beyond the shopfronts at how the dry-stone trulli form a dense street fabric, then leave space for a separate meal or interpretation stop rather than shopping every lane.'],
+          ['AIA PICCOLA · INHABITED QUARTER', 'Read a quieter residential landscape', 'The official destination account describes about 400 inhabited trulli here and the Territorial Museum among the district’s buildings. Keep to public lanes, avoid doorways and use the museum only under its current opening rules.']
+        ],
         sources: [
-          ['https://www.viaggiareinpuglia.it/en/localita', 'Viaggiare in Puglia — official destination directory'],
-          ['https://www.fssudest.it/', 'FS Sud Est — official Puglia rail and bus information']
+          ['https://www.italia.it/en/puglia/bari', 'Italia.it — official Alberobello districts and visitor context'],
+          ['https://whc.unesco.org/en/list/787/', 'UNESCO World Heritage Centre — Trulli of Alberobello'],
+          ['https://www.fssudest.it/', 'FS Sud Est — official Puglia rail and bus journey planning']
         ]
       }),
       g({
@@ -104,34 +144,52 @@ export const italySouthIslandsClusters = [
         layout: 'dual-coast-clock',
         structure: 'two-shore-clock',
         imageQuery: 'Lecce Basilica Santa Croce baroque facade Puglia',
-        imageAlt: 'The carved baroque façade of Santa Croce in Lecce',
+        imageAlt: 'Aerial view over Lecce’s rooftops and streets',
         purpose: 'Use Lecce as a deliberate base, then choose either the Adriatic Otranto branch or the Ionian Gallipoli branch rather than crossing the Salento peninsula twice for a checklist.',
-        summary: 'Read Lecce’s stone and civic spaces on foot, commit to one coast on a verified service day, and end beside the station or stop that protects the return.',
+        summary: 'Base in Lecce for a walk through Roman and Baroque landmarks, then choose Otranto or Gallipoli as one coast day with a separately verified return.',
+        localPlan: {
+          title: 'Choose a walkable Lecce base and one coast',
+          intro: 'Lecce is the inland base; beaches and the two coastal towns need their own transfer and return decision.',
+          stayTitle: 'Pick the side of the station that fits the trip',
+          stay: 'A room in the historic centre around Piazza Sant’Oronzo or Piazza Duomo makes the Roman and Baroque walk and evening streets easy on foot. A stay nearer Lecce station suits luggage and early rail departures but adds a walk into the centre. Lecce is not a beach resort: choose Otranto or Gallipoli for an overnight coast stay only when you want the slower shoreline evening and have checked the onward arrival with bags.',
+          walkTitle: 'Use three connected historic-centre zones',
+          walk: 'Build the city day from Piazza Sant’Oronzo and the Roman amphitheatre, continue to Via Umberto I for Santa Croce and the former Celestini complex, then finish at the enclosed setting of Piazza Duomo. Keep this core on foot; a coast day is a separate outward-and-back leg rather than a detour in the same loop.',
+          bookingTitle: 'Check worship, interiors and the coastal operator',
+          booking: 'Basilica, cathedral, castle and Roman-site access are separate decisions. Reopen each official notice for admission, worship closures and any timed entry. For Otranto or Gallipoli, confirm which operator serves the chosen branch, whether a transfer or replacement coach is involved, the old-town walk from the arrival stop and the return to Lecce before booking an interior.',
+          seasonTitle: 'Let heat and the coast’s service calendar shape the day',
+          season: 'In summer, walk the stone centre in cooler hours and use an indoor visit or long meal through midday; beaches need their own access and facilities check. Outside peak season, coastal buses and visitor services may have a different pattern. Otranto and Gallipoli face opposite sides of the peninsula, so pick one and check its sea and weather conditions rather than trying to cross between them.'
+        },
         choices: [
-          ['Lecce baroque day', 'Keep the day in Lecce for Santa Croce, Piazza del Duomo, the Roman layers and lived streets. It offers the lowest transport risk but no coastal swim or fortress town.'],
-          ['Otranto and the Adriatic', 'Take the eastern branch for Otranto’s cathedral, castle edge and harbour. The route gains a compact historic port but gives up Gallipoli’s Ionian sunset.'],
-          ['Gallipoli and the Ionian', 'Use the western branch for the island old town, castle and seafront. It suits a late coastal finish, provided the return is fixed before the evening service thins.']
+          ['Lecce centre on foot', 'Join Piazza Sant’Oronzo and the Roman amphitheatre to Santa Croce and Piazza Duomo. This is the complete low-transfer day and leaves the beach to another trip.'],
+          ['Otranto: Adriatic harbour and cathedral', 'Choose the eastern coast branch for one harbour town and its cathedral precinct. It adds a sea-facing historic centre but uses the day and return window that Gallipoli would take.'],
+          ['Gallipoli: island old town and Ionian edge', 'Choose the western branch for the old town across its bridge and the harbour-facing streets. A later coastal finish is possible only when the dated return is confirmed; do not infer a summer service from a map.']
         ],
-        access: 'Lecce’s rail and bus departure points must be matched to the selected operator. Otranto and Gallipoli lie on different FS Sud Est branches, and seasonal through-services or replacement buses should never be inferred from a map. In each town, identify the old-town walk from the actual arrival stop.',
-        tradeoff: 'Otranto and Gallipoli face different coasts and reward different light, bathing and history decisions. Attempting both turns Lecce into a transfer and risks the final return; choosing one coast preserves a complete port-city route.',
+        access: 'Lecce rail and bus departures serve different operators and are not one interchangeable stop. Otranto and Gallipoli sit on separate FS Sud Est branches; check the exact departure point, any transfer or replacement coach, the walk from the destination stop into the old town and the final return to Lecce.',
+        tradeoff: 'Lecce itself gives a dense walk between Roman, Baroque and civic landmarks. Otranto and Gallipoli each add a coastal old town, but on opposite sides of the peninsula. Visiting both turns the day into a connection test; choose one coast or overnight there.',
         stages: [
-          ['Start with Lecce’s threshold', 'Enter the centre from the station on one baroque line, using Santa Croce, Piazza Sant’Oronzo or Piazza del Duomo as the chosen anchor. Keep any church access subordinate to worship notices.'],
-          ['Commit to one branch', 'Return to the correct Lecce departure point and board only the confirmed Otranto or Gallipoli service. Record whether a transfer or replacement coach is part of the journey.'],
-          ['Work the port inward', 'From Otranto or Gallipoli, connect harbour, fortification, cathedral or old-town streets in one direction. Treat beach time as a choice with changing and walking costs, not a free extra.'],
-          ['Meet the coastal return', 'Finish near the known station or stop and take the protected service back to Lecce. Add dinner only after arrival, unless a later return has been verified.']
+          ['Walk Lecce as a city, not a beach gateway', 'Start with Piazza Sant’Oronzo and the amphitheatre; continue to Santa Croce on Via Umberto I and the Piazza Duomo enclosure. If a church or civic interior is closed, keep to the street route and return only if its current notice allows.'],
+          ['Select Otranto or Gallipoli before departure', 'Use the correct Lecce operator and departure point for the coast you chose. Check the dated service both ways and note any transfer or substitute bus before leaving the centre.'],
+          ['Read the port from its actual arrival stop', 'In Otranto, keep the harbour, cathedral and castle area on one town walk. In Gallipoli, cross to the old-town island and link the bridge, castle edge and harbour. Add bathing only when access, sea state and facilities work for the date.'],
+          ['Return before planning the evening', 'Walk back to the stop or station you saved and protect the ride to Lecce. Do not depend on a late dinner or on switching to the other coast unless a later connection is actually published.']
         ],
-        fallback: 'If a coast branch is cancelled or its return becomes unreliable, stay in Lecce for the civic museum, churches and an evening street circuit. If poor sea conditions remove bathing, retain the selected port’s history rather than crossing to the other coast.',
+        fallback: 'If the coastal train or bus is disrupted, stay in Lecce and complete the Roman-and-Baroque centre walk. If sea conditions make bathing unsuitable, keep the selected port’s streets and historic setting; do not cross the peninsula to chase a different forecast.',
         watch: [
-          ['Two coasts use two clocks', 'Adriatic wind, Ionian sea state and sunset do not create the same usable day. Check the chosen side rather than relying on a generic Salento forecast.'],
-          ['Branch service is date-sensitive', 'Seasonal frequency, works and substitute buses can change the best connection. Verify the operator on the day before travel and again at departure.'],
-          ['Sacred interiors remain active', 'Lecce and Otranto churches can restrict tourist entry during services. Build an exterior and civic alternative into the same street sequence.']
+          ['The beach is not next to Lecce', 'The city’s historic centre is inland. A coast visit needs an outward and return service plus the last walk from its stop; do not book a beach day on the assumption that “Salento” is one local zone.'],
+          ['Otranto and Gallipoli do not share one branch', 'They serve different coasts and use different return journeys. Read the operator and exact travel date twice before you commit to either town.'],
+          ['A church timetable is not a city timetable', 'Santa Croce, Lecce Cathedral and Otranto Cathedral are active religious sites with their own visitor notices. Keep the exterior sequence usable if worship limits access.']
         ],
-        duration: 'Allow a full day for Lecce plus one coast, or five to seven hours for Lecce alone. Otranto and Gallipoli belong on separate days unless using private transport and deliberately sacrificing depth.',
-        combine: 'Combine Lecce with exactly one coast. Keep the Itria Valley, Bari and Castel del Monte on their own route days.',
-        verify: 'Check FS Sud Est rail and bus notices in both directions, church and castle access, the selected coast’s weather and sea conditions, and the final practical return to Lecce.',
+        duration: 'Guide estimates: reserve five to seven hours for Lecce’s core on foot with an indoor visit and meal. Give a coast its own day; combining it with a full city itinerary depends on the published service and can leave little time beyond the old-town walk.',
+        combine: 'Within Lecce, connect Piazza Sant’Oronzo, Santa Croce and Piazza Duomo on foot. Pair the city with Otranto or Gallipoli only when the rail/bus timing still allows a complete port walk and return; do not combine both coasts.',
+        verify: 'Check the current visitor notice for each church or monument, the date-specific FS Sud Est service to the selected coast, any replacement bus, sea and weather conditions, and the return to Lecce before planning dinner.',
+        whatToSee: [
+          ['PIAZZA SANT’ORONZO · ROMAN CORE', 'Begin with the city’s public square', 'Use the square and Roman amphitheatre as the orientation point for the central walk. Read the surviving Roman fabric alongside the civic street grid, then choose whether a ticketed interior belongs in this day.'],
+          ['VIA UMBERTO I · SANTA CROCE', 'Look at the façade as a crafted surface', 'Italia.it locates the Basilica of Santa Croce on Via Umberto I beside the former Celestini convent complex. Give the carved façade its own pause; inside access follows the basilica’s current worship and visitor notice.'],
+          ['PIAZZA DUOMO · ENCLOSED PRECINCT', 'End the centre walk in a quieter square', 'The cathedral square is a distinct spatial room from the open commercial centre. Use it as the walk’s finish or a shade break, then return through the route you chose rather than treating the coast as the next block.']
+        ],
         sources: [
-          ['https://mobile.viaggiareinpuglia.it/en/viaggi', 'Viaggiare in Puglia — official regional travel ideas and destination areas'],
-          ['https://www.fssudest.it/', 'FS Sud Est — official Salento rail and bus information']
+          ['https://www.italia.it/en/puglia/lecce', 'Italia.it — official Lecce visitor information and landmark context'],
+          ['https://www.fssudest.it/', 'FS Sud Est — official Salento rail and bus journey planning'],
+          ['https://www.trenitalia.com/en.html', 'Trenitalia — official national and regional rail planning']
         ]
       })
     ]
@@ -633,7 +691,7 @@ export const italySouthIslandsClusters = [
         layout: 'coast-mountain-expedition-gate',
         structure: 'summit-operating-stack',
         imageQuery: 'Cala Goloritze Gulf of Orosei Sardinia limestone coast',
-        imageAlt: 'The limestone pinnacle and turquoise water of Cala Goloritzé on the Gulf of Orosei',
+        imageAlt: 'White limestone cliffs and turquoise water at Cala Goloritzé',
         purpose: 'Choose a Gulf boat day, the regulated Cala Goloritzé hike or a Gennargentu mountain route and make the correct gateway, permit, water and turnaround non-negotiable.',
         summary: 'Base at Orosei, Cala Gonone, Baunei or an inland mountain town according to the chosen objective, confirm authority and weather, complete one coast or mountain line, and return before sea or road conditions deteriorate.',
         choices: [

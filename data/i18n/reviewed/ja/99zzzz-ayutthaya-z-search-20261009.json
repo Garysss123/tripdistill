@@ -1,0 +1,19 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Ayutthaya Guide: UNESCO History, Ruins and Routes": "アユタヤ観光ガイド：ユネスコの歴史、遺跡、旅程",
+    "Plan a three-river heritage visit with a walkable Mahathat–Ratchaburana–Sanphet core, separate east-bank station and west-bank transfers, and a two-day route.": "三つの川に囲まれた歴史遺産を訪ねる計画を立てましょう。マハータート—ラーチャブラナ—プラシーサンペットを歩く中心ルート、東岸の駅と西岸への別移動、2日間の旅程を紹介します。",
+    "Check the SRT origin station and travel date, then plan the separate east-bank station-to-island transfer and return margin.": "SRTの出発駅と旅行日を確認し、東岸の駅から島への別移動と、帰路に必要な余裕時間を計画してください。",
+    "Walk Mahathat to Ratchaburana, continue through the royal quarter, then give living temples or the west-bank route a separate day.": "マハータートからラーチャブラナへ歩き、王宮地区を続けて巡ります。現役寺院または西岸ルートは、別の日に回しましょう。",
+    "Wat Mahathat and Wat Ratchaburana: Relics, Prang and Crypt": "ワット・マハータートとワット・ラーチャブラナ：仏舎利、プラーン、地下室",
+    "Compare Mahathat's 1374 foundation tradition and 1384 relic deposit with Ratchaburana's 1424 succession account, prang and crypt on a central walk.": "中心部を歩いて巡り、マハータートの1374年創建伝承と1384年の仏舎利奉納を、ラーチャブラナの1424年王位継承記録、プラーン、地下室と比較します。",
+    "Ayutthaya Palace Quarter and Wat Phra Si Sanphet: Three Royal Stupas": "アユタヤ王宮地区とワット・プラシーサンペット：王室の仏塔3基",
+    "Read the former palace ground as a later ceremonial precinct, compare three Ceylonese-style stupas and plan a separate Chao Sam Phraya Museum visit.": "旧王宮の敷地を後世の祭祀地区として見て、スリランカ様式の仏塔3基を比べましょう。チャオサームプラヤー博物館は別訪問として計画してください。",
+    "Wat Chaiwatthanaram: Five Prangs and West-Bank Route": "ワット・チャイワッタナラーム：プラーン5基と西岸ルート",
+    "Follow its central prang, four satellites, eight Meru structures and gallery; compare the 1630 tradition with phased scholarly dating and plan both transfers.": "中央のプラーンと四方の小塔、8基のメル、回廊をたどります。1630年の伝承と段階的建設を提案する研究年代を比較し、往復の移動を計画しましょう。"
+  }
+}

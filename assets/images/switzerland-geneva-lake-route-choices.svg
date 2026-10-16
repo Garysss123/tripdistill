@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-labelledby="title desc">
+  <title id="title">Geneva district route choices</title>
+  <desc id="desc">Three conceptual route chains for Geneva Old Town, the Nations quarter and Carouge, with a visible English, Traditional Chinese, Japanese, Korean and Thai legend. Not to scale and not a live timetable.</desc>
+  <rect x="0" y="0" width="1600" height="1066" fill="#f2f5f3"/>
+  <rect x="58" y="48" width="1484" height="964" rx="32" fill="#fffefa" stroke="#d4dfdc" stroke-width="3"/>
+  <text x="112" y="120" fill="#173e4b" font-family="Arial,sans-serif" font-size="39" font-weight="700">GENEVA · THREE DISTRICTS, ONE TRANSIT NETWORK</text>
+  <text x="114" y="160" fill="#526970" font-family="Arial,sans-serif" font-size="22">Route concepts and five-language visible labels · check current access and service · not to scale</text>
+
+  <rect x="102" y="192" width="1396" height="236" rx="22" fill="#edf5f4"/>
+  <rect x="102" y="192" width="14" height="236" rx="7" fill="#c44b3f"/>
+  <text x="150" y="235" fill="#173e4b" font-family="Arial,sans-serif" font-size="28" font-weight="700">1 · OLD TOWN &amp; LAKEFRONT</text>
+  <line x1="240" y1="292" x2="1360" y2="292" stroke="#c44b3f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="260" cy="292" r="20" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle cx="635" cy="292" r="20" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle cx="1010" cy="292" r="20" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <circle cx="1350" cy="292" r="20" fill="#fffefa" stroke="#c44b3f" stroke-width="8"/>
+  <text x="260" y="333" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Cornavin</text>
+  <text x="635" y="333" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Mont-Blanc bridge</text>
+  <text x="1010" y="333" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Bourg-de-Four / St Pierre</text>
+  <text x="1350" y="333" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Rive</text>
+  <text x="150" y="377" fill="#526970" font-family="Arial,sans-serif" font-size="17">EN Old Town / Lakefront</text>
+  <text x="414" y="377" fill="#526970" font-family="Arial,sans-serif" font-size="17">繁中 古城／湖岸</text>
+  <text x="664" y="377" fill="#526970" font-family="Arial,sans-serif" font-size="17">日本語 旧市街／湖畔</text>
+  <text x="940" y="377" fill="#526970" font-family="Arial,sans-serif" font-size="17">한국어 구시가지／호숫가</text>
+  <text x="1200" y="377" fill="#526970" font-family="Arial,sans-serif" font-size="15">ไทย เมืองเก่า／ริมทะเลสาบ</text>
+
+  <rect x="102" y="446" width="1396" height="236" rx="22" fill="#f6f1e7"/>
+  <rect x="102" y="446" width="14" height="236" rx="7" fill="#b47b20"/>
+  <text x="150" y="489" fill="#173e4b" font-family="Arial,sans-serif" font-size="28" font-weight="700">2 · NATIONS QUARTER · BOOKED ACCESS</text>
+  <line x1="240" y1="546" x2="1360" y2="546" stroke="#b47b20" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="260" cy="546" r="20" fill="#fffefa" stroke="#b47b20" stroke-width="8"/>
+  <circle cx="635" cy="546" r="20" fill="#fffefa" stroke="#b47b20" stroke-width="8"/>
+  <circle cx="1010" cy="546" r="20" fill="#fffefa" stroke="#b47b20" stroke-width="8"/>
+  <circle cx="1350" cy="546" r="20" fill="#fffefa" stroke="#b47b20" stroke-width="8"/>
+  <text x="260" y="587" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Cornavin</text>
+  <text x="635" y="587" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">tram 15 / bus 5</text>
+  <text x="1010" y="587" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Nations</text>
+  <text x="1350" y="587" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Pregny Gate</text>
+  <text x="150" y="631" fill="#526970" font-family="Arial,sans-serif" font-size="17">EN Nations quarter</text>
+  <text x="414" y="631" fill="#526970" font-family="Arial,sans-serif" font-size="17">繁中 國際區</text>
+  <text x="664" y="631" fill="#526970" font-family="Arial,sans-serif" font-size="17">日本語 国際地区</text>
+  <text x="940" y="631" fill="#526970" font-family="Arial,sans-serif" font-size="17">한국어 국제 지구</text>
+  <text x="1200" y="631" fill="#526970" font-family="Arial,sans-serif" font-size="15">ไทย ย่านนานาชาติ</text>
+
+  <rect x="102" y="700" width="1396" height="236" rx="22" fill="#edf2e9"/>
+  <rect x="102" y="700" width="14" height="236" rx="7" fill="#39765e"/>
+  <text x="150" y="743" fill="#173e4b" font-family="Arial,sans-serif" font-size="28" font-weight="700">3 · CAROUGE NEIGHBORHOOD</text>
+  <line x1="240" y1="800" x2="1360" y2="800" stroke="#39765e" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="260" cy="800" r="20" fill="#fffefa" stroke="#39765e" stroke-width="8"/>
+  <circle cx="635" cy="800" r="20" fill="#fffefa" stroke="#39765e" stroke-width="8"/>
+  <circle cx="1010" cy="800" r="20" fill="#fffefa" stroke="#39765e" stroke-width="8"/>
+  <circle cx="1350" cy="800" r="20" fill="#fffefa" stroke="#39765e" stroke-width="8"/>
+  <text x="260" y="841" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Rive</text>
+  <text x="635" y="841" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">tram 12</text>
+  <text x="1010" y="841" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Carouge-Marché</text>
+  <text x="1350" y="841" text-anchor="middle" fill="#173e4b" font-family="Arial,sans-serif" font-size="20">Plainpalais optional</text>
+  <text x="150" y="885" fill="#526970" font-family="Arial,sans-serif" font-size="17">EN Carouge neighborhood</text>
+  <text x="414" y="885" fill="#526970" font-family="Arial,sans-serif" font-size="17">繁中 卡魯日街區</text>
+  <text x="664" y="885" fill="#526970" font-family="Arial,sans-serif" font-size="17">日本語 カルージュ地区</text>
+  <text x="940" y="885" fill="#526970" font-family="Arial,sans-serif" font-size="17">한국어 카루주 지역</text>
+  <text x="1200" y="885" fill="#526970" font-family="Arial,sans-serif" font-size="15">ไทย ย่านการูจ</text>
+
+  <text x="112" y="978" fill="#526970" font-family="Arial,sans-serif" font-size="18">Conceptual access chains only · walking segments and stop positions are schematic · no live departures, fares or geographic scale</text>
+</svg>

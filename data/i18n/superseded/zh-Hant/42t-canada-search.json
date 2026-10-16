@@ -1,0 +1,19 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Canada Travel Guide": "加拿大旅遊指南",
+    "Plan Canada through eighteen complete travel hubs and fifty-four focused guides across cities, mountains, coasts, prairies and the North.": "透過 18 個完整旅遊樞紐與 54 份聚焦指南規劃加拿大，探索城市、山脈、海岸、草原與北方。",
+    "Canadian travel": "加拿大旅遊",
+    "pacific": "太平洋",
+    "rockies": "落磯山脈",
+    "prairies": "草原",
+    "central": "中部",
+    "quebec": "魁北克",
+    "atlantic": "大西洋",
+    "north": "北方"
+  }
+}

@@ -30,7 +30,7 @@ const only = new Set(onlyArg ? onlyArg.slice(7).split(',').map((value) => value.
 const unknown = [...only].filter((key) => !allGuides.some((job) => job.key === key));
 if (unknown.length) throw new Error(`Unknown United Kingdom image job(s): ${unknown.join(', ')}`);
 const force = process.argv.includes('--force');
-const jobs = allGuides.filter(({ key }) => only.has(key));
+const jobs = allGuides.filter(({ key }) => only.has(key) && existingManifest[key]?.assetType !== 'original-planning-diagram');
 
 const allowedLicenses = new Set([
   'CC0', 'Public domain',

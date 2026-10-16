@@ -351,7 +351,10 @@ const allRoutes = [
     ...australiaClusters.flatMap((cluster) => [
       [`${locale}-au-${cluster.slug}`, `/${locale}/australia/${cluster.slug}/`],
       [`${locale}-au-${cluster.slug}-${cluster.guides[0].slug}`, `/${locale}/australia/${cluster.slug}/${cluster.guides[0].slug}/`]
-    ])
+    ]),
+    ...australiaGuides.filter((guide) => guide.hubSlug === 'red-centre').map((guide) =>
+      [`${locale}-au-field-${guide.slug}`, `/${locale}/australia/${guide.hubSlug}/${guide.slug}/`]
+    )
   ]),
   ...['zh', 'ja', 'ko', 'th'].flatMap((locale) => [
     [`${locale}-canada`, `/${locale}/canada/`],
@@ -428,9 +431,11 @@ const routes = requestedRoutes.size ? allRoutes.filter(([slug]) => requestedRout
 if (!routes.length) throw new Error(`TRIPDISTILL_ROUTE_FILTER did not match a known route: ${[...requestedRoutes].join(', ')}`);
 
 const desktopWidth = Number(process.env.TRIPDISTILL_DESKTOP_WIDTH || 1440);
+const desktopHeight = Number(process.env.TRIPDISTILL_DESKTOP_HEIGHT || 1000);
 if (!Number.isFinite(desktopWidth) || desktopWidth < 1024) throw new Error('TRIPDISTILL_DESKTOP_WIDTH must be a number of at least 1024.');
+if (!Number.isFinite(desktopHeight) || desktopHeight < 600) throw new Error('TRIPDISTILL_DESKTOP_HEIGHT must be a number of at least 600.');
 const allViewports = [
-  ['desktop', desktopWidth, 1000, false],
+  ['desktop', desktopWidth, desktopHeight, false],
   ...(process.env.TRIPDISTILL_INCLUDE_TABLET === '1' ? [['tablet', 1100, 900, false]] : []),
   ['mobile', 390, 844, true],
   ...(process.env.TRIPDISTILL_INCLUDE_SMALL_PHONE === '1' ? [['small-phone', 320, 740, true]] : [])
@@ -716,8 +721,15 @@ for (const [viewportName, width, height, mobile] of viewports) {
         return [...candidates].filter((item) => {
           const rect = item.getBoundingClientRect();
           const outsideHero = rect.left < heroRect.left - 1 || rect.right > heroRect.right + 1;
-          const hiddenInlineContent = item.scrollWidth > item.clientWidth + 1;
-          return outsideHero || hiddenInlineContent;
+          const style = getComputedStyle(item);
+          const clipsContent = ['hidden', 'clip'].includes(style.overflowX);
+          const clippedInlineContent = clipsContent && item.scrollWidth > item.clientWidth + 1;
+          const textRange = document.createRange();
+          textRange.selectNodeContents(item);
+          const textEscapesHero = [...textRange.getClientRects()].some((textRect) =>
+            textRect.left < heroRect.left - 1 || textRect.right > heroRect.right + 1
+          );
+          return outsideHero || clippedInlineContent || textEscapesHero;
         }).map((item) => item.tagName.toLowerCase() + ':' + item.textContent.trim().replace(/\s+/g, ' ').slice(0, 90));
       });
       return {

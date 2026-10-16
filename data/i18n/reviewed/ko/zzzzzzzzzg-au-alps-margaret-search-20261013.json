@@ -1,0 +1,42 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Build a southwest Western Australia route with separate Busselton/Dunsborough, Margaret River, Augusta and Albany bases. Compare three-, five- and longer-night plans, then check the date-specific Transwa coach, sober wine transport, park and fire closures, coastal weather and road conditions.": "서호주 남서부 여행은 버셀턴/던스버러, 마거릿 리버, 오거스타, 올버니를 각각 별도 숙박 거점으로 계획하세요. 3박, 5박, 장기 일정을 비교한 뒤 날짜별 Transwa 코치, 술을 마시지 않는 와인 이동편, 공원·산불 폐쇄, 해안 날씨, 도로 상황을 확인하세요.",
+    "southwest western australia itinerary nights": "서호주 남서부 여행 일정과 숙박 일수",
+    "perth to margaret river transwa sw1 coach": "퍼스에서 마거릿 리버까지 Transwa SW1 코치",
+    "busselton dunsborough margaret river bases": "버셀턴 던스버러 마거릿 리버 숙박 거점",
+    "margaret river to augusta and albany road trip": "마거릿 리버에서 오거스타와 올버니까지 로드 트립",
+    "leeuwin-naturaliste park access and closures": "리윈 내추럴리스트 국립공원 접근과 폐쇄",
+    "margaret river wine tour sober driver": "마거릿 리버 와인 투어 음주하지 않는 운전자",
+    "Plan Margaret River wine and food around a pre-booked zero-alcohol driver, two or three nearby cellar-door appointments, a fixed meal and a daylight return. Transwa SW1 connects regional towns on selected dates but is not a winery shuttle.": "마거릿 리버 와인·음식 일정은 음주하지 않는 운전자를 미리 예약하고 가까운 셀러 도어 두세 곳을 정한 뒤 식사 시간과 해 지기 전 귀환을 고정하세요. Transwa SW1은 운행일에 따라 지역 도시를 연결하지만 와이너리 셔틀은 아닙니다.",
+    "margaret river cellar door sober driver": "마거릿 리버 셀러 도어 음주하지 않는 운전자",
+    "margaret river wine tours pickup": "마거릿 리버 와인 투어 픽업",
+    "busselton dunsborough margaret river sw1 coach": "버셀턴 던스버러 마거릿 리버 SW1 코치",
+    "margaret river wineries lunch bookings": "마거릿 리버 와이너리 점심 예약",
+    "margaret river tasting appointments and fees": "마거릿 리버 시음 예약과 요금",
+    "margaret river rural road daylight return": "마거릿 리버 시골 도로 해 지기 전 귀환",
+    "Choose one Namadgi trail from Canberra by trailhead, grade, unsealed-road access and daylight. Compare Mount Tennent, Square Rock and Yankee Hat; check Ngunnawal cultural guidance, fire, weather, road closures and the return before leaving.": "캔버라에서 Namadgi 탐방로 하나를 고를 때 트레일헤드, 난이도, 비포장 도로 접근, 일조 시간을 비교하세요. Mount Tennent, Square Rock, Yankee Hat을 살펴보고 출발 전 응구나왈 문화 안내와 화재·날씨·도로 폐쇄, 귀환 시간을 확인하세요.",
+    "namadgi walks from canberra": "캔버라 출발 Namadgi 하이킹",
+    "mount tennent 4.5 km 15 km": "Mount Tennent 트랙 4.5 km 15 km",
+    "square rock track corin road": "Square Rock 트랙 Corin Road",
+    "yankee hat walk old boboyan road": "Yankee Hat 워크 Old Boboyan Road",
+    "namadgi road closures and fire": "Namadgi 도로 폐쇄와 산불",
+    "namadgi visitor centre woodland walk": "Namadgi 방문자 센터 Woodland Walk",
+    "Plan the Snowy Mountains by gateway, season and ascent: Charlotte Pass for the 18.6km summit walk or Thredbo for the lift-dependent route. Allow at least two Jindabyne-area nights, check chains, road closures, park alerts and alpine weather.": "Snowy Mountains는 관문 도시와 계절, 등반로에 맞춰 계획하세요. Charlotte Pass는 18.6km 정상 코스, Thredbo는 리프트 이용이 필요한 경로입니다. Jindabyne 지역에서 최소 2박을 하고 체인, 도로 폐쇄, 공원 경보, 고산 날씨를 확인하세요.",
+    "canberra to jindabyne via cooma": "캔버라에서 Cooma 경유 Jindabyne",
+    "charlotte pass kosciuszko summit walk 18.6km": "Charlotte Pass Kosciuszko 정상 코스 18.6km",
+    "thredbo chairlift kosciuszko summit route": "Thredbo 리프트 Kosciuszko 정상 경로",
+    "kosciuszko snow chains and winter road closure": "Kosciuszko 스노 체인과 겨울 도로 폐쇄",
+    "snowy mountains adaminaby and tumut access": "Snowy Mountains Adaminaby와 Tumut 접근",
+    "kosciuszko alpine weather and park alerts": "Kosciuszko 고산 날씨와 공원 경보"
+  },
+  "reviewProvenance": {
+    "writer": "Task assistant, GPT-6 Codex execution family; exact runtime model ID unverified and requested GPT-6 Luna runtime could not be verified in the selected environment",
+    "reviewer": "Same task assistant/model-family self-review; non-independent; exact runtime model ID unverified",
+    "independentSecondModel": false
+  }
+}

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Sydney harbour and coast planning schematic</title>
+  <desc id="desc">A not-to-scale planning diagram connecting the CBD and Circular Quay to the Opera House and Botanic Garden, a ferry toward Manly and a bus transfer toward the Bondi to Coogee coastal walk. The legend is shown in English, Traditional Chinese, Japanese, Korean and Thai.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f3eee3}.panel{fill:#fffaf0;stroke:#c9c1b2;stroke-width:2}.ink{fill:#173d46}.muted{fill:#546a68}.small{font:700 20px Arial,sans-serif;letter-spacing:2px}.title{font:900 42px Arial,sans-serif;letter-spacing:-1px}.place{font:800 23px Arial,sans-serif}.sub{font:600 17px Arial,sans-serif}.mode{font:800 16px Arial,sans-serif;letter-spacing:1px}.legend{font:600 18px Arial,sans-serif}.micro{font:600 16px Arial,sans-serif}.rail{fill:none;stroke:#b8582d;stroke-width:9;stroke-linecap:round;stroke-linejoin:round}.ferry{fill:none;stroke:#187b93;stroke-width:9;stroke-linecap:round;stroke-dasharray:20 15}.bus{fill:none;stroke:#36744c;stroke-width:8;stroke-linecap:round;stroke-dasharray:3 15}.walk{fill:none;stroke:#d39931;stroke-width:9;stroke-linecap:round;stroke-linejoin:round}.node{fill:#fffaf0;stroke:#173d46;stroke-width:5}.transfer{fill:#173d46}.water{fill:#d9edf0;stroke:#b4d8dd;stroke-width:2}.rule{stroke:#d7d0c3;stroke-width:2}
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1600" height="1000" rx="28"/>
+  <text class="small muted" x="72" y="68">FIELD ATLAS · CONNECTION LOGIC</text>
+  <text class="title ink" x="72" y="122">Sydney harbour + coast</text>
+  <text class="sub muted" x="74" y="158">Choose one operating day at a time; verify every service and open path before travel.</text>
+  <rect class="panel" x="58" y="190" width="1484" height="536" rx="22"/>
+
+  <path class="water" d="M790 213 C740 285 810 342 764 402 C729 449 775 514 748 558 C719 606 770 670 746 703 L1540 703 L1540 213 Z"/>
+  <text class="small muted" x="1114" y="680">HARBOUR · WATER CROSSING</text>
+
+  <path class="rail" d="M172 300 H710"/>
+  <text class="mode" fill="#9e4624" x="333" y="270">RAIL</text>
+  <path class="walk" d="M710 300 C810 300 850 260 938 260 H1170"/>
+  <text class="mode" fill="#90630b" x="820" y="244">WALK</text>
+  <path class="ferry" d="M710 300 C840 376 1033 430 1270 430"/>
+  <text class="mode" fill="#126277" x="985" y="374">FERRY</text>
+  <path class="walk" d="M1270 430 C1343 464 1391 505 1440 548"/>
+  <text class="mode" fill="#90630b" x="1382" y="476">WALK</text>
+  <path class="bus" d="M432 300 C457 399 505 480 615 564"/>
+  <text class="mode" fill="#2c603f" x="470" y="448">BUS</text>
+  <path class="walk" d="M615 564 H1398"/>
+  <text class="mode" fill="#90630b" x="961" y="535">WALK · COASTAL PATH</text>
+
+  <circle class="node" cx="172" cy="300" r="17"/><circle class="node" cx="432" cy="300" r="17"/><circle class="node" cx="710" cy="300" r="17"/>
+  <circle class="node" cx="938" cy="260" r="17"/><circle class="node" cx="1170" cy="260" r="17"/>
+  <circle class="node" cx="1270" cy="430" r="17"/><circle class="node" cx="1440" cy="548" r="17"/>
+  <circle class="node" cx="615" cy="564" r="17"/><circle class="node" cx="850" cy="564" r="13"/><circle class="node" cx="1050" cy="564" r="13"/><circle class="node" cx="1220" cy="564" r="13"/><circle class="node" cx="1398" cy="564" r="17"/>
+
+  <text class="place ink" x="112" y="350">Central</text><text class="sub muted" x="114" y="375">rail interchange</text>
+  <text class="place ink" x="379" y="350">CBD</text><text class="sub muted" x="356" y="375">base + transfer check</text>
+  <text class="place ink" x="648" y="350">Circular Quay</text><text class="sub muted" x="669" y="375">rail · ferry</text>
+  <text class="place ink" x="873" y="214">Opera House</text>
+  <text class="place ink" x="1106" y="214">Botanic Garden</text>
+  <text class="place ink" x="1228" y="477">Manly</text>
+  <text class="place ink" x="1400" y="600">North Head</text>
+  <text class="place ink" x="562" y="613">Bondi Beach</text>
+  <text class="sub muted" x="829" y="613">Tamarama</text><text class="sub muted" x="1020" y="613">Bronte</text><text class="sub muted" x="1182" y="613">Clovelly</text>
+  <text class="place ink" x="1360" y="642">Coogee</text>
+
+  <rect class="panel" x="58" y="748" width="1484" height="220" rx="22"/>
+  <text class="small ink" x="88" y="789">MODE KEY · EN / 繁中 / 日本語 / 한국어 / ไทย</text>
+  <line class="rule" x1="88" y1="808" x2="1510" y2="808"/>
+  <line class="rail" x1="102" y1="845" x2="176" y2="845"/><text class="legend ink" x="194" y="851">Train · 鐵路 · 鉄道 · 철도 · รถไฟ</text>
+  <line class="ferry" x1="642" y1="845" x2="716" y2="845"/><text class="legend ink" x="735" y="851">Ferry · 渡輪 · フェリー · 페리 · เรือข้ามฟาก</text>
+  <line class="bus" x1="102" y1="891" x2="176" y2="891"/><text class="legend ink" x="194" y="897">Bus · 公車 · バス · 버스 · รถโดยสาร</text>
+  <line class="walk" x1="642" y1="891" x2="716" y2="891"/><text class="legend ink" x="735" y="897">Walk · 步行 · 徒歩 · 도보 · เดิน</text>
+  <text class="micro ink" x="88" y="933">Schematic only · not to scale · 僅供示意 · 非按比例 · 模式図 · 縮尺なし · 개략도 · 축척 없음 · แผนผังโดยสังเขป · ไม่ได้มาตราส่วน</text>
+  <text class="micro muted" x="88" y="956">No distance, bearing, timetable or service is implied.</text>
+</svg>

@@ -4,14 +4,28 @@ export const australiaNorthClusters = [
   cluster({
     slug: 'cairns-wet-tropics',
     name: 'Cairns & Wet Tropics',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
     region: 'Queensland',
     band: 'tropics',
     family: 'reef-rainforest-transect',
     label: 'REEF GATEWAY / RAINFOREST / TROPICAL ROADS',
-    tagline: 'Keep reef weather, rainforest access and tropical distance on separate forecasts.',
-    hubIntro: 'Cairns is a practical gateway rather than the whole tropical experience. The city waterfront, Kuranda corridor, northern beaches, Port Douglas and Daintree rainforest each depend on different operators, roads, heat and storm conditions. Five chapters make reef departure, rail or cableway identity, crocodile-aware water boundaries and Wet Tropics protection visible before the day begins.',
-    stay: 'Base in Cairns for vessel choice and urban transport, Port Douglas for northern reef and coast, or the Daintree only when road, food and power constraints are understood.',
-    transfer: 'Flights and rail reach Cairns; regional coaches, rental cars and operators serve the coast and tablelands. The Daintree crossing and remote roads must be checked directly.',
+    tagline: 'Build separate days for reef departures, rainforest crossings and tropical coast roads.',
+    hubIntro: 'Cairns is a practical gateway rather than the whole tropical experience. Treat it as the base for a city Lagoon day, a booked reef vessel, the Cairns–Kuranda rail and cableway crossing, and a Palm Cove beach visit. Port Douglas and the Daintree use separate transport and weather decisions. Start with nights and the return connection, then choose the chapters that fit; do not turn one Cairns base into a promise that every northern road is a day trip.',
+    searchSummary: 'Plan Cairns nights around a reef vessel, the Cairns–Kuranda crossing or Palm Cove, then separate Port Douglas and Daintree roads by their transport, weather and return requirements.',
+    stay: 'Use Cairns for a reef departure and city or Kuranda days; move to Port Douglas when the northern coast is the focus. Stay north of the Daintree only when the ferry, road status, daylight, meals, fuel and accommodation are confirmed. Keep the final night near the flight or rail departure rather than relying on a long same-day transfer.',
+    transfer: 'Cairns is the rail and flight gateway, but each chapter has a different last mile: the booked reef operator sets its check-in, the Kuranda package connects Cairns or Freshwater with Skyrail at Smithfield, and a Palm Cove return depends on the date-specific Translink plan or a booked transfer. For the Daintree, check the ferry and road directly. Do not assume one bus, ticket or operating day covers the region.',
+    tripShapes: [
+      { title: '3 nights · Cairns base', copy: 'Keep arrival day in the city. Choose one full reef day and one other chapter—either Kuranda or a northern beach—then leave a buffer before an onward flight. This is a focused Cairns stay, not time to add Port Douglas, Mossman Gorge and Cape Tribulation as extra day trips.' },
+      { title: '5 nights · reef and one land day', copy: 'Use Cairns for a city arrival, one reef departure, one Kuranda crossing and one flexible day for Palm Cove or a weather recovery. Choose the beach only after checking the return service for your date. If Port Douglas matters more than Cairns evenings, transfer there for a separate two-night base instead of commuting north repeatedly.' },
+      { title: '7 nights · two bases, one long north day', copy: 'Give Cairns several nights for the reef and rail or cableway, then move to Port Douglas for the coast and Mossman Gorge. Treat Cape Tribulation as its own road plan, preferably with a northern overnight when access and accommodation suit. Return to Cairns the day before an important flight; do not make a ferry queue the final connection.' }
+    ],
+    faq: [
+      ['How many nights should I give Cairns?', 'Three nights can fit arrival and departure logistics plus one reef day and one other full chapter such as Kuranda or a northern beach, if your flights leave those days usable. Add a night when you want both land chapters or a weather buffer. Move to a second base when the northern coast is a real priority.'],
+      ['Can I visit the Daintree as a quick Cairns day trip?', 'It is a long, road-dependent day with the Daintree River ferry, limited services and a separate return. Check current ferry, road, daylight and tour conditions; an overnight north of the river is often more coherent than stacking it with Cairns activities.'],
+      ['Should I rent a car for all five chapters?', 'Not automatically. A car helps with a self-directed coast or rainforest route, while reef vessels, Kuranda packages and the Cairns city day have their own transport systems. Compare the exact parking, transfer, ferry and fatigue costs before keeping a car throughout.'],
+      ['What should I verify just before travel?', 'The booked reef operator’s check-in and sea notice, current rail and Skyrail status, the Translink journey for a Palm Cove return, road and ferry conditions north of Cairns, and the local heat, storm or marine warnings for the next day.']
+    ],
     sources: [
       ['https://www.australia.com/en/places/cairns-and-surrounds/guide-to-cairns.html', 'Tourism Australia — Cairns'],
       ['https://tropicalnorthqueensland.org.au/', 'Tourism Tropical North Queensland — official visitor guide'],
@@ -21,44 +35,136 @@ export const australiaNorthClusters = [
     ],
     guides: [
       g({
-        slug: 'cairns-esplanade-reef-terminal', name: 'Cairns Esplanade & Reef Terminal', motif: 'city-to-vessel threshold', instrument: 'departure-board', imageQuery: 'Cairns Esplanade marina Queensland', imageAlt: 'Cairns waterfront and marina in tropical Queensland',
-        summary: 'A gateway day connecting the lagoon, waterfront and reef terminal while operator check-in and tropical heat remain the real anchors.',
-        orientation: 'use the Reef Fleet Terminal and Esplanade Lagoon as separate transport and recreation nodes.', access: 'Arrive in central Cairns on foot, bus or hotel transfer and locate the exact operator desk before departure morning.', sequence: 'Reconnoitre the terminal, use the managed lagoon or shaded waterfront, add one cultural stop and finish early before a vessel day.', boundary: 'The mudflat and estuary are wildlife habitat, not a swimming beach. Use the managed lagoon and follow crocodile warning signs.',
-        stages: [['Find the operator desk', 'Confirm vessel name, berth, check-in and medical or equipment forms.'], ['Read the waterfront', 'Distinguish managed lagoon, promenade and tidal habitat.'], ['Use one cool interior', 'Add a gallery or visitor centre during peak heat.'], ['Prepare for departure', 'Sleep with transport, medication and weather questions resolved.']],
-        risks: [['Heat and UV', 'Humidity and sun require water, shade and an early pace.'], ['Crocodile habitat', 'Never enter tidal creeks or mudflats and obey every warning.'], ['Wrong terminal', 'Operators and vessels can use different desks and timings.']],
-        duration: 'Use half a day before or after a reef trip; one full city day is enough for the core.', combine: 'Pair with a booked reef day only through an overnight, not on the same arrival morning.', verify: 'Check operator desk, marine forecast, heat, lagoon hours, crocodile warnings and airport transfer.'
+        slug: 'cairns-esplanade-reef-terminal', name: 'Cairns Esplanade & Reef Terminal', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'city-to-vessel threshold', instrument: 'departure-board', imageQuery: 'Cairns Esplanade marina Queensland', imageAlt: 'Cairns waterfront and marina in tropical Queensland',
+        summary: 'A Cairns waterfront plan that separates a managed city swim from a reef departure whose check-in location and time depend on the booked operator.',
+        searchSummary: 'Distinguish the Cairns Lagoon from tidal water, confirm the booked reef operator’s own check-in and berth, and keep an overnight buffer before the vessel.',
+        orientation: 'Treat the Esplanade Lagoon, tidal foreshore and reef terminal as three different places with different rules. The Lagoon is a council-managed swimming facility on the city waterfront; it does not make the adjacent tidal mudflat or estuary a swimming beach. Sunlover lists Reef Fleet Terminal at 1 Spence Street for its own check-in, while another operator can use a different desk, berth or departure arrangement. Match the day to the ticket rather than the postcard.',
+        access: 'A Lagoon and waterfront visit can fit an arrival or final city day when flight, rail and transfer timing leave margin; do not tie it to a reef check-in. For a city swim, stay near the central waterfront or plan the exact local transfer to it. For a reef trip, save the operator name, terminal, check-in time, berth and return point from the booking, then check the route from your accommodation. If step-free access or an aquatic chair matters, confirm the Lagoon facility and boat operator directly; do not infer accessible boarding from a nearby map pin.',
+        sequence: 'On a non-boat day, walk the Esplanade when the heat suits, use the Lagoon only if the council lists it open, and place Cairns Museum or another confirmed indoor stop in the hottest or wettest part of the day. For a reef booking, sleep in Cairns the night before, prepare documents and any operator forms, and keep the morning for the confirmed check-in. Do not combine the vessel with a same-morning flight arrival, Kuranda crossing or distant northern drive.',
+        boundary: 'The Lagoon is a managed swimming facility; tidal foreshore and estuary water are not substitutes. Read current council notices and local crocodile signs, keep out of closed water and obey staff instructions. Lagoon hours and closures are operating details that can change. A reef cancellation is an operator decision tied to marine conditions; a calm-looking city waterfront says nothing about the offshore sea state.',
+        decisions: [['Choose a city swim', 'Use the Lagoon when council status, access and opening conditions fit the day. It is a maintained city facility, not a beach or evidence that nearby natural water is safe.'], ['Name the boat desk', 'Follow the check-in point and time on the booked operator’s confirmation. Sunlover names Reef Fleet Terminal at 1 Spence Street for its own trips; do not transfer that instruction to every vessel.'], ['Protect the departure window', 'Stay in Cairns the previous night and keep the return day flexible. If the operator changes or cancels the trip, follow its booking terms and move to a city fallback instead of buying a second boat at the wharf.']],
+        sources: [
+          ['https://www.cairns.qld.gov.au/experience-cairns/Cairns-Esplanade', 'Cairns Regional Council — Cairns Esplanade'],
+          ['https://www.cairns.qld.gov.au/experience-cairns/Cairns-Esplanade/esplanade-sport-and-fitness-facilities', 'Cairns Regional Council — Esplanade sport and fitness facilities'],
+          ['https://sunlover.com.au/getting-here/', 'Sunlover — getting to the Reef Fleet Terminal'],
+          ['https://cairnsmuseum.org.au/visitor-information/', 'Cairns Museum — visitor information'],
+          ['https://www.bom.gov.au/qld/cairns/climate.shtml', 'Bureau of Meteorology — Cairns climate']
+        ],
+        stages: [['Write the booking details', 'Save the operator, date, check-in time, named terminal or desk, berth, boarding documents and return location. Ask the operator about mobility or luggage needs before travel.'], ['Separate the waterfront zones', 'Walk the public Esplanade, use the council Lagoon only while open, and do not enter tidal or estuary water. Check signs and any local closure before approaching the edge.'], ['Set an indoor anchor', 'Use Cairns Museum or another confirmed venue as a deliberate heat or rain stop; check its current hours and admission before making it the day’s fallback. Carry drinking water and sun protection for the walk between stops.'], ['Keep the boat day protected', 'Stay overnight in Cairns, check the marine notice and operator message, and leave a generous gap before any onward flight. A cancellation changes the day; it does not create a safe same-day substitute vessel.']],
+        risks: [['Wrong terminal or check-in', 'Operators do not share one departure contract. A correct marina address still may not identify the right desk, berth, boarding time or return transfer.'], ['Offshore weather mismatch', 'A city view cannot establish reef sea conditions. Follow the booked operator’s marine updates and cancellation terms; preserve a Cairns alternative that can be reached on foot or by local transport.'], ['Heat, wet season or facility notice', 'Cairns is hot and humid in summer, with most rainfall generally falling January to March; daily storms and warnings vary. Use that as broad timing only, then check the Bureau’s current forecast, council Lagoon status and indoor venue hours. Shorten the walk rather than chasing a second distant stop.']],
+        duration: 'Allow half a day for the Esplanade and Lagoon, or a full city day when you add one confirmed museum visit. A reef trip is a separate full-day booking; keep the previous night and post-trip connection in Cairns.',
+        combine: 'Use the waterfront before or after the reef trip only when the vessel return and fatigue leave room. Do not rely on an airport arrival, Kuranda crossing or Palm Cove excursion to fit around the same check-in window.',
+        verify: 'Check the booked operator’s check-in point, time, berth, marine update and cancellation terms; Cairns Regional Council Lagoon status and access; current venue hours; local signs; and your transfer to the next night or airport.',
+        faq: [
+          ['Do all reef boats check in at Reef Fleet Terminal?', 'No. Sunlover lists Reef Fleet Terminal, 1 Spence Street, for its own departures. Use the terminal, desk, check-in time and berth on your own booking.'],
+          ['Is the Esplanade Lagoon an ocean beach?', 'No. It is a council-managed city swimming facility. Check current council hours and closures, and do not substitute the adjacent tidal foreshore or estuary for a beach swim.'],
+          ['What is a useful rainy-day plan?', 'Keep the city visit modular: use an indoor venue with hours checked for your date, and add the Lagoon or promenade only if council status and weather suit. If the reef operator cancels, follow its booking terms rather than assuming another boat is available.'],
+          ['Can I arrive by plane and make an early reef departure?', 'A same-morning flight creates a connection risk if baggage, traffic or the flight changes. Stay in Cairns the night before or ask the operator whether its actual check-in rules support your arrival; never infer a guaranteed connection from the map.']
+        ]
       }),
       g({
-        slug: 'kuranda-rail-skyrail', name: 'Kuranda Rail & Rainforest Cableway', motif: 'two-mode rainforest crossing', instrument: 'two-way-ticket', imageQuery: 'Kuranda Scenic Railway Barron Gorge Queensland', imageAlt: 'Kuranda Scenic Railway passing through tropical rainforest',
-        summary: 'A two-mode rainforest journey whose rail station, cableway terminal, coach transfer and weather cancellation are matched before purchase.',
-        orientation: 'treat the scenic railway and cableway as directional components with different terminals, not interchangeable return rides.', access: 'Book the exact combination and confirm hotel transfer, Cairns or Freshwater rail boarding and Smithfield connections.', sequence: 'Use the time-sensitive mode first, keep Kuranda village contained, stop only at managed rainforest platforms and take the booked return.', boundary: 'The corridor crosses ancient rainforest and living Djabugay Country. Use recognised cultural interpretation and stay within managed access.',
-        stages: [['Audit the ticket', 'Match date, direction, station, terminal and transfers.'], ['Ride the first mode', 'Arrive before check-in and follow operator safety instructions.'], ['Keep Kuranda focused', 'Choose one cultural, market or nature experience rather than chasing every attraction.'], ['Complete the second mode', 'Return through the confirmed terminal before coach or rail cutoff.']],
-        risks: [['Terminal mismatch', 'Cairns, Freshwater and Smithfield are not one station.'], ['Weather disruption', 'Heavy rain, wind or maintenance can alter either mode.'], ['Tourist wildlife ethics', 'Use accredited experiences and avoid handling or staged contact that compromises animals.']],
-        duration: 'Reserve a full day and leave the evening flexible.', combine: 'Do not add Port Douglas or a reef cruise; Cairns Esplanade is the sensible finish.', verify: 'Confirm ticket components, station, transfers, weather, operator alerts, accessibility and return time.'
+        slug: 'kuranda-rail-skyrail', name: 'Kuranda Rail & Rainforest Cableway', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'two-mode rainforest crossing', instrument: 'two-way-ticket', imageQuery: 'Kuranda Scenic Railway Barron Gorge Queensland', imageAlt: 'Kuranda Scenic Railway passing through tropical rainforest',
+        summary: 'A full-day one-way rail and cableway crossing between Cairns and Kuranda, with station transfers and weather notices checked against the exact ticket.',
+        searchSummary: 'Compare the Kuranda Scenic Railway and Skyrail ticket direction, Cairns or Freshwater station, Smithfield coach transfer, luggage limits and service notices before a full-day visit.',
+        orientation: 'The KSR Classic Experience combines one direction by Kuranda Scenic Railway with the other by Skyrail; it is not a return ride on both. Cairns and Freshwater are separate railway boarding choices, while Skyrail starts at Smithfield. The package’s direction and coach transfer link those nodes. Kuranda village is the middle of a transport day, not a quick add-on to a reef cruise or northern-coast drive.',
+        access: 'Choose the departure station and direction printed on the package, then verify where the coach boards and which station it serves. KSR schedules and Skyrail operations can change for dates, weather or maintenance, so use the operators’ current timetable, notices and your confirmation. Skyrail restricts baggage to small personal items; arrange storage for suitcases before leaving your Cairns hotel and confirm any mobility or equipment requirements with both operators.',
+        sequence: 'Start from the exact Cairns or Freshwater boarding point, make the rail or Skyrail crossing in the booked direction, and use only the village time that remains before the named return transfer. Check which intermediate stops are operating on your date instead of planning around a photo stop from an old itinerary. Finish at the confirmed terminal or station, then keep the evening clear for a delayed service or slower transfer.',
+        boundary: 'Stay on the railway and cableway’s managed access, follow staff instructions and use the visitor interpretation to understand Djabugay Country. Rainforest weather is part of the setting, but it does not mean a service is operating; the current operator status controls.',
+        decisions: [['Pick the transport pair', 'Choose the Classic Experience when one scenic rail leg and one Skyrail leg suit the group; compare direction, station, coach transfer and ticket conditions before paying.'], ['Travel without a suitcase', 'Keep only a small day bag for the crossing and store larger luggage in Cairns. Ask operators in advance about prams, mobility equipment or other bulky items.'], ['Set a firm return point', 'Use the confirmed station or coach meeting point and leave Kuranda before the margin disappears. If a service changes, take the operator’s revised transfer plan rather than making a separate town-to-city connection.']],
+        sources: [
+          ['https://ksr.com.au/planning-and-pricing/departure-times', 'Kuranda Scenic Railway — departure times'],
+          ['https://ksr.com.au/Tourpackages/Pages/KSRClassic.aspx', 'Kuranda Scenic Railway — Classic Experience'],
+          ['https://skyrail.com.au/visitor-information/faqs/', 'Skyrail — visitor FAQs'],
+          ['https://skyrail.com.au/visitor-information/notices/', 'Skyrail — service notices']
+        ],
+        stages: [['Map the booked nodes', 'Write down Cairns or Freshwater, the Skyrail Smithfield terminal, the coach meeting point and the order of travel. Save the operator confirmation offline.'], ['Check the operating day', 'Review KSR departures, Skyrail notices, intermediate stop status and meeting instructions for the actual date. If the package changes, revise the whole link rather than keeping only one ticket leg.'], ['Use Kuranda selectively', 'Choose a small number of village stops that fit the confirmed dwell time, walking needs and return. Keep luggage stored and return to the stated meeting point early.'], ['Close at the correct end', 'Use the package transfer to finish the crossing, then leave time for the ride back to accommodation. Avoid a tight flight, reef departure or second long excursion that depends on every segment being on time.']],
+        risks: [['Three different terminals', 'Cairns station, Freshwater station and Smithfield Skyrail are distinct locations. A package coach is the link; a map distance is not a transfer plan.'], ['Unusable luggage or equipment', 'Skyrail’s small-bag limit can make a suitcase, large camera case or bulky mobility item unsuitable. Confirm operator rules and storage before the travel morning.'], ['Weather, maintenance or full departures', 'Rain is not itself proof of cancellation, and a clear forecast does not guarantee operation. Check both operators’ current notices and ticket terms; peak dates can also limit a preferred direction or departure.']],
+        duration: 'Reserve a full day for both scenic journeys, the included coach and a contained village visit. Leave the evening and next connection open enough to absorb a delay.',
+        combine: 'Keep this as the day’s main excursion. Do not add a reef vessel, Palm Cove, Port Douglas or a same-day airport connection; they use separate transport and return contracts.',
+        verify: 'Check KSR departure times and boarding station, Skyrail notices and baggage rules, exact ticket direction, coach location, meeting time, intermediate stop access and any accessibility requirements.',
+        faq: [
+          ['Does the Classic Experience include both rides?', 'It pairs one-way Kuranda Scenic Railway and Skyrail journeys and includes the coach transfer in the package. Check the confirmed direction, station and meeting details for your ticket.'],
+          ['Which station or terminal should I use?', 'The railway offers Cairns and Freshwater boarding options, and Skyrail uses Smithfield. The booked direction determines the sequence and coach connection; do not plan to walk between these nodes.'],
+          ['Can I take a suitcase on Skyrail?', 'Skyrail’s FAQ limits baggage to small personal items and says luggage is not carried on the cableway, coach or rail. Store a suitcase in Cairns and confirm the current operator rule before travel.'],
+          ['Does rain automatically cancel the crossing?', 'No. Rain can be part of a rainforest visit, but actual service status can change for weather or maintenance. Check both operators’ notices and follow any revised ticket or transfer instructions.']
+        ]
       }),
       g({
-        slug: 'northern-beaches-palm-cove', name: 'Northern Beaches & Palm Cove', motif: 'patrol-and-stinger coast', instrument: 'beach-safety-strip', imageQuery: 'Palm Cove beach Cairns Queensland', imageAlt: 'Palm-lined beach at Palm Cove north of Cairns',
+        slug: 'northern-beaches-palm-cove', name: 'Northern Beaches & Palm Cove', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'patrol-and-stinger coast', instrument: 'beach-safety-strip', imageQuery: 'Palm Cove beach Cairns Queensland', imageAlt: 'Palm-lined beach at Palm Cove north of Cairns',
         summary: 'A tropical beach day selected by patrol, marine stinger advice, crocodile warnings and bus or road return rather than postcard calm.',
-        orientation: 'choose one northern beach and locate the patrolled or netted swimming area before entering the sand.', access: 'Use the current bus route, hotel transfer or legal parking and know the last service back to Cairns.', sequence: 'Read the beach signs, swim only where advised, use shade through midday and return before storms or darkness.', boundary: 'Never enter creeks, estuaries or unpatrolled water. Wildlife and stinger controls are not optional even when others ignore them.',
-        stages: [['Choose the managed beach', 'Verify patrol, net or current local swimming advice.'], ['Read every warning', 'Check crocodile, stinger, surf and water-quality signs.'], ['Stay inside the safe window', 'Use sun protection and leave the water when patrol or weather changes.'], ['Take the known return', 'Reach the bus or vehicle before tropical darkness and storm.']],
-        risks: [['Marine stingers', 'Seasonal advice and protective enclosures must be followed.'], ['Crocodiles', 'Keep away from creek mouths and obey all warnings.'], ['Tropical storms', 'Lightning and intense rain can arrive quickly.']],
-        duration: 'Half a day is enough for one beach; use a full day only with a nearby meal and shade.', combine: 'Pair with Cairns or Port Douglas on the same road, not the Daintree.', verify: 'Check Beachsafe, local patrol, stinger and crocodile advice, bus service, storm and UV.'
+        searchSummary: 'Plan a Palm Cove day from Cairns around a date-specific Translink or booked transfer return, local beach advice, shade and a no-swim fallback.',
+        orientation: 'Treat Palm Cove as one deliberate coastal outing from Cairns, not a sampler of every northern beach. Decide whether the purpose is a shoreline walk, a long meal or swimming; the first two do not require entering the water. The coastal setting can change from an inviting photograph to a no-swim day under current surf, stinger, crocodile, patrol or weather advice. Choose the beach activity after checking local information, and keep the trip worthwhile if the water is closed or unsuitable.',
+        access: 'Before leaving central Cairns, enter Palm Cove and your actual date and time into the Translink journey planner, then record the outbound stop, every transfer and a return option that still works after your planned meal or walk. A route appearing in search is not proof that its return fits your day. If the planner gives too little margin, book a transfer or rental car with legal parking before departure; do not assume a late bus or hotel shuttle. Save the return details offline.',
+        sequence: 'Arrive in daylight, use the public beachfront and shaded streets at a comfortable pace, and choose a meal or rest stop before the warmest part of the day. Before entering the water, check the current Palm Cove Beachsafe information, flags, patrol presence and all local crocodile, stinger and surf signs. If any warning closes the swim or confidence is unclear, stay ashore and make that the complete outing. Start back with enough margin for the confirmed transport and changing tropical weather.',
+        boundary: 'Do not use a stinger enclosure or the behavior of other swimmers as a guarantee that conditions are safe. Enter water only where current local advice permits and follow lifesaver instructions; keep away from creek mouths, estuaries and signed crocodile areas. Respect beach closures and wildlife. This guide does not promise patrol hours, a net, swimming safety or a particular bus service on your date.',
+        decisions: [['Make the transport work first', 'Compare the real Translink itinerary and return with a pre-booked transfer or car. If no dependable return fits, stay in Cairns or move the beach visit to a day with a confirmed ride.'], ['Decide on water separately', 'A beach visit can still be a walk and meal. Swim only if current beach information, flags, patrol and local signs allow it; a net or a calm surface does not override a warning.'], ['Choose half-day or full-day', 'Use a half-day for the shore and return. Add a meal and longer rest only when the transport window, shade, venue opening and weather support it. Do not add Port Douglas or the Daintree to this outing.']],
+        sources: [
+          ['https://translink.com.au/plan-your-journey', 'Translink — date-specific journey planner and service updates'],
+          ['https://beachsafe.org.au/', 'Surf Life Saving Australia — Beachsafe beach information'],
+          ['https://www.bom.gov.au/qld/cairns/climate.shtml', 'Bureau of Meteorology — Cairns climate and seasonal context'],
+          ['https://tropicalnorthqueensland.org.au/', 'Tourism Tropical North Queensland — official visitor guide']
+        ],
+        stages: [['Lock the outward and return legs', 'Plan Cairns to Palm Cove for your date and the time you expect to leave. Note stops, transfers, service alerts and an alternate ride before buying lunch or setting a swim plan.'], ['Settle ashore', 'Walk the public beachfront or shaded streets, keep drinking water and sun protection close, and make a meal or rest stop the anchor if the day is hot.'], ['Check current beach conditions', 'Use the Palm Cove Beachsafe listing and on-site flags, patrol and warning signs. Do not enter water when advice is closed, absent or unclear; never approach creek or estuary edges against signs.'], ['Return with daylight and margin', 'Leave for the confirmed stop early enough to absorb a missed connection or weather change. If the return no longer works, use the transfer arranged in advance rather than relying on an assumed late service.']],
+        risks: [['Return gap', 'A bus route can exist without a useful return at the time you want. Check both directions, service updates and the final connection for your exact date before leaving Cairns.'], ['Water advice changes', 'Patrol, flags, surf, marine-stinger advice and crocodile notices are local and time-sensitive. A beach can remain a good place to sit while being unsuitable for swimming.'], ['Heat and tropical weather', 'Exposed sand and sudden storms can shorten the comfortable window. Keep shade, water, a sheltered meal option and an early return available; leave the shore when lightning or official advice requires it.']],
+        duration: 'Plan a half-day for a shoreline visit and confirmed return. Keep a full day only when a suitable meal or rest stop and the dated transport plan leave enough daylight and weather margin.',
+        combine: 'Pair Palm Cove with Cairns only when the return time is dependable. Port Douglas and the Daintree use the same broad coast corridor but are separate trip decisions; do not add them without checking the road, transfer and overnight plan.',
+        verify: 'Check the date-specific Translink plan and alerts in both directions, Palm Cove Beachsafe entry, on-site flags and patrol, crocodile and stinger notices, current local weather, and the transfer or parking details you will use.',
+        faq: [
+          ['Can I count on a direct bus from Cairns?', 'Do not assume a direct trip or a useful last service. Enter the actual date and times in the Translink planner, inspect every transfer and confirm the return before leaving Cairns. Arrange another transfer if the schedule does not support your plan.'],
+          ['Is Palm Cove always a swimming beach?', 'No. Use current Beachsafe information and local flags, patrol instructions and warnings. Conditions and controls can change; if advice is absent or unclear, stay out of the water and enjoy the shore instead.'],
+          ['How long should I allow?', 'A half-day is enough for a walk and return when transport fits. Add a meal or longer beach rest only if opening hours, weather, shade and the return connection leave a comfortable margin.'],
+          ['Can I combine Palm Cove with Port Douglas?', 'Only after checking the exact road or transfer and time at both places. For a Cairns-based visitor, Palm Cove can fill a simple coastal day; Port Douglas and the Daintree deserve separate routing and often a different overnight base.']
+        ]
       }),
       g({
-        slug: 'port-douglas-mossman', name: 'Port Douglas & Mossman Gorge', motif: 'coast-to-gorge gateway', instrument: 'gateway-pair', imageQuery: 'Mossman Gorge Daintree rainforest Queensland', imageAlt: 'Rainforest and clear water at Mossman Gorge',
-        summary: 'A northern base pairing a walkable coastal town with a managed rainforest gorge while shuttle, swimming advice and road time stay explicit.',
-        orientation: 'use Port Douglas for services and Mossman Gorge Centre as the required rainforest gateway.', access: 'Drive or use a booked transfer north, then follow the current parking and shuttle system for the gorge.', sequence: 'Visit the gorge early through its managed entrance, return for a town or coast afternoon and avoid another long road leg.', boundary: 'Mossman Gorge is Kuku Yalanji Country. Use official interpretation, respect cultural guidance and never assume the river is safe to swim.',
-        stages: [['Reach the centre', 'Confirm opening, shuttle, accessibility and cultural experiences.'], ['Read the gorge conditions', 'Follow warning signs for current, rain and track access.'], ['Walk one rainforest loop', 'Stay on the formed route and leave rocks and water undisturbed.'], ['Return to the coast base', 'Finish in Port Douglas without extending into the Daintree after dusk.']],
-        risks: [['Fast water', 'Gorge current and submerged hazards can be fatal; obey no-swim advice.'], ['Shuttle timing', 'The managed transfer has operating windows and capacity.'], ['Road fatigue', 'The coastal road is winding and busy; avoid late extra distance.']],
-        duration: 'Use a full day from Port Douglas or two nights for a relaxed base.', combine: 'Pair with Port Douglas town, not Cape Tribulation on the same day.', verify: 'Check Mossman Gorge Centre, shuttle, river warnings, road status, heat, rain and cultural-tour booking.'
+        slug: 'port-douglas-mossman', name: 'Port Douglas & Mossman Gorge', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'coast-to-gorge gateway', instrument: 'gateway-pair', imageQuery: 'Mossman Gorge Daintree rainforest Queensland', imageAlt: 'Rainforest and clear water at Mossman Gorge',
+        summary: 'A practical Port Douglas base for a separate Mossman Gorge visit, using the Centre shuttle and choosing a walk that fits current track, river and mobility conditions.',
+        orientation: 'From Port Douglas, travel north on the coastal road to Mossman Gorge Cultural Centre, then use its shuttle to reach the gorge. There is no footpath between the Centre and gorge, so do not walk the highway. A Gorge visit and Port Douglas town time fit one day; Cape Tribulation is a separate road journey.',
+        access: 'Drive or book a transfer to the Cultural Centre and check its current shuttle timetable, fares, last return bus and any cultural experience before setting out. The shuttle is the access link; schedules and terms can change.',
+        sequence: 'Reach the Centre early enough to use the shuttle and complete one suitable walk, then return to Port Douglas for a low-key town or coast afternoon. Baral Marrjanga is the shortest, easier option; choose the longer rainforest circuit only if footing, heat and available time suit. Do not enter the river based on appearance or a previous visit.',
+        boundary: 'Mossman Gorge is Kuku Yalanji Country. Follow the Cultural Centre’s guidance, track signs and river warnings. Rain can make paths slippery and the river can rise or change quickly; swimming is not a default activity.',
+        decisions: [['Choose an accessible short walk', 'Baral Marrjanga is 270 m and usually takes 5–10 minutes; the Centre describes it as easy and suitable for wheelchairs and strollers. Confirm current access before travelling.'], ['Choose more walking', 'The Rainforest Circuit is 2.4 km return, around 45 minutes. The 300 m Lower River Track has slippery steps, so skip it when footing or mobility makes that a poor fit.'], ['If the shuttle or tracks change', 'Follow the Centre’s current last-bus and access information. If gorge access is unavailable, stay around Port Douglas or choose a currently open, managed local visit rather than walking the highway or improvising a river entry.']],
+        sources: [
+          ['https://www.mossmangorge.com.au/plan-your-visit/getting-here-and-around', 'Mossman Gorge — getting here and around'],
+          ['https://www.mossmangorge.com.au/things-to-do/self-guided-walks', 'Mossman Gorge — self-guided walks']
+        ],
+        stages: [['Reach the Cultural Centre', 'Use the current road and parking information and check shuttle operation and last return.'], ['Select a walk', 'Match Baral Marrjanga, Lower River Track or Rainforest Circuit to mobility, footing, rain and daylight.'], ['Read the river and track notices', 'Stay on open formed paths and obey closures; do not treat clear water as a safety signal.'], ['Return to Port Douglas', 'Use the shuttle and keep the afternoon to town or coast rather than adding the Daintree crossing.']],
+        risks: [['Shuttle dependency', 'There is no footpath between the Centre and gorge; missing the last shuttle is not a reason to walk the highway.'], ['Rain and slippery footing', 'The Lower River Track has slippery steps and river conditions can change rapidly after rain.'], ['Road and day scope', 'Mossman Gorge and Cape Tribulation require different road plans; do not stack them into a rushed day.']],
+        duration: 'Allow a half day for the Gorge from Port Douglas, with extra margin for transfer and a slower walk. Two Port Douglas nights make the coast and gorge easier to separate.',
+        combine: 'Pair Mossman Gorge with Port Douglas town or coast. Visit Cape Tribulation on another day or with an overnight north of the Daintree River.',
+        verify: 'Check Centre and shuttle operating information, last bus, selected walk status, rain, river warnings, road conditions and cultural guidance.',
+        faq: [
+          ['Can I walk from the Centre to the gorge?', 'No. The operator says there is no footpath between the Cultural Centre and the gorge; use the shuttle and check its current last return.'],
+          ['Which walk is suitable for a short, step-free visit?', 'Baral Marrjanga is 270 m, around 5–10 minutes, and is described as easy and wheelchair- and stroller-appropriate. Confirm current access with the Centre.'],
+          ['Is it safe to swim after rain?', 'Do not infer safety from water clarity or a previous visit. River conditions can change quickly after rain; follow current signs and local advice and skip the water when uncertain.']
+        ]
       }),
       g({
-        slug: 'daintree-cape-tribulation', name: 'Daintree & Cape Tribulation', motif: 'river-crossing rainforest road', instrument: 'crossing-gate', imageQuery: 'Daintree rainforest Cape Tribulation Queensland', imageAlt: 'Daintree rainforest meeting the coast near Cape Tribulation',
-        summary: 'A remote rainforest-coast journey built around the Daintree River crossing, road condition, limited services and an overnight rather than a rushed return.',
-        orientation: 'treat the ferry crossing, forest boardwalks, beach edges and accommodation as separate stages north of the river.', access: 'Check the river crossing, road works, vehicle suitability, fuel and accommodation before leaving Mossman.', sequence: 'Cross early, select two managed boardwalk or visitor stops, avoid unmarked water access and stay overnight or turn back well before dusk.', boundary: 'This is Eastern Kuku Yalanji Country and World Heritage rainforest. Follow cultural guidance, crocodile warnings, cassowary speed and biosecurity.',
-        stages: [['Confirm the crossing', 'Check operating status, queues and payment before committing north.'], ['Choose managed rainforest access', 'Use signed boardwalks and recognised cultural experiences.'], ['Keep beaches observational', 'Stay away from creek mouths and unpatrolled water.'], ['Close before the road darkens', 'Reach accommodation or the ferry with daylight and fuel reserve.']],
-        risks: [['Crocodile habitat', 'Do not swim in beaches, rivers or creeks unless current official advice explicitly permits it.'], ['Cassowaries and roads', 'Drive slowly and never feed or crowd wildlife.'], ['Flood and isolation', 'Heavy rain can affect roads, ferry and communications.']],
-        duration: 'Stay at least one night north of the river; two gives a real weather buffer.', combine: 'Pair with Port Douglas before or after, not as a single Cairns day dash.', verify: 'Check ferry, road, flood and weather alerts, accommodation, fuel, crocodile and cassowary guidance.'
+        slug: 'daintree-cape-tribulation', name: 'Daintree & Cape Tribulation', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'river-crossing rainforest road', instrument: 'crossing-gate', imageQuery: 'Daintree rainforest Cape Tribulation Queensland', imageAlt: 'Daintree rainforest meeting the coast near Cape Tribulation',
+        summary: 'A remote rainforest and coast drive north of the Daintree River, planned around the ferry, current road access, limited services and an overnight buffer.',
+        orientation: 'The route runs from Mossman north to the Daintree River ferry, then along the narrow, winding road to Cape Tribulation. Ferry status, the road north and each boardwalk or beach access are separate checks. Standard 2WD access is possible on the main route when open, but road notices and vehicle conditions govern the day.',
+        access: 'Before leaving Mossman, check the ferry operator’s current service status, operating window and queue updates; then confirm Queensland Parks alerts for the road and the specific walks. Allow for school holiday queues, carry fuel and supplies appropriate to the remote route, and confirm accommodation before crossing.',
+        sequence: 'Cross in daylight, select a small number of open managed stops such as Dubuji Boardwalk, and reach confirmed accommodation north of the river before dusk. If ferry service is suspended, do not set out to cross; if a road or track closes after you are north, follow the live authority instructions and use confirmed local accommodation rather than improvising a route.',
+        boundary: 'This is Eastern Kuku Yalanji Country and World Heritage rainforest. Follow Traditional Owner and park guidance, remain on open tracks, drive cautiously for cassowaries and keep clear of beaches, rivers and creeks where crocodiles may be present. Flooding can isolate the route and disrupt ferry service.',
+        decisions: [['Best for', 'A self-drive or booked tour with a full daylight window, flexible plans and at least one night north of the river. Two nights give more room for rain or access changes.'], ['Skip the day dash', 'A Cairns return to Cape Tribulation in one day leaves little margin for ferry queues, stops or delays. Base in Port Douglas or stay north of the river.'], ['Rain or ferry fallback', 'During the wetter months, especially January to March around Cairns, check live warnings rather than relying on seasonal averages. If ferry, road or track access is affected, stay south of the river or at confirmed accommodation; use Mossman Gorge only if it is open and reachable.']],
+        sources: [
+          ['https://daintreeferry.com.au/', 'Daintree Ferry — service information'],
+          ['https://daintreeferry.com.au/status-updates/', 'Daintree Ferry — status updates'],
+          ['https://parks.desi.qld.gov.au/parks/daintree', 'Queensland Parks — Daintree National Park'],
+          ['https://parks.desi.qld.gov.au/parks/daintree/visiting-safely', 'Queensland Parks — visiting Daintree safely'],
+          ['https://parks.desi.qld.gov.au/parks/daintree/journeys/dubuji-boardwalk', 'Queensland Parks — Dubuji Boardwalk'],
+          ['https://www.bom.gov.au/qld/cairns/climate.shtml', 'Bureau of Meteorology — Cairns climate']
+        ],
+        stages: [['Check before the ferry', 'Review service and queue updates, operating window, weather and park alerts before committing north.'], ['Cross and drive carefully', 'Use the ferry, obey road signs and allow for a narrow, winding road and wildlife.'], ['Choose open rainforest access', 'Use signed boardwalks such as Dubuji only when the current park notice confirms access.'], ['Finish at a confirmed base', 'Reach accommodation before dark, or turn back south while the ferry and road remain available.']],
+        risks: [['Ferry queue or service change', 'Operating window, river conditions and status updates can change; school holiday queues add uncertainty.'], ['Flooding and isolation', 'Heavy rain can close roads and tracks or interrupt the crossing. Follow official alerts and do not cross barriers.'], ['Wildlife and water', 'Slow for cassowaries and never enter beaches, creeks or rivers based on appearance or past conditions.']],
+        duration: 'Plan at least one night north of the river and two when a weather buffer matters. Treat the crossing and road as a full route with stops, not a short extension from Cairns.',
+        combine: 'Combine with Port Douglas or Mossman on a separate day. Avoid a same-day Cairns arrival or departure and do not rely on reaching the ferry near its closing window.',
+        verify: 'Check Daintree Ferry operating status and queues, Queensland Parks alerts and each planned track, current weather and flood warnings, vehicle and fuel needs, accommodation, crocodile advice and daylight.',
+        faq: [
+          ['Can a regular 2WD reach Cape Tribulation?', 'Queensland Parks describes standard 2WD access on the main route when conditions allow, but the road is narrow and winding. Check current park and road notices for your date and vehicle.'],
+          ['What should I do if the ferry is delayed or closed?', 'Use the ferry status and road alerts before setting out. If service is suspended, do not cross; if a road closes after you are north, follow current authority instructions and use confirmed local accommodation. Do not plan around an assumed crossing time.'],
+          ['Should I swim at Cape Tribulation?', 'Treat beaches, rivers and creeks as wildlife habitat and follow current crocodile warnings. Do not swim unless official local advice specifically identifies a safe, open place.']
+        ]
       })
     ]
   }),
@@ -66,61 +172,163 @@ export const australiaNorthClusters = [
   cluster({
     slug: 'whitsundays-great-barrier-reef',
     name: 'Whitsundays & Great Barrier Reef',
+    reviewDate: '12 October 2026',
+    reviewIsoDate: '2026-10-12',
     region: 'Queensland',
     band: 'tropics',
     family: 'coral-forecast-chart',
     label: 'ISLANDS / VESSELS / REEF CONDITION',
     tagline: 'Name the vessel, reef zone and return before promising blue water.',
-    hubIntro: 'The Great Barrier Reef is not one excursion. Airlie Beach, Whitehaven, resort islands, outer-reef platforms and the Townsville–Magnetic Island corridor use different ports, vessels, weather limits and marine-park practices. Five chapters make operator identity, swimming ability, coral conduct and cancellation terms part of the visible plan.',
-    stay: 'Choose the mainland or island base that serves the booked vessel. A beautiful island address can make another reef departure impractical.',
-    transfer: 'Flights, coaches and rail reach several gateways, but every boat uses a named marina or terminal. Confirm baggage, check-in, sea-state and return directly.',
+    hubIntro: 'Choose the reef day by its departure base and crossing, then choose an island day separately. Airlie Beach is the mainland base for Whitehaven and many reef boats; Hamilton Island has its own airport and marina; Townsville’s short ferry reaches Magnetic Island, not the Whitsunday island chain. Hardy Reef is an offshore passage of about three hours from Airlie or two from Hamilton Island, while Townsville is roughly 275 km by road from Airlie. These are separate operating areas, not same-day add-ons. Match nights, vessel, sea forecast, swimming fit and the confirmed return before choosing.',
+    searchSummary: 'Choose between Airlie Beach and Hamilton Island for Whitehaven and Hardy Reef, or Townsville for the separate Magnetic Island ferry. Compare vessel time, base nights, terminal, weather fallback and return before booking.',
+    stay: 'For Airlie, arrive the night before a major boat and allow separate days for Whitehaven and the outer reef. Hamilton Island can shorten the Hardy Reef crossing but needs its own lodging and marina or airport transfer. Townsville is a distinct gateway for Magnetic Island; add a local night instead of treating its 275 km road distance from Airlie as a day excursion.',
+    transfer: 'Whitsunday Coast Airport is inland at Proserpine, about 38 km from Airlie; prebook the road transfer. Cruise Whitsundays’ Airlie day trips use Port of Airlie, while Hamilton Island departures use the main marina. Hardy Reef takes about three hours each way from Airlie and two from Hamilton Island. Townsville–Airlie is about 275 km by road; SeaLink’s passenger ferry to Magnetic Island leaves Townsville Breakwater terminal and takes about 20 minutes. Check exact-date check-in, sailing/status, luggage, marine forecast and operator change terms.',
+    tripShapes: [
+      { title: '4 nights · Airlie, two different boat days', copy: 'Sleep in Airlie before departure. Use one full day for a Whitehaven itinerary that names the landing you want; use another for the long Hardy Reef crossing. Keep the intervening or final day on land as a weather, rest and transfer buffer. Reach Port of Airlie or another terminal only when it is printed on that booking; PPP is inland at Proserpine and needs a road transfer.' },
+      { title: '3–4 nights · Hamilton Island, one priority at sea', copy: 'Choose this base if its airport or marina transfer fits the trip and a shorter published Hardy Reef crossing matters. Decide between one reef day and one Whitehaven day instead of squeezing both into arrival and departure margins. Confirm which marina the vessel uses, how your accommodation handles bags, and the last ferry or flight connection before adding an island stay.' },
+      { title: '2 nights · Townsville and Magnetic Island', copy: 'Treat this as a separate central-reef stop: arrive in Townsville, take the passenger ferry from Breakwater to Nelly Bay, then match the island bus to the selected walk or village. One island day can suit the Forts Walk and a single bay; keep an overnight in Townsville for weather or return-service disruption. Do not plan the roughly 275 km Townsville–Airlie road leg and an island day together.' }
+    ],
+    faq: [
+      ['Which base should I choose for Hardy Reef?', 'Compare the confirmed departure and crossing with where you sleep. Cruise Whitsundays lists departures from Port of Airlie, Daydream Island and Hamilton Island; its FAQ estimates about three hours each way from Airlie and two from Hamilton Island. Match the terminal and return to your booking and leave a buffer after arrival.'],
+      ['Can I make Townsville and Airlie one day trip?', 'No useful same-day plan should rely on that. The operator FAQ puts Townsville about 275 km and three hours by road from Airlie, and Magnetic Island adds a separate Townsville ferry, island bus and return. Treat Townsville as its own base.'],
+      ['Does rain automatically cancel a reef trip?', 'No. Cruise Whitsundays says tours operate rain-or-shine, but the skipper’s safety decision and sea conditions govern. Check the Mackay coastal forecast and operator notice, then keep a land day and the live change or refund terms as your fallback.'],
+      ['How far ahead should I check stingers and reef conduct?', 'Recheck the operator and Great Barrier Reef Marine Park guidance for your date. The operator notes stingers may be present year-round and are more common October–May; use any supplied suit, follow crew directions, and do not touch or stand on coral.']
+    ],
     sources: [
       ['https://www.australia.com/en/places/whitsundays-and-surrounds/guide-to-the-whitsundays.html', 'Tourism Australia — Whitsundays'],
       ['https://www.tourismwhitsundays.com.au/', 'Tourism Whitsundays — official visitor guide'],
       ['https://www.gbrmpa.gov.au/visit', 'Great Barrier Reef Marine Park Authority — visitor guidance'],
+      ['https://www.cruisewhitsundays.com/about-us/faqs/', 'Cruise Whitsundays — departure terminals, passage times and weather'],
+      ['https://www.bom.gov.au/qld/forecasts/mackay-coast.shtml', 'Bureau of Meteorology — Mackay coastal waters forecast'],
       ['https://parks.desi.qld.gov.au/parks/whitsunday-islands', 'Queensland Parks — Whitsunday Islands'],
       ['https://parks.desi.qld.gov.au/parks/magnetic-island', 'Queensland Parks — Magnetic Island']
     ],
     guides: [
       g({
-        slug: 'airlie-beach-shute-harbour', name: 'Airlie Beach & Shute Harbour', motif: 'mainland vessel board', instrument: 'marina-board', imageQuery: 'Airlie Beach Shute Harbour Whitsundays', imageAlt: 'Airlie Beach marina and Whitsunday coast',
-        summary: 'A mainland gateway day that distinguishes Port of Airlie, Coral Sea Marina and Shute Harbour before any island booking.',
-        orientation: 'map the exact marina, lagoon, bus stop and accommodation rather than treating Airlie as one dock.', access: 'Reach the correct terminal with baggage allowance and check-in time confirmed by the operator.', sequence: 'Reconnoitre the departure point, use the managed lagoon or town walk, prepare equipment and keep the evening quiet before the sea day.', boundary: 'The lagoon is managed swimming; surrounding tidal coast is not automatically safe. Respect marina security and working docks.',
-        stages: [['Name the marina', 'Match the operator to the exact terminal and berth.'], ['Test the land transfer', 'Walk or ride the real route with baggage assumptions checked.'], ['Use the managed waterfront', 'Stay within signed recreation areas and shade.'], ['Prepare the vessel day', 'Resolve medication, equipment, weather and cancellation contacts.']],
-        risks: [['Wrong departure point', 'Airlie has multiple marinas and Shute Harbour is separate.'], ['Heat and stingers', 'Follow lagoon and marine-stinger advice.'], ['Late arrival', 'Regional flights and coaches need a buffer before a boat booking.']],
-        duration: 'One gateway night before and after a major vessel trip is prudent.', combine: 'Pair with the booked Whitsunday trip, not another distant reef gateway.', verify: 'Confirm marina, check-in, transfer, baggage, marine forecast, stinger advice and cancellation terms.'
+        slug: 'airlie-beach-shute-harbour', name: 'Airlie Beach & Shute Harbour', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'mainland vessel board', instrument: 'marina-board', imageQuery: 'Airlie Beach Shute Harbour Whitsundays', imageAlt: 'Airlie Beach marina and Whitsunday coast',
+        summary: 'A mainland arrival plan built around three different boat nodes: Port of Airlie, Coral Sea Marina North and Shute Harbour.',
+        orientation: 'Airlie Beach is the accommodation town, not one shared dock. Whitsunday Coast Airport (PPP) is at Proserpine, about 30 minutes from Airlie by road; transfer options must be arranged for the flight you actually booked. In town, Cruise Whitsundays day cruises use Port of Airlie, Ocean Rafting checks in at Coral Sea Marina North, and island-transfer services also use Shute Harbour. These are separate addresses and schedules.',
+        access: 'From PPP, prebook an airport coach, taxi or rental car; the regional airport lists transfer operators and taxi information. If arriving by coach in Airlie, check the drop-off against your accommodation and marina. For a Cruise Whitsundays day trip, use its Port of Airlie maritime terminal; for Ocean Rafting, use Coral Sea Marina North; use Shute Harbour only when that is the named stop on your confirmed transfer. Check terminal, baggage rules, check-in and the return time in the same operator booking.',
+        sequence: 'Arrive and settle in Airlie before a boat day. Walk the waterfront and locate the exact terminal while there is daylight; then confirm the transfer from accommodation and prepare food, medication, sun protection and any required gear. On departure morning go to the operator’s named check-in desk, not the visually nearest marina. After return, keep the evening free for delays and sea fatigue.',
+        boundary: 'Marinas are working terminals; stay within public areas and follow staff directions. Choose a signed, managed swimming area for a land-based swim and follow local stinger, weather and water notices; the open tidal coast is not interchangeable with a pool.',
+        decisions: [['Choose Airlie as the base', 'It keeps mainland accommodation and boat departures together, but still requires a road transfer from PPP and a final walk, taxi or shuttle to the correct marina.'], ['Choose a marina-side start', 'For Cruise Whitsundays day cruises, start at Port of Airlie. Ocean Rafting lists Coral Sea Marina North as its check-in. Compare the booking address before choosing a hotel or airport pickup.'], ['Use Shute Harbour for the service that names it', 'Cruise Whitsundays’ island network includes Shute Harbour, but it is not the Port of Airlie terminal. Match your ferry and accommodation transfer to the live timetable and luggage conditions.'], ['If wind or rain disrupts the boat plan', 'Check the operator notice and Bureau forecast before leaving. If the sailing is cancelled or you choose not to go, use the Airlie Beach Lagoon if open, or stay in town for a sheltered meal; move the island activity only after the operator confirms a new space.']],
+        sources: [
+          ['https://www.whitsundaycoastairport.com.au/Business/About-Us', 'Whitsunday Coast Airport — location and access'],
+          ['https://www.whitsundaycoastairport.com.au/Transport-and-Parking/Buses-and-Transfers', 'Whitsunday Coast Airport — buses and transfers'],
+          ['https://www.cruisewhitsundays.com/about-us/faqs/', 'Cruise Whitsundays — Port of Airlie day-cruise terminal'],
+          ['https://www.cruisewhitsundays.com/island-transfers/', 'Cruise Whitsundays — island-transfer nodes'],
+          ['https://oceanrafting.com.au/contact/', 'Ocean Rafting — Coral Sea Marina North check-in'],
+          ['https://www.whitsundayrc.qld.gov.au/Community-and-Environment/Facilities-and-Recreation/Aquatic-Facilities', 'Whitsunday Regional Council — Airlie Beach Lagoon'],
+          ['https://www.bom.gov.au/qld/forecasts/mackay-coast.shtml', 'Bureau of Meteorology — Bowen to St Lawrence coastal waters']
+        ],
+        stages: [['Match arrival to the ground transfer', 'PPP is at Proserpine, not Airlie Beach. Reserve a listed coach, taxi or car and allow for the road leg before promising a same-day boat connection.'], ['Pin the booked terminal', 'Port of Airlie, Coral Sea Marina North and Shute Harbour are distinct nodes. Save the operator’s address and return terminal.'], ['Rehearse the morning', 'Check baggage acceptance, check-in and final boarding rules in the actual booking; allow time for the transfer from your lodging.'], ['Keep a mainland fallback', 'If the vessel cancels or conditions do not suit, use Airlie’s managed town facilities and rebook only against confirmed operator space.']],
+        risks: [['Terminal mismatch', 'A short map distance does not make the three marinas interchangeable; a missed boat can end the island plan.'], ['Flight-to-boat connection', 'PPP is roughly 30 minutes by road from Airlie, before baggage, traffic or transfer waiting time. Avoid a tight self-made connection.'], ['Sea state and cancellation', 'Rain alone does not predict a safe or cancelled trip. Check the marine forecast and the operator’s decision and refund/change terms.']],
+        duration: 'Arrive in Airlie the day before a major boat departure; keep the post-trip night on the mainland if onward travel matters.', combine: 'Pair the mainland base with one confirmed island or reef itinerary. Treat a same-day PPP arrival and boat check-in as a separate risk decision.', verify: 'Check the PPP transfer, exact terminal, check-in and boarding cutoff, baggage allowance, live timetable, coastal forecast, operator notices and cancellation terms.',
+        faq: [
+          ['Is Shute Harbour the same departure point as Port of Airlie?', 'No. Cruise Whitsundays lists both as separate nodes. Follow the terminal printed on your particular booking.'],
+          ['Which terminal does a Cruise Whitsundays day cruise use?', 'Its FAQ lists the maritime terminal at 24 The Cove Road, Port of Airlie, Airlie Beach. Check the booking for your departure and check-in time.'],
+          ['Can I transfer from Proserpine Airport to Airlie?', 'Yes, the airport lists bus/transfer providers and taxi information. Book the connection for your flight; do not assume a boat waits for a delayed arrival.']
+        ]
       }),
       g({
-        slug: 'whitehaven-hill-inlet', name: 'Whitehaven Beach & Hill Inlet', motif: 'tide-window landing', instrument: 'tide-window', imageQuery: 'Whitehaven Beach Hill Inlet Whitsundays', imageAlt: 'White silica sand and turquoise water at Whitehaven Beach',
-        summary: 'A boat or aircraft excursion whose landing site, tide view, track access and beach conduct depend on the exact operator and conditions.',
-        orientation: 'distinguish southern Whitehaven landings from Hill Inlet access at the northern end.', access: 'Book a licensed operator and confirm vessel, transfer craft, walking, meals and beach time.', sequence: 'Follow the operator landing, use only open tracks and platforms, swim under current advice and return on the named vessel.', boundary: 'Silica dunes and marine habitat are protected. Do not remove sand, leave tracks through vegetation or approach wildlife.',
-        stages: [['Audit the itinerary', 'Confirm which end of Whitehaven and whether Hill Inlet is actually included.'], ['Land under instruction', 'Use the crew’s transfer and footwear guidance.'], ['Walk the formal viewpoint', 'Stay on boardwalks and respect capacity.'], ['Return to the same vessel', 'Track tender and boarding time rather than drifting along the beach.']],
-        risks: [['Tender transfer', 'Wet landings and moving boats require mobility disclosure.'], ['Heat and exposure', 'Shade and water can be limited.'], ['Tide and weather', 'The visual pattern and landing can change with conditions.']],
-        duration: 'Use a full-day trip or a carefully described half-day; do not assume both island ends fit.', combine: 'Pair only with the operator’s included route.', verify: 'Check operator licence, landing, tide, marine forecast, stinger advice, mobility and return time.'
+        slug: 'whitehaven-hill-inlet', name: 'Whitehaven Beach & Hill Inlet', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'tide-window landing', instrument: 'tide-window', imageQuery: 'Whitehaven Beach Hill Inlet Whitsundays', imageAlt: 'White silica sand and turquoise water at Whitehaven Beach',
+        summary: 'A boat landing and short walk planned by island end and tide: Whitehaven’s beach and Hill Inlet’s Tongue Point lookout are different stops.',
+        orientation: 'Whitehaven Beach stretches along Whitsunday Island; Hill Inlet opens at its northern end, where the Tongue Point track looks across the inlet. Queensland Parks places the lookout track at Tongue Point and says boat access to it is possible from mid to high tide. Do not book a trip described only as “Whitehaven” if the northern lookout is your priority.',
+        access: 'Start from the port stated by your operator—commonly Port of Airlie, Coral Sea Marina North or Hamilton Island Marina—and verify whether the itinerary lands at southern Whitehaven, Tongue Bay/Hill Inlet, or both. Queensland Parks identifies the Hill Inlet lookout as a formed walk at Tongue Point; a boat operator controls landing and any tender transfer. Confirm track time, beach time, tender steps, mobility limits, water and the exact return vessel.',
+        sequence: 'For Hill Inlet, reach Tongue Bay only on the booked vessel or an authorized boat, follow the crew’s landing instructions, then allow about 40 minutes for the moderate 1.3 km return walk to the lookout and back before using any beach access. The 500 m return Lookout Beach branch is separate and also has a tide window. If the operator lands at Whitehaven’s southern end instead, keep that as the beach visit and do not assume a cross-island walk to Tongue Point. Return to the same vessel at the stated boarding time.',
+        boundary: 'Hill Inlet is tidal: Queensland Parks warns currents can be strong and water can rise rapidly. Stay on formed tracks, heed barriers and crew, carry drinking water, and do not wade or swim across the inlet to chase a view. Leave sand, shells, plants and wildlife undisturbed.',
+        decisions: [['Prioritize the lookout', 'Choose an itinerary that explicitly names Hill Inlet/Tongue Point and allows the moderate 1.3 km return lookout walk (about 40 minutes). The boat approach depends on a mid-to-high tide access window and park status.'], ['Prioritize beach time', 'Choose a Whitehaven landing with enough time for your preferred beach stretch; do not assume it includes Hill Inlet or the lookout track.'], ['Choose a gentler day', 'A high-speed raft can involve a bouncy ride and wet transfer; compare with a larger vessel or a flight-only viewpoint if motion, balance or tender steps are a concern. Disclose mobility needs before booking.'], ['If the landing or sea conditions change', 'The operator may alter or cancel the landing for wind, swell, tide or safety. Use the confirmed mainland town/lagoon day as the fallback; do not self-charter or cross tidal water to recover a missed viewpoint.']],
+        sources: [
+          ['https://parks.desi.qld.gov.au/parks/whitsunday-islands/journeys/hill-inlet-lookout-track', 'Queensland Parks — Hill Inlet lookout track'],
+          ['https://parks.desi.qld.gov.au/parks/whitsunday-islands/journeys/beach-track', 'Queensland Parks — Beach track and tide access'],
+          ['https://parks.desi.qld.gov.au/parks/whitsunday-islands/visiting-safely', 'Queensland Parks — visiting safely'],
+          ['https://www.cruisewhitsundays.com/experiences/whitehaven-beach-chill-grill/', 'Cruise Whitsundays — Whitehaven itinerary and conditions'],
+          ['https://oceanrafting.com.au/contact/', 'Ocean Rafting — Airlie check-in location']
+        ],
+        stages: [['Select the actual island end', 'Compare itinerary names and map the landing: southern Whitehaven beach and northern Hill Inlet are not a single walkable stop.'], ['Check the tide and park notice', 'Confirm Tongue Bay access, the lookout track and any alerts close to travel; a track page is not a live operator promise.'], ['Land, walk, then return', 'Use crew transfer directions, the formed track and the planned boarding time. Keep the optional beach branch within tide and daylight.'], ['Accept a changed itinerary', 'If the master changes the landing or cancels for safety, follow the operator message and choose a mainland day; do not improvise an inlet crossing.']],
+        risks: [['Tide and weather', 'Current can be strong and water level rise quickly; access at the beach track is tide-dependent.'], ['Landing logistics', 'A beach or tender landing may be wet, uneven and exposed. Ask about steps, walking distance and mobility fit before paying.'], ['Heat and limited facilities', 'The island is uninhabited; bring water, sun protection and any personal essentials specified by the operator.']],
+        duration: 'Give the day to one boat itinerary. Do not combine two island ends unless the operator explicitly schedules both with adequate landing time.', combine: 'Pair only with the booked vessel and its included route; leave scenic flights or an extra island landing for another day.', verify: 'Check named departure port, exact landing(s), Tongue Point inclusion, tide, Queensland Parks alerts, transfer steps, forecast, stinger advice, water plan, return time and cancellation terms.',
+        faq: [
+          ['Does every Whitehaven trip visit Hill Inlet?', 'No. Hill Inlet is at Whitehaven’s northern end. Confirm Tongue Bay/Tongue Point and allow about 40 minutes for Queensland Parks’ moderate 1.3 km return lookout track.'],
+          ['Can I walk from the south end of Whitehaven to the lookout?', 'Do not plan that connection. Tongue Point is at the northern end and reached by a separate boat landing; use only the route in your confirmed itinerary.'],
+          ['Can I walk down to the water at Hill Inlet?', 'Queensland Parks says access to the Beach track is possible from mid to high tide and warns the inlet current can be strong. Follow park/crew advice and do not wade across.']
+        ]
       }),
       g({
-        slug: 'hamilton-island', name: 'Hamilton Island', motif: 'resort-island transport loop', instrument: 'island-loop', imageQuery: 'Hamilton Island Whitsundays Queensland view', imageAlt: 'Hamilton Island and the Whitsunday waters',
-        summary: 'A resort-island stay planned around airport or ferry arrival, accommodation transport, buggy rules and the difference between island and reef days.',
-        orientation: 'use the airport, marina and accommodation zone as the island triangle.', access: 'Confirm flight or ferry terminal, baggage transfer, check-in and any buggy licence or booking.', sequence: 'Settle the island first, choose one beach or trail, reserve a separate weather day for reef or sailing and protect the outbound connection.', boundary: 'Resort access does not erase marine-park, wildlife, trail and road rules. Keep wallabies and birds unfed.',
-        stages: [['Resolve arrival transfer', 'Match luggage and accommodation to the airport or marina.'], ['Learn the island transport', 'Use shuttle or buggy only within current licence and safety rules.'], ['Choose one island day', 'Keep beach, trail or pool as the primary objective.'], ['Protect the departure', 'Return vehicle and reach the terminal before cutoff.']],
-        risks: [['Buggy incidents', 'Seatbelts, licences, road rules and alcohol limits apply.'], ['Weather cancellation', 'Island stay does not guarantee reef vessels or flights.'], ['Wildlife feeding', 'Do not feed birds or wallabies and secure food.']],
-        duration: 'Three nights allow one island day and one condition-dependent excursion.', combine: 'Pair with one Whitsunday operator, not a mainland day-trip checklist.', verify: 'Check ferry or flight, baggage, accommodation transfer, buggy rules, marine forecast and cancellation.'
+        slug: 'hamilton-island', name: 'Hamilton Island', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'resort-island transport loop', instrument: 'island-loop', imageQuery: 'Hamilton Island Whitsundays Queensland view', imageAlt: 'Hamilton Island and the Whitsunday waters',
+        summary: 'An island base planned around Great Barrier Reef Airport or Hamilton Island Marina, hotel transfer and the free island shuttle.',
+        orientation: 'Hamilton Island has two arrival nodes: Great Barrier Reef Airport (HTI) and Hamilton Island Marina. Cruise Whitsundays uses the marina for island connections and HTI for passengers connecting with flights; the operator distinguishes these in its timetable. Accommodation transfer is property-specific, so do not assume every booking includes the same shuttle.',
+        access: 'At HTI, follow your accommodation’s arrival instructions after baggage claim. From the mainland, book the ferry to Hamilton Island Marina and check whether your chosen service carries luggage on that sailing. Resort bookings may include marina or airport transfers—confirm with the property. The free Island Shuttle is the practical default for the Resort Centre–Marina Village loop; hire a buggy only if an authorized driver meets the current age/licence terms and a vehicle is available.',
+        sequence: 'Arrive, meet the accommodation transfer and leave bags before attempting a full island circuit. Use the shuttle to Marina Village or Resort Centre, then choose one island focus—Catseye waterfront, a booked activity or a signed walking route. Keep a separate day for a reef or Whitehaven vessel, and return to the correct ferry or airport node with the operator’s boarding cutoff in hand.',
+        boundary: 'This is a resort island, but buggies use roads and are subject to Queensland road rules and the island’s current hire conditions. Keep seatbelts on, do not drive after drinking, stay on open walking routes and do not feed wildlife.',
+        decisions: [['Choose Hamilton as the base', 'It suits travellers who want accommodation, shuttle and island activities in one compact hub, with flights to HTI or a booked ferry to the marina. The trade-off is that mainland Airlie departures then require a separate sea transfer and schedule match.'], ['Use the shuttle before renting', 'The free shuttle serves visitors and runs on a published daily timetable. It avoids licence, availability, parking and driving decisions; check current service hours and stops before relying on it for a connection.'], ['Hire a buggy selectively', 'A buggy can help with independent island movement, but hire has age, licence, availability and safety conditions. Verify current rules and reserve only if the route and driver suit.'], ['If the marine day is cancelled', 'Use an island day—shuttle to a local base, a booked land activity or time at the accommodation—and ask the operator about rebooking/refund terms. Island weather does not guarantee flight or boat service.']],
+        sources: [
+          ['https://www.cruisewhitsundays.com/island-transfers-timetable/', 'Cruise Whitsundays — current transfer timetable and node key'],
+          ['https://www.hamiltonisland.com.au/getting-around-island/shuttle-bus', 'Hamilton Island — free shuttle'],
+          ['https://www.hamiltonisland.com.au/getting-around-island/buggy-hire', 'Hamilton Island — buggy hire terms'],
+          ['https://www.hamiltonisland.com.au/accommodation/complimentary-transfers', 'Hamilton Island — accommodation transfer instructions'],
+          ['https://www.cruisewhitsundays.com/terms-conditions/', 'Cruise Whitsundays — transfer and day-cruise changes/cancellations']
+        ],
+        stages: [['Choose airport or marina arrival', 'Match the booking to HTI or Hamilton Island Marina; these are separate transfer nodes.'], ['Confirm the last mile', 'Get the property’s current meeting point and transfer inclusion, and check luggage handling on the exact ferry.'], ['Use one island transport plan', 'Read the shuttle stops and hours. If hiring a buggy, verify the authorized driver, licence, age and availability first.'], ['Protect the outbound connection', 'Follow the ferry or flight booking’s check-in and cutoff, and avoid a tight same-day mainland transfer.']],
+        risks: [['Wrong terminal', 'HTI and Hamilton Island Marina serve different passengers and itineraries.'], ['Buggy conditions', 'Hire is not automatic; current driver eligibility, seat restraints and availability matter.'], ['Weather or schedule changes', 'A boat, flight or transfer can change independently of the accommodation stay; retain a flexible island day and confirm live operator advice.']],
+        duration: 'Three nights is a useful planning shape for one island day and one separate sea excursion, with arrival and departure buffers.', combine: 'Choose one Whitsunday operator and departure node; do not build a mainland checklist into an island stay without checking transfers.', verify: 'Check HTI versus marina, ferry/timetable, checked luggage, property transfer, shuttle hours/stops, buggy hire rules, marine forecast and change/cancellation conditions.',
+        faq: [
+          ['Should I arrive by plane or ferry?', 'Choose the connection that matches your schedule and lodging. Flights arrive at HTI; ferries use Hamilton Island Marina. The two terminals have different transfer instructions.'],
+          ['Do I need to hire a buggy?', 'No. The island has a free shuttle. Hire is optional, subject to availability and current driver/licence conditions.'],
+          ['Can I connect to an Airlie boat on the same day?', 'Only if the exact ferry and boat schedules leave a robust buffer and the operators confirm the itinerary. A mainland arrival buffer is safer for a high-value departure.']
+        ]
       }),
       g({
-        slug: 'outer-reef-day', name: 'Outer Reef Day', motif: 'marine operator contract', instrument: 'reef-checklist', imageQuery: 'Great Barrier Reef coral Queensland underwater', imageAlt: 'Coral habitat in the Great Barrier Reef',
-        summary: 'A reef excursion selected by vessel, site type, swimming ability, environmental practice and cancellation policy rather than lowest headline price.',
-        orientation: 'compare pontoon, small-vessel snorkel and dive itineraries as different products.', access: 'Disclose medical and mobility needs, arrive at the named terminal and complete forms honestly.', sequence: 'Attend the safety briefing, enter only through managed points, keep coral untouched and return to the vessel well before final call.', boundary: 'Coral is living habitat. No standing, touching, collecting, feeding or wildlife pursuit is acceptable.',
-        stages: [['Choose the right vessel', 'Match sea tolerance, group size and activity to the operator.'], ['Complete the briefing', 'Understand signals, buddy system, flotation and site limits.'], ['Enter with control', 'Use the designated platform or tender and maintain buoyancy.'], ['Count back aboard', 'Respond to crew checks and protect the return transfer.']],
-        risks: [['Seasickness', 'Use medical advice and choose vessel conditions realistically.'], ['Swimming mismatch', 'Open water and current may exceed pool ability; use flotation or stay aboard.'], ['Coral damage', 'Poor buoyancy and standing cause harm; follow the code.']],
-        duration: 'Reserve a full day plus a gateway night before any onward flight.', combine: 'Do not add another island landing unless the operator itinerary already includes it.', verify: 'Check operator accreditation, site, vessel, medical rules, forecast, cancellation, stingers and flight-after-dive guidance.'
+        slug: 'outer-reef-day', name: 'Outer Reef Day', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'marine operator contract', instrument: 'reef-checklist', imageQuery: 'Great Barrier Reef coral Queensland underwater', imageAlt: 'Coral habitat in the Great Barrier Reef',
+        summary: 'A full-day outer-reef crossing from Port of Airlie, Daydream or Hamilton Island to Hardy Reef and a managed reef pontoon.',
+        orientation: 'Cruise Whitsundays lists its full-day Great Barrier Reef Adventure from Port of Airlie, Daydream or Hamilton Island to a permanently moored pontoon at Hardy Reef, 39 nautical miles from shore. Its published FAQ estimates around three hours each way from Airlie and two from Hamilton Island, depending on sea and weather, with about four hours at Hardy Reef. Its day-trip page uses generic wording for the pontoon; a current Hamilton Island experience listing calls the landing Heart Pontoon. Match the pontoon name and schedule to your live booking. This is an open-water crossing, not a sheltered Whitsunday-island snorkel.',
+        access: 'Choose the departure that matches your base: Port of Airlie from the mainland, Daydream Island, or Hamilton Island. Cruise Whitsundays lists all three departure choices; check the booking for the actual terminal, check-in, transfer and return. The trip includes snorkelling gear, observatory and semi-submarine options; non-swimmers can remain dry, while swimming/diving needs are subject to medical forms, crew advice and operator conditions.',
+        sequence: 'Arrive at the named terminal with enough time for check-in, complete the medical declaration, and attend the vessel and pontoon briefings. During the crossing, manage motion sickness early. At the pontoon, choose the activity that fits your water confidence—snorkel with the provided flotation if appropriate, or use the semi-submarine/observatory—and stay within crew directions and crew-advised entry points. Return on the same vessel and keep onward travel clear of the arrival buffer.',
+        boundary: 'The Great Barrier Reef Marine Park Authority prohibits damaging, collecting or taking coral without a permit. Never stand on or touch coral, chase wildlife, feed animals or leave rubbish; use buoyancy control and follow the skipper, guide and site-specific rules.',
+        decisions: [['Choose the outer reef', 'Best for travellers who want an offshore reef day and can tolerate a long vessel passage. It is a full-day commitment; allow a mainland/island buffer and do not plan a flight connection immediately after return.'], ['Choose a dry-view alternative', 'If swimming is not suitable, the current product lists an underwater observatory and semi-submarine. Ask about access, mobility and motion tolerance before booking.'], ['Choose a nearer island day instead', 'If you are very sea-sensitive, want more beach time, or the offshore forecast is poor, choose an operator-confirmed Whitsunday island/inner-reef outing or a land day rather than forcing the crossing.'], ['Rain versus unsafe sea', 'The operator says light rain does not usually stop the tour; the voyage and activities continue unless conditions are deemed unsafe. Check its notice and the BOM coastal waters forecast. If cancelled, use a sheltered base-day and apply the booking’s current change/refund terms.']],
+        sources: [
+          ['https://www.cruisewhitsundays.com/experiences/great-barrier-reef-full-day-adventure/', 'Cruise Whitsundays — current Hardy Reef day trip'],
+          ['https://www.hamiltonisland.com.au/great-barrier-reef/great-barrier-reef-day-trip-to-reef-world', 'Hamilton Island — Hardy Reef itinerary, identified as Heart Pontoon'],
+          ['https://www.cruisewhitsundays.com/terms-conditions/', 'Cruise Whitsundays — cancellation and amendment terms'],
+          ['https://www.gbrmpa.gov.au/access/responsible-reef-practices', 'Great Barrier Reef Marine Park Authority — responsible reef practices'],
+          ['https://www.bom.gov.au/qld/forecasts/gbroffshore.shtml', 'Bureau of Meteorology — Great Barrier Reef offshore waters forecast']
+        ],
+        stages: [['Select the terminal and vessel', 'Book from the node you can reach and verify the exact check-in and return, rather than assuming an Airlie departure.'], ['Screen for fit', 'Complete medical disclosure honestly; compare open-ocean motion, water confidence, mobility, child readiness and dry-view options.'], ['Use the managed reef access', 'Follow the safety briefing, use designated entries and flotation as advised, and keep fins and body clear of coral.'], ['Keep a shore buffer', 'Watch operator messages and marine forecast, then leave the evening and onward flight flexible until the vessel is back.']],
+        risks: [['Open-water passage', 'Motion and sea state can dominate the day; choose a nearer island plan if the crossing is a poor fit.'], ['Swimming mismatch', 'Outer-reef water is not a pool. Use the observatory/semi-submarine or remain aboard if you cannot enter safely.'], ['Weather and cancellations', 'Rain itself may not cancel, but unsafe wind/swell can change or stop the trip. Operator judgement and current notices govern.']],
+        duration: 'Reserve the full day and sleep at the departure gateway the night before; keep a buffer after the return before flights or rail.', combine: 'Treat Hardy Reef as the day’s main event. Do not add a separate Whitehaven landing or dive without an operator-built itinerary and adequate rest.', verify: 'Check pontoon identity, departure node, check-in, medical form, sea forecast/warnings, seasickness plan, stinger suit and flotation provision, cancellation terms and post-trip transfer.',
+        faq: [
+          ['Which pontoon does the day trip visit?', 'The Cruise Whitsundays day-trip page confirms a Hardy Reef pontoon but does not name it. Hamilton Island’s current experience listing names Heart Pontoon; verify the pontoon and schedule on the live booking.'],
+          ['Can a non-swimmer go?', 'The operator lists an underwater observatory and semi-submarine, so entering the water is not required to take part in those activities. Confirm mobility and medical suitability with the operator.'],
+          ['Will rain cancel the trip?', 'The operator says light rain does not usually affect the tour, but activities continue only when conditions are considered safe. Check its live notices and the Bureau forecast.']
+        ]
       }),
       g({
-        slug: 'townsville-magnetic-island', name: 'Townsville & Magnetic Island', motif: 'city-to-island ferry spine', instrument: 'ferry-spine', imageQuery: 'Magnetic Island Queensland coast Townsville', imageAlt: 'Rocky coast and blue water on Magnetic Island',
-        summary: 'A separate central-reef gateway linking Townsville’s terminal to Magnetic Island buses, bays and national-park tracks.',
-        orientation: 'use Nelly Bay terminal as the island hinge and select one bay or Forts-area route.', access: 'Confirm passenger or vehicle ferry, terminal, island bus and accommodation transfer.', sequence: 'Cross early, connect by bus, walk or swim only under current conditions and return before the final useful service.', boundary: 'Yunbenun/Magnetic Island is Wulgurukaba Country with koala habitat, forts heritage and fire-prone tracks. Keep wildlife distance and obey closures.',
-        stages: [['Choose passenger or vehicle', 'Match the correct operator and terminal.'], ['Connect from Nelly Bay', 'Read the bus timetable before leaving the ferry.'], ['Use one island sector', 'Choose a bay or open track according to heat and fire.'], ['Return through the terminal', 'Protect the bus-to-ferry connection.']],
-        risks: [['Heat and fire', 'Exposed tracks can close or become unsafe.'], ['Wildlife on roads', 'Drive slowly and never crowd koalas.'], ['Ferry connection', 'Island buses and ferries require an actual timetable match.']],
-        duration: 'One full day is possible; two nights make the island useful.', combine: 'Keep it separate from Airlie Beach and Whitehaven due to distance.', verify: 'Check ferry, bus, park alerts, fire danger, patrols, stingers, heat and return.'
+        slug: 'townsville-magnetic-island', name: 'Townsville & Magnetic Island', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'city-to-island ferry spine', instrument: 'ferry-spine', imageQuery: 'Magnetic Island Queensland coast Townsville', imageAlt: 'Palm-fringed Horseshoe Bay beach and a red boat on Magnetic Island',
+        summary: 'A separate central-reef gateway: a Townsville Breakwater ferry, Nelly Bay arrival, island-bus match and one heat-aware walk.',
+        searchSummary: 'Plan Townsville to Magnetic Island via the Breakwater passenger ferry, Nelly Bay and the Kinetic island bus. Match the Forts Walk or one bay to daylight, heat, park status and the confirmed return.',
+        orientation: 'Plan this as a Townsville gateway and an island day with one primary sector, not as an extension of Airlie Beach. SeaLink’s passenger ferry runs from Breakwater terminal in central Townsville to Nelly Bay in about 20 minutes; vehicle ferries use a separate operator and terminal. From Nelly Bay, the island bus links the main settlements and trail approaches, but a ferry ticket does not guarantee a bus connection. Choose the bus to Forts Junction for the 4 km Grade 3 Forts Walk (allow about two hours), or choose one village/bay focus; do not try to complete both plus multiple swims in one hot day.',
+        access: 'Check the exact-date SeaLink timetable and service-status notice, public-holiday exceptions, terminal, ticket and boarding advice. Arrive at Townsville Breakwater with the operator’s stated margin. If bringing a car, book the separate vehicle ferry and its different terminal well in advance; do not drive to the passenger-ferry berth expecting a car sailing. At Nelly Bay, use the live Kinetic timetable and fare information to match the outbound and return bus to the Forts Walk, accommodation or selected village. Airport-to-terminal transfers are by taxi or a shuttle that the airport says must be prebooked; confirm the booking rather than assuming a walk-up seat.',
+        sequence: 'The day before, save the ferry status, exact sailing pair, Kinetic timetable, park alert and forecast. On the island, take an early passenger ferry, connect from Nelly Bay to Forts Junction, and walk the signed 4 km Grade 3 Forts route in cooler hours with water, footwear and sun protection. Keep the optional bay or swim only if the bus timetable, heat and current beach advice leave a safe return. Reboard the bus with margin for the ferry queue and return to the Townsville Breakwater terminal on the sailing you booked or verified; keep the next flight or long drive out of that same-day chain.',
+        boundary: 'Yunbenun/Magnetic Island is Wulgurukaba Country. Respect cultural guidance and historic sites, stay on open tracks, keep distance from koalas and other wildlife, and obey fire, track and park closures. Crocodiles occur in the region and marine stingers can be present year-round, with higher risk in warmer months; a scenic beach is not permission to swim. Use current signs and advice, and swim only where authorities identify conditions as suitable.',
+        decisions: [['Choose a passenger-ferry day', 'For one or two people without a car, the SeaLink passenger service from Breakwater to Nelly Bay is the simple crossing. It is about 20 minutes, but the island bus and ferry must still match. Check holiday and service-status changes before buying around a tight connection.'], ['Choose the vehicle ferry only for a reason', 'A car can add flexibility for dispersed stays, but it is a separate operator, terminal and advance booking. For a day visit, compare that cost and vehicle-queue time with the Kinetic bus before committing.'], ['Choose Forts Walk or a village/bay day', 'Forts Walk is a named 4 km Grade 3 route with about two hours walking time. Start in cooler hours and check track status. If heat, fire or fitness makes that poor fit, keep the day to a bus-served settlement and a short shaded outing; do not replace a closure with an unmarked track.'], ['Treat swimming and weather as live decisions', 'Marine stingers may occur year-round and crocodiles are present on the regional coast. Check current authority advice, signs and patrol information at the actual beach. If weather, ferry status or heat breaks the plan, shorten the island visit or remain in Townsville; do not count on an extra sailing or unsafe natural-water substitute.']],
+        stages: [['Secure the correct crossing', 'Select passenger or vehicle service, verify the Townsville terminal, exact-date timetable and status, and arrange airport-to-terminal transport if needed.'], ['Match the island bus', 'Save the Kinetic times for Nelly Bay and the chosen stop. Allow walking and ferry queue time; do not assume a bus waits for a delayed sailing.'], ['Do one primary route', 'Choose Forts Walk or a village/bay day. Check park alerts, heat, water, footwear and current swim advice before leaving the settlement.'], ['Protect the return', 'Set a turnaround time that reaches Nelly Bay before the bus you need, then leave margin for the booked ferry. Keep onward flight or road travel separate.']],
+        risks: [['Ferry and bus mismatch', 'Timetables change and public-holiday exceptions apply. A missed Nelly Bay connection can remove the last useful bus or ferry; verify each leg and its status.'], ['Heat, fire and exposed walking', 'Forts is a Grade 3 walk with exposed sections. Start early, carry water and use park alerts; shorten or abandon the walk if conditions or health change.'], ['Water and wildlife', 'Stingers may be present year-round and crocodiles occur on the regional coast. A beach photo or calm water is not a safety clearance; obey current signs and advice.']],
+        duration: 'One full island day can cover one main walk or one village/bay focus. Two nights in Townsville give room for an island day and a separate ferry/weather buffer.', combine: 'Keep Townsville/Magnetic Island as its own central-reef stop. The operator FAQ gives Townsville–Airlie as about 275 km by road, before the island ferry and bus; do not combine that road transfer and an island day.', verify: 'Recheck SeaLink exact-date timetable, ferry status, holiday service notes, correct passenger or vehicle terminal, Kinetic bus times/fares, airport transfer booking, Magnetic Island park alerts, heat/fire conditions, track grade, beach/stinger advice and the return connection.',
+        faq: [
+          ['Is the Magnetic Island ferry the same service as the Airlie ferry?', 'No. SeaLink runs passenger ferries from Townsville Breakwater to Nelly Bay; vehicle ferries are a separate service and terminal. Airlie and the Whitsunday islands are a different operating area.'],
+          ['Can I walk the Forts and still see several bays?', 'The Forts Walk alone is 4 km, Grade 3, and takes about two hours. Choose one main route, then add a bay only if the current bus timetable, heat and return sailing allow it.'],
+          ['Can I rely on the island bus?', 'Use the current Kinetic timetable and ferry status for the date you travel. Match a return bus to the terminal and leave margin; do not assume the ferry waits for a late bus.'],
+          ['Is a beach swim always safe?', 'No. Queensland Parks advises visitors to check current safety information; marine stingers may be present year-round and crocodiles occur around the region. Follow beach signs and authority advice and do not enter water when conditions are unclear.']
+        ],
+        sources: [
+          ['https://www.sealink.com.au/magnetic-island/ferry-information/timetable/', 'SeaLink — Magnetic Island ferry timetable and service status'],
+          ['https://www.sealink.com.au/magnetic-island/', 'SeaLink — passenger and vehicle ferry information'],
+          ['https://parks.qld.gov.au/parks/magnetic-island/visiting-safely', 'Queensland Parks — Magnetic Island visitor safety'],
+          ['https://parks.qld.gov.au/parks/magnetic-island/journeys', 'Queensland Parks — island walks including Forts Walk'],
+          ['https://www.wearekinetic.com/', 'Kinetic — Magnetic Island bus timetable and fares'],
+          ['https://www.townsvilleairport.com.au/to-from-airport/transport', 'Townsville Airport — prebooked shuttle and taxi transfers'],
+          ['https://www.cruisewhitsundays.com/about-us/faqs/', 'Cruise Whitsundays — Townsville–Airlie road distance']
+        ]
       })
     ]
   }),
@@ -133,56 +341,165 @@ export const australiaNorthClusters = [
     family: 'wet-dry-season-gate',
     label: 'WET–DRY CLOCK / FLOODPLAINS / CULTURAL COUNTRY',
     tagline: 'Let season, road and Traditional Owner guidance decide what opens.',
-    hubIntro: 'Darwin and the Top End change profoundly between wet and dry seasons. The waterfront, city culture, Litchfield, Kakadu and Nitmiluk operate across crocodile habitat, floodplain roads, fire and long-distance driving. Five chapters make swimming boundaries, park passes, cultural access and seasonal closure visible before the itinerary leaves town.',
-    stay: 'Use Darwin for arrival and city context, then stay near the park region being visited. Daily returns from the capital waste daylight and driver attention.',
-    transfer: 'Flights reach Darwin; parks require a suitable vehicle or licensed operator. Road, fuel, pass, permit and seasonal-access checks belong before every remote leg.',
+    hubIntro: 'Choose one Top End operating region around your nights, not a pin for every day. Litchfield is about 120 km southwest of Darwin; Kakadu is about a three-hour drive via the Stuart and Arnhem highways. Kakadu’s wet season can flood roads and close sites, while dry-season demand makes park bases and exact departures worth arranging ahead. This guide maps a Darwin city day, one Litchfield day, two distinct Kakadu days and a separate Nitmiluk journey.',
+    stay: 'Three nights: Darwin plus one park; five: Kakadu with three nights for separate art and cruise days; seven can add Litchfield with a Darwin buffer. Treat these as planning shapes, not minimum stays; add nights if flights leave no full park day. Base in Kakadu instead of commuting daily from Darwin, and keep Nitmiluk as a separate southern leg.',
+    transfer: 'Fly to Darwin; reach Litchfield via Batchelor or Cox Peninsula, and Kakadu via Stuart then Arnhem Highway. Kakadu is about three hours east, with fuel at Jabiru and Cooinda. Use a suitable vehicle or licensed operator; Kakadu and NT Parks use separate passes, and each road, site and swim needs a fresh status check.',
+    reviewDate: '9 October 2026',
+    reviewIsoDate: '2026-10-09',
+    faq: [
+      ['I have only three nights. Should I include both Kakadu and Litchfield?', 'No. Keep Darwin as the base and choose one park day, or devote the short trip to Kakadu if its art sites and wetland cruise are the priority. Kakadu is about a three-hour drive from Darwin each way, so a same-day return leaves little time at the park.'],
+      ['What can five nights support?', 'A realistic option is Darwin for arrival and a city day, then three Kakadu nights for one art-site day and a separate Yellow Water day, followed by a Darwin buffer before departure. Confirm your flights leave two usable park days; if not, stay in Darwin and choose Litchfield instead.'],
+      ['How can I include both park regions?', 'Use about seven nights as a planning allowance: Darwin, a multi-night Kakadu stay, then a separate Litchfield day with a Darwin night before departure. This is a route shape, not a minimum; do not combine the long Kakadu drive, a full park day and an onward flight.'],
+      ['Are one park pass and one road check enough?', 'No. Kakadu requires its own park pass; NT Parks has a separate visitor-pass system that includes Litchfield. Check each authority’s same-day road, site, swimming and cultural-access notices before leaving your base.']
+    ],
     sources: [
       ['https://www.australia.com/en/places/darwin-and-surrounds/guide-to-darwin.html', 'Tourism Australia — Darwin'],
       ['https://northernterritory.com/darwin-and-surrounds', 'Tourism NT — Darwin and surrounds'],
-      ['https://nt.gov.au/parks/find-a-park/litchfield-national-park', 'Northern Territory Parks — Litchfield'],
-      ['https://parksaustralia.gov.au/kakadu/', 'Parks Australia — Kakadu National Park'],
+      ['https://nt.gov.au/parks/find-a-park/litchfield-national-park', 'Northern Territory Parks — Litchfield access and sites'],
+      ['https://nt.gov.au/parks/regions/darwin/check-park-open-darwin/litchfield-national-park', 'Northern Territory Parks — Litchfield current status'],
+      ['https://nt.gov.au/parks/visitor-pass', 'Northern Territory Parks — visitor pass'],
+      ['https://kakadu.gov.au/plan/getting-here/', 'Parks Australia — getting to Kakadu'],
+      ['https://kakadu.gov.au/plan/when-come/seasons/', 'Parks Australia — Kakadu seasons'],
+      ['https://kakadu.gov.au/plan/passes/', 'Parks Australia — Kakadu park pass'],
+      ['https://kakadu.gov.au/news/access-and-alerts/', 'Parks Australia — Kakadu access report'],
       ['https://nt.gov.au/parks/find-a-park/nitmiluk-national-park', 'Northern Territory Parks — Nitmiluk']
     ],
     guides: [
       g({
-        slug: 'darwin-waterfront-city', name: 'Darwin Waterfront & City', motif: 'tropical arrival ledger', instrument: 'wet-dry-board', imageQuery: 'Darwin waterfront Northern Territory Australia', imageAlt: 'Darwin waterfront in the tropical Top End',
-        summary: 'A city arrival chapter using managed waterfront swimming, museums and sunset space while crocodile and heat boundaries remain explicit.',
-        orientation: 'use the waterfront, city centre and museum precinct as separate heat-managed nodes.', access: 'Arrive by airport transfer or bus and keep a reliable late ride option.', sequence: 'Use a cool cultural interior, swim only in managed facilities, take a sunset edge and finish before storm or nightlife dispersal.', boundary: 'Darwin Harbour and natural waterways are crocodile and marine-stinger habitat. Use only designated managed swimming areas.',
-        stages: [['Set the tropical clock', 'Plan outdoor movement outside peak heat and storm risk.'], ['Choose one collection', 'Give the museum or heritage room enough attention.'], ['Use managed water', 'Enter only the lagoon or pool currently declared safe.'], ['Finish at a known pickup', 'Avoid unlit foreshore wandering.']],
-        risks: [['Crocodiles and stingers', 'Never infer safe swimming from other people in natural water.'], ['Heat stress', 'Hydration, shade and rest are essential.'], ['Monsoon storm', 'Lightning and intense rain can disrupt paths quickly.']],
-        duration: 'One to two days gives city context before a park journey.', combine: 'Pair with an overnight departure to one park, not a same-day remote return.', verify: 'Check managed swimming status, heat, storm, museum hours, bus or pickup and park preparation.'
+        slug: 'darwin-waterfront-city', name: 'Darwin Waterfront & City', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'tropical arrival ledger', instrument: 'wet-dry-board', imageQuery: 'Darwin waterfront Northern Territory Australia', imageAlt: 'Darwin waterfront in the tropical Top End',
+        summary: 'A heat-aware Darwin city day linking the Waterfront’s managed lagoons, Route 14 and a date-checked cultural stop.',
+        searchSummary: 'Plan Darwin city and Waterfront by heat, Route 14 and the free precinct shuttle; know the lightning evacuation rule for both lagoons and check MAGNT status before using it as an indoor stop.',
+        orientation: 'Treat the Waterfront precinct, Darwin CBD and a museum visit as distinct stops rather than one compact pool day. Route 14 serves the Waterfront; a free precinct shuttle runs a loop 11:30am–2pm and 4pm–9pm, so it does not cover every time or destination. The Wave Lagoon is a ticketed, lifeguarded pool; The Beach is a man-made saltwater lagoon behind a seawall from Darwin Harbour. Neither makes natural harbour, creek or beach water a safe substitute. As checked on 12 October 2026, MAGNT Darwin’s official page says the museum is closed and reopens in November; verify its live status before building a visit around it.',
+        access: 'For a city–Waterfront day, check the current NT Route 14 timetable and disruption notices, then use the free Waterfront shuttle only within its published route and 11:30am–2pm / 4–9pm windows. Outside those windows, budget a taxi/rideshare or stay near the next stop; do not assume a bus will run after an evening event. Confirm airport transfers separately. Wave Lagoon tickets, entry conditions and opening hours are date-specific; the adjacent Beach is a managed recreation lagoon with lifeguards and a seawall. Check the separate MAGNT closure notice and opening time on the day.',
+        sequence: 'Begin early with a shaded city or waterfront walk before peak heat. Choose one cultural stop only after checking its opening—MAGNT Darwin is currently posted closed until November 2026—then use lunch/rest indoors. If the Waterfront lagoons are open and weather permits, choose one managed swimming area, follow the lifeguards and leave time to dry, change and catch the next transport. From October to April, if thunder follows lightning by 30 seconds or less, lifeguards evacuate both lagoons; leave the water area for shelter immediately. Close with a short foreshore visit only if storms and transport allow, and return on the verified bus/shuttle or a prearranged ride.',
+        boundary: 'Larrakia people are the Traditional Owners of the Darwin region. Respect cultural places and local guidance. Darwin Harbour and natural waterways are crocodile habitat, while stingers are monitored at the managed Beach lagoon. Never treat calm water or other swimmers as clearance. Follow the lifeguard’s thunder evacuation and re-entry instructions; if swimming closes, switch to a sheltered meal/rest or return to lodging rather than seeking an unpatrolled natural-water alternative.',
+        decisions: [['Choose a Waterfront-led day', 'Route 14 serves the precinct and the free shuttle loops within the Waterfront. Use the published bus timetable and shuttle service windows; plan an alternate ride for gaps rather than expecting the free shuttle to reach the CBD or airport.'], ['Choose the cultural stop only when open', 'MAGNT Darwin is a meaningful indoor option when operating, but on 12 October 2026 its official site lists it closed until a November reopening. Confirm the date-specific hours before travelling; if still closed, use a sheltered meal or hotel rest instead of adding a long unverified transfer.'], ['Use only managed swimming', 'The Beach sits behind a seawall separating it from Darwin Harbour and monitors marine stingers; Wave Lagoon is lifeguarded and designated crocodile/stinger-free. Check entry and status for the actual day. Never substitute harbour, river, creek or an unpatrolled beach.'], ['Make a lightning plan', 'During the October–April storm season, thunder within 30 seconds of lightning triggers evacuation of both Waterfront lagoons. Leave the lagoon area for shelter, follow staff, and wait for an official reopening; a closed lagoon is not a reason to swim elsewhere.']],
+        stages: [['Choose the first shaded node', 'Start at the CBD or Waterfront according to lodging and heat. Check Route 14, the precinct shuttle’s fixed operating windows and your last ride before setting the order.'], ['Verify the interior stop', 'Check the venue’s own date-specific opening. MAGNT Darwin is listed closed until November 2026 as of 12 October; do not count it as today’s shelter unless its live page changes.'], ['Swim only if open and safe', 'Check Wave Lagoon/The Beach status and conditions on arrival. Follow lifeguards; when thunder is heard within 30 seconds of lightning, both lagoons are evacuated and visitors must seek shelter.'], ['Return on a named service', 'Save the bus/shuttle departure or prebook a taxi/rideshare. If weather or service cuts the outing short, return to lodging or a sheltered precinct venue; do not improvise a natural-water stop.']],
+        risks: [['Lightning and lagoon closure', 'The Waterfront says both lagoons are evacuated when thunder follows lightning within 30 seconds. Shelter and wait for staff reopening; no natural-water substitute is safe.'], ['Heat and wet-season exposure', 'Outdoor time can become unsafe quickly in tropical heat or storms. Carry water and sun protection, rest indoors and shorten the foreshore segment.'], ['Transport and venue gaps', 'Route 14 and the free Waterfront shuttle have separate routes/timetables; the shuttle runs only 11:30am–2pm and 4–9pm. MAGNT Darwin is currently listed closed until November 2026. Verify each service and venue before using it as the plan’s hinge.']],
+        duration: 'Allow one full city day with a heat/rest break. Add a second night if arrival or departure leaves no usable daylight; do not combine the waterfront and a distant park on the same day.', combine: 'Use Darwin as the arrival buffer before one park road trip. A city museum, pool and sunset itinerary is not a same-day Litchfield, Kakadu or Nitmiluk transfer.', verify: 'Check BOM heat/storm warnings, Route 14 timetable and alerts, free shuttle hours/stops, Wave Lagoon and Beach status/admission, lifeguard instructions, MAGNT’s live closure/hours and a fallback ride to your lodging.',
+        faq: [
+          ['Does Route 14 go to the Darwin Waterfront?', 'Yes. The Waterfront’s getting-around page says Route 14 serves the precinct. Check the NT Government’s current timetable and service notices for your date.'],
+          ['When does the free Waterfront shuttle run?', 'The precinct lists daily service 11:30am–2pm and 4pm–9pm on its local loop. It is not an airport or all-day CBD bus; plan another ride outside those windows.'],
+          ['What happens if there is lightning?', 'If thunder is heard within 30 seconds of a lightning flash, Waterfront lifeguards evacuate both lagoons. Leave the lagoon areas for shelter and follow staff instructions until they reopen.'],
+          ['Can I use MAGNT as the rainy-day backup?', 'Not on the status checked 12 October 2026: MAGNT Darwin’s official page lists it closed and reopening in November. Recheck the live notice; if still closed, keep a sheltered meal or lodging break instead.']
+        ],
+        sources: [
+          ['https://www.waterfront.nt.gov.au/getting-around', 'Darwin Waterfront — Route 14, shuttle hours and access'],
+          ['https://www.waterfront.nt.gov.au/waterfront-shuttle', 'Darwin Waterfront — shuttle loop and stops'],
+          ['https://www.waterfront.nt.gov.au/the-beach', 'Darwin Waterfront — Beach lagoon, stinger monitoring and lightning rule'],
+          ['https://www.waterfront.nt.gov.au/wave-lagoon', 'Darwin Waterfront — Wave Lagoon lifeguards and conditions'],
+          ['https://www.magnt.net.au/', 'MAGNT — Darwin reopening and current hours'],
+          ['https://nt.gov.au/driving/public-transport-cycling/public-bus-timetables-and-maps', 'Northern Territory Government — public bus timetables and maps'],
+          ['https://www.bom.gov.au/nt/forecasts/darwin.shtml', 'Bureau of Meteorology — Darwin forecast']
+        ]
       }),
       g({
-        slug: 'litchfield-national-park', name: 'Litchfield National Park', motif: 'waterhole safety circuit', instrument: 'waterhole-gate', imageQuery: 'Litchfield National Park waterfall Northern Territory', imageAlt: 'Waterfall and plunge pool in Litchfield National Park',
-        summary: 'A waterfall circuit that uses current open-and-safe notices, road condition and a single swimming decision instead of assuming every pool is available.',
-        orientation: 'select one park sector and distinguish lookout, walk and officially open swimming site.', access: 'Drive a suitable vehicle or use a licensed operator, carrying fuel, water and offline information.', sequence: 'Read the park board, visit the most condition-sensitive site first, swim only where explicitly open and return before dusk.', boundary: 'Crocodile management, cultural closures and seasonal access determine use. Never cross a closed gate or water warning.',
-        stages: [['Read the open list', 'Check the same-day park notice for roads, walks and swimming.'], ['Choose one falls system', 'Avoid spending the day in repeated car-park hops.'], ['Enter water only if open', 'Follow rangers and signs without exception.'], ['Leave before wildlife hour', 'Protect the road return and driver attention.']],
-        risks: [['Crocodile closure', 'A previously safe pool can close; current signs are final.'], ['Wet-season roads', 'Flooding and unsealed access can change vehicle requirements.'], ['Heat and falls', 'Tracks and stone are hot and slippery.']],
-        duration: 'Use a full day from Darwin or stay nearby for a calmer circuit.', combine: 'Do not combine with Kakadu or Nitmiluk.', verify: 'Check NT Parks openings, swimming status, roads, fire, storm, vehicle and sunset.'
+        slug: 'litchfield-national-park', name: 'Litchfield National Park', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'falls, access and swim choice', instrument: 'waterhole-gate', imageQuery: 'Litchfield National Park waterfall Northern Territory', imageAlt: 'Waterfall and plunge pool in Litchfield National Park',
+        summary: 'A Darwin-side park day organized around the Batchelor or Cox Peninsula approach, the Florence–Buley walk, step-free viewpoint choices and a swim that only happens when the current park notice allows it.',
+        orientation: 'Start from Darwin with one day for Litchfield, about 120 km southwest, and choose the Batchelor or Cox Peninsula road approach from your first open site and current road notice. Florence Falls and Buley Rockhole share a corridor; Wangi is a separate western stop, not a guaranteed swim.',
+        access: 'A suitable vehicle or licensed tour is needed to connect the park sites. The Florence Creek walk between Florence Falls and Buley Rockhole is 3.2 km return, about 1.5 hours at Grade 2; NT Parks advises parking at Florence because Buley parking is limited. The falls descent at Florence uses 160 steps or a 1 km uneven path with steps; Tolmer has accessible viewing decks and no swimming.',
+        sequence: 'Check NT Parks and road status before leaving Darwin. If Florence and Buley are open, park at Florence and take the 3.2 km return Florence Creek walk rather than moving between both car parks. Add Tolmer’s viewing decks only if daylight and the current notice allow; treat every swimming area as closed unless it is explicitly open that day.',
+        boundary: 'Litchfield is a living landscape with cultural places and crocodile-managed waters. Follow Traditional Owner and ranger guidance, keep to open paths, and never treat a pool photograph or a past visit as current permission to swim.',
+        decisions: [['Best for', 'A self-drive or guided day with a full daylight window and flexibility to walk, view and skip swimming.'], ['Choose instead', 'Visitors needing one dependable step-free nature stop should confirm site access with NT Parks first; this circuit includes stairs and uneven path options.'], ['Current check', 'NT Parks listed Wangi Falls swimming as closed under crocodile management on 9 October 2026. This is a dated status snapshot, not a permanent closure; check the live notice before departure.']],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/litchfield-national-park', 'Northern Territory Parks — Litchfield National Park'],
+          ['https://nt.gov.au/parks/regions/darwin/check-park-open-darwin/litchfield-national-park', 'Northern Territory Parks — Litchfield current status'],
+          ['https://nt.gov.au/parks/find-a-park/litchfield-national-park/short-walks', 'Northern Territory Parks — Litchfield short walks'],
+          ['https://nt.gov.au/parks/find-a-park/litchfield-national-park/florence-falls', 'Northern Territory Parks — Florence Falls access'],
+          ['https://nt.gov.au/parks/find-a-park/litchfield-national-park/tolmer-falls', 'Northern Territory Parks — Tolmer Falls'],
+          ['https://nt.gov.au/parks/visitor-pass', 'Northern Territory Parks — visitor pass']
+        ],
+        stages: [['Set the road approach', 'Use Batchelor or Cox Peninsula only after checking the route and the first site you plan to reach.'], ['Walk the Florence–Buley corridor', 'If open, park at Florence; the Florence Creek walk is 3.2 km return, Grade 2 and about 1.5 hours.'], ['Choose a falls view', 'At Florence, account for 160 steps or the longer uneven path. Tolmer offers accessible viewing decks but no swimming.'], ['Make one swim decision', 'Enter only a site the live NT Parks notice declares open; otherwise keep the day to walks and viewpoints and return in daylight.']],
+        risks: [['A closed swimming area', 'A park or crocodile-management closure overrides every guidebook and old photo; do not drive around looking for an unofficial entry.'], ['Mobility and footing', 'Florence has steps or an uneven path; the Florence–Buley route and Wangi loop are not interchangeable with the accessible Tolmer viewing decks.'], ['Wet-season road and storm', 'Rain can change roads, paths and swimming status. If the official notice or storm makes the route unsafe, keep the Darwin day flexible rather than adding Kakadu.']],
+        duration: 'Allow a full daylight day from Darwin, plus a Darwin night before an early flight. The named falls are separate stops, not a quick loop; shorten the route if roads or weather delay departure.',
+        combine: 'Pair with a Darwin city day, not Kakadu or Nitmiluk on the same day. If your trip has too little daylight for a park return, remain in Darwin and use a verified city or museum option.',
+        verify: 'Check NT Parks’ Litchfield status and visitor-pass rules, the chosen approach road, each walk and swimming notice, weather and sunset. The live closure notice takes priority over this guide’s dated 9 October 2026 Wangi snapshot.',
+        faq: [
+          ['Can I swim at Wangi Falls?', 'Only if the current NT Parks notice and on-site signs say the swimming area is open. On 9 October 2026 the live status page listed Wangi swimming closed under crocodile management; that dated notice can change.'],
+          ['Is Florence Falls accessible without stairs?', 'The falls access has a 160-step route or a longer uneven path. NT Parks lists separate viewpoint access at Tolmer; confirm the exact path and current opening with the park if you need step-free access.'],
+          ['What is a useful one-day route?', 'From Darwin, choose one road approach, take the 3.2 km return Florence Creek walk between Florence and Buley if open, and add one viewpoint only if the return remains in daylight. A swim is optional and never assumed.']
+        ]
       }),
       g({
-        slug: 'kakadu-nourlangie-ubirr', name: 'Kakadu: Burrungkuy & Ubirr', motif: 'rock-country access day', instrument: 'cultural-access', imageQuery: 'Ubirr Kakadu National Park lookout Australia', imageAlt: 'Floodplain view from Ubirr in Kakadu National Park',
-        summary: 'A northern Kakadu chapter centered on official cultural interpretation, rock-art access, floodplain views and seasonal road gates.',
-        orientation: 'use Jabiru or a nearby park base and treat Burrungkuy and Ubirr as separate long road and attention blocks.', access: 'Obtain the current park pass, check access roads and use a ranger program or recognised guide when available.', sequence: 'Visit one art and cultural site slowly, use a formal lookout only in safe conditions and avoid racing to both at sunset.', boundary: 'Kakadu is Aboriginal land jointly managed with Traditional Owners. Rock art, sacred places and closure directions require absolute respect.',
-        stages: [['Begin with park guidance', 'Check Bowali or official notices, pass and seasonal access.'], ['Read one cultural site', 'Follow marked routes and authoritative interpretation.'], ['Use the floodplain lookout', 'Stay on open paths and turn back for heat, storm or fire.'], ['Return to the park base', 'Avoid wildlife-heavy night driving.']],
-        risks: [['Seasonal access', 'Flooding can close roads and shorten opening hours.'], ['Cultural harm', 'Never touch rock surfaces or enter closed areas.'], ['Heat and distance', 'Remote walks and roads require water and conservative timing.']],
-        duration: 'Two or more nights in Kakadu are required; this chapter takes one full day.', combine: 'Pair with Yellow Water on another day, not Litchfield.', verify: 'Check Kakadu pass, cultural and road closures, ranger programs, fire, weather, water and fuel.'
+        slug: 'kakadu-nourlangie-ubirr', name: 'Kakadu: Burrungkuy & Ubirr', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'two separate art-country walks', instrument: 'cultural-access', imageQuery: 'Ubirr Kakadu National Park lookout Australia', imageAlt: 'Floodplain view from Ubirr in Kakadu National Park',
+        summary: 'Choose one of Kakadu’s two distinct cultural landscapes for a full day: Burrungkuy (Nourlangie) near the central park corridor, or Ubirr by the East Alligator floodplain. Base, access and the steep Ubirr lookout climb decide which fits.',
+        orientation: 'Start from a Kakadu base, not Darwin: Parks Australia describes the drive from Darwin as about three hours via the Stuart and Arnhem highways. Jabiru suits Ubirr and the East Alligator side; Cooinda is closer to Burrungkuy and the southern wetland corridor. They are separate day choices, not adjacent stops.',
+        access: 'Burrungkuy’s return walk is 1.5 km, Grade 3; allow about two hours for the gallery and Kunwarddewardde lookout. Ubirr is a 1 km circuit with about an hour allowed; the lookout route includes a steep 250 m climb. The main art areas have accessible sections, but the Ubirr lookout climb is not step-free.',
+        sequence: 'Choose the site that matches your base and mobility: spend the day at Burrungkuy from Cooinda or the central corridor, or take the East Alligator road to Ubirr from Jabiru. Read the marked art shelters and visitor interpretation, include the lookout only if the path and conditions suit, then return before dusk. Do not try to connect both with a Darwin return.',
+        boundary: 'Kakadu is Aboriginal land, jointly managed by Bininj/Mungguy Traditional Owners and Parks Australia. Treat rock art as cultural knowledge, not a photo prop: remain on marked routes, do not touch rock surfaces, and follow signs about photography, ceremony and closures.',
+        decisions: [['Choose Burrungkuy', 'A 1.5 km return walk with two hours allowed; the main gallery and Kunwarddewardde lookout sit in the central-south park corridor.'], ['Choose Ubirr', 'A 1 km circuit with about an hour allowed; its floodplain view includes a steep 250 m lookout climb.'], ['Skip the second site', 'The drives are separate park legs. Give each its own day, base and current access check.']],
+        sources: [
+          ['https://kakadu.gov.au/plan/getting-here/', 'Parks Australia — getting to Kakadu'],
+          ['https://kakadu.gov.au/things-do/activities/walks/burrungkuy-nourlangie-walk/', 'Parks Australia — Burrungkuy walk'],
+          ['https://kakadu.gov.au/things-do/activities/walks/ubirr-walk/', 'Parks Australia — Ubirr walk'],
+          ['https://kakadu.gov.au/plan/passes/', 'Parks Australia — Kakadu park pass'],
+          ['https://kakadu.gov.au/news/access-and-alerts/', 'Parks Australia — Kakadu access report'],
+          ['https://kakadu.gov.au/about/about-us/', 'Parks Australia — Kakadu joint management'],
+          ['https://kakadu.gov.au/discover/culture/', 'Parks Australia — Bininj/Mungguy culture']
+        ],
+        stages: [['Choose the base-side', 'Sleep near Jabiru for Ubirr or near Cooinda for Burrungkuy; allow the drive from Darwin before planning a full park day.'], ['Take the Ubirr option', 'If chosen and open, follow the 1 km circuit; decide in advance whether the steep 250 m climb to the lookout suits you.'], ['Take the Burrungkuy option', 'If chosen and open, allow about two hours for the 1.5 km return walk, art shelters and Kunwarddewardde lookout.'], ['Close the loop at one site', 'Use only marked, open paths and return to your base in daylight; save the other art site for another day.']],
+        risks: [['The wrong base or day scope', 'Kakadu is about three hours from Darwin. Jabiru and Cooinda serve different sides; do not append the second site to a long transfer day.'], ['A climb that does not fit', 'Ubirr’s lookout involves a steep 250 m ascent. Its main art area can be a better choice for visitors who skip the lookout; recheck the current route status.'], ['Flood and cultural closure', 'The wet season can close roads and sites. A park pass does not override daily notices or Traditional Owner access directions.']],
+        duration: 'Give one full day to either site. Two Kakadu nights make one art-site day possible after arrival; use three or more if adding Yellow Water as a separate day.',
+        combine: 'Pair with Yellow Water on a different day. Do not combine Ubirr, Burrungkuy and the roughly three-hour Darwin drive into one day.',
+        verify: 'Check the Kakadu pass, daily access report, chosen sector roads, walk and lookout openings, weather, fire, fuel and Bininj/Mungguy visitor guidance before leaving your base.',
+        faq: [
+          ['Can I see Burrungkuy and Ubirr in one day?', 'Plan one site for the day. They sit on different park corridors, and Kakadu is about three hours from Darwin; adding both to a long transfer leaves too little time to walk and read the sites carefully.'],
+          ['Which route includes the steep climb?', 'Ubirr’s floodplain lookout route includes a steep 250 m ascent. Its main art area has an accessible section; Burrungkuy is a separate Grade 3, 1.5 km return walk for which Parks Australia recommends allowing about two hours.'],
+          ['What changes in the wet season?', 'Flooding may close roads or sites. Check Kakadu’s current access report and choose only an open sector; if your route is closed, stay at your base or use a verified open alternative rather than crossing a barrier.']
+        ]
       }),
       g({
-        slug: 'kakadu-yellow-water', name: 'Kakadu: Yellow Water & South Alligator', motif: 'wetland vessel contract', instrument: 'floodplain-clock', imageQuery: 'Yellow Water Kakadu wetlands Northern Territory', imageAlt: 'Wetlands and wildlife at Yellow Water in Kakadu National Park',
-        summary: 'A wetland day whose cruise, lodge base, road and crocodile boundary are matched to seasonal floodplain conditions.',
-        orientation: 'use Cooinda as the operating base and keep wetland cruise and land walks under separate safety rules.', access: 'Book the exact cruise, confirm check-in and road access and stay nearby rather than relying on a Darwin return.', sequence: 'Use the condition-sensitive cruise first, rest through heat, add one open cultural or wetland walk and return before dark.', boundary: 'Wildlife viewing must not become pursuit. Stay inside vessels and formal paths and follow Traditional Owner and ranger guidance.',
-        stages: [['Confirm the cruise', 'Match departure, check-in, accessibility and cancellation terms.'], ['Enter the wetland with crew', 'Remain within the vessel and follow wildlife instructions.'], ['Rest during peak heat', 'Do not fill the gap with an exposed remote walk.'], ['Use one open land stop', 'Choose a formal route and return to accommodation early.']],
-        risks: [['Crocodiles', 'Never approach banks or enter floodplain water.'], ['Flood and road', 'Season changes can alter access and cruise routes.'], ['Wildlife disturbance', 'Keep noise, drones and proximity within rules.']],
-        duration: 'Use one full day within a multi-night Kakadu stay.', combine: 'Pair with Burrungkuy or Ubirr on a separate day.', verify: 'Check cruise, road, Kakadu alerts, heat, storm, fire, accommodation and wildlife guidance.'
+        slug: 'kakadu-yellow-water', name: 'Kakadu: Yellow Water & South Alligator', reviewDate: '9 October 2026', reviewIsoDate: '2026-10-09', motif: 'Cooinda cruise-day plan', instrument: 'floodplain-clock', imageQuery: 'Yellow Water Kakadu wetlands Northern Territory', imageAlt: 'Wetlands and wildlife at Yellow Water in Kakadu National Park',
+        summary: 'Build a Kakadu wetland day around a booked Yellow Water departure from Cooinda: choose the actual 90- or 120-minute cruise, reach its named check-in 20 minutes early and leave time for heat, road and access changes.',
+        orientation: 'Use Cooinda as the base for Yellow Water rather than commuting from Darwin. The cruise departs at Cooinda Lodge Bus Stop; the tour is Indigenous-owned and runs year-round, but departure times and the land access around it vary. Book a specific sailing, not a presumed sunrise slot.',
+        access: 'Parks Australia lists cruises of 90 or 120 minutes, up to six daily; the timetable changes, sunrise and sunset sailings are popular, and check-in is 20 minutes before departure at Cooinda Lodge Bus Stop. Confirm the exact meeting point, mobility details and cancellation terms with the operator.',
+        sequence: 'Stay at Cooinda or another confirmed Kakadu base with a road plan. Book the exact cruise, meet 20 minutes early, follow the crew’s wildlife instructions, then leave a rest window before any second stop. Add Warradjan Cultural Centre or a boardwalk only after checking its current opening and access; return to your base before dusk.',
+        boundary: 'Yellow Water is living Bininj/Mungguy Country and crocodile habitat. View wildlife from the managed vessel or an open boardwalk; never approach the bank, enter floodplain water, feed animals, fly a drone where prohibited or pursue a sighting.',
+        decisions: [['Choose a departure', 'The official cruise listing offers 90- and 120-minute sailings; confirm the exact schedule and check-in with the operator.'], ['Sleep near Cooinda', 'The Cooinda base protects the early or late boat slot and removes the long Darwin return from the cruise day.'], ['Keep a ground fallback', 'A land stop is optional and status-dependent; rest or stay at base if rain, heat or road notices change the day.']],
+        sources: [
+          ['https://kakadu.gov.au/things-do/tours/boat-cruises/yellow-water-cruises/', 'Parks Australia — Yellow Water cruises'],
+          ['https://kakadu.gov.au/stay/hotels-cabins/cooinda-lodge/', 'Parks Australia — Cooinda Lodge'],
+          ['https://kakadu.gov.au/news/access-and-alerts/', 'Parks Australia — Kakadu access report'],
+          ['https://kakadu.gov.au/plan/when-come/seasons/', 'Parks Australia — Kakadu seasons'],
+          ['https://kakadu.gov.au/plan/passes/', 'Parks Australia — Kakadu park pass'],
+          ['https://kakadu.gov.au/things-do/activities/walks/burrungkuy-nourlangie-walk/', 'Parks Australia — nearby Burrungkuy walk']
+        ],
+        stages: [['Secure the Cooinda base', 'Check road access and stay near the departure before choosing an early or late cruise.'], ['Book the actual sailing', 'Select a listed 90- or 120-minute trip and confirm its check-in point, time, mobility and cancellation terms.'], ['Arrive at the named stop', 'Be at Cooinda Lodge Bus Stop 20 minutes before departure; follow the crew’s wildlife and vessel guidance.'], ['Protect the ground gap', 'Rest after the boat; add only a currently open, confirmed land stop, then return to base before dusk.']],
+        risks: [['Assuming a sunrise time', 'Schedules vary and popular sailings can book out. Use the operator’s exact departure rather than a generic clock time.'], ['Flooded road or closed boardwalk', 'The cruise and land access are different checks. On 8 October 2026 the access report listed the Yellow Water boardwalk open only to the pontoon; check the live report before adding the extension.'], ['Crocodile and wildlife boundary', 'Stay aboard or on an open managed path. No bank approach, swimming, feeding or pursuit is part of the viewing plan.']],
+        duration: 'Give Yellow Water one full day inside a multi-night Kakadu stay. Two nights can fit one cruise day if arrival and departure leave a full window; three nights allow a separate cultural-site day without stacking drives.',
+        combine: 'Pair with Burrungkuy or Ubirr on another day. Do not add the Darwin road transfer or both art sites to the cruise day.',
+        verify: 'Confirm cruise date, departure, check-in, duration, accessibility and cancellation with the operator; recheck Kakadu roads, pass, boardwalk, weather and accommodation on the official access report.',
+        faq: [
+          ['How early should I arrive for Yellow Water?', 'Parks Australia asks cruise guests to meet at Cooinda Lodge Bus Stop 20 minutes before the booked departure. Verify the meeting point and time on your own ticket and operator notice.'],
+          ['Can I walk beyond the Yellow Water pontoon?', 'Only if the current boardwalk notice allows it. The access report checked on 8 October 2026 listed the boardwalk open only to the pontoon; that dated status can change.'],
+          ['Is Yellow Water a sunrise-only cruise?', 'No. The official listing describes 90- and 120-minute cruises, up to six per day, with schedules that vary. Select and confirm the actual departure; do not plan around an assumed sunrise time.']
+        ]
       }),
       g({
-        slug: 'katherine-nitmiluk', name: 'Katherine & Nitmiluk', motif: 'gorge vessel and heat plan', instrument: 'gorge-section', imageQuery: 'Nitmiluk Katherine Gorge Northern Territory', imageAlt: 'Sandstone gorge and river in Nitmiluk National Park',
-        summary: 'A gorge-country visit built around Jawoyn guidance, cruise or paddle identity, heat, water level and a Katherine base.',
-        orientation: 'use Katherine for services and Nitmiluk visitor facilities as the gorge threshold.', access: 'Drive, take regional transport or use a tour, then check the exact cruise, walk or paddle departure.', sequence: 'Start with the booked water or guided activity, rest in heat, attempt one short open walk and stay locally.', boundary: 'Nitmiluk is Jawoyn Country. Follow cultural interpretation, water and crocodile controls, and do not enter closed gorges or art sites.',
-        stages: [['Arrive at the visitor node', 'Confirm activity, check-in, water and track conditions.'], ['Take the booked gorge route', 'Follow operator and ranger instructions.'], ['Keep the heat gap empty', 'Rest rather than forcing an exposed midday walk.'], ['Return to Katherine or camp', 'Avoid a fatigued long drive.']],
-        risks: [['Heat illness', 'Gorge walls and tracks become severe; carry water and shorten the day.'], ['Water and crocodile rules', 'Seasonal management determines paddling and swimming.'], ['Long road distance', 'Darwin is not a casual evening return.']],
-        duration: 'Stay at least one night; two supports a cruise and a separate walk.', combine: 'Pair with a Top End road trip, not a Kakadu same-day excursion.', verify: 'Check Nitmiluk activity, road, water and crocodile advice, heat, fire, camping and fuel.'
+        slug: 'katherine-nitmiluk', name: 'Katherine & Nitmiluk', reviewDate: '12 October 2026', reviewIsoDate: '2026-10-12', motif: 'two-sector gorge and heat plan', instrument: 'gorge-section', imageQuery: 'Nitmiluk Katherine Gorge Northern Territory', imageAlt: 'Sandstone gorge and river in Nitmiluk National Park',
+        summary: 'A Jawoyn Country itinerary that separates the Katherine Gorge sector from Leliyn, with operator-led access and a heat-aware overnight.',
+        searchSummary: 'Plan Katherine and Nitmiluk as two park sectors about 90 km apart: the gorge visitor centre and Leliyn (Edith Falls). Choose an overnight, exact cruise/walk/transfer and check closures, heat, visitor pass and water rules.',
+        orientation: 'Start from Katherine and choose which Nitmiluk sector your available nights support. The gorge entrance is about 30 km northeast of town via sealed Gorge Road; Leliyn (Edith Falls) is about 60 km north via Stuart Highway and Edith Falls Road. The official park page gives about 90 km driving between the two. A Katherine Gorge cruise, canoe or walk begins at the Nitmiluk Centre; Leliyn has its own walking, camping and swimming access. These are not neighbouring stops to tack onto one hot afternoon.',
+        access: 'A self-drive plan needs a vehicle, fuel, daylight and separate status checks for each road and sector. If you do not have a car, book an operator or transfer that names the Gorge or Leliyn pickup and return; do not assume regional buses go to either trailhead. Reserve Nitmiluk Tours or another licensed activity directly for its exact check-in, cruise/walk/paddle, water-level limits and cancellation conditions. An NT Parks Visitor Pass is required. Check park and track openings before leaving Katherine because fire, flood or maintenance can close access.',
+        sequence: 'Give the gorge sector its own day: reach the Nitmiluk Centre for the booked cruise, canoe or walk, follow Jawoyn and ranger interpretation, then use a short open track only if heat, water and daylight permit. Sleep in Katherine or the park. Add a second night before choosing Leliyn, then drive its separate sealed-road approach, check the current pool/track status and swim only at a place explicitly open under current crocodile advice. In October–April, Northern Territory temperatures may exceed 40°C; check heatwave warnings, start early, rest during the hottest hours and abandon exposed walking if conditions or health deteriorate. Do not plan an evening drive back to Darwin after the activity.',
+        boundary: 'Nitmiluk is Jawoyn Country, where people continue to live, work and share culture. Respect cultural interpretation, restricted places and art sites; do not touch rock art or enter closed gorges. Pools, canoes and river access depend on seasonal water levels, crocodile management and current park directions; a past photo or open sign at another sector is not permission here. Carry water, keep to open tracks and follow ranger and operator instructions.',
+        decisions: [['Choose Gorge for a boat or gorge-wall day', 'Stay in Katherine or at the park and begin at the Nitmiluk Centre. Book the actual cruise, canoe, guided walk or track that matches your ability; its duration and access vary with conditions and operator schedule.'], ['Choose Leliyn as a separate sector', 'Leliyn is reached by a different road from Katherine and lies about 90 km driving from the Gorge sector. Give it another day or night. Check its swimming-hole and walking status independently; if the pool is closed, keep to an open short walk or picnic rather than searching for an unofficial entry.'], ['Choose a transfer before choosing an activity', 'Without a car, confirm a licensed tour/transfer with named pickup, trailhead, activity and return. A town coach or Katherine accommodation does not itself provide park access, and the two sectors require different road movements.'], ['Let heat and closure notices win', 'NT Parks warns October–April temperatures may exceed 40°C and parks can close for fire, flood or maintenance. Check BOM warnings and NT Parks status before travel. If the gorge or Leliyn access closes, stay in Katherine or use only a separately verified open local option; do not replace it with a longer unplanned drive.']],
+        stages: [['Base in Katherine and select one sector', 'For the gorge, allow the sealed 30 km road to the Nitmiluk Centre. For Leliyn, allow the separate roughly 60 km drive north. Do not route both as adjacent stops.'], ['Reserve the named activity or transfer', 'Confirm operator check-in, pickup, return, water-level/crocodile restrictions and what happens if weather changes. Non-drivers need a park-specific booked transfer.'], ['Use the cool hours', 'Check NT Parks openings, track status and BOM heat warnings. Start an allowed walk or vessel activity early, carry water and rest during the hottest period.'], ['Stay or return with daylight', 'Keep an overnight in Katherine/park when doing both sectors or a long activity. Do not add a tired 320 km drive to Darwin after a full park day.']],
+        risks: [['Two sectors mistaken for one', 'Nitmiluk’s Gorge and Leliyn areas are about 90 km apart by road. Each needs its own approach, access check and enough daylight.'], ['Extreme heat and exposure', 'October–April heat can exceed 40°C in the NT and the Top End is humid. Heat exhaustion/dehydration can develop quickly; heed warnings, carry water and shorten or cancel exposed activity.'], ['Fire, flood, water and crocodile closures', 'NT Parks may close the park unexpectedly. Gorge, canoe and Leliyn swimming rules change with water level and crocodile management. Current park/operator status overrides any saved itinerary.']],
+        duration: 'One night in Katherine is the minimum for a deliberate gorge visit. Two or more nights allow a booked gorge activity and a separate Leliyn day without combining the 90 km sector transfer with a long activity.', combine: 'Link Nitmiluk to a Top End road itinerary with a Katherine overnight. Do not combine Darwin, Kakadu and Nitmiluk as a same-day return or put the two Nitmiluk sectors on opposite ends of one rushed day.', verify: 'Check NT Parks Visitor Pass, Nitmiluk and Leliyn open status, road conditions, fire/flood/heatwave alerts, exact operator schedule and pickup, water levels, crocodile controls, activity access, fuel and accommodation.',
+        faq: [
+          ['Are Katherine Gorge and Edith Falls the same stop?', 'No. Nitmiluk Parks describes two sectors: the Gorge entrance about 30 km northeast of Katherine and Leliyn (Edith Falls) about 60 km north. They are about 90 km apart by road, so give each separate time.'],
+          ['Can I visit without a car?', 'Only after confirming a park-specific tour or transfer with its pickup, exact sector, activity and return. Do not assume a regional service reaches the Nitmiluk Centre or Leliyn trailhead.'],
+          ['Is Leliyn always open for swimming?', 'No. Check NT Parks status, swimming and crocodile advice on the day. Closures from water conditions, fire, flood or maintenance override older descriptions and photos.'],
+          ['How much heat should I plan for?', 'NT Parks warns that October–April temperatures can exceed 40°C and the humid Top End can cause exhaustion and dehydration. Check BOM heatwave warnings, start early, rest and cancel exposed activity if conditions become unsafe.']
+        ],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/nitmiluk-national-park', 'Northern Territory Parks — Nitmiluk sectors, road distances, visitor pass and heat'],
+          ['https://nt.gov.au/parks/check-park-open', 'Northern Territory Parks — current park openings and alerts'],
+          ['https://nt.gov.au/parks/visitor-pass', 'Northern Territory Parks — Visitor Pass'],
+          ['https://www.nitmiluktours.com.au/', 'Nitmiluk Tours — current cruise, canoe and activity bookings'],
+          ['https://www.bom.gov.au/nt/forecasts/katherine.shtml', 'Bureau of Meteorology — Katherine forecast and warnings']
+        ]
       })
     ]
   }),
@@ -194,57 +511,354 @@ export const australiaNorthClusters = [
     band: 'interior',
     family: 'desert-light-compass',
     label: 'DESERT DISTANCE / CULTURAL COUNTRY / HEAT',
-    tagline: 'Distance, heat and Anangu or Arrernte guidance come before the photograph.',
-    hubIntro: 'The Red Centre is a chain of distinct Countries and remote gateways, not one desert attraction. Mparntwe/Alice Springs, Tjoritja, Watarrka, Uluru and Kata Tjuta demand long drives, water, cultural guidance and seasonal heat planning. Five chapters separate town context, gorge or ridge walking and the protected cultural landscape around Uluru–Kata Tjuta.',
-    stay: 'Use Mparntwe for regional context, a Watarrka base for Kings Canyon and Yulara for Uluru–Kata Tjuta. Attempting all from one room creates unsafe road days.',
-    transfer: 'Flights reach Alice Springs and Yulara. Self-drive and tours require fuel, tyre, communications and road checks; remote distances need daylight and recovery margin.',
+    tagline: 'Give Uluṟu–Kata Tjuṯa, Watarrka, Tjoritja and Mparntwe separate bases; let Country, distance and heat set the order.',
+    hubIntro: 'Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and Kata Tjuṯa have long exposed walks and their own access conditions, while fuel, daylight and road closures govern every remote leg. Begin with Aṉangu or Arrernte visitor guidance, then build each day around the current park and road information.',
+    hubDecision: 'Choose the road before choosing the vehicle. A standard 2WD route to Watarrka follows the sealed Stuart Highway, then the Lasseter Highway and Luritja Road via Erldunda; the Mereenie Loop via Larapinta Drive is a separate unsealed 4WD choice with a required pass. Tourism NT lists no fuel facilities on that loop, so refuel before entering it and check road status and fuel availability before leaving a base. Keep Mparntwe/Tjoritja, separate Uluṟu and Kata Tjuṯa days from Yulara, and a Watarrka canyon night as distinct blocks; do not trade the last daylight for a long post-walk transfer.',
+    stay: 'If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window. Keep the Kings Canyon Rim Walk beside a Watarrka overnight; use Mparntwe for town services and a separate Tjoritja day. Moving bases is part of the itinerary, not spare time.',
+    transfer: 'Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and Tjoritja. Confirm vehicle suitability, fuel, communications and road notices before each departure; plan daylight and recovery rather than a night return.',
+    faq: [
+      ['How many days should I give the Red Centre?', 'Use at least two full days from Yulara if you want both Uluṟu and Kata Tjuṯa. Add separate nights for Watarrka and Mparntwe when those chapters are in the route; do not turn the drive between them into an evening transfer.'],
+      ['Can I drive from Uluṟu to Watarrka and return after one walk?', 'Keep those chapters on different days with an overnight near Watarrka. The long road leg plus an exposed canyon walk leaves too little daylight and recovery margin for a safe return.'],
+      ['What should I recheck before leaving a base?', 'Check current park and cultural closures, heat or wind advice, road conditions, fuel, water, communications and the vehicle requirements for the actual route.']
+    ],
+    reviewDate: "4 October 2026",
+    reviewIsoDate: "2026-10-04",
+    hubReviewDate: "15 October 2026",
+    hubReviewIsoDate: "2026-10-15",
+    stayTeaser: "Use Yulara for Uluṟu and Kata Tjuṯa, stay near Watarrka for Kings Canyon, and base in Mparntwe for Tjoritja.",
+    transferTeaser: "Fly into Yulara or Alice Springs, then allow separate daylight road legs between the park regions.",
     sources: [
       ['https://www.australia.com/en/places/alice-springs-and-surrounds/guide-to-alice-springs.html', 'Tourism Australia — Alice Springs'],
       ['https://northernterritory.com/alice-springs-and-surrounds', 'Tourism NT — Alice Springs and surrounds'],
       ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park', 'Northern Territory Parks — Tjoritja / West MacDonnell'],
       ['https://nt.gov.au/parks/find-a-park/watarrka-national-park', 'Northern Territory Parks — Watarrka'],
-      ['https://parksaustralia.gov.au/uluru/', 'Parks Australia — Uluru–Kata Tjuta National Park']
+      ['https://northernterritory.com/itineraries/queens-on-tour', 'Tourism NT — Mereenie Loop fuel and permit notes'],
+      ['https://roadreport.nt.gov.au/', 'Road Report NT — live road conditions'],
+      ['https://parksaustralia.gov.au/uluru/', 'Parks Australia — Uluṟu–Kata Tjuṯa National Park']
     ],
     guides: [
       g({
-        slug: 'mparntwe-alice-springs', name: 'Mparntwe / Alice Springs', motif: 'desert gateway and culture', instrument: 'gateway-compass', imageQuery: 'Alice Springs Mparntwe MacDonnell Ranges', imageAlt: 'Road and rocky landscape at Anzac Hill in Alice Springs',
-        summary: 'A desert gateway chapter using cultural institutions, town services and a ridge or riverbed view to prepare for remote Country.',
-        orientation: 'use central services, the Todd River corridor and one cultural institution as separate anchors.', access: 'Arrive by flight, rail or road and resolve vehicle, fuel, water and communications before leaving town.', sequence: 'Begin with recognised Arrernte cultural context, use one town landscape and finish with expedition supplies and road checks.', boundary: 'Mparntwe is Arrernte Country. Use preferred names and recognised cultural experiences; never enter or photograph restricted places.',
-        stages: [['Settle the remote logistics', 'Confirm vehicle, fuel, water, accommodation and emergency contacts.'], ['Choose cultural context', 'Use an Aboriginal-owned or authoritative institution or tour.'], ['Read one town landscape', 'Walk only an open route suited to heat.'], ['Prepare the next road', 'Check conditions before departure, not at the highway edge.']],
-        risks: [['Heat', 'Outdoor activity needs early timing and generous water.'], ['Remote-road assumptions', 'Fuel and communication gaps start outside town.'], ['Cultural disrespect', 'Do not publish sensitive sites or repeat unverified stories.']],
-        duration: 'Allow two nights before a regional loop.', combine: 'Pair with Tjoritja as a separate day, not a hurried airport transfer.', verify: 'Check road, fuel, heat, fire, cultural operator, vehicle and communication.'
+        slug: 'mparntwe-alice-springs', routeTitle: "Plan an Alice Springs town day",
+        name: 'Mparntwe / Alice Springs',
+        motif: 'town, interpretation and preparation',
+        instrument: 'gateway-compass',
+        imageQuery: 'Alice Springs Mparntwe MacDonnell Ranges',
+        imageAlt: 'Road and rocky landscape at Anzac Hill in Alice Springs',
+        summary: "Make Alice Springs (Mparntwe) more than a fuel stop: pair the 1872 Telegraph Station precinct with the Desert Park's three habitats, then prepare for a separate day in Tjoritja.",
+        orientationTitle: 'Read the town in two different ways',
+        orientation: 'Mparntwe is the Arrernte name for Alice Springs. The Telegraph Station preserves a dated Overland Telegraph chapter and begins Larapinta Section 1; 7 km west, the Desert Park moves through sand country, desert river and woodland. These are two distinct introductions to the region, not interchangeable photo stops.',
+        interpretation: 'The Telegraph Station records the history of the 1872 line and one early European settlement site. Arrernte presence does not begin with that station. The Desert Park pairs public cultural presentations with displays about regional landscapes and wildlife; use the material offered there rather than repeating restricted stories.',
+        access: 'The Telegraph Station is 4 km north of town: its reserve is open 8 am–9 pm and its historic precinct 8 am–4 pm. The Desert Park is 7 km west along Larapinta Drive, open 7:30 am–6 pm with last entry at 4:30 pm. Check current hours, closures and road notices before setting a timed visit.',
+        sequence: 'Give the Telegraph precinct and Desert Park separate blocks, allowing for their different locations and the Desert Park entry cutoff. Section 1 of the Larapinta Trail starts at the Telegraph Station but runs 24.7 km to Simpsons Gap, takes about 9 hours and is Grade 4; treat it as a full hiking day, not an extra town walk. Finish with fuel, water, accommodation and road checks for the next leg.',
+        boundary: 'Mparntwe is Arrernte Country. Use public interpretation and names preferred by Traditional Owners; remain on marked tracks, and do not publish restricted places or stories.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Set a town day', 'Leave a recovery and resupply block after arrival; keep the remote drive out of the same day as a long walk.'],
+          ['Visit the Telegraph precinct', 'Four kilometres north, the station interprets the 1872 Overland Telegraph. Check the historic precinct hours; Larapinta Section 1 begins here.'],
+          ['Choose the Desert Park lens', 'Seven kilometres west, walk through sand country, desert river and woodland. Check the Nature Theatre and cultural presentation schedule, or reserve the one-hour foothills tour.'],
+          ['Prepare the next leg', 'Confirm vehicle, fuel, water, park pass, communications and live road conditions before leaving town.']
+        ],
+        risks: [
+          ['Heat and timing', 'Avoid strenuous outdoor activity in the heat of the day; both sites publish current hours and access notices.'],
+          ['Trail status', 'Flood damage can affect paths at the Telegraph Reserve. Check the live status instead of assuming every short route is open.'],
+          ['Remote-road gap', 'Town services do not continue along every outback road. Leave with the required fuel, water, vehicle plan and offline directions.']
+        ],
+        decisions: [
+          ['Telegraph Station | town history', 'Four kilometres north of town, this is the best-preserved station on the Overland Telegraph Line. The short precinct visit is distinct from Larapinta Section 1: the walk to Simpsons Gap is 24.7 km, Grade 4 and about nine hours.'],
+          ['Desert Park | three habitats', 'At 7 km west on Larapinta Drive, the park links sand country, desert river and woodland with public interpretation, a birds-of-prey Nature Theatre and a Nocturnal House. Last entry is 4:30 pm; verify the current presentation timetable.'],
+          ['Town stay | reset and provision', 'Allow two nights before a regional loop when arrival, interpretation and vehicle preparation all matter. A town night gives you a separate daylight window for Tjoritja instead of turning the first park visit into an airport transfer.']
+        ],
+        duration: 'Allow two nights before a regional loop if you want a town day and a separate departure window.',
+        combine: 'Use the town as the base for Tjoritja, but give the park drive and any long Larapinta section their own daylight.',
+        verify: 'Check Telegraph precinct and Desert Park hours, park and trail status, heat advice, fuel, water, visitor pass and road conditions.',
+        faq: [
+          ['Is Larapinta Section 1 a short walk from the Telegraph Station?', 'No. It runs 24.7 km to Simpsons Gap, is Grade 4 and takes about nine hours. Use one of the reserve short walks unless you have planned the full section as a hike.'],
+          ['Can I fit the Desert Park into a late afternoon?', 'Plan around last entry at 4:30 pm. The park is 7 km west of town and includes three habitat areas, scheduled presentations and a one-hour foothills tour; check the live timetable before choosing a short visit.'],
+          ['How long should I stay in Alice Springs before driving west?', 'Two nights leave room to recover, visit one or both interpretive sites and set up the next day with fuel, water, road information and a realistic departure time.']
+        ],
+        sources: [
+          ['https://www.education.gov.au/indigenous-education/resources/alice-springs-mparntwe-education-declaration', 'Australian Government Department of Education — Alice Springs (Mparntwe) Education Declaration'],
+          ['https://nt.gov.au/parks/find-a-park/alice-springs-telegraph-station-historical-reserve', 'Northern Territory Parks — Alice Springs Telegraph Station'],
+          ['https://nt.gov.au/parks/find-a-park/alice-springs-desert-park', 'Northern Territory Parks — Alice Springs Desert Park'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail', 'Northern Territory Parks — Larapinta Trail sections']
+        ]
       }),
       g({
-        slug: 'tjoritja-west-macdonnell', name: 'Tjoritja / West MacDonnell Ranges', motif: 'gorge-and-water desert road', instrument: 'range-mileage', imageQuery: 'West MacDonnell Ranges Tjoritja Ormiston Gorge', imageAlt: 'Rocky gorge in Tjoritja West MacDonnell National Park',
-        summary: 'A westward gorge route that limits stops, identifies safe water advice and keeps fuel, heat and the Mparntwe return visible.',
-        orientation: 'select two or three named gorges on one road line and reject the temptation to stop at every sign.', access: 'Drive a suitable vehicle or join a recognised tour with water, fuel and offline communication.', sequence: 'Use the longest walk at first light, visit a second accessible gorge, rest in heat and return before wildlife-heavy dusk.', boundary: 'Tjoritja is Arrernte Country. Sacred places, waterholes and cultural information require current park and Traditional Owner guidance.',
-        stages: [['Choose the furthest point', 'Build the day backward from fuel, daylight and the return.'], ['Walk before heat', 'Use one graded route early.'], ['Treat waterholes cautiously', 'Enter only where officially permitted and follow hygiene and cultural rules.'], ['Drive back before dusk', 'Protect visibility and wildlife safety.']],
-        risks: [['Heat and dehydration', 'Carry more water than a town walk and turn back early.'], ['Remote roads', 'Tyres, fuel and coverage require preparation.'], ['Waterhole danger', 'Cold, deep or culturally restricted water is not an automatic swim.']],
-        duration: 'Use a full day from Mparntwe; stay west for longer walks.', combine: 'Keep Watarrka and Uluru for separate bases.', verify: 'Check NT Parks, road, fuel, temperature, fire, waterhole advice, cultural closure and sunset.'
+        slug: 'tjoritja-west-macdonnell', routeTitle: "Choose an Ormiston or Simpsons Gap day",
+        name: 'Tjoritja / West MacDonnell Ranges',
+        motif: 'gorge road and water decisions',
+        instrument: 'range-mileage',
+        imageQuery: 'West MacDonnell Ranges Tjoritja Ormiston Gorge',
+        imageAlt: 'Rocky gorge in Tjoritja West MacDonnell National Park',
+        summary: 'Choose a near-town gorge or a full westward drive: Simpsons Gap is 20 minutes from Alice Springs, while Ormiston Gorge is 135 km away.',
+        orientationTitle: 'Choose by distance, then by water',
+        orientation: 'Tjoritja / West MacDonnell National Park stretches 161 km west of Alice Springs, with sites reached along Larapinta Drive and Namatjira Drive. Simpsons Gap offers short walks near town; Ormiston is a full-distance outing with a permanent waterhole, campground and longer trail options. A map pin is not a measure of the return drive.',
+        interpretation: 'At Simpsons Gap, the permanent waterhole, ghost gums and range-facing short walks sit close to town; black-footed rock-wallabies may appear around dawn or dusk, and swimming is not permitted. Farther west, Ormiston Gorge holds a permanent waterhole about 500 m from its visitor centre, but the water is extremely cold and can be deep. Read the signed route and current water conditions before deciding to enter.',
+        access: 'An NT Parks Visitor Pass is required. Reach visitor areas from Alice Springs along Larapinta Drive and Namatjira Drive; check closures and road conditions first. The Red Centre Way / Mereenie Loop toward Watarrka is unsealed and requires a permit; the NT recommends a 4WD for that route.',
+        sequence: 'For a short outing, choose Simpsons Gap and one of its named walks. For Ormiston, leave early, make the 135 km westward leg the day’s anchor and add at most one stop on the return. As of 4 October 2026, NT Parks warns that Ormiston Pound Walk requires a short swim through deep, cold water; verify the live status and do not start unless prepared for that crossing.',
+        boundary: 'Tjoritja is Arrernte Country. Follow public park interpretation, stay on formed tracks, do not swim at Simpsons Gap and respect any cultural or waterhole closure. Boil water where park signs require it.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Set the distance limit', 'Choose Simpsons Gap for a short town-side outing or Ormiston Gorge for a full westward day; do not plan every gorge as one loop.'],
+          ['Choose one walk', 'Match the named route, grade, heat and daylight to the site. Treat Larapinta sections as multi-hour or overnight hikes, not roadside add-ons.'],
+          ['Read the water notice', 'Check swimming rules, water temperature, depth and any crossing requirement at the exact site before entering or starting a loop.'],
+          ['Return in daylight', 'Carry water and offline directions, refuel in town and leave a margin for a long drive and wildlife on the road.']
+        ],
+        risks: [
+          ['Distance mistaken for a day trip', 'Ormiston is 135 km west of Alice Springs; build the return and one main walk into the plan before adding another stop.'],
+          ['Cold or restricted water', 'Ormiston’s waterhole is very cold and can reach 14 m deep. Do not jump or dive; Simpsons Gap is closed to swimming.'],
+          ['Changing park status', 'Fire, flood, maintenance and road conditions can close sites. The Ormiston Pound crossing requirement is a live condition, so recheck on the day.']
+        ],
+        decisions: [
+          ['Simpsons Gap | short walks or cycle', 'Twenty minutes from Alice Springs, Simpsons Gap has Ghost Gum Walk, Cassia Hill and Woodland Trail; swimming is prohibited. The sealed bicycle path runs 17 km one way from a start 7 km out of town, so treat it as its own ride with water and a return plan.'],
+          ['Ormiston Gorge | full-day base', 'At 135 km west, Ormiston has short accessible routes, half-day circuits and overnight walks. Its permanent waterhole is 500 m from the visitor centre and may be up to 14 m deep. NT Parks currently warns that Ormiston Pound Walk requires a short swim through deep cold water.'],
+          ['Larapinta | commit to sections', 'This 12-section trail is a separate hiking plan: Simpsons Gap lies on Sections 1 and 2, while Ormiston Gorge is on Sections 9 and 10. Check section maps, water and closure notices before choosing an overnight itinerary.']
+        ],
+        duration: 'Give Ormiston a full day from Alice Springs; add nights for long walks or Larapinta sections. Simpsons Gap can fit a shorter town-side outing.',
+        combine: 'Keep Watarrka and Uluṟu on separate road-trip days. A Simpsons Gap visit is the practical nearby pairing; do not treat Ormiston as a quick stop on the way west.',
+        verify: 'Check the NT Parks Visitor Pass, site openings, heat and fire notices, road conditions, water and swim advice, fuel and sunset.',
+        faq: [
+          ['Can I visit Simpsons Gap and Ormiston Gorge in one day?', 'Ormiston lies 135 km west of Alice Springs and needs a full-day plan. Simpsons Gap is only 20 minutes from town; combine it with one other stop only when current daylight and road conditions leave a safe return.'],
+          ['Is the water safe for a swim?', 'Swimming is prohibited at Simpsons Gap. Ormiston has a permanent swimming waterhole, but the water is extremely cold, may be 14 m deep and contains submerged logs and rocks. Never jump or dive, and check current crossing notices.'],
+          ['Does the Red Centre Way need a special vehicle or permit?', 'NT Parks says the Mereenie Loop between the West Macs and Watarrka is unsealed, requires a permit and is recommended for 4WD. Check the road report and permit terms before selecting it.']
+        ],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park', 'Northern Territory Parks — Tjoritja / West MacDonnell National Park'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/simpsons-gap', 'Northern Territory Parks — Simpsons Gap'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/ormiston-gorge', 'Northern Territory Parks — Ormiston Gorge'],
+          ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park/larapinta-trail/sections-of-the-larapinta-trail', 'Northern Territory Parks — Larapinta Trail sections']
+        ]
       }),
       g({
-        slug: 'watarrka-kings-canyon', name: 'Watarrka / Kings Canyon', motif: 'rim-walk heat gate', instrument: 'heat-gate', imageQuery: 'Kings Canyon Watarrka Northern Territory rim', imageAlt: 'Sandstone cliffs at Watarrka Kings Canyon',
-        summary: 'A remote canyon visit where temperature-based trail closure, steep ascent and nearby accommodation determine whether the rim is attempted.',
-        orientation: 'separate the Rim Walk from shorter creek routes and let official heat rules make the decision.', access: 'Stay near Watarrka or arrive with a realistic road plan, full fuel and water; do not drive from Uluru and back around one walk.', sequence: 'Start at first light if the rim is open, turn back at the initial climb when needed and reserve a shorter route as the complete alternative.', boundary: 'Watarrka is culturally significant Luritja and Arrernte Country. Stay on open paths and respect closed or sensitive areas.',
-        stages: [['Read the heat gate', 'Check the current forecast and closure threshold.'], ['Choose rim or creek', 'Make the shorter route a valid plan, not a consolation.'], ['Carry the full walk supply', 'Use water, sun protection and footwear appropriate to exposed rock.'], ['Recover before driving', 'Rest, refuel and avoid a fatigued night road.']],
-        risks: [['Extreme heat', 'The rim can close and heat illness can become life-threatening.'], ['Steep exposed terrain', 'The initial climb and cliff edges require fitness and conservative behavior.'], ['Long road return', 'Wildlife and fatigue make dusk driving hazardous.']],
-        duration: 'Stay one or two nights near Watarrka.', combine: 'Use it as a road-trip leg between bases, never a casual Uluru add-on.', verify: 'Check park alerts, heat closure, road, fuel, accommodation, water and sunrise.'
+        slug: 'watarrka-kings-canyon', routeTitle: "Choose a Watarrka walk by its heat cutoff",
+        name: 'Watarrka / Kings Canyon',
+        motif: 'canyon rim and heat gate',
+        instrument: 'heat-gate',
+        imageQuery: 'Kings Canyon Watarrka Northern Territory rim',
+        imageAlt: 'Sandstone cliffs at Watarrka Kings Canyon',
+        summary: 'Stay near Watarrka and let the 36°C start limits choose between the six-kilometre Rim Walk and three shorter routes.',
+        orientationTitle: 'A rim walk is one of four different walks',
+        orientation: 'Kings Canyon’s red walls rise about 100 m above Kings Creek to a plateau of rocky domes. The Rim Walk reaches that exposed rim after a difficult climb; the South Wall stops before the Garden of Eden, Kings Creek stays below the rim, and Kathleen Springs follows a paved, accessible path to a significant waterhole.',
+        interpretation: 'The canyon is not a single summit viewpoint. From the rim, the plateau and domes open above the sheltered creek, where the NT notes relict plants including the MacDonnell Ranges cycad. The four public routes have separate markers, grades and heat cutoffs; taking a shorter one does not connect it to the Rim Walk.',
+        access: 'Watarrka lies about 450 km southwest of Alice Springs. The sealed Stuart and Lasseter highways and Luritja Road suit 2WD vehicles; the Red Centre Way / Mereenie Loop is unsealed, needs a permit and is recommended for 4WD. Camping is not allowed inside the park: stay at Kings Canyon Resort or Kings Creek Station and check road conditions before departure.',
+        sequence: 'Sleep near the park, check the Watarrka forecast and walk status at first light, then choose one route. At a forecast of 36°C or higher, start the Rim Walk before 9 am or South Wall Return before 11 am. The Rim Walk is clockwise; if its climb or cutoff does not fit, Kings Creek or Kathleen Springs is a complete alternative.',
+        boundary: 'Watarrka is culturally significant Luritja and Arrernte Country. Keep to marked paths and boardwalks, stay back from cliff edges, do not swim at Kathleen Springs and respect closures and public cultural guidance.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Base beside the park', 'Book the nearby resort or station: overnight camping is not permitted inside Watarrka National Park.'],
+          ['Apply the heat gate', 'Check the Watarrka forecast before sunrise. At 36°C or above, Rim Walk entry ends at 9 am and South Wall entry at 11 am.'],
+          ['Choose one track', 'Use the clockwise rim for the full canyon, South Wall for its separate return, Kings Creek for a shorter walk or Kathleen Springs for paved accessible access.'],
+          ['Recover before the drive', 'Carry water, rest after the walk and set the next road leg in daylight. If using Mereenie, confirm 4WD suitability and the current permit.']
+        ],
+        risks: [
+          ['Heat cutoff', 'At 36°C or above, the Rim and South Wall start deadlines are mandatory. A later start means choosing another walk.'],
+          ['Exposed rim and steep ascent', 'The Rim Walk begins with a difficult climb and follows cliff edges. Follow the clockwise arrows, stairs and boardwalks; do not approach edges.'],
+          ['Route mistaken for access', 'A 2WD can use the sealed highway route. The Mereenie route is unsealed, needs a permit and is recommended for 4WD; check road status before committing.']
+        ],
+        decisions: [
+          ['Kings Canyon Rim | 6 km loop', 'Grade 4, 3–4 hours, clockwise, with a difficult initial climb. The halfway Garden of Eden is a rockhole among rare plants and swimming is not allowed. At a forecast of 36°C or above, start before 9 am.'],
+          ['South Wall | 4.8 km return', 'Grade 3, about two hours, with a steep climb to the south wall. At 36°C or above, start before 11 am. This route ends at a one-way gate and does not reach the Garden of Eden or the rest of the rim.'],
+          ['Kings Creek or Kathleen Springs | shorter options', 'Kings Creek is 2.6 km return, about one hour, Grade 2. Kathleen Springs is 2.4 km return, about 1.5 hours, Grade 1, sealed and wheelchair accessible; it lies 21 km by road from the canyon. Do not swim at its culturally significant waterhole.']
+        ],
+        duration: 'Stay one or two nights near Watarrka so the approach, walk and onward drive do not compete for the same daylight.',
+        combine: 'Use Watarrka as a separate road-trip overnight between bases, not as a same-day return from Uluṟu.',
+        verify: 'Check the NT Parks Visitor Pass, live walk opening, Watarrka temperature, route and road conditions, accommodation, fuel and Mereenie permit if relevant.',
+        faq: [
+          ['Can South Wall Return be joined to the Rim Walk?', 'No. South Wall Return uses its own out-and-back path to a one-way gate; it does not access the Garden of Eden or the rest of the rim.'],
+          ['Can I reach Watarrka in a 2WD?', 'The sealed Stuart and Lasseter highways and Luritja Road are suitable for 2WD. The Red Centre Way / Mereenie Loop is unsealed, requires a permit and is recommended for 4WD; check current road advice.'],
+          ['Is Kathleen Springs a swimming stop?', 'No. The 2.4 km paved Grade 1 return path reaches a waterhole significant to local Aboriginal people and important to wildlife; swimming is prohibited.']
+        ],
+        sources: [
+          ['https://nt.gov.au/parks/find-a-park/watarrka-national-park', 'Northern Territory Parks — Watarrka National Park'],
+          ['https://nt.gov.au/parks/find-a-park/watarrka-national-park/short-walks', 'Northern Territory Parks — Watarrka short walks'],
+          ['https://roadreport.nt.gov.au/home', 'Northern Territory Road Report']
+        ]
       }),
       g({
-        slug: 'uluru-cultural-landscape', name: 'Uluru Cultural Landscape', motif: 'respect-first light circuit', instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluru rising from the central Australian desert',
-        summary: 'A respectful Uluru day beginning with Anangu interpretation, open walking routes and photo restrictions rather than a race between sunrise and sunset.',
-        orientation: 'use the Cultural Centre and one open base-walk section as the core, with a single light-viewing period.', access: 'Stay in Yulara, hold the current park pass and use shuttle, tour or a road plan that avoids dawn wildlife risk.', sequence: 'Begin with cultural guidance, walk only open sections in safe temperature, observe restricted photography and finish at one designated viewing area.', boundary: 'Uluru is a sacred living cultural landscape. Do not climb, enter closed areas, photograph restricted sites or treat Anangu stories as decorative content.',
-        stages: [['Begin at the Cultural Centre', 'Read current Anangu guidance and park alerts.'], ['Choose the open base section', 'Match heat, distance and cultural closures.'], ['Keep the camera inside rules', 'Observe signs and put interpretation before image collection.'], ['Use one light window', 'Choose sunrise or sunset and avoid exhausting both ends of the day.']],
-        risks: [['Extreme heat', 'Walks can close and exposed distance is serious.'], ['Cultural photography rules', 'Some sites must not be photographed or described.'], ['Dawn and dusk driving', 'Wildlife and fatigue make roads dangerous.']],
-        duration: 'Allow at least two full days in the park area.', combine: 'Pair with Kata Tjuta on a separate weather window.', verify: 'Check park pass, cultural and walking closures, temperature, shuttle or tour, viewing access and road.'
+        slug: 'uluru-cultural-landscape', name: 'Uluṟu Cultural Landscape', motif: 'surface, water and respect', orientationTitle: "Choose the right walk", routeTitle: "Plan Uluṟu’s half-day for cool hours", instrument: 'cultural-compass', imageQuery: 'Uluru sunset Northern Territory Australia', imageAlt: 'Uluṟu rising from the central Australian desert',
+        summary: "Uluṟu is more than a red landmark: Aṉangu have cared for this living Country for generations, and the park is jointly managed with the Australian Government. Begin with the Cultural Centre, then read the exposed sandstone and water-shaped shade around Muṯitjulu Waterhole.",
+        orientation: "Uluṟu and Kata Tjuṯa formed from ancient sediment fans that hardened into rock and later tilted as the land shifted. Uluṟu is mainly arkose sandstone; iron oxide gives its weathered surface the familiar red, while pale patches expose less-weathered rock. Geology is one layer of this place. Tjukurpa is Aṉangu law, knowledge and spiritual philosophy, and it guides the park's joint management. Start with the Tjukurpa Tunnel and multilingual displays at the Cultural Centre; let Aṉangu interpretation set the limits of what is shared.",
+        interpretation: "The two short walks end in different landscapes. From the Mala carpark, the public route to Kaṉtju Gorge passes publicly described ancient campsites and a kitchen cave before reaching sheer gorge walls. Kuniya ends at Muṯitjulu Waterhole, one of the area's few permanent water sources, with river red gums, shade and tall grasses. These are visitor-route descriptions, not permission to enter caves or reproduce restricted Tjukurpa. Stay on the open track and use park signs as the authority at each site.",
+        access: "Fly to Ayers Rock / Connellan Airport (AYQ) at Yulara, then prearrange a hire car, coach tour or the Uluṟu Hop On Hop Off bus for the park. There is no taxi or other public transport inside the park; the resort shuttle links accommodation with Yulara's town square only. From Alice Springs, Uluṟu is 465 km by road and Parks Australia estimates about 5.5 hours of direct driving before stops. Make that a travel day, not the approach to a long exposed walk.",
+        sequence: "For a half-day from Yulara, use the cool morning for the designated Talinguṟu Nyakunytjaku sunrise view, walk Mala to Kaṉtju Gorge before late-morning heat, then spend time at the Cultural Centre and have lunch there. Check that the lookout and Mala track are open for your date, and check the centre's current hours before setting out. Leave the full 10.6 km Uluṟu Base Walk and Kata Tjuṯa for a separate day.",
+        boundary: "Uluṟu and Kata Tjuṯa are living Aṉangu sacred landscapes. Do not climb, leave marked tracks, enter closed areas or photograph culturally sensitive rock features identified by park maps and signs. In marked sensitive areas, Aṉangu ask visitors not to photograph the rock; on the north-east face, they ask for wide, distant views and no detail of the top-left area. Ask before photographing people. Drones are prohibited. Anyone making or publicly displaying their own commercial park photography or video should check Parks Australia's media-permit rules first.",
+        reviewDate: "4 October 2026",
+        reviewIsoDate: "2026-10-04",
+        decisions: [
+          [
+            "Kuniya | water and shade",
+            "The return is 1 km, Grade 2 and 30–45 minutes. It reaches Muṯitjulu Waterhole, where permanent water supports a greener, shadier pocket of river red gums and tall grass. Keep this shorter walk for a limited morning or a day when the longer route is a poor fit."
+          ],
+          [
+            "Mala | campsite and gorge",
+            "The return from Mala carpark to Kaṉtju Gorge is 2 km, Grade 2 and about 90 minutes; water and toilets are available. It takes longer than Kuniya and adds publicly described campsites, a kitchen cave and the enclosed gorge."
+          ],
+          [
+            "Uluṟu Base Walk | full circuit",
+            "The full loop is 10.6 km, Grade 3 and about 3.5 hours. Its sections alternate between greener pockets and exposed ground; start at Mala carpark while it is cool. Some tracks close in summer afternoons, and Parks Australia advises finishing before 11 am in hot weather."
+          ]
+        ],
+        stages: [
+          [
+            "Settle the arrival",
+            "Fly into AYQ at Yulara or make Alice Springs a separate road day. Reserve the park vehicle or tour in advance; the resort shuttle does not serve the park. Carry your park pass and check current alerts before leaving Yulara."
+          ],
+          [
+            "Start at the sunrise area",
+            "When the park access schedule permits, go to the designated Talinguṟu Nyakunytjaku viewing area at sunrise. Use the marked paths and follow the posted photography map; allow the quiet view to be the first stop rather than adding Kata Tjuṯa."
+          ],
+          [
+            "Walk Mala before the heat",
+            "From Mala carpark, follow the 2 km Grade 2 return path to Kaṉtju Gorge and back; allow about 90 minutes. Read the public signs from the track and check for closure notices. If Mala is closed, use Kuniya only when its route is open and the current heat advice allows it."
+          ],
+          [
+            "Finish at the Cultural Centre",
+            "Return for the Tjukurpa Tunnel, multilingual information displays, ranger desk and Aṉangu-owned galleries. Parks Australia recommends at least two hours; Ininti is the only park location selling food and drinks. Check current opening hours, then return to Yulara before adding another drive."
+          ]
+        ],
+        risks: [
+          [
+            "Heat can close the walk",
+            "Summer temperatures can exceed 40°C. Parks Australia recommends walking only in cooler periods, avoiding walks after 11 am in summer, carrying at least 1 litre of water per person per hour and obeying all closures. If the morning is already hot, replace the walk with the Cultural Centre and a designated viewing area."
+          ],
+          [
+            "Transport is not interchangeable",
+            "Ayers Rock Resort, the airport, the park entrance and the walking carparks are separate stops. There are no taxis or public transit inside the park; confirm the exact rental, tour or hop-on hop-off return before committing to a trail."
+          ],
+          [
+            "Photography has cultural boundaries",
+            "Use the current sensitive-site map and signs. Do not photograph restricted rock features, leave the path for a camera angle or photograph Aṉangu without permission; avoid detail on the north-east face as requested by Traditional Owners."
+          ]
+        ],
+        duration: "Allow at least two hours for the Cultural Centre, as Parks Australia recommends, plus a 90-minute Mala walk, sunrise and the drives from Yulara: a full cool-morning half-day. Give Kata Tjuṯa a separate half or full day. Two full park days from Yulara leave room for the different landscapes and current access windows.",
+        combine: "Use the half-day sequence of Talinguṟu Nyakunytjaku, Mala and the Cultural Centre for Uluṟu. Keep Kata Tjuṯa for its own morning or day; the 50 km road separation and exposed walks make it a poor add-on after Mala.",
+        verify: "Before departure, check the park pass, park and road alerts, walk and photography maps, heat advice, sunrise-area access, bus or tour schedule, and the Cultural Centre's published hours. Recheck the conditions at the park information desk before starting a walk.",
+        faq: [
+          [
+            "Why does this place matter beyond its geology?",
+            "Aṉangu Traditional Owners received Uluṟu-Kata Tjuṯa National Park back in 1985, and jointly manage it with the Australian Government. Parks Australia describes Tjukurpa as traditional law, knowledge and spiritual philosophy guiding care of Country. Begin with the park's public Aṉangu interpretation and do not assume restricted stories are for visitors to repeat."
+          ],
+          [
+            "Which Uluṟu walk fits a short visit?",
+            "Kuniya is the shorter 1 km return (30–45 minutes, Grade 2) to the waterhole. Mala is 2 km return (about 90 minutes, Grade 2) to Kaṉtju Gorge. The complete Uluṟu Base Walk is 10.6 km (about 3.5 hours, Grade 3) and needs a cool morning. Use the current official walk page for changes or closures."
+          ],
+          [
+            "What changes when it is hot?",
+            "Do not move an exposed walk to midday. In summer, Parks Australia advises finishing walking before 11 am; carry at least a litre of water per person per hour and obey closure signs. Use the Cultural Centre and a designated viewing area if the walk window is closed."
+          ],
+          [
+            "Where may I take photographs?",
+            "Follow the park photography map and every sign. Some sensitive sites prohibit photographs of the rock; elsewhere visitors should stay on marked tracks. On the north-east face, Aṉangu request wide, distant pictures without detail at the top-left. Ask before photographing people, and do not fly a drone."
+          ]
+        ],
+        sources: [
+          [
+            "https://uluru.gov.au/about/joint-management/",
+            "Parks Australia – joint management"
+          ],
+          [
+            "https://uluru.gov.au/discover/nature/geology/",
+            "Parks Australia – geology of Uluṟu and Kata Tjuṯa"
+          ],
+          [
+            "https://uluru.gov.au/things-do/cultural-centre/",
+            "Parks Australia – Cultural Centre and visitor information"
+          ],
+          [
+            "https://uluru.gov.au/things-do/itineraries/half-one-day-adventures/",
+            "Parks Australia – half-day itineraries"
+          ],
+          [
+            "https://uluru.gov.au/plan/getting-here/",
+            "Parks Australia – getting to the park"
+          ],
+          [
+            "https://uluru.gov.au/plan/getting-here/getting-around/",
+            "Parks Australia – getting around"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/mala-walk/",
+            "Parks Australia – Mala walk"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/kuniya-walk-mutitjulu-waterhole/",
+            "Parks Australia – Kuniya walk and Muṯitjulu Waterhole"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/walks/uluru-walks/uluru-base-walk/",
+            "Parks Australia – Uluṟu Base Walk"
+          ],
+          [
+            "https://uluru.gov.au/things-do/activities/photography/",
+            "Parks Australia – photography and cultural protocols"
+          ],
+          [
+            "https://uluru.gov.au/plan/when-come/seasons/",
+            "Parks Australia – Aṉangu seasons"
+          ],
+          [
+            "https://uluru.gov.au/plan/plan-your-trip/staying-safe/",
+            "Parks Australia – heat and walking safety"
+          ],
+          [
+            "https://uluru.gov.au/plan/buy-your-pass/",
+            "Parks Australia – park passes"
+          ],
+          [
+            "https://uluru.gov.au/discover/culture/tjukurpa/",
+            "Parks Australia – Tjukurpa"
+          ]
+        ],
       }),
       g({
-        slug: 'kata-tjuta', name: 'Kata Tjuta', motif: 'valley-walk weather decision', instrument: 'valley-profile', imageQuery: 'Kata Tjuta domes Northern Territory', imageAlt: 'The domes of Kata Tjuta in Uluru Kata Tjuta National Park',
-        summary: 'A separate Kata Tjuta chapter where wind, heat, cultural closure and route grade decide between valley walks and viewpoints.',
-        orientation: 'treat Walpa Gorge, Valley of the Winds and viewing areas as different commitments.', access: 'Travel from Yulara or within the park with enough fuel, pass, water and daylight for the chosen route.', sequence: 'Check closures at the park source, attempt the most exposed walk early, use the shorter gorge or viewpoint when conditions narrow and return before heat.', boundary: 'Kata Tjuta is sacred Anangu Country. Stay on open paths, respect restricted knowledge and never leave the route for a better angle.',
-        stages: [['Check the route gate', 'Wind, heat and cultural closure determine what is open.'], ['Choose one valley', 'Match grade and distance to the day.'], ['Walk without shortcuts', 'Remain on formed paths and carry water.'], ['Return before the heat wall', 'End the walk with transport and recovery time.']],
-        risks: [['Heat closure', 'Long exposed walks may close early.'], ['Wind and uneven ground', 'Strong gusts and rock surfaces require stable footing.'], ['Cultural boundary', 'Closed paths and restricted stories must remain untouched.']],
-        duration: 'Give Kata Tjuta a dedicated half or full day within a multi-night stay.', combine: 'Pair with Uluru on different days rather than two major walks together.', verify: 'Check Parks Australia alerts, temperature, wind, cultural closure, road, water and turnaround.'
+        slug: 'kata-tjuta', routeTitle: "Choose Waḻpa Gorge or the Valley circuit",
+        name: 'Kata Tjuṯa',
+        motif: 'gorge walk and valley loop',
+        instrument: 'valley-profile',
+        imageQuery: 'Kata Tjuṯa domes Northern Territory',
+        imageAlt: 'The domes of Kata Tjuṯa in Uluṟu Kata Tjuṯa National Park',
+        summary: 'Waḻpa Gorge is a one-hour return walk; the Valley of the Winds is a steep, 7.4 km loop with a heat cutoff and its own Aṉangu photography rules.',
+        orientationTitle: 'Choose a gorge or a full valley circuit',
+        orientation: 'Waḻpa Gorge’s rocky track rises gently toward a seasonal stream and a grove of spearwood. The Valley of the Winds runs among the domes, with two lookouts and a more demanding grade. Its full loop can be easier than returning from the second lookout by the same route, so compare the whole circuit before choosing an out-and-back.',
+        interpretation: 'These are different ways to read Kata Tjuṯa: Waḻpa follows a narrow gorge through a desert refuge for plants and animals; Valley of the Winds crosses the open valley between domes. Parks Australia reports pink daisies near Waḻpa’s entrance in late winter and water halfway around the Valley circuit. Take only the details the public track offers; Aṉangu set firm limits on recording the rock formations.',
+        access: 'Travel from Yulara with park entry, water and return transport settled before departure. Both official walk pages list no toilets. The Valley of the Winds is Grade 4, steep and rocky; Waḻpa Gorge is Grade 3 and has no wheelchair access. Recheck park alerts and each walk page for same-day closures.',
+        sequence: 'Decide between Waḻpa and the Valley before leaving Yulara, then check the forecast and access status. When the temperature is forecast or observed at 36°C or higher, the Valley closes at Karu Lookout from 11 am; start early enough for the chosen full route, or use a permitted shorter walk or designated viewing area. Keep the other major Uluṟu walk on a separate day.',
+        boundary: 'Kata Tjuṯa is sacred Aṉangu Country. On the Valley of the Winds, do not photograph or film the rock formations anywhere on the walk. At Waḻpa Gorge, frame both sides of the gorge when recording it. Remain on marked paths and do not enter waterholes.',
+        reviewDate: '4 October 2026',
+        reviewIsoDate: '2026-10-04',
+        stages: [
+          ['Check the walk status', 'Read Parks Australia alerts, the temperature forecast and the photography guidance before setting off.'],
+          ['Choose the commitment', 'Select Waḻpa for a 2.6 km, one-hour return, or the 7.4 km Valley circuit for a three-to-four-hour Grade 4 walk.'],
+          ['Start with the cutoff in mind', 'At 36°C or above, the Valley closes at Karu from 11 am. Carry water; there are no toilets on either walk.'],
+          ['Return without rushing', 'Stay on formed tracks, leave time for the drive back to Yulara and keep Uluṟu for a separate day.']
+        ],
+        risks: [
+          ['Heat closure', 'The Valley of the Winds closes at its first lookout from 11 am when the forecast or actual temperature reaches 36°C.'],
+          ['Loose rock and grade', 'The Valley is steep and rocky; Waḻpa’s route still requires care on its uneven surface. Wear sturdy footwear and turn back if footing or heat is wrong.'],
+          ['Recording sensitive formations', 'The Valley’s no-photo/no-video guidance applies throughout the walk. Waḻpa requires both sides of the gorge to remain in frame.']
+        ],
+        decisions: [
+          ['Waḻpa Gorge | 2.6 km return', 'Grade 3, about one hour. The rocky track gently rises to a seasonal stream and spearwood grove; pink daisies may appear at the entrance in late winter. There is water but no toilet, and photography must keep both sides of the gorge in frame.'],
+          ['Valley of the Winds | 7.4 km loop', 'Grade 4, roughly 3–4 hours, with two lookouts and water halfway. Karu is 2.2 km return / about one hour; Karingana is 5.4 km return / about 2.5 hours. The full circuit can be easier than going out to Karingana and returning. At 36°C or above, Karu access closes from 11 am.'],
+          ['Viewpoint | when the route is closed', 'If heat, wind, fitness or a cultural closure rules out a walk, use a designated viewing area and keep time for the return to Yulara. Do not turn a closure into permission to leave the marked track or photograph a restricted face.']
+        ],
+        duration: 'Give Kata Tjuṯa a dedicated half or full day. Plan a second day for Uluṟu instead of combining two exposed walks.',
+        combine: 'Pair with the designated viewing area only if transport and daylight allow; reserve Uluṟu’s longer walk for another day.',
+        verify: 'Check park opening, temperature, Valley cutoff, wind, cultural closures, entry pass, water, transport and the current photography map.',
+        faq: [
+          ['Is the first Valley of the Winds lookout a short option?', 'Karu Lookout is 2.2 km return and about one hour. The route is still rocky; from 11 am it closes when the forecast or actual temperature is 36°C or higher.'],
+          ['Can I photograph Kata Tjuṯa on the Valley walk?', 'No. Aṉangu ask visitors not to photograph or film the rock formations anywhere along the Valley of the Winds. At Waḻpa Gorge, keep both sides of the gorge in frame when recording it.'],
+          ['Can I visit Kata Tjuṯa after a long Uluṟu walk?', 'Give the walks separate days. The Valley loop takes three to four hours before the drive and recovery time; heat or a closure may also narrow the walking window.']
+        ],
+        sources: [
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/', 'Parks Australia — Kata Tjuṯa walks'],
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/walpa-gorge-walk/', 'Parks Australia — Waḻpa Gorge walk'],
+          ['https://uluru.gov.au/things-do/activities/walks/kata-tjuta-walks/valley-winds-walks/', 'Parks Australia — Valley of the Winds walks'],
+          ['https://uluru.gov.au/plan/buy-your-pass/', 'Parks Australia — park entry']
+        ]
       })
     ]
   })

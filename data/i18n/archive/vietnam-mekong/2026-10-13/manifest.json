@@ -1,0 +1,35 @@
+{
+  "sourceBaseCommit": "75c8caf79053a67cf645a53bed215a72eff07baf",
+  "archivedAt": "2026-10-13",
+  "reason": "Byte-preserved the four superseded reviewed Mekong translation batches before pruning keys made stale by the four-route content refresh. No draft batches were included.",
+  "files": [
+    {
+      "locale": "zh-Hant",
+      "name": "29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-mekong/2026-10-13/zh-Hant/29m-vietnam-mekong-delta.json",
+      "sha256": "c9d84f32ba1a30cb742971d49c907b5426c0f75d3840947f72b5aada92f987f2",
+      "bytes": 34677
+    },
+    {
+      "locale": "ja",
+      "name": "29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-mekong/2026-10-13/ja/29m-vietnam-mekong-delta.json",
+      "sha256": "febfe4eecd28deae67f5f8568b5e53f51a0212b9dbd0396546f1f9dd734b35b4",
+      "bytes": 39965
+    },
+    {
+      "locale": "ko",
+      "name": "29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-mekong/2026-10-13/ko/29m-vietnam-mekong.json",
+      "sha256": "b8da7346b80a4ab29f868581606b2c2268de0d32f772c9870f0441ba88c68950",
+      "bytes": 39333
+    },
+    {
+      "locale": "th",
+      "name": "29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-mekong/2026-10-13/th/29m-vietnam-mekong.json",
+      "sha256": "117c323e6b41197ed3c1bf8975c0f4f9dc76a5272ee583e6a3e37ca98009779b",
+      "bytes": 61927
+    }
+  ]
+}

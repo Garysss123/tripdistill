@@ -1,0 +1,11 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "kata tjuṯa": "Kata Tjuṯa",
+    "Kata Tjuṯa Guide": "คู่มือท่องเที่ยว Kata Tjuṯa"
+  }
+}

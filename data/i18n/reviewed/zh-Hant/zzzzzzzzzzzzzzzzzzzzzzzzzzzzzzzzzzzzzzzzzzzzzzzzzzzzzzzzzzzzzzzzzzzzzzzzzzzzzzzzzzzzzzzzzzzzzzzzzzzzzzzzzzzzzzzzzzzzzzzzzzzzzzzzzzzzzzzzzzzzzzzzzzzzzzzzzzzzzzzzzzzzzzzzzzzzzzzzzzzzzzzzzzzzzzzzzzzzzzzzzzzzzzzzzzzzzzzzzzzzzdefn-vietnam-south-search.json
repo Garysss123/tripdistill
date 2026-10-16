@@ -1,0 +1,40 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "Saigon Waterbus Thu Thiem pier": "Saigon Waterbus Thủ Thiêm 碼頭",
+    "Thao Dien pier": "Thảo Điền 碼頭",
+    "Bach Dang waterbus one-way ticket": "Bạch Đằng 水上巴士單程票",
+    "Thu Thiem riverfront access": "Thủ Thiêm 河岸通行",
+    "Ho Chi Minh City water bus return": "胡志明市水上巴士返程",
+    "Thao Dien neighborhood route": "Thảo Điền 街區路線",
+    "Can Gio mangrove reserve day trip": "Cần Giờ 紅樹林保護區一日遊",
+    "Binh Khanh ferry Cần Giờ": "Bình Khánh 渡船與 Cần Giờ",
+    "Vam Sat visitor access": "Vàm Sát 訪客通行",
+    "Rung Sac mangrove forest": "Rừng Sác 紅樹林",
+    "Can Gio boat and boardwalk": "Cần Giờ 船程與棧道",
+    "Ho Chi Minh City wetland route": "胡志明市濕地路線",
+    "My Tho Thoi Son island boat": "Mỹ Tho 至 Thới Sơn 島船程",
+    "Thoi Son pier operator": "Thới Sơn 碼頭業者",
+    "My Tho island tour return": "Mỹ Tho 島上行程返程",
+    "My Tho to Can Tho coach transfer": "Mỹ Tho 至 Cần Thơ 巴士接駁",
+    "Mekong Delta Thoi Son garden": "湄公河三角洲 Thới Sơn 花園",
+    "My Tho one night itinerary": "Mỹ Tho 一晚行程",
+    "Sa Dec flower village gardens": "Sa Đéc 花村花園",
+    "Sa Dec Huynh Thuy Le house opening": "Sa Đéc Huỳnh Thủy Lê 故居開放時間",
+    "Sa Dec market route": "Sa Đéc 市場路線",
+    "Dong Thap flower village transfer": "Đồng Tháp 花村交通接駁",
+    "Sa Dec one night itinerary": "Sa Đéc 一晚行程",
+    "Sa Dec to Can Tho coach": "Sa Đéc 至 Cần Thơ 巴士"
+  },
+  "translationProvenance": {
+    "translator": "GPT-6 Codex same-session translation",
+    "reviewer": "same-model self-review; exact runtime model identifier not exposed",
+    "independentSecondModel": false,
+    "reviewDate": "2026-10-13",
+    "note": "Search terms were checked against the page route and translated with local names preserved. This is not independent model or human review."
+  }
+}

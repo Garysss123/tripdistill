@@ -1,0 +1,176 @@
+{
+  "task": "Vietnam coastal gaps translation-key archive",
+  "sourceBaseCommit": "d779848fbc247042561cfaa34773257122aa38d0",
+  "archivedOn": "2026-10-13",
+  "reason": "Preserve the exact reviewed source batches before removing keys that no longer occur in active English translation work after this content refresh.",
+  "files": [
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/10-gyeongju.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/10-gyeongju.json",
+      "bytes": 44741,
+      "sha256": "b037666899b4c801dc0aa2010ffc16a25414d9407c6c20ae656b0eb0da68f4c0",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/26e-malaysia-langkawi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/26e-malaysia-langkawi.json",
+      "bytes": 3242,
+      "sha256": "21e8988b39c4e53adeeea054d46441e76acfe38eee448793372f829b380c6251",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/26j-malaysia-kinabalu.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/26j-malaysia-kinabalu.json",
+      "bytes": 4109,
+      "sha256": "c07f10b2cff5179180d6ef58aa52a970b35e8b00447de5f25c26dfd23cedb4ac",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29k-vietnam-mui-ne-binh-thuan.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/29k-vietnam-mui-ne-binh-thuan.json",
+      "bytes": 21460,
+      "sha256": "14a351f61ee1e3e27b9b90299721d337c185d0ec3a98631e108996675cc17084",
+      "staleKeys": 51
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/29m-vietnam-mekong-delta.json",
+      "bytes": 15249,
+      "sha256": "a276004e22663737df012637f98502bead8d6d3155be94b91ee036c81c2b8262",
+      "staleKeys": 20
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/10-gyeongju.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/10-gyeongju.json",
+      "bytes": 50432,
+      "sha256": "a6c95eeb4f8732f69003ea2e930077b158f4aa277afe9fe0a6ac3f6d0475df4b",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/26e-malaysia-langkawi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/26e-malaysia-langkawi.json",
+      "bytes": 3819,
+      "sha256": "e44c8c68a220a5414c79d8f8b34a8086ff45d1b1222cb2e18e14b87da9b942bf",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/26j-malaysia-kinabalu-park.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/26j-malaysia-kinabalu-park.json",
+      "bytes": 4653,
+      "sha256": "56d7913f3a31b83e5a3e0996796b07f20481fd346fa0989304a2f7facad1058f",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/29k-vietnam-mui-ne-binh-thuan.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/29k-vietnam-mui-ne-binh-thuan.json",
+      "bytes": 24821,
+      "sha256": "f9226404437c4fe4506923236edefa53ea1e82a4b4c727d525f2610aca35af18",
+      "staleKeys": 51
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/29m-vietnam-mekong-delta.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/29m-vietnam-mekong-delta.json",
+      "bytes": 17325,
+      "sha256": "d9f94165a448d8233d24f363de75b22dd1ed61b0085dbfc29eea8bc9e8899781",
+      "staleKeys": 20
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/10-gyeongju.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/10-gyeongju.json",
+      "bytes": 51163,
+      "sha256": "4780eb0be973a79d8c314bd8082deca0e6d588a57af40adad771cee50fe17f0e",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/26e-malaysia-langkawi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/26e-malaysia-langkawi.json",
+      "bytes": 3479,
+      "sha256": "0c7d3e0c6adad41d1f6a38015180fda68aeaa04e5c970c7f5c3a46f5a1f787a4",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/26j-malaysia-kinabalu-park.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/26j-malaysia-kinabalu-park.json",
+      "bytes": 4517,
+      "sha256": "328fb2f887d61048868927749867e07103868226de938ebf44109017b14ed124",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/29k-vietnam-mui-ne.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/29k-vietnam-mui-ne.json",
+      "bytes": 24146,
+      "sha256": "2755c57ea35e0b462c9c14fcade55d06bd8d134000dcf8247c1b63968aee7b49",
+      "staleKeys": 51
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/29m-vietnam-mekong.json",
+      "bytes": 16592,
+      "sha256": "73c1899c86ba326df5edbb0e5957246c98c0ae2f2301541cbc161018aa8716c6",
+      "staleKeys": 20
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/10-gyeongju.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/10-gyeongju.json",
+      "bytes": 80663,
+      "sha256": "7e1e7604b1e4c3e51633ef4df037b26b5bd768c9ebbecb376a3339fa5baeb9eb",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/28e-malaysia-langkawi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/28e-malaysia-langkawi.json",
+      "bytes": 4456,
+      "sha256": "3c2f43f5600019d35cb85fa6e95dd829221957c48eaf978d9c3e8de44d778f0b",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/28j-malaysia-kinabalu-park.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/28j-malaysia-kinabalu-park.json",
+      "bytes": 7054,
+      "sha256": "d4d96e0406634455e671ed7ce26101123091c619cd4d24a341cfe64969a96158",
+      "staleKeys": 1
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/29k-vietnam-mui-ne.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/29k-vietnam-mui-ne.json",
+      "bytes": 37566,
+      "sha256": "731576bc36ed048cc12eeeb2348b04e0a95511456b398e4d364bb749c86661f6",
+      "staleKeys": 51
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/29m-vietnam-mekong.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/29m-vietnam-mekong.json",
+      "bytes": 25561,
+      "sha256": "da56ca96c6790727b88f80ca4799dd4bf87953de629dd000f0792b1ea183c72e",
+      "staleKeys": 20
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/zh-Hant/29a-vietnam-hanoi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/zh-Hant/29a-vietnam-hanoi.json",
+      "bytes": 45413,
+      "sha256": "da3b4c2b0073645493035017d05446a89baeeb93d3cceddc993d53da9c07adb0",
+      "staleKeys": 2
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ja/29a-vietnam-hanoi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ja/29a-vietnam-hanoi.json",
+      "bytes": 52362,
+      "sha256": "b8a4a5a4bc53ee71a82b4964325752cb6862cb6ee0248fbe420eaa13a9303337",
+      "staleKeys": 2
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/ko/29a-vietnam-hanoi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/ko/29a-vietnam-hanoi.json",
+      "bytes": 51177,
+      "sha256": "42b71a665bd5b27095b32300ed4139a3150891e1fa5ba916dd94053c89ffcb75",
+      "staleKeys": 2
+    },
+    {
+      "sourcePath": "data/i18n/reviewed/th/29a-vietnam-hanoi.json",
+      "archivePath": "data/i18n/archive/vietnam-coastal-gaps/2026-10-13/th/29a-vietnam-hanoi.json",
+      "bytes": 83760,
+      "sha256": "064d4bcf7a11c4fac10b80f17d116e220cddce4bb180990a92cff1e7422c965c",
+      "staleKeys": 2
+    }
+  ]
+}

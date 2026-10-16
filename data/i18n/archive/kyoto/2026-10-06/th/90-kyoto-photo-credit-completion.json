@@ -1,0 +1,24 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/japan/kyoto/",
+    "/japan/kyoto/arashiyama-sagano/",
+    "/japan/kyoto/fushimi-inari-sake-district/",
+    "/japan/kyoto/gion-pontocho/"
+  ],
+  "translations": {
+    "Photo by Basile Morin; licensed under": "ภาพถ่ายโดย Basile Morin; เผยแพร่ภายใต้สัญญาอนุญาต",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 4.0 license.": ". การปรับแต่ง: ปรับขนาด ครอปเพื่อใช้แสดงผล และแปลงเป็น WebP เงื่อนไขการเผยแพร่ต่อภายใต้สัญญาอนุญาตเดียวกัน (Share-alike): ภาพที่ดัดแปลงต้องเผยแพร่ต่อภายใต้สัญญาอนุญาต CC BY-SA 4.0 ฉบับเดียวกัน",
+    "Photo by lumoplank; licensed under": "ภาพถ่ายโดย lumoplank; เผยแพร่ภายใต้สัญญาอนุญาต",
+    ". Changes: image resized, display-cropped and converted to WebP.": ". การปรับแต่ง: ปรับขนาด ครอปเพื่อใช้แสดงผล และแปลงเป็น WebP",
+    "Photo by Joli Rumi; licensed under": "ภาพถ่ายโดย Joli Rumi; เผยแพร่ภายใต้สัญญาอนุญาต",
+    "Photo by Gzzz; licensed under": "ภาพถ่ายโดย Gzzz; เผยแพร่ภายใต้สัญญาอนุญาต",
+    "Photo by Martin Falbisoner; licensed under": "ภาพถ่ายโดย Martin Falbisoner; เผยแพร่ภายใต้สัญญาอนุญาต",
+    "Photo by Sergiy Galyonkin; licensed under": "ภาพถ่ายโดย Sergiy Galyonkin; เผยแพร่ภายใต้สัญญาอนุญาต",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 2.0 license.": ". การปรับแต่ง: ปรับขนาด ครอปเพื่อใช้แสดงผล และแปลงเป็น WebP เงื่อนไขการเผยแพร่ต่อภายใต้สัญญาอนุญาตเดียวกัน (Share-alike): ภาพที่ดัดแปลงต้องเผยแพร่ต่อภายใต้สัญญาอนุญาต CC BY-SA 2.0 ฉบับเดียวกัน",
+    "Photo by Marco Almbauer; licensed under": "ภาพถ่ายโดย Marco Almbauer; เผยแพร่ภายใต้สัญญาอนุญาต",
+    "Photo by 663highland; licensed under": "ภาพถ่ายโดย 663highland; เผยแพร่ภายใต้สัญญาอนุญาต",
+    ". Changes: image resized, display-cropped and converted to WebP. Share-alike: the adapted image is released under the same CC BY-SA 3.0 license.": ". การปรับแต่ง: ปรับขนาด ครอปเพื่อใช้แสดงผล และแปลงเป็น WebP เงื่อนไขการเผยแพร่ต่อภายใต้สัญญาอนุญาตเดียวกัน (Share-alike): ภาพที่ดัดแปลงต้องเผยแพร่ต่อภายใต้สัญญาอนุญาต CC BY-SA 3.0 ฉบับเดียวกัน"
+  }
+}

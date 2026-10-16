@@ -1,0 +1,30 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "bai dai coast hotel base": "ที่พักชายฝั่ง Bai Dai",
+    "nha trang train station transfer": "รถรับส่งจากสถานีรถไฟญาจาง",
+    "bai dai public beach access": "ทางเข้าสาธารณะของชายหาด Bai Dai",
+    "ba ho waterfall route ninh hoa": "เส้นทางน้ำตก Ba Ho ใน Ninh Hoa",
+    "ninh ich phu huu access": "การเดินทางไป Ninh Ích และ Phú Hữu",
+    "nha trang day trip driver": "คนขับรถเที่ยววันเดียวจากญาจาง",
+    "ba ho stream water safety": "ความปลอดภัยของน้ำในลำธาร Ba Ho",
+    "nha trang bay boat transfer": "การเดินทางทางเรือในอ่าวญาจาง",
+    "hon mun current access": "การเข้าถึง Hon Mun ปัจจุบัน",
+    "nha trang marine reserve rules": "กฎเขตอนุรักษ์ทางทะเลญาจาง",
+    "nha trang pier operator safety": "ความปลอดภัยของท่าเรือและผู้ให้บริการในญาจาง",
+    "con dao park registration": "การลงทะเบียนอุทยาน Côn Đảo",
+    "bay canh turtle tour booking": "จองทริปดูเต่าที่ Bay Canh",
+    "con dao flight ferry connection": "เที่ยวบินและเรือข้ามฟากไป Côn Đảo",
+    "con dao park consent rules": "กฎการขออนุญาตของอุทยาน Côn Đảo",
+    "three stream pools inland": "แอ่งน้ำสามแห่งในลำธารตอนใน"
+  },
+  "reviewProvenance": {
+    "writer": "GPT-6 Codex, current execution session",
+    "reviewer": "GPT-6 Codex; same-model self-review",
+    "independentSecondModel": false
+  }
+}

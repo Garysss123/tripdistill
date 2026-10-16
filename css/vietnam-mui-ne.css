@@ -1,0 +1,114 @@
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan {
+  margin: clamp(3.5rem, 7vw, 6rem) 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--vn-line);
+  border-radius: .25rem 3.5rem .25rem .25rem;
+  background:
+    radial-gradient(ellipse at 100% 0, rgba(34,112,100,.08), transparent 38%),
+    #fffaf0;
+  box-shadow: 0 1rem 2.5rem rgba(39,67,61,.08);
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan > header {
+  max-width: 52rem;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan h2 {
+  max-width: 15ch;
+  margin: .5rem 0 .8rem;
+  color: var(--vn-ink);
+  font: 700 clamp(2.3rem, 4.7vw, 4rem)/.95 Georgia, "Times New Roman", serif;
+  letter-spacing: -.045em;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan > header p {
+  max-width: 45rem;
+  color: #536965;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: 1.8rem;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards article {
+  min-width: 0;
+  min-height: 17rem;
+  padding: 1.25rem;
+  border-top: .28rem solid var(--vn-jade);
+  background: rgba(255,255,255,.78);
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards article:nth-child(2) {
+  border-top-color: var(--vn-lacquer);
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards article:nth-child(3) {
+  border-top-color: #a9782b;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards small {
+  color: var(--vn-accent-text);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards h3 {
+  margin: 2.5rem 0 .65rem;
+  color: var(--vn-ink);
+  font: 700 1.45rem/1 Georgia, "Times New Roman", serif;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards p {
+  margin-bottom: 0;
+  color: #536965;
+  font-size: .9rem;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan > aside {
+  margin-top: .8rem;
+  padding: 1.1rem 1.3rem;
+  border-left: .3rem solid var(--vn-river);
+  background: #173f3a;
+  color: #fff9ed;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan > aside strong {
+  display: block;
+  margin-bottom: .35rem;
+  color: #f3c979;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan > aside p {
+  margin: 0;
+  color: rgba(255,255,255,.84);
+}
+
+@media (max-width: 900px) {
+  body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards article {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan {
+    padding: 1rem;
+    border-top-right-radius: 2rem;
+  }
+
+  body[data-country="vietnam"][data-region="mui-ne-binh-thuan"] .vn-mui-ne-plan__cards h3 {
+    margin-top: 1.4rem;
+  }
+}
