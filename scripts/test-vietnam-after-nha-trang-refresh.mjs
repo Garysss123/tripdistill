@@ -319,10 +319,19 @@ for (const edition of editions.slice(1)) {
 }
 uniqueExpectedReviewedDiffs.sort();
 assert.deepEqual(reviewedDiffs, uniqueExpectedReviewedDiffs, 'Draft and parallel-work files must remain untouched; existing reviewed batches may only lose keys absent from the current source set.');
+const threePageArchiveRoot = 'data/i18n/archive/tripdistill-three-pages/2026-10-15/';
+const threePageArchiveManifest = JSON.parse(fs.readFileSync(path.join(root, `${threePageArchiveRoot}manifest.json`), 'utf8'));
+const expectedThreePageArchiveFiles = [...threePageArchiveManifest.files.map((entry) => entry.archive), `${threePageArchiveRoot}manifest.json`].sort();
+const actualThreePageArchiveFiles = git(['diff', '--name-only', integrationBaseCommit, '--', threePageArchiveRoot]).trim().split('\n').filter(Boolean).sort();
+assert.deepEqual(actualThreePageArchiveFiles, expectedThreePageArchiveFiles, 'Only the exact archived reviewed batch blobs and manifest from the three-page cleanup may be added.');
+for (const entry of threePageArchiveManifest.files) {
+  const archivedBytes = fs.readFileSync(path.join(root, entry.archive));
+  assert.equal(crypto.createHash('sha256').update(archivedBytes).digest('hex'), entry.sha256, `${entry.archive}: archived reviewed batch bytes match the manifest.`);
+}
 const nonReviewedI18nDiffs = git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n']).trim().split('\n').filter(Boolean)
   .filter((repoPath) => !repoPath.startsWith('data/i18n/reviewed/') && !repoPath.startsWith('data/i18n/archive/vietnam-after-nha-trang/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-southern-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-bay-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/vietnam-caves-islands-gaps/2026-10-13/') && !repoPath.startsWith('data/i18n/archive/thailand-country-overview-refresh/2026-10-14/') && !/^data\/i18n\/(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath))
-  .filter((repoPath) => !repoPath.startsWith('data/i18n/archive/vietnam-coastal-gaps/2026-10-13/') && !/^data\/i18n\/terms-(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
-assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or other localization files may change in this sprint.');
+  .filter((repoPath) => !repoPath.startsWith('data/i18n/archive/vietnam-coastal-gaps/2026-10-13/') && !repoPath.startsWith(threePageArchiveRoot) && !/^data\/i18n\/terms-(?:zh-Hant|ja|ko|th)\.json$/.test(repoPath));
+assert.deepEqual(nonReviewedI18nDiffs, [], 'No draft, parallel, terms or unregistered localization files may change in this sprint.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 const southernCheckpoint = ledger.previousCheckpoint;

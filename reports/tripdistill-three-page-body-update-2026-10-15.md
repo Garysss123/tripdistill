@@ -55,3 +55,20 @@ The three routes carry `2026-10-15` as `lastmod` in all five sitemap editions. T
 - `npm run build` passed: 5,501 generated files, 4,577 HTML files, 825 images, and 4,560 verified sitemap routes.
 - `git diff --check` passed.
 - No browser, UI, deployment or pixel acceptance was performed.
+
+## 2026-10-16 traceable body-count addendum
+
+This addendum records the three English source pages against `b585e6eb24a144dec8263ad9d7464913d4473acd`, the parent baseline of the current three-page source commit `e30fbf0f11b0d0b5f9ddb971ef3233f24e278c1e`. Counts use the same `parse5` non-card body extraction as `scripts/test-australia-final-content.mjs`: read text under `main#main-content`; omit scripts, styles, noscript, SVG, source/credit sections, hub directories, related grids/cards, country cards and advertisement sections; join text nodes, collapse whitespace, then count whitespace-separated tokens. Headings, the hero, decision paragraphs, operating guidance and FAQs remain in scope. The SHA-256 values below are over that normalized body text, before token counting. These are English source counts; the five-language audit separately checks localized page and search parity.
+
+| English route | Baseline words | Current words | Delta | Baseline body SHA-256 | Current body SHA-256 |
+| --- | ---: | ---: | ---: | --- | --- |
+| `/australia/red-centre/` | 620 | 717 | +97 | `cbe14e3e829686459e1e13a6ef641fb7291ea78f65b0027e063a42092e3bd054` | `c86c9695f7870efc00e039684d5e381b6537f9f51e5f6cdcbc906a2e12719a0d` |
+| `/france/basque-coast-pyrenees/` | 859 | 969 | +110 | `81b403dcfbb43a026b359db7d5bc992f7148d314d98b11d5ed7fcea92ec3e3b1` | `611569f86260b3e9d061f74c7d04371244c972111dbd2b788e8a6dfc6f1beab8` |
+| `/france/basque-coast-pyrenees/bayonne-biarritz/` | 955 | 1,072 | +117 | `977057f48dff22105747480bd5f37bd0afba31ca63e74fd01946357b9241f42d` | `b2cf6667dd211a55c3a3ff40dbbd7216569b2608351b1abfc6566d0df0ebdce8` |
+| **Total** | **2,434** | **2,758** | **+324** | — | — |
+
+The Red Centre check now independently compares its current non-card body to the stated `b585e6e` baseline, asserts the 620 / 717 / +97 counts and both hashes, verifies that the new 2WD-versus-Mereenie 4WD paragraph appears once in the hub hero and is absent from the baseline, and checks its linked official sources: [NT Parks — Watarrka](https://nt.gov.au/parks/find-a-park/watarrka-national-park), [Tourism NT — Mereenie Loop permit and fuel notes](https://northernterritory.com/itineraries/queens-on-tour) and [Road Report NT](https://roadreport.nt.gov.au/).
+
+The 13 October Australia CSV remains a historical 92/97 ledger: its Red Centre row remains `620 / 620 / 0` with status `carried-forward prior 92/97`. This addendum keeps the newer Red Centre evidence traceable without reclassifying or rewriting that completed historical batch. No other page body is changed by this audit correction.
+
+This correction passed `node scripts/test-australia-final-content.mjs`, full `npm run audit` and `git diff --check`. The audit's existing Vietnam localization-scope regression now recognizes only the exact eight archived batch snapshots and manifest already recorded above, verifies each archived blob against its SHA-256 manifest entry, and continues rejecting other unregistered localization changes. `npm run build` passed with 5,501 files (4,577 HTML, 825 images) and 4,560 sitemap routes. No rendered UI or deployment check was performed in this correction.

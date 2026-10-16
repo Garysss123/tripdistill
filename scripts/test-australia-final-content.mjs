@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -54,6 +55,21 @@ const officialSources = new Map([
   ['/australia/tasmania/launceston-tamar-valley/', ['https://parks.tas.gov.au/explore-our-parks/know-before-you-go/alerts', 'https://www.metrotas.com.au/timetables/launceston/', 'https://parks.tas.gov.au/explore-our-parks/tamar-island-wetlands']],
   ['/australia/tasmania/port-arthur-tasman-peninsula/', ['https://parks.tas.gov.au/explore-our-parks/know-before-you-go/alerts', 'https://www.alert.tas.gov.au/', 'https://portarthur.org.au/what-to-do/']]
 ]);
+const redCentreBodyAudit = {
+  route: '/australia/red-centre/',
+  baseline: 'b585e6eb24a144dec8263ad9d7464913d4473acd',
+  baseWords: 620,
+  currentWords: 717,
+  deltaWords: 97,
+  baseSha256: 'cbe14e3e829686459e1e13a6ef641fb7291ea78f65b0027e063a42092e3bd054',
+  currentSha256: 'c86c9695f7870efc00e039684d5e381b6537f9f51e5f6cdcbc906a2e12719a0d',
+  decisionParagraph: 'Choose the road before choosing the vehicle. A standard 2WD route to Watarrka follows the sealed Stuart Highway, then the Lasseter Highway and Luritja Road via Erldunda; the Mereenie Loop via Larapinta Drive is a separate unsealed 4WD choice with a required pass. Tourism NT lists no fuel facilities on that loop, so refuel before entering it and check road status and fuel availability before leaving a base. Keep Mparntwe/Tjoritja, separate Uluṟu and Kata Tjuṯa days from Yulara, and a Watarrka canyon night as distinct blocks; do not trade the last daylight for a long post-walk transfer.',
+  officialSources: [
+    'https://nt.gov.au/parks/find-a-park/watarrka-national-park',
+    'https://northernterritory.com/itineraries/queens-on-tour',
+    'https://roadreport.nt.gov.au/'
+  ]
+};
 
 function git(args, binary = false) {
   return execFileSync('git', args, { cwd: root, encoding: binary ? undefined : 'utf8', maxBuffer: 64 * 1024 * 1024 });
@@ -135,11 +151,35 @@ const laterReviewedBodyRoutes = ['/australia/red-centre/'];
 const englishHtml = [...routes, ...laterReviewedBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort();
 assert.deepEqual(git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort(), englishHtml, 'Only the country overview, four exact Tasmania child routes, and the separately reviewed Red Centre body changed in English.');
 const actualEnglish = new Map();
+{
+  const route = redCentreBodyAudit.route;
+  const currentHtml = fs.readFileSync(routeFile(route), 'utf8');
+  const currentBody = mainText(currentHtml);
+  const baseBody = bodyAt(redCentreBodyAudit.baseline, route);
+  const digest = (value) => createHash('sha256').update(value, 'utf8').digest('hex');
+  assert.deepEqual({ base: wordCount(baseBody), current: wordCount(currentBody), delta: wordCount(currentBody) - wordCount(baseBody) }, {
+    base: redCentreBodyAudit.baseWords,
+    current: redCentreBodyAudit.currentWords,
+    delta: redCentreBodyAudit.deltaWords
+  }, `${route}: independent non-card body count against the three-page baseline.`);
+  assert.equal(digest(baseBody), redCentreBodyAudit.baseSha256, `${route}: exact normalized baseline body hash.`);
+  assert.equal(digest(currentBody), redCentreBodyAudit.currentSha256, `${route}: exact normalized current body hash.`);
+  assert(!baseBody.includes(redCentreBodyAudit.decisionParagraph), `${route}: the separately reviewed decision paragraph is new since the baseline.`);
+
+  const doc = parse(currentHtml);
+  const main = one(doc, (node) => node.tagName === 'main' && attrs(node).id === 'main-content');
+  const heroCopy = one(main, (node) => node.tagName === 'div' && (attrs(node).class || '').split(/\s+/u).includes('au-hub-copy'));
+  const heroParagraphs = all(heroCopy, (node) => node.tagName === 'p').map((node) => text(node).replace(/\s+/gu, ' ').trim());
+  assert.equal(heroParagraphs.filter((paragraph) => paragraph === redCentreBodyAudit.decisionParagraph).length, 1, `${route}: the new road, fuel and base decision appears once as actual hero body prose, not in a card.`);
+  const sources = one(main, (node) => node.tagName === 'section' && (attrs(node).class || '').split(/\s+/u).includes('sources'));
+  const sourceHrefs = new Set(all(sources, (node) => node.tagName === 'a').map((node) => attrs(node).href));
+  for (const source of redCentreBodyAudit.officialSources) assert(sourceHrefs.has(source), `${route}: current official source link ${source}.`);
+}
 for (const route of inventory) {
   const current = mainText(fs.readFileSync(routeFile(route), 'utf8'));
   const previous = bodyAt(base, route);
   actualEnglish.set(route, { current: wordCount(current), base: wordCount(previous), delta: wordCount(current) - wordCount(previous) });
-  if (laterReviewedBodyRoutes.includes(route)) continue;
+  if (laterReviewedBodyRoutes.includes(route)) continue; // Independently checked above; excluded from the historical 92/97 totals.
   if (expectedBody.has(route)) {
     const expected = expectedBody.get(route);
     assert.deepEqual(actualEnglish.get(route), { current: expected.current, base: expected.base, delta: expected.delta }, `${route}: exact-body word evidence, with country cards/sources/ads excluded.`);
@@ -251,6 +291,7 @@ for (const row of ledger.slice(1)) {
   const [, , status, oldWords, newWords, delta] = row;
   if (laterReviewedBodyRoutes.includes(row[0])) {
     assert.equal(status, 'carried-forward prior 92/97', `${row[0]}: keep the historical ledger status for the later-reviewed body.`);
+    assert.deepEqual([oldWords, newWords, delta, row[6]], ['620', '620', '0', 'Prior documented 92/97 body tally at exact base; main text unchanged in this batch.'], `${row[0]}: preserve the frozen 92/97 ledger evidence; current later-reviewed evidence lives in the addendum.`);
     continue;
   }
   assert.equal(Number(newWords), actualEnglish.get(row[0]).current, `${row[0]}: ledger current body count.`);
@@ -265,4 +306,4 @@ for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg'
 assert.equal(git(['diff', '--name-only', base, sourceTerminal, '--', 'assets/images']).trim(), '', 'No image or SVG changed in the exact AU source batch.');
 assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No untracked image or SVG exists.');
 
-console.log('Australia final-content regression passed: exact source ancestry/tree, five substantive bodies, 97 unique ledger routes, Japan content floors, official source links, FAQ/schema parity, 4,560 unchanged sitemap URLs with 25 dated entries, 955 search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');
+console.log('Australia final-content regression passed: exact source ancestry/tree, five substantive bodies, the separate Red Centre non-card body hash/count/decision/source check, preserved historical 92/97 ledger, Japan content floors, official source links, FAQ/schema parity, 4,560 unchanged sitemap URLs with 25 dated entries, 955 search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');
