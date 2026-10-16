@@ -10,7 +10,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const base = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
 const sourceTerminal = '73bcb05ae123fe3e4b70f057fa4dc7fc88979693';
 const baseParent = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
-const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const september = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const septemberParent = '5ef5073b3beb5e06ffcc8cba58359dd09ee70b4b';
 const routes = ['/usa/', '/usa/alaska/juneau-southeast/'];
 const pageFiles = routes.map((route) => route.slice(1) + 'index.html');

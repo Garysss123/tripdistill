@@ -354,7 +354,7 @@ const allExplicitUsaRouteGroups = [
 assert.equal(new Set(allExplicitUsaRouteGroups).size, allExplicitUsaRouteGroups.length, 'Historical coverage corrections do not overlap the prior source-work sets or each other.');
 
 const overviewJuneauSourceBase = 'b4045e0b7265cc6c3ceb8f16acb3e591d4b87eda';
-const overviewJuneauHistoricalSource = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const overviewJuneauHistoricalSource = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const overviewJuneauFollowupTerminal = '73bcb05ae123fe3e4b70f057fa4dc7fc88979693';
 assert.equal(git(['show', '-s', '--format=%P', overviewJuneauFollowupTerminal]).trim(), overviewJuneauSourceBase, 'The dated overview/Juneau follow-up has its exact authorized source base.');
 for (const route of usaOverviewJuneauHistoricalCoverageCorrectionRoutes) {

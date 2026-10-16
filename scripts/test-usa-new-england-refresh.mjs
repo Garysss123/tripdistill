@@ -11,7 +11,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const base = 'f2a2aa1d9aaab0151a6bd75dfc31c907c63afb28';
 const exactTaskBase = 'dc88a75c561d3e7a4f30bd00afadb6e8d52841d7';
 const chicagoTerminal = 'dc88a75c561d3e7a4f30bd00afadb6e8d52841d7';
-const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const september = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const routes = [
   '/usa/new-england/',
   '/usa/new-england/portland-maine/',

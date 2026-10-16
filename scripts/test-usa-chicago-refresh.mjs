@@ -9,7 +9,7 @@ import { postNewEnglandIntegrationRoutes, postNewEnglandArizonaRoutes, postArizo
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '654f0475dcbaa22f88f88a20169e1f18a04b14ab';
-const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const september = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const routes = [
   '/usa/chicago/',
   '/usa/chicago/loop-riverwalk/',

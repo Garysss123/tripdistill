@@ -201,7 +201,7 @@ const sourceMerge = git(['log', '--first-parent', '--merges', '--format=%H %P', 
 const assetDiffBase = mergeHead.status === 0 && mergeHead.stdout.trim() === sourceTerminal
   ? 'HEAD'
   : sourceMerge ? sourceMerge[1]
-  : git(['rev-parse', 'HEAD']).trim() === sourceTerminal ? base : 'HEAD^1';
+  : sourceInHead ? base : 'HEAD^1';
 assert(sourceInHead || sourceInCurrentMerge, 'The exact pixel-corrected AU source terminal must be in the current integration history.');
 assert.equal(git(['merge-base', base, sourceTerminal]).trim(), base, 'The source branch must descend from the authorized exact base.');
 const followOnInHead = spawnSync('git', ['merge-base', '--is-ancestor', followOnTerminal, 'HEAD'], { cwd: root }).status === 0;

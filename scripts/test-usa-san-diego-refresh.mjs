@@ -8,7 +8,7 @@ import { postLosAngelesBostonRoutes, postBostonOverviewJuneauRoutes, postBostonO
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'b7d32c7e1585d5af3cf3d4291dd323e5d2da30eb';
-const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const september = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const parent = 'd5f7d1689b784b4930cd9f7d4496ab3148929162';
 const routes = [
   '/usa/san-diego/',

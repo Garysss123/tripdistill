@@ -6,7 +6,7 @@ import { parse } from 'parse5';
 import { postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes } from './integration-sprint-scope.mjs';
 
 const base = '55147104cc93f80b6c9ec7f0b01436b01661e435';
-const september = '71def01cd4d489552b9f5d67ca1a202becaa0435e';
+const september = '71def01cd4d489552b9f5d67ca1a202becaa0435';
 const floridaRoutes = [
   '/usa/miami/south-beach/',
   '/usa/miami/little-havana-wynwood/',
