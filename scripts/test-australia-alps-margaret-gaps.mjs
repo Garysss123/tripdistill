@@ -10,7 +10,7 @@ import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, po
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015'].includes(branch);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
@@ -147,8 +147,9 @@ for (const file of correctionFiles) {
 
 const comparisonBase = integrationBranch ? integrationBase : base;
 const changedEnglish = git(['diff', '--name-only', comparisonBase, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-const expectedChangedEnglish = integrationBranch ? [...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : routes;
+const expectedChangedEnglish = integrationBranch ? [...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, '/australia/red-centre/'] : routes;
 assert.deepEqual(changedEnglish, expectedChangedEnglish.map((route) => `${route.slice(1)}index.html`).sort(), 'Only the exact source batch or subsequent four Margaret guides changed in the selected checkpoint.');
+const expectedChangedSearch = integrationBranch ? [...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : routes;
 
 const referenceHub = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/index.html'), 'utf8')));
 const referenceGuide = words(mainText(fs.readFileSync(path.join(root, 'japan/hokkaido/otaru-shakotan/index.html'), 'utf8')));
@@ -184,7 +185,7 @@ assert.equal(currentSearch.size, 955, 'Current English search index keeps all 95
 assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
 const changedSearch = [...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 const changedAustraliaSearch = changedSearch.filter((url) => url.startsWith('/australia/'));
-assert.deepEqual(sourceBranch ? changedSearch : changedAustraliaSearch, [...expectedChangedEnglish].sort(), 'Only the exact source batch or subsequent four Margaret search records changed in the selected checkpoint.');
+assert.deepEqual(sourceBranch ? changedSearch : changedAustraliaSearch, expectedChangedSearch.sort(), 'Only the exact source batch or subsequent four Margaret search records changed in the selected checkpoint.');
 const terminalSearch = searchMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
 for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalSearch.get(route), `${route}: integrated search record matches the exact source terminal.`);
 
@@ -197,7 +198,10 @@ const changedDates = expectedChangedEnglish.flatMap((route) => locales.map((loca
 const actualChangedDates = [...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url));
 const changedAustraliaDates = actualChangedDates.filter((url) => expectedChangedEnglish.some((route) => new URL(url, 'https://tripdistill.com').pathname.endsWith(route)));
 assert.deepEqual(sourceBranch ? actualChangedDates.sort() : changedAustraliaDates.sort(), changedDates, 'Only the exact selected four routes × five locale lastmod values changed in the checkpoint.');
-for (const url of changedDates) assert.equal(currentSitemap.get(url), isoDate, `${url}: lastmod date.`);
+for (const url of changedDates) {
+  const route = new URL(url, 'https://tripdistill.com').pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  assert.equal(currentSitemap.get(url), route === '/australia/red-centre/' ? '2026-10-15' : isoDate, `${url}: lastmod date.`);
+}
 
 const pages = collectTranslationWork();
 const requiredPageUnits = new Set(pages.filter((record) => routes.includes(record.route)).flatMap((record) => record.units));

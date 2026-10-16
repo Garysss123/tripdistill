@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { SaxesParser } from 'saxes';
 import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
 import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
@@ -203,7 +204,7 @@ assert(followOnInHead || followOnInCurrentMerge, 'The exact Top End/Whitsundays 
 assert.equal(git(['merge-base', followOnBase, followOnTerminal]).trim(), followOnBase, 'The Top End/Whitsundays source must descend from its exact authorized base.');
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and the exact later Australia batches may change.');
+assert.deepEqual(changedEnglish, [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, postIntegrationTripDistillRoutes[0]].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and the exact later Australia batches may change.');
 
 const followOnWordDeltas = new Map([
   ['/australia/darwin-top-end/darwin-waterfront-city/', 730],
@@ -274,10 +275,10 @@ const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.x
 assert.equal(baseSitemap.size, 4560, 'Base sitemap contains 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap contains 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const expectedSitemap = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+const expectedSitemap = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const changedSitemap = [...currentSitemap.keys()].filter((url) => expectedSitemap.includes(url) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
 assert.deepEqual(changedSitemap, expectedSitemap, 'Only the Adelaide/Perth and exact later Top End/Whitsundays route editions receive new sitemap dates.');
-for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate, `${url}: sitemap lastmod.`);
+for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), postIntegrationTripDistillRoutes.some((route) => url.endsWith(route)) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate, `${url}: sitemap lastmod.`);
 
 for (const locale of locales.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', locale.code);

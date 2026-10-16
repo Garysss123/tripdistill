@@ -1,0 +1,46 @@
+{
+  "reason": "Archived exact reviewed locale batches before the repository-standard stale-key cleanup needed for full catalog approval. The dry run identified only 16 obsolete review-date/label keys across these eight files; no current translation values were rewritten.",
+  "baseline": "b585e6eb24a144dec8263ad9d7464913d4473acd",
+  "files": [
+    {
+      "source": "data/i18n/reviewed/zh-Hant/44a-france-paris.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/zh-Hant/44a-france-paris.json",
+      "sha256": "29b865665b87ca238458df7143eeb1c03b1eacad97c4bb1d786a85359ca00541"
+    },
+    {
+      "source": "data/i18n/reviewed/zh-Hant/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/zh-Hant/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "sha256": "91d561da877710c7b7693b02c7a5a077c9a24e7b3e9d66b9be4dbd50aac2f44c"
+    },
+    {
+      "source": "data/i18n/reviewed/ja/44a-france-paris.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/ja/44a-france-paris.json",
+      "sha256": "33d71cdba93d5ea3712f9b926d656da1bac6f2a31de488136a54447151b1287c"
+    },
+    {
+      "source": "data/i18n/reviewed/ja/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/ja/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "sha256": "dfbd927ebe85a1f7208e3e8f0252570f4e8b53601a8a2a80ef72bdfb64605047"
+    },
+    {
+      "source": "data/i18n/reviewed/ko/44a-france-paris.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/ko/44a-france-paris.json",
+      "sha256": "d346077c8a115baa4df931d3ae6290db8b15927d44022ce1fb33ef9e2fdc327f"
+    },
+    {
+      "source": "data/i18n/reviewed/ko/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/ko/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "sha256": "cb03b75ed253292b1961a672ff928d23bcd5a913e4bd85957e75ad5bc6881b11"
+    },
+    {
+      "source": "data/i18n/reviewed/th/44a-france-paris.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/th/44a-france-paris.json",
+      "sha256": "ddbb100824aedcd7b11388d822bcaf2a60bd30d4a7f76e743cfe673896c2b79e"
+    },
+    {
+      "source": "data/i18n/reviewed/th/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "archive": "data/i18n/archive/tripdistill-three-pages/2026-10-15/th/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json",
+      "sha256": "9f7f066f6d5f40621af25ce169bbdfc8eb05f4c35996d00c02cd360b0d0adb8d"
+    }
+  ]
+}

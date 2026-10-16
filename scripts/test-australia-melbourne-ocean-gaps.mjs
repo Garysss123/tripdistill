@@ -4,7 +4,7 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
-import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes, postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '19bd73df24866ac49389fdf4ccb572e91cc422f6';
@@ -145,7 +145,7 @@ check(git(['merge-base', base, sourceTerminal]).trim() === base, 'AU gap source 
 
 const changedEnglish = git(['diff', '--name-only', base, '--', 'australia'])
   .split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-const expectedEnglish = [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].map((route) => `${route.slice(1)}index.html`).sort();
+const expectedEnglish = [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, postIntegrationTripDistillRoutes[0]].map((route) => `${route.slice(1)}index.html`).sort();
 check(changedEnglish.join('|') === expectedEnglish.join('|'), `English route file scope differs: ${changedEnglish.join(', ')}`);
 
 for (const route of routes) {
@@ -242,11 +242,11 @@ const baseSitemap = sitemapEntries(readBase('sitemap.xml'));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 check(baseSitemap.size === 4560 && currentSitemap.size === 4560, `Expected 4560 sitemap URLs, got ${baseSitemap.size}/${currentSitemap.size}.`);
 check([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed.');
-const expectedChanged = [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+const expectedChanged = [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const actualChanged = [...currentSitemap.keys()].filter((url) => expectedChanged.includes(url) && baseSitemap.get(url) !== currentSitemap.get(url)).sort();
 check(actualChanged.join('|') === expectedChanged.join('|'), `Sitemap lastmod changes escaped four routes/five languages: ${actualChanged.join(', ')}`);
 for (const url of expectedChanged) {
-  const expectedDate = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate;
+  const expectedDate = postIntegrationTripDistillRoutes.some((route) => url.endsWith(route)) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate;
   check(currentSitemap.get(url) === expectedDate, `${url}: lastmod date is wrong.`);
 }
 

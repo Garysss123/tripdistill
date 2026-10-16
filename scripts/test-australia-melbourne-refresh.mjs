@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { australiaSouthClusters } from '../data/australia-south-guides.mjs';
 import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
 
@@ -150,14 +151,14 @@ const laterAustraliaGapRoutes = [
   '/australia/perth-fremantle-rottnest/kings-park/',
   '/australia/perth-fremantle-rottnest/cottesloe-scarborough/'
 ];
-const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes];
+const editedRoutes = [...routes, ...adelaideRoutes, ...sydneyRoutes, ...brisbaneRoutes, ...blueMountainsRoutes, ...greatOceanRoutes, ...goldCoastRoutes, ...cairnsRoutes, ...laterAustraliaGapRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, '/australia/red-centre/'];
 const editedUrls = new Set(editions.flatMap(({ prefix }) => editedRoutes.map((route) => `${prefix}${route}`)));
-assert.equal(editedUrls.size, 385, 'seventy-seven exact Australia route dates across five language editions, including the five final-content routes');
+assert.equal(editedUrls.size, 390, 'seventy-seven exact Australia route dates across five language editions, including the five final-content routes');
 for (const [url, originalDate] of originalEntries) {
   const pathname = new URL(url, 'https://tripdistill.com').pathname;
   if (!pathname.includes('/australia/')) continue;
   const isAlpsMargaretRoute = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => pathname.endsWith(route));
-  const expectedDate = isAlpsMargaretRoute ? '2026-10-13' : editedUrls.has(pathname) ? '2026-10-12' : originalDate;
+  const expectedDate = postIntegrationTripDistillRoutes.some((route) => pathname.endsWith(route)) ? '2026-10-15' : isAlpsMargaretRoute ? '2026-10-13' : editedUrls.has(pathname) ? '2026-10-12' : originalDate;
   assert.equal(currentEntries.get(url), expectedDate, `only the exact 77 selected Australia route dates change: ${url}`);
 }
 

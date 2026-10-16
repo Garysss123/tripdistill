@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillReviewedPaths } from './integration-sprint-scope.mjs';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -141,12 +143,12 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared dates.');
 for (const pagePath of expectedDatePaths) {
   const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
-  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap lastmod`);
+  assert.equal(currentSitemap.get(pagePath), postIntegrationTripDistillRoutes.includes(route) ? '2026-10-15' : (route === '/thailand/' ? '2026-10-14' : editDate), `${pagePath}: sitemap lastmod`);
 }
 
 for (const route of routes) {
@@ -256,6 +258,7 @@ for (const edition of editions.slice(1)) {
     expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
   }
 }
+expectedReviewedDiffs.push(...postIntegrationTripDistillReviewedPaths);
 const reviewedDiffs = [...new Set([
   ...git(['diff', '--name-only', integrationBaseCommit, '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'data/i18n/reviewed']).trim().split('\n').filter(Boolean)

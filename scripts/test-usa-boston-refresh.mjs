@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postLosAngelesSanDiegoRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, followingVietnamCoastalGapsRoutes, postAustraliaFinalRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
+import { postLosAngelesSanDiegoRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, followingVietnamCoastalGapsRoutes, postAustraliaFinalRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes, postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'bc08029d36448bcb9d0a42a986caddec883b3d1f';
@@ -174,9 +174,9 @@ assert.equal(integrationBaseSitemap.size, 4560, 'integration-base sitemap has 4,
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(integrationBaseSitemap.keys()), 'all 4,560 sitemap URLs remain unchanged');
 const thailandOverviewPaths = locales.map(({ prefix }) => `${prefix}/thailand/`);
-const datedPaths = [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).concat(thailandOverviewPaths).sort();
+const datedPaths = [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).concat(thailandOverviewPaths).sort();
 assert.deepEqual([...currentSitemap].filter(([route, date]) => integrationBaseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only the four Boston routes, their registered follow-ups and the five Thailand overview editions receive new sitemap dates from the pushed checkpoint');
-for (const route of datedPaths) assert.equal(currentSitemap.get(route), route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
+for (const route of datedPaths) assert.equal(currentSitemap.get(route), postIntegrationTripDistillRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-15' : route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
 
 for (const locale of locales) {
   const searchPath = locale.code === 'en' ? 'data/search-index.json' : `${locale.prefix.slice(1)}/data/search-index.json`;

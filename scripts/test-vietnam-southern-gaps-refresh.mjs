@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillReviewedPaths } from './integration-sprint-scope.mjs';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -182,14 +184,14 @@ const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].map((route) => prefix + route)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared sitemap dates.');
 for (const pagePath of expectedDatePaths) {
   const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
-  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, pagePath + ': sitemap date');
+  assert.equal(currentSitemap.get(pagePath), postIntegrationTripDistillRoutes.includes(route) ? '2026-10-15' : (route === '/thailand/' ? '2026-10-14' : editDate), pagePath + ': sitemap date');
 }
 for (const pagePath of editions.flatMap(({ prefix }) => routes.map((route) => prefix + route))) assert.equal(currentSitemap.get(pagePath), sourceSitemap.get(pagePath), pagePath + ': southern-route sitemap date matches the exact southern source terminal.');
 
@@ -333,6 +335,7 @@ for (const edition of editions.slice(1)) {
     expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
   }
 }
+expectedReviewedDiffs.push(...postIntegrationTripDistillReviewedPaths);
 assert.deepEqual(reviewedDiffs, [...new Set(expectedReviewedDiffs)].sort(), 'Only historical southern-gaps files, the separately archived bay-gaps overlay, and their reviewed batches may change; drafts and parallel translations must stay untouched.');
 
 const changedSvgs = git(['diff', '--name-only', integrationBaseCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);

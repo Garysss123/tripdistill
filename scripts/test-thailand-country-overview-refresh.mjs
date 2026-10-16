@@ -137,7 +137,15 @@ assert(datedOverviewRoutes.every(({ lastmod }) => lastmod === '2026-10-14'), 'On
 const sitemapDateMap = (source) => new Map([...source.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/gu)].map((match) => [match[1], match[2]]));
 const previousDates = sitemapDateMap(baseSitemap);
 const changedDateRoutes = [...sitemapDateMap(sitemap)].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
-assert.deepEqual(changedDateRoutes, ['', '/zh', '/ja', '/ko', '/th'].map((prefix) => `${prefix}/thailand/`).sort(), 'Exactly the five overview sitemap dates may change.');
+const tripDistillEditedRoutes = [
+  '/australia/red-centre/',
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
+];
+const expectedSitemapDateRoutes = [
+  ...['', '/zh', '/ja', '/ko', '/th'].flatMap((prefix) => [`${prefix}/thailand/`, ...tripDistillEditedRoutes.map((route) => `${prefix}${route}`)])
+].sort();
+assert.deepEqual(changedDateRoutes, expectedSitemapDateRoutes, 'Exactly the Thailand overview and the three reviewed TripDistill routes may receive synchronized sitemap dates.');
 
 for (const locale of locales) {
   const batchPath = path.join(root, `data/i18n/reviewed/${locale.code}/${pageBatchName}`);

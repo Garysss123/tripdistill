@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillReviewedPaths } from './integration-sprint-scope.mjs';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -174,7 +176,7 @@ assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
 const sourceChangedDatePaths = [...sourceSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(sourceChangedDatePaths, [...expectedDatePaths].sort(), 'The coastal source changes dates for exactly four routes in five editions.');
-const integrationExpectedDatePaths = new Set([...expectedDatePaths, ...editions.map(({ prefix }) => prefix + '/thailand/')]);
+const integrationExpectedDatePaths = new Set([...expectedDatePaths, ...editions.flatMap(({ prefix }) => postIntegrationTripDistillRoutes.map((route) => prefix + route)), ...editions.map(({ prefix }) => prefix + '/thailand/')]);
 const integrationChangedDatePaths = [...currentSitemap].filter(([url, date]) => integrationBaseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(integrationChangedDatePaths, [...integrationExpectedDatePaths].sort(), 'The integration checkpoint changes dates for exactly the four coastal routes and the separately tracked Thailand overview in five editions.');
 for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, pagePath + ': sitemap date');
@@ -281,6 +283,7 @@ for (const locale of ['ja', 'ko', 'th', 'zh-Hant']) {
   assert(muiNe, locale + ': expected shared Mui Ne translation source file.');
   expectedMergedReviewedDiffs.push('data/i18n/reviewed/' + locale + '/' + muiNe);
 }
+expectedMergedReviewedDiffs.push(...postIntegrationTripDistillReviewedPaths);
 assert.deepEqual(reviewedDiffs, [...new Set(expectedMergedReviewedDiffs)].sort(), 'Only four pruned Mui Ne source files and this coastal batch’s eight reviewed locale files change on the integration checkpoint.');
 
 const changedSvgs = git(['diff', '--name-only', baseCommit, sourceTerminal, '--', '*.svg']).trim().split('\n').filter(Boolean);

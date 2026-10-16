@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
-import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, followingVietnamCoastalGapsRoutes, postAustraliaFinalRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
+import { postIntegrationMargaretRemainingRoutes, postFloridaChicagoRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, followingVietnamCoastalGapsRoutes, postAustraliaFinalRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes, postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = 'f2a2aa1d9aaab0151a6bd75dfc31c907c63afb28';
@@ -184,11 +184,11 @@ const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), '
 assert.equal(baseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
 assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
 assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap URL set is unchanged');
-const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postAustraliaFinalRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes];
+const datedRoutes = [...routes, ...chicagoRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes];
 const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).concat(locales.map(({ prefix }) => `${prefix}/thailand/`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => baseSitemap.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(changedDates, datedPaths, 'only the selected New England, Chicago, Margaret, Da Lat, Arizona, Los Angeles, Broome/Tasmania, Mui Ne, Phong Nha, San Diego, Boston and Thailand overview routes across five editions receive changed sitemap dates');
-for (const route of datedPaths) assert.equal(currentSitemap.get(route), route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
+for (const route of datedPaths) assert.equal(currentSitemap.get(route), postIntegrationTripDistillRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-15' : route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
 
 for (const route of routes) {
   for (const locale of locales) {

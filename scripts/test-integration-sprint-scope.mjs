@@ -62,6 +62,11 @@ assert.equal(integrationRouteGroups.vietnam.length, 12);
 assert.equal(integrationRoutes.length, 302);
 assert.equal(integrationSitemapRoutes.length, 301);
 assert.equal(integrationSearchRoutes.length, 271);
+const tripDistillRemainingRoutes = [
+  '/australia/red-centre/',
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
+];
 for (const route of [
   '/switzerland/lugano-southern-ticino/lugano-lakefront/',
   '/switzerland/lugano-southern-ticino/san-salvatore-morcote/',
@@ -117,8 +122,8 @@ const changedBodyRoutes = changedFiles
   .filter((file) => file.endsWith('/index.html'))
   .map((file) => `/${file.slice(0, -'index.html'.length)}`);
 assert.equal(thailandCountryOverviewNewSubstantiveRoutes.length, 1);
-assert.equal(changedBodyRoutes.length, 422);
-assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes, ...thailandCountryOverviewNewSubstantiveRoutes]), 'the exact integration scope and separately accounted follow-on batches changed');
+assert.equal(changedBodyRoutes.length, 425);
+assert.deepEqual(sorted(changedBodyRoutes), sorted([...integrationRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes, ...thailandCountryOverviewNewSubstantiveRoutes, ...tripDistillRemainingRoutes]), 'the exact integration scope and separately accounted follow-on batches changed');
 
 const phuQuocParent = '01144e03bf6173f468cb836d0899163e1a98c4ea';
 const phuQuocTerminal = 'a639c760ec728d90a0c271e512cbb7af2fa8bfa4';
@@ -361,17 +366,19 @@ for (const prefix of prefixes) {
   for (const route of postFloridaChicagoRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postIntegrationAustraliaRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postBostonOverviewJuneauRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
+  for (const route of tripDistillRemainingRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   expectedChangedSitemapPaths.add(`${prefix}/thailand/`);
 }
-assert.equal(changedSitemapUrls.length, 2105);
+assert.equal(changedSitemapUrls.length, 2120);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
-  'only the exact integrated routes, twenty-one separately counted four-route follow-on batches and Thailand overview have updated sitemap dates across five editions'
+  'only the exact integrated routes, twenty-one separately counted four-route follow-on batches, Thailand overview and three reviewed TripDistill routes have updated sitemap dates across five editions'
 );
 for (const url of changedSitemapUrls) {
   const route = new URL(url).pathname;
-  const expectedDate = route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '') === '/thailand/' ? '2026-10-14' : [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const unlocalizedRoute = route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  const expectedDate = unlocalizedRoute === '/thailand/' ? '2026-10-14' : tripDistillRemainingRoutes.includes(unlocalizedRoute) ? '2026-10-15' : [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
 }
 const alpsMargaretBaseSitemap = parseSitemap(readFromGit(`${alpsMargaretBase}:sitemap.xml`).toString('utf8'));
@@ -462,4 +469,4 @@ for (const route of postIntegrationMuiNeRoutes) assert.deepEqual(currentSearchBy
 const bostonSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${bostonTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of bostonRoutes) assert.deepEqual(currentSearchByUrl.get(route), bostonSourceSearch.get(route), `${route}: exact Boston source search record is integrated`);
 
-console.log('Integration scope regression passed: 422 exact English bodies (420 source-work bodies plus two separately accounted USA historical paths), 2,105 integration date changes over 421 routes × five editions, 378 English search changes, and the unchanged 4,560-URL set.');
+console.log('Integration scope regression passed: 425 exact English bodies (420 source-work bodies, two separately accounted USA historical paths and three TripDistill follow-on bodies), 2,120 date changes over 424 routes × five editions, 378 English search changes, and the unchanged 4,560-URL set.');

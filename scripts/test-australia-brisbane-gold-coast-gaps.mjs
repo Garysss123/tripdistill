@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { SaxesParser } from 'saxes';
 import { australiaGuides } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
@@ -128,7 +129,7 @@ const laterAustraliaBodyRoutes = [
   ...postIntegrationAustraliaRoutes,
   ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes
 ];
-assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
+assert.deepEqual(englishHtml, [...routes, ...laterAustraliaBodyRoutes, postIntegrationTripDistillRoutes[0]].map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four authorized English route bodies and eight subsequent AU gap improvements may change from the exact sprint base.');
 
 const baseSearch = JSON.parse(git(['show', `${taskStart}:data/search-index.json`]));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
@@ -141,10 +142,10 @@ assert.deepEqual(changedSearch, [...routes, ...laterAustraliaBodyRoutes].sort(),
 const baseSitemap = sitemapEntries(git(['show', `${taskStart}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
-const expectedDatePaths = [...routes, ...laterAustraliaBodyRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
+const expectedDatePaths = [...routes, ...laterAustraliaBodyRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDatePaths = expectedDatePaths.filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedDatePaths, expectedDatePaths, 'Only the selected Brisbane/Gold Coast and exact later AU route/language sitemap dates may change from the source task base.');
-for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate, `${route}: sitemap lastmod.`);
+for (const route of expectedDatePaths) assert.equal(currentSitemap.get(route), postIntegrationTripDistillRoutes.some((path) => route.endsWith(path)) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate, `${route}: sitemap lastmod.`);
 
 const work = new Map(collectTranslationWork().map((record) => [record.route, record]));
 const requiredPageKeys = new Set(routes.flatMap((route) => work.get(route).units));

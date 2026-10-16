@@ -8,7 +8,7 @@ import { followingVietnamDaLatRoutes, followingVietnamNhaTrangRoutes, followingV
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-margaret-remaining-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015'].includes(branch);
 const base = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
@@ -118,7 +118,7 @@ if (sourceBranch) {
 }
 
 const changedEnglish = git(['diff', '--name-only', comparisonBase, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
-assert.deepEqual(changedEnglish, (integrationBranch ? [...routes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : routes).map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English child pages and exact integrated Broome follow-on changed.');
+assert.deepEqual(changedEnglish, (integrationBranch ? [...routes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, '/australia/red-centre/'] : routes).map((route) => `${route.slice(1)}index.html`).sort(), 'Only the four requested English child pages and exact integrated follow-ons changed.');
 for (const untouched of [
   'australia/margaret-river-southwest/index.html',
   'australia/margaret-river-southwest/margaret-river-wine-food/index.html'
@@ -163,12 +163,12 @@ const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml')
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauRoutes, '/thailand/'] : [])];
+const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauRoutes, '/thailand/', '/australia/red-centre/', '/france/basque-coast-pyrenees/', '/france/basque-coast-pyrenees/bayonne-biarritz/'] : [])];
 const changedDates = datedRoutes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
 assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the selected Margaret, Chicago, Arizona, Da Lat, Los Angeles, Boston, Broome, Mui Ne, Southern Vietnam and separately dated Thailand overview routes × five locale lastmod values changed.');
 for (const url of changedDates) {
   const route = new URL(`https://tripdistill.com${url}`).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
-  assert.equal(currentSitemap.get(url), route === '/thailand/' ? '2026-10-14' : isoDate, `${url}: lastmod date.`);
+  assert.equal(currentSitemap.get(url), route === '/thailand/' ? '2026-10-14' : ['/australia/red-centre/', '/france/basque-coast-pyrenees/', '/france/basque-coast-pyrenees/bayonne-biarritz/'].includes(route) ? '2026-10-15' : isoDate, `${url}: lastmod date.`);
 }
 
 for (const locale of locales) {

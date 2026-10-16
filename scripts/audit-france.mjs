@@ -434,6 +434,10 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
   const franceResponsiveEditedRoutes = new Set(franceClusters
     .filter((cluster) => cluster.slug !== 'paris')
     .flatMap((cluster) => [`/france/${cluster.slug}/`, ...cluster.guides.map((guide) => guide.url)]));
+  const tripDistillBasqueUpdatedRoutes = new Set([
+    '/france/basque-coast-pyrenees/',
+    '/france/basque-coast-pyrenees/bayonne-biarritz/'
+  ]);
   const brittanyEditedRoutes = new Set([
     '/france/brittany-coasts/',
     '/france/brittany-coasts/saint-malo-dinan/',
@@ -524,7 +528,7 @@ if (fs.existsSync(path.join(root, 'sitemap.xml'))) {
     '/france/lille-french-flanders/opal-coast-headlands/'
   ]);
   for (const route of routes) {
-    const expectedDate = lilleFranceFlandersEditedRoutes.has(route) || corsicaEditedRoutes.has(route) || languedocCamargueEditedRoutes.has(route) || marseilleEditedRoutes.has(route) || coteDAzurEditedRoutes.has(route) || provenceEditedRoutes.has(route) || frenchAlpsEditedRoutes.has(route) ? '2026-10-12' : lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
+    const expectedDate = tripDistillBasqueUpdatedRoutes.has(route) ? '2026-10-15' : lilleFranceFlandersEditedRoutes.has(route) || corsicaEditedRoutes.has(route) || languedocCamargueEditedRoutes.has(route) || marseilleEditedRoutes.has(route) || coteDAzurEditedRoutes.has(route) || provenceEditedRoutes.has(route) || frenchAlpsEditedRoutes.has(route) ? '2026-10-12' : lyonEditedRoutes.has(route) || alsaceEditedRoutes.has(route) || burgundyEditedRoutes.has(route) || bordeauxGirondeEditedRoutes.has(route) || dordogneEditedRoutes.has(route) || toulouseOccitanieEditedRoutes.has(route) ? '2026-10-11' : brittanyEditedRoutes.has(route) ? '2026-10-10' : fr02EditedRoutes.has(route) ? '2026-10-11' : normandyEditedRoutes.has(route) ? '2026-10-07' : parisEditedRoutes.has(route) ? '2026-10-06' : franceResponsiveEditedRoutes.has(route) ? '2026-10-07' : '2026-09-20';
     check(sitemap.includes(`<loc>https://tripdistill.com${route}</loc><lastmod>${expectedDate}</lastmod>`), `${route}: sitemap missing or stale`);
   }
   for (const route of fr02EditedRoutes) {

@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { SaxesParser } from 'saxes';
 import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
 
@@ -224,7 +225,7 @@ function articleAndFaq(html) {
   return { article, faq, visibleFaq };
 }
 
-const expectedEnglishHtml = branchRefreshRoutes.map((route) => `${route.slice(1)}index.html`).sort();
+const expectedEnglishHtml = [...branchRefreshRoutes, postIntegrationTripDistillRoutes[0]].map((route) => `${route.slice(1)}index.html`).sort();
 const changedEnglishHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
 assertIssue(changedEnglishHtml.join('|') === expectedEnglishHtml.join('|'), `English HTML diff must be exactly the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns routes; found ${changedEnglishHtml.join(', ')}.`);
 
@@ -353,11 +354,11 @@ assertIssue(hubHtml.includes(`href="${svgPath}"`) && hubHtml.includes('href="/te
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assertIssue([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed; this task must not add or remove routes.');
-const expectedSitemapRoutes = branchRefreshRoutes.flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
+const expectedSitemapRoutes = [...branchRefreshRoutes, postIntegrationTripDistillRoutes[0]].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns Australia route/language lastmod values may change; found ${changedLastmod.length}.`);
 for (const route of expectedSitemapRoutes) {
-  const expectedDate = [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
+  const expectedDate = route.endsWith(postIntegrationTripDistillRoutes[0]) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((path) => route.endsWith(path)) ? '2026-10-13' : isoDate;
   assertIssue(currentSitemap.get(route) === expectedDate, `${route}: sitemap lastmod is not ${expectedDate}.`);
 }
 

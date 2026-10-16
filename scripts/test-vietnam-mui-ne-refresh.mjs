@@ -18,6 +18,11 @@ const routes = [
   '/vietnam/mui-ne-binh-thuan/mui-ne-red-sand-dunes/',
   '/vietnam/mui-ne-binh-thuan/mui-ne-kiteboarding-coast/'
 ];
+const tripDistillRemainingRoutes = [
+  '/australia/red-centre/',
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
+];
 const editions = [
   { code: 'en', prefix: '' },
   { code: 'zh-Hant', prefix: '/zh' },
@@ -38,8 +43,8 @@ const walk = (node, visit) => {
 };
 
 const branch = git(['branch', '--show-current']).trim();
-assert(['codex/sprint-vn-after-dalat-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch), 'Selected Mui Ne source, isolated integration or independent Thailand overview branch.');
-if (branch === 'codex/integration-sprint-20261011' || branch === 'codex/integration-sprint-20261011-preflight' || branch === 'codex/thailand-country-overview-20261014') {
+assert(['codex/sprint-vn-after-dalat-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015'].includes(branch), 'Selected Mui Ne source, isolated integration, Thailand overview or explicitly scoped TripDistill follow-on branch.');
+if (branch === 'codex/integration-sprint-20261011' || branch === 'codex/integration-sprint-20261011-preflight' || branch === 'codex/thailand-country-overview-20261014' || branch === 'codex/tripdistill-remaining-3-pages-20261015') {
   const sourceInHead = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'HEAD'], { cwd: root }).status === 0;
   const sourceInMerge = spawnSync('git', ['merge-base', '--is-ancestor', sourceTerminal, 'MERGE_HEAD'], { cwd: root }).status === 0;
   assert(sourceInHead || sourceInMerge, 'The exact Mui Ne source terminal is in integration history.');
@@ -151,12 +156,17 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes].map((route) => `${prefix}${route}`)));
+const dateRoutes = [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, '/thailand/', ...tripDistillRemainingRoutes];
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => dateRoutes.map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => [...routes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes].some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => dateRoutes.some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
-assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the exact Mui Ne, Phong Nha, Phu Quoc, Nha Trang and post-Nha-Trang route groups in five editions changed dates after this source base.');
-for (const pagePath of expectedDatePaths) assert.equal(currentSitemap.get(pagePath), editDate, `${pagePath}: sitemap date`);
+assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the exact Mui Ne, Phong Nha, Phu Quoc, Nha Trang, post-Nha-Trang, Thailand-overview and TripDistill route groups in five editions changed dates after this source base.');
+for (const pagePath of expectedDatePaths) {
+  const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
+  const expectedDate = route === '/thailand/' ? '2026-10-14' : tripDistillRemainingRoutes.includes(route) ? '2026-10-15' : editDate;
+  assert.equal(currentSitemap.get(pagePath), expectedDate, `${pagePath}: sitemap date`);
+}
 
 for (const route of routes) {
   const sourceSearch = currentSearchByUrl.get(route);

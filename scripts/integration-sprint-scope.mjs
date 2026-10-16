@@ -548,6 +548,21 @@ export const followingVietnamCoastalGapsRoutes = Object.freeze([
   '/vietnam/mui-ne-binh-thuan/ta-cu-ke-ga-coast/'
 ]);
 
+// Later existing-page body/date follow-up, outside the original integration sprint.
+export const postIntegrationTripDistillRoutes = Object.freeze([
+  '/australia/red-centre/',
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
+]);
+
+export const postIntegrationTripDistillReviewedPaths = Object.freeze(
+  ['ja', 'ko', 'th', 'zh-Hant'].flatMap((locale) => [
+    `data/i18n/reviewed/${locale}/${'z'.repeat(223)}-3p-1015.json`,
+    `data/i18n/reviewed/${locale}/44a-france-paris.json`,
+    `data/i18n/reviewed/${locale}/99zzzzzzzzzz-sprint-au-20261009-regeneration-consistency.json`
+  ])
+);
+
 export const postOctober13Routes = Object.freeze([
   ...postAustraliaFinalRoutes,
   ...postAtlantaFloridaRoutes,
@@ -696,6 +711,7 @@ export const localizedCurrentSitemapDateChangeRoutes = (prefixes) => {
     for (const route of postIntegrationMuiNeRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationPhongNhaRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationPhuQuocRoutes) routes.add(`${prefix}${route}`);
+    for (const route of postIntegrationTripDistillRoutes) routes.add(`${prefix}${route}`);
     for (const route of followingVietnamNhaTrangRoutes) routes.add(`${prefix}${route}`);
     for (const route of postIntegrationBroomeTasmaniaRoutes) routes.add(`${prefix}${route}`);
   }

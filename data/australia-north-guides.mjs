@@ -513,6 +513,7 @@ export const australiaNorthClusters = [
     label: 'DESERT DISTANCE / CULTURAL COUNTRY / HEAT',
     tagline: 'Give Uluṟu–Kata Tjuṯa, Watarrka, Tjoritja and Mparntwe separate bases; let Country, distance and heat set the order.',
     hubIntro: 'Use Yulara as the park base, Watarrka as a separate road-trip overnight and Mparntwe as the gateway to Tjoritja. These are not interchangeable day trips: Uluṟu and Kata Tjuṯa have long exposed walks and their own access conditions, while fuel, daylight and road closures govern every remote leg. Begin with Aṉangu or Arrernte visitor guidance, then build each day around the current park and road information.',
+    hubDecision: 'Choose the road before choosing the vehicle. A standard 2WD route to Watarrka follows the sealed Stuart Highway, then the Lasseter Highway and Luritja Road via Erldunda; the Mereenie Loop via Larapinta Drive is a separate unsealed 4WD choice with a required pass. Tourism NT lists no fuel facilities on that loop, so refuel before entering it and check road status and fuel availability before leaving a base. Keep Mparntwe/Tjoritja, separate Uluṟu and Kata Tjuṯa days from Yulara, and a Watarrka canyon night as distinct blocks; do not trade the last daylight for a long post-walk transfer.',
     stay: 'If both Uluṟu and Kata Tjuṯa are priorities, reserve at least two full days from Yulara and give each its own weather window. Keep the Kings Canyon Rim Walk beside a Watarrka overnight; use Mparntwe for town services and a separate Tjoritja day. Moving bases is part of the itinerary, not spare time.',
     transfer: 'Flights serve Alice Springs and Yulara, but air arrival does not shorten the long road legs between the park, Watarrka and Tjoritja. Confirm vehicle suitability, fuel, communications and road notices before each departure; plan daylight and recovery rather than a night return.',
     faq: [
@@ -522,6 +523,8 @@ export const australiaNorthClusters = [
     ],
     reviewDate: "4 October 2026",
     reviewIsoDate: "2026-10-04",
+    hubReviewDate: "15 October 2026",
+    hubReviewIsoDate: "2026-10-15",
     stayTeaser: "Use Yulara for Uluṟu and Kata Tjuṯa, stay near Watarrka for Kings Canyon, and base in Mparntwe for Tjoritja.",
     transferTeaser: "Fly into Yulara or Alice Springs, then allow separate daylight road legs between the park regions.",
     sources: [
@@ -529,6 +532,8 @@ export const australiaNorthClusters = [
       ['https://northernterritory.com/alice-springs-and-surrounds', 'Tourism NT — Alice Springs and surrounds'],
       ['https://nt.gov.au/parks/find-a-park/tjoritja-west-macdonnell-national-park', 'Northern Territory Parks — Tjoritja / West MacDonnell'],
       ['https://nt.gov.au/parks/find-a-park/watarrka-national-park', 'Northern Territory Parks — Watarrka'],
+      ['https://northernterritory.com/itineraries/queens-on-tour', 'Tourism NT — Mereenie Loop fuel and permit notes'],
+      ['https://roadreport.nt.gov.au/', 'Road Report NT — live road conditions'],
       ['https://parksaustralia.gov.au/uluru/', 'Parks Australia — Uluṟu–Kata Tjuṯa National Park']
     ],
     guides: [

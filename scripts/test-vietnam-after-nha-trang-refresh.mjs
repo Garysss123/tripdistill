@@ -5,6 +5,8 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { postIntegrationTripDistillReviewedPaths } from './integration-sprint-scope.mjs';
+import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -173,14 +175,14 @@ const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml
 assert.equal(baseSitemap.size, 4560);
 assert.equal(currentSitemap.size, 4560);
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
-const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
+const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...southernGapsRoutes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
   .filter(([url, date]) => baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared sitemap dates.');
 for (const pagePath of expectedDatePaths) {
   const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
-  assert.equal(currentSitemap.get(pagePath), route === '/thailand/' ? '2026-10-14' : editDate, `${pagePath}: sitemap date`);
+  assert.equal(currentSitemap.get(pagePath), postIntegrationTripDistillRoutes.includes(route) ? '2026-10-15' : (route === '/thailand/' ? '2026-10-14' : editDate), `${pagePath}: sitemap date`);
 }
 
 for (const route of routes) {
@@ -305,6 +307,7 @@ for (const repoPath of baseReviewedPaths) {
     translations: Object.fromEntries(Object.entries(before.translations).filter(([source]) => activeTranslationSources.has(source)))
   }, `${repoPath}: only obsolete source keys may be pruned from an existing reviewed batch.`);
 }
+expectedReviewedDiffs.push(...postIntegrationTripDistillReviewedPaths);
 const uniqueExpectedReviewedDiffs = [...new Set(expectedReviewedDiffs)].sort();
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);

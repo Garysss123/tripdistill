@@ -96,7 +96,7 @@ function sitemapEntries(xml) {
 function jsonMap(text) { return new Map(JSON.parse(text).map((item) => [item.url, item])); }
 function routeFile(route, prefix = '') { return path.join(root, `${prefix}${route}`.replace(/^\//u, ''), 'index.html'); }
 
-assert(['codex/sprint-au-canberra-content-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch), 'Selected source, integration or independent Thailand overview branch name.');
+assert(['codex/sprint-au-canberra-content-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015'].includes(branch), 'Selected source, integration, independent Thailand overview or explicitly scoped TripDistill follow-on branch name.');
 if (sourceBranch) {
   const head = git(['rev-parse', 'HEAD']).trim();
   assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'Source branch must remain at the authorized base or its direct child.');

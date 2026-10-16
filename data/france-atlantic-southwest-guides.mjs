@@ -793,6 +793,9 @@ export const franceAtlanticSouthwestClusters = [
     label: 'Coast and mountain gate',
     tagline: 'Do not merge Atlantic swell and high-mountain access into one weather forecast.',
     hubIntro: 'Bayonne and Biarritz share an urban coastal network, Saint-Jean-de-Luz opens a different harbor and inland Basque corridor, and Gavarnie or Cauterets require a separate Pyrenean base. Ocean conditions and mountain conditions must be checked independently.',
+    hubDecision: 'On the coast, TER Nouvelle-Aquitaine’s Bordeaux–Hendaye corridor serves Bayonne, Biarritz and Saint-Jean-de-Luz–Ciboure; TXIK TXAK T1 connects Gare de Bayonne with Mairie de Biarritz, while line 12 links Gare de Biarritz with Bayonne Place des Basques. Inland, liO 965 runs Lourdes–Cauterets and 968 Lourdes–Luz-Saint-Sauveur, with the 968 extension to Gavarnie operating only on its summer timetable. Choose a valley only after checking both date-valid legs. If the Gavarnie extension is unavailable or its return does not fit the walk, sleep near the valley or arrange verified road transport instead of stretching a coastal-base day.',
+    reviewDate: '15 October 2026',
+    reviewDateISO: '2026-10-15',
     stay: 'Three nights on the coast support Bayonne, Biarritz and Saint-Jean-de-Luz; add separate mountain nights around Lourdes, Cauterets or Luz-Saint-Sauveur for Pyrenean routes. A coast hotel is not a practical high-mountain base.',
     transfer: 'Regional rail links coastal towns, with local buses for beaches and inland villages. Pyrenean valleys depend on seasonal buses, cars and weather-sensitive roads; the final trail or lift has its own status.',
     season: 'Surf, swimming, red-flag closures and storms shape the Atlantic. Snow, road status, waterfalls, heat and thunderstorms shape the mountains. Shoulder-season services thin in both systems.',
@@ -800,6 +803,8 @@ export const franceAtlanticSouthwestClusters = [
     sources: [
       ['https://www.tourisme64.com/en/', 'Pyrénées-Atlantiques tourism — official regional guide'],
       ['https://www.ter.sncf.com/nouvelle-aquitaine', 'TER Nouvelle-Aquitaine — official coastal rail'],
+      ['https://itineraires.txiktxak.fr/fr/plan-du-site/reseau/TXIK-TXAK-Littoral/TXIKTXAK-LITTORAL', 'TXIK TXAK — coastal route endpoints and current timetables'],
+      ['https://www.lio-occitanie.fr/horaires-et-plans/', 'liO Occitanie — regional coach timetables'],
       ['https://www.pyrenees-parcnational.fr/en', 'Pyrenees National Park — official access and conduct']
     ],
     guides: [
@@ -812,6 +817,9 @@ export const franceAtlanticSouthwestClusters = [
         imageAlt: 'Atlantic waterfront and buildings in Biarritz on the French Basque coast',
         purpose: 'Choose whether Bayonne’s river-and-culture city or Biarritz’s exposed ocean front leads the day, then connect them by the current urban network.',
         summary: 'Walk one complete center first, use bus or rail for the second, and treat ocean safety as a live condition rather than a postcard assumption.',
+        routeDecision: 'Choose the return door before combining the towns. TXIK TXAK line 12 runs from Gare de Biarritz through Mairie de Biarritz–Edouard VII and Jardin Public to Bayonne Place des Basques; it does not end at Bayonne rail station. From Gare de Bayonne, T1 reaches Mairie de Biarritz L. Barthou. Use the central Biarritz stops for the walk to Grande Plage, or Cité de l’Océan for the southern coast; TER serves the separate Bayonne, Biarritz and Saint-Jean-de-Luz–Ciboure rail stations. Check a matched bus or train return before adding the second center, and treat the last local departure as a firm turnaround.',
+        reviewDate: '15 October 2026',
+        reviewDateISO: '2026-10-15',
         choices: [
           ['Bayonne history and culture', 'Use the cathedral quarter, Nive and Adour edges, market and Basque Museum where open. This is the more sheltered route.'],
           ['Biarritz ocean city', 'Connect Grande Plage, Rocher de la Vierge and one aquarium or museum block, following current surf and access warnings.'],

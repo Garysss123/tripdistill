@@ -149,6 +149,8 @@ const vietnamAfterNhaTrangEditedRoutes = [
   '/vietnam/ha-long-cat-ba/viet-hai-cai-beo/'
 ];
 const australiaLastmod = '2026-09-04';
+const australiaRedCentreLastmod = '2026-10-15';
+const australiaRedCentreEditedRoutes = ['/australia/red-centre/'];
 const australiaGreatOceanLastmod = '2026-10-12';
 const australiaGreatOceanEditedRoutes = [
   '/australia/great-ocean-road-gariwerd/',
@@ -169,6 +171,11 @@ const australiaBroomeEditedRoutes = [
   '/australia/broome-kimberley/rubibi-broome-cable-beach/',
   '/australia/broome-kimberley/dampier-peninsula/',
   '/australia/broome-kimberley/gibb-river-road/'
+];
+const franceBasqueLastmod = '2026-10-15';
+const franceBasqueEditedRoutes = [
+  '/france/basque-coast-pyrenees/',
+  '/france/basque-coast-pyrenees/bayonne-biarritz/'
 ];
 const canadaLastmod = '2026-09-12';
 const pacificRimLastmod = '2026-10-12';
@@ -1813,6 +1820,18 @@ for (const route of australiaBroomeEditedRoutes) {
   const record = records.get(route);
   if (!record) throw new Error('Cannot date edited Broome/Kimberley route absent from sitemap: ' + route);
   records.set(route, { ...record, lastmod: australiaBroomeLastmod });
+}
+
+for (const route of australiaRedCentreEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Red Centre route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: australiaRedCentreLastmod });
+}
+
+for (const route of franceBasqueEditedRoutes) {
+  const record = records.get(route);
+  if (!record) throw new Error(`Cannot date edited Basque Coast/Pyrenees route absent from sitemap: ${route}`);
+  records.set(route, { ...record, lastmod: franceBasqueLastmod });
 }
 
 const english = [...records.values()];

@@ -9,7 +9,7 @@ import { postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from '.
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-broome-content-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015'].includes(branch);
 const base = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
 const sourceTerminal = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
@@ -120,7 +120,8 @@ if (sourceBranch) {
 }
 
 const integrationFollowups = integrationBranch ? [...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes] : [];
-const expectedHtml = [...routes, ...integrationFollowups].map((route) => `${route.slice(1)}index.html`).sort();
+const tripDistillFollowups = integrationBranch ? ['/australia/red-centre/'] : [];
+const expectedHtml = [...routes, ...integrationFollowups, ...tripDistillFollowups].map((route) => `${route.slice(1)}index.html`).sort();
 const changedHtml = git(['diff', '--name-only', base, '--', 'australia']).split(/\r?\n/u).filter((name) => name.endsWith('/index.html')).sort();
 assert.deepEqual(changedHtml, expectedHtml, 'Only the four Broome source routes and exact registered integration follow-ups may change.');
 if (sourceBranch) for (const route of untouchedRoutes) git(['diff', '--quiet', base, '--', route]);
@@ -164,10 +165,10 @@ const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml')
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
 assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
 assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
-const datedRoutes = [...routes, ...integrationFollowups].flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
+const datedRoutes = [...routes, ...integrationFollowups, ...tripDistillFollowups].flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap.keys()].filter((url) => (sourceBranch || new URL(url, 'https://tripdistill.com').pathname.includes('/australia/')) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
 assert.deepEqual(changedDates, datedRoutes, 'Only the exact requested routes × five language editions received new lastmod dates in the relevant source scope.');
-for (const route of datedRoutes) assert.equal(currentSitemap.get(route), isoDate, `${route}: sitemap lastmod.`);
+for (const route of datedRoutes) assert.equal(currentSitemap.get(route), tripDistillFollowups.some((baseRoute) => route.endsWith(baseRoute)) ? '2026-10-15' : isoDate, `${route}: sitemap lastmod.`);
 
 for (const locale of locales) {
   const dir = path.join(root, 'data/i18n/reviewed', locale.code);
