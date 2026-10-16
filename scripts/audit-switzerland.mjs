@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { parseSvgDimensions } from './svg-dimensions.mjs';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandCh14CountryRefresh, switzerlandCh14HubRefresh, switzerlandCh14IsoDate } from '../data/switzerland-ch14-refresh.mjs';
 import { switzerlandCh15GuideRefresh, switzerlandCh15IsoDate } from '../data/switzerland-ch15-refresh.mjs';
@@ -175,8 +176,17 @@ for (const guide of switzerlandGuides) {
     check(/^(CC0|Public domain|CC BY(?:-SA)? [1-4](?:\.\d)?(?: [a-z]{2})?)$/i.test(guide.image.license), `${guide.url}: unapproved image license ${guide.image.license}`);
   }
   const imageFile = path.join(root, guide.image.src.replace(/^\//, ''));
-  const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
-  check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
+  if (guide.image.assetType === 'original-planning-diagram') {
+    try {
+      const dimensions = parseSvgDimensions(fs.readFileSync(imageFile, 'utf8'));
+      check(dimensions.width === 1600 && dimensions.height === 1066, `${guide.url}: SVG image is not 1600x1066`);
+    } catch (error) {
+      check(false, `${guide.url}: SVG image missing or invalid (${error.message})`);
+    }
+  } else {
+    const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', imageFile], { encoding: 'utf8' });
+    check(probe.status === 0 && probe.stdout.trim() === '1600x1066', `${guide.url}: image missing or not 1600x1066`);
+  }
 }
 
 const titles = new Set();
