@@ -229,7 +229,7 @@ for (const route of previousRefresh) {
 }
 
 const changedSvgs = git(['diff', '--name-only', integrationBase, '--', '*.svg']).trim().split('\n').filter(Boolean);
-assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
+assert.deepEqual(changedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only SVG change in the integration scope is the separately reviewed Niagara decision diagram; the Phu Quoc content batch adds no diagrams.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 assert.equal(ledger.previousTopLevelSprint.branch, 'codex/sprint-vn-after-phong-nha-20261013');
 assert.equal(ledger.previousTopLevelSprint.sourceBaseCommit, sourceParent);
@@ -243,5 +243,5 @@ assert(ledger.previousTopLevelSprint.excludedHistoricalRoutes.some((route) => ro
 assert.equal(ledger.previousTopLevelSprint.remainingRoutesAfterSprint.length, 24);
 assert.deepEqual(ledger.previousTopLevelSprint.remainingRoutesAfterSprint, [...ledger.previousTopLevelSprint.remainingRoutesAfterSprint].sort());
 
-console.log('Phu Quoc refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; exact Vietnam follow-on body/search/date scopes include the coastal batch; 140 sitemap dates changed across 28 routes in five editions; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; no SVG changed.');
+console.log('Phu Quoc refresh regression passed: four exact-base untouched English bodies each gained at least 350 visible words; exact Vietnam follow-on body/search/date scopes include the coastal batch; 140 sitemap dates changed across 28 routes in five editions; all four localized editions contain translated page/search summaries with matching 955-record URL sets; five-language canonical, hreflang, Article dates and ledger totals match; the only integration-scope SVG change is the separately reviewed Niagara diagram.');
 console.log(JSON.stringify(bodyChecks, null, 2));
