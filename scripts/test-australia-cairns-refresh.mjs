@@ -183,8 +183,12 @@ function sitemapEntries(xml) {
 }
 
 const expectedHtml = [...routes, ...switzerlandCh15AffectedRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postBostonOverviewJuneauRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => route.replace(/^\//, '') + 'index.html').sort();
-const changedHtml = git(['diff', '--name-only', integrationBase, '--']).split(/\r?\n/).filter((name) => name.endsWith('.html'))
-  .filter((name) => normalizeSharedAssetVersions(git(['show', `${integrationBase}:${name}`])) !== normalizeSharedAssetVersions(fs.readFileSync(path.join(root, name), 'utf8'))).sort();
+// New country pages are additions relative to this historical checkpoint; their exact scope is covered by the Spain release audit.
+const changedHtml = git(['diff', '--name-status', integrationBase, '--']).split(/\r?\n/u)
+  .map((line) => line.split('\t'))
+  .filter(([status, name]) => status && !status.startsWith('A') && name?.endsWith('.html'))
+  .filter(([status, name]) => status.startsWith('D') || normalizeSharedAssetVersions(git(['show', `${integrationBase}:${name}`])) !== normalizeSharedAssetVersions(fs.readFileSync(path.join(root, name), 'utf8')))
+  .map(([, name]) => name).sort();
 if (releaseContext) {
   const allowedReleaseHtml = new Set([
     ...substantiveHtmlPaths(integrationBase, '7f797a9685649e945a5660ea1352ce239d638389'),
