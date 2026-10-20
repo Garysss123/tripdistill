@@ -48,7 +48,7 @@ for (const output of outputs) {
   const sitemap = fs.readFileSync(sitemapFile, 'utf8');
   const entries = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
     .map(([, route, date]) => [route, date]));
-  assert.equal(entries.size, 4560, `${sitemapFile}: route count changed`);
+  assert.equal(entries.size, 4725, `${sitemapFile}: route count changed`);
   const italyRoutes = [...entries.keys()].filter((route) => route.startsWith('/italy/') || /^\/(?:zh|ja|ko|th)\/italy\//.test(route));
   assert.equal(italyRoutes.length, 81 * editions.length, `${sitemapFile}: Italy route count changed`);
 

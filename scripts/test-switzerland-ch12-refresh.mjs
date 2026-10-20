@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import { SaxesParser } from 'saxes';
 import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh12ClusterRefresh, switzerlandCh12GuideRefresh } from '../data/switzerland-ch12-refresh.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
@@ -79,8 +80,8 @@ const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], {
 const beforeSitemap = sitemapRecords(baseSitemap);
 const afterSitemap = sitemapRecords(read('sitemap.xml'));
 assert.equal(beforeSitemap.size, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(afterSitemap.size, beforeSitemap.size, 'sitemap URL count is unchanged');
-assert.deepEqual([...afterSitemap.keys()].sort(), [...beforeSitemap.keys()].sort(), 'CH12 adds or removes no URL');
+assert.equal(afterSitemap.size, beforeSitemap.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...afterSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...beforeSitemap.keys()].sort(), 'CH12 changes no pre-existing non-Spain URL');
 const changedDates = [...afterSitemap].filter(([route, date]) => route.includes('/switzerland/') && beforeSitemap.get(route) !== date);
 assert.equal(changedDates.length, expectedLocalized.size, 'CH12–CH16 routes receive only their declared dates across five editions');
 for (const [route, date] of changedDates) {
@@ -106,48 +107,89 @@ assert.equal(retiredPhoto.inventoryStatus, 'unused', 'the unverified photo is re
 assert.ok(retiredPhoto.sourceDeclaredLicenses.includes('CC BY-SA 3.0'), 'historical source-declared license remains distinct from verification');
 assert.equal(crypto.createHash('sha1').update(fs.readFileSync(path.join(root, retiredPhoto.src.slice(1)))).digest('hex'), retiredPhoto.localSha1, 'retired source image bytes are preserved');
 
-const pythonSvgCheck = String.raw`import sys, xml.etree.ElementTree as ET
-root = ET.parse(sys.argv[1]).getroot()
-assert root.tag.endswith('svg')
-assert root.attrib.get('width') == '1600' and root.attrib.get('height') == '1066'
-allowed = {'svg','title','desc','rect','line','circle','text'}
-nodes = list(root.iter())
-for node in nodes:
-    tag = node.tag.rsplit('}',1)[-1]
-    assert tag in allowed, f'unapproved geometry/text element: {tag}'
-    a = node.attrib
-    if tag == 'rect':
-        assert float(a['x']) >= 0 and float(a['y']) >= 0
-        assert float(a['x']) + float(a['width']) <= 1600 and float(a['y']) + float(a['height']) <= 1066
-    elif tag == 'line':
-        for key, limit in [('x1',1600),('x2',1600),('y1',1066),('y2',1066)]:
-            assert 0 <= float(a[key]) <= limit
-    elif tag == 'circle':
-        assert float(a['cx']) - float(a['r']) >= 0 and float(a['cx']) + float(a['r']) <= 1600
-        assert float(a['cy']) - float(a['r']) >= 0 and float(a['cy']) + float(a['r']) <= 1066
-    elif tag == 'text':
-        assert 0 <= float(a['x']) <= 1600 and 0 <= float(a['y']) <= 1066
-assert any(n.tag.endswith('title') and n.text for n in nodes)
-assert any(n.tag.endswith('desc') and 'not a geographic map' in n.text for n in nodes)
-colors = {'#d71920','#d7a94b','#416d75'}
-branch = [n for n in nodes if n.tag.endswith('line') and n.attrib.get('x1') == '524' and n.attrib.get('x2') == '620']
-assert {(n.attrib.get('stroke'), n.attrib.get('y1')) for n in branch} == {('#d71920','384'),('#d7a94b','578'),('#416d75','767')}
-expected = {
- 'en':['Rail / cableway access','Signed path · check the day','Low village or city fallback'],
- 'zh-Hant':['鐵道／纜車接駁','標示步道','低地村落／城市備案'],
- 'ja':['鉄道／ロープウェイ','標識ルート','低地の村／都市へ変更'],
- 'ko':['철도·케이블카 접근','표지 등산로','저지대 마을·도시 대안'],
- 'th':['รถไฟ／กระเช้าขึ้นเขา','ทางมีป้าย','ทางเลือกที่หมู่บ้านหรือเมือง']
+function parseSvgElements(xml) {
+  const stack = [];
+  const errors = [];
+  let rootNode;
+  const parser = new SaxesParser({ xmlns: true });
+  parser.on('opentag', (tag) => {
+    const attributes = Object.fromEntries(Object.entries(tag.attributes).map(([name, value]) => [name, value.value]));
+    const node = { tag: tag.local, attributes, text: '', children: [] };
+    if (stack.length) stack.at(-1).children.push(node);
+    else rootNode = node;
+    stack.push(node);
+  });
+  parser.on('text', (value) => { if (stack.length) stack.at(-1).text += value; });
+  parser.on('cdata', (value) => { if (stack.length) stack.at(-1).text += value; });
+  parser.on('closetag', () => { stack.pop(); });
+  parser.on('doctype', () => { throw new Error('DOCTYPE is forbidden in SVG'); });
+  parser.on('error', (error) => { errors.push(error); });
+  parser.write(xml).close();
+  if (errors.length) throw new Error(`Invalid SVG XML: ${errors[0].message}`);
+  assert.ok(rootNode, 'SVG XML must have a root element');
+  assert.equal(stack.length, 0, 'SVG XML must close every element');
+
+  const nodes = [];
+  const visit = (node) => { nodes.push(node); node.children.forEach(visit); };
+  visit(rootNode);
+  return { root: rootNode, nodes };
 }
-for lang, labels in expected.items():
-    texts=[n for n in nodes if n.tag.endswith('text') and n.attrib.get('data-language') == lang]
-    assert len(texts) == 4, f'{lang} must have its heading and three explanations'
-    for label, color in zip(labels, ['#d71920','#d7a94b','#416d75']):
-        i=next(i for i,n in enumerate(nodes) if n.tag.endswith('text') and n.attrib.get('data-language') == lang and label in (n.text or ''))
-        prior=nodes[i-1]
-        assert prior.tag.endswith('circle') and prior.attrib.get('fill') == color, f'{lang}: {label} color mapping'
-`;
-execFileSync('python3', ['-c', pythonSvgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
+
+function validateCh12Svg(xml) {
+  const { root: svg, nodes } = parseSvgElements(xml);
+  assert.equal(svg.tag.endsWith('svg'), true);
+  assert.equal(svg.attributes.width, '1600');
+  assert.equal(svg.attributes.height, '1066');
+  const allowed = new Set(['svg', 'title', 'desc', 'rect', 'line', 'circle', 'text']);
+  for (const node of nodes) {
+    const { tag, attributes: a } = node;
+    assert.ok(allowed.has(tag), `unapproved geometry/text element: ${tag}`);
+    if (tag === 'rect') {
+      assert.ok(Number(a.x) >= 0 && Number(a.y) >= 0);
+      assert.ok(Number(a.x) + Number(a.width) <= 1600 && Number(a.y) + Number(a.height) <= 1066);
+    } else if (tag === 'line') {
+      for (const [key, limit] of [['x1', 1600], ['x2', 1600], ['y1', 1066], ['y2', 1066]]) {
+        assert.ok(0 <= Number(a[key]) && Number(a[key]) <= limit, `line ${key} is outside the canvas`);
+      }
+    } else if (tag === 'circle') {
+      assert.ok(Number(a.cx) - Number(a.r) >= 0 && Number(a.cx) + Number(a.r) <= 1600);
+      assert.ok(Number(a.cy) - Number(a.r) >= 0 && Number(a.cy) + Number(a.r) <= 1066);
+    } else if (tag === 'text') {
+      assert.ok(0 <= Number(a.x) && Number(a.x) <= 1600 && 0 <= Number(a.y) && Number(a.y) <= 1066);
+    }
+  }
+  assert.ok(nodes.some((node) => node.tag === 'title' && node.text));
+  assert.ok(nodes.some((node) => node.tag === 'desc' && node.text.includes('not a geographic map')));
+  const branch = nodes.filter((node) => node.tag === 'line' && node.attributes.x1 === '524' && node.attributes.x2 === '620');
+  const branchLevels = new Set(branch.map((node) => JSON.stringify([node.attributes.stroke, node.attributes.y1])));
+  assert.deepEqual(branchLevels, new Set([['#d71920', '384'], ['#d7a94b', '578'], ['#416d75', '767']].map(JSON.stringify)));
+  const expected = {
+    en: ['Rail / cableway access', 'Signed path · check the day', 'Low village or city fallback'],
+    'zh-Hant': ['鐵道／纜車接駁', '標示步道', '低地村落／城市備案'],
+    ja: ['鉄道／ロープウェイ', '標識ルート', '低地の村／都市へ変更'],
+    ko: ['철도·케이블카 접근', '표지 등산로', '저지대 마을·도시 대안'],
+    th: ['รถไฟ／กระเช้าขึ้นเขา', 'ทางมีป้าย', 'ทางเลือกที่หมู่บ้านหรือเมือง']
+  };
+  for (const [language, labels] of Object.entries(expected)) {
+    const texts = nodes.filter((node) => node.tag === 'text' && node.attributes['data-language'] === language);
+    assert.equal(texts.length, 4, `${language} must have its heading and three explanations`);
+    for (const [index, [label, color]] of labels.map((label, index) => [label, ['#d71920', '#d7a94b', '#416d75'][index]]).entries()) {
+      const nodeIndex = nodes.findIndex((node) => node.tag === 'text' && node.attributes['data-language'] === language && node.text.includes(label));
+      assert.ok(nodeIndex >= 0, `${language} label missing: ${label}`);
+      assert.equal(nodes[nodeIndex - 1]?.tag, 'circle', `${language}: ${label} needs its marker immediately before it`);
+      assert.equal(nodes[nodeIndex - 1].attributes.fill, color, `${language}: ${label} color mapping`);
+    }
+  }
+}
+
+const svgSource = read(diagram.src.slice(1));
+for (const malformed of ['<svg><rect></svg>', '<!DOCTYPE svg [<!ENTITY x "blocked">]><svg>&x;</svg>']) {
+  assert.throws(() => parseSvgElements(malformed), 'malformed XML and DOCTYPE input must be rejected');
+}
+validateCh12Svg(svgSource);
+assert.throws(() => validateCh12Svg(svgSource.replace('<desc', '<script/><desc')), 'unapproved SVG elements must be rejected');
+assert.throws(() => validateCh12Svg(svgSource.replace('x2="620"', 'x2="1620"')), 'coordinates outside the canvas must be rejected');
+assert.throws(() => validateCh12Svg(svgSource.replace('Rail / cableway access', 'Rail access')), 'missing localized route labels must be rejected');
 
 const targetSearch = JSON.parse(read('data/search-index.json')).filter((record) => targetSet.has(record.url));
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${baseCommit}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));

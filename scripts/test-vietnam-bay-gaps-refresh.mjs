@@ -136,21 +136,21 @@ assert.deepEqual(sourceVietnamFiles, routes.map((route) => `${route.slice(1)}ind
 const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.length, 955);
-assert.equal(currentSearch.length, 955);
+assert.equal(currentSearch.length, 988);
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set changed.');
-const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url).sort();
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set changed.');
+const changedSearchRoutes = [...currentSearchByUrl].filter(([url, record]) => !url.includes('/spain/') && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].sort(), 'Only the registered Bay/Caves/islands/coastal and Thailand overview English search records may change.');
 
 const baseSitemap = parseSitemap(readAt(integrationBaseCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4560);
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
+assert.equal(currentSitemap.size, 4725);
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => prefix + route)));
-const changedDatePaths = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url).sort();
+const changedDatePaths = [...currentSitemap].filter(([url, date]) => !url.includes('/spain/') && baseSitemap.get(url) !== date).map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared dates.');
 for (const pagePath of expectedDatePaths) {
   const route = pagePath.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
@@ -186,7 +186,7 @@ for (const route of routes) {
       }
       assert(localizedBody.includes(catalog[sourceSearch.summary]), `${edition.code} ${route}: translated search summary is absent from page.`);
       assert(!localizedBody.includes(sourceSearch.summary), `${edition.code} ${route}: English search summary leaked into localized page.`);
-      assert.equal(localizedIndex.length, 955, `${edition.code}: search index record count`);
+      assert.equal(localizedIndex.length, 988, `${edition.code}: search index record count`);
     }
   }
 }
@@ -224,6 +224,7 @@ const cavesIntegrationFollowup = JSON.parse(fs.readFileSync(path.join(root, cave
 expectedReviewedDiffs.push(...cavesIntegrationFollowup.files.map((item) => item.sourcePath));
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
+  expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/46u-italy-shell.json`);
   const pageBatches = fs.readdirSync(directory).filter((name) => name.endsWith('-caves-islands-gaps-pages.json'));
   assert.equal(pageBatches.length, 1, `${edition.code}: one caves/islands page batch is expected.`);
   expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${pageBatches[0]}`);
@@ -261,6 +262,11 @@ for (const edition of editions.slice(1)) {
   for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
     const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
     assert.equal(matches.length, 1, `${edition.code}: expected one Thailand overview ${suffix.includes('search') ? 'search' : 'page'} batch.`);
+    expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
+  }
+  for (const suffix of ['-spain-00-country-madrid.json', '-spain-01-regions.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${edition.code}: exactly one reviewed Spain ${suffix.includes('00-') ? 'country/Madrid' : 'regional/local'} batch is present.`);
     expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
   }
 }

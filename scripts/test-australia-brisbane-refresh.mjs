@@ -11,7 +11,7 @@ import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postInte
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
-const releaseContext = branch === 'codex/release-tripdistill-20261016';
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
 const base = 'a9c6bd648d64054c981f57e4696c43a5a49251a4';
 const routes = [
   '/australia/brisbane-moreton-bay/',
@@ -308,8 +308,8 @@ const oldSearch = JSON.parse(git(['show', `${base}:data/search-index.json`]));
 const newSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const oldSearchByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newSearchByUrl = new Map(newSearch.map((record) => [record.url, record]));
-assertIssue(oldSearchByUrl.size === newSearchByUrl.size && [...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].sort().join('|'), 'Search-index URL set or count changed.');
-const changedSearch = [...newSearchByUrl.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
+assertIssue([...oldSearchByUrl.keys()].sort().join('|') === [...newSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort().join('|'), 'The pre-existing non-Spain search URL set changed.');
+const changedSearch = [...newSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && JSON.stringify(newSearchByUrl.get(url)) !== JSON.stringify(oldSearchByUrl.get(url))).sort();
 assertIssue(changedSearch.join('|') === [...branchRefreshRoutes].sort().join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns Australia search records may change; found ${changedSearch.join(', ')}.`);
 for (const route of routes) {
   const record = newSearchByUrl.get(route);
@@ -373,7 +373,7 @@ assertIssue(hubHtml.includes(`href="${svgPath}"`) && hubHtml.includes('href="/te
 
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assertIssue([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed; this task must not add or remove routes.');
+assertIssue([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort().join('|'), 'The pre-existing non-Spain sitemap URL set changed.');
 const expectedSitemapRoutes = [...branchRefreshRoutes, postIntegrationTripDistillRoutes[0]].flatMap((route) => locales.map(([, prefix]) => `${prefix}${route}`)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => route.includes('/australia/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assertIssue(changedLastmod.join('|') === expectedSitemapRoutes.join('|'), `Only the Brisbane, Blue Mountains, Great Ocean Road, Gold Coast and Cairns Australia route/language lastmod values may change; found ${changedLastmod.length}.`);

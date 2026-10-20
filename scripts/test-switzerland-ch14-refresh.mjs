@@ -7,6 +7,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh14CountryRefresh, switzerlandCh14HubRefresh, switzerlandCh14IsoDate } from '../data/switzerland-ch14-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml, localizeSearchIndex, loadCatalog } from './i18n-lib.mjs';
+import { execFilePython3 } from './python-runner.mjs';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -79,8 +80,8 @@ for (const route of allRoutes.filter((item) => !targetSet.has(item) && !switzerl
 const baseMap = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const currentMap = sitemap(read('sitemap.xml'));
 assert.equal(baseMap.size, 4560, 'base sitemap contains the existing 4,560 URLs');
-assert.equal(currentMap.size, baseMap.size, 'sitemap route count is unchanged');
-assert.deepEqual([...currentMap.keys()].sort(), [...baseMap.keys()].sort(), 'CH14 adds or removes no URL');
+assert.equal(currentMap.size, baseMap.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...currentMap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseMap.keys()].sort(), 'CH14 changes no pre-existing non-Spain URL');
 const editions = new Set(localePrefixes.flatMap((prefix) => [...targetRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const changedLastmods = [...currentMap].filter(([route, date]) => route.includes('/switzerland/') && baseMap.get(route) !== date);
 assert.equal(changedLastmods.length, 60, 'the three CH14 hubs, four CH15 guides and five CH16 guides receive new lastmods; the country date already matched the exact base');
@@ -92,7 +93,8 @@ for (const route of editions) assert.equal(currentMap.get(route), '2026-10-12', 
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
-assert.equal(currentSearch.length, baseSearch.length, 'search URL count is unchanged');
+assert.equal(currentSearch.length, baseSearch.length + 33, 'the English search index includes the exact 33 added Spain routes');
+assert.deepEqual(currentSearch.map((item) => item.url).filter((url) => !url.startsWith('/spain/')).sort(), baseSearch.map((item) => item.url).sort(), 'all pre-existing English search URLs remain unchanged');
 const targetSearch = currentSearch.filter((item) => targetSet.has(item.url));
 assert.equal(targetSearch.length, 4, 'search changes only the four existing target records');
 for (const record of currentSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh15Routes.includes(item.url) && !switzerlandCh16Routes.includes(item.url))) {
@@ -172,7 +174,7 @@ assert.ok(countryHtml.includes(diagram.rightsStatus));
 assert.ok(countryHtml.includes(diagram.diagramNote));
 for (const route of targetRoutes.slice(1)) assert.ok(!read(`${route.slice(1)}index.html`).includes(diagram.src), `${route} does not reuse the country schematic`);
 const svgCheck = "import sys,xml.etree.ElementTree as E; r=E.parse(sys.argv[1]).getroot(); n=list(r.iter()); t=lambda x:x.tag.rsplit('}',1)[-1]; allowed={'svg','title','desc','rect','line','circle','text'}; assert t(r)=='svg' and r.attrib.get('width')=='1600' and r.attrib.get('height')=='1066'; assert all(t(x) in allowed for x in n); assert all(float(x.attrib['x'])>=0 and float(x.attrib['y'])>=0 and float(x.attrib['x'])+float(x.attrib['width'])<=1600 and float(x.attrib['y'])+float(x.attrib['height'])<=1066 for x in n if t(x)=='rect'); assert all(0<=float(x.attrib[k])<=lim for x in n if t(x)=='line' for k,lim in [('x1',1600),('x2',1600),('y1',1066),('y2',1066)]); assert all(float(x.attrib['cx'])-float(x.attrib['r'])>=0 and float(x.attrib['cx'])+float(x.attrib['r'])<=1600 and float(x.attrib['cy'])-float(x.attrib['r'])>=0 and float(x.attrib['cy'])+float(x.attrib['r'])<=1066 for x in n if t(x)=='circle'); assert all(0<=float(x.attrib['x'])<=1600 and 0<=float(x.attrib['y'])<=1066 for x in n if t(x)=='text'); assert any(t(x)=='title' and x.text for x in n) and any(t(x)=='desc' and 'not a geographic map' in x.text for x in n); texts=[x.text or '' for x in n if t(x)=='text']; expected=['EN · Zurich → Lucerne | city + lake','繁中 · 蘇黎世 → 琉森｜城市＋湖泊','日本語 · チューリヒ → ルツェルン｜都市＋湖','한국어 · 취리히 → 루체른 | 도시 + 호수','ไทย · ซูริก → ลูเซิร์น | เมือง + ทะเลสาบ','EN · Lugano → Locarno | Ticino valleys','繁中 · 盧加諾 → 洛迦諾｜提契諾山谷','日本語 · ルガーノ → ロカルノ｜ティチーノの谷','한국어 · 루가노 → 로카르노 | 티치노 계곡','ไทย · ลูการ์โน → โลการ์โน | หุบเขาทีชีโน','EN · Zurich → Schaffhausen | Rhine Falls','繁中 · 蘇黎世 → 沙夫豪森｜萊茵瀑布','日本語 · チューリヒ → シャフハウゼン｜ライン滝','한국어 · 취리히 → 샤프하우젠 | 라인 폭포','ไทย · ซูริก → ชาฟเฮาเซิน | น้ำตกไรน์']; assert all(label in texts for label in expected); assert 'not a geographic map' in ''.join(x.text or '' for x in n)";
-execFileSync('python3', ['-c', svgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
+execFilePython3(['-c', svgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
 
 for (const [index, prefix] of localePrefixes.entries()) {
   if (!prefix) continue;

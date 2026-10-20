@@ -116,8 +116,8 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'source route inventory');
-assert.equal(currentRecords.size, baseRecords.size, 'no sitemap URL additions or removals');
-assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
+assert.equal(currentRecords.size, baseRecords.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseRecords.keys()].sort(), 'route inventory is unchanged');
 const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...zermattRoutes, ...interlakenRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const locale of locales) {
   for (const route of switzerlandCh15Routes) expectedDateChanges.add(`https://tripdistill.com${locale.prefix}${route}`);
@@ -159,7 +159,7 @@ for (const locale of locales) {
     expectedDateChanges.add(`https://tripdistill.com${locale.prefix}${route}`);
   }
 }
-const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => !url.includes('/spain/') && url.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, 285, 'the reviewed Switzerland clusters and overview routes retain their five-language date history through CH16');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);

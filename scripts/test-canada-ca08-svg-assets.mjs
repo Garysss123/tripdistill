@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawnPython3 } from './python-runner.mjs';
 import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -86,7 +86,7 @@ for node in root.iter():
         x, y = float(node.attrib['x']), float(node.attrib['y'])
         assert 0 <= x <= 1200 and 0 <= y <= 700
 `;
-const parsed = spawnSync('python3', ['-c', geometryCheck, svgFile], { encoding: 'utf8' });
+const parsed = spawnPython3(['-c', geometryCheck, svgFile], { encoding: 'utf8' });
 assert.equal(parsed.status, 0, `Python XML/geometry verification failed:\n${parsed.stdout}\n${parsed.stderr}`);
 for (const locale of ['', 'zh/', 'ja/', 'ko/', 'th/']) {
   const pageFile = path.join(root, locale, 'canada/jasper-icefields/icefields-parkway/index.html');

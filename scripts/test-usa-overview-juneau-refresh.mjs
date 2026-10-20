@@ -66,7 +66,7 @@ function localePagePath(locale, route) {
 assert.equal(git(['rev-parse', base]).toString('utf8').trim(), base, 'the exact Boston source base exists');
 assert.equal(git(['rev-parse', `${base}^`]).toString('utf8').trim(), baseParent, 'the source branch starts at the exact requested parent');
 assert.equal(git(['rev-parse', sourceTerminal]).toString('utf8').trim(), sourceTerminal, 'the exact USA follow-up source terminal exists');
-assert.ok(['codex/sprint-us-after-boston-20261013', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016'].includes(git(['branch', '--show-current']).toString('utf8').trim()), 'work is on the exact requested source branch, isolated integration preflight, independent Thailand overview or explicitly scoped TripDistill release branch');
+assert.ok(['codex/sprint-us-after-boston-20261013', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(git(['branch', '--show-current']).toString('utf8').trim()), 'work is on the exact requested source branch, isolated integration preflight, independent Thailand overview or explicitly scoped TripDistill release branch');
 assert.equal(git(['ls-tree', '-r', '--name-only', base, '--', 'usa']).toString('utf8').trim().split('\n').filter((file) => file.endsWith('/index.html') || file === 'usa/index.html').length, 97, 'base has the existing English USA routes');
 
 const baseUsaPages = git(['ls-tree', '-r', '--name-only', base, '--', 'usa']).toString('utf8')
@@ -120,17 +120,17 @@ assert.ok(juneau.includes('Juneau transit and seasonal visitor information were 
 const baseSearch = new Map(JSON.parse(gitText(base, 'data/search-index.json')).map((item) => [item.url, item]));
 const currentSearch = new Map(readJson('data/search-index.json').map((item) => [item.url, item]));
 assert.equal(baseSearch.size, 955, 'base English search index has 955 records');
-assert.equal(currentSearch.size, 955, 'English search keeps 955 records');
-assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL inventory is unchanged');
-const changedFollowupSearch = routes.filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.equal(currentSearch.size, 988, 'English search keeps 988 records');
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearch.keys()), 'English search URL inventory is unchanged');
+const changedFollowupSearch = routes.filter((url) => !url.includes('/spain/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 assert.deepEqual(changedFollowupSearch, ['/usa/alaska/juneau-southeast/'], 'only Juneau changes search within these two follow-up routes; overview search is unchanged');
 assert.equal(currentSearch.get('/usa/alaska/juneau-southeast/').summary, 'Choose Juneau with a one-night downtown plan or a 2–3-night single-base stay, and map the full airport, Auke Bay and Mendenhall transfers before choosing each day.');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(currentSitemap.size, 4560, 'sitemap keeps 4,560 URLs');
-assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'sitemap route inventory is unchanged');
+assert.equal(currentSitemap.size, 4725, 'sitemap keeps 4,560 URLs');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'sitemap route inventory is unchanged');
 const datedRoutes = routes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
 const changedFollowupDates = datedRoutes.filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedFollowupDates, datedRoutes, 'exactly the two follow-up paths across five editions receive a new lastmod within their own source scope');
@@ -177,7 +177,7 @@ for (const locale of locales.slice(1)) {
   }
   const localizedSearchPath = `${locale.dir}/data/search-index.json`;
   const localizedSearch = readJson(localizedSearchPath);
-  assert.equal(localizedSearch.length, 955, `${locale.code}: localized search keeps 955 records`);
+  assert.equal(localizedSearch.length, 988, `${locale.code}: localized search keeps 988 records`);
   assert.equal(localizedSearch.find((item) => item.url === `${locale.prefix}/usa/alaska/juneau-southeast/`)?.summary,
     catalog.translations[currentSearch.get('/usa/alaska/juneau-southeast/').summary], `${locale.code}: search summary uses the reviewed Juneau description`);
   for (const route of routes) assert.equal(currentSitemap.get(`${locale.prefix}${route}`), '2026-10-13', `${locale.code}: localized sitemap date`);

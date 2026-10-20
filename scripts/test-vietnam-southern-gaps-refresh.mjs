@@ -170,13 +170,13 @@ const baseSearch = JSON.parse(readAt(integrationBaseCommit, 'data/search-index.j
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const sourceSearch = JSON.parse(readAt(sourceTerminal, 'data/search-index.json'));
 assert.equal(baseSearch.length, 955);
-assert.equal(currentSearch.length, 955);
+assert.equal(currentSearch.length, 988);
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'English search URL set changed.');
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'English search URL set changed.');
 const changedSearchRoutes = [...currentSearchByUrl]
-  .filter(([url, record]) => JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
+  .filter(([url, record]) => !url.includes('/spain/') && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, '/thailand/'].sort(), 'Only the Southern, Bay-gaps, cave/island, coastal and Thailand overview English search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
@@ -186,11 +186,11 @@ const baseSitemap = parseSitemap(readAt(integrationBaseCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4560);
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
+assert.equal(currentSitemap.size, 4725);
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...bayGapsRoutes, ...cavesIslandsGapsRoutes, ...coastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => prefix + route)));
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => baseSitemap.get(url) !== date)
+  .filter(([url, date]) => !url.includes('/spain/') && baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the selected Vietnam routes and Thailand overview in five editions may receive their declared sitemap dates.');
 for (const pagePath of expectedDatePaths) {
@@ -222,7 +222,7 @@ for (const route of routes) {
 for (const edition of editions.slice(1)) {
   const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/' + edition.code + '.json'), 'utf8')).translations;
   const localizedIndex = JSON.parse(fs.readFileSync(path.join(root, edition.prefix.slice(1), 'data/search-index.json'), 'utf8'));
-  assert.equal(localizedIndex.length, 955, edition.code + ' search record count');
+  assert.equal(localizedIndex.length, 988, edition.code + ' search record count');
   const localizedMap = byUrl(localizedIndex);
   const expectedLocalizedSearchPaths = currentSearch.map((record) => edition.prefix + record.url).sort();
   assert.deepEqual([...localizedMap.keys()].sort(), expectedLocalizedSearchPaths, edition.code + ' search URL set does not match the English source index.');
@@ -328,6 +328,7 @@ const coastalArchive = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n/arc
 expectedReviewedDiffs.push(...coastalArchive.files.map((file) => file.sourcePath));
 for (const edition of editions.slice(1)) {
   const directory = path.join(root, 'data/i18n/reviewed', edition.code);
+  expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/46u-italy-shell.json`);
   for (const suffix of ['defo-vietnam-coastal-pages.json', 'defp-vietnam-coastal-search.json']) {
     const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
     assert.equal(matches.length, 1, `${edition.code}: expected one explicit coastal ${suffix.includes('search') ? 'search' : 'pages'} batch.`);
@@ -336,6 +337,11 @@ for (const edition of editions.slice(1)) {
   for (const suffix of ['a-th-pages.json', 'b-th-search.json']) {
     const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
     assert.equal(matches.length, 1, `${edition.code}: expected one Thailand overview ${suffix.includes('search') ? 'search' : 'page'} batch.`);
+    expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
+  }
+  for (const suffix of ['-spain-00-country-madrid.json', '-spain-01-regions.json']) {
+    const matches = fs.readdirSync(directory).filter((name) => name.endsWith(suffix));
+    assert.equal(matches.length, 1, `${edition.code}: exactly one reviewed Spain ${suffix.includes('00-') ? 'country/Madrid' : 'regional/local'} batch is present.`);
     expectedReviewedDiffs.push(`data/i18n/reviewed/${edition.code}/${matches[0]}`);
   }
 }

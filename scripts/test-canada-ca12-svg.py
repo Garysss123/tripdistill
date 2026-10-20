@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Regression checks for the original five-language Niagara planning schematic."""
 import os
+import html
 import re
 import shutil
 import struct
@@ -13,7 +14,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SVG = ROOT / 'assets/images/tripdistill-canada-niagara-falls-decision.svg'
 INKSCAPE = shutil.which('inkscape')
-assert INKSCAPE, 'Pixel regression requires the local Inkscape renderer.'
+IMAGEMAGICK = shutil.which('magick')
+if not IMAGEMAGICK and os.name != 'nt':
+    IMAGEMAGICK = shutil.which('convert')
+if IMAGEMAGICK:
+    try:
+        version = subprocess.run([IMAGEMAGICK, '-version'], capture_output=True, text=True, check=False, timeout=5)
+    except (OSError, subprocess.TimeoutExpired):
+        IMAGEMAGICK = None
+    else:
+        if version.returncode != 0 or 'ImageMagick' not in version.stdout:
+            IMAGEMAGICK = None
+assert INKSCAPE or IMAGEMAGICK, 'Pixel regression requires Inkscape or an existing ImageMagick renderer.'
+RENDERER = 'Inkscape' if INKSCAPE else 'ImageMagick'
 
 tree = ET.parse(SVG)
 root = tree.getroot()
@@ -92,7 +105,7 @@ for element in elements:
                 assert 0 <= x <= 1200 and 0 <= y <= 700, (command, x, y, d)
 
 texts = [(number(element, 'x'), number(element, 'y'), ''.join(element.itertext()).strip()) for element in root.findall('.//s:text', ns)]
-transfer_titles = [element for element in root.findall('.//s:text', ns) if ''.join(element.itertext()).strip() == 'CONFIRM THE TRANSFER']
+transfer_titles = [element for element in root.findall('.//s:text', ns) if ''.join(element.itertext()).strip() == 'PICK A TRANSFER']
 assert len(transfer_titles) == 1, 'The second card must have exactly one transfer heading.'
 transfer_title = transfer_titles[0]
 assert number(transfer_title, 'x') == 404 and number(transfer_title, 'y') == 174
@@ -172,9 +185,57 @@ def read_png(path):
         previous = scanline
     return width, height, channels, rows
 
+def local_font_for_character(character):
+    code = ord(character)
+    if 0x0E00 <= code <= 0x0E7F:
+        return 'Tahoma'
+    if 0xAC00 <= code <= 0xD7AF:
+        return 'Malgun Gothic'
+    if 0x3040 <= code <= 0x30FF:
+        return 'MS Gothic'
+    if 0x4E00 <= code <= 0x9FFF:
+        return 'Microsoft YaHei'
+    return 'Arial'
+
+def render_source_with_local_fonts(source):
+    def replace_text(match):
+        opening, content, closing = match.groups()
+        decoded = html.unescape(content)
+        runs = []
+        for character in decoded:
+            family = local_font_for_character(character)
+            if runs and runs[-1][0] == family:
+                runs[-1][1] += character
+            else:
+                runs.append([family, character])
+        spans = ''.join(f'<tspan font-family="{family}">{html.escape(value, quote=False)}</tspan>' for family, value in runs)
+        return opening + spans + closing
+    return re.sub(r'(<text\b[^>]*>)(.*?)(</text>)', replace_text, source, flags=re.DOTALL)
+
 with tempfile.TemporaryDirectory(prefix='ca12-niagara-svg-') as scratch:
     png_path = Path(scratch) / 'niagara.png'
-    rendered = subprocess.run([INKSCAPE, str(SVG), f'--export-filename={png_path}'], capture_output=True, text=True, check=False)
+    renderer_env = os.environ.copy()
+    render_svg = SVG
+    if INKSCAPE:
+        command = [INKSCAPE, str(SVG), f'--export-filename={png_path}']
+    else:
+        windows_font_dir = Path('/mnt/c/Windows/Fonts')
+        if windows_font_dir.is_dir():
+            render_svg = Path(scratch) / 'niagara-render.svg'
+            render_svg.write_text(render_source_with_local_fonts(SVG.read_text(encoding='utf-8')), encoding='utf-8')
+            font_cache = Path(scratch) / 'font-cache'
+            font_cache.mkdir()
+            font_config = Path(scratch) / 'fonts.conf'
+            font_config.write_text(
+                '<?xml version="1.0"?>\n<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n'
+                '<fontconfig><dir>/usr/share/fonts</dir><dir>/mnt/c/Windows/Fonts</dir>'
+                f'<cachedir>{font_cache}</cachedir><include>/etc/fonts/conf.d</include>'
+                '<include ignore_missing="yes">/etc/fonts/local.conf</include></fontconfig>',
+                encoding='utf-8'
+            )
+            renderer_env['FONTCONFIG_FILE'] = str(font_config)
+        command = [IMAGEMAGICK, str(render_svg), '-depth', '8', str(png_path)]
+    rendered = subprocess.run(command, capture_output=True, text=True, check=False, env=renderer_env)
     assert rendered.returncode == 0 and png_path.is_file(), rendered.stderr
     width, height, channels, pixels = read_png(png_path)
     assert (width, height) == (1200, 700), (width, height)
@@ -223,4 +284,4 @@ with tempfile.TemporaryDirectory(prefix='ca12-niagara-svg-') as scratch:
     for line, baseline in zip(disclaimers, [615, 633, 651, 669, 687]):
         assert dark_pixel_count(48, baseline - 13, 1150, baseline + 2) >= 25, f'Five-language not-to-scale disclaimer did not render: {line}'
 
-print(f'CA12 SVG passed: XML and {len(elements)}-element geometry fit 1200×700; all five localized legend columns and disclaimers are present; Inkscape pixel checks confirmed background, four card fills and rendered text; second-card heading clearance is {heading_right_clearance}px.')
+print(f'CA12 SVG passed: XML and {len(elements)}-element geometry fit 1200×700; all five localized legend columns and disclaimers are present; {RENDERER} pixel checks confirmed background, four card fills and rendered text; second-card heading clearance is {heading_right_clearance}px.')

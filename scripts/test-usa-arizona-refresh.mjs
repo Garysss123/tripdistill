@@ -161,21 +161,21 @@ for (const [route, urls] of sourceLinks) {
 const baseSearch = new Map(JSON.parse(gitText(base, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 const currentSearch = new Map(JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8')).map((entry) => [entry.url, entry]));
 assert.equal(baseSearch.size, 955);
-assert.equal(currentSearch.size, 955);
-assert.deepEqual(new Set(currentSearch.keys()), new Set(baseSearch.keys()), 'English search URL set is unchanged');
+assert.equal(currentSearch.size, 988);
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearch.keys()), 'English search URL set is unchanged');
 for (const route of routes) {
   const sourceSearch = new Map(JSON.parse(gitText(sourceTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
   assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: integrated search record matches exact Arizona terminal`);
   assert.notDeepEqual(currentSearch.get(route), baseSearch.get(route), `${route}: Arizona summary changed from exact source base`);
 }
-const changedSearchRoutes = [...currentSearch].filter(([url, value]) => url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
+const changedSearchRoutes = [...currentSearch].filter(([url, value]) => !url.includes('/spain/') && url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes, ...laterLosAngelesRoutes, ...laterSanDiegoRoutes, ...laterBostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'only the Arizona, Los Angeles, San Diego, Boston and Juneau U.S. summaries changed; overview search is unchanged');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4560);
-assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'the sitemap URL set is unchanged');
+assert.equal(currentSitemap.size, 4725);
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'the sitemap URL set is unchanged');
 const datedRoutes = [...routes, ...laterLosAngelesRoutes, ...laterSanDiegoRoutes, ...laterBostonRoutes, ...postBostonOverviewJuneauRoutes];
 const datedPaths = datedRoutes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedArizonaDates = [...currentSitemap]
@@ -194,7 +194,7 @@ for (const route of routes) {
 }
 for (const locale of locales.slice(1)) {
   const search = JSON.parse(fs.readFileSync(path.join(root, `${locale.prefix}/data/search-index.json`), 'utf8'));
-  assert.equal(search.length, 955, `${locale.code} search record count`);
+  assert.equal(search.length, 988, `${locale.code} search record count`);
   for (const route of routes) {
     const record = search.find((entry) => entry.url === `${locale.prefix}${route}`);
     assert.ok(record?.summary && locale.script.test(record.summary), `${locale.code} translated search summary: ${route}`);

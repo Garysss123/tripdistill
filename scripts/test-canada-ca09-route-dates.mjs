@@ -90,8 +90,8 @@ const sourceSitemap = spawnSync('git', ['show', `${sourceTerminal}:sitemap.xml`]
 assert.equal(sourceSitemap.status, 0, `Could not read the exact CA09 source terminal sitemap: ${sourceSitemap.stderr}`);
 const sourceSitemapDates = readSitemapDates(sourceSitemap.stdout);
 const sitemapDates = readSitemapDates(sitemap);
-assert.deepEqual([...sourceSitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'The CA09 source terminal must retain the exact CA08 sitemap URL set.');
-assert.deepEqual([...sitemapDates.keys()].sort(), [...previousSitemapDates.keys()].sort(), 'CA09 must retain the exact CA08 sitemap URL set.');
+assert.deepEqual([...sourceSitemapDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousSitemapDates.keys()].sort(), 'The CA09 source terminal must retain the exact CA08 sitemap URL set.');
+assert.deepEqual([...sitemapDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousSitemapDates.keys()].sort(), 'CA09 must retain the exact CA08 sitemap URL set.');
 const expectedSourceSitemapDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualSourceSitemapDateChanges = [...sourceSitemapDates].filter(([route, date]) => previousSitemapDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSourceSitemapDateChanges, expectedSourceSitemapDateChanges, 'The exact CA09 source terminal may change only its four article routes across five editions.');

@@ -60,7 +60,7 @@ function translation(locale, source) {
 const routeSetFrom = (xml) => [...xml.matchAll(/<loc>(https:\/\/tripdistill\.com[^<]*)<\/loc>/g)].map((match) => new URL(match[1]).pathname).sort();
 const beforeUrls = routeSetFrom(baseline('sitemap.xml'));
 const afterSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
-assert.deepEqual(routeSetFrom(afterSitemap), beforeUrls, 'the sitemap URL set is unchanged');
+assert.deepEqual(routeSetFrom(afterSitemap).filter((url) => !url.includes('/spain/')), beforeUrls, 'all pre-existing non-Spain sitemap URLs remain unchanged');
 const englishOverview = parsePage(fs.readFileSync(pagePath(locales[0], linkedOverview), 'utf8'));
 const englishCard = englishOverview.nodes.find((node) => node.tagName === 'a' && attr(node, 'href') === '/switzerland/lausanne-lavaux/');
 const englishCardSummary = nodeText(descendants(englishCard).find((node) => node.tagName === 'p')).replace(/\s+/g, ' ').trim();

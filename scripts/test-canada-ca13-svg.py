@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate the five-language Saguenay sector schematic and render its pixels."""
+import os
 import re
 import shutil
 import struct
@@ -11,7 +12,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SVG = ROOT / 'assets/images/tripdistill-canada-saguenay-sector-decisions.svg'
 INKSCAPE = shutil.which('inkscape')
-assert INKSCAPE, 'Pixel regression requires the local Inkscape renderer.'
+IMAGEMAGICK = shutil.which('magick')
+if not IMAGEMAGICK and os.name != 'nt':
+    IMAGEMAGICK = shutil.which('convert')
+if IMAGEMAGICK:
+    try:
+        version = subprocess.run([IMAGEMAGICK, '-version'], capture_output=True, text=True, check=False, timeout=5)
+    except (OSError, subprocess.TimeoutExpired):
+        IMAGEMAGICK = None
+    else:
+        if version.returncode != 0 or 'ImageMagick' not in version.stdout:
+            IMAGEMAGICK = None
+assert INKSCAPE or IMAGEMAGICK, 'Pixel regression requires Inkscape or an existing ImageMagick renderer.'
+RENDERER = 'Inkscape' if INKSCAPE else 'ImageMagick'
 
 tree = ET.parse(SVG)
 root = tree.getroot()
@@ -109,11 +122,12 @@ assert {'sector-eternite', 'sector-sainte-marguerite', 'sector-tadoussac'} <= se
 
 with tempfile.TemporaryDirectory(prefix='ca13-svg-') as temp_dir:
     png = Path(temp_dir) / 'saguenay.png'
-    subprocess.run([INKSCAPE, str(SVG), '--export-filename', str(png)], check=True, capture_output=True, text=True)
+    command = [INKSCAPE, str(SVG), '--export-filename', str(png)] if INKSCAPE else [IMAGEMAGICK, str(SVG), '-depth', '8', str(png)]
+    subprocess.run(command, check=True, capture_output=True, text=True)
     data = png.read_bytes()
     assert data[:8] == b'\x89PNG\r\n\x1a\n'
     width, height = struct.unpack('>II', data[16:24])
     assert (width, height) == (1200, 700)
     assert len(data) > 30_000, f'Rendered pixel output unexpectedly small ({len(data)} bytes).'
 
-print('CA13 Saguenay SVG passed XML, unique ID, bounds, genuine geometry, five-language legend and Inkscape pixel-render checks.')
+print(f'CA13 Saguenay SVG passed XML, unique ID, bounds, genuine geometry, five-language legend and {RENDERER} pixel-render checks.')

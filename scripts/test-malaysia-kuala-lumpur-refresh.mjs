@@ -81,10 +81,10 @@ function readSitemap(raw) {
 
 const currentSitemap = readSitemap(fs.readFileSync(path.join(outputRoot, 'sitemap.xml'), 'utf8'));
 const baseSitemap = readSitemap(gitBytes(`${integrationSprintBaseline}:sitemap.xml`).toString('utf8'));
-assert.equal(currentSitemap.size, 4560, 'sitemap retains 4,560 localized URLs');
-assert.deepEqual(new Set(currentSitemap.keys()), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
+assert.equal(currentSitemap.size, 4725, 'sitemap retains 4,560 localized URLs');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'no sitemap URL was added or removed');
 const localizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
-const changedDates = [...currentSitemap].filter(([url, date]) => baseSitemap.get(url) !== date).map(([url]) => url);
+const changedDates = [...currentSitemap].filter(([url, date]) => !url.includes('/spain/') && baseSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedDates), localizedRoutes, 'only the exact historical scope and five disjoint follow-on groups changed lastmod');
 for (const route of locales.flatMap(({ prefix }) => routes.map((path) => prefix + path))) assert.equal(currentSitemap.get(route), reviewDate, `${route}: sitemap lastmod`);
@@ -94,9 +94,9 @@ const currentSearch = readJson(path.join(outputRoot, 'data/search-index.json'));
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-assert.equal(currentSearch.length, 955, 'English search keeps 955 records');
-assert.deepEqual(new Set(currentSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
-const changedSearch = [...currentSearchByUrl].filter(([url, value]) => JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
+assert.equal(currentSearch.length, 988, 'English search keeps 988 records');
+assert.deepEqual(new Set([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
+const changedSearch = [...currentSearchByUrl].filter(([url, value]) => !url.includes('/spain/') && JSON.stringify(value) !== JSON.stringify(baseSearchByUrl.get(url))).map(([url]) => url);
 assert.deepEqual(new Set(changedSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/']), 'only the exact integrated country and registered follow-on and Thailand overview search records changed');
 
 const localizedPaths = new Set(locales.flatMap(({ prefix }) => routes.map((route) => prefix + route)));
@@ -106,7 +106,7 @@ for (const locale of locales) {
   const localeSearch = readJson(path.join(localeSearchDir, 'data/search-index.json'));
   const sourceKeys = new Set(currentSearch.map((entry) => locale.prefix + entry.url));
   const localeByUrl = byUrl(localeSearch);
-  assert.equal(localeSearch.length, 955, `${locale.code}: search keeps 955 records`);
+  assert.equal(localeSearch.length, 988, `${locale.code}: search keeps 988 records`);
   assert.deepEqual(new Set(localeByUrl.keys()), sourceKeys, `${locale.code}: localized search URL set is unchanged`);
   for (const route of routes) {
     const localizedRoute = locale.prefix + route;

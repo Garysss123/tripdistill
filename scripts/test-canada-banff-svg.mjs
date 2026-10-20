@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawnPython3 } from './python-runner.mjs';
 import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -63,7 +63,7 @@ assert blue_arrow.attrib['d'].startswith('M 772 225 ')
 thai = next(n for n in root.iter(ns + 'text') if (n.text or '').startswith('ไทย ·'))
 assert float(thai.attrib['y']) <= 633 and 658 - float(thai.attrib['y']) >= 25
 `;
-const parsed = spawnSync('python3', ['-c', geometryCheck, svgFile], { encoding: 'utf8' });
+const parsed = spawnPython3(['-c', geometryCheck, svgFile], { encoding: 'utf8' });
 assert.equal(parsed.status, 0, `Python XML/geometry verification failed:\n${parsed.stdout}\n${parsed.stderr}`);
 
 const page = fs.readFileSync(path.join(root, 'canada/banff-lake-louise/johnston-minnewanka/index.html'), 'utf8');

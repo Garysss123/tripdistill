@@ -394,6 +394,42 @@ export const thailandCountryOverviewNewSubstantiveRoutes = Object.freeze([
   '/thailand/'
 ]);
 
+export const spainNewSubstantiveRoutes = Object.freeze([
+  '/spain/',
+  '/spain/madrid/',
+  '/spain/catalonia-barcelona/',
+  '/spain/andalusia/',
+  '/spain/basque-country/',
+  '/spain/valencia/',
+  '/spain/balearic-islands/',
+  '/spain/canary-islands/',
+  '/spain/galicia-asturias/',
+  '/spain/madrid/royal-core-sol-to-palace/',
+  '/spain/madrid/prado-retiro-art-to-park/',
+  '/spain/madrid/toledo-rail-station-to-old-town/',
+  '/spain/catalonia-barcelona/barcelona-ciutat-vella-waterfront/',
+  '/spain/catalonia-barcelona/eixample-modernisme-sagrada-familia/',
+  '/spain/catalonia-barcelona/girona-costa-brava-two-gateways/',
+  '/spain/andalusia/seville-royal-core-santa-cruz/',
+  '/spain/andalusia/cordoba-mosque-river-loop/',
+  '/spain/andalusia/granada-alhambra-albaicin-approach/',
+  '/spain/basque-country/bilbao-ria-guggenheim/',
+  '/spain/basque-country/donostia-bay-old-town/',
+  '/spain/basque-country/urdaibai-bermeo-rail-coast/',
+  '/spain/valencia/valencia-old-town-central-market/',
+  '/spain/valencia/turia-city-arts-coast/',
+  '/spain/valencia/albufera-lagoon-el-palmar/',
+  '/spain/balearic-islands/mallorca-palma-soller-tramuntana/',
+  '/spain/balearic-islands/menorca-mao-ciutadella-coves/',
+  '/spain/balearic-islands/ibiza-formentera-port-to-beach/',
+  '/spain/canary-islands/tenerife-la-laguna-teide/',
+  '/spain/canary-islands/gran-canaria-las-palmas-south/',
+  '/spain/canary-islands/lanzarote-fuerteventura-island-choice/',
+  '/spain/galicia-asturias/santiago-old-town-station-arrival/',
+  '/spain/galicia-asturias/rias-baixas-pontevedra-vigo-coast/',
+  '/spain/galicia-asturias/oviedo-picos-covadonga/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),

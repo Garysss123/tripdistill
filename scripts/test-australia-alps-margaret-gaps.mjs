@@ -5,12 +5,13 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { collectTranslationWork } from './i18n-lib.mjs';
+import { spainPhotoAssets } from './spain-release-scope.mjs';
 import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(branch);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
@@ -194,15 +195,15 @@ for (const [index, route] of routes.entries()) {
 const baseSearch = searchMap(git(['show', `${comparisonBase}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 site-wide records.');
-assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 site-wide records.');
-assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
-const changedSearch = [...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.equal(currentSearch.size, 988, 'Current English search index keeps all 988 site-wide records.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
+const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 const changedAustraliaSearch = changedSearch.filter((url) => url.startsWith('/australia/'));
 if (sourceBranch) assert.deepEqual(changedSearch, expectedChangedSearch.sort(), 'Only the exact source batch or subsequent four Margaret search records changed in the selected checkpoint.');
 else {
   const integrationSearch = searchMap(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:data/search-index.json']));
   const mainSearch = searchMap(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:data/search-index.json']));
-  const allowedSearchRoutes = new Set([...integrationSearch.keys(), ...mainSearch.keys()].filter((url) => url.startsWith('/australia/') && (JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url)) || JSON.stringify(mainSearch.get(url)) !== JSON.stringify(baseSearch.get(url)))));
+  const allowedSearchRoutes = new Set([...integrationSearch.keys(), ...mainSearch.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && (JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url)) || JSON.stringify(mainSearch.get(url)) !== JSON.stringify(baseSearch.get(url)))));
   assert.deepEqual(changedAustraliaSearch.filter((url) => !allowedSearchRoutes.has(url)), [], 'Australia search changes must belong to the pinned integration/main parents.');
   assert.deepEqual(expectedChangedSearch.filter((url) => !changedAustraliaSearch.includes(url)), [], 'Every selected Australia follow-on search record remains updated.');
 }
@@ -212,16 +213,16 @@ for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalS
 const baseSitemap = urlRecords(git(['show', `${comparisonBase}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
-assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const changedDates = expectedChangedEnglish.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-const actualChangedDates = [...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url));
+const actualChangedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && currentSitemap.get(url) !== baseSitemap.get(url));
 const changedAustraliaDates = actualChangedDates.filter((url) => expectedChangedEnglish.some((route) => new URL(url, 'https://tripdistill.com').pathname.endsWith(route)));
 if (sourceBranch) assert.deepEqual(actualChangedDates.sort(), changedDates, 'Only the exact selected four routes × five locale lastmod values changed in the checkpoint.');
 else {
   const integrationDates = urlRecords(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:sitemap.xml']));
   const mainDates = urlRecords(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:sitemap.xml']));
-  const allowedDates = new Set([...integrationDates.keys(), ...mainDates.keys()].filter((url) => url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/australia/') && (integrationDates.get(url) !== baseSitemap.get(url) || mainDates.get(url) !== baseSitemap.get(url))));
+  const allowedDates = new Set([...integrationDates.keys(), ...mainDates.keys()].filter((url) => !url.includes('/spain/') && url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/australia/') && (integrationDates.get(url) !== baseSitemap.get(url) || mainDates.get(url) !== baseSitemap.get(url))));
   assert.deepEqual(changedAustraliaDates.filter((url) => !allowedDates.has(url)), [], 'Australia lastmod changes must belong to the pinned integration/main parents.');
   assert.deepEqual(changedDates.filter((url) => !actualChangedDates.includes(url)), [], 'Every exact selected five-language Australia date remains updated.');
 }
@@ -271,6 +272,7 @@ for (const locale of locales.slice(1)) {
 const changedSvgPaths = git(['diff', '--name-only', base, '--', 'assets/images']).trim().split(/\r?\n/u).filter(Boolean).sort();
 const correctedArrowSvgs = correctionFiles.filter((file) => file.endsWith('.svg')).sort();
 assert.deepEqual(sourceBranch ? changedSvgPaths : changedSvgPaths.filter((file) => file.startsWith('assets/images/australia-')), correctedArrowSvgs, 'The only changed Australian SVG paths from the exact base are the two preserved parallel arrow corrections.');
-assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No untracked image or SVG asset exists.');
+const untrackedImagePaths = git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean);
+assert.deepEqual(untrackedImagePaths.filter((assetPath) => !spainPhotoAssets.has(assetPath)), [], 'Only the exact licensed Spain photo set may be untracked alongside the unchanged Alps/Margaret batch.');
 
 console.log(`Australia Alps/Margaret River regression passed (${integrationBranch ? 'integration' : 'source'} mode): exact base and four route scope; Hokkaido/Otaru content floors and substantive route decisions; translated pages, dates and search; 4,560 unchanged sitemap URLs; 31fc438 arrow correction preserved byte-for-byte. This is a source/markup and data check, not a rendered UI or pixel review.`);

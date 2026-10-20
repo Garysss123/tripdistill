@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import { execFileSync, spawnSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { collectTranslationWork, localeConfigs } from './i18n-lib.mjs';
+import { spawnPython3 } from './python-runner.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -127,7 +128,7 @@ function sitemapMap(source) {
   return new Map([...source.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/gu)].map((match) => [match[1], match[2]]));
 }
 const currentMap = sitemapMap(sitemap), baseMap = sitemapMap(baseSitemap);
-assert.deepEqual([...currentMap.keys()].sort(), [...baseMap.keys()].sort(), 'sitemap URL inventory is unchanged');
+assert.deepEqual([...currentMap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseMap.keys()].sort(), 'sitemap URL inventory is unchanged');
 const routeLocs = new Set(routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const bernEmmentalRoutes = [
   '/switzerland/bern-emmental/',
@@ -199,7 +200,7 @@ for node in root.iter():
     tag = node.tag.rsplit('}', 1)[-1]
     items.append({'tag': tag, 'attrs': node.attrib, 'text': ''.join(node.itertext()).strip() if tag == 'text' else ''})
 print(json.dumps({'root': {'tag': root.tag.rsplit('}', 1)[-1], 'attrs': root.attrib}, 'items': items}, ensure_ascii=False))`;
-const xml = spawnSync('python3', ['-c', xmlInspector, diagramPath], { encoding: 'utf8' });
+const xml = spawnPython3(['-c', xmlInspector, diagramPath], { encoding: 'utf8' });
 assert.equal(xml.status, 0, `SVG must parse as XML: ${xml.stderr}`);
 const diagram = JSON.parse(xml.stdout);
 assert.equal(diagram.root.tag, 'svg');

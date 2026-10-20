@@ -49,8 +49,10 @@ import {
   vietnamBayGapsNewSubstantiveRoutes,
   vietnamCavesIslandsGapsNewSubstantiveRoutes,
   vietnamCoastalGapsNewSubstantiveRoutes,
-  thailandCountryOverviewNewSubstantiveRoutes
+  thailandCountryOverviewNewSubstantiveRoutes,
+  spainNewSubstantiveRoutes
 } from '../data/substantive-route-ledger.mjs';
+import { spainRoutes } from '../data/spain-guides.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const originalAtlas = '8a1ada3b4021d077fd468c9c318d91823177c0cb';
@@ -221,6 +223,9 @@ for (const route of vietnamCompletedRoutes) {
 for (const checkpoint of correctedCoverageCheckpoints) assert(Number.isInteger(checkpoint.count) && checkpoint.count > 0, `${checkpoint.label}: checkpoint count must be an integer.`);
 assert.deepEqual(correctedCoverageCheckpoints.map(({ count }) => count), [697, 701, 703, 707, 711, 719, 723, 727, 732, 736, 740, 744, 748, 752, 757, 765, 769, 773, 777, 781, 785, 789, 793, 797, 801, 805, 809, 813, 817, 821, 825, 829, 833, 837, 841, 845, 871, 873, 878, 882, 886, 890, 894, 898, 902, 906, 907]);
 assert.deepEqual(thailandCountryOverviewNewSubstantiveRoutes, ['/thailand/'], 'The Thailand addition is exactly its country overview.');
+assert.deepEqual(spainNewSubstantiveRoutes, spainRoutes, 'The Spain ledger records exactly the country, eight regional hubs and 24 local guides.');
+assert.equal(spainNewSubstantiveRoutes.length, 33, 'Spain adds exactly 33 substantive route pages.');
+assert.equal(new Set(spainNewSubstantiveRoutes).size, 33, 'Spain routes must be unique.');
 
 const canadaRoutes = ['/canada/', ...canadaClusters.flatMap((cluster) => [
   `/canada/${cluster.slug}/`,
@@ -458,7 +463,7 @@ for (const group of historicalUsaSources) {
     }
   }
 }
-for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...vietnamBayGapsNewSubstantiveRoutes, ...vietnamCavesIslandsGapsNewSubstantiveRoutes, ...vietnamCoastalGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes, ...thailandCountryOverviewNewSubstantiveRoutes]) {
+for (const route of [...usaSanDiegoNewSubstantiveRoutes, ...vietnamPhongNhaNewSubstantiveRoutes, ...vietnamPhuQuocNewSubstantiveRoutes, ...vietnamNhaTrangNewSubstantiveRoutes, ...vietnamAfterNhaTrangNewSubstantiveRoutes, ...vietnamSouthernGapsNewSubstantiveRoutes, ...vietnamBayGapsNewSubstantiveRoutes, ...vietnamCavesIslandsGapsNewSubstantiveRoutes, ...vietnamCoastalGapsNewSubstantiveRoutes, ...australiaBroomeTasmaniaNewSubstantiveRoutes, ...thailandCountryOverviewNewSubstantiveRoutes, ...spainNewSubstantiveRoutes]) {
   assert(fs.existsSync(path.join(root, route.slice(1), 'index.html')), `Newly integrated route is missing: ${route}`);
 }
 assert.equal(usaSanDiegoNewSubstantiveRoutes.length, 4, 'San Diego adds four newly integrated body routes.');

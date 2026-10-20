@@ -20,7 +20,7 @@ check(cluster?.publishedIsoDate === '2026-09-26', 'Siena cluster publication dat
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const entries = new Map([...sitemap.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map((match) => [match[1], match[2]]));
-check(entries.size === 4560, `Expected 4,560 sitemap routes, found ${entries.size}`);
+check(entries.size === 4725, `Expected 4,560 sitemap routes, found ${entries.size}`);
 const italyRoutes = [...entries.keys()].filter((route) => route.startsWith('/italy/') || /^\/(?:zh|ja|ko|th)\/italy\//.test(route));
 check(italyRoutes.length === 81 * locales.length, `Expected 405 Italy sitemap entries, found ${italyRoutes.length}`);
 const search = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));

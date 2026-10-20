@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
+import { spawnPython3 } from './python-runner.mjs';
 import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -64,7 +64,7 @@ assert regions['gros-morne'] < regions['bonavista-trinity'] < regions['st-johns'
 assert float(next(n for n in root.iter(ns + 'rect') if n.attrib.get('x') == '545').attrib['x']) > regions['st-johns'], 'Labrador inset must remain separate from the Newfoundland island nodes.'
 assert not list(root.iter(ns + 'path')), 'The diagram must not imply a surveyed road or ferry line.'
 `;
-const parsed = spawnSync('python3', ['-c', geometryCheck, svgFile], { encoding: 'utf8' });
+const parsed = spawnPython3(['-c', geometryCheck, svgFile], { encoding: 'utf8' });
 assert.equal(parsed.status, 0, `Python ElementTree XML/geometry verification failed:\n${parsed.stdout}\n${parsed.stderr}`);
 
 for (const locale of ['', 'zh/', 'ja/', 'ko/', 'th/']) {

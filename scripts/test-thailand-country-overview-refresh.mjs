@@ -137,7 +137,12 @@ assert.equal(searchRecord.length, 1, 'The Thailand overview must keep one search
 assert.match(searchRecord[0].summary, /7-, 10- and 14-day/u, 'The search summary must advertise the route-length comparison.');
 const baseSearch = JSON.parse(git(['show', `${sourceBase}:data/search-index.json`]));
 const changedSearchRoutes = search.filter((record) => JSON.stringify(record) !== JSON.stringify(baseSearch.find((oldRecord) => oldRecord.url === record.url))).map(({ url }) => url).sort();
-assert.deepEqual(changedSearchRoutes, ['/thailand/'], 'Only the Thailand overview search record may change.');
+const newSpainSearchRoutes = search
+  .filter((record) => record.url.startsWith('/spain/') && !baseSearch.some((oldRecord) => oldRecord.url === record.url))
+  .map(({ url }) => url)
+  .sort();
+const unexpectedSearchChanges = changedSearchRoutes.filter((route) => route !== '/thailand/' && !newSpainSearchRoutes.includes(route));
+assert.deepEqual(unexpectedSearchChanges, [], 'Only the Thailand overview record and newly added Spain records may change in the shared search index.');
 
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseSitemap = git(['show', `${sourceBase}:sitemap.xml`]);
@@ -149,13 +154,21 @@ assert(datedOverviewRoutes.every(({ lastmod }) => lastmod === '2026-10-14'), 'On
 const sitemapDateMap = (source) => new Map([...source.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/gu)].map((match) => [match[1], match[2]]));
 const previousDates = sitemapDateMap(baseSitemap);
 const changedDateRoutes = [...sitemapDateMap(sitemap)].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
+const currentDates = sitemapDateMap(sitemap);
+const newSpainRoutes = [...new Set([...currentDates.keys()]
+  .map((route) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, ''))
+  .filter((route) => route.startsWith('/spain/') && !previousDates.has(route)))].sort();
 const tripDistillEditedRoutes = [
   '/australia/red-centre/',
   '/france/basque-coast-pyrenees/',
   '/france/basque-coast-pyrenees/bayonne-biarritz/'
 ];
 const expectedSitemapDateRoutes = [
-  ...['', '/zh', '/ja', '/ko', '/th'].flatMap((prefix) => [`${prefix}/thailand/`, ...tripDistillEditedRoutes.map((route) => `${prefix}${route}`)])
+  ...['', '/zh', '/ja', '/ko', '/th'].flatMap((prefix) => [
+    `${prefix}/thailand/`,
+    ...tripDistillEditedRoutes.map((route) => `${prefix}${route}`),
+    ...newSpainRoutes.map((route) => `${prefix}${route}`)
+  ])
 ].sort();
 assert.deepEqual(changedDateRoutes, expectedSitemapDateRoutes, 'Exactly the Thailand overview and the three reviewed TripDistill routes may receive synchronized sitemap dates.');
 

@@ -5,6 +5,7 @@ import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { SaxesParser } from 'saxes';
 import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes, postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
+import { spainRoutes } from '../data/spain-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const base = '19bd73df24866ac49389fdf4ccb572e91cc422f6';
@@ -212,8 +213,11 @@ const baseSearch = JSON.parse(readBase('data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record]));
 const currentSearchByUrl = new Map(currentSearch.map((record) => [record.url, record]));
-check(baseSearchByUrl.size === currentSearchByUrl.size && [...baseSearchByUrl.keys()].sort().join('|') === [...currentSearchByUrl.keys()].sort().join('|'), 'Search URL set/count changed.');
-const changedSearch = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+const newSpainSearchRoutes = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/spain/')).sort();
+check(baseSearchByUrl.size === 955 && currentSearchByUrl.size === 988, `Expected 955 baseline and 988 current search records, got ${baseSearchByUrl.size}/${currentSearchByUrl.size}.`);
+check(newSpainSearchRoutes.length === 33 && newSpainSearchRoutes.join('|') === spainRoutes.slice().sort().join('|'), 'Spain adds exactly its 33 registered English search routes.');
+check([...currentSearchByUrl.keys()].filter((url) => !url.startsWith('/spain/')).sort().join('|') === [...baseSearchByUrl.keys()].sort().join('|'), 'Existing non-Spain search URL set changed.');
+const changedSearch = [...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
 check(changedSearch.join('|') === [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].sort().join('|'), `Australia search changes escaped the exact Melbourne/Ocean, Adelaide/Perth and later Australia route scope: ${changedSearch.join(', ')}`);
 
 const localesForBatches = locales.slice(1);
@@ -252,10 +256,13 @@ for (const locale of localesForBatches) {
 
 const baseSitemap = sitemapEntries(readBase('sitemap.xml'));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-check(baseSitemap.size === 4560 && currentSitemap.size === 4560, `Expected 4560 sitemap URLs, got ${baseSitemap.size}/${currentSitemap.size}.`);
-check([...baseSitemap.keys()].sort().join('|') === [...currentSitemap.keys()].sort().join('|'), 'Sitemap URL set changed.');
+check(baseSitemap.size === 4560 && currentSitemap.size === 4725, `Expected 4,560 baseline and 4,725 current sitemap URLs, got ${baseSitemap.size}/${currentSitemap.size}.`);
+const newSpainSitemapPaths = [...currentSitemap.keys()].filter((url) => url.includes('/spain/')).sort();
+const expectedSpainSitemapPaths = spainRoutes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
+check(newSpainSitemapPaths.length === 165 && newSpainSitemapPaths.join('|') === expectedSpainSitemapPaths.join('|'), 'Spain adds exactly its 33 registered routes across five language editions.');
+check([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort().join('|') === [...baseSitemap.keys()].sort().join('|'), 'Existing 4,560-route sitemap URL set changed.');
 const expectedChanged = [...routes, ...laterAdelaidePerthRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-const actualChanged = [...currentSitemap.keys()].filter((url) => expectedChanged.includes(url) && baseSitemap.get(url) !== currentSitemap.get(url)).sort();
+const actualChanged = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && expectedChanged.includes(url) && baseSitemap.get(url) !== currentSitemap.get(url)).sort();
 check(actualChanged.join('|') === expectedChanged.join('|'), `Sitemap lastmod changes escaped four routes/five languages: ${actualChanged.join(', ')}`);
 for (const url of expectedChanged) {
   const expectedDate = postIntegrationTripDistillRoutes.some((route) => url.endsWith(route)) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate;

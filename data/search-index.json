@@ -13613,5 +13613,446 @@
       "Yukon",
       "two-clock-board"
     ]
+  },
+  {
+    "title": "Spain Travel Guide",
+    "url": "/spain/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan Spain by rail corridor, region and island. Compare eight hubs and 24 local routes for Madrid, Barcelona, Andalusia, the Basque Country, Valencia, the Balearics and the Canaries.",
+    "keywords": [
+      "Spain",
+      "España",
+      "AVE",
+      "Madrid",
+      "Barcelona",
+      "Andalusia",
+      "Balearic Islands",
+      "Canary Islands"
+    ]
+  },
+  {
+    "title": "Madrid & Castile approaches",
+    "url": "/spain/madrid/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Madrid is a rail hub and a full city stay, not merely a transfer between AVE trains. Use the capital for its own walkable museum, park and palace districts; add a Castilian day trip only when the named station, return train and local onward leg all fit.",
+    "keywords": [
+      "Madrid & Castile approaches",
+      "Central Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Sol, Plaza Mayor & the Royal Palace",
+    "url": "/spain/madrid/royal-core-sol-to-palace/",
+    "parent": "Madrid & Castile approaches",
+    "type": "Local guide",
+    "summary": "Link Sol, Plaza Mayor, the westward palace approach and one chosen interior without treating every square and palace room as a timed attraction.",
+    "keywords": [
+      "Sol, Plaza Mayor & the Royal Palace",
+      "Madrid & Castile approaches",
+      "One compact old-centre loop with a booked interior as the anchor",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Prado, Retiro & the Literary Quarter",
+    "url": "/spain/madrid/prado-retiro-art-to-park/",
+    "parent": "Madrid & Castile approaches",
+    "type": "Local guide",
+    "summary": "Build an art-and-park day around one museum entrance, a deliberate lunch break and a gentle south-to-east walk into Retiro rather than trying to clear every nearby gallery.",
+    "keywords": [
+      "Prado, Retiro & the Literary Quarter",
+      "Madrid & Castile approaches",
+      "Choose one major collection, then move east into the park",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Toledo: Rail Station to the Historic Ridge",
+    "url": "/spain/madrid/toledo-rail-station-to-old-town/",
+    "parent": "Madrid & Castile approaches",
+    "type": "Local guide",
+    "summary": "Plan the station approach, uphill transfer and one historic-centre circuit before booking a Madrid day return; Toledo’s rail arrival is not at the top of the old city.",
+    "keywords": [
+      "Toledo: Rail Station to the Historic Ridge",
+      "Madrid & Castile approaches",
+      "A station below the city, a steep transfer and a return that must be protected",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Catalonia & Barcelona",
+    "url": "/spain/catalonia-barcelona/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Barcelona rewards a neighbourhood-led stay; Girona and the coast are separate rail and last-mile decisions. AVE access from France or Madrid lands on a city network, while beach, hillside and monument visits still have their own doors and local services.",
+    "keywords": [
+      "Catalonia & Barcelona",
+      "Northeast Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Barcelona: Ciutat Vella to the Waterfront",
+    "url": "/spain/catalonia-barcelona/barcelona-ciutat-vella-waterfront/",
+    "parent": "Catalonia & Barcelona",
+    "type": "Local guide",
+    "summary": "Trace one route from the old city toward Port Vell and the waterfront, keeping market, cathedral, museum and beach visits as separate choices.",
+    "keywords": [
+      "Barcelona: Ciutat Vella to the Waterfront",
+      "Catalonia & Barcelona",
+      "Old-centre lanes with a waterfront finish and crowd-aware return",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Eixample, Modernisme & Sagrada Família",
+    "url": "/spain/catalonia-barcelona/eixample-modernisme-sagrada-familia/",
+    "parent": "Catalonia & Barcelona",
+    "type": "Local guide",
+    "summary": "Use Eixample’s broad streets to connect one Gaudí interior, an exterior architecture walk and a practical Metro return without stacking distant booked sites.",
+    "keywords": [
+      "Eixample, Modernisme & Sagrada Família",
+      "Catalonia & Barcelona",
+      "A grid-based architecture day organized around one fixed basilica entry",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Girona & the Costa Brava: Two Gateways",
+    "url": "/spain/catalonia-barcelona/girona-costa-brava-two-gateways/",
+    "parent": "Catalonia & Barcelona",
+    "type": "Local guide",
+    "summary": "Decide whether Girona’s old town is the destination or a gateway to one named coast town; train arrival alone does not solve the Costa Brava transfer.",
+    "keywords": [
+      "Girona & the Costa Brava: Two Gateways",
+      "Catalonia & Barcelona",
+      "Rail reaches Girona; the coast needs a separately planned last mile",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Andalusia: Seville, Córdoba & Granada",
+    "url": "/spain/andalusia/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Andalusia is not one city itinerary: Seville, Córdoba and Granada each have a rail station, a different local walk and an independent landmark-entry system. Link them by AVE or conventional rail only after checking the named operator, terminal and transfer; summer heat can change how much of each day belongs outdoors.",
+    "keywords": [
+      "Andalusia: Seville, Córdoba & Granada",
+      "Southern Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Seville: Alcázar, Cathedral Edge & Santa Cruz",
+    "url": "/spain/andalusia/seville-royal-core-santa-cruz/",
+    "parent": "Andalusia: Seville, Córdoba & Granada",
+    "type": "Local guide",
+    "summary": "Arrange the Real Alcázar, cathedral-side streets and Santa Cruz as separate thresholds around one chosen entry, with shade and a simple return built into the loop.",
+    "keywords": [
+      "Seville: Alcázar, Cathedral Edge & Santa Cruz",
+      "Andalusia: Seville, Córdoba & Granada",
+      "Protect one booked palace entry; keep the rest of the old quarter flexible",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Córdoba: Mosque-Cathedral & the River",
+    "url": "/spain/andalusia/cordoba-mosque-river-loop/",
+    "parent": "Andalusia: Seville, Córdoba & Granada",
+    "type": "Local guide",
+    "summary": "Connect the station approach, the Mosque-Cathedral and the Roman Bridge as one compact Córdoba day, choosing an interior visit that respects worship and timed entry conditions.",
+    "keywords": [
+      "Córdoba: Mosque-Cathedral & the River",
+      "Andalusia: Seville, Córdoba & Granada",
+      "A station-to-old-quarter walk with one threshold inside the Mezquita",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Granada: Alhambra, Albaicín & the Uphill Choice",
+    "url": "/spain/andalusia/granada-alhambra-albaicin-approach/",
+    "parent": "Andalusia: Seville, Córdoba & Granada",
+    "type": "Local guide",
+    "summary": "Treat the Alhambra ticket window, Granada station transfer and Albaicín slopes as three distinct planning jobs, not a single walkable centre.",
+    "keywords": [
+      "Granada: Alhambra, Albaicín & the Uphill Choice",
+      "Andalusia: Seville, Córdoba & Granada",
+      "A timed palace city above a separate station and hill-quarter network",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Basque Country: Bilbao, Donostia & the Coast",
+    "url": "/spain/basque-country/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Bilbao, Donostia-San Sebastián and the smaller coast are linked by a mix of national rail, Euskotren, bus and local streets. The Bay of Biscay brings changing weather and steep coastal paths; choose one city base and treat each rural stop as a separate timetable decision.",
+    "keywords": [
+      "Basque Country: Bilbao, Donostia & the Coast",
+      "Northern Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Bilbao: Ría, Guggenheim & the Old Town",
+    "url": "/spain/basque-country/bilbao-ria-guggenheim/",
+    "parent": "Basque Country: Bilbao, Donostia & the Coast",
+    "type": "Local guide",
+    "summary": "Plan a river-side line from one Guggenheim visit to a separate Casco Viejo finish, using the actual station, bridge and Metro return rather than a taxi loop.",
+    "keywords": [
+      "Bilbao: Ría, Guggenheim & the Old Town",
+      "Basque Country: Bilbao, Donostia & the Coast",
+      "Follow the river between the museum door and the city’s older commercial core",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Donostia: La Concha, Parte Vieja & the Hills",
+    "url": "/spain/basque-country/donostia-bay-old-town/",
+    "parent": "Basque Country: Bilbao, Donostia & the Coast",
+    "type": "Local guide",
+    "summary": "Walk the La Concha edge toward Parte Vieja, then choose one hill viewpoint only if weather, stairs and daylight support the detour.",
+    "keywords": [
+      "Donostia: La Concha, Parte Vieja & the Hills",
+      "Basque Country: Bilbao, Donostia & the Coast",
+      "A bay-side urban route with a weather-dependent hill layer",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Urdaibai, Bermeo & the Coastal Rail Choice",
+    "url": "/spain/basque-country/urdaibai-bermeo-rail-coast/",
+    "parent": "Basque Country: Bilbao, Donostia & the Coast",
+    "type": "Local guide",
+    "summary": "Use Euskotren for a selected Urdaibai stop only after verifying the actual station and service; the estuary, village and headland are connected by local roads and paths, not a single platform.",
+    "keywords": [
+      "Urdaibai, Bermeo & the Coastal Rail Choice",
+      "Basque Country: Bilbao, Donostia & the Coast",
+      "One regional rail day and a coastal walk that depends on the return service",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Valencia & the Albufera",
+    "url": "/spain/valencia/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Valencia pairs a compact historic centre with a long former riverbed park, eastern cultural district and a separate lagoon-and-rice coast. Metro, tram, bus and walking cover different edges of the city; Albufera is an excursion whose access, boat operation and return deserve a dedicated check.",
+    "keywords": [
+      "Valencia & the Albufera",
+      "Eastern Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Valencia Old Town, Market & the Cathedral Edge",
+    "url": "/spain/valencia/valencia-old-town-central-market/",
+    "parent": "Valencia & the Albufera",
+    "type": "Local guide",
+    "summary": "Keep the central market, Lonja surroundings and cathedral quarter in one walk, checking trading, worship and visitor access separately before adding a tower or museum.",
+    "keywords": [
+      "Valencia Old Town, Market & the Cathedral Edge",
+      "Valencia & the Albufera",
+      "A morning food-and-street route with a defined indoor choice",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Turia Gardens, City of Arts & the Coast",
+    "url": "/spain/valencia/turia-city-arts-coast/",
+    "parent": "Valencia & the Albufera",
+    "type": "Local guide",
+    "summary": "Follow a selected Turia garden segment toward the City of Arts and Sciences, then decide whether to stop at its grounds or add the separate tram-and-bus route to the beach.",
+    "keywords": [
+      "Turia Gardens, City of Arts & the Coast",
+      "Valencia & the Albufera",
+      "A long eastbound city walk with a separate beach decision",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Albufera Lagoon & El Palmar",
+    "url": "/spain/valencia/albufera-lagoon-el-palmar/",
+    "parent": "Valencia & the Albufera",
+    "type": "Local guide",
+    "summary": "Choose the lagoon viewpoint, a walk or El Palmar meal as the anchor; verify bus access, boat operation and the return before leaving Valencia’s urban network.",
+    "keywords": [
+      "Albufera Lagoon & El Palmar",
+      "Valencia & the Albufera",
+      "A city-edge nature visit with boat operation, protected paths and return timing",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Balearic Islands: Mallorca, Menorca & Ibiza",
+    "url": "/spain/balearic-islands/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Mallorca, Menorca and Ibiza are separate island trips with different settlement patterns and ground transport; Formentera is an additional ferry leg from Ibiza. Choose one island for a short stay, then decide whether local bus, rail, rental car or bicycle actually reaches the place you plan to see.",
+    "keywords": [
+      "Balearic Islands: Mallorca, Menorca & Ibiza",
+      "Western Mediterranean islands",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Mallorca: Palma, Sóller & the Tramuntana",
+    "url": "/spain/balearic-islands/mallorca-palma-soller-tramuntana/",
+    "parent": "Balearic Islands: Mallorca, Menorca & Ibiza",
+    "type": "Local guide",
+    "summary": "Keep Palma’s old town separate from the Sóller rail-and-tram excursion, then decide whether a mountain village needs an overnight or a car beyond the rail terminus.",
+    "keywords": [
+      "Mallorca: Palma, Sóller & the Tramuntana",
+      "Balearic Islands: Mallorca, Menorca & Ibiza",
+      "Choose an island city day or a mountain-corridor day",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Menorca: Maó, Ciutadella & the Cove Decision",
+    "url": "/spain/balearic-islands/menorca-mao-ciutadella-coves/",
+    "parent": "Balearic Islands: Mallorca, Menorca & Ibiza",
+    "type": "Local guide",
+    "summary": "Use Maó and Ciutadella as two urban anchors, then choose one named cove whose bus, road, parking and walking access fits the date.",
+    "keywords": [
+      "Menorca: Maó, Ciutadella & the Cove Decision",
+      "Balearic Islands: Mallorca, Menorca & Ibiza",
+      "An island without rail where two towns do not solve every beach transfer",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Ibiza & Formentera: Port-to-Beach Connections",
+    "url": "/spain/balearic-islands/ibiza-formentera-port-to-beach/",
+    "parent": "Balearic Islands: Mallorca, Menorca & Ibiza",
+    "type": "Local guide",
+    "summary": "Treat Formentera as a separate ferry day from Ibiza: reach the correct port, reserve the crossing, choose a local mode and save enough time to return before the ferry buffer disappears.",
+    "keywords": [
+      "Ibiza & Formentera: Port-to-Beach Connections",
+      "Balearic Islands: Mallorca, Menorca & Ibiza",
+      "An island day trip built from a port, ferry, local mode and a protected return",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+    "url": "/spain/canary-islands/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "The Canary Islands are several distinct volcanic islands, not one rail-connected destination. Choose a home island by terrain and town mix, then coordinate an inter-island flight or ferry with the port or airport transfer and local road or bus network; weather and elevation can change sharply within one day.",
+    "keywords": [
+      "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+      "Atlantic islands",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Tenerife: La Laguna, Teide & the High-Altitude Choice",
+    "url": "/spain/canary-islands/tenerife-la-laguna-teide/",
+    "parent": "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+    "type": "Local guide",
+    "summary": "Use La Laguna and Santa Cruz as a city pair, then give Teide a dedicated day with the exact trail, road, permit and weather plan confirmed before departure.",
+    "keywords": [
+      "Tenerife: La Laguna, Teide & the High-Altitude Choice",
+      "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+      "Separate the historic north from the mountain excursion and its access rules",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Gran Canaria: Las Palmas & the Southern Coast",
+    "url": "/spain/canary-islands/gran-canaria-las-palmas-south/",
+    "parent": "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+    "type": "Local guide",
+    "summary": "Choose a Las Palmas city day or a south-coast excursion, checking Global bus service and the last return before treating the capital and resort strip as one neighborhood.",
+    "keywords": [
+      "Gran Canaria: Las Palmas & the Southern Coast",
+      "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+      "A city-and-beach island with a long southbound corridor",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Lanzarote or Fuerteventura: Choosing an Eastern Island",
+    "url": "/spain/canary-islands/lanzarote-fuerteventura-island-choice/",
+    "parent": "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+    "type": "Local guide",
+    "summary": "Choose volcanic Lanzarote or beach-focused Fuerteventura as the main island; if crossing the channel, schedule the ferry and port-to-lodging legs before adding a second island day.",
+    "keywords": [
+      "Lanzarote or Fuerteventura: Choosing an Eastern Island",
+      "Canary Islands: Tenerife, Gran Canaria & the Eastern Islands",
+      "Make a one-island choice or plan the inter-island crossing as a real transfer",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Galicia & Asturias: Atlantic Cities and Green North",
+    "url": "/spain/galicia-asturias/",
+    "parent": "Spain",
+    "type": "Regional guide",
+    "summary": "Northwestern Spain trades the interior’s heat for Atlantic weather, green valleys and a more dispersed coast. Santiago de Compostela has a strong rail-and-walk centre, while the Rías Baixas and Asturias’ Picos gateways need a dated bus, road or seasonal access plan beyond the mainline station.",
+    "keywords": [
+      "Galicia & Asturias: Atlantic Cities and Green North",
+      "Northwest Spain",
+      "Spain",
+      "rail",
+      "regional transport"
+    ]
+  },
+  {
+    "title": "Santiago de Compostela: Station to the Old Town",
+    "url": "/spain/galicia-asturias/santiago-old-town-station-arrival/",
+    "parent": "Galicia & Asturias: Atlantic Cities and Green North",
+    "type": "Local guide",
+    "summary": "Plan the train station approach to the historic core, choose a cathedral or museum interior and leave enough energy for the cobbled return uphill.",
+    "keywords": [
+      "Santiago de Compostela: Station to the Old Town",
+      "Galicia & Asturias: Atlantic Cities and Green North",
+      "A pilgrim city arrival with a downhill/uphill station and cathedral precinct",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Rías Baixas: Pontevedra, Vigo & the Coastal Branch",
+    "url": "/spain/galicia-asturias/rias-baixas-pontevedra-vigo-coast/",
+    "parent": "Galicia & Asturias: Atlantic Cities and Green North",
+    "type": "Local guide",
+    "summary": "Choose Vigo or Pontevedra as the rail anchor, then add one beach, island or estuary visit only after checking the bus, boat and return connection for the date.",
+    "keywords": [
+      "Rías Baixas: Pontevedra, Vigo & the Coastal Branch",
+      "Galicia & Asturias: Atlantic Cities and Green North",
+      "Select a rail-served city and a single coastal extension",
+      "Spain"
+    ]
+  },
+  {
+    "title": "Oviedo, Covadonga & the Picos Access Choice",
+    "url": "/spain/galicia-asturias/oviedo-picos-covadonga/",
+    "parent": "Galicia & Asturias: Atlantic Cities and Green North",
+    "type": "Local guide",
+    "summary": "Keep Oviedo’s walkable centre separate from a Covadonga or Picos excursion; check park transport, road restrictions and the exact trailhead before booking an overnight or driving.",
+    "keywords": [
+      "Oviedo, Covadonga & the Picos Access Choice",
+      "Galicia & Asturias: Atlantic Cities and Green North",
+      "An urban rail base and a mountain excursion with managed road access",
+      "Spain"
+    ]
   }
 ]

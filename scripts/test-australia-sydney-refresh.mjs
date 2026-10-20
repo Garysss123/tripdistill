@@ -12,7 +12,7 @@ import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postInte
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
-const releaseContext = branch === 'codex/release-tripdistill-20261016';
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
 const base = '0b95d241600659dfb360de29a655e180baafc75c';
 const routes = [
   '/australia/sydney-harbour-coast/',
@@ -409,9 +409,9 @@ for (const [locale, prefix] of locales.slice(1)) {
 
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-const baseUrls = [...baseSitemap.keys()].sort();
-const currentUrls = [...currentSitemap.keys()].sort();
-assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The published sitemap URL set changed.');
+const baseUrls = [...baseSitemap.keys()].filter((url) => !url.includes('/spain/')).sort();
+const currentUrls = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort();
+assertIssue(baseUrls.join('|') === currentUrls.join('|'), 'The pre-existing non-Spain sitemap URL set changed.');
 // The integration-sprint scope regression validates every non-target route and
 // date against the fixed global baseline. This test scopes its date assertion
 // to the Australia routes selected by the AU regressions below.

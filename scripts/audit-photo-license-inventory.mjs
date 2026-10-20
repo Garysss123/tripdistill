@@ -19,7 +19,7 @@ const retainedLocalOnlyAssetPaths = [
 ];
 const countries = [
   'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
-  'south-korea', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
+  'south-korea', 'spain', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
 ];
 const verifiedOn = '2026-10-04';
 const verifiedBySourcePattern = [
@@ -671,7 +671,9 @@ function collect(value, moduleName, seen, depth = 0) {
       commercialReuseEligibility: value.commercialReuseEligibility ?? null,
       alt: value.alt ?? null,
       inventoryStatus: value.inventoryStatus ?? null,
-      retirementNote: value.retirementNote ?? null
+      retirementNote: value.retirementNote ?? null,
+      sourceVerification: value.sourceVerification ?? null,
+      visualReviewDate: value.visualReviewDate ?? null
     };
     if (!recordsBySrc.has(item.src)) recordsBySrc.set(item.src, []);
     recordsBySrc.get(item.src).push(item);
@@ -1550,7 +1552,9 @@ for (const fullPath of assetPaths) {
   const licenseUrl = uniqueValues('licenseUrl')[0] || explicit?.licenseUrl || creditMatch?.licenseUrl || canonicalLicenseUrl(license);
   const editHistory = uniqueValues('editHistory')[0] || creditMatch?.editHistory || null;
   const authoredDiagram = dataRecords.some((record) => record.assetType === 'original-planning-diagram');
-  const rawVerification = sourceUrl ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl))) : null;
+  const rawVerification = sourceUrl
+    ? (verifiedSourcePageDetails.get(sourceUrl) || verifiedBySourcePattern.find((item) => item.pattern.test(sourceUrl)) || dataRecords.map((record) => record.sourceVerification).find(Boolean))
+    : null;
   const verificationDetail = typeof rawVerification?.detail === 'string'
     ? rawVerification.detail
     : typeof rawVerification?.detail?.detail === 'string'
@@ -1565,6 +1569,7 @@ for (const fullPath of assetPaths) {
   const hash = crypto.createHash('sha256').update(fs.readFileSync(fullPath)).digest('hex');
   const imageUses = uses.map(({ route, alt }) => ({ route, alt })).sort((a, b) => a.route.localeCompare(b.route));
   const inventoryStatus = imageUses.length ? 'used' : 'unused';
+  const visualReviewDate = visualReviewDateByAsset.get(src) || dataRecords.map((record) => record.visualReviewDate).find(Boolean) || null;
   if (imageUses.length && uniqueValues('inventoryStatus').includes('unused')) {
     throw new Error(`Asset ${src} is declared unused but remains referenced by a current English page.`);
   }
@@ -1588,7 +1593,7 @@ for (const fullPath of assetPaths) {
     editHistory: editHistory || 'No per-image edit note found in the source record or matched English photo credit.',
     metadataOrigin: dataRecords.length ? 'structured_data_record' : creditMatch ? creditMatch.matching : 'unmatched',
     creditMatchNote: creditMatch?.matchNote || (creditMatch?.matching === 'page_credit_lexical_match' ? 'Unique same-page label/alt match.' : null),
-    visualReviewStatus: visualReviewDateByAsset.has(src) ? `visually_reviewed_${visualReviewDateByAsset.get(src)}` : 'not_individually_visually_reviewed',
+    visualReviewStatus: visualReviewDate ? 'visually_reviewed_' + visualReviewDate : 'not_individually_visually_reviewed',
     verificationStatus: verification ? 'source_page_checked' : sourceUrl ? 'site_credit_or_metadata_only' : 'missing_source_credit_match',
     verificationDate: verification ? (verification.checkedOn || verifiedOn) : null,
     verificationDetail: verification?.detail || (authoredDiagram ? 'TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.' : null),

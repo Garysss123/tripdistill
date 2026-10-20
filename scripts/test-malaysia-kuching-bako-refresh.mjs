@@ -122,10 +122,10 @@ const sourceSitemap = readSitemap(root);
 const baselineSitemapRaw = execFileSync('git', ['show', `${baselineCommit}:sitemap.xml`], { encoding: 'utf8' });
 const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, url, date]) => [url || '/', date]));
-assert.equal(sourceSitemap.size, 4560, 'source sitemap remains at 4,560 URLs');
-assert.deepEqual(new Set(sourceSitemap.keys()), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
+assert.equal(sourceSitemap.size, 4725, 'source sitemap remains at 4,560 URLs');
+assert.deepEqual(new Set([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URLs');
 const expectedLocalizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
-const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => baselineSitemap.get(url) !== date).map(([url]) => url);
+const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => !url.includes('/spain/') && baselineSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact historical scope and five disjoint follow-on groups × five locales receive new lastmod');
 for (const route of expectedLocalizedRoutes) {
@@ -137,8 +137,8 @@ const baseSearch = JSON.parse(execFileSync('git', ['show', `${baselineCommit}:da
 const englishSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record]));
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
-assert.deepEqual(new Set(englishSearchByUrl.keys()), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
-const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
+assert.deepEqual(new Set([...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
+const changedSearchRoutes = [...englishSearchByUrl].filter(([url, record]) => !url.includes('/spain/') && !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
 assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/']), 'only the exact integrated country and registered follow-on and Thailand overview search records changed');
 assert.equal(englishSearch.filter((record) => selectedRoutes.has(record.url)).length, routes.length, 'all five existing English search records remain present');
 
@@ -247,8 +247,8 @@ for (const { route, text } of englishChildren) {
 if (process.argv.includes('--dist')) {
   const distRoot = path.join(root, 'dist');
   const distSitemap = readSitemap(distRoot);
-  assert.equal(distSitemap.size, 4560, 'built sitemap remains at 4,560 URLs');
-  assert.deepEqual(new Set(distSitemap.keys()), new Set(baselineSitemap.keys()), 'built refresh adds or removes no URL');
+  assert.equal(distSitemap.size, 4725, 'built sitemap remains at 4,560 URLs');
+  assert.deepEqual(new Set([...distSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baselineSitemap.keys()), 'built refresh adds or removes no URL');
   for (const route of routes) {
     for (const { prefix } of locales) {
       const html = fs.readFileSync(pagePath(prefix, route, distRoot), 'utf8');

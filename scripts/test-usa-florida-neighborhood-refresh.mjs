@@ -129,11 +129,11 @@ for (const [route, phrases] of requiredText) {
 const oldSearch = JSON.parse(gitShow(base, 'data/search-index.json'));
 const newSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(oldSearch.length, 955, 'base search record count');
-assert.equal(newSearch.length, 955, 'English search record count remains 955');
+assert.equal(newSearch.length, 988, 'English search record count remains 988');
 const oldByUrl = new Map(oldSearch.map((record) => [record.url, record]));
 const newByUrl = new Map(newSearch.map((record) => [record.url, record]));
 const changedSearch = [...newByUrl.keys()]
-  .filter((url) => url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
+  .filter((url) => !url.includes('/spain/') && url.startsWith('/usa/') && JSON.stringify(oldByUrl.get(url)) !== JSON.stringify(newByUrl.get(url))).sort();
 assert.deepEqual(changedSearch, scopedSearchRoutes.sort(), 'only the exact Florida, Chicago, New England, Arizona, Los Angeles, San Diego, Boston and Juneau search summaries changed; the USA overview summary remains unchanged');
 
 const sitemapBefore = gitShow(base, 'sitemap.xml');
@@ -144,10 +144,10 @@ function sitemapRecords(xml) {
 const oldSitemap = sitemapRecords(sitemapBefore);
 const newSitemap = sitemapRecords(sitemapAfter);
 assert.equal(oldSitemap.length, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(newSitemap.length, 4560, 'sitemap keeps 4,560 URLs');
+assert.equal(newSitemap.length, 4725, 'sitemap keeps 4,560 URLs');
 const oldDates = new Map(oldSitemap);
 const newDates = new Map(newSitemap);
-assert.deepEqual([...newDates.keys()].sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
+assert.deepEqual([...newDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...oldDates.keys()].sort(), 'sitemap URL set is unchanged');
 const expectedDatedUrls = [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...overviewJuneauRoutes].flatMap((route) => localePrefixes.map((prefix) => `https://tripdistill.com${prefix}${route}`)).sort();
 const changedDates = [...newDates.keys()]
   .filter((url) => {
@@ -168,7 +168,7 @@ for (const route of [...routes, ...postNewEnglandRoutes, ...arizonaRoutes, ...ov
 for (const prefix of ['/zh', '/ja', '/ko', '/th']) {
   const searchPath = path.join(root, prefix, 'data/search-index.json');
   const records = JSON.parse(fs.readFileSync(searchPath, 'utf8'));
-  assert.equal(records.length, 955, `${prefix} search record count`);
+  assert.equal(records.length, 988, `${prefix} search record count`);
   for (const route of [...routes, ...juneauSearchRoutes]) assert.ok(records.find((record) => record.url === `${prefix}${route}`)?.summary, `${prefix}${route} localized search summary`);
 }
 

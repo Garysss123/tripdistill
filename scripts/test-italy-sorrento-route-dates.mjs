@@ -64,8 +64,8 @@ let checkedPages = 0;
 for (const output of outputs) {
   const currentSitemap = fs.readFileSync(path.join(root, output, 'sitemap.xml'), 'utf8');
   const entries = parseSitemap(currentSitemap);
-  assert.equal(entries.size, 4560, `${output}sitemap URL count changed`);
-  assert.deepEqual([...entries.keys()].sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
+  assert.equal(entries.size, 4725, `${output}sitemap URL count changed`);
+  assert.deepEqual([...entries.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
   const changed = [...entries].filter(([route, date]) => expectedChanges.has(route) && baseline.get(route) !== date);
   assert.equal(changed.length, 205, `${output}sitemap changed ${changed.length} selected lastmod values instead of 205`);
   assert.deepEqual(new Set(changed.map(([route]) => route)), expectedChanges,

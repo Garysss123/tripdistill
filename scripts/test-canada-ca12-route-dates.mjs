@@ -147,13 +147,13 @@ const sourceDates = readDates(sourceSitemapResult.stdout);
 const integrationSitemapResult = spawnSync('git', ['show', '6c265971eabf44995f24a771784e8567c205834f:sitemap.xml'], { cwd: root, encoding: 'utf8' });
 assert.equal(integrationSitemapResult.status, 0, `Could not read the pre-CA13 integration sitemap: ${integrationSitemapResult.stderr}`);
 const integrationDates = readDates(integrationSitemapResult.stdout);
-assert.deepEqual([...sourceDates.keys()].sort(), [...previousDates.keys()].sort(), 'The CA12 source terminal must retain the exact CA11 sitemap URL set.');
-assert.deepEqual([...dates.keys()].sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
+assert.deepEqual([...sourceDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The CA12 source terminal must retain the exact CA11 sitemap URL set.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
 const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA12 source terminal may change only its four article routes across five editions.');
 const expectedLaterDateChanges = locales.flatMap((locale) => checkpointContinuationRoutes.map((route) => locale + route)).sort();
-const actualLaterDateChanges = [...dates].filter(([route, date]) => integrationDates.get(route) !== date).map(([route]) => route).sort();
+const actualLaterDateChanges = [...dates].filter(([route, date]) => !route.includes('/spain/') && integrationDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualLaterDateChanges, expectedLaterDateChanges, 'Since the 686-page checkpoint, only exact CA13–CA18, Australia, CH14–CH16, Vietnam, U.S. follow-ons, Thailand overview and TripDistill route dates may have changed.');
 for (const route of locales.flatMap((locale) => routes.map((target) => locale + target))) assert.equal(dates.get(route), '2026-10-12', `${route}: lastmod must be current.`);
 for (const route of expectedLaterDateChanges) {

@@ -7,6 +7,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from '../data/switzerland-ch13-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml, localizeSearchIndex, loadCatalog } from './i18n-lib.mjs';
+import { execFilePython3 } from './python-runner.mjs';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -69,8 +70,8 @@ for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has
 const before = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const after = sitemap(read('sitemap.xml'));
 assert.equal(before.size, 4560);
-assert.equal(after.size, before.size);
-assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no sitemap URL changed');
+assert.equal(after.size, before.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/')).sort(), [...before.keys()].sort(), 'no sitemap URL changed');
 const editions = new Set(prefixes.flatMap((prefix) => [...routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const dateChanges = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
 assert.equal(dateChanges.length, 80, 'cumulative CH13 pages, three downstream CH14 hubs, four CH15 guides and five CH16 guides receive dates; the country date already matched the CH13 base');
@@ -157,7 +158,7 @@ assert.ok(churGuide.includes(diagram.diagramNote));
 assert.ok(churGuide.includes(churPhoto.src));
 
 const svgCheck = "import sys,xml.etree.ElementTree as E; r=E.parse(sys.argv[1]).getroot(); n=list(r.iter()); t=lambda x:x.tag.rsplit('}',1)[-1]; allowed={'svg','title','desc','rect','line','circle','text'}; assert r.tag.endswith('svg') and r.attrib.get('width')=='1600' and r.attrib.get('height')=='1066'; assert all(t(x) in allowed for x in n); assert all(float(x.attrib['x'])>=0 and float(x.attrib['y'])>=0 and float(x.attrib['x'])+float(x.attrib['width'])<=1600 and float(x.attrib['y'])+float(x.attrib['height'])<=1066 for x in n if t(x)=='rect'); assert all(0<=float(x.attrib[k])<=lim for x in n if t(x)=='line' for k,lim in [('x1',1600),('x2',1600),('y1',1066),('y2',1066)]); assert all(float(x.attrib['cx'])-float(x.attrib['r'])>=0 and float(x.attrib['cx'])+float(x.attrib['r'])<=1600 and float(x.attrib['cy'])-float(x.attrib['r'])>=0 and float(x.attrib['cy'])+float(x.attrib['r'])<=1066 for x in n if t(x)=='circle'); assert all(0<=float(x.attrib['x'])<=1600 and 0<=float(x.attrib['y'])<=1066 for x in n if t(x)=='text'); assert any(t(x)=='title' and x.text for x in n) and any(t(x)=='desc' and 'not geographic position' in x.text for x in n); exp={'en':['Red · Rhine Gorge rail / walk','Gold · Davos / Parsenn','Teal · Chur–Arosa rail','Fallback · Chur Old Town'],'zh-Hant':['紅色 · 萊茵峽谷鐵路／步行','金色 · 達沃斯／Parsenn','藍綠色 · 庫爾—阿羅薩鐵路','備案 · 庫爾舊城'],'ja':['赤・ライン峡谷の鉄道／徒歩','金・ダボス／パルゼン','青緑・クール—アローザ線','代替案・クール旧市街'],'ko':['빨강 · 라인 협곡 철도/도보','금색 · 다보스/파르젠','청록 · 쿠어–아로자 철도','대안 · 쿠어 구시가지'],'th':['สีแดง · รถไฟ/ทางเดินไรน์กอร์จ','สีทอง · ดาวอส/พาร์เซนน์','สีเขียวอมฟ้า · รถไฟคูร์–อาโรซา','แผนสำรอง · เมืองเก่าคูร์']}; assert all(sum(t(x)=='text' and x.attrib.get('data-language')==lang for x in n)==5 for lang in exp); assert all(any(label in (x.text or '') and x.attrib.get('data-language')==lang for x in n) for lang,labels in exp.items() for label in labels); assert all(any(t(x)=='line' and x.attrib.get('stroke')==color and x.attrib.get('y1')==y for x in n) for color,y in [('#d71920','390'),('#d7a94b','520'),('#416d75','650')])";
-execFileSync('python3', ['-c', svgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
+execFilePython3(['-c', svgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
 
 for (const [index, prefix] of prefixes.entries()) {
   if (!prefix) continue;

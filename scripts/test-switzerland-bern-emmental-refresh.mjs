@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import { execFileSync, spawnSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
+import { spawnPython3 } from './python-runner.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '1d6da4bf2fff506f290b2132b093f124d4252289';
@@ -77,8 +78,8 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'starting sitemap has 4,560 URLs');
-assert.equal(currentRecords.size, baseRecords.size, 'sitemap URL count stays fixed');
-assert.deepEqual([...currentRecords.keys()].sort(), [...baseRecords.keys()].sort(), 'no route was added or removed');
+assert.equal(currentRecords.size, baseRecords.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseRecords.keys()].sort(), 'no route was added or removed');
 const baselRoutes = [
   '/switzerland/basel-rhine/',
   '/switzerland/basel-rhine/old-town-rhine/',
@@ -105,7 +106,7 @@ const graubuendenRoutes = [
 ];
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14HubRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => url.includes('/switzerland/') && baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => !url.includes('/spain/') && url.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, 160, 'the cumulative Bern/Emmental, Basel and CH11–CH16 routes receive only their expected edition dates');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
@@ -265,6 +266,6 @@ visible = [value for lang,value in texts]
 assert all(any(marker in value for value in visible) for marker in ('Choose one gateway','選擇一個入口','入口を一つ選ぶ','거점 하나 선택','เลือกจุดเริ่มต้นหนึ่งแห่ง'))
 print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts), 'languages': sorted(languages)}))
 `;
-const xmlResult = spawnSync('python3', ['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
+const xmlResult = spawnPython3(['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
 assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
 console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11–CH16, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);

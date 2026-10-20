@@ -207,8 +207,8 @@ const baseSearch = JSON.parse(git(['show', base + ':data/search-index.json']));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
-assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
-const changedSearch = [...currentSearchByUrl.keys()].filter((url) => routes.includes(url) && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
+const changedSearch = [...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && routes.includes(url) && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
 assert.deepEqual(changedSearch, [...routes].sort(), 'Each selected Gold Coast search record must change from the requested base.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
@@ -224,7 +224,7 @@ for (const route of routes) {
 
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const expectedLastmod = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => expectedLastmod.includes(route) && baseSitemap.get(route) !== currentSitemap.get(route)).sort();

@@ -13,7 +13,7 @@ import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postInte
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
-const releaseContext = branch === 'codex/release-tripdistill-20261016';
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
 const requestedParent = '6aa9321ff72077cf5143516f466add5ca2a830cc';
 const taskStart = '7dc3979c38677d3b0994583016a07c3a7a52bcef';
 const routes = [
@@ -156,13 +156,13 @@ const baseSearch = JSON.parse(git(['show', `${taskStart}:data/search-index.json`
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record]));
 const currentSearchByUrl = new Map(currentSearch.map((record) => [record.url, record]));
-assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
-const changedSearch = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
+const changedSearch = [...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
 assert.deepEqual(changedSearch, [...routes, ...laterAustraliaBodyRoutes].sort(), 'Only the selected Brisbane/Gold Coast and exact later AU gap search records may change from the source task base.');
 
 const baseSitemap = sitemapEntries(git(['show', `${taskStart}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const expectedDatePaths = [...routes, ...laterAustraliaBodyRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDatePaths = expectedDatePaths.filter((route) => baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedDatePaths, expectedDatePaths, 'Only the selected Brisbane/Gold Coast and exact later AU route/language sitemap dates may change from the source task base.');

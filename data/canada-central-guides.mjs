@@ -182,7 +182,7 @@ export const canadaCentralClusters = [
           alt: 'Not-to-scale planning diagram separating Toronto rail, Niagara Falls station, the Falls visitor district and optional gorge or town branches; arrows do not identify actual routes or travel times.',
           source: 'https://tripdistill.com/assets/images/tripdistill-canada-niagara-falls-decision.svg',
           label: 'Niagara Falls trip-planning schematic (original SVG)', creator: 'TripDistill', assetType: 'original-planning-diagram', license: null,
-          rightsStatus: 'Project original; no separate reuse license declared', rightsStatusUrl: 'https://tripdistill.com/terms-of-use/', inventoryStatus: 'used', localSha1: '742c1b1ba89c38a9de02872e76681a57640dc8d2'
+          rightsStatus: 'Project original; no separate reuse license declared', rightsStatusUrl: 'https://tripdistill.com/terms-of-use/', inventoryStatus: 'used', localSha1: '514c7f2e78635233419133f7f485b79e40a5502a'
         },
         stages: [
           ['Check the Toronto connection', 'Compare GO’s current Niagara Falls schedule with your intended arrival and return. The operator says Niagara Falls service runs year-round, but direct trains, departure frequency and planned track work are date-specific. Keep the station-to-Falls transfer as a separate leg and identify a backup before leaving Toronto.'],

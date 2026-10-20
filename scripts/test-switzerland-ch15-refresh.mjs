@@ -110,8 +110,8 @@ for (const [slug, guide] of Object.entries(switzerlandCh15GuideRefresh)) {
 const baseSitemap = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const currentSitemap = sitemap(read('sitemap.xml'));
 assert.equal(baseSitemap.size, 4560, 'the base has 4,560 localized URLs');
-assert.equal(currentSitemap.size, baseSitemap.size, 'CH15 creates or removes no URL');
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs are unchanged');
+assert.equal(currentSitemap.size, baseSitemap.size + 165, 'the exact Spain release adds 165 localized paths');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs are unchanged');
 const targetLocalized = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
 const targetAndLaterLocalized = new Set(locales.flatMap(({ prefix }) => [...targetRoutes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 assert.equal(targetLocalized.size, 20, 'the CH15 four-route batch covers twenty edition paths');
@@ -124,7 +124,8 @@ for (const [route, date] of changedDates) {
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
-assert.equal(currentSearch.length, baseSearch.length, 'the English search record count is unchanged');
+assert.equal(currentSearch.length, baseSearch.length + 33, 'the English search index contains the exact 33 added Spain routes');
+assert.deepEqual(currentSearch.map((item) => item.url).filter((url) => !url.startsWith('/spain/')).sort(), baseSearch.map((item) => item.url).sort(), 'all pre-existing English search URLs remain unchanged');
 for (const record of currentSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url) && !switzerlandCh16Routes.includes(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target search record changed: ${record.url}`);
 }

@@ -5,10 +5,11 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { followingVietnamDaLatRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, followingVietnamCoastalGapsRoutes, postFloridaChicagoRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes } from './integration-sprint-scope.mjs';
+import { spainPhotoAssets } from './spain-release-scope.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-margaret-remaining-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(branch);
 const base = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
@@ -167,10 +168,10 @@ for (const [index, route] of routes.entries()) {
 const baseSearch = searchMap(git(['show', `${comparisonBase}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.');
-assert.equal(currentSearch.size, 955, 'Current English search index keeps all 955 records.');
-assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
+assert.equal(currentSearch.size, 988, 'Current English search index keeps all 988 records.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
 const expectedSearchRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'] : [])].sort();
-assert.deepEqual([...currentSearch.keys()].filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), expectedSearchRoutes, 'Only the selected Margaret, Chicago, Arizona, Los Angeles, Boston, Broome, Mui Ne, Phong Nha, Phu Quoc, southern Vietnam, separately scoped Juneau and Thailand overview search records changed from the exact selected checkpoint.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).filter((url) => JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), expectedSearchRoutes, 'Only the selected Margaret, Chicago, Arizona, Los Angeles, Boston, Broome, Mui Ne, Phong Nha, Phu Quoc, southern Vietnam, separately scoped Juneau and Thailand overview search records changed from the exact selected checkpoint.');
 if (integrationBranch) {
   const terminalBodies = new Map(routes.map((route) => [route, git([`show`, `${sourceTerminal}:${route.slice(1)}index.html`])]));
   for (const route of routes) assert.equal(normalizeSharedAssetVersions(fs.readFileSync(fileFor(route), 'utf8')), normalizeSharedAssetVersions(terminalBodies.get(route)), `${route}: integrated body matches the exact Margaret source terminal apart from shared asset cache versions.`);
@@ -179,11 +180,11 @@ if (integrationBranch) {
 const baseSitemap = urlRecords(git(['show', `${comparisonBase}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
-assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const datedRoutes = [...routes, ...postFloridaChicagoRoutes, ...postNewEnglandArizonaRoutes, ...followingVietnamDaLatRoutes, ...(integrationBranch ? [...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauRoutes, '/thailand/', '/australia/red-centre/', '/france/basque-coast-pyrenees/', '/france/basque-coast-pyrenees/bayonne-biarritz/'] : [])];
 const changedDates = datedRoutes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...currentSitemap.keys()].filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the selected Margaret, Chicago, Arizona, Da Lat, Los Angeles, Boston, Broome, Mui Ne, Southern Vietnam and separately dated Thailand overview routes × five locale lastmod values changed.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).filter((url) => currentSitemap.get(url) !== baseSitemap.get(url)).sort(), changedDates, 'Only the selected Margaret, Chicago, Arizona, Da Lat, Los Angeles, Boston, Broome, Mui Ne, Southern Vietnam and separately dated Thailand overview routes × five locale lastmod values changed.');
 for (const url of changedDates) {
   const route = new URL(`https://tripdistill.com${url}`).pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
   assert.equal(currentSitemap.get(url), route === '/thailand/' ? '2026-10-14' : ['/australia/red-centre/', '/france/basque-coast-pyrenees/', '/france/basque-coast-pyrenees/bayonne-biarritz/'].includes(route) ? '2026-10-15' : isoDate, `${url}: lastmod date.`);
@@ -224,6 +225,7 @@ for (const locale of locales) {
 for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg', 'assets/images/australia-kings-park-entry-choice.svg']) {
   assert.equal(fs.readFileSync(path.join(root, asset), 'utf8'), git(['show', `${correction}:${asset}`]), `${asset}: prior parallel arrow correction is byte-for-byte intact.`);
 }
-assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No new image or SVG asset was created.');
+const untrackedImagePaths = git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean);
+assert.deepEqual(untrackedImagePaths.filter((assetPath) => !spainPhotoAssets.has(assetPath)), [], 'Only the exact licensed Spain photo set may be untracked alongside the unchanged Margaret remaining batch.');
 
 console.log(`Australia Margaret remaining regression passed (${integrationBranch ? 'integration' : 'source'} mode): exact four-route scope, untouched hub and wine/food page, Japan/Otaru content floor, reviewed five-language pages and search, 4,560 unchanged sitemap URLs, and preserved arrow SVG correction. This is a source/markup and data check, not a rendered UI or pixel review.`);

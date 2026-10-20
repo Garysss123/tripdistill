@@ -183,7 +183,7 @@ assert.equal(checkedInNiagaraDiagram.rightsStatus, 'Project original; no separat
 assert.equal(checkedInNiagaraDiagram.rightsStatusUrl, 'https://tripdistill.com/terms-of-use/');
 assert.equal(checkedInNiagaraDiagram.commercialReuseEligibility, 'unknown');
 assert.equal(checkedInNiagaraDiagram.verificationStatus, 'site_credit_or_metadata_only');
-assert.equal(checkedInNiagaraDiagram.localSha1, '742c1b1ba89c38a9de02872e76681a57640dc8d2');
+assert.equal(checkedInNiagaraDiagram.localSha1, '514c7f2e78635233419133f7f485b79e40a5502a');
 const checkedInSaguenayPhotos = [
   { assetPath: '/assets/images/canada-saguenay-tadoussac-tadoussac-marine.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tadoussac.jpg', creator: 'Bodoklecksel', license: 'CC BY-SA 3.0' },
   { assetPath: '/assets/images/canada-saguenay-tadoussac-fjord-hiking.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:SaguenayFjord.JPG', creator: 'Ajor933', license: 'CC BY-SA 3.0' },
@@ -572,9 +572,9 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the four new Australia project originals remain metadata-only and make no independent rights claim');
-  assert.equal(report.counts.sourcePageChecked, 292, 'the merged inventory retains source-page checks for the three CH14 photos alongside the previous reviewed assets');
-  assert.equal(report.counts.assetsVisuallyReviewed, 217, 'the merged inventory includes four individually reviewed Australia planning schematics');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the eight Spain images now have source-page checks; the four new Australia project originals remain metadata-only');
+  assert.equal(report.counts.sourcePageChecked, 300, 'the merged inventory retains prior checks and adds eight Spain source-page checks');
+  assert.equal(report.counts.assetsVisuallyReviewed, 225, 'the merged inventory includes eight individually reviewed Spain images and four Australia planning schematics');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
   const summary = fs.readFileSync(artifactPaths[1], 'utf8');
   assert.ok(summary.includes('Open source-to-image reviews: none.'), 'the Markdown inventory must agree that no source-to-image review remains open');
@@ -607,6 +607,22 @@ try {
     assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-08', 'Victoria pixels were reviewed against the exact Commons subject');
   }
   const photoRecords = report.entries.flatMap((group) => group.sourceRecords);
+  const spainImages = JSON.parse(fs.readFileSync(path.join(root, 'data/spain/images.json'), 'utf8'));
+  for (const image of Object.values(spainImages)) {
+    const record = photoRecords.find((item) => item.assetPath === image.src);
+    assert.ok(record, 'Spain image inventory must retain ' + image.src);
+    assert.equal(record.sourceUrl, image.source);
+    assert.equal(record.sourceTitle, image.commonsTitle);
+    assert.equal(record.creator, image.creator);
+    assert.equal(record.license, image.license);
+    assert.equal(record.verificationStatus, 'source_page_checked');
+    assert.equal(record.verificationDate, '2026-10-20');
+    assert.equal(record.visualReviewStatus, 'visually_reviewed_2026-10-20');
+    assert.ok(record.useCount > 0, image.src + ' must be used on a published Spain page');
+    assert.ok(record.routes.some((route) => route.startsWith('/spain/')), image.src + ' must resolve to a Spain route');
+    assert.ok(record.rawVisibleCredits.some((credit) => credit.includes(image.creator) && credit.includes(image.license)), image.src + ' must retain its visible creator and license');
+    assert.equal(report.unmatchedAssets.some((item) => item.src === image.src), false, image.src + ' must not be an attribution gap');
+  }
   for (const [routeKey, diagram] of Object.entries(australiaAdelaidePerthDiagrams)) {
     const record = photoRecords.find((item) => item.assetPath === diagram.src);
     assert.ok(record, `inventory must include the original Australia planning diagram ${diagram.src}`);
@@ -1114,7 +1130,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 825, 'the four Adelaide/Perth schematics are included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 833, 'the eight Spain photos and four Adelaide/Perth schematics are included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

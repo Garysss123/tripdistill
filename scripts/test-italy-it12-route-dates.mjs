@@ -71,8 +71,8 @@ function escapeHtml(value) {
 
 for (const output of sourceOutputs) {
   const entries = parseSitemap(fs.readFileSync(path.join(root, output, 'sitemap.xml'), 'utf8'));
-  assert.equal(entries.size, 4560, `${output}sitemap URL count changed`);
-  assert.deepEqual([...entries.keys()].sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
+  assert.equal(entries.size, 4725, `${output}sitemap URL count changed`);
+  assert.deepEqual([...entries.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseline.keys()].sort(), `${output}sitemap URL set changed`);
   const changed = [...entries].filter(([route, date]) => expectedChanges.has(route) && baseline.get(route) !== date);
   assert.equal(changed.length, 185, `${output}sitemap changed ${changed.length} selected lastmod values instead of 185`);
   assert.deepEqual(new Set(changed.map(([route]) => route)), expectedChanges,

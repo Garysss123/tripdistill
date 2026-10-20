@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-10-12T22:35:03.158Z",
+  "generatedAt": "2026-10-20T08:52:10.724Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 828,
-    "completeSourceCreatorLicenseRecords": 756,
+    "assetFileCount": 836,
+    "completeSourceCreatorLicenseRecords": 764,
     "completeProjectOriginalRightsRecords": 39,
     "licenseClaimsNotIndependentlyVerified": 473,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 825,
-    "deduplicatedImageCount": 828,
+    "expectedBuildImageCount": 833,
+    "deduplicatedImageCount": 836,
     "exactDuplicateFileCount": 0,
-    "englishCountryPagesScanned": 907,
-    "imageReferencesScanned": 3526,
-    "assetsUsedByScannedEnglishPages": 785,
+    "englishCountryPagesScanned": 940,
+    "imageReferencesScanned": 3567,
+    "assetsUsedByScannedEnglishPages": 793,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 615,
+    "assetsWithStructuredSourceRecords": 623,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
-    "assetsVisuallyReviewed": 217,
+    "assetsVisuallyReviewed": 225,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
-    "sourcePageChecked": 292,
+    "sourcePageChecked": 300,
     "metadataOrCreditOnly": 512,
     "usedAssetsWithoutIndependentSourcePageCheck": 499,
     "missingSourceCreditMatch": 24,
@@ -40,7 +40,7 @@
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 821 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 825 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 829 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 833 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -2928,7 +2928,6 @@
             "/australia/melbourne-port-phillip/st-kilda-foreshore/"
           ],
           "altTexts": [
-            "Melbourne central business district seen from above",
             "Melbourne central business district viewed from above"
           ],
           "rawVisibleCredits": [
@@ -3795,7 +3794,6 @@
             "/australia/sydney-harbour-coast/opera-house-botanic-garden/"
           ],
           "altTexts": [
-            "Circular Quay and The Rocks beside Sydney Harbour",
             "Sydney Harbour Bridge viewed across Sydney Cove from Circular Quay"
           ],
           "rawVisibleCredits": [
@@ -4453,6 +4451,7 @@
             "/australia/whitsundays-great-barrier-reef/whitehaven-hill-inlet/"
           ],
           "altTexts": [
+            "Palm-fringed Horseshoe Bay beach and a red boat on Magnetic Island",
             "Rocky coast and blue water on Magnetic Island"
           ],
           "rawVisibleCredits": [
@@ -23105,6 +23104,406 @@
       ]
     },
     {
+      "sha256": "713823820f537a4693b4d5bca827fdb5211e4bea6d8595d73fd914765a4f3233",
+      "assetPaths": [
+        "/assets/images/spain-andalusia.webp"
+      ],
+      "byteLength": 463536,
+      "sourceRecords": [
+        {
+          "sha256": "713823820f537a4693b4d5bca827fdb5211e4bea6d8595d73fd914765a4f3233",
+          "assetPath": "/assets/images/spain-andalusia.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcazar_of_Seville.jpg",
+          "sourceTitle": "File:Alcazar of Seville.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Alcazar of Seville.jpg",
+          "creator": "Mervat",
+          "license": "CC BY-SA 4.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Mervat, a 7 March 2018 photograph, 4,032 x 3,024 source dimensions, and CC BY-SA 4.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the Alcazar of Seville arches and tiled courtyard; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/andalusia/",
+            "/spain/andalusia/cordoba-mosque-river-loop/",
+            "/spain/andalusia/granada-alhambra-albaicin-approach/",
+            "/spain/andalusia/seville-royal-core-santa-cruz/"
+          ],
+          "altTexts": [
+            "Courtyard and arches inside the Alcázar of Seville"
+          ],
+          "rawVisibleCredits": [
+            "Alcazar of Seville.jpg — Mervat, CC BY-SA 4.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 4.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "7be45f351fc3a8868e1046ec054e631a5a503a5e292912372ee2ca3c21c39f11",
+      "assetPaths": [
+        "/assets/images/spain-balearic-islands.webp"
+      ],
+      "byteLength": 558144,
+      "sourceRecords": [
+        {
+          "sha256": "7be45f351fc3a8868e1046ec054e631a5a503a5e292912372ee2ca3c21c39f11",
+          "assetPath": "/assets/images/spain-balearic-islands.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serra_de_Tramuntana_Mallorca_msu_2018-4041.jpg",
+          "sourceTitle": "File:Serra de Tramuntana Mallorca msu 2018-4041.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Serra de Tramuntana Mallorca msu 2018-4041.jpg",
+          "creator": "Matthias Süßen",
+          "license": "CC BY-SA 4.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Matthias Sussen, a 26 March 2018 photograph, 5,593 x 3,729 source dimensions, and CC BY-SA 4.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the Nus de sa Corbata road in the Serra de Tramuntana; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/balearic-islands/",
+            "/spain/balearic-islands/ibiza-formentera-port-to-beach/",
+            "/spain/balearic-islands/mallorca-palma-soller-tramuntana/",
+            "/spain/balearic-islands/menorca-mao-ciutadella-coves/"
+          ],
+          "altTexts": [
+            "Mountain road and limestone landscape in Mallorca’s Serra de Tramuntana"
+          ],
+          "rawVisibleCredits": [
+            "Serra de Tramuntana Mallorca msu 2018-4041.jpg — Matthias Süßen, CC BY-SA 4.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 4.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "7468aea09cee67658a7c9773e796c2e24a85600a0c0b4007bf5826b3b92c71cd",
+      "assetPaths": [
+        "/assets/images/spain-basque-country.webp"
+      ],
+      "byteLength": 163010,
+      "sourceRecords": [
+        {
+          "sha256": "7468aea09cee67658a7c9773e796c2e24a85600a0c0b4007bf5826b3b92c71cd",
+          "assetPath": "/assets/images/spain-basque-country.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guggenheim_Museum_Bilbao_2016-07_--3.jpg",
+          "sourceTitle": "File:Guggenheim Museum Bilbao 2016-07 --3.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Guggenheim Museum Bilbao 2016-07 --3.jpg",
+          "creator": "Zinneke",
+          "license": "CC BY-SA 3.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Zinneke, a 28 July 2016 photograph, 5,184 x 3,456 source dimensions, and CC BY-SA 3.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the Maman sculpture outside the Guggenheim Museum Bilbao; the resized, center-cropped derivative matches the page subject. This records the photographic page declaration and image match, not separate rights clearance for depicted works or independent uploader-authority/chain-of-title clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/basque-country/",
+            "/spain/basque-country/bilbao-ria-guggenheim/",
+            "/spain/basque-country/donostia-bay-old-town/",
+            "/spain/basque-country/urdaibai-bermeo-rail-coast/"
+          ],
+          "altTexts": [
+            "Maman sculpture outside the Guggenheim Museum Bilbao"
+          ],
+          "rawVisibleCredits": [
+            "Guggenheim Museum Bilbao 2016-07 --3.jpg — Zinneke, CC BY-SA 3.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 3.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "04f88b658d2e8fad101d4f07f6bc57a9f10f2d245f9ac3ef2d24e4c5c3d5db8a",
+      "assetPaths": [
+        "/assets/images/spain-canary-islands.webp"
+      ],
+      "byteLength": 315964,
+      "sourceRecords": [
+        {
+          "sha256": "04f88b658d2e8fad101d4f07f6bc57a9f10f2d245f9ac3ef2d24e4c5c3d5db8a",
+          "assetPath": "/assets/images/spain-canary-islands.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_area_Roques_de_Garc%C3%ADa_and_Mount_Teide_volcano_on_Tenerife,_Spain_(48225409071).jpg",
+          "sourceTitle": "File:Aerial view of the area Roques de García and Mount Teide volcano on Tenerife, Spain (48225409071).jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Aerial view of the area Roques de García and Mount Teide volcano on Tenerife, Spain (48225409071).jpg",
+          "creator": "dronepicr",
+          "license": "CC BY 2.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies dronepicr, a 22 April 2019 photograph, 4,160 x 2,768 source dimensions, and CC BY 2.0; the page records Flickr review confirmation. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the volcanic slopes and summit of Teide; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/canary-islands/",
+            "/spain/canary-islands/gran-canaria-las-palmas-south/",
+            "/spain/canary-islands/lanzarote-fuerteventura-island-choice/",
+            "/spain/canary-islands/tenerife-la-laguna-teide/"
+          ],
+          "altTexts": [
+            "Aerial view across the Roques de García and Mount Teide on Tenerife"
+          ],
+          "rawVisibleCredits": [
+            "Aerial view of the area Roques de García and Mount Teide volcano on Tenerife, Spain (48225409071).jpg — dronepicr, CC BY 2.0. Resized and cropped to a WebP derivative; changes made."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "5b2283ede8551719c35ca03be82a854a706cca3efdd575c75a337a8b5c26011c",
+      "assetPaths": [
+        "/assets/images/spain-catalonia-barcelona.webp"
+      ],
+      "byteLength": 249888,
+      "sourceRecords": [
+        {
+          "sha256": "5b2283ede8551719c35ca03be82a854a706cca3efdd575c75a337a8b5c26011c",
+          "assetPath": "/assets/images/spain-catalonia-barcelona.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sagrada_familia_BCN_01.jpg",
+          "sourceTitle": "File:Sagrada familia BCN 01.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Sagrada familia BCN 01.jpg",
+          "creator": "Felvalen",
+          "license": "CC BY-SA 4.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Felvalen, an 8 June 2019 photograph, 4,288 x 2,848 source dimensions, and CC BY-SA 4.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the Sagrada Familia above Barcelona; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/catalonia-barcelona/",
+            "/spain/catalonia-barcelona/barcelona-ciutat-vella-waterfront/",
+            "/spain/catalonia-barcelona/eixample-modernisme-sagrada-familia/",
+            "/spain/catalonia-barcelona/girona-costa-brava-two-gateways/"
+          ],
+          "altTexts": [
+            "Sagrada Família viewed from a Barcelona hillside"
+          ],
+          "rawVisibleCredits": [
+            "Sagrada familia BCN 01.jpg — Felvalen, CC BY-SA 4.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 4.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "21c1ebcc8d0d78862ec3d6a65bbae4b37fbb30536f90a649a2f71ef1959058ed",
+      "assetPaths": [
+        "/assets/images/spain-galicia-asturias.webp"
+      ],
+      "byteLength": 496590,
+      "sourceRecords": [
+        {
+          "sha256": "21c1ebcc8d0d78862ec3d6a65bbae4b37fbb30536f90a649a2f71ef1959058ed",
+          "assetPath": "/assets/images/spain-galicia-asturias.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santiago_de_Compostela_Cathedral.jpg",
+          "sourceTitle": "File:Santiago de Compostela Cathedral.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Santiago de Compostela Cathedral.jpg",
+          "creator": "Sudzie",
+          "license": "CC BY-SA 4.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Sudzie, a 28 June 2012 photograph, 1,792 x 1,232 source dimensions, and CC BY-SA 4.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows Santiago de Compostela Cathedral framed by trees from Alameda Park; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/galicia-asturias/",
+            "/spain/galicia-asturias/oviedo-picos-covadonga/",
+            "/spain/galicia-asturias/rias-baixas-pontevedra-vigo-coast/",
+            "/spain/galicia-asturias/santiago-old-town-station-arrival/"
+          ],
+          "altTexts": [
+            "Santiago de Compostela Cathedral framed by trees in Alameda Park"
+          ],
+          "rawVisibleCredits": [
+            "Santiago de Compostela Cathedral.jpg — Sudzie, CC BY-SA 4.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 4.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "d3f1f9def47280f477b23cfb98c2ece5409dcb7ab3f0d0a228c8aa7fa1aec05d",
+      "assetPaths": [
+        "/assets/images/spain-madrid.webp"
+      ],
+      "byteLength": 322606,
+      "sourceRecords": [
+        {
+          "sha256": "d3f1f9def47280f477b23cfb98c2ece5409dcb7ab3f0d0a228c8aa7fa1aec05d",
+          "assetPath": "/assets/images/spain-madrid.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Royal_Palace_of_Madrid_viewed_from_a_distance.jpg",
+          "sourceTitle": "File:Royal Palace of Madrid viewed from a distance.jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "Royal Palace of Madrid viewed from a distance.jpg",
+          "creator": "Sheila1988",
+          "license": "CC BY-SA 4.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, note changes, and keep adapted material under the same license version.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies Sheila1988, a 4 June 2023 photograph, 5,184 x 3,888 source dimensions, and CC BY-SA 4.0. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the Royal Palace against Madrid rooftops; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 6,
+          "routes": [
+            "/spain/",
+            "/spain/madrid/",
+            "/spain/madrid/prado-retiro-art-to-park/",
+            "/spain/madrid/royal-core-sol-to-palace/",
+            "/spain/madrid/toledo-rail-station-to-old-town/"
+          ],
+          "altTexts": [
+            "The Royal Palace of Madrid seen across the western city skyline"
+          ],
+          "rawVisibleCredits": [
+            "Royal Palace of Madrid viewed from a distance.jpg — Sheila1988, CC BY-SA 4.0. Resized and cropped to a WebP derivative; changes made. The derivative remains under CC BY-SA 4.0."
+          ]
+        }
+      ]
+    },
+    {
+      "sha256": "93099ee0bb34de59857008971bad31e9f4d6a05929804a18b235618c9349add5",
+      "assetPaths": [
+        "/assets/images/spain-valencia.webp"
+      ],
+      "byteLength": 174628,
+      "sourceRecords": [
+        {
+          "sha256": "93099ee0bb34de59857008971bad31e9f4d6a05929804a18b235618c9349add5",
+          "assetPath": "/assets/images/spain-valencia.webp",
+          "assetType": "photographic-raster",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:City_of_Arts_and_Sciences,_Valencia_(52395812264).jpg",
+          "sourceTitle": "File:City of Arts and Sciences, Valencia (52395812264).jpg",
+          "sourcePhotoDate": null,
+          "creditLabel": "City of Arts and Sciences, Valencia (52395812264).jpg",
+          "creator": "ChiralJon",
+          "license": "CC BY 2.0",
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": null,
+          "rightsStatusUrl": null,
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+          "commercialReuseEligibility": "permitted_under_source_page_checked_license_terms",
+          "attributionTerms": "Credit the creator and title where supplied, link to the source and license, and note changes.",
+          "editHistory": "2200px Commons thumbnail, center-cropped and resized to 1600x1066 WebP; visual crop subject to page render review.",
+          "localSha1": null,
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "visually_reviewed_2026-10-20",
+          "verificationStatus": "source_page_checked",
+          "verificationDate": "2026-10-20",
+          "verificationDetail": "The exact Wikimedia Commons file page identifies ChiralJon, a 30 September 2022 photograph, 3,648 x 2,736 source dimensions, and CC BY 2.0; the page also records Flickr review confirmation. The local 1,600 x 1,066 WebP was inspected on 2026-10-20 and shows the City of Arts and Sciences across its reflecting pool; the resized, center-cropped derivative matches the page subject. This records the page declaration and image match, not independent uploader-authority or rights-chain clearance.",
+          "useCount": 5,
+          "routes": [
+            "/spain/",
+            "/spain/valencia/",
+            "/spain/valencia/albufera-lagoon-el-palmar/",
+            "/spain/valencia/turia-city-arts-coast/",
+            "/spain/valencia/valencia-old-town-central-market/"
+          ],
+          "altTexts": [
+            "Water basin and buildings at Valencia’s City of Arts and Sciences"
+          ],
+          "rawVisibleCredits": [
+            "City of Arts and Sciences, Valencia (52395812264).jpg — ChiralJon, CC BY 2.0. Resized and cropped to a WebP derivative; changes made."
+          ]
+        }
+      ]
+    },
+    {
       "sha256": "2f83a53e2cd7007d96f507b5d5622d57ebfd5e8177935420259dbd1774e06402",
       "assetPaths": [
         "/assets/images/switzerland-basel-rhine-art-museums.webp"
@@ -24738,7 +25137,8 @@
             "/switzerland/lugano-southern-ticino/san-salvatore-morcote/"
           ],
           "altTexts": [
-            "Lake Lugano and mountains from Monte San Salvatore area"
+            "Lake Lugano and mountains from Monte San Salvatore area",
+            "Flower-laden bicycle beside Lake Lugano with Monte San Salvatore behind"
           ],
           "rawVisibleCredits": [
             "Monte San Salvatore in Lugano.jpg — Jean Schmitt, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -25025,7 +25425,8 @@
             "/switzerland/schaffhausen-rhine-falls/stein-am-rhein/"
           ],
           "altTexts": [
-            "Schaffhausen old town and Munot fortress"
+            "Schaffhausen old town and Munot fortress",
+            "Pedestrian Vordergasse in Schaffhausen with ornate old-town facades"
           ],
           "rawVisibleCredits": [
             "Schaffhausen Vordergasse 2008 2.jpg — Photo: Andreas Praefcke, CC BY 3.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -28546,14 +28947,14 @@
       ]
     },
     {
-      "sha256": "184e4814ec08a2f3c6f303bfcaf2e61dcd0b1072f76ee78a189dab665c88b957",
+      "sha256": "448d6711a5930a8cd62981c3c51109b4feadcf46b26a91e7386364e98f42cb73",
       "assetPaths": [
         "/assets/images/tripdistill-canada-niagara-falls-decision.svg"
       ],
-      "byteLength": 9585,
+      "byteLength": 9555,
       "sourceRecords": [
         {
-          "sha256": "184e4814ec08a2f3c6f303bfcaf2e61dcd0b1072f76ee78a189dab665c88b957",
+          "sha256": "448d6711a5930a8cd62981c3c51109b4feadcf46b26a91e7386364e98f42cb73",
           "assetPath": "/assets/images/tripdistill-canada-niagara-falls-decision.svg",
           "assetType": "original-planning-diagram",
           "sourceUrl": "https://tripdistill.com/assets/images/tripdistill-canada-niagara-falls-decision.svg",
@@ -28571,7 +28972,7 @@
           "commercialReuseEligibility": "unknown",
           "attributionTerms": "unknown",
           "editHistory": "No per-image edit note found in the source record or matched English photo credit.",
-          "localSha1": "742c1b1ba89c38a9de02872e76681a57640dc8d2",
+          "localSha1": "514c7f2e78635233419133f7f485b79e40a5502a",
           "metadataOrigin": "structured_data_record",
           "creditMatchNote": null,
           "visualReviewStatus": "not_individually_visually_reviewed",
@@ -33960,7 +34361,7 @@
             "/usa/new-orleans/river-wetlands/"
           ],
           "altTexts": [
-            "French Quarter & Live Music"
+            "Jackson Square, the equestrian statue of Andrew Jackson and St. Louis Cathedral"
           ],
           "rawVisibleCredits": [
             "French Quarter & Live Music — Mussi Katz, CC0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -34009,7 +34410,7 @@
             "/usa/new-orleans/river-wetlands/"
           ],
           "altTexts": [
-            "Garden District & Streetcars"
+            "Green St. Charles streetcar on the oak-lined tracks along St. Charles Avenue"
           ],
           "rawVisibleCredits": [
             "Garden District & Streetcars — Infrogmation of New Orleans, CC BY-SA 4.0. Resized, display-cropped and converted to WebP; no other material edits."
@@ -34058,7 +34459,7 @@
             "/usa/new-orleans/river-wetlands/"
           ],
           "altTexts": [
-            "Mississippi River & Wetlands"
+            "Cypress trees and still water at Barataria Preserve; archived landscape photograph"
           ],
           "rawVisibleCredits": [
             "Mississippi River & Wetlands — Jim Bahn, CC BY 2.0. Resized, display-cropped and converted to WebP; no other material edits."

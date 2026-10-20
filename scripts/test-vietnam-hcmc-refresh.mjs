@@ -130,13 +130,16 @@ for (const route of routes) {
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baselineSearch.length, 955);
-assert.equal(currentSearch.length, 955);
+assert.equal(currentSearch.length, baselineSearch.length + 33, 'Only the 33 English Spain routes may add search records.');
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baselineSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-assert.deepEqual([...currentSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'English search URL set changed.');
+const currentNonSpainSearchByUrl = new Map([...currentSearchByUrl].filter(([url]) => !url.startsWith('/spain/')));
+const newSpainSearchRoutes = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/spain/'));
+assert.equal(newSpainSearchRoutes.length, 33, 'All 33 English Spain routes should have search records.');
+assert.deepEqual([...currentNonSpainSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'A non-Spain English search URL changed.');
 const changedSearchRoutes = [...currentSearchByUrl]
-  .filter(([url, record]) => routes.includes(url) && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
+  .filter(([url, record]) => !url.includes('/spain/') && routes.includes(url) && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
 assert.deepEqual(changedSearchRoutes, [], 'The existing four HCMC search records should remain stable for this body-only refresh.');
@@ -145,10 +148,17 @@ const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((r
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4560);
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
+assert.equal(currentSitemap.size, baseSitemap.size + 165, 'Only 33 new Spain routes across five editions may add sitemap URLs.');
+const baseSitemapPaths = [...baseSitemap.keys()].sort();
+const currentNonSpainSitemapPaths = [...currentSitemap.keys()]
+  .filter((url) => !url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/spain/'))
+  .sort();
+const newSpainSitemapPaths = [...currentSitemap.keys()]
+  .filter((url) => url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/spain/'));
+assert.deepEqual(currentNonSpainSitemapPaths, baseSitemapPaths, 'A non-Spain sitemap URL changed.');
+assert.equal(newSpainSitemapPaths.length, 165, 'Every new Spain route must be present in each of the five editions.');
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => routes.some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => !url.includes('/spain/') && routes.some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four HCMC routes in five editions may receive new sitemap dates from the exact batch base.');
@@ -192,5 +202,5 @@ for (const edition of editions.slice(1)) {
   }
 }
 
-console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, four stable and five-language-covered search records, 20 localized date/canonical/hreflang paths, and the unchanged 4,560-URL sitemap.`);
+console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, four stable and five-language-covered search records, 20 localized date/canonical/hreflang paths, and 165 new Spain sitemap URLs with every non-Spain URL unchanged.`);
 console.log(JSON.stringify(bodyChecks, null, 2));

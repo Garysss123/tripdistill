@@ -72,8 +72,8 @@ const currentSitemap = read('sitemap.xml');
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(currentSitemap);
 assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(after.size, before.size, 'sitemap URL count is unchanged');
-assert.deepEqual([...after.keys()].sort(), [...before.keys()].sort(), 'no route was added or removed');
+assert.equal(after.size, before.size + 165, 'the exact Spain release adds 165 localized URLs');
+assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/')).sort(), [...before.keys()].sort(), 'no route was added or removed');
 
 const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);

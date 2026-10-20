@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import { execFileSync, spawnSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import { SaxesParser } from 'saxes';
 import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
@@ -156,15 +157,40 @@ assert.equal(switzerlandImageManifest['geneva-lake/old-town-lakefront'].license,
 assert.equal(sha1(fs.readFileSync(path.join(root, switzerlandImageManifest['geneva-lake/old-town-lakefront'].src.slice(1)))), switzerlandImageManifest['geneva-lake/old-town-lakefront'].localSha1, 'original diagram hash matches manifest');
 
 const svgFile = path.join(root, 'assets/images/switzerland-geneva-lake-route-choices.svg');
-const xmlInspector = `import json, sys, xml.etree.ElementTree as ET
-root = ET.parse(sys.argv[1]).getroot()
-items = []
-for node in root.iter():
-    items.append({'tag': node.tag.rsplit('}', 1)[-1], 'attrs': node.attrib, 'text': ''.join(node.itertext()).strip() if node.tag.rsplit('}', 1)[-1] == 'text' else ''})
-print(json.dumps({'root': {'tag': root.tag.rsplit('}', 1)[-1], 'attrs': root.attrib}, 'items': items}, ensure_ascii=False))`;
-const xml = spawnSync('python3', ['-c', xmlInspector, svgFile], { encoding: 'utf8' });
-assert.equal(xml.status, 0, `SVG must parse as real XML: ${xml.stderr}`);
-const diagram = JSON.parse(xml.stdout);
+function parseSvgDocument(source) {
+  const stack = [];
+  const errors = [];
+  let rootNode;
+  const parser = new SaxesParser({ xmlns: true });
+  parser.on('opentag', (tag) => {
+    const attrs = Object.fromEntries(Object.entries(tag.attributes).map(([name, value]) => [name, value.value]));
+    const node = { tag: tag.local, attrs, content: [] };
+    if (stack.length) stack.at(-1).content.push(node);
+    else rootNode = node;
+    stack.push(node);
+  });
+  parser.on('text', (value) => { if (stack.length) stack.at(-1).content.push(value); });
+  parser.on('cdata', (value) => { if (stack.length) stack.at(-1).content.push(value); });
+  parser.on('closetag', () => { stack.pop(); });
+  parser.on('error', (error) => { errors.push(error); });
+  parser.write(source).close();
+  if (errors.length) throw new Error(`Invalid SVG XML: ${errors[0].message}`);
+  assert.ok(rootNode, 'SVG XML must have a root element');
+  assert.equal(stack.length, 0, 'SVG XML must close every element');
+
+  const textContent = (node) => node.content.map((part) => typeof part === 'string' ? part : textContent(part)).join('');
+  const pythonStrip = (value) => value.replace(/^[\u0009-\u000d\u001c-\u0020\u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+|[\u0009-\u000d\u001c-\u0020\u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+$/gu, '');
+  const items = [];
+  const visit = (node) => {
+    items.push({ tag: node.tag, attrs: node.attrs, text: node.tag === 'text' ? pythonStrip(textContent(node)) : '' });
+    for (const part of node.content) if (typeof part !== 'string') visit(part);
+  };
+  visit(rootNode);
+  return { root: { tag: rootNode.tag, attrs: rootNode.attrs }, items };
+}
+const svgSource = fs.readFileSync(svgFile, 'utf8');
+assert.throws(() => parseSvgDocument('<svg><rect></svg>'), /Invalid SVG XML/u, 'mismatched XML tags must be rejected');
+const diagram = parseSvgDocument(svgSource);
 assert.equal(diagram.root.tag, 'svg');
 assert.equal(diagram.root.attrs.viewBox, '0 0 1600 1066');
 const permittedTags = new Set(['svg', 'title', 'desc', 'rect', 'line', 'circle', 'text']);

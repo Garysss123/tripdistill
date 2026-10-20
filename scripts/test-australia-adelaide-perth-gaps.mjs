@@ -6,6 +6,7 @@ import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
 import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
+import { spainPhotoAssets } from './spain-release-scope.mjs';
 import { SaxesParser } from 'saxes';
 import { australiaAdelaidePerthDiagrams } from '../data/australia-adelaide-perth-diagrams.mjs';
 import { postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationAlpsMargaretRoutes, postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
@@ -278,18 +279,18 @@ for (const [index, route] of routes.entries()) {
 
 const baseSearch = searchByUrl(git(['show', `${base}:data/search-index.json`]));
 const currentSearch = searchByUrl(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
-assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'Search index URL set is unchanged.');
-const changedSearch = [...currentSearch.keys()].filter((url) => url.startsWith('/australia/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'Search index URL set is unchanged.');
+const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 assert.deepEqual(changedSearch, [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].sort(), 'Only the four Adelaide/Perth and exact later Australia search records changed.');
 for (const route of routes) assert(currentSearch.get(route)?.summary?.trim(), `${route}: English search summary exists.`);
 
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap contains 4,560 URLs.');
-assert.equal(currentSitemap.size, 4560, 'Current sitemap contains 4,560 URLs.');
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const expectedSitemap = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-const changedSitemap = [...currentSitemap.keys()].filter((url) => expectedSitemap.includes(url) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
+const changedSitemap = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && expectedSitemap.includes(url) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
 assert.deepEqual(changedSitemap, expectedSitemap, 'Only the Adelaide/Perth and exact later Top End/Whitsundays route editions receive new sitemap dates.');
 for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), postIntegrationTripDistillRoutes.some((route) => url.endsWith(route)) ? '2026-10-15' : [...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes].some((route) => url.endsWith(route)) ? '2026-10-13' : isoDate, `${url}: sitemap lastmod.`);
 
@@ -324,6 +325,8 @@ const changedAssets = [...new Set([
 const diagramFiles = routes.map((route) => `assets/images/${australiaAdelaidePerthDiagrams[route.replace(/^\/australia\//u, '').replace(/\/$/u, '')]?.src.split('/').at(-1)}`);
 const allowedReleaseAssets = new Set([
   ...diagramFiles,
+  // The exact licensed Spain photo set belongs to the parallel release.
+  ...spainPhotoAssets,
   ...git(['diff', '--name-only', assetDiffBase, '7f797a9685649e945a5660ea1352ce239d638389', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean),
   ...git(['diff', '--name-only', '6d3008dac99de4d2bc9988e6d06a5f393021f81c', 'ddea19cb80796325ed0a76087c39ad25e17f2b07', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean)
 ]);

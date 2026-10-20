@@ -24,6 +24,7 @@ const publicDirectories = [
   'france',
   'united-kingdom',
   'italy',
+  'spain',
   'switzerland',
   'usa',
   'china',

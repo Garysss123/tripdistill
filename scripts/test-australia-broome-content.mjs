@@ -4,13 +4,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { spainPhotoAssets } from './spain-release-scope.mjs';
 import { postIntegrationBroomeTasmaniaRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-broome-content-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016'].includes(branch);
-const releaseContext = branch === 'codex/release-tripdistill-20261016';
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(branch);
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
 const base = '5578d6da740ca9d7ec07fca6c7eed65cc67868e8';
 const sourceTerminal = '8baea8a720ebd88ff6834e60235e29c03343c4c4';
 const correction = '768151d3f42378358c122a1cde55100fcec9eafa';
@@ -173,16 +174,16 @@ for (let index = 0; index < routes.length; index += 1) {
 const baseSearch = searchMap(git(['show', `${base}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 records.');
-assert.equal(currentSearch.size, 955, 'Current English search index keeps 955 records.');
-assert.deepEqual([...currentSearch.keys()].sort(), [...baseSearch.keys()].sort(), 'Search URL set is unchanged.');
-const changedSearch = [...currentSearch.keys()].filter((url) => (sourceBranch || url.startsWith('/australia/')) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.equal(currentSearch.size, 988, 'Current English search index keeps 988 records.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'Search URL set is unchanged.');
+const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && (sourceBranch || url.startsWith('/australia/')) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 if (releaseContext) {
   const integrationSearch = searchMapFromRevision('7f797a9685649e945a5660ea1352ce239d638389');
   const mainBaseSearch = searchMapFromRevision('6d3008dac99de4d2bc9988e6d06a5f393021f81c');
   const mainSearch = searchMapFromRevision('ddea19cb80796325ed0a76087c39ad25e17f2b07');
   const allowedSearch = new Set([
-    ...[...integrationSearch.keys()].filter((url) => JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url))),
-    ...[...mainSearch.keys()].filter((url) => JSON.stringify(mainSearch.get(url)) !== JSON.stringify(mainBaseSearch.get(url)))
+    ...[...integrationSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url))),
+    ...[...mainSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(mainSearch.get(url)) !== JSON.stringify(mainBaseSearch.get(url)))
   ]);
   assert.deepEqual(changedSearch.filter((url) => !allowedSearch.has(url)), [], 'Australia search record changes must belong to the pinned integration/main parents.');
   assert.deepEqual([...routes, ...integrationFollowups].filter((url) => !changedSearch.includes(url)), [], 'The Broome and registered follow-up search records remain in the substantive diff.');
@@ -193,17 +194,17 @@ for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalS
 const baseSitemap = sitemapMap(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
-assert.equal(currentSitemap.size, 4560, 'Current sitemap keeps 4,560 URLs.');
-assert.deepEqual([...currentSitemap.keys()].sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const datedRoutes = [...routes, ...integrationFollowups, ...tripDistillFollowups].flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-const changedDates = [...currentSitemap.keys()].filter((url) => (sourceBranch || new URL(url, 'https://tripdistill.com').pathname.includes('/australia/')) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
+const changedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && (sourceBranch || new URL(url, 'https://tripdistill.com').pathname.includes('/australia/')) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
 if (releaseContext) {
   const integrationDates = sitemapMap(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:sitemap.xml']));
   const mainBaseDates = sitemapMap(git(['show', '6d3008dac99de4d2bc9988e6d06a5f393021f81c:sitemap.xml']));
   const mainDates = sitemapMap(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:sitemap.xml']));
   const allowedDates = new Set([
-    ...[...integrationDates.keys()].filter((url) => integrationDates.get(url) !== baseSitemap.get(url)),
-    ...[...mainDates.keys()].filter((url) => mainDates.get(url) !== mainBaseDates.get(url))
+    ...[...integrationDates.keys()].filter((url) => !url.includes('/spain/') && integrationDates.get(url) !== baseSitemap.get(url)),
+    ...[...mainDates.keys()].filter((url) => !url.includes('/spain/') && mainDates.get(url) !== mainBaseDates.get(url))
   ]);
   assert.deepEqual(changedDates.filter((url) => !allowedDates.has(url)), [], 'Australia sitemap date changes must belong to the pinned integration/main parents.');
   assert.deepEqual(datedRoutes.filter((url) => !changedDates.includes(url)), [], 'The Broome and registered follow-up route editions remain in the substantive date diff.');
@@ -248,6 +249,7 @@ for (const asset of ['assets/images/australia-kangaroo-island-regional-days.svg'
 }
 const newImagePaths = git(['diff', '--name-status', base, sourceTerminal, '--', 'assets/images']).split(/\r?\n/u).filter((line) => /^A\s/u.test(line));
 assert.deepEqual(newImagePaths, [], 'No image or SVG asset was added.');
-assert.equal(git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).trim(), '', 'No untracked image or SVG asset exists.');
+const untrackedImagePaths = git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean);
+assert.deepEqual(untrackedImagePaths.filter((assetPath) => !spainPhotoAssets.has(assetPath)), [], 'Only the exact licensed Spain photo set may be untracked alongside the unchanged Broome batch.');
 
 console.log(`Australia Broome content regression passed: exact base and ${sourceBranch ? 'four-route' : 'eight-route cumulative'} scope; ${sourceBranch ? 'unchanged Kununurra/Purnululu' : 'separately registered Broome/Tasmania follow-up'}; Japan Hokkaido/Otaru content floors; five-language pages and search; scoped Article/sitemap dates; 4,560 unchanged sitemap URLs; and preserved arrow SVG correction. Source/markup checks only; no rendered UI or pixel review.`);

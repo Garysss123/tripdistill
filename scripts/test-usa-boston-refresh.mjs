@@ -167,9 +167,9 @@ const integrationBaseSearch = new Map(JSON.parse(gitText(integrationBase, 'data/
 const currentSearch = new Map(readJson('data/search-index.json').map((entry) => [entry.url, entry]));
 assert.equal(baseSearch.size, 955, 'English search has 955 records at the source base');
 assert.equal(integrationBaseSearch.size, 955, 'English search has 955 records at the integration checkpoint');
-assert.equal(currentSearch.size, 955, 'English search retains 955 records');
-assert.deepEqual(new Set(currentSearch.keys()), new Set(integrationBaseSearch.keys()), 'English search URL set remains unchanged');
-assert.deepEqual([...currentSearch].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(integrationBaseSearch.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'only Boston, San Diego, Phong Nha, Broome/Tasmania, final Australia, coastal Vietnam, Juneau and Thailand overview English search summaries changed; USA overview search remains unchanged');
+assert.equal(currentSearch.size, 988, 'English search retains 988 records');
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(integrationBaseSearch.keys()), 'English search URL set remains unchanged');
+assert.deepEqual([...currentSearch].filter(([url, entry]) => !url.includes('/spain/') && JSON.stringify(entry) !== JSON.stringify(integrationBaseSearch.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'only Boston, San Diego, Phong Nha, Broome/Tasmania, final Australia, coastal Vietnam, Juneau and Thailand overview English search summaries changed; USA overview search remains unchanged');
 const sourceSearch = new Map(JSON.parse(gitText(sourceTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: English search record matches exact Boston source`);
 
@@ -178,21 +178,21 @@ const integrationBaseSitemap = sitemap(gitText(integrationBase, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'source-base sitemap has 4,560 URLs');
 assert.equal(integrationBaseSitemap.size, 4560, 'integration-base sitemap has 4,560 URLs');
-assert.equal(currentSitemap.size, 4560, 'current sitemap retains 4,560 URLs');
-assert.deepEqual(new Set(currentSitemap.keys()), new Set(integrationBaseSitemap.keys()), 'all 4,560 sitemap URLs remain unchanged');
+assert.equal(currentSitemap.size, 4725, 'current sitemap retains 4,560 URLs');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(integrationBaseSitemap.keys()), 'all 4,560 sitemap URLs remain unchanged');
 const thailandOverviewPaths = locales.map(({ prefix }) => `${prefix}/thailand/`);
 const datedPaths = [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).concat(thailandOverviewPaths).sort();
-assert.deepEqual([...currentSitemap].filter(([route, date]) => integrationBaseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only the four Boston routes, their registered follow-ups and the five Thailand overview editions receive new sitemap dates from the pushed checkpoint');
+assert.deepEqual([...currentSitemap].filter(([route, date]) => !route.includes('/spain/') && integrationBaseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'Spain additions are scoped separately; only the four Boston routes, their registered follow-ups and the five Thailand overview editions receive other new sitemap dates from the pushed checkpoint');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), postIntegrationTripDistillRoutes.some((candidate) => route.endsWith(candidate)) ? '2026-10-15' : route.endsWith('/thailand/') ? '2026-10-14' : '2026-10-13', `${route}: sitemap lastmod`);
 
 for (const locale of locales) {
   const searchPath = locale.code === 'en' ? 'data/search-index.json' : `${locale.prefix.slice(1)}/data/search-index.json`;
   const records = readJson(searchPath);
   const afterRecords = new Map(records.map((entry) => [entry.url, entry]));
-  assert.equal(records.length, 955, `${locale.code}: search has 955 records`);
+  assert.equal(records.length, 988, `${locale.code}: search has 988 records`);
   if (locale.code === 'en') {
     const beforeRecords = new Map(JSON.parse(gitText(integrationBase, searchPath)).map((entry) => [entry.url, entry]));
-    assert.deepEqual([...afterRecords].filter(([url, entry]) => JSON.stringify(entry) !== JSON.stringify(beforeRecords.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'English: only Boston, exact earlier task-scope search summaries, final Australia, Juneau and Thailand overview changed; USA overview search remains unchanged');
+    assert.deepEqual([...afterRecords].filter(([url, entry]) => !url.includes('/spain/') && JSON.stringify(entry) !== JSON.stringify(beforeRecords.get(url))).map(([url]) => url).sort(), [...routes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'English: only Boston, exact earlier task-scope search summaries, final Australia, Juneau and Thailand overview changed; USA overview search remains unchanged');
   }
   const catalog = locale.code === 'en' ? null : readJson(`data/i18n/${locale.code}.json`).translations;
   for (const route of routes) {
