@@ -57,7 +57,26 @@ const editions = [
 const editDate = '2026-10-13';
 const fileForRoute = (route) => path.join(root, `${route.slice(1)}index.html`);
 const git = (args, encoding = 'utf8') => execFileSync('git', args, { cwd: root, encoding });
-const readAt = (commit, repoPath) => git(['show', `${commit}:${repoPath}`]);
+const treeEntries = new Map();
+const readAt = (commit, repoPath) => {
+  let tree = commit;
+  const segments = repoPath.split('/');
+  for (let index = 0; index < segments.length; index += 1) {
+    if (!treeEntries.has(tree)) {
+      treeEntries.set(tree, git(['ls-tree', '-z', tree]).split('\0').filter(Boolean));
+    }
+    const entry = treeEntries.get(tree).find((candidate) => candidate.slice(candidate.indexOf('\t') + 1) === segments[index]);
+    assert.ok(entry, `${commit}:${repoPath}: tree entry ${segments.slice(0, index + 1).join('/')} exists`);
+    const [, type, objectId] = entry.slice(0, entry.indexOf('\t')).split(' ');
+    if (index === segments.length - 1) {
+      assert.equal(type, 'blob', `${commit}:${repoPath}: final tree entry is a blob`);
+      return git(['cat-file', 'blob', objectId]);
+    }
+    assert.equal(type, 'tree', `${commit}:${segments.slice(0, index + 1).join('/')}: intermediate tree entry is a tree`);
+    tree = objectId;
+  }
+  assert.fail(`${commit}:${repoPath}: no final blob was resolved`);
+};
 const normalizeSharedAssetVersions = (html) => html
   .replace(/\/css\/site\.css\?v=[^"'\s]+/gu, '/css/site.css?v=<shared>')
   .replace(/\/js\/main\.js\?v=[^"'\s]+/gu, '/js/main.js?v=<shared>');
