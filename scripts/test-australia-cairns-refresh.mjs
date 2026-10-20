@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
 import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { SaxesParser } from 'saxes';
+import { spainRoutes } from '../data/spain-guides.mjs';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
@@ -101,6 +102,24 @@ function substantiveHtmlPaths(fromRevision, toRevision, directory = '.') {
     .filter((name) => name.endsWith('.html'))
     .filter((name) => normalizeSharedAssetVersions(git(['show', `${fromRevision}:${name}`])) !== normalizeSharedAssetVersions(git(['show', `${toRevision}:${name}`])));
 }
+function htmlPathsFromNameStatus(output, readBase, readCurrent) {
+  return output.split(/\r?\n/u)
+    .map((line) => line.split('\t'))
+    .filter(([status, name]) => status && name?.endsWith('.html'))
+    .filter(([status, name]) => {
+      if (status.startsWith('A') || status.startsWith('D')) return true;
+      return normalizeSharedAssetVersions(readBase(name)) !== normalizeSharedAssetVersions(readCurrent(name));
+    })
+    .map(([, name]) => name)
+    .sort();
+}
+function assertHtmlScope(changedPaths, allowedPaths, requiredPaths) {
+  const allowed = new Set(allowedPaths);
+  const outside = changedPaths.filter((name) => !allowed.has(name));
+  assert(outside.length === 0, `HTML changes must belong to the pinned integration/main parents or the exact Spain release set; outside paths: ${outside.join(', ')}.`);
+  const missing = requiredPaths.filter((name) => !changedPaths.includes(name));
+  assert(missing.length === 0, `Expected route changes are missing from the substantive diff: ${missing.join(', ')}.`);
+}
 
 function pageFile(route, prefix = '') {
   return path.join(root, `${prefix}${route}`.replace(/^\//, ''), 'index.html');
@@ -183,24 +202,37 @@ function sitemapEntries(xml) {
 }
 
 const expectedHtml = [...routes, ...switzerlandCh15AffectedRoutes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postBostonOverviewJuneauRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => route.replace(/^\//, '') + 'index.html').sort();
-// New country pages are additions relative to this historical checkpoint; their exact scope is covered by the Spain release audit.
-const changedHtml = git(['diff', '--name-status', integrationBase, '--']).split(/\r?\n/u)
-  .map((line) => line.split('\t'))
-  .filter(([status, name]) => status && !status.startsWith('A') && name?.endsWith('.html'))
-  .filter(([status, name]) => status.startsWith('D') || normalizeSharedAssetVersions(git(['show', `${integrationBase}:${name}`])) !== normalizeSharedAssetVersions(fs.readFileSync(path.join(root, name), 'utf8')))
-  .map(([, name]) => name).sort();
+const changedHtml = htmlPathsFromNameStatus(
+  git(['diff', '--no-renames', '--name-status', integrationBase, '--']),
+  (name) => git(['show', `${integrationBase}:${name}`]),
+  (name) => fs.readFileSync(path.join(root, name), 'utf8')
+);
+const spainEnglishHtmlPaths = spainRoutes.map((route) => `${route.slice(1)}index.html`).sort();
+assert.equal(spainEnglishHtmlPaths.length, 33, 'Spain tracked HTML release scope must contain exactly 33 English routes.');
+assert.equal(new Set(spainEnglishHtmlPaths).size, 33, 'Spain tracked HTML release scope must not contain duplicate paths.');
 if (releaseContext) {
   const allowedReleaseHtml = new Set([
     ...substantiveHtmlPaths(integrationBase, '7f797a9685649e945a5660ea1352ce239d638389'),
     ...substantiveHtmlPaths('6d3008dac99de4d2bc9988e6d06a5f393021f81c', 'ddea19cb80796325ed0a76087c39ad25e17f2b07'),
+    ...spainEnglishHtmlPaths,
     'about/index.html',
     'components/header.html',
     'components/sidebar.html',
     'index.html',
     'components/footer.html'
   ]);
-  assert(changedHtml.every((name) => allowedReleaseHtml.has(name)), `HTML changes must belong to the pinned integration/main parents; outside paths: ${changedHtml.filter((name) => !allowedReleaseHtml.has(name)).join(', ')}.`);
-  assert(expectedHtml.every((name) => changedHtml.includes(name)), `Expected route changes are missing from the substantive diff: ${expectedHtml.filter((name) => !changedHtml.includes(name)).join(', ')}.`);
+  const changedSpainHtml = changedHtml.filter((name) => spainEnglishHtmlPaths.includes(name));
+  assert.deepEqual(changedSpainHtml, spainEnglishHtmlPaths, 'All 33 tracked English Spain pages must appear in the release diff; localized outputs are generated and covered by the translation audit.');
+  const requiredHtml = [...expectedHtml, ...spainEnglishHtmlPaths];
+  assertHtmlScope(changedHtml, allowedReleaseHtml, requiredHtml);
+  // Negative fixture: an unrelated added country page must be detected and rejected by the same whole-repository guard.
+  const unexpectedAddition = htmlPathsFromNameStatus(
+    'A\titaly/unexpected/index.html',
+    () => { throw new Error('Added files must not read from the baseline.'); },
+    () => { throw new Error('Added files must not read from the working tree.'); }
+  );
+  assert.deepEqual(unexpectedAddition, ['italy/unexpected/index.html'], 'The guard must retain unexpected added HTML paths.');
+  assert.throws(() => assertHtmlScope([...changedHtml, ...unexpectedAddition], allowedReleaseHtml, requiredHtml), /italy\/unexpected\/index\.html/u, 'The scope guard must reject an unrelated added country page.');
 } else assert.deepEqual(changedHtml, expectedHtml, 'Only the four Cairns, exact CH15/CH16 documents, later Canada/Australia scopes, eight Vietnam routes and three follow-on country batches may change.');
 const priorBodyHtml = git(['show', '--pretty=format:', '--name-only', priorCairnsBodyCommit, '--', 'australia/cairns-wet-tropics'])
   .split(/\r?\n/).filter((name) => name.endsWith('.html')).sort();
