@@ -358,7 +358,7 @@ assert.deepEqual(unregisteredReviewedDiffs, [], 'Reviewed translation changes mu
 assert.deepEqual(exactExpectedReviewedDiffs.filter((repoPath) => !reviewedDiffs.includes(repoPath)), [], 'Every exact historical, archived and reviewed translation batch is present.');
 
 const changedSvgs = git(['diff', '--name-only', integrationBaseCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
-assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
+assert.deepEqual(changedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only SVG change in the integration scope is the separately reviewed Niagara decision diagram; this content batch adds no diagrams.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 const southernCheckpoint = ledger.previousCheckpoint;

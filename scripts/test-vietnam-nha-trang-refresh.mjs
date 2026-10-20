@@ -243,7 +243,7 @@ for (const route of previousRefresh) {
 }
 
 const changedSvgs = git(['diff', '--name-only', integrationBase, '--', '*.svg']).trim().split('\n').filter(Boolean);
-assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
+assert.deepEqual(changedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only SVG change in the integration scope is the separately reviewed Niagara decision diagram; the Nha Trang content batch adds no diagrams.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 assert.equal(ledger.previousActiveSprint.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
 assert.equal(ledger.previousActiveSprint.sourceBaseCommit, baselineCommit);

@@ -303,7 +303,7 @@ if (!releaseContext) assert.deepEqual(reviewedDiffs, [...new Set(expectedMergedR
 const changedSvgs = git(['diff', '--name-only', baseCommit, sourceTerminal, '--', '*.svg']).trim().split('\n').filter(Boolean);
 assert.deepEqual(changedSvgs, [], 'No SVG changes are in scope for this route batch.');
 const integratedChangedSvgs = git(['diff', '--name-only', integrationBaseCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
-if (!releaseContext) assert.deepEqual(integratedChangedSvgs, [], 'No SVG changes are in scope on the integration checkpoint.');
+if (!releaseContext) assert.deepEqual(integratedChangedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only integration-scope SVG change is the separately reviewed Niagara decision diagram; the Vietnam coastal batch changes no SVG.');
 
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 assert.equal(ledger.branch, branch);

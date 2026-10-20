@@ -267,7 +267,7 @@ for (const route of previousNhaTrangRoutes) {
 }
 
 const changedSvgs = git(['diff', '--name-only', integrationBaseCommit, '--', '*.svg']).trim().split('\n').filter(Boolean);
-assert.deepEqual(changedSvgs, [], 'No SVG was requested or added in this content-only route batch.');
+assert.deepEqual(changedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only SVG change in the integration scope is the separately reviewed Niagara decision diagram; this content batch adds no diagrams.');
 
 const activeTranslationSources = new Set(collectTranslationWork().flatMap((record) => record.units));
 const gyeongjuTranslationSources = new Set(collectTranslationWork()
