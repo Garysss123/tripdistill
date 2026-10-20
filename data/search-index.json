@@ -14054,5 +14054,446 @@
       "An urban rail base and a mountain excursion with managed road access",
       "Spain"
     ]
+  },
+  {
+    "title": "Greece Travel Guide",
+    "url": "/greece/",
+    "parent": "Europe",
+    "type": "Country",
+    "summary": "Plan Greece through eight mainland and island regions. Compare rail, KTEL, city networks and ferry transfers with practical stay and weather decisions.",
+    "keywords": [
+      "Greece",
+      "Athens",
+      "Cyclades",
+      "Crete",
+      "Meteora",
+      "Delphi",
+      "ferry",
+      "KTEL"
+    ]
+  },
+  {
+    "title": "Athens & Attica",
+    "url": "/greece/athens-attica/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "Athens is a full urban stay and Greece’s most useful air, rail and ferry hinge. Its archaeological core, neighbourhoods, airport, Piraeus and Attica coast are separate door-to-door plans; treat each transfer as part of the day rather than assuming one central station reaches every first stop.",
+    "keywords": [
+      "Athens & Attica",
+      "Mainland gateway",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Acropolis, Plaka & Anafiotika",
+    "url": "/greece/athens-attica/acropolis-plaka-anafiotika/",
+    "parent": "Athens & Attica",
+    "type": "Local guide",
+    "summary": "Build the Acropolis visit around its booked entrance and uphill approach, then descend through Plaka on foot. Anafiotika is a residential hillside quarter, not a shortcut to rush through; preserve time for the museum or a shaded meal before adding another site.",
+    "keywords": [
+      "Acropolis, Plaka & Anafiotika",
+      "Athens & Attica",
+      "Timed hill and old-town lanes",
+      "Greece"
+    ]
+  },
+  {
+    "title": "National Archaeological Museum & Exarchia",
+    "url": "/greece/athens-attica/national-archaeological-museum-exarchia/",
+    "parent": "Athens & Attica",
+    "type": "Local guide",
+    "summary": "Pair the National Archaeological Museum with one nearby modern-neighbourhood walk instead of crossing Athens between monuments. The museum is a substantial visit in its own right; Exarchia’s streets and cafés work best as an unhurried, daytime continuation with a clear route back to the central metro network.",
+    "keywords": [
+      "National Archaeological Museum & Exarchia",
+      "Athens & Attica",
+      "Indoor collections and modern Athens",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Piraeus Port & the Attica Coast",
+    "url": "/greece/athens-attica/piraeus-port-attica-coast/",
+    "parent": "Athens & Attica",
+    "type": "Local guide",
+    "summary": "Piraeus is a working, spread-out port with terminal-specific boarding points; the Attica coast is a separate day-trip geography. Decide whether this page is for a ferry departure or for the shoreline, then plan only the relevant leg and return instead of combining both by default.",
+    "keywords": [
+      "Piraeus Port & the Attica Coast",
+      "Athens & Attica",
+      "Port departure or separate coast day",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Peloponnese: Nafplio, Arcadia & the South",
+    "url": "/greece/peloponnese/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "The Peloponnese is a road-shaped region of archaeological sites, port towns and mountain peninsulas. Nafplio, Ancient Olympia and the Mani are not quick spokes from one rail station; plan around a chosen base, a dated intercity coach or a car with a realistic return and overnight rhythm.",
+    "keywords": [
+      "Peloponnese: Nafplio, Arcadia & the South",
+      "Southern mainland",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Nafplio, Palamidi & the Argolid",
+    "url": "/greece/peloponnese/nafplio-palamedes-argolid/",
+    "parent": "Peloponnese: Nafplio, Arcadia & the South",
+    "type": "Local guide",
+    "summary": "Use Nafplio for its own harbour lanes and hilltop Palamidi; treat Mycenae or Epidaurus as a separate dated excursion. The archaeological sites sit outside the old town and their entrances, local transport and return need a clear plan.",
+    "keywords": [
+      "Nafplio, Palamidi & the Argolid",
+      "Peloponnese: Nafplio, Arcadia & the South",
+      "Harbour base and two ancient sites",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Ancient Olympia & the Archaeological Museum",
+    "url": "/greece/peloponnese/ancient-olympia-archaeology/",
+    "parent": "Peloponnese: Nafplio, Arcadia & the South",
+    "type": "Local guide",
+    "summary": "The ancient site, archaeological museum and modern village form one compact visit zone, but reaching Olympia is a separate intercity decision. Protect enough time for the museum and shaded breaks rather than treating Olympia as a photo stop between long drives.",
+    "keywords": [
+      "Ancient Olympia & the Archaeological Museum",
+      "Peloponnese: Nafplio, Arcadia & the South",
+      "Site, museum and rural arrival",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Mani: Areopoli, Limeni & Diros",
+    "url": "/greece/peloponnese/mani-areopoli-diros/",
+    "parent": "Peloponnese: Nafplio, Arcadia & the South",
+    "type": "Local guide",
+    "summary": "The Mani is a dispersed peninsula of stone villages, coves and road viewpoints rather than a rail-connected loop. Base in or near Areopoli for a coherent west-Mani day, then make Limeni or Diros Caves the main commitment after confirming road, parking and current visitor access.",
+    "keywords": [
+      "Mani: Areopoli, Limeni & Diros",
+      "Peloponnese: Nafplio, Arcadia & the South",
+      "Stone settlements and peninsula roads",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Central Greece: Delphi, Meteora & Olympus",
+    "url": "/greece/central-mainland/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "Central Greece connects an archaeological sanctuary, a monastery landscape and a high mountain through different gateways. Delphi is a coach-and-hill day, Meteora depends on Kalambaka and local ascent, and Olympus starts from Litochoro with a trailhead transfer; they are not one compact rail loop.",
+    "keywords": [
+      "Central Greece: Delphi, Meteora & Olympus",
+      "Central mainland",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Delphi Sanctuary & Arachova",
+    "url": "/greece/central-mainland/delphi-sanctuary-arachova/",
+    "parent": "Central Greece: Delphi, Meteora & Olympus",
+    "type": "Local guide",
+    "summary": "Delphi’s sanctuary, museum and modern village sit on a mountain slope above the Gulf of Corinth. Reach the archaeological entrance by a dated coach or planned road transfer, then keep Arachova as a separate evening/overnight choice rather than an unverified shuttle.",
+    "keywords": [
+      "Delphi Sanctuary & Arachova",
+      "Central Greece: Delphi, Meteora & Olympus",
+      "Mountain coach and timed ruins",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Meteora Monasteries from Kalambaka",
+    "url": "/greece/central-mainland/meteora-kalambaka-monasteries/",
+    "parent": "Central Greece: Delphi, Meteora & Olympus",
+    "type": "Local guide",
+    "summary": "Kalambaka is the arrival town below Meteora; the monasteries sit above it on separate roads and paths. A train or coach brings you to the gateway, not to each entrance, so choose a walking, driver or guided transfer plan around current monastery opening days.",
+    "keywords": [
+      "Meteora Monasteries from Kalambaka",
+      "Central Greece: Delphi, Meteora & Olympus",
+      "Rail gateway and cliff-top access",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Mount Olympus from Litochoro",
+    "url": "/greece/central-mainland/olympus-litochoro-prionia/",
+    "parent": "Central Greece: Delphi, Meteora & Olympus",
+    "type": "Local guide",
+    "summary": "Litochoro is the practical town gateway; Prionia and the higher trails require a separate road or arranged transfer and a mountain-weather decision. A coast-and-city stay does not automatically provide an Olympus trail day, especially when daylight or conditions narrow the safe return.",
+    "keywords": [
+      "Mount Olympus from Litochoro",
+      "Central Greece: Delphi, Meteora & Olympus",
+      "Mountain gate and trailhead logistics",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Thessaloniki & Northern Greece",
+    "url": "/greece/thessaloniki-north/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "Thessaloniki is a walkable waterfront city with a growing metro network; Vergina/Aigai, Halkidiki and the northern hinterland are separate day-trip geographies. Use the city as a real base, then match each excursion to its own coach, airport or road gateway and return.",
+    "keywords": [
+      "Thessaloniki & Northern Greece",
+      "Northern mainland",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Thessaloniki Waterfront & Upper Town",
+    "url": "/greece/thessaloniki-north/thessaloniki-waterfront-upper-town/",
+    "parent": "Thessaloniki & Northern Greece",
+    "type": "Local guide",
+    "summary": "Follow the waterfront as a long walk, then choose one upward branch into Ano Poli or the city’s archaeological collections. The Metro and OASTH serve different edges; treat the return from the upper town as a separate bus, taxi or downhill walk decision.",
+    "keywords": [
+      "Thessaloniki Waterfront & Upper Town",
+      "Thessaloniki & Northern Greece",
+      "Waterfront, archaeology and hillside lanes",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Aigai (Vergina) Royal Tombs & Museum",
+    "url": "/greece/thessaloniki-north/aigai-vergina-museum/",
+    "parent": "Thessaloniki & Northern Greece",
+    "type": "Local guide",
+    "summary": "Aigai’s museum and royal burial landscape lie outside Thessaloniki’s urban transport grid. The day depends on a verified coach, organized transfer or car and the return to the city; a rail journey to Thessaloniki is not the last leg to Vergina.",
+    "keywords": [
+      "Aigai (Vergina) Royal Tombs & Museum",
+      "Thessaloniki & Northern Greece",
+      "Archaeological site beyond the city rail",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Halkidiki: Kassandra or Sithonia",
+    "url": "/greece/thessaloniki-north/halkidiki-kassandra-sithonia/",
+    "parent": "Thessaloniki & Northern Greece",
+    "type": "Local guide",
+    "summary": "Halkidiki’s branching peninsulas make “a beach day” a destination choice, not a short city transfer. Choose Kassandra for a developed resort corridor or Sithonia for a more dispersed coast, then pick a town whose local bus or parking actually reaches the beach you want.",
+    "keywords": [
+      "Halkidiki: Kassandra or Sithonia",
+      "Thessaloniki & Northern Greece",
+      "Choose one peninsula and a road base",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Crete: Chania, Heraklion & the East",
+    "url": "/greece/crete/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "Crete is large enough to be a mainland-style regional trip with island gateways. Chania, Heraklion and the east are several hours apart by road, and the Samaria gorge, archaeological sites and south-coast villages require distinct local plans; avoid treating the island as one hotel base.",
+    "keywords": [
+      "Crete: Chania, Heraklion & the East",
+      "Southern island",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Chania Old Harbour & Akrotiri",
+    "url": "/greece/crete/chania-old-harbour-akrotiri/",
+    "parent": "Crete: Chania, Heraklion & the East",
+    "type": "Local guide",
+    "summary": "Chania’s harbour and old-town lanes reward an on-foot day; Akrotiri’s monasteries, beaches and airport side are a separate peninsula loop. Use the city as a base, then choose a KTEL/bus, taxi or car leg for one Akrotiri anchor rather than chaining remote stops.",
+    "keywords": [
+      "Chania Old Harbour & Akrotiri",
+      "Crete: Chania, Heraklion & the East",
+      "Venetian lanes and peninsula access",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Heraklion, Knossos & the Archaeological Museum",
+    "url": "/greece/crete/heraklion-knossos-museum/",
+    "parent": "Crete: Chania, Heraklion & the East",
+    "type": "Local guide",
+    "summary": "Knossos sits outside Heraklion’s central grid; combine it with the Archaeological Museum only after checking each site’s current entry and the bus/return link. The museum is a strong indoor companion, while the palace grounds are exposed and need a cooler-hour visit.",
+    "keywords": [
+      "Heraklion, Knossos & the Archaeological Museum",
+      "Crete: Chania, Heraklion & the East",
+      "Timed palace and city collection",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Lasithi: Agios Nikolaos & Spinalonga",
+    "url": "/greece/crete/lasithi-agios-nikolaos-spinalonga/",
+    "parent": "Crete: Chania, Heraklion & the East",
+    "type": "Local guide",
+    "summary": "Agios Nikolaos is an eastern Crete base; Spinalonga adds a separate boat departure from Plaka or another current operator’s pier. Pair the island with one nearby town and confirm the boat’s sailing/return, site entry and wind conditions before building the day.",
+    "keywords": [
+      "Lasithi: Agios Nikolaos & Spinalonga",
+      "Crete: Chania, Heraklion & the East",
+      "Eastern base and boat-dependent island visit",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Cyclades: Santorini, Naxos & Smaller Islands",
+    "url": "/greece/cyclades/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "The Cyclades are a ferry network, not a single island itinerary. Santorini’s port and caldera villages involve a steep transfer; Naxos and Paros are separate bases; Milos and smaller islands depend on date-specific sailings and local roads. Choose one island or one verified pair and protect a weather buffer.",
+    "keywords": [
+      "Cyclades: Santorini, Naxos & Smaller Islands",
+      "Aegean island group",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Santorini: Fira, Oia & the Ferry Port",
+    "url": "/greece/cyclades/santorini-fira-oia-port/",
+    "parent": "Cyclades: Santorini, Naxos & Smaller Islands",
+    "type": "Local guide",
+    "summary": "Santorini’s caldera villages sit high above the ferry port. The port road is steep and queues can gather around arrivals; use an operator/official bus connection, luggage-aware lodging and a generous port buffer instead of treating a ferry arrival as a simple town walk.",
+    "keywords": [
+      "Santorini: Fira, Oia & the Ferry Port",
+      "Cyclades: Santorini, Naxos & Smaller Islands",
+      "Caldera walks and steep port transfer",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Naxos & Paros: One Island or a Two-Port Pair",
+    "url": "/greece/cyclades/naxos-paros-port-town-pair/",
+    "parent": "Cyclades: Santorini, Naxos & Smaller Islands",
+    "type": "Local guide",
+    "summary": "Naxos and Paros can form a short island pair only when the booked sailing and each port-to-hotel transfer fit. Naxos Town and Parikia are useful hubs; adding inland villages or beaches depends on each island’s bus/car network, not on the short sea distance alone.",
+    "keywords": [
+      "Naxos & Paros: One Island or a Two-Port Pair",
+      "Cyclades: Santorini, Naxos & Smaller Islands",
+      "Ferry corridor and two island bases",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Milos & Sifnos: West Cyclades by Date",
+    "url": "/greece/cyclades/milos-sifnos-west-cyclades/",
+    "parent": "Cyclades: Santorini, Naxos & Smaller Islands",
+    "type": "Local guide",
+    "summary": "Milos and Sifnos reward a local overnight, but their ferry pairing depends on the date, vessel and seasonal route. Choose the island first, plan one realistic road or bus loop, and only connect the second after a direct live sailing is actually offered.",
+    "keywords": [
+      "Milos & Sifnos: West Cyclades by Date",
+      "Cyclades: Santorini, Naxos & Smaller Islands",
+      "Low-frequency island links and road loops",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Ionian Islands: Corfu, Lefkada & Kefalonia",
+    "url": "/greece/ionian-islands/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "The Ionian islands do not share one transfer system. Corfu, Kefalonia and Zakynthos use separate ports/airports; Lefkada connects to the mainland by road causeway/bridge rather than needing a routine car ferry. Choose one island base and confirm the exact pier, local bus and return.",
+    "keywords": [
+      "Ionian Islands: Corfu, Lefkada & Kefalonia",
+      "Ionian island group",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Corfu Town & Paxos Harbour Crossing",
+    "url": "/greece/ionian-islands/corfu-town-paxos-harbour/",
+    "parent": "Ionian Islands: Corfu, Lefkada & Kefalonia",
+    "type": "Local guide",
+    "summary": "Corfu Town is a walkable heritage base; Paxos is a separate boat/port day whose operator and sea conditions determine the route. Do not treat an excursion boat as a permanent inter-island connection or book a tight onward flight from its return.",
+    "keywords": [
+      "Corfu Town & Paxos Harbour Crossing",
+      "Ionian Islands: Corfu, Lefkada & Kefalonia",
+      "Old-town base and a separate boat day",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Lefkada Town & the West Coast",
+    "url": "/greece/ionian-islands/lefkada-town-west-coast/",
+    "parent": "Ionian Islands: Corfu, Lefkada & Kefalonia",
+    "type": "Local guide",
+    "summary": "Lefkada connects to the mainland by a road bridge/causeway, so the gateway decision is road transfer rather than a routine island ferry. The west coast has exposed cliffs and beaches with different parking, stair and bus access; choose one shoreline and a safe return.",
+    "keywords": [
+      "Lefkada Town & the West Coast",
+      "Ionian Islands: Corfu, Lefkada & Kefalonia",
+      "Road-linked island and beach access",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Kefalonia, Ithaca & Zakynthos Gateways",
+    "url": "/greece/ionian-islands/kefalonia-ithaca-zakynthos-gateways/",
+    "parent": "Ionian Islands: Corfu, Lefkada & Kefalonia",
+    "type": "Local guide",
+    "summary": "Kefalonia, Ithaca and Zakynthos are distinct island trips with different ferry ports and local transport. Choose one gateway, then build a local route from that island’s bus/car network; a short map distance does not guarantee a same-day direct ferry or a useful cross-island connection.",
+    "keywords": [
+      "Kefalonia, Ithaca & Zakynthos Gateways",
+      "Ionian Islands: Corfu, Lefkada & Kefalonia",
+      "Choose one southern Ionian island",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Dodecanese: Rhodes, Kos & the Smaller Islands",
+    "url": "/greece/dodecanese/",
+    "parent": "Greece",
+    "type": "Regional guide",
+    "summary": "The Dodecanese stretches across a long island chain; Rhodes and Kos have airports and separate city/port systems, while smaller islands depend on date-specific ferries or local flights. Choose a principal island and treat any hop to Nisyros, Kalymnos, Leros or Patmos as its own sailing and return plan.",
+    "keywords": [
+      "Dodecanese: Rhodes, Kos & the Smaller Islands",
+      "Southeastern Aegean island group",
+      "Greece",
+      "transport",
+      "stay"
+    ]
+  },
+  {
+    "title": "Rhodes Old Town & Lindos",
+    "url": "/greece/dodecanese/rhodes-old-town-lindos/",
+    "parent": "Dodecanese: Rhodes, Kos & the Smaller Islands",
+    "type": "Local guide",
+    "summary": "Rhodes Town’s walled centre is a walking day; Lindos is a separate south-coast trip with a longer road/bus transfer, steep village lanes and exposed acropolis approach. Do not squeeze both into a port-arrival day.",
+    "keywords": [
+      "Rhodes Old Town & Lindos",
+      "Dodecanese: Rhodes, Kos & the Smaller Islands",
+      "Medieval centre and separate south-coast drive",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Kos Town, Asklepion & Nisyros",
+    "url": "/greece/dodecanese/kos-town-asklepion-nisyros/",
+    "parent": "Dodecanese: Rhodes, Kos & the Smaller Islands",
+    "type": "Local guide",
+    "summary": "Kos Town can be explored on foot and by local bus; Asklepion is a separate nearby site and Nisyros a ferry day with its own island transfer. Choose one main excursion and check the sailing, volcanic-site access and last return instead of combining both by default.",
+    "keywords": [
+      "Kos Town, Asklepion & Nisyros",
+      "Dodecanese: Rhodes, Kos & the Smaller Islands",
+      "Urban archaeology or date-specific volcano ferry",
+      "Greece"
+    ]
+  },
+  {
+    "title": "Kalymnos, Leros & Patmos by Ferry Chain",
+    "url": "/greece/dodecanese/kalymnos-leros-patmos-chain/",
+    "parent": "Dodecanese: Rhodes, Kos & the Smaller Islands",
+    "type": "Local guide",
+    "summary": "Kalymnos, Leros and Patmos sit on a ferry chain with changing call patterns, not a guaranteed hop-on sequence. Pick one island as the stay, verify an exact sailing between named ports, and include the port-to-lodging transfer plus a weather-safe buffer.",
+    "keywords": [
+      "Kalymnos, Leros & Patmos by Ferry Chain",
+      "Dodecanese: Rhodes, Kos & the Smaller Islands",
+      "Small-island ports and overnight buffers",
+      "Greece"
+    ]
   }
 ]

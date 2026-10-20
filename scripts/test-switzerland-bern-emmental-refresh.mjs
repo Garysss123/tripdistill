@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -7,7 +8,7 @@ import path from 'node:path';
 import { parse } from 'parse5';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
-import { spawnPython3 } from './python-runner.mjs';
+import { SaxesParser } from 'saxes';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baseCommit = '1d6da4bf2fff506f290b2132b093f124d4252289';
@@ -78,8 +79,8 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'starting sitemap has 4,560 URLs');
-assert.equal(currentRecords.size, baseRecords.size + 165, 'the exact Spain release adds 165 localized URLs');
-assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseRecords.keys()].sort(), 'no route was added or removed');
+assert.equal(currentRecords.size, baseRecords.size + 330, 'the exact Spain and Greece release adds 330 localized URLs');
+assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseRecords.keys()].sort(), 'no route was added or removed');
 const baselRoutes = [
   '/switzerland/basel-rhine/',
   '/switzerland/basel-rhine/old-town-rhine/',
@@ -106,7 +107,7 @@ const graubuendenRoutes = [
 ];
 const ch14HubRoutes = ['/switzerland/lugano-southern-ticino/', '/switzerland/locarno-ascona-valleys/', '/switzerland/schaffhausen-rhine-falls/'];
 const expectedDateChanges = new Set(locales.flatMap((locale) => [...routes, ...baselRoutes, ...stMoritzRoutes, ...stGallenRoutes, ...graubuendenRoutes, ...ch14HubRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
-const dateChanges = [...currentRecords].filter(([url, date]) => !url.includes('/spain/') && url.includes('/switzerland/') && baseRecords.get(url) !== date);
+const dateChanges = [...currentRecords].filter(([url, date]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && url.includes('/switzerland/') && baseRecords.get(url) !== date);
 assert.equal(dateChanges.length, 160, 'the cumulative Bern/Emmental, Basel and CH11–CH16 routes receive only their expected edition dates');
 for (const [url, date] of dateChanges) {
   assert.ok(expectedDateChanges.has(url), `unexpected sitemap date change: ${url}`);
@@ -215,57 +216,98 @@ for (const [relative, referenceCommit] of protectedImages) {
 }
 
 const svg = fs.readFileSync(path.join(root, diagramPath.slice(1)), 'utf8');
-const xmlCheck = `
-import json, sys, unicodedata, xml.etree.ElementTree as ET
-root = ET.fromstring(sys.stdin.read())
-tag = lambda node: node.tag.rsplit('}', 1)[-1]
-assert tag(root) == 'svg'
-assert root.attrib.get('viewBox') == '0 0 1600 1066'
-assert root.attrib.get('width') == '1600' and root.attrib.get('height') == '1066'
-allowed = {'svg','title','desc','rect','line','circle','text'}
-nodes = list(root.iter())
-assert all(tag(node) in allowed for node in nodes), 'only bounded vector/text geometry is allowed'
-texts = []
-for node in nodes:
-    name = tag(node)
-    a = node.attrib
-    if name == 'rect':
-        x,y,w,h = (float(a.get(k,'0')) for k in ('x','y','width','height'))
-        assert x >= 0 and y >= 0 and x+w <= 1600 and y+h <= 1066
-    elif name == 'circle':
-        x,y,r = (float(a[k]) for k in ('cx','cy','r'))
-        assert x-r >= 0 and y-r >= 0 and x+r <= 1600 and y+r <= 1066
-    elif name == 'line':
-        points = [float(a[k]) for k in ('x1','y1','x2','y2')]
-        assert all(0 <= v <= 1600 for v in points[::2]) and all(0 <= v <= 1066 for v in points[1::2])
-    elif name == 'text':
-        value = ''.join(node.itertext()).strip()
-        assert value
-        size = float(a.get('font-size','16'))
-        width = 0.0
-        for ch in value:
-            category = unicodedata.category(ch)
-            if category in ('Mn','Mc','Me','Cf'):
-                continue
-            if '\u0e00' <= ch <= '\u0e7f':
-                width += size * 0.9
-            elif unicodedata.east_asian_width(ch) in ('W','F'):
-                width += size
-            else:
-                width += size * 0.56
-        x = float(a['x'])
-        anchor = a.get('text-anchor','start')
-        left = x if anchor == 'start' else x-width/2 if anchor == 'middle' else x-width
-        assert left >= 0 and left+width <= 1600, (value, left, width)
-        y = float(a['y'])
-        assert y-size*0.9 >= 0 and y+size*0.25 <= 1066, (value, y, size)
-        texts.append((a.get('data-language'), value))
-languages = {lang for lang,value in texts if lang}
-assert languages == {'en','zh-Hant','ja','ko','th'}
-visible = [value for lang,value in texts]
-assert all(any(marker in value for value in visible) for marker in ('Choose one gateway','選擇一個入口','入口を一つ選ぶ','거점 하나 선택','เลือกจุดเริ่มต้นหนึ่งแห่ง'))
-print(json.dumps({'root': tag(root), 'elements': len(nodes), 'texts': len(texts), 'languages': sorted(languages)}))
-`;
-const xmlResult = spawnPython3(['-c', xmlCheck], { cwd: root, input: svg, encoding: 'utf8' });
-assert.equal(xmlResult.status, 0, `SVG must parse as XML and fit its geometry: ${xmlResult.stderr}`);
+const tree = [];
+const stack = [];
+let parseError;
+const xmlParser = new SaxesParser({ xmlns: true });
+xmlParser.on('doctype', () => { throw new Error('DOCTYPE is forbidden in SVG input'); });
+xmlParser.on('error', (error) => { parseError ??= error; });
+xmlParser.on('opentag', (tag) => {
+  const node = {
+    tag: tag.local,
+    uri: tag.uri,
+    attrs: Object.fromEntries(Object.values(tag.attributes).map((attribute) => [attribute.name, attribute.value])),
+    content: []
+  };
+  if (stack.length) stack.at(-1).content.push(node);
+  else tree.push(node);
+  stack.push(node);
+});
+xmlParser.on('text', (text) => { stack.at(-1)?.content.push(text); });
+xmlParser.on('cdata', (text) => { stack.at(-1)?.content.push(text); });
+xmlParser.on('closetag', () => { stack.pop(); });
+xmlParser.write(svg).close();
+assert.equal(parseError, undefined, 'SVG must parse as XML: ' + (parseError?.message || ''));
+assert.equal(tree.length, 1, 'SVG XML has exactly one root element');
+const flatten = (node) => [node, ...node.content.filter((item) => typeof item === 'object').flatMap(flatten)];
+const textContent = (node) => node.content.map((item) => typeof item === 'string' ? item : textContent(item)).join('');
+const svgRoot = tree[0];
+const nodes = flatten(svgRoot);
+assert.equal(svgRoot.tag, 'svg');
+assert.equal(svgRoot.uri, 'http://www.w3.org/2000/svg');
+assert.equal(svgRoot.attrs.viewBox, '0 0 1600 1066');
+assert.equal(svgRoot.attrs.width, '1600');
+assert.equal(svgRoot.attrs.height, '1066');
+const allowed = new Set(['svg', 'title', 'desc', 'rect', 'line', 'circle', 'text']);
+assert.ok(nodes.every((node) => allowed.has(node.tag)), 'only bounded vector/text geometry is allowed');
+const texts = [];
+for (const node of nodes) {
+  const name = node.tag;
+  const a = node.attrs;
+  if (name === 'rect') {
+    const x = Number(a.x || 0), y = Number(a.y || 0), w = Number(a.width), h = Number(a.height);
+    assert.ok(x >= 0 && y >= 0 && x + w <= 1600 && y + h <= 1066, 'rectangle stays within the SVG viewBox');
+  } else if (name === 'circle') {
+    const x = Number(a.cx), y = Number(a.cy), radius = Number(a.r);
+    assert.ok(x - radius >= 0 && y - radius >= 0 && x + radius <= 1600 && y + radius <= 1066, 'circle stays within the SVG viewBox');
+  } else if (name === 'line') {
+    const points = [Number(a.x1), Number(a.y1), Number(a.x2), Number(a.y2)];
+    assert.ok(points[0] >= 0 && points[0] <= 1600 && points[2] >= 0 && points[2] <= 1600, 'line x coordinates stay within the SVG viewBox');
+    assert.ok(points[1] >= 0 && points[1] <= 1066 && points[3] >= 0 && points[3] <= 1066, 'line y coordinates stay within the SVG viewBox');
+  } else if (name === 'text') {
+    const value = textContent(node).trim();
+    assert(value);
+    const size = Number(a['font-size'] || 16);
+    let width = 0;
+    for (const character of value) {
+      if (/[\p{M}\p{Cf}]/u.test(character)) continue;
+      const codepoint = character.codePointAt(0);
+      if (codepoint >= 0x0e00 && codepoint <= 0x0e7f) width += size * 0.9;
+      else if (
+        (codepoint >= 0x1100 && codepoint <= 0x115f)
+        || codepoint === 0x2329 || codepoint === 0x232a
+        || (codepoint >= 0x2e80 && codepoint <= 0x303e)
+        || (codepoint >= 0x3040 && codepoint <= 0xa4cf)
+        || (codepoint >= 0xac00 && codepoint <= 0xd7a3)
+        || (codepoint >= 0xf900 && codepoint <= 0xfaff)
+        || (codepoint >= 0xfe10 && codepoint <= 0xfe19)
+        || (codepoint >= 0xfe30 && codepoint <= 0xfe6f)
+        || (codepoint >= 0xff00 && codepoint <= 0xff60)
+        || (codepoint >= 0xffe0 && codepoint <= 0xffe6)
+        || (codepoint >= 0x1f300 && codepoint <= 0x1faff)
+        || (codepoint >= 0x20000 && codepoint <= 0x3fffd)
+      ) width += size;
+      else width += size * 0.56;
+    }
+    const x = Number(a.x);
+    const anchor = a['text-anchor'] || 'start';
+    const left = anchor === 'start' ? x : anchor === 'middle' ? x - width / 2 : x - width;
+    assert.ok(left >= 0 && left + width <= 1600, 'SVG text fits the canvas: ' + value);
+    const y = Number(a.y);
+    assert.ok(y - size * 0.9 >= 0 && y + size * 0.25 <= 1066, 'SVG text fits the canvas vertically: ' + value);
+    texts.push([a['data-language'], value]);
+  }
+}
+const languages = new Set(texts.map(([language]) => language).filter(Boolean));
+assert.deepEqual([...languages].sort(), ['en', 'ja', 'ko', 'th', 'zh-Hant']);
+const visible = texts.map(([, value]) => value);
+const visibleMarkers = [
+  'Choose one gateway',
+  '\u9078\u64c7\u4e00\u500b\u5165\u53e3',
+  '\u5165\u53e3\u3092\u4e00\u3064\u9078\u3076',
+  '\uac70\uc810 \ud558\ub098 \uc120\ud0dd',
+  '\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e08\u0e38\u0e14\u0e40\u0e23\u0e34\u0e48\u0e21\u0e15\u0e49\u0e19\u0e2b\u0e19\u0e36\u0e48\u0e07\u0e41\u0e2b\u0e48\u0e07'
+];
+assert.ok(visibleMarkers.every((marker) => visible.some((value) => value.includes(marker))), 'each language has its expected visible route-choice label');
+const xmlResult = { stdout: JSON.stringify({ root: svgRoot.tag, elements: nodes.length, texts: texts.length, languages: [...languages].sort() }) };
 console.log(`Bern/Emmental refresh regressions passed: 20 Bern/Emmental route-edition checks, ${dateChanges.length} cumulative sitemap dates including CH11–CH16, unchanged 4,560-URL inventory, five localized route/search editions, retired-photo preservation, protected Rigi/Zermatt diagrams, and XML geometry (${xmlResult.stdout.trim()}).`);

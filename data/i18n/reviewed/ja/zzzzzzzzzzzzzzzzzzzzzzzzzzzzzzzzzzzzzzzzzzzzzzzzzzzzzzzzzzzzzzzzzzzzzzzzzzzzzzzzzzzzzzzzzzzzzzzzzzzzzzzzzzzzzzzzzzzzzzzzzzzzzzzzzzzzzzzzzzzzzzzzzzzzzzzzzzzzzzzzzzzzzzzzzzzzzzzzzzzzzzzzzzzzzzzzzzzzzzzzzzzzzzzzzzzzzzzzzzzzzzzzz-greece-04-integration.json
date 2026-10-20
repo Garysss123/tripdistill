@@ -1,0 +1,39 @@
+{
+  "locale": "ja",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/",
+    "/about/",
+    "/contact/",
+    "/privacy-policy/",
+    "/components/header.html",
+    "/components/sidebar.html",
+    "/components/footer.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "TripDistill · Practical Travel Guides Across 15 Countries": "TripDistill・15か国の実用旅行ガイド",
+    "15 countries live": "15か国を掲載中",
+    "Explore Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia": "ギリシャ、スペイン、イタリア、英国、フランス、スイス、カナダ、米国、オーストラリア、アジアを巡る",
+    "Open the Greece country atlas →": "ギリシャの国別アトラスを見る →",
+    "Choose eight mainland and island regions through real rail, coach, ferry, heat and last-mile decisions.": "鉄道、バス、フェリー、暑さ、最後の移動区間を踏まえ、実際に旅できる本土と島の8地域を選びましょう。",
+    "Plan Greece →": "ギリシャ旅行を計画 →",
+    "TripDistill now covers Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Greece adds eight mainland and island hubs with 24 focused local routes built around rail, regional coaches, city transit, island crossings, lodging bases and route-specific alternatives; each page includes planning detail and official sources. Its route schematics are original TripDistill diagrams rather than third-party photographs.": "TripDistillでは現在、ギリシャ、スペイン、イタリア、英国、フランス、スイス、カナダ、米国、オーストラリア、ベトナム、マレーシア、中国、日本、韓国、タイを案内しています。ギリシャには本土と島の8地域拠点と、鉄道、地域バス、市内交通、島間移動、宿泊拠点、ルート別の代替案を軸にした24件の現地ガイドがあります。各ページに計画の詳細と公式情報を掲載しています。ルート図はTripDistillオリジナルで、第三者の写真は使っていません。",
+    "Greece guide": "ギリシャ旅行ガイド",
+    "Athens": "アテネ",
+    "Peloponnese": "ペロポネソス半島",
+    "Plan Greece through eight mainland and island regions. Compare rail, KTEL, city networks and ferry transfers with practical stay and weather decisions.": "本土と島の8地域をめぐるギリシャ旅行を計画しましょう。鉄道、KTEL、都市交通網、フェリーの乗り継ぎを比較し、宿泊拠点と天候も踏まえて旅程を決められます。",
+    "Meteora": "メテオラ",
+    "Delphi": "デルフィ",
+    "KTEL": "KTEL（ギリシャ地域バス）",
+    "Mainland gateway": "本土の玄関口",
+    "stay": "宿泊",
+    "Southern mainland": "本土南部",
+    "Central mainland": "本土中部",
+    "Northern mainland": "本土北部",
+    "Southern island": "島の南部",
+    "Aegean island group": "エーゲ海の島々",
+    "Ionian island group": "イオニア海の島々",
+    "Southeastern Aegean island group": "エーゲ海南東部の島々"
+  }
+}

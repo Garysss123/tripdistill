@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -140,18 +141,18 @@ for (const [index, route] of routes.entries()) {
 const baseSearch = searchMap(git(['show', `${base}:data/search-index.json`]));
 const sourceSearch = searchMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
-assert.equal(currentSearch.size, 988, 'Search records retained.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'Search URL inventory is unchanged.');
-assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/')).filter((url) => JSON.stringify(sourceSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'Exact AU source search delta includes only the four selected records.');
+assert.equal(currentSearch.size, 1021, 'Search records retained.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearch.keys()].sort(), 'Search URL inventory is unchanged.');
+assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).filter((url) => JSON.stringify(sourceSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'Exact AU source search delta includes only the four selected records.');
 for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: integrated search record matches the exact source terminal.`);
 
 const baseSitemap = sitemapMap(git(['show', `${base}:sitemap.xml`]));
 const sourceSitemap = sitemapMap(git(['show', `${sourceTerminal}:sitemap.xml`]));
 const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL inventory is unchanged.');
+assert.equal(currentSitemap.size, 4890, 'Current sitemap contains 4,890 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL inventory is unchanged.');
 const datedUrls = routes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/')).filter((url) => sourceSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'The exact AU source commit dates only four routes × five editions.');
+assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).filter((url) => sourceSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'The exact AU source commit dates only four routes × five editions.');
 for (const url of datedUrls) assert.equal(currentSitemap.get(url), date, `${url}: sitemap date.`);
 
 for (const locale of locales) {

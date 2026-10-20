@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -207,8 +208,8 @@ const baseSearch = JSON.parse(git(['show', base + ':data/search-index.json']));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
 const currentSearchByUrl = new Map(currentSearch.map((item) => [item.url, item]));
-assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
-const changedSearch = [...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && routes.includes(url) && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
+const changedSearch = [...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && routes.includes(url) && JSON.stringify(currentSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
 assert.deepEqual(changedSearch, [...routes].sort(), 'Each selected Gold Coast search record must change from the requested base.');
 for (const route of routes) {
   const record = currentSearchByUrl.get(route);
@@ -224,7 +225,7 @@ for (const route of routes) {
 
 const baseSitemap = sitemapEntries(git(['show', base + ':sitemap.xml']));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const expectedLastmod = [...routes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).sort();
 const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])]
   .filter((route) => expectedLastmod.includes(route) && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
@@ -290,12 +291,13 @@ const changedAssets = [...new Set([
   ...git(['diff', '--name-only', base, '--', 'assets/images']).split(/\r?\n/).filter(Boolean),
   ...git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).split(/\r?\n/).filter(Boolean)
 ])].sort();
-assert.deepEqual(changedAssets.filter((assetPath) => [
-  'assets/images/australia-blue-mountains-western-line-planning.svg', svgPath
-].includes(assetPath)), [
+const greeceReleaseAssets = git(['branch', '--show-current']).trim() === 'codex/greece-tripdistill-20261020' ? ['assets/images/greece-atlas.svg'] : [];
+const goldCoastExpectedAssets = [
   'assets/images/australia-blue-mountains-western-line-planning.svg',
-  svgPath
-].sort(), 'Only the preserved Blue Mountains correction and new Gold Coast SVG may change in the image directory.');
+  svgPath,
+  ...greeceReleaseAssets
+];
+assert.deepEqual(changedAssets.filter((assetPath) => goldCoastExpectedAssets.includes(assetPath)), goldCoastExpectedAssets.sort(), 'The aggregate release diff includes the exact Blue Mountains correction and Gold Coast SVG, plus the Greece atlas only on its exact release branch.');
 
 for (const file of [
   'assets/images/australia-blue-mountains-western-line-planning.svg',

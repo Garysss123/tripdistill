@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnPython3 } from './python-runner.mjs';
+import { descendants, descendantsByTag, numberAttr, parseXmlFile } from './svg-test-utils.mjs';
 import { canadaClusters } from '../data/canada-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -19,55 +19,53 @@ for (const phrase of [
   'Johnston Canyon', 'Lake Minnewanka', 'BANFF BASE'
 ]) assert.ok(source.includes(phrase), `SVG legend/content missing: ${phrase}`);
 
-const geometryCheck = String.raw`
-import re, sys, xml.etree.ElementTree as ET
-file = sys.argv[1]
-root = ET.parse(file).getroot()
-assert root.tag == '{http://www.w3.org/2000/svg}svg'
-assert root.attrib.get('viewBox') == '0 0 1200 700'
-ns = '{http://www.w3.org/2000/svg}'
-texts = [n.text or '' for n in root.iter(ns + 'text')]
-assert len(texts) >= 10
-paths = list(root.iter(ns + 'path'))
-assert len(paths) >= 4
-for node in root.iter():
-    if node.tag == ns + 'path':
-        nums = [float(x) for x in re.findall(r'[-+]?(?:\d*\.\d+|\d+\.?\d*)', node.attrib.get('d', ''))]
-        assert nums and all(0 <= n <= 1200 for n in nums), ('path coordinate outside viewBox', node.attrib)
-    elif node.tag == ns + 'rect':
-        x, y = float(node.attrib.get('x', '0')), float(node.attrib.get('y', '0'))
-        w, h = float(node.attrib.get('width', '0')), float(node.attrib.get('height', '0'))
-        assert 0 <= x <= 1200 and 0 <= y <= 700 and x + w <= 1200 and y + h <= 700
-    elif node.tag == ns + 'circle':
-        cx, cy, radius = (float(node.attrib[k]) for k in ('cx', 'cy', 'r'))
-        assert radius > 0 and radius <= cx <= 1200 - radius and radius <= cy <= 700 - radius
-    elif node.tag == ns + 'text':
-        x, y = float(node.attrib['x']), float(node.attrib['y'])
-        assert 0 <= x <= 1200 and 0 <= y <= 700
-children = list(root)
-rects = [n for n in root.iter(ns + 'rect')]
-west_card = next(n for n in rects if n.attrib.get('x') == '118')
-east_card = next(n for n in rects if n.attrib.get('x') == '778')
-red_arrow = next(n for n in paths if n.attrib.get('fill') == '#b5503d')
-blue_arrow = next(n for n in paths if n.attrib.get('fill') == '#2f7184')
-red_marker = next(n for n in root.iter(ns + 'circle') if n.attrib.get('cx') == '476')
-blue_marker = next(n for n in root.iter(ns + 'circle') if n.attrib.get('cx') == '734')
-assert children.index(west_card) < children.index(red_arrow) < children.index(red_marker)
-assert children.index(east_card) < children.index(blue_arrow) < children.index(blue_marker)
-west_card_right = float(west_card.attrib['x']) + float(west_card.attrib['width'])
-east_card_left = float(east_card.attrib['x'])
-assert float(red_marker.attrib['cx']) - float(red_marker.attrib['r']) > west_card_right
-assert float(blue_marker.attrib['cx']) + float(blue_marker.attrib['r']) < east_card_left
-assert red_arrow.attrib['d'].startswith('M 434 228 ')
-assert blue_arrow.attrib['d'].startswith('M 772 225 ')
-thai = next(n for n in root.iter(ns + 'text') if (n.text or '').startswith('ไทย ·'))
-assert float(thai.attrib['y']) <= 633 and 658 - float(thai.attrib['y']) >= 25
-`;
-const parsed = spawnPython3(['-c', geometryCheck, svgFile], { encoding: 'utf8' });
-assert.equal(parsed.status, 0, `Python XML/geometry verification failed:\n${parsed.stdout}\n${parsed.stderr}`);
+const svgRoot = parseXmlFile(svgFile);
+const elements = descendants(svgRoot);
+const texts = descendantsByTag(svgRoot, 'text');
+const paths = descendantsByTag(svgRoot, 'path');
+assert.equal(svgRoot.tag, 'svg');
+assert.equal(svgRoot.uri, 'http://www.w3.org/2000/svg');
+assert.equal(svgRoot.attrs.viewBox, '0 0 1200 700');
+assert.ok(texts.length >= 10);
+assert.ok(paths.length >= 4);
+for (const node of elements) {
+  if (node.tag === 'path') {
+    const nums = [...(node.attrs.d || '').matchAll(/[-+]?(?:\d*\.\d+|\d+\.?\d*)/gu)].map((match) => Number(match[0]));
+    assert.ok(nums.length && nums.every((value) => value >= 0 && value <= 1200), ['path coordinate outside viewBox', node.attrs]);
+  } else if (node.tag === 'rect') {
+    const x = numberAttr(node, 'x'), y = numberAttr(node, 'y');
+    const w = numberAttr(node, 'width'), h = numberAttr(node, 'height');
+    assert.ok(x >= 0 && x <= 1200 && y >= 0 && y <= 700 && x + w <= 1200 && y + h <= 700);
+  } else if (node.tag === 'circle') {
+    const cx = numberAttr(node, 'cx'), cy = numberAttr(node, 'cy'), radius = numberAttr(node, 'r');
+    assert.ok(radius > 0 && radius <= cx && cx <= 1200 - radius && radius <= cy && cy <= 700 - radius);
+  } else if (node.tag === 'text') {
+    const x = numberAttr(node, 'x'), y = numberAttr(node, 'y');
+    assert.ok(x >= 0 && x <= 1200 && y >= 0 && y <= 700);
+  }
+}
+const rects = descendantsByTag(svgRoot, 'rect');
+const westCard = rects.find((node) => node.attrs.x === '118');
+const eastCard = rects.find((node) => node.attrs.x === '778');
+const redArrow = paths.find((node) => node.attrs.fill === '#b5503d');
+const blueArrow = paths.find((node) => node.attrs.fill === '#2f7184');
+const circles = descendantsByTag(svgRoot, 'circle');
+const redMarker = circles.find((node) => node.attrs.cx === '476');
+const blueMarker = circles.find((node) => node.attrs.cx === '734');
+const rootChildren = svgRoot.content.filter((item) => typeof item === 'object');
+assert.ok(rootChildren.indexOf(westCard) < rootChildren.indexOf(redArrow) && rootChildren.indexOf(redArrow) < rootChildren.indexOf(redMarker));
+assert.ok(rootChildren.indexOf(eastCard) < rootChildren.indexOf(blueArrow) && rootChildren.indexOf(blueArrow) < rootChildren.indexOf(blueMarker));
+const westCardRight = numberAttr(westCard, 'x') + numberAttr(westCard, 'width');
+const eastCardLeft = numberAttr(eastCard, 'x');
+assert.ok(numberAttr(redMarker, 'cx') - numberAttr(redMarker, 'r') > westCardRight);
+assert.ok(numberAttr(blueMarker, 'cx') + numberAttr(blueMarker, 'r') < eastCardLeft);
+assert.ok(redArrow.attrs.d.startsWith('M 434 228 '));
+assert.ok(blueArrow.attrs.d.startsWith('M 772 225 '));
+const thai = texts.find((node) => node.content.find((item) => typeof item === 'string')?.startsWith('ไทย ·'));
+assert.ok(numberAttr(thai, 'y') <= 633 && 658 - numberAttr(thai, 'y') >= 25);
 
 const page = fs.readFileSync(path.join(root, 'canada/banff-lake-louise/johnston-minnewanka/index.html'), 'utf8');
 assert.ok(page.includes(diagram.src) && page.includes(diagram.source) && page.includes(diagram.rightsStatusUrl));
 assert.ok(page.includes('ca-banff-map-wrap'));
 assert.ok(!page.includes('/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp'));
-console.log('Banff SVG regression passed: Python ElementTree parsed the XML; route markers/arrows render beyond the corridor cards in visible order, Thai legend keeps bottom padding, geometry stays within the viewBox, and five-language/source/Terms checks pass.');
+console.log('Banff SVG regression passed: strict Saxes XML parse; route markers/arrows render beyond the corridor cards in visible order, Thai legend keeps bottom padding, geometry stays within the viewBox, and five-language/source/Terms checks pass.');

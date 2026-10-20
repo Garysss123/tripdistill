@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,6 +9,7 @@ import { parse } from 'parse5';
 import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { SaxesParser } from 'saxes';
 import { spainRoutes } from '../data/spain-guides.mjs';
+import { greeceRoutes } from '../data/greece-guides.mjs';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 import { australiaClusters } from '../data/australia-guides.mjs';
 import { collectTranslationWork } from './i18n-lib.mjs';
@@ -15,7 +17,7 @@ import { integrationRouteGroups, postHawaiiNewOrleansRoutes, postIntegrationAust
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const branch = execFileSync('git', ['branch', '--show-current'], { cwd: root, encoding: 'utf8' }).trim();
-const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020' || branch === 'codex/greece-tripdistill-20261020';
 const base = '99f9f2f1f7d586164c5dd3308711b0346fc5be5b';
 const integrationBase = 'ca2c1517ae3d962b5a4370c6c73c056f4ba14939';
 const priorCairnsBodyCommit = '43551cf59c9f9be20639130970e933c54f10b568';
@@ -208,6 +210,7 @@ const changedHtml = htmlPathsFromNameStatus(
   (name) => fs.readFileSync(path.join(root, name), 'utf8')
 );
 const spainEnglishHtmlPaths = spainRoutes.map((route) => `${route.slice(1)}index.html`).sort();
+const greeceEnglishHtmlPaths = greeceRoutes.map((route) => `${route.slice(1)}index.html`).sort();
 assert.equal(spainEnglishHtmlPaths.length, 33, 'Spain tracked HTML release scope must contain exactly 33 English routes.');
 assert.equal(new Set(spainEnglishHtmlPaths).size, 33, 'Spain tracked HTML release scope must not contain duplicate paths.');
 if (releaseContext) {
@@ -215,6 +218,7 @@ if (releaseContext) {
     ...substantiveHtmlPaths(integrationBase, '7f797a9685649e945a5660ea1352ce239d638389'),
     ...substantiveHtmlPaths('6d3008dac99de4d2bc9988e6d06a5f393021f81c', 'ddea19cb80796325ed0a76087c39ad25e17f2b07'),
     ...spainEnglishHtmlPaths,
+    ...greeceEnglishHtmlPaths,
     'about/index.html',
     'components/header.html',
     'components/sidebar.html',
@@ -223,7 +227,11 @@ if (releaseContext) {
   ]);
   const changedSpainHtml = changedHtml.filter((name) => spainEnglishHtmlPaths.includes(name));
   assert.deepEqual(changedSpainHtml, spainEnglishHtmlPaths, 'All 33 tracked English Spain pages must appear in the release diff; localized outputs are generated and covered by the translation audit.');
-  const requiredHtml = [...expectedHtml, ...spainEnglishHtmlPaths];
+  const changedGreeceHtml = changedHtml.filter((name) => greeceEnglishHtmlPaths.includes(name));
+  if (branch === 'codex/greece-tripdistill-20261020') {
+    assert.deepEqual(changedGreeceHtml, greeceEnglishHtmlPaths, 'All 33 registered English Greece pages must appear in the release diff; localized outputs are generated and covered by the translation audit.');
+  }
+  const requiredHtml = [...expectedHtml, ...spainEnglishHtmlPaths, ...(branch === 'codex/greece-tripdistill-20261020' ? greeceEnglishHtmlPaths : [])];
   assertHtmlScope(changedHtml, allowedReleaseHtml, requiredHtml);
   // Negative fixture: an unrelated added country page must be detected and rejected by the same whole-repository guard.
   const unexpectedAddition = htmlPathsFromNameStatus(
@@ -306,8 +314,8 @@ const englishSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-in
 const baseSearch = JSON.parse(git(['show', `${integrationBase}:data/search-index.json`]));
 const englishSearchByUrl = new Map(englishSearch.map((item) => [item.url, item]));
 const baseSearchByUrl = new Map(baseSearch.map((item) => [item.url, item]));
-assert.deepEqual([...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
-const changedSearch = [...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
+assert.deepEqual([...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearchByUrl.keys()].sort(), 'Search URL set must remain unchanged.');
+const changedSearch = [...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(englishSearchByUrl.get(url)) !== JSON.stringify(baseSearchByUrl.get(url))).sort();
 assert.deepEqual(changedSearch, [...routes, ...switzerlandCh15Routes, ...switzerlandCh16Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes, ...laterAustraliaGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postBostonOverviewJuneauSearchRoutes, '/thailand/'].sort(), 'Only the exact source scope, Thailand overview, and Juneau follow-up may change the English search records since the Cairns integration checkpoint; the U.S. overview has no search change.');
 const expectedSearchSummary = new Map([
   ['/australia/cairns-wet-tropics/', cluster.searchSummary],
@@ -326,10 +334,10 @@ for (const [locale, prefix] of locales.slice(1)) {
 
 const baseSitemap = sitemapEntries(git(['show', `${integrationBase}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set must remain unchanged.');
 const thailandOverviewLastmod = locales.map(([, prefix]) => prefix + '/thailand/');
 const expectedLastmod = [...routes, ...switzerlandCh15Routes, ...switzerlandCh16Routes, ...laterCanadaCa15Routes, ...laterCanadaCa16Ca18SearchRoutes.slice(1), ...laterAustraliaGapRoutes, ...integrationRouteGroups.vietnam, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postBostonOverviewJuneauRoutes, ...postIntegrationTripDistillRoutes].flatMap((route) => locales.map(([, prefix]) => prefix + route)).concat(thailandOverviewLastmod).sort();
-const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => !route.includes('/spain/') && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
+const changedLastmod = [...new Set([...baseSitemap.keys(), ...currentSitemap.keys()])].filter((route) => !route.includes('/spain/') && !isGreeceRoutePath(route) && baseSitemap.get(route) !== currentSitemap.get(route)).sort();
 assert.deepEqual(changedLastmod, expectedLastmod, 'Only the four Cairns, exact CH15/CH16, later Canada/Australia, eight Vietnam and Hawaii/New Orleans follow-on routes across five editions may receive new lastmod dates since the Cairns integration checkpoint.');
 for (const route of expectedLastmod) assert.equal(currentSitemap.get(route), postIntegrationTripDistillRoutes.some((path) => route.endsWith(path)) ? '2026-10-15' : route.endsWith('/thailand/') ? '2026-10-14' : ([...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postHaLongHCMCIntegrationRoutes, ...postMekongDeltaIntegrationRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postAustraliaFinalRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postBostonOverviewJuneauRoutes].some((path) => route.endsWith(path))) ? '2026-10-13' : reviewIsoDate, route + ': sitemap date.');
 

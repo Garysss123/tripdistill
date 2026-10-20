@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -179,8 +180,8 @@ const baseSearchFromGit = new Map(JSON.parse(gitText(base, 'data/search-index.js
 const sourceSearch = new Map(JSON.parse(gitText(sourceTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 const bostonSearch = new Map(JSON.parse(gitText(bostonTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 assert.equal(baseSearchFromGit.size, 955, 'base English search index has 955 entries');
-assert.equal(currentSearch.size, 988, 'current English search index has 988 entries');
-assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
+assert.equal(currentSearch.size, 1021, 'current English search index has 1021 entries');
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
 for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: San Diego search record matches its exact source terminal`);
 for (const route of laterBostonRoutes) assert.deepEqual(currentSearch.get(route), bostonSearch.get(route), `${route}: Boston search record matches its exact source terminal`);
 const overviewJuneauSearch = new Map(JSON.parse(gitText(overviewJuneauTerminal, 'data/search-index.json')).map((entry) => [entry.url, entry]));
@@ -189,8 +190,8 @@ for (const route of postBostonOverviewJuneauSearchRoutes) assert.deepEqual(curre
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'base sitemap has exactly 4,560 URLs');
-assert.equal(currentSitemap.size, 4725, 'current sitemap has exactly 4,560 URLs');
-assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
+assert.equal(currentSitemap.size, 4890, 'current sitemap has exactly 4,890 URLs');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
 const datedPaths = [...routes, ...laterBostonRoutes, ...postBostonOverviewJuneauRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: lastmod`);
 

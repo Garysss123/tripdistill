@@ -40,4 +40,4 @@ for(const config of [{code:'zh-Hant',dir:'zh',prefix:'/zh'},{code:'ja',dir:'ja',
 const cardCounts={country:(fs.readFileSync(routeFile('/spain/'),'utf8').match(/class="spain-region-card"/g)||[]).length};
 if(cardCounts.country!==8)fail(`Country page links ${cardCounts.country} regions, expected 8.`);
 if(errors.length){console.error(`Spain audit failed (${errors.length} findings):`);for(const e of errors)console.error('- '+e);process.exit(1);}
-console.log(`Spain audit passed: 33 English pages, 132 localized pages, 33 search routes, 8 licensed images, 4,725 sitemap URLs; body-depth, SEO, navigation and internal links checked.`);
+console.log(`Spain audit passed: 33 English pages, 132 localized pages, 33 search routes, 8 licensed images, 4,890 site-wide sitemap URLs; body-depth, SEO, navigation and internal links checked.`);

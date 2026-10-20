@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'parse5';
+import { greeceRoutes } from '../data/greece-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const baselineCommit = '92996ef6631fb3775f1bf4f996292059b4aeca83';
@@ -24,6 +25,8 @@ const editions = [
   { code: 'th', prefix: '/th' }
 ];
 const baseDate = '2026-10-13';
+const greeceRouteSet = new Set(greeceRoutes);
+const isGreeceRoutePath = (pathname) => greeceRouteSet.has(pathname.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, ''));
 const fileForRoute = (route) => path.join(root, `${route.slice(1)}index.html`);
 const git = (args, encoding = 'utf8') => execFileSync('git', args, { cwd: root, encoding });
 const readAt = (commit, repoPath) => git(['show', `${commit}:${repoPath}`]);
@@ -130,16 +133,18 @@ for (const route of routes) {
 const baselineSearch = JSON.parse(readAt(baselineCommit, 'data/search-index.json'));
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baselineSearch.length, 955);
-assert.equal(currentSearch.length, baselineSearch.length + 33, 'Only the 33 English Spain routes may add search records.');
+assert.equal(currentSearch.length, baselineSearch.length + 66, 'Only the 33 English Spain and 33 registered Greece routes may add search records.');
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baselineSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-const currentNonSpainSearchByUrl = new Map([...currentSearchByUrl].filter(([url]) => !url.startsWith('/spain/')));
+const currentBaselineSearchByUrl = new Map([...currentSearchByUrl].filter(([url]) => !url.startsWith('/spain/') && !isGreeceRoutePath(url)));
 const newSpainSearchRoutes = [...currentSearchByUrl.keys()].filter((url) => url.startsWith('/spain/'));
 assert.equal(newSpainSearchRoutes.length, 33, 'All 33 English Spain routes should have search records.');
-assert.deepEqual([...currentNonSpainSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'A non-Spain English search URL changed.');
+const newGreeceSearchRoutes = [...currentSearchByUrl.keys()].filter(isGreeceRoutePath);
+assert.deepEqual(newGreeceSearchRoutes.sort(), [...greeceRoutes].sort(), 'Exactly the 33 registered Greece routes should have English search records.');
+assert.deepEqual([...currentBaselineSearchByUrl.keys()].sort(), [...baseSearchByUrl.keys()].sort(), 'An unrelated English search URL changed.');
 const changedSearchRoutes = [...currentSearchByUrl]
-  .filter(([url, record]) => !url.includes('/spain/') && routes.includes(url) && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
+  .filter(([url, record]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && routes.includes(url) && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url)
   .sort();
 assert.deepEqual(changedSearchRoutes, [], 'The existing four HCMC search records should remain stable for this body-only refresh.');
@@ -148,17 +153,20 @@ const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => routes.map((r
 const baseSitemap = parseSitemap(readAt(baselineCommit, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, baseSitemap.size + 165, 'Only 33 new Spain routes across five editions may add sitemap URLs.');
+assert.equal(currentSitemap.size, baseSitemap.size + 330, 'Only 33 Spain and 33 registered Greece routes across five editions may add sitemap URLs.');
 const baseSitemapPaths = [...baseSitemap.keys()].sort();
-const currentNonSpainSitemapPaths = [...currentSitemap.keys()]
-  .filter((url) => !url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/spain/'))
+const currentBaselineSitemapPaths = [...currentSitemap.keys()]
+  .filter((url) => !url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/spain/') && !isGreeceRoutePath(url))
   .sort();
 const newSpainSitemapPaths = [...currentSitemap.keys()]
   .filter((url) => url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/spain/'));
-assert.deepEqual(currentNonSpainSitemapPaths, baseSitemapPaths, 'A non-Spain sitemap URL changed.');
+const newGreeceSitemapPaths = [...currentSitemap.keys()].filter(isGreeceRoutePath);
+const expectedGreeceSitemapPaths = editions.flatMap(({ prefix }) => greeceRoutes.map((route) => `${prefix}${route}`));
+assert.deepEqual(currentBaselineSitemapPaths, baseSitemapPaths, 'An unrelated sitemap URL changed.');
 assert.equal(newSpainSitemapPaths.length, 165, 'Every new Spain route must be present in each of the five editions.');
+assert.deepEqual(newGreeceSitemapPaths.sort(), expectedGreeceSitemapPaths.sort(), 'Every registered Greece route must be present in each of the five editions.');
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => !url.includes('/spain/') && routes.some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && routes.some((route) => url.endsWith(route)) && baseSitemap.get(url) !== date)
   .map(([url]) => url)
   .sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the four HCMC routes in five editions may receive new sitemap dates from the exact batch base.');
@@ -202,5 +210,5 @@ for (const edition of editions.slice(1)) {
   }
 }
 
-console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, four stable and five-language-covered search records, 20 localized date/canonical/hreflang paths, and 165 new Spain sitemap URLs with every non-Spain URL unchanged.`);
+console.log(`HCMC refresh regression passed: ${routes.length} unchanged-before/currently-expanded visible bodies, four stable and five-language-covered search records, 20 localized date/canonical/hreflang paths, and exact Spain/Greece search and sitemap additions with every unrelated URL unchanged.`);
 console.log(JSON.stringify(bodyChecks, null, 2));

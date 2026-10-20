@@ -2,8 +2,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnPython3 } from './python-runner.mjs';
 import { italyClusters } from '../data/italy-guides.mjs';
+import { checkItalyEmiliaSvgXml } from './test-italy-emilia-svg-xml.mjs';
 
 const root = process.cwd();
 const cluster = italyClusters.find((item) => item.slug === 'emilia-romagna');
@@ -29,9 +29,7 @@ for (const guide of diagramGuides) {
   assert.equal(guide.image.rightsStatus, 'Project original; no separate reuse license declared');
   assert.ok(Array.isArray(guide.image.legend) && guide.image.legend.length >= 3);
 }
-const parsed = spawnPython3(['scripts/test-italy-emilia-svg-xml.py'], { encoding: 'utf8' });
-assert.equal(parsed.status, 0, parsed.stderr || parsed.stdout);
-process.stdout.write(parsed.stdout);
+checkItalyEmiliaSvgXml();
 
 for (const relative of retired) {
   assert.ok(fs.existsSync(path.join(root, relative)), `${relative}: original bytes must remain in the repository`);

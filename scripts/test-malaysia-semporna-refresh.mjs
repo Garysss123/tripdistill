@@ -1,3 +1,5 @@
+import { greeceRoutes } from '../data/greece-guides.mjs';
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -5,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'parse5';
-import { execFilePython3 } from './python-runner.mjs';
+import { descendantsByTag, parseXmlFile, textContent } from './svg-test-utils.mjs';
 import { postIntegrationTripDistillRoutes } from './integration-sprint-scope.mjs';
 import { imageCredits, malaysiaDepthClusters, malaysiaDepthGuides, retiredMalaysiaImageCredits } from '../data/malaysia-depth-guides.mjs';
 import { integrationRouteGroups, integrationRoutes, integrationSearchRoutes, integrationSprintBaseline, localizedCurrentSitemapDateChangeRoutes, postHawaiiNewOrleansRoutes, postIntegrationAustraliaRoutes, postIntegrationCanberraRoutes, postIntegrationHawaiiRoutes, postNewOrleansAtlantaRoutes, postAtlantaFloridaRoutes, postFloridaChicagoRoutes, postIntegrationAlpsMargaretRoutes, postHaLongHCMCIntegrationRoutes, postMekongDeltaIntegrationRoutes, postNewEnglandIntegrationRoutes, postIntegrationMargaretRemainingRoutes, followingVietnamDaLatRoutes, postNewEnglandArizonaRoutes, postArizonaLosAngelesRoutes, postLosAngelesBostonRoutes, postLosAngelesSanDiegoRoutes, postIntegrationBroomeRoutes, postIntegrationBroomeTasmaniaRoutes, postIntegrationMuiNeRoutes, postIntegrationPhongNhaRoutes, postIntegrationPhuQuocRoutes, followingVietnamNhaTrangRoutes, followingVietnamAfterNhaTrangRoutes, followingVietnamSouthernGapsRoutes, followingVietnamBayGapsRoutes, followingVietnamCavesIslandsGapsRoutes, postBostonOverviewJuneauRoutes, postBostonOverviewJuneauSearchRoutes, postAustraliaFinalRoutes } from './integration-sprint-scope.mjs';
@@ -135,10 +137,10 @@ const sourceSitemap = readSitemap(root);
 const baselineSitemapRaw = gitBytes(`${integrationScopeBaseline}:sitemap.xml`).toString('utf8');
 const baselineSitemap = new Map([...baselineSitemapRaw.matchAll(/<url><loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)]
   .map(([, url, date]) => [url || '/', date]));
-assert.equal(sourceSitemap.size, 4725, 'source sitemap stays at 4,560 URLs');
-assert.deepEqual(new Set([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URL');
+assert.equal(sourceSitemap.size, 4890, 'source sitemap contains 4,890 URLs across five editions');
+assert.deepEqual(new Set([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baselineSitemap.keys()), 'refresh adds or removes no sitemap URL');
 const expectedLocalizedRoutes = localizedCurrentSitemapDateChangeRoutes(locales.map(({ prefix }) => prefix));
-const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => !url.includes('/spain/') && baselineSitemap.get(url) !== date).map(([url]) => url);
+const changedSitemapRoutes = [...sourceSitemap].filter(([url, date]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && baselineSitemap.get(url) !== date).map(([url]) => url);
 assert.equal(integrationRoutes.length, 302, 'the exact UK, Australia, France, Italy, Switzerland, Canada, Malaysia and twelve Vietnam route scope contains 302 existing English pages');
 assert.deepEqual(new Set(changedSitemapRoutes), expectedLocalizedRoutes, 'only the exact historical scope and five disjoint follow-on groups × five locales receive a new lastmod');
 for (const route of expectedLocalizedRoutes) {
@@ -150,8 +152,8 @@ const baseSearch = JSON.parse(gitBytes(`${integrationScopeBaseline}:data/search-
 const englishSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const baseSearchByUrl = new Map(baseSearch.map((record) => [record.url, record]));
 const englishSearchByUrl = new Map(englishSearch.map((record) => [record.url, record]));
-assert.deepEqual(new Set([...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
-const changedEnglishSearch = [...englishSearchByUrl].filter(([url, record]) => !url.includes('/spain/') && !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
+assert.deepEqual(new Set([...englishSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSearchByUrl.keys()), 'English search URL set is unchanged');
+const changedEnglishSearch = [...englishSearchByUrl].filter(([url, record]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && !isDeepStrictEqual(record, baseSearchByUrl.get(url))).map(([url]) => url);
 assert.deepEqual(new Set(changedEnglishSearch), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/']), 'only the exact integrated country and registered follow-on and Thailand overview search records changed');
 
 const localSearchByPrefix = new Map();
@@ -159,9 +161,10 @@ for (const { prefix } of locales.filter(({ prefix }) => prefix)) {
   const dir = prefix.slice(1);
   const current = JSON.parse(fs.readFileSync(path.join(root, dir, 'data/search-index.json'), 'utf8'));
   const currentByUrl = new Map(current.map((record) => [record.url, record]));
-  assert.deepEqual(new Set([...currentByUrl.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearch.map((record) => `${prefix}${record.url}`)), `${prefix}: localized search keeps the unchanged English URL set with its locale prefix`);
-  assert.equal(current.length, baseSearch.length + 33, `${prefix}: the 33 Spain records are added after all existing search records are localized`);
+  assert.deepEqual(new Set([...currentByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSearch.map((record) => `${prefix}${record.url}`)), `${prefix}: localized search keeps the unchanged English URL set with its locale prefix`);
+  assert.equal(current.length, baseSearch.length + 66, `${prefix}: the 33 Spain and 33 registered Greece records are added after all existing search records are localized`);
   assert.equal([...currentByUrl.keys()].filter((url) => url.startsWith(`${prefix}/spain/`)).length, 33, `${prefix}: all 33 Spain search records are present`);
+  assert.deepEqual([...currentByUrl.keys()].filter((url) => isGreeceRoutePath(url)).sort(), greeceRoutes.map((route) => `${prefix}${route}`).sort(), `${prefix}: exactly the 33 registered Greece search records are present`);
   localSearchByPrefix.set(prefix, currentByUrl);
 }
 
@@ -191,36 +194,22 @@ for (const diagram of diagrams) {
   for (const label of languageLabels) assert.ok(svg.includes(`>${label}</text>`), `${diagram.src}: visible ${label} legend`);
   assert.ok(/not to scale/i.test(svg), `${diagram.src}: the schematic is marked not to scale`);
 }
-const xmlParseCheck = `
-import sys
-from xml.etree import ElementTree
-
-svg_namespace = '{http://www.w3.org/2000/svg}'
-required_labels = ['EN', '繁體中文', '日本語', '한국어', 'ไทย']
-for filename in sys.argv[1:]:
-    root = ElementTree.parse(filename).getroot()
-    if root.tag != svg_namespace + 'svg':
-        raise SystemExit(f'{filename}: root is not an SVG XML element')
-    visible_text = ' '.join(''.join(node.itertext()) for node in root.iter(svg_namespace + 'text'))
-    for label in required_labels:
-        if label not in visible_text:
-            raise SystemExit(f'{filename}: parsed visible XML text lacks {label!r}')
-    if filename.endswith('tripdistill-semporna-sipadan-permit-flow.svg'):
-        for phrase in ['BRIEF & DIVE', 'RETURN & REST']:
-            if phrase not in visible_text:
-                raise SystemExit(f'{filename}: parsed label changed or disappeared: {phrase!r}')
-print(f'Strict XML parse passed for {len(sys.argv) - 1} Semporna SVG files; each parsed as an SVG root with all five visible language labels.')
-`;
 const xmlSvgPaths = diagrams.map((diagram) => path.join(root, diagram.src.slice(1)));
 if (process.argv.includes('--dist')) {
   xmlSvgPaths.push(...diagrams.map((diagram) => path.join(root, 'dist', diagram.src.slice(1))));
 }
-const xmlParseOutput = execFilePython3([
-  '-c', xmlParseCheck,
-  ...xmlSvgPaths
-], { cwd: root, encoding: 'utf8' });
-assert.match(xmlParseOutput, new RegExp(`Strict XML parse passed for ${xmlSvgPaths.length} Semporna SVG files`));
-process.stdout.write(xmlParseOutput);
+const requiredLabels = ['EN', '繁體中文', '日本語', '한국어', 'ไทย'];
+for (const filename of xmlSvgPaths) {
+  const svg = parseXmlFile(filename);
+  assert.equal(svg.tag, 'svg', `${filename}: root is not an SVG XML element`);
+  assert.equal(svg.uri, 'http://www.w3.org/2000/svg', `${filename}: root is not an SVG XML element`);
+  const visibleText = descendantsByTag(svg, 'text').map(textContent).join(' ');
+  for (const label of requiredLabels) assert.ok(visibleText.includes(label), `${filename}: parsed visible XML text lacks ${JSON.stringify(label)}`);
+  if (filename.endsWith('tripdistill-semporna-sipadan-permit-flow.svg')) {
+    for (const phrase of ['BRIEF & DIVE', 'RETURN & REST']) assert.ok(visibleText.includes(phrase), `${filename}: parsed label changed or disappeared: ${JSON.stringify(phrase)}`);
+  }
+}
+console.log(`Strict Saxes XML parse passed for ${xmlSvgPaths.length} Semporna SVG files; each parsed as an SVG root with all five visible language labels.`);
 
 for (const route of routes) {
   const englishRecord = englishSearchByUrl.get(route);
@@ -306,8 +295,8 @@ for (const [route, phrases] of [
 if (process.argv.includes('--dist')) {
   const distRoot = path.join(root, 'dist');
   const distSitemap = readSitemap(distRoot);
-  assert.equal(distSitemap.size, 4725, 'built sitemap remains at 4,560 URLs');
-  assert.deepEqual(new Set([...distSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baselineSitemap.keys()), 'built refresh adds or removes no URL');
+  assert.equal(distSitemap.size, 4890, 'built sitemap contains 4,890 URLs across five editions');
+  assert.deepEqual(new Set([...distSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baselineSitemap.keys()), 'built refresh adds or removes no URL');
   for (const route of routes) {
     for (const { prefix } of locales) {
       const html = fs.readFileSync(pagePath(prefix, route, distRoot), 'utf8');

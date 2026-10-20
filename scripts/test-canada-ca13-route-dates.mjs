@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -66,7 +67,7 @@ const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdi
 const dates = readDates(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const previousDates = readDates(gitShow(`${base}:sitemap.xml`));
 const integrationDates = readDates(gitShow(`${integrationBase}:sitemap.xml`));
-assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must not change.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must not change.');
 const expectedDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => routes.some((target) => route.endsWith(target)) && integrationDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four Saguenay routes × five editions may have changed Canada sitemap dates since the pre-CA13 integration checkpoint.');

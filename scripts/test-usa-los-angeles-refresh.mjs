@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -178,15 +179,15 @@ for (const [route, urls] of officialSources) {
 const currentSearch = new Map(readJson('data/search-index.json').map((entry) => [entry.url, entry]));
 const baseSearchFromGit = new Map(JSON.parse(gitText(base, 'data/search-index.json')).map((entry) => [entry.url, entry]));
 assert.equal(baseSearchFromGit.size, 955, 'base English search index has 955 entries');
-assert.equal(currentSearch.size, 988, 'current English search index has 988 entries');
-assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
-assert.deepEqual([...currentSearch].filter(([url, value]) => !url.includes('/spain/') && url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes, ...laterSanDiegoRoutes, ...laterBostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'only the exact Los Angeles, San Diego, Boston and Juneau summaries changed; the USA overview search remains unchanged');
+assert.equal(currentSearch.size, 1021, 'current English search index has 1021 entries');
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSearchFromGit.keys()), 'English search URL inventory is unchanged');
+assert.deepEqual([...currentSearch].filter(([url, value]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearchFromGit.get(url))).map(([url]) => url).sort(), [...routes, ...laterSanDiegoRoutes, ...laterBostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'only the exact Los Angeles, San Diego, Boston and Juneau summaries changed; the USA overview search remains unchanged');
 
 const baseSitemap = sitemap(gitText(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'base sitemap has exactly 4,560 URLs');
-assert.equal(currentSitemap.size, 4725, 'current sitemap has exactly 4,560 URLs');
-assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
+assert.equal(currentSitemap.size, 4890, 'current sitemap has exactly 4,890 URLs');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSitemap.keys()), 'the sitemap URL inventory is unchanged');
 const datedPaths = [...routes, ...laterSanDiegoRoutes, ...laterBostonRoutes, ...postBostonOverviewJuneauRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 assert.deepEqual([...currentSitemap].filter(([route, date]) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').startsWith('/usa/') && baseSitemap.get(route) !== date).map(([route]) => route).sort(), datedPaths, 'only Los Angeles, San Diego and Boston routes across five editions receive new U.S. sitemap dates; other country updates are audited separately');
 for (const route of datedPaths) assert.equal(currentSitemap.get(route), '2026-10-13', `${route}: lastmod`);

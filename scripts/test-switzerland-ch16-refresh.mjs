@@ -1,3 +1,4 @@
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -88,8 +89,8 @@ for (const [slug, guide] of Object.entries(switzerlandCh16GuideRefresh)) {
 const baseSitemap = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const currentSitemap = sitemap(read('sitemap.xml'));
 assert.equal(baseSitemap.size, 4560, 'the selected base has 4,560 localized URLs');
-assert.equal(currentSitemap.size, baseSitemap.size + 165, 'the exact Spain release adds 165 localized paths');
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs remain unchanged');
+assert.equal(currentSitemap.size, baseSitemap.size + 330, 'the exact Spain and Greece release adds 330 localized paths');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'all sitemap URLs remain unchanged');
 const expectedDated = new Set(locales.flatMap(({ prefix }) => targetRoutes.map((route) => `${prefix}${route}`)));
 const changedDates = [...currentSitemap].filter(([route, date]) => route.includes('/switzerland/') && baseSitemap.get(route) !== date);
 assert.equal(changedDates.length, 25, 'exactly five guides across five editions have updated dates');
@@ -100,8 +101,8 @@ for (const [route, date] of changedDates) {
 
 const baseSearch = JSON.parse(execFileSync('git', ['show', `${base}:data/search-index.json`], { cwd: root, encoding: 'utf8' }));
 const currentSearch = JSON.parse(read('data/search-index.json'));
-assert.equal(currentSearch.length, baseSearch.length + 33, 'the English search index contains the exact 33 added Spain routes');
-assert.deepEqual(currentSearch.map((item) => item.url).filter((url) => !url.startsWith('/spain/')).sort(), baseSearch.map((item) => item.url).sort(), 'all pre-existing English search URLs remain unchanged');
+assert.equal(currentSearch.length, baseSearch.length + 66, 'the English search index contains the exact 33 added Spain and 33 registered Greece routes');
+assert.deepEqual(currentSearch.map((item) => item.url).filter((url) => !url.startsWith('/spain/') && !isGreeceRoutePath(url)).sort(), baseSearch.map((item) => item.url).sort(), 'all pre-existing English search URLs remain unchanged');
 for (const record of currentSearch.filter((item) => item.url.startsWith('/switzerland/') && !targetSet.has(item.url))) {
   assert.deepEqual(record, baseSearch.find((item) => item.url === record.url), `non-target English search record changed: ${record.url}`);
 }

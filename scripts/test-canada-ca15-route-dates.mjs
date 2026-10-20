@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -101,8 +102,8 @@ const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdi
 const previousDates = readDates(previousSitemap);
 const sourceDates = readDates(sourceSitemap);
 const dates = readDates(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
-assert.deepEqual([...sourceDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The CA15 source terminal must retain the exact CA14 sitemap URL set.');
-assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain unchanged.');
+assert.deepEqual([...sourceDates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'The CA15 source terminal must retain the exact CA14 sitemap URL set.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain unchanged.');
 const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA15 source terminal may change only the four PEI routes across five editions.');

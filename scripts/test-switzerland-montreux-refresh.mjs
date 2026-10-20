@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -8,7 +9,7 @@ import { parse } from 'parse5';
 import { switzerlandClusters, switzerlandGuides } from '../data/switzerland-guides.mjs';
 import { switzerlandImageManifest, switzerlandRetiredImageRecords } from '../data/switzerland-image-manifest.mjs';
 import { collectTranslationWork, localeConfigs } from './i18n-lib.mjs';
-import { spawnPython3 } from './python-runner.mjs';
+import { SaxesParser } from 'saxes';
 import { switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -128,7 +129,7 @@ function sitemapMap(source) {
   return new Map([...source.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/gu)].map((match) => [match[1], match[2]]));
 }
 const currentMap = sitemapMap(sitemap), baseMap = sitemapMap(baseSitemap);
-assert.deepEqual([...currentMap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseMap.keys()].sort(), 'sitemap URL inventory is unchanged');
+assert.deepEqual([...currentMap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseMap.keys()].sort(), 'sitemap URL inventory is unchanged');
 const routeLocs = new Set(routes.flatMap((route) => locales.map((locale) => `https://tripdistill.com${locale.prefix}${route}`)));
 const bernEmmentalRoutes = [
   '/switzerland/bern-emmental/',
@@ -192,18 +193,40 @@ assert.match(diagramEntry.rightsStatus, /Project original/i);
 const diagramPath = path.join(root, diagramEntry.src.slice(1));
 assert.equal(sha1(fs.readFileSync(diagramPath)), diagramEntry.localSha1, 'original diagram matches its manifest hash');
 
-// Parse the SVG as XML and validate its simple geometry and five visible language labels.
-const xmlInspector = `import json, sys, xml.etree.ElementTree as ET
-root = ET.parse(sys.argv[1]).getroot()
-items = []
-for node in root.iter():
-    tag = node.tag.rsplit('}', 1)[-1]
-    items.append({'tag': tag, 'attrs': node.attrib, 'text': ''.join(node.itertext()).strip() if tag == 'text' else ''})
-print(json.dumps({'root': {'tag': root.tag.rsplit('}', 1)[-1], 'attrs': root.attrib}, 'items': items}, ensure_ascii=False))`;
-const xml = spawnPython3(['-c', xmlInspector, diagramPath], { encoding: 'utf8' });
-assert.equal(xml.status, 0, `SVG must parse as XML: ${xml.stderr}`);
-const diagram = JSON.parse(xml.stdout);
+// Parse the SVG as XML with the project's cross-platform Node XML parser.
+const svgXml = fs.readFileSync(diagramPath, 'utf8');
+const tree = [];
+const stack = [];
+let parseError;
+const parser = new SaxesParser({ xmlns: true });
+parser.on('doctype', () => { throw new Error('DOCTYPE is forbidden in SVG input'); });
+parser.on('error', (error) => { parseError ??= error; });
+parser.on('opentag', (tag) => {
+  const node = {
+    tag: tag.local,
+    uri: tag.uri,
+    attrs: Object.fromEntries(Object.values(tag.attributes).map((attribute) => [attribute.name, attribute.value])),
+    content: []
+  };
+  if (stack.length) stack.at(-1).content.push(node);
+  else tree.push(node);
+  stack.push(node);
+});
+parser.on('text', (text) => { stack.at(-1)?.content.push(text); });
+parser.on('cdata', (text) => { stack.at(-1)?.content.push(text); });
+parser.on('closetag', () => { stack.pop(); });
+parser.write(svgXml).close();
+assert.equal(parseError, undefined, `SVG must parse as XML: ${parseError?.message || ''}`);
+assert.equal(tree.length, 1, 'SVG XML has exactly one root element');
+const flatten = (node) => [node, ...node.content.filter((item) => typeof item === 'object').flatMap(flatten)];
+const textContent = (node) => node.content.map((item) => typeof item === 'string' ? item : textContent(item)).join('');
+const svgRoot = tree[0];
+const diagram = {
+  root: { tag: svgRoot.tag, attrs: svgRoot.attrs, uri: svgRoot.uri },
+  items: flatten(svgRoot).map((node) => ({ tag: node.tag, attrs: node.attrs, text: node.tag === 'text' ? textContent(node).trim() : '' }))
+};
 assert.equal(diagram.root.tag, 'svg');
+assert.equal(diagram.root.uri, 'http://www.w3.org/2000/svg');
 assert.equal(diagram.root.attrs.viewBox, '0 0 1600 1066');
 const permittedTags = new Set(['svg', 'title', 'desc', 'rect', 'line', 'circle', 'text']);
 assert.ok(diagram.items.every((item) => permittedTags.has(item.tag)), 'SVG uses only the checked diagram element set');

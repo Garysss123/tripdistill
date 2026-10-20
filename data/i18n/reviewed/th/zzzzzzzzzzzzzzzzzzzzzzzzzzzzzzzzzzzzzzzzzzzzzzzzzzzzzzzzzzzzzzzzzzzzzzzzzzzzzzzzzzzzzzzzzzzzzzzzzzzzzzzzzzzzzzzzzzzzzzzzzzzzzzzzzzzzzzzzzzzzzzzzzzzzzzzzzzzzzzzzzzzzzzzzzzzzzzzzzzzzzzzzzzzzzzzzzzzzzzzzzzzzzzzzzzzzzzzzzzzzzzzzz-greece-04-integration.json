@@ -1,0 +1,39 @@
+{
+  "locale": "th",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/",
+    "/about/",
+    "/contact/",
+    "/privacy-policy/",
+    "/components/header.html",
+    "/components/sidebar.html",
+    "/components/footer.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "TripDistill · Practical Travel Guides Across 15 Countries": "TripDistill · คู่มือท่องเที่ยวเชิงปฏิบัติ 15 ประเทศ",
+    "15 countries live": "เปิดให้ใช้งานแล้ว 15 ประเทศ",
+    "Explore Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia": "เที่ยวกรีซ สเปน อิตาลี สหราชอาณาจักร ฝรั่งเศส สวิตเซอร์แลนด์ แคนาดา สหรัฐอเมริกา ออสเตรเลีย และเอเชีย",
+    "Open the Greece country atlas →": "เปิดแผนที่ท่องเที่ยวกรีซ →",
+    "Choose eight mainland and island regions through real rail, coach, ferry, heat and last-mile decisions.": "เลือกเที่ยว 8 ภูมิภาคบนแผ่นดินใหญ่และหมู่เกาะ โดยพิจารณารถไฟ รถโค้ช เรือเฟอร์รี่ อากาศร้อน และการเดินทางช่วงสุดท้ายจากข้อมูลจริง",
+    "Plan Greece →": "วางแผนเที่ยวกรีซ →",
+    "TripDistill now covers Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Greece adds eight mainland and island hubs with 24 focused local routes built around rail, regional coaches, city transit, island crossings, lodging bases and route-specific alternatives; each page includes planning detail and official sources. Its route schematics are original TripDistill diagrams rather than third-party photographs.": "ตอนนี้ TripDistill ครอบคลุมกรีซ สเปน อิตาลี สหราชอาณาจักร ฝรั่งเศส สวิตเซอร์แลนด์ แคนาดา สหรัฐอเมริกา ออสเตรเลีย เวียดนาม มาเลเซีย จีน ญี่ปุ่น เกาหลีใต้ และไทย กรีซเพิ่มศูนย์ภูมิภาคแปดแห่งทั้งบนแผ่นดินใหญ่และหมู่เกาะ พร้อมเส้นทางท้องถิ่นเจาะจง 24 เส้นทางที่วางแผนตามรถไฟ รถโค้ชภูมิภาค ขนส่งในเมือง การข้ามเกาะ ฐานที่พัก และทางเลือกสำรองเฉพาะเส้นทาง แต่ละหน้ามีรายละเอียดการวางแผนและแหล่งข้อมูลทางการ แผนผังเส้นทางเป็นภาพต้นฉบับของ TripDistill ไม่ใช่ภาพถ่ายจากบุคคลที่สาม",
+    "Greece guide": "คู่มือเที่ยวกรีซ",
+    "Athens": "เอเธนส์",
+    "Peloponnese": "เพโลพอนนีส",
+    "Plan Greece through eight mainland and island regions. Compare rail, KTEL, city networks and ferry transfers with practical stay and weather decisions.": "วางแผนเที่ยวกรีซผ่าน 8 ภูมิภาคทั้งแผ่นดินใหญ่และหมู่เกาะ เปรียบเทียบรถไฟ KTEL เครือข่ายในเมือง และการต่อเรือเฟอร์รี่ พร้อมตัดสินใจเรื่องฐานพักและสภาพอากาศอย่างเป็นรูปธรรม",
+    "Meteora": "เมเทโอรา",
+    "Delphi": "เดลฟี",
+    "KTEL": "KTEL",
+    "Mainland gateway": "ประตูสู่แผ่นดินใหญ่",
+    "stay": "ฐานพัก",
+    "Southern mainland": "แผ่นดินใหญ่ตอนใต้",
+    "Central mainland": "แผ่นดินใหญ่ตอนกลาง",
+    "Northern mainland": "แผ่นดินใหญ่ตอนเหนือ",
+    "Southern island": "เกาะทางใต้",
+    "Aegean island group": "กลุ่มเกาะทะเลอีเจียน",
+    "Ionian island group": "กลุ่มเกาะไอโอเนียน",
+    "Southeastern Aegean island group": "กลุ่มเกาะทะเลอีเจียนตะวันออกเฉียงใต้"
+  }
+}

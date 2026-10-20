@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -172,16 +173,16 @@ for (const route of routes) {
 const baseSearch = searchByUrl(JSON.parse(gitShow(base, 'data/search-index.json')));
 const currentSearch = searchByUrl(JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8')));
 assert.equal(baseSearch.size, 955, 'source-base English search index has 955 records');
-assert.equal(currentSearch.size, 988, 'English search index retains 988 records');
-assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSearch.keys()), 'English search URL set remains unchanged');
-const changedSearchRoutes = [...currentSearch].filter(([url, value]) => !url.includes('/spain/') && url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
+assert.equal(currentSearch.size, 1021, 'English search index retains 1021 records');
+assert.deepEqual(new Set([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSearch.keys()), 'English search URL set remains unchanged');
+const changedSearchRoutes = [...currentSearch].filter(([url, value]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && url.startsWith('/usa/') && JSON.stringify(value) !== JSON.stringify(baseSearch.get(url))).map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes, ...newEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauSearchRoutes].sort(), 'Chicago adds four English search changes; later Juneau search is added explicitly and overview search remains unchanged');
 
 const baseSitemap = sitemap(gitShow(base, 'sitemap.xml'));
 const currentSitemap = sitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'source-base sitemap has 4,560 URLs');
-assert.equal(currentSitemap.size, 4725, 'current sitemap retains 4,560 URLs');
-assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baseSitemap.keys()), 'sitemap URL set remains unchanged');
+assert.equal(currentSitemap.size, 4890, 'current sitemap contains 4,890 URLs across five editions');
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(baseSitemap.keys()), 'sitemap URL set remains unchanged');
 const datePaths = routes.flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
 const changedDates = [...currentSitemap].filter(([route, date]) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/, '').startsWith('/usa/') && baseSitemap.get(route) !== date).map(([route]) => route).sort();
 const expectedUsDates = [...routes, ...newEnglandRoutes, ...arizonaRoutes, ...losAngelesRoutes, ...sanDiegoRoutes, ...bostonRoutes, ...postBostonOverviewJuneauRoutes].flatMap((route) => locales.map(({ prefix }) => `${prefix}${route}`)).sort();
@@ -203,7 +204,7 @@ for (const locale of locales.slice(1)) {
   const recordsPath = path.join(root, `${locale.prefix}/data/search-index.json`);
   assert.ok(fs.existsSync(recordsPath), `${locale.code} localized search index exists`);
   const records = searchByUrl(JSON.parse(fs.readFileSync(recordsPath, 'utf8')));
-  assert.equal(records.size, 988, `${locale.code} search index has 988 records`);
+  assert.equal(records.size, 1021, `${locale.code} search index has 1021 records`);
   const summaries = [];
   for (const route of routes) {
     const entry = records.get(`${locale.prefix}${route}`);
@@ -213,5 +214,5 @@ for (const locale of locales.slice(1)) {
   }
 }
 
-console.log(`USA Chicago refresh regression passed: four Chicago routes plus exact New England, Arizona, Los Angeles, San Diego and Boston batches and two separately accounted overview/Juneau bodies; only Juneau adds search; ${expectedUsDates.length} scoped edition dates, 955 records per locale and the 4,560-URL set preserved.`);
+console.log(`USA Chicago refresh regression passed: four Chicago routes plus exact New England, Arizona, Los Angeles, San Diego and Boston batches and two separately accounted overview/Juneau bodies; only Juneau adds search; ${expectedUsDates.length} scoped edition dates, 1,021 records per locale and all 4,890 sitemap URLs accounted for.`);
 console.log(JSON.stringify(bodyStats, null, 2));

@@ -1,3 +1,4 @@
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -90,7 +91,7 @@ const originalSitemap = execFileSync('git', ['show', `${baseline}:sitemap.xml`],
 const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const originalEntries = sitemapEntries(originalSitemap);
 const currentEntries = sitemapEntries(currentSitemap);
-assert.deepEqual(new Set([...currentEntries.keys()].filter((url) => !url.includes('/spain/'))), new Set(originalEntries.keys()), 'sitemap URL set is unchanged');
+assert.deepEqual(new Set([...currentEntries.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url))), new Set(originalEntries.keys()), 'sitemap URL set is unchanged');
 const adelaideRoutes = [
   '/australia/adelaide-wine-island/',
   '/australia/adelaide-wine-island/city-parklands-north-terrace/',

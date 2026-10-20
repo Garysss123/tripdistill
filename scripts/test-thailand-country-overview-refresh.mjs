@@ -6,6 +6,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'parse5';
+import { greeceRoutes } from '../data/greece-guides.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sourceBase = '2dfb69529b96e29ff77f1e579baceb0b22da5e13';
@@ -141,8 +142,14 @@ const newSpainSearchRoutes = search
   .filter((record) => record.url.startsWith('/spain/') && !baseSearch.some((oldRecord) => oldRecord.url === record.url))
   .map(({ url }) => url)
   .sort();
-const unexpectedSearchChanges = changedSearchRoutes.filter((route) => route !== '/thailand/' && !newSpainSearchRoutes.includes(route));
-assert.deepEqual(unexpectedSearchChanges, [], 'Only the Thailand overview record and newly added Spain records may change in the shared search index.');
+const newGreeceSearchRoutes = search
+  .filter((record) => record.url.startsWith('/greece/') && !baseSearch.some((oldRecord) => oldRecord.url === record.url))
+  .map(({ url }) => url)
+  .sort();
+assert.equal(greeceRoutes.length, 33, 'The Greece integration must register exactly 33 routes.');
+assert.deepEqual(newGreeceSearchRoutes, [...greeceRoutes].sort(), 'Only the exact new Greece routes may be added to search.');
+const unexpectedSearchChanges = changedSearchRoutes.filter((route) => route !== '/thailand/' && !newSpainSearchRoutes.includes(route) && !newGreeceSearchRoutes.includes(route));
+assert.deepEqual(unexpectedSearchChanges, [], 'Only the Thailand overview and newly added Spain and exact Greece records may change in the shared search index.');
 
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseSitemap = git(['show', `${sourceBase}:sitemap.xml`]);
@@ -158,6 +165,10 @@ const currentDates = sitemapDateMap(sitemap);
 const newSpainRoutes = [...new Set([...currentDates.keys()]
   .map((route) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, ''))
   .filter((route) => route.startsWith('/spain/') && !previousDates.has(route)))].sort();
+const newGreeceRoutes = [...new Set([...currentDates.keys()]
+  .map((route) => route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, ''))
+  .filter((route) => route.startsWith('/greece/') && !previousDates.has(route)))].sort();
+assert.deepEqual(newGreeceRoutes, [...greeceRoutes].sort(), 'Only the exact 33 Greece routes may be added to sitemap.');
 const tripDistillEditedRoutes = [
   '/australia/red-centre/',
   '/france/basque-coast-pyrenees/',
@@ -167,10 +178,11 @@ const expectedSitemapDateRoutes = [
   ...['', '/zh', '/ja', '/ko', '/th'].flatMap((prefix) => [
     `${prefix}/thailand/`,
     ...tripDistillEditedRoutes.map((route) => `${prefix}${route}`),
-    ...newSpainRoutes.map((route) => `${prefix}${route}`)
+    ...newSpainRoutes.map((route) => `${prefix}${route}`),
+    ...newGreeceRoutes.map((route) => `${prefix}${route}`)
   ])
 ].sort();
-assert.deepEqual(changedDateRoutes, expectedSitemapDateRoutes, 'Exactly the Thailand overview and the three reviewed TripDistill routes may receive synchronized sitemap dates.');
+assert.deepEqual(changedDateRoutes, expectedSitemapDateRoutes, 'Exactly the Thailand overview, three reviewed TripDistill routes, and new Spain and Greece routes may receive synchronized sitemap dates.');
 
 for (const locale of locales) {
   const batchPath = path.join(root, `data/i18n/reviewed/${locale.code}/${pageBatchName}`);

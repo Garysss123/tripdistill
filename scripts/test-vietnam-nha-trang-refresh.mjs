@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import crypto from 'node:crypto';
@@ -137,13 +138,13 @@ const baseSearch = JSON.parse(readAt(integrationBase, 'data/search-index.json'))
 const currentSearch = JSON.parse(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 const sourceSearch = JSON.parse(readAt(sourceTerminal, 'data/search-index.json'));
 assert.equal(baseSearch.length, 955);
-assert.equal(currentSearch.length, 988);
+assert.equal(currentSearch.length, 1021);
 const byUrl = (records) => new Map(records.map((record) => [record.url, record]));
 const baseSearchByUrl = byUrl(baseSearch);
 const currentSearchByUrl = byUrl(currentSearch);
-assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearchByUrl.keys()].sort(), 'English search URL set changed.');
+assert.deepEqual([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearchByUrl.keys()].sort(), 'English search URL set changed.');
 const changedSearchRoutes = [...currentSearchByUrl]
-  .filter(([url, record]) => !url.includes('/spain/') && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
+  .filter(([url, record]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(record) !== JSON.stringify(baseSearchByUrl.get(url)))
   .map(([url]) => url).sort();
 assert.deepEqual(changedSearchRoutes, [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, '/thailand/'].sort(), 'Only the Nha Trang/later Vietnam, separately recorded gap groups and Thailand overview search records may change.');
 const sourceSearchByUrl = byUrl(sourceSearch);
@@ -153,11 +154,11 @@ const baseSitemap = parseSitemap(readAt(integrationBase, 'sitemap.xml'));
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const sourceSitemap = parseSitemap(readAt(sourceTerminal, 'sitemap.xml'));
 assert.equal(baseSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4725);
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
+assert.equal(currentSitemap.size, 4890);
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set changed.');
 const expectedDatePaths = new Set(editions.flatMap(({ prefix }) => [...routes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationTripDistillRoutes, '/thailand/'].map((route) => `${prefix}${route}`)));
 const changedDatePaths = [...currentSitemap]
-  .filter(([url, date]) => !url.includes('/spain/') && baseSitemap.get(url) !== date)
+  .filter(([url, date]) => !url.includes('/spain/') && !isGreeceRoutePath(url) && baseSitemap.get(url) !== date)
   .map(([url]) => url).sort();
 assert.deepEqual(changedDatePaths, [...expectedDatePaths].sort(), 'Only the Nha Trang/following Vietnam routes and Thailand overview in five editions may receive the declared sitemap dates.');
 for (const pagePath of expectedDatePaths) {
@@ -194,7 +195,7 @@ for (const edition of editions.slice(1)) {
   const catalog = JSON.parse(fs.readFileSync(path.join(root, `data/i18n/${edition.code}.json`), 'utf8')).translations;
   const localizedIndex = JSON.parse(fs.readFileSync(path.join(root, edition.prefix.slice(1), 'data/search-index.json'), 'utf8'));
   const prefix = edition.prefix;
-  assert.equal(localizedIndex.length, 988, `${edition.code} search record count`);
+  assert.equal(localizedIndex.length, 1021, `${edition.code} search record count`);
   const localizedMap = byUrl(localizedIndex);
   const expectedLocalizedSearchPaths = currentSearch.map((record) => `${prefix}${record.url}`).sort();
   assert.deepEqual([...localizedMap.keys()].sort(), expectedLocalizedSearchPaths, `${edition.code} search URL set does not match the English source index.`);
@@ -243,7 +244,8 @@ for (const route of previousRefresh) {
 }
 
 const changedSvgs = git(['diff', '--name-only', integrationBase, '--', '*.svg']).trim().split('\n').filter(Boolean);
-assert.deepEqual(changedSvgs, ['assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The only SVG change in the integration scope is the separately reviewed Niagara decision diagram; the Nha Trang content batch adds no diagrams.');
+const greeceReleaseSvgs = git(['branch', '--show-current']).trim() === 'codex/greece-tripdistill-20261020' ? ['assets/images/greece-atlas.svg'] : [];
+assert.deepEqual(changedSvgs, [...greeceReleaseSvgs, 'assets/images/tripdistill-canada-niagara-falls-decision.svg'], 'The integration scope includes only the registered Greece country-original atlas for its release and the separately reviewed Niagara diagram; the Nha Trang batch adds no diagrams.');
 const ledger = JSON.parse(fs.readFileSync(path.join(root, 'reports/vietnam-coverage-ledger-20261013.json'), 'utf8'));
 assert.equal(ledger.previousActiveSprint.branch, 'codex/sprint-vn-after-phu-quoc-20261013');
 assert.equal(ledger.previousActiveSprint.sourceBaseCommit, baselineCommit);

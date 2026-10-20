@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -121,7 +122,7 @@ assert.equal(new Set(canadaSearch.map((item) => item.url)).size, 73, 'English Ca
 assert.deepEqual(canadaSearch.map((item) => item.url).sort(), previousCanada.map((item) => item.url).sort(), 'Canada search route set must remain unchanged.');
 assert.deepEqual(search.filter((item) => targetSet.has(item.url)), sourceSearch.filter((item) => targetSet.has(item.url)), 'Integrated CA18 target search records must match the exact recovery source terminal.');
 const laterIntegrationSearchSet = new Set([...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postNewEnglandArizonaRoutes, ...postIntegrationMargaretRemainingRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/']);
-assert.deepEqual(search.filter((item) => !item.url.includes('/spain/') && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope and verified Hawaii, Australia, Canberra, New Orleans, Atlanta and New England routes must remain unchanged from the CA17 source base.');
+assert.deepEqual(search.filter((item) => !item.url.includes('/spain/') && !isGreeceRoutePath(item.url) && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !item.url.includes('/spain/') && !isGreeceRoutePath(item.url) && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope, Greece/Spain additions and verified Hawaii, Australia, Canberra, New Orleans, Atlanta and New England routes must remain unchanged from the CA17 source base.');
 for (const route of routes) {
   const current = canadaSearch.find((item) => item.url === route);
   const previous = previousCanada.find((item) => item.url === route);
@@ -136,7 +137,7 @@ const readDates = (source) => new Map([...source.matchAll(/<loc>https:\/\/tripdi
 const previousDates = readDates(previousSitemap);
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const dates = readDates(sitemap);
-assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'Sitemap route set must remain unchanged.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'Sitemap route set must remain unchanged.');
 const expectedDateChanges = locales.flatMap((locale) => datedRoutes.map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => locales.some((locale) => route.startsWith(`${locale}/canada/`)) && previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four newly refreshed Yellowknife routes × five editions may change sitemap dates.');

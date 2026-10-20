@@ -430,6 +430,42 @@ export const spainNewSubstantiveRoutes = Object.freeze([
   '/spain/galicia-asturias/oviedo-picos-covadonga/'
 ]);
 
+export const greeceNewSubstantiveRoutes = Object.freeze([
+  '/greece/',
+  '/greece/athens-attica/',
+  '/greece/peloponnese/',
+  '/greece/central-mainland/',
+  '/greece/thessaloniki-north/',
+  '/greece/crete/',
+  '/greece/cyclades/',
+  '/greece/ionian-islands/',
+  '/greece/dodecanese/',
+  '/greece/athens-attica/acropolis-plaka-anafiotika/',
+  '/greece/athens-attica/national-archaeological-museum-exarchia/',
+  '/greece/athens-attica/piraeus-port-attica-coast/',
+  '/greece/peloponnese/nafplio-palamedes-argolid/',
+  '/greece/peloponnese/ancient-olympia-archaeology/',
+  '/greece/peloponnese/mani-areopoli-diros/',
+  '/greece/central-mainland/delphi-sanctuary-arachova/',
+  '/greece/central-mainland/meteora-kalambaka-monasteries/',
+  '/greece/central-mainland/olympus-litochoro-prionia/',
+  '/greece/thessaloniki-north/thessaloniki-waterfront-upper-town/',
+  '/greece/thessaloniki-north/aigai-vergina-museum/',
+  '/greece/thessaloniki-north/halkidiki-kassandra-sithonia/',
+  '/greece/crete/chania-old-harbour-akrotiri/',
+  '/greece/crete/heraklion-knossos-museum/',
+  '/greece/crete/lasithi-agios-nikolaos-spinalonga/',
+  '/greece/cyclades/santorini-fira-oia-port/',
+  '/greece/cyclades/naxos-paros-port-town-pair/',
+  '/greece/cyclades/milos-sifnos-west-cyclades/',
+  '/greece/ionian-islands/corfu-town-paxos-harbour/',
+  '/greece/ionian-islands/lefkada-town-west-coast/',
+  '/greece/ionian-islands/kefalonia-ithaca-zakynthos-gateways/',
+  '/greece/dodecanese/rhodes-old-town-lindos/',
+  '/greece/dodecanese/kos-town-asklepion-nisyros/',
+  '/greece/dodecanese/kalymnos-leros-patmos-chain/'
+]);
+
 export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'CA13 + Gold Coast + CH14', count: 697 }),
   Object.freeze({ label: 'CA14', count: 701 }),
@@ -477,5 +513,6 @@ export const correctedCoverageCheckpoints = Object.freeze([
   Object.freeze({ label: 'Vietnam bay and Con Dao follow-on', count: 898 }),
   Object.freeze({ label: 'Vietnam caves and island gaps follow-on', count: 902 }),
   Object.freeze({ label: 'Vietnam coastal gaps follow-on', count: 906 }),
-  Object.freeze({ label: 'Thailand country overview', count: 907 })
+  Object.freeze({ label: 'Thailand country overview', count: 907 }),
+  Object.freeze({ label: 'Greece country, regions and local routes', count: 940 })
 ]);

@@ -45,9 +45,10 @@ import {
 } from './integration-sprint-scope.mjs';
 import { thailandCountryOverviewNewSubstantiveRoutes } from '../data/substantive-route-ledger.mjs';
 import { spainRoutes } from '../data/spain-guides.mjs';
+import { greeceRoutes } from '../data/greece-guides.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
-const git = (args) => execFileSync('git', args, { cwd: root });
+const git = (args) => execFileSync('git', ['-c', `safe.directory=${root.replaceAll('\\', '/')}`, ...args], { cwd: root });
 const readFromGit = (spec) => git(['show', spec]);
 const normalizeSharedAssetVersions = (html) => html.replace(/(\/(?:css\/site\.css|js\/main\.js)\?v=)[^"'&\s]+/gu, '$1<shared>');
 const sorted = (values) => [...values].sort();
@@ -346,7 +347,7 @@ const baselineSitemap = parseSitemap(readFromGit(`${integrationSprintBaseline}:s
 const currentSitemap = parseSitemap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 const prefixes = ['', '/zh', '/ja', '/ko', '/th'];
 assert.equal(baselineSitemap.size, 4560);
-assert.equal(currentSitemap.size, 4725);
+assert.equal(currentSitemap.size, 4890);
 const newSpainSitemapPaths = new Set([...currentSitemap.keys()].filter((url) => url.includes('/spain/')));
 assert.equal(newSpainSitemapPaths.size, 165, 'Spain adds 33 routes across five language editions.');
 assert.deepEqual(
@@ -354,12 +355,20 @@ assert.deepEqual(
   new Set(prefixes.flatMap((prefix) => spainRoutes.map((route) => `${prefix}${route}`))),
   'the Spain sitemap entries match exactly the registered 33 routes across five language editions'
 );
-assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/'))), new Set(baselineSitemap.keys()), 'the existing 4,560-URL set is unchanged');
+const newGreeceSitemapPaths = new Set([...currentSitemap.keys()].filter((url) => url.includes('/greece/')));
+assert.equal(newGreeceSitemapPaths.size, 165, 'Greece adds 33 routes across five language editions.');
+assert.deepEqual(
+  new Set([...newGreeceSitemapPaths].map((url) => new URL(url).pathname)),
+  new Set(prefixes.flatMap((prefix) => greeceRoutes.map((route) => `${prefix}${route}`))),
+  'the Greece sitemap entries match exactly the registered 33 routes across five language editions'
+);
+assert.deepEqual(new Set([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !url.includes('/greece/'))), new Set(baselineSitemap.keys()), 'the existing 4,560-URL set is unchanged');
 const changedSitemapUrls = [...currentSitemap]
   .filter(([url, date]) => baselineSitemap.get(url) !== date)
   .map(([url]) => url);
 const expectedChangedSitemapPaths = localizedIntegrationSitemapRoutes(prefixes);
 for (const route of newSpainSitemapPaths) expectedChangedSitemapPaths.add(new URL(route).pathname);
+for (const route of newGreeceSitemapPaths) expectedChangedSitemapPaths.add(new URL(route).pathname);
 for (const prefix of prefixes) {
   for (const route of postIntegrationHawaiiRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   for (const route of postHawaiiNewOrleansRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
@@ -390,7 +399,7 @@ for (const prefix of prefixes) {
   for (const route of tripDistillRemainingRoutes) expectedChangedSitemapPaths.add(`${prefix}${route}`);
   expectedChangedSitemapPaths.add(`${prefix}/thailand/`);
 }
-assert.equal(changedSitemapUrls.length, 2285);
+assert.equal(changedSitemapUrls.length, 2450);
 assert.deepEqual(
   new Set(changedSitemapUrls.map((url) => new URL(url).pathname)),
   expectedChangedSitemapPaths,
@@ -399,7 +408,7 @@ assert.deepEqual(
 for (const url of changedSitemapUrls) {
   const route = new URL(url).pathname;
   const unlocalizedRoute = route.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '');
-  const expectedDate = unlocalizedRoute.startsWith('/spain/') ? '2026-10-20' : unlocalizedRoute === '/thailand/' ? '2026-10-14' : tripDistillRemainingRoutes.includes(unlocalizedRoute) ? '2026-10-15' : [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
+  const expectedDate = unlocalizedRoute.startsWith('/spain/') || unlocalizedRoute.startsWith('/greece/') ? '2026-10-20' : unlocalizedRoute === '/thailand/' ? '2026-10-14' : tripDistillRemainingRoutes.includes(unlocalizedRoute) ? '2026-10-15' : [...alpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...hcmcRoutes, ...mekongRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...followingVietnamDaLatRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauRoutes, ...postAustraliaFinalRoutes].some((candidate) => route.endsWith(candidate)) ? '2026-10-13' : '2026-10-12';
   assert.equal(currentSitemap.get(url), expectedDate, `${url}: current sitemap date`);
 }
 const alpsMargaretBaseSitemap = parseSitemap(readFromGit(`${alpsMargaretBase}:sitemap.xml`).toString('utf8'));
@@ -429,16 +438,19 @@ const recordsByUrl = (records) => new Map(records.map((record) => [record.url, r
 const baselineSearchByUrl = recordsByUrl(baselineSearch);
 const currentSearchByUrl = recordsByUrl(currentSearch);
 assert.equal(baselineSearch.length, 955);
-assert.equal(currentSearch.length, 988);
+assert.equal(currentSearch.length, 1021);
 const newSpainSearchRoutes = new Set([...currentSearchByUrl.keys()].filter((url) => url.startsWith('/spain/')));
 assert.equal(newSpainSearchRoutes.size, 33, 'Spain adds 33 English search routes.');
 assert.deepEqual(newSpainSearchRoutes, new Set(spainRoutes), 'the Spain search entries match exactly the registered 33 routes.');
-assert.deepEqual(new Set([...currentSearchByUrl.keys()].filter((url) => !url.includes('/spain/')).filter((url) => !url.startsWith('/spain/'))), new Set(baselineSearchByUrl.keys()), 'the existing English search URL set is unchanged');
+const newGreeceSearchRoutes = new Set([...currentSearchByUrl.keys()].filter((url) => url.startsWith('/greece/')));
+assert.equal(newGreeceSearchRoutes.size, 33, 'Greece adds 33 English search routes.');
+assert.deepEqual(newGreeceSearchRoutes, new Set(greeceRoutes), 'the Greece search entries match exactly the registered 33 routes.');
+assert.deepEqual(new Set([...currentSearchByUrl.keys()].filter((url) => !url.startsWith('/spain/') && !url.startsWith('/greece/'))), new Set(baselineSearchByUrl.keys()), 'the existing English search URL set is unchanged');
 const changedSearchRoutes = [...currentSearchByUrl]
   .filter(([url, record]) => !isDeepStrictEqual(record, baselineSearchByUrl.get(url)))
   .map(([url]) => url);
-assert.equal(changedSearchRoutes.length, 411);
-assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/', ...newSpainSearchRoutes]), 'only the exact integrated, disjoint follow-on, Thailand, and new Spain search records changed');
+assert.equal(changedSearchRoutes.length, 444);
+assert.deepEqual(new Set(changedSearchRoutes), new Set([...integrationSearchRoutes, ...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postHawaiiNewOrleansRoutes, ...postIntegrationCanberraRoutes, ...postNewOrleansAtlantaRoutes, ...postIntegrationAlpsMargaretRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postIntegrationMargaretRemainingRoutes, ...postNewEnglandArizonaRoutes, ...postArizonaLosAngelesRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationMuiNeRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/', ...newSpainSearchRoutes, ...newGreeceSearchRoutes]), 'only the exact integrated, disjoint follow-on, Thailand, Spain and Greece search records changed');
 const alpsMargaretSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${alpsMargaretTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of alpsMargaretRoutes) assert.deepEqual(currentSearchByUrl.get(route), alpsMargaretSourceSearch.get(route), `${route}: exact Alps/Margaret source search record is integrated`);
 const haLongSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${haLongTerminal}:data/search-index.json`).toString('utf8')));
@@ -493,4 +505,4 @@ for (const route of postIntegrationMuiNeRoutes) assert.deepEqual(currentSearchBy
 const bostonSourceSearch = recordsByUrl(JSON.parse(readFromGit(`${bostonTerminal}:data/search-index.json`).toString('utf8')));
 for (const route of bostonRoutes) assert.deepEqual(currentSearchByUrl.get(route), bostonSourceSearch.get(route), `${route}: exact Boston source search record is integrated`);
 
-console.log('Integration scope regression passed: 425 exact English bodies (420 source-work bodies, two separately accounted USA historical paths and three TripDistill follow-on bodies), 2,285 changed-or-added dates including 165 Spain edition URLs, 411 English search additions/changes, and all existing 4,560 URLs preserved.');
+console.log('Integration scope regression passed: 425 exact earlier English bodies plus the separately audited 33-route Greece batch; 2,450 changed-or-added sitemap dates (165 Spain and 165 Greece edition URLs included); 444 English search additions/changes; all original 4,560 URLs preserved.');

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -102,7 +103,7 @@ function normalizeSharedAssetVersions(html) {
     .replace(/\/js\/main\.js\?v=[^"'\s]+/gu, '/js/main.js?v=<shared>');
 }
 
-assert(['codex/sprint-au-canberra-content-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(branch), 'Selected source, integration, independent Thailand overview or explicitly scoped TripDistill release branch name.');
+assert(['codex/sprint-au-canberra-content-20261013', 'codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020', 'codex/greece-tripdistill-20261020'].includes(branch), 'Selected source, integration, independent Thailand overview or explicitly scoped TripDistill release branch name.');
 if (sourceBranch) {
   const head = git(['rev-parse', 'HEAD']).trim();
   assert(head === base || git(['rev-parse', `${head}^`]).trim() === base, 'Source branch must remain at the authorized base or its direct child.');
@@ -141,9 +142,9 @@ for (const route of routes) {
 const baseSearch = jsonMap(git(['show', `${base}:data/search-index.json`]));
 const currentSearch = jsonMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 site-wide records.');
-assert.equal(currentSearch.size, 988, 'Current English search index keeps all 988 site-wide records.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'Search URL set is unchanged.');
-const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.equal(currentSearch.size, 1021, 'Current English search index keeps all 1021 site-wide records.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearch.keys()].sort(), 'Search URL set is unchanged.');
+const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 if (sourceBranch) assert.deepEqual(changedSearch, [...routes].sort(), 'Only the four authorized English search records changed.');
 else {
   const sourceSearch = jsonMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
@@ -153,10 +154,10 @@ else {
 const baseSitemap = sitemapEntries(git(['show', `${base}:sitemap.xml`]));
 const currentSitemap = sitemapEntries(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap contains 4,560 URLs.');
-assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4890, 'Current sitemap contains 4,890 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const expectedSitemap = routes.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-const changedSitemap = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
+const changedSitemap = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && currentSitemap.get(url) !== baseSitemap.get(url)).sort();
 if (sourceBranch) assert.deepEqual(changedSitemap, expectedSitemap, 'Only the four routes × five locale sitemap dates changed.');
 else for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), isoDate, `${url}: integrated Canberra sitemap date.`);
 for (const url of expectedSitemap) assert.equal(currentSitemap.get(url), isoDate, `${url}: sitemap lastmod.`);

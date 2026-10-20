@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,7 +12,7 @@ import { postIntegrationMargaretRemainingRoutes, postIntegrationBroomeRoutes, po
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
 const sourceBranch = branch === 'codex/sprint-au-alps-margaret-gaps-20261013';
-const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020'].includes(branch);
+const integrationBranch = ['codex/integration-sprint-20261011', 'codex/integration-sprint-20261011-preflight', 'codex/thailand-country-overview-20261014', 'codex/tripdistill-remaining-3-pages-20261015', 'codex/release-tripdistill-20261016', 'codex/spain-tripdistill-20261020', 'codex/greece-tripdistill-20261020'].includes(branch);
 const base = '5f1205bbbee0ef636c34e883c399e6fceaa7b508';
 const integrationBase = '2784debcbf3eb6908dd108df4125b924779282eb';
 const sourceTerminal = 'a99fbe9fe996ccedbac42b1b9386447a11403854';
@@ -195,15 +196,15 @@ for (const [index, route] of routes.entries()) {
 const baseSearch = searchMap(git(['show', `${comparisonBase}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
 assert.equal(baseSearch.size, 955, 'Base English search index has 955 site-wide records.');
-assert.equal(currentSearch.size, 988, 'Current English search index keeps all 988 site-wide records.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
-const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
+assert.equal(currentSearch.size, 1021, 'Current English search index keeps all 1021 site-wide records.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearch.keys()].sort(), 'English search URL set is unchanged.');
+const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort();
 const changedAustraliaSearch = changedSearch.filter((url) => url.startsWith('/australia/'));
 if (sourceBranch) assert.deepEqual(changedSearch, expectedChangedSearch.sort(), 'Only the exact source batch or subsequent four Margaret search records changed in the selected checkpoint.');
 else {
   const integrationSearch = searchMap(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:data/search-index.json']));
   const mainSearch = searchMap(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:data/search-index.json']));
-  const allowedSearchRoutes = new Set([...integrationSearch.keys(), ...mainSearch.keys()].filter((url) => !url.includes('/spain/') && url.startsWith('/australia/') && (JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url)) || JSON.stringify(mainSearch.get(url)) !== JSON.stringify(baseSearch.get(url)))));
+  const allowedSearchRoutes = new Set([...integrationSearch.keys(), ...mainSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && url.startsWith('/australia/') && (JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url)) || JSON.stringify(mainSearch.get(url)) !== JSON.stringify(baseSearch.get(url)))));
   assert.deepEqual(changedAustraliaSearch.filter((url) => !allowedSearchRoutes.has(url)), [], 'Australia search changes must belong to the pinned integration/main parents.');
   assert.deepEqual(expectedChangedSearch.filter((url) => !changedAustraliaSearch.includes(url)), [], 'Every selected Australia follow-on search record remains updated.');
 }
@@ -213,16 +214,16 @@ for (const route of routes) assert.deepEqual(currentSearch.get(route), terminalS
 const baseSitemap = urlRecords(git(['show', `${comparisonBase}:sitemap.xml`]));
 const currentSitemap = urlRecords(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Base sitemap has 4,560 URLs.');
-assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
+assert.equal(currentSitemap.size, 4890, 'Current sitemap contains 4,890 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL set is unchanged.');
 const changedDates = expectedChangedEnglish.flatMap((route) => locales.map((locale) => `${locale.prefix}${route}`)).sort();
-const actualChangedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && currentSitemap.get(url) !== baseSitemap.get(url));
+const actualChangedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && currentSitemap.get(url) !== baseSitemap.get(url));
 const changedAustraliaDates = actualChangedDates.filter((url) => expectedChangedEnglish.some((route) => new URL(url, 'https://tripdistill.com').pathname.endsWith(route)));
 if (sourceBranch) assert.deepEqual(actualChangedDates.sort(), changedDates, 'Only the exact selected four routes × five locale lastmod values changed in the checkpoint.');
 else {
   const integrationDates = urlRecords(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:sitemap.xml']));
   const mainDates = urlRecords(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:sitemap.xml']));
-  const allowedDates = new Set([...integrationDates.keys(), ...mainDates.keys()].filter((url) => !url.includes('/spain/') && url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/australia/') && (integrationDates.get(url) !== baseSitemap.get(url) || mainDates.get(url) !== baseSitemap.get(url))));
+  const allowedDates = new Set([...integrationDates.keys(), ...mainDates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && url.replace(/^\/(?:zh|ja|ko|th)(?=\/)/u, '').startsWith('/australia/') && (integrationDates.get(url) !== baseSitemap.get(url) || mainDates.get(url) !== baseSitemap.get(url))));
   assert.deepEqual(changedAustraliaDates.filter((url) => !allowedDates.has(url)), [], 'Australia lastmod changes must belong to the pinned integration/main parents.');
   assert.deepEqual(changedDates.filter((url) => !actualChangedDates.includes(url)), [], 'Every exact selected five-language Australia date remains updated.');
 }

@@ -1,3 +1,4 @@
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -80,8 +81,8 @@ const baseSitemap = execFileSync('git', ['show', `${baseCommit}:sitemap.xml`], {
 const beforeSitemap = sitemapRecords(baseSitemap);
 const afterSitemap = sitemapRecords(read('sitemap.xml'));
 assert.equal(beforeSitemap.size, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(afterSitemap.size, beforeSitemap.size + 165, 'the exact Spain release adds 165 localized URLs');
-assert.deepEqual([...afterSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...beforeSitemap.keys()].sort(), 'CH12 changes no pre-existing non-Spain URL');
+assert.equal(afterSitemap.size, beforeSitemap.size + 330, 'the exact Spain and Greece release adds 330 localized URLs');
+assert.deepEqual([...afterSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...beforeSitemap.keys()].sort(), 'CH12 changes no pre-existing non-Spain URL');
 const changedDates = [...afterSitemap].filter(([route, date]) => route.includes('/switzerland/') && beforeSitemap.get(route) !== date);
 assert.equal(changedDates.length, expectedLocalized.size, 'CH12–CH16 routes receive only their declared dates across five editions');
 for (const [route, date] of changedDates) {

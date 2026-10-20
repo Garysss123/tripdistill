@@ -1,3 +1,4 @@
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -7,7 +8,7 @@ import { switzerlandClusters } from '../data/switzerland-guides.mjs';
 import { switzerlandCh13ClusterRefresh, switzerlandCh13GuideRefresh } from '../data/switzerland-ch13-refresh.mjs';
 import { switzerlandImageManifest } from '../data/switzerland-image-manifest.mjs';
 import { localizeHtml, localizeSearchIndex, loadCatalog } from './i18n-lib.mjs';
-import { execFilePython3 } from './python-runner.mjs';
+import { SaxesParser } from 'saxes';
 import { switzerlandCh15AffectedRoutes, switzerlandCh15Routes, switzerlandCh16Routes } from './switzerland-ch15-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -70,8 +71,8 @@ for (const route of allRoutes.filter((item) => !target.has(item) && !ch14Set.has
 const before = sitemap(execFileSync('git', ['show', `${base}:sitemap.xml`], { cwd: root, encoding: 'utf8' }));
 const after = sitemap(read('sitemap.xml'));
 assert.equal(before.size, 4560);
-assert.equal(after.size, before.size + 165, 'the exact Spain release adds 165 localized URLs');
-assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/')).sort(), [...before.keys()].sort(), 'no sitemap URL changed');
+assert.equal(after.size, before.size + 330, 'the exact Spain and Greece release adds 330 localized URLs');
+assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...before.keys()].sort(), 'no sitemap URL changed');
 const editions = new Set(prefixes.flatMap((prefix) => [...routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const dateChanges = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);
 assert.equal(dateChanges.length, 80, 'cumulative CH13 pages, three downstream CH14 hubs, four CH15 guides and five CH16 guides receive dates; the country date already matched the CH13 base');
@@ -157,8 +158,78 @@ assert.ok(churGuide.includes(diagram.rightsStatus));
 assert.ok(churGuide.includes(diagram.diagramNote));
 assert.ok(churGuide.includes(churPhoto.src));
 
-const svgCheck = "import sys,xml.etree.ElementTree as E; r=E.parse(sys.argv[1]).getroot(); n=list(r.iter()); t=lambda x:x.tag.rsplit('}',1)[-1]; allowed={'svg','title','desc','rect','line','circle','text'}; assert r.tag.endswith('svg') and r.attrib.get('width')=='1600' and r.attrib.get('height')=='1066'; assert all(t(x) in allowed for x in n); assert all(float(x.attrib['x'])>=0 and float(x.attrib['y'])>=0 and float(x.attrib['x'])+float(x.attrib['width'])<=1600 and float(x.attrib['y'])+float(x.attrib['height'])<=1066 for x in n if t(x)=='rect'); assert all(0<=float(x.attrib[k])<=lim for x in n if t(x)=='line' for k,lim in [('x1',1600),('x2',1600),('y1',1066),('y2',1066)]); assert all(float(x.attrib['cx'])-float(x.attrib['r'])>=0 and float(x.attrib['cx'])+float(x.attrib['r'])<=1600 and float(x.attrib['cy'])-float(x.attrib['r'])>=0 and float(x.attrib['cy'])+float(x.attrib['r'])<=1066 for x in n if t(x)=='circle'); assert all(0<=float(x.attrib['x'])<=1600 and 0<=float(x.attrib['y'])<=1066 for x in n if t(x)=='text'); assert any(t(x)=='title' and x.text for x in n) and any(t(x)=='desc' and 'not geographic position' in x.text for x in n); exp={'en':['Red · Rhine Gorge rail / walk','Gold · Davos / Parsenn','Teal · Chur–Arosa rail','Fallback · Chur Old Town'],'zh-Hant':['紅色 · 萊茵峽谷鐵路／步行','金色 · 達沃斯／Parsenn','藍綠色 · 庫爾—阿羅薩鐵路','備案 · 庫爾舊城'],'ja':['赤・ライン峡谷の鉄道／徒歩','金・ダボス／パルゼン','青緑・クール—アローザ線','代替案・クール旧市街'],'ko':['빨강 · 라인 협곡 철도/도보','금색 · 다보스/파르젠','청록 · 쿠어–아로자 철도','대안 · 쿠어 구시가지'],'th':['สีแดง · รถไฟ/ทางเดินไรน์กอร์จ','สีทอง · ดาวอส/พาร์เซนน์','สีเขียวอมฟ้า · รถไฟคูร์–อาโรซา','แผนสำรอง · เมืองเก่าคูร์']}; assert all(sum(t(x)=='text' and x.attrib.get('data-language')==lang for x in n)==5 for lang in exp); assert all(any(label in (x.text or '') and x.attrib.get('data-language')==lang for x in n) for lang,labels in exp.items() for label in labels); assert all(any(t(x)=='line' and x.attrib.get('stroke')==color and x.attrib.get('y1')==y for x in n) for color,y in [('#d71920','390'),('#d7a94b','520'),('#416d75','650')])";
-execFilePython3(['-c', svgCheck, path.join(root, diagram.src.slice(1))], { cwd: root, stdio: 'pipe' });
+const expectedLabels = {"en":["Red · Rhine Gorge rail / walk","Gold · Davos / Parsenn","Teal · Chur–Arosa rail","Fallback · Chur Old Town"],"zh-Hant":["紅色 · 萊茵峽谷鐵路／步行","金色 · 達沃斯／Parsenn","藍綠色 · 庫爾—阿羅薩鐵路","備案 · 庫爾舊城"],"ja":["赤・ライン峡谷の鉄道／徒歩","金・ダボス／パルゼン","青緑・クール—アローザ線","代替案・クール旧市街"],"ko":["빨강 · 라인 협곡 철도/도보","금색 · 다보스/파르젠","청록 · 쿠어–아로자 철도","대안 · 쿠어 구시가지"],"th":["สีแดง · รถไฟ/ทางเดินไรน์กอร์จ","สีทอง · ดาวอส/พาร์เซนน์","สีเขียวอมฟ้า · รถไฟคูร์–อาโรซา","แผนสำรอง · เมืองเก่าคูร์"]};
+function parseAndCheckSvg(relativePath, expectedDescription) {
+  const svg = fs.readFileSync(path.join(root, relativePath), 'utf8');
+  const roots = [];
+  const stack = [];
+  let parseError;
+  const parser = new SaxesParser({ xmlns: true });
+  parser.on('error', (error) => { parseError ??= error; });
+  parser.on('opentag', (tag) => {
+    const node = {
+      tag: tag.local,
+      uri: tag.uri,
+      attrs: Object.fromEntries(Object.values(tag.attributes).map((attribute) => [attribute.name, attribute.value])),
+      content: []
+    };
+    if (stack.length) stack.at(-1).content.push(node);
+    else roots.push(node);
+    stack.push(node);
+  });
+  parser.on('text', (value) => { stack.at(-1)?.content.push(value); });
+  parser.on('cdata', (value) => { stack.at(-1)?.content.push(value); });
+  parser.on('closetag', () => { stack.pop(); });
+  parser.write(svg).close();
+  assert.equal(parseError, undefined, 'SVG must parse as XML: ' + (parseError?.message || ''));
+  assert.equal(roots.length, 1, 'SVG XML has exactly one root element');
+  const flatten = (node) => [node, ...node.content.filter((item) => typeof item === 'object').flatMap(flatten)];
+  const textContent = (node) => node.content.map((item) => typeof item === 'string' ? item : textContent(item)).join('');
+  const rootNode = roots[0];
+  const nodes = flatten(rootNode);
+  assert.equal(rootNode.tag, 'svg');
+  assert.equal(rootNode.attrs.width, '1600');
+  assert.equal(rootNode.attrs.height, '1066');
+  const allowed = new Set(['svg', 'title', 'desc', 'rect', 'line', 'circle', 'text']);
+  assert.ok(nodes.every((node) => allowed.has(node.tag)), 'only bounded vector/text geometry is allowed');
+  assert.ok(nodes.some((node) => node.tag === 'title' && textContent(node).trim()), 'SVG has a non-empty title');
+  const description = nodes.filter((node) => node.tag === 'desc').map(textContent).join('');
+  assert.ok(description.includes(expectedDescription), 'SVG description preserves its map disclaimer');
+  const labels = nodes.filter((node) => node.tag === 'text').map((node) => [node.attrs['data-language'] || '', textContent(node)]);
+  for (const node of nodes) {
+    const a = node.attrs;
+    if (node.tag === 'rect') {
+      const [x, y, width, height] = [a.x, a.y, a.width, a.height].map(Number);
+      assert.ok([x, y, width, height].every(Number.isFinite), 'rectangle coordinates are numeric');
+      assert.ok(x >= 0 && y >= 0 && x + width <= 1600 && y + height <= 1066, 'rectangle stays within the SVG viewBox');
+    } else if (node.tag === 'line') {
+      const [x1, y1, x2, y2] = [a.x1, a.y1, a.x2, a.y2].map(Number);
+      assert.ok([x1, y1, x2, y2].every(Number.isFinite), 'line coordinates are numeric');
+      assert.ok(x1 >= 0 && x1 <= 1600 && x2 >= 0 && x2 <= 1600 && y1 >= 0 && y1 <= 1066 && y2 >= 0 && y2 <= 1066, 'line stays within the SVG viewBox');
+    } else if (node.tag === 'circle') {
+      const [cx, cy, radius] = [a.cx, a.cy, a.r].map(Number);
+      assert.ok([cx, cy, radius].every(Number.isFinite), 'circle geometry is numeric');
+      assert.ok(cx - radius >= 0 && cx + radius <= 1600 && cy - radius >= 0 && cy + radius <= 1066, 'circle stays within the SVG viewBox');
+    } else if (node.tag === 'text') {
+      const [x, y] = [a.x, a.y].map(Number);
+      assert.ok(textContent(node).trim(), 'SVG label is non-empty');
+      assert.ok(Number.isFinite(x) && Number.isFinite(y) && x >= 0 && x <= 1600 && y >= 0 && y <= 1066, 'SVG text anchor stays within the viewBox');
+    }
+  }
+  return { nodes, labels };
+}
+const { nodes, labels } = parseAndCheckSvg(diagram.src.slice(1), 'not geographic position');
+const languages = ['en', 'ja', 'ko', 'th', 'zh-Hant'];
+assert.deepEqual([...new Set(labels.map(([language]) => language).filter(Boolean))].sort(), [...languages].sort());
+for (const language of languages) {
+  const localized = labels.filter(([code]) => code === language).map(([, value]) => value);
+  assert.equal(localized.length, 5, language + ': SVG has exactly five text labels');
+  for (const expected of expectedLabels[language]) assert.ok(localized.some((value) => value.includes(expected)), language + ': SVG is missing expected label ' + expected);
+}
+assert.ok(['#d71920:390', '#d7a94b:520', '#416d75:650'].every((marker) => {
+  const [color, y] = marker.split(':');
+  return nodes.some((node) => node.tag === 'line' && node.attrs.stroke === color && node.attrs.y1 === y);
+}), 'SVG retains its three color-coded gateway route markers');
 
 for (const [index, prefix] of prefixes.entries()) {
   if (!prefix) continue;

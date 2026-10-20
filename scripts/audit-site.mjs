@@ -9,6 +9,7 @@ import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 import { spainClusters, spainGuides } from '../data/spain-guides.mjs';
+import { greeceClusters, greeceGuides } from '../data/greece-guides.mjs';
 import { hasVisibleOriginalProjectProvenance } from './site-image-provenance-guard.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -54,6 +55,8 @@ const italyByRoute = new Map(italyGuides.map((guide) => [guide.url, guide]));
 const italyHubRoutes = new Set(italyClusters.map((cluster) => `/italy/${cluster.slug}/`));
 const spainByRoute = new Map(spainGuides.map((guide) => [guide.url, guide]));
 const spainHubRoutes = new Set(spainClusters.map((cluster) => `/spain/${cluster.slug}/`));
+const greeceByRoute = new Map(greeceGuides.map((guide) => [`/greece/${guide.cluster.slug}/${guide.slug}/`, guide]));
+const greeceHubRoutes = new Set(greeceClusters.map((cluster) => `/greece/${cluster.slug}/`));
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
@@ -411,6 +414,12 @@ for (const absoluteUrl of publishedUrls) {
   if (spainHubRoutes.has(baseRoute) && (html.match(/class="spain-route-card"/g) || []).length !== 3) problems.push(`${relativePath}: Spain regional hub does not contain three distinct route guides`);
   const spainGuide = spainByRoute.get(baseRoute);
   if (spainGuide && (!/class="[^"]*\bspain-route-folio\b[^"]*"/.test(html) || !/class="[^"]*\bspain-sources\b[^"]*"/.test(html) || !html.includes(`data-region="${spainGuide.hubSlug}"`))) problems.push(`${relativePath}: Spain local guide is missing route, source or region metadata`);
+  if (baseRoute.startsWith('/greece/') && !html.includes('/css/greece.css?v=20261020-1')) problems.push(`${relativePath}: Greece destination route is missing the field guide stylesheet`);
+  if (baseRoute.startsWith('/greece/') && baseRoute !== '/greece/' && !/<body\b[^>]*\bdata-parent-page="greece"/i.test(html)) problems.push(`${relativePath}: Greece primary navigation parent is not set`);
+  if (baseRoute === '/greece/' && (html.match(/class="greece-region-card"/g) || []).length !== 8) problems.push(`${relativePath}: Greece country hub does not contain eight linked regional cards`);
+  if (greeceHubRoutes.has(baseRoute) && (html.match(/class="greece-route-card"/g) || []).length !== 3) problems.push(`${relativePath}: Greece regional hub does not contain three distinct route guides`);
+  const greeceGuide = greeceByRoute.get(baseRoute);
+  if (greeceGuide && (!/class="[^\"]*\bgreece-route-folio\b[^\"]*"/.test(html) || !/class="[^\"]*\bgreece-sources\b[^\"]*"/.test(html) || !html.includes(`data-region="${greeceGuide.cluster.slug}"`))) problems.push(`${relativePath}: Greece local guide is missing route, source or region metadata`);
   if (baseRoute.startsWith('/italy/') && !html.includes('/css/italy.css?v=20261004-2')) problems.push(`${relativePath}: missing Italy peninsula field-atlas stylesheet`);
   if (baseRoute.startsWith('/italy/') && baseRoute !== '/italy/' && !/<body\b[^>]*\bdata-parent-page="italy"/i.test(html)) problems.push(`${relativePath}: Italy primary navigation parent is not set`);
   if (baseRoute === '/italy/' && (html.match(/class="it-country-card"/g) || []).length !== 20) problems.push(`${relativePath}: Italy country hub does not contain twenty linked regional cards`);
@@ -556,7 +565,7 @@ for (const component of ['components/header.html', 'components/footer.html']) {
 }
 
 const footerRegionIds = ['asia', 'europe', 'north-america', 'oceania'];
-const footerCountryRoutes = ['/australia/', '/canada/', '/china/', '/france/', '/italy/', '/japan/', '/malaysia/', '/south-korea/', '/spain/', '/switzerland/', '/thailand/', '/united-kingdom/', '/usa/', '/vietnam/'];
+const footerCountryRoutes = ['/australia/', '/canada/', '/china/', '/france/', '/greece/', '/italy/', '/japan/', '/malaysia/', '/south-korea/', '/spain/', '/switzerland/', '/thailand/', '/united-kingdom/', '/usa/', '/vietnam/'];
 for (const locale of allLocales) {
   const relativePath = locale.prefix ? `${locale.dir}/components/footer.html` : 'components/footer.html';
   const footer = read(relativePath);
@@ -567,7 +576,7 @@ for (const locale of allLocales) {
   }
   for (const region of footerRegionIds) if (!destinationBlock.includes(`data-footer-region="${region}"`)) problems.push(`${relativePath}: missing ${region} destination group`);
   const routes = [...destinationBlock.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1].replace(/^\/(?:zh|ja|ko|th)(?=\/|$)/, '') || '/');
-  if (routes.length !== 81) problems.push(`${relativePath}: expected 81 featured destination links, found ${routes.length}`);
+  if (routes.length !== 86) problems.push(`${relativePath}: expected 86 featured destination links, found ${routes.length}`);
   if (new Set(routes).size !== routes.length) problems.push(`${relativePath}: duplicate featured destination links`);
   for (const route of footerCountryRoutes) if (!routes.includes(route)) problems.push(`${relativePath}: missing country entry ${route}`);
 }
@@ -576,7 +585,7 @@ notes.push(`${publishedUrls.length} published routes (${allLocales.map((locale) 
 notes.push(`${englishSearchIndex.length} search records per language`);
 notes.push(`${hokkaidoSearchAliases.length * allLocales.length} Hokkaido search aliases resolve across five languages`);
 notes.push('Thai Gyeongju hero line-height and subtitle spacing regression passed');
-notes.push('81 grouped featured destination links per footer edition');
+notes.push('86 grouped featured destination links per footer edition');
 notes.push(`${allLocales.reduce((sum, locale) => sum + titles[locale.code].size, 0)} unique localized page titles`);
 
 if (problems.length) {

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -140,7 +141,7 @@ const targetSet = new Set(routes);
 const laterCa18Set = new Set(laterCa18SearchRoutes);
 assert.deepEqual(search.filter((item) => targetSet.has(item.url)), sourceSearch.filter((item) => targetSet.has(item.url)), 'Integrated CA17 target search records must match the exact source snapshot.');
 const laterIntegrationSearchSet = new Set([...postIntegrationHawaiiRoutes, ...postIntegrationAustraliaRoutes, ...postIntegrationCanberraRoutes, ...postIntegrationAlpsMargaretRoutes, ...postHawaiiNewOrleansRoutes, ...postNewOrleansAtlantaRoutes, ...postAtlantaFloridaRoutes, ...postFloridaChicagoRoutes, ...postNewEnglandIntegrationRoutes, ...postNewEnglandArizonaRoutes, ...postIntegrationMargaretRemainingRoutes, ...postArizonaLosAngelesRoutes, ...postLosAngelesBostonRoutes, ...postLosAngelesSanDiegoRoutes, ...postIntegrationBroomeRoutes, ...postIntegrationBroomeTasmaniaRoutes, ...postIntegrationMuiNeRoutes, ...postIntegrationPhongNhaRoutes, ...postIntegrationPhuQuocRoutes, ...followingVietnamNhaTrangRoutes, ...followingVietnamAfterNhaTrangRoutes, ...followingVietnamSouthernGapsRoutes, ...followingVietnamBayGapsRoutes, ...followingVietnamCavesIslandsGapsRoutes, ...followingVietnamCoastalGapsRoutes, ...postBostonOverviewJuneauSearchRoutes, ...postAustraliaFinalRoutes, '/thailand/']);
-assert.deepEqual(search.filter((item) => !item.url.includes('/spain/') && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope and verified Hawaii, Australia, Canberra, New Orleans, Atlanta and New England routes must remain unchanged from the CA16 source base.');
+assert.deepEqual(search.filter((item) => !item.url.includes('/spain/') && !isGreeceRoutePath(item.url) && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), previousSearch.filter((item) => !item.url.includes('/spain/') && !isGreeceRoutePath(item.url) && !integrationSearchRoutes.includes(item.url) && !laterIntegrationSearchSet.has(item.url)), 'Every search record outside the exact integration sprint scope, Greece/Spain additions and verified Hawaii, Australia, Canberra, New Orleans, Atlanta and New England routes must remain unchanged from the CA16 source base.');
 for (const route of routes) {
   const current = canadaSearch.find((item) => item.url === route);
   const previous = previousCanada.find((item) => item.url === route);
@@ -151,7 +152,7 @@ for (const route of routes) {
 const previousDates = new Map([...gitShow(`${base}:sitemap.xml`).matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const dates = new Map([...sitemap.matchAll(/<loc>https:\/\/tripdistill\.com([^<]*)<\/loc><lastmod>([^<]*)<\/lastmod>/g)].map((match) => [match[1], match[2]]));
-assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'Sitemap URL set must be unchanged.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'Sitemap URL set must be unchanged.');
 const expectedDateChanges = locales.flatMap((locale) => [...routes, ...laterCa18DatedRoutes].map((route) => locale + route)).sort();
 const actualDateChanges = [...dates].filter(([route, date]) => locales.some((locale) => route.startsWith(`${locale}/canada/`)) && previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualDateChanges, expectedDateChanges, 'Only the four CA17 routes and four later CA18 Yellowknife routes × five editions may change sitemap dates.');

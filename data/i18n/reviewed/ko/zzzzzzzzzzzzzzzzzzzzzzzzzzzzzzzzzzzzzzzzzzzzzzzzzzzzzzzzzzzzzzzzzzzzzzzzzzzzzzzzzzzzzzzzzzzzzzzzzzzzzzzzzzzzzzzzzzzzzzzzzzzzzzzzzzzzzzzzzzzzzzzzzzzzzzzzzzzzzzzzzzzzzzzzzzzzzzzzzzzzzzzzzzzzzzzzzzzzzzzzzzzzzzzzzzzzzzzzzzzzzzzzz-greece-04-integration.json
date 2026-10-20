@@ -1,0 +1,39 @@
+{
+  "locale": "ko",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/",
+    "/about/",
+    "/contact/",
+    "/privacy-policy/",
+    "/components/header.html",
+    "/components/sidebar.html",
+    "/components/footer.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "TripDistill · Practical Travel Guides Across 15 Countries": "TripDistill · 15개국 실용 여행 가이드",
+    "15 countries live": "15개국 가이드 제공 중",
+    "Explore Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia": "그리스, 스페인, 이탈리아, 영국, 프랑스, 스위스, 캐나다, 미국, 호주와 아시아 여행지를 둘러보세요",
+    "Open the Greece country atlas →": "그리스 열기 →",
+    "Choose eight mainland and island regions through real rail, coach, ferry, heat and last-mile decisions.": "본토와 섬의 8개 지역을 살펴보세요. 철도, 장거리 버스, 페리, 더위와 마지막 구간 이동까지 실제 여행에 필요한 선택을 안내합니다.",
+    "Plan Greece →": "그리스 여행 계획하기 →",
+    "TripDistill now covers Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Greece adds eight mainland and island hubs with 24 focused local routes built around rail, regional coaches, city transit, island crossings, lodging bases and route-specific alternatives; each page includes planning detail and official sources. Its route schematics are original TripDistill diagrams rather than third-party photographs.": "TripDistill은 그리스, 스페인, 이탈리아, 영국, 프랑스, 스위스, 캐나다, 미국, 호주, 베트남, 말레이시아, 중국, 일본, 한국, 태국 등 15개국을 다룹니다. 그리스 편에는 본토와 섬의 8개 거점 지역과 철도, 지역 버스, 도시 교통, 섬 간 이동, 숙소 거점, 경로별 대안을 중심으로 구성한 24개의 세부 현지 가이드가 포함됩니다. 각 페이지에는 여행 계획에 필요한 세부 정보와 공식 출처가 담겨 있습니다. 경로도는 제3자 사진이 아닌 TripDistill의 자체 제작 도식입니다.",
+    "Greece guide": "그리스 가이드",
+    "Athens": "아테네",
+    "Peloponnese": "펠로폰네소스",
+    "Plan Greece through eight mainland and island regions. Compare rail, KTEL, city networks and ferry transfers with practical stay and weather decisions.": "본토와 섬의 8개 지역을 중심으로 그리스 여행을 계획하세요. 철도, KTEL, 도시 교통망과 페리 환승을 비교하고 숙소와 날씨에 따른 실용적인 선택지를 살펴보세요.",
+    "Meteora": "메테오라",
+    "Delphi": "델포이",
+    "KTEL": "지역 버스(KTEL)",
+    "Mainland gateway": "본토 관문 지역",
+    "stay": "숙박",
+    "Southern mainland": "남부 본토",
+    "Central mainland": "중부 본토",
+    "Northern mainland": "북부 본토",
+    "Southern island": "남부 섬",
+    "Aegean island group": "에게해 섬 지역",
+    "Ionian island group": "이오니아 제도",
+    "Southeastern Aegean island group": "에게해 남동부 섬 지역"
+  }
+}

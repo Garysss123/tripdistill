@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -164,8 +165,8 @@ const currentSitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const baseRecords = sitemapRecords(baseSitemap);
 const currentRecords = sitemapRecords(currentSitemap);
 assert.equal(baseRecords.size, 4560, 'base route inventory');
-assert.equal(currentRecords.size, baseRecords.size + 165, 'the exact Spain release adds 165 localized URLs');
-assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseRecords.keys()].sort(), 'all pre-existing non-Spain URLs remain unchanged');
+assert.equal(currentRecords.size, baseRecords.size + 330, 'the exact Spain and Greece release adds 330 localized URLs');
+assert.deepEqual([...currentRecords.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseRecords.keys()].sort(), 'all pre-existing non-Spain URLs remain unchanged');
 const expectedDateChanges = new Set(locales.flatMap((locale) => routes.map((route) => `https://tripdistill.com${locale.prefix}${route}`)));
 for (const url of expectedDateChanges) {
   assert.ok(currentRecords.has(url), `Lucerne sitemap route remains published: ${url}`);

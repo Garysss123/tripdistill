@@ -1,0 +1,39 @@
+{
+  "locale": "zh-Hant",
+  "qualityStatus": "reviewed",
+  "routes": [
+    "/",
+    "/about/",
+    "/contact/",
+    "/privacy-policy/",
+    "/components/header.html",
+    "/components/sidebar.html",
+    "/components/footer.html",
+    "/data/search-index.json"
+  ],
+  "translations": {
+    "TripDistill · Practical Travel Guides Across 15 Countries": "TripDistill・15 國實用旅遊指南",
+    "15 countries live": "15 個國家已上線",
+    "Explore Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia and Asia": "探索希臘、西班牙、義大利、英國、法國、瑞士、加拿大、美國、澳洲與亞洲",
+    "Open the Greece country atlas →": "開啟希臘國家旅行路線圖 →",
+    "Choose eight mainland and island regions through real rail, coach, ferry, heat and last-mile decisions.": "透過實際的鐵路、客運、渡輪、高溫與最後一段接駁安排，探索八個本土與島嶼區域。",
+    "Plan Greece →": "規劃希臘行程 →",
+    "TripDistill now covers Greece, Spain, Italy, the United Kingdom, France, Switzerland, Canada, the United States, Australia, Vietnam, Malaysia, China, Japan, South Korea and Thailand. Greece adds eight mainland and island hubs with 24 focused local routes built around rail, regional coaches, city transit, island crossings, lodging bases and route-specific alternatives; each page includes planning detail and official sources. Its route schematics are original TripDistill diagrams rather than third-party photographs.": "TripDistill 現已涵蓋希臘、西班牙、義大利、英國、法國、瑞士、加拿大、美國、澳洲、越南、馬來西亞、中國、日本、南韓與泰國。希臘新增八個本土與島嶼樞紐，以及 24 條以鐵路、區域客運、市區交通、島際渡輪、住宿據點與路線專屬備案為核心的在地深度路線；每頁均提供規劃資訊與官方來源。路線示意圖皆為 TripDistill 原創圖，未使用第三方照片。",
+    "Greece guide": "希臘指南",
+    "Athens": "雅典",
+    "Peloponnese": "伯羅奔尼撒",
+    "Plan Greece through eight mainland and island regions. Compare rail, KTEL, city networks and ferry transfers with practical stay and weather decisions.": "透過八個本土與島嶼區域規劃希臘行程。比較鐵路、KTEL、市區交通網與渡輪接駁，並考量住宿安排與天候。",
+    "Meteora": "梅特歐拉",
+    "Delphi": "德爾菲",
+    "KTEL": "KTEL 區域客運",
+    "Mainland gateway": "本土交通門戶",
+    "stay": "住宿",
+    "Southern mainland": "南部本土",
+    "Central mainland": "中部本土",
+    "Northern mainland": "北部本土",
+    "Southern island": "南部島嶼",
+    "Aegean island group": "愛琴海島群",
+    "Ionian island group": "愛奧尼亞島群",
+    "Southeastern Aegean island group": "愛琴海東南部島群"
+  }
+}

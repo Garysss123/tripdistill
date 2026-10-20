@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -86,8 +87,8 @@ const previousDates = readDates(previousSitemapResult.stdout);
 const sourceSitemapResult = spawnSync('git', ['show', `${sourceTerminal}:sitemap.xml`], { cwd: root, encoding: 'utf8' });
 assert.equal(sourceSitemapResult.status, 0, `Could not read the exact CA11 source terminal sitemap: ${sourceSitemapResult.stderr}`);
 const sourceDates = readDates(sourceSitemapResult.stdout);
-assert.deepEqual([...sourceDates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The CA11 source terminal must retain the exact CA10 sitemap URL set.');
-assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/')).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
+assert.deepEqual([...sourceDates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'The CA11 source terminal must retain the exact CA10 sitemap URL set.');
+assert.deepEqual([...dates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...previousDates.keys()].sort(), 'The sitemap URL set must remain exact.');
 const expectedSourceDateChanges = locales.flatMap((locale) => routes.map((route) => locale + route)).sort();
 const actualSourceDateChanges = [...sourceDates].filter(([route, date]) => previousDates.get(route) !== date).map(([route]) => route).sort();
 assert.deepEqual(actualSourceDateChanges, expectedSourceDateChanges, 'The exact CA11 source terminal may change only its four article routes across five editions.');

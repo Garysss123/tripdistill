@@ -1,3 +1,4 @@
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -72,8 +73,8 @@ const currentSitemap = read('sitemap.xml');
 const before = sitemapRecords(baseSitemap);
 const after = sitemapRecords(currentSitemap);
 assert.equal(before.size, 4560, 'base sitemap has 4,560 URLs');
-assert.equal(after.size, before.size + 165, 'the exact Spain release adds 165 localized URLs');
-assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/')).sort(), [...before.keys()].sort(), 'no route was added or removed');
+assert.equal(after.size, before.size + 330, 'the exact Spain and Greece release adds 330 localized URLs');
+assert.deepEqual([...after.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...before.keys()].sort(), 'no route was added or removed');
 
 const allowedDatedUrls = new Set(locales.flatMap((prefix) => [...ch11Routes, ...ch12Routes, ...ch13Routes, ...ch14NewDateRoutes, ...switzerlandCh15Routes, ...switzerlandCh16Routes].map((route) => `${prefix}${route}`)));
 const changedDates = [...after].filter(([route, date]) => route.includes('/switzerland/') && before.get(route) !== date);

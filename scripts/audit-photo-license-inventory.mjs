@@ -18,7 +18,7 @@ const retainedLocalOnlyAssetPaths = [
   '/assets/images/canada-banff-lake-louise-johnston-minnewanka.webp',
 ];
 const countries = [
-  'australia', 'canada', 'china', 'france', 'italy', 'japan', 'malaysia',
+  'australia', 'canada', 'china', 'france', 'greece', 'italy', 'japan', 'malaysia',
   'south-korea', 'spain', 'switzerland', 'thailand', 'united-kingdom', 'usa', 'vietnam'
 ];
 const verifiedOn = '2026-10-04';
@@ -715,6 +715,23 @@ for (const country of countries) {
       const a = attrs(node);
       return { src: a.src?.split(/[?#]/)[0] || '', alt: a.alt || '', route };
     }).filter((img) => img.src.startsWith('/assets/images/'));
+    if (country === 'greece') {
+      const metas = all(document, (node) => node.tagName === 'meta').map(attrs);
+      const socialImageAlt = metas.find((meta) => ['og:image:alt', 'twitter:image:alt'].includes((meta.property || meta.name || '').toLowerCase()))?.content || '';
+      for (const meta of metas) {
+        const key = (meta.property || meta.name || '').toLowerCase();
+        if (!['og:image', 'twitter:image'].includes(key) || !meta.content) continue;
+        try {
+          const src = new URL(meta.content, 'https://tripdistill.com').pathname.split(/[?#]/)[0];
+          if (src.startsWith('/assets/images/')) imgs.push({ src, alt: socialImageAlt, route });
+        } catch {
+          // Invalid social image URLs are handled by the site audit; do not register them as local assets.
+        }
+      }
+    }
+    const scannedImages = country === 'greece'
+      ? [...new Map(imgs.map((image) => [image.src, image])).values()]
+      : imgs;
     const credits = photoCreditsInDocument(document);
     for (const credit of credits) {
       if (!creditsBySrc.has(credit.sourceUrl)) creditsBySrc.set(credit.sourceUrl, []);
@@ -724,7 +741,7 @@ for (const country of countries) {
         explicitCreditsByAsset.get(credit.assetPath).push({ ...credit, route });
       }
     }
-    for (const image of imgs) {
+    for (const image of scannedImages) {
       if (!usesBySrc.has(image.src)) usesBySrc.set(image.src, []);
       usesBySrc.get(image.src).push(image);
     }
@@ -1657,7 +1674,8 @@ const assetImageExtras = fs.readdirSync(imageDir)
 const rootImageExtras = ['favicon.svg'].filter((file) => fs.existsSync(path.join(root, file)));
 const buildImageExtras = [...assetImageExtras, ...rootImageExtras];
 const retainedLocalOnlyAssets = retainedLocalOnlyAssetPaths.filter((assetPath) => fs.existsSync(path.join(root, assetPath.slice(1))));
-const publishedWebpCount = assetPaths.length - retainedLocalOnlyAssets.length;
+const publishedWebpCount = assetPaths.filter((assetPath) => /\.webp$/i.test(assetPath)).length - retainedLocalOnlyAssets.length;
+const publishedOriginalDiagramCount = assetPaths.filter((assetPath) => !/\.webp$/i.test(assetPath)).length;
 const counts = {
   assetFileCount: assetPaths.length,
   completeSourceCreatorLicenseRecords: entries.filter((row) => row.sourceUrl && row.creator && row.license).length,
@@ -1667,7 +1685,7 @@ const counts = {
   previouslyMisplacedImageReplaced: 2,
   buildImageFilesOutsidePhotoInventory: buildImageExtras.length,
   buildImageFilesExcludedForRightsReview: retainedLocalOnlyAssets.length,
-  expectedBuildImageCount: publishedWebpCount + buildImageExtras.length,
+  expectedBuildImageCount: publishedWebpCount + publishedOriginalDiagramCount + buildImageExtras.length,
   deduplicatedImageCount: grouped.length,
   exactDuplicateFileCount: assetPaths.length - grouped.length,
   englishCountryPagesScanned: englishPageCount,
@@ -1701,11 +1719,11 @@ const report = {
   scope: 'Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.',
   counts,
   verificationMethod: {
-    structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.',
+    structuredRecords: 'Imported every data/*.mjs module and merged objects with a local /assets/images path; project-original vector diagrams are inventoried alongside WebP photos.',
     visibleCredits: 'Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.',
     sourcePageChecks: 'Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.',
     imageDeduplication: 'Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.',
-    buildImageCountReconciliation: `The ${publishedWebpCount} published WebP photos and ${assetImageExtras.length} other image assets in assets/images, plus ${rootImageExtras.length} root-level image assets, explain the ${counts.expectedBuildImageCount} build image files. ${retainedLocalOnlyAssets.length} retained rights-review source file(s) stay in the repository but are excluded from the build.`
+    buildImageCountReconciliation: `The ${publishedWebpCount} published WebP photos, ${publishedOriginalDiagramCount} inventoried project-original vector image(s), ${assetImageExtras.length} other image assets in assets/images, and ${rootImageExtras.length} root-level image asset(s) explain the ${counts.expectedBuildImageCount} build image files. ${retainedLocalOnlyAssets.length} retained rights-review source file(s) stay in the repository but are excluded from the build.`
   },
   knownHistoricalMismatch: {
     status: 'removed_from_current_inventory',
@@ -1746,7 +1764,7 @@ const summaryLines = [
   '',
   'The inventory records share-alike rows with the same-license adaptation term. Review row-level attributionTerms and editHistory before reusing an asset.',
   '',
-  'Build image count: ' + publishedWebpCount + ' published WebP photos plus ' + buildImageExtras.length + ' additional build image file(s) (' + buildImageExtras.join(', ') + ') = ' + counts.expectedBuildImageCount + '. ' + retainedLocalOnlyAssets.length + ' retained rights-review source file(s) are excluded from dist.',
+  'Build image count: ' + publishedWebpCount + ' published WebP photos, ' + publishedOriginalDiagramCount + ' inventoried original vector image(s), and ' + buildImageExtras.length + ' additional build image file(s) (' + buildImageExtras.join(', ') + ') = ' + counts.expectedBuildImageCount + '. ' + retainedLocalOnlyAssets.length + ' retained rights-review source file(s) are excluded from dist.',
   '',
   '## Current mismatches',
   '',

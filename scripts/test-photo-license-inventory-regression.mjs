@@ -113,6 +113,20 @@ const artifactPaths = [
 ];
 const originalArtifacts = artifactPaths.map((file) => [file, fs.readFileSync(file)]);
 const checkedInReport = JSON.parse(originalArtifacts[0][1].toString('utf8'));
+const checkedInGreeceAtlas = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/greece-atlas.svg');
+assert.ok(checkedInGreeceAtlas, 'checked-in inventory must include the original Greece social-preview schematic');
+assert.equal(checkedInGreeceAtlas.assetType, 'original-planning-diagram');
+assert.equal(checkedInGreeceAtlas.sourceUrl, 'https://tripdistill.com/assets/images/greece-atlas.svg');
+assert.equal(checkedInGreeceAtlas.creator, 'TripDistill Editorial Team');
+assert.equal(checkedInGreeceAtlas.license, null);
+assert.equal(checkedInGreeceAtlas.rightsStatus, 'Project original; no separate reuse license declared');
+assert.equal(checkedInGreeceAtlas.commercialReuseEligibility, 'unknown');
+assert.equal(checkedInGreeceAtlas.verificationStatus, 'site_credit_or_metadata_only');
+assert.equal(checkedInGreeceAtlas.useCount, 33);
+assert.equal(checkedInGreeceAtlas.localSha1, '44927f758db7eeb28ee24399d951917ed6a03f34');
+assert.equal(checkedInGreeceAtlas.routes.length, 33);
+assert.ok(checkedInGreeceAtlas.routes.includes('/greece/'));
+assert.ok(checkedInGreeceAtlas.routes.includes('/greece/crete/'));
 const checkedInYongduam = checkedInReport.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/korea-jeju-yongduam.webp');
 assert.ok(checkedInYongduam, 'checked-in inventory must retain the Jeju Yongduam asset record');
 assert.equal(checkedInYongduam.sourceUrl, 'https://commons.wikimedia.org/wiki/File:%EC%9A%A9%EB%91%90%EC%95%94.jpg');
@@ -240,6 +254,19 @@ try {
   assert.ok(findAll(explicitCreditRows[0], (node) => node.tagName === 'a' && attrs(node).href === sourceUrl).length, 'visible credit must link to the exact Commons file page');
 
   const report = JSON.parse(fs.readFileSync(artifactPaths[0], 'utf8'));
+  const greeceAtlas = report.entries.flatMap((group) => group.sourceRecords).find((record) => record.assetPath === '/assets/images/greece-atlas.svg');
+  assert.ok(greeceAtlas, 'inventory regeneration must retain the original Greece social-preview schematic');
+  assert.equal(greeceAtlas.assetType, 'original-planning-diagram');
+  assert.equal(greeceAtlas.sourceUrl, 'https://tripdistill.com/assets/images/greece-atlas.svg');
+  assert.equal(greeceAtlas.creator, 'TripDistill Editorial Team');
+  assert.equal(greeceAtlas.license, null);
+  assert.equal(greeceAtlas.rightsStatus, 'Project original; no separate reuse license declared');
+  assert.equal(greeceAtlas.commercialReuseEligibility, 'unknown');
+  assert.equal(greeceAtlas.verificationStatus, 'site_credit_or_metadata_only');
+  assert.equal(greeceAtlas.useCount, 33);
+  assert.equal(greeceAtlas.localSha1, '44927f758db7eeb28ee24399d951917ed6a03f34');
+  assert.equal(greeceAtlas.routes.length, 33);
+  assert.equal(report.unmatchedAssets.some((item) => item.src === '/assets/images/greece-atlas.svg'), false);
   const kotaKinabaluPhotos = [
     { assetPath: '/assets/images/malaysia-kota-kinabalu.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sunset_of_Segala_Waterfront_Kota_Kinabalu,_Sabah_Malaysia.jpg', creator: 'Garysawjuntiek', license: 'CC BY-SA 4.0', sourceDate: '2018-08-25', localSha1: '3b436ef0bbeb3f5f78ab7ff2d955983af73b4706', originalSize: '4,160 × 3,120' },
     { assetPath: '/assets/images/malaysia-kota-kinabalu-jetty.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kota_Kinabalu_-_Boats_to_TAR_Marine_Park.jpg', creator: 'Stefan Fussan', license: 'CC BY-SA 3.0', sourceDate: '2012-01-01', localSha1: 'f7233f4fb25f8bc1040d5815db79735fdbcb77dc', originalSize: '1,200 × 729' },
@@ -572,7 +599,7 @@ try {
   }
   const antibesPhoto = report.entries.flatMap((group) => group.sourceRecords).find((item) => item.assetPath === '/assets/images/france-cote-dazur-antibes-cannes-west-coast.webp');
   assert.ok(antibesPhoto.rawVisibleCredits.some((credit) => credit.includes('adaptation is shared under CC BY-SA 4.0')));
-  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 499, 'the eight Spain images now have source-page checks; the four new Australia project originals remain metadata-only');
+  assert.equal(report.counts.usedAssetsWithoutIndependentSourcePageCheck, 500, 'the eight Spain images now have source-page checks; four Australia originals and the Greece social-preview schematic remain metadata-only');
   assert.equal(report.counts.sourcePageChecked, 300, 'the merged inventory retains prior checks and adds eight Spain source-page checks');
   assert.equal(report.counts.assetsVisuallyReviewed, 225, 'the merged inventory includes eight individually reviewed Spain images and four Australia planning schematics');
   assert.equal(report.counts.openCreditReviewCount, 0, 'no N Seoul Tower source-to-image question remains open after pixel review');
@@ -977,7 +1004,7 @@ try {
   assert.equal(retiredJohnston.useCount, 0);
   assert.equal(retiredJohnston.verificationStatus, 'site_credit_or_metadata_only');
   assert.ok(retiredJohnston.retirementNote.includes('Local pixels show a forest stream'));
-  assert.equal(report.counts.completeProjectOriginalRightsRecords, 39, 'the merged inventory includes the four pixel-reviewed Adelaide/Perth planning schematics');
+  assert.equal(report.counts.completeProjectOriginalRightsRecords, 40, 'the merged inventory includes the four Adelaide/Perth planning schematics and the original Greece social-preview schematic');
   assert.equal(report.counts.licenseClaimsNotIndependentlyVerified, 473, 'source-page declarations do not establish independent rights clearance; project-original diagrams remain separately accounted for');
   assert.match(wadjemupDiagram.localSha1, /^[a-f0-9]{40}$/);
   assert.equal(wadjemupDiagram.verificationStatus, 'site_credit_or_metadata_only', 'the original diagram is not represented as an external photo or source-page check');
@@ -1130,7 +1157,7 @@ try {
   assert.deepEqual(melakaRetired.routes, []);
   assert.match(melakaRetired.retirementNote, /must not be used on the site/i);
   assert.equal(report.counts.buildImageFilesExcludedForRightsReview, 7, 'the Melaka, UK19, Vimy, Emilia-Romagna and Banff rights-review photos stay excluded from dist');
-  assert.equal(report.counts.expectedBuildImageCount, 833, 'the eight Spain photos and four Adelaide/Perth schematics are included while rights-review photos stay excluded');
+  assert.equal(report.counts.expectedBuildImageCount, 834, 'the eight Spain photos, four Adelaide/Perth schematics and Greece social-preview SVG are included while rights-review photos stay excluded');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaRetiredAssetPath), false, 'the documented retired photo is not an active attribution gap');
   assert.equal(report.unmatchedAssets.some((item) => item.src === melakaDiagramAssetPath), false, 'the credited original diagram is not an attribution gap');
   const malaysiaChildDiagrams = [

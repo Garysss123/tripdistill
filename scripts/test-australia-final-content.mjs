@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { isGreeceRoutePath } from './greece-route-test-utils.mjs';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -11,7 +12,7 @@ import { spainPhotoAssets } from './spain-release-scope.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const branch = git(['branch', '--show-current']).trim();
-const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020';
+const releaseContext = branch === 'codex/release-tripdistill-20261016' || branch === 'codex/spain-tripdistill-20261020' || branch === 'codex/greece-tripdistill-20261020';
 const base = '335f19b4f3cbc69038ff943a1beec7049c135a2c';
 const sourceTerminal = '70fbc1aa3706f2f33ee7b6b62e66aaee6c18962d';
 const sourceTree = '11b7937f472389104a3a3b61700e41e534dd039b';
@@ -247,21 +248,21 @@ for (const route of routes) {
 const baseSearch = searchMap(git(['show', `${base}:data/search-index.json`]));
 const sourceSearch = searchMap(git(['show', `${sourceTerminal}:data/search-index.json`]));
 const currentSearch = searchMap(fs.readFileSync(path.join(root, 'data/search-index.json'), 'utf8'));
-assert.equal(currentSearch.size, 988, 'English search inventory remains 988 records.');
-assert.equal(new Set(currentSearch.keys()).size, 988, 'English search URLs are unique.');
-assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'English search URL inventory is unchanged.');
-assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSearch.keys()].sort(), 'The AU source preserves the English search URL inventory.');
-assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/')).filter((url) => JSON.stringify(sourceSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'The AU source changes only the five selected search records.');
+assert.equal(currentSearch.size, 1021, 'English search inventory remains 1021 records.');
+assert.equal(new Set(currentSearch.keys()).size, 1021, 'English search URLs are unique.');
+assert.deepEqual([...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearch.keys()].sort(), 'English search URL inventory is unchanged.');
+assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSearch.keys()].sort(), 'The AU source preserves the English search URL inventory.');
+assert.deepEqual([...sourceSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).filter((url) => JSON.stringify(sourceSearch.get(url)) !== JSON.stringify(baseSearch.get(url))).sort(), [...routes].sort(), 'The AU source changes only the five selected search records.');
 for (const route of routes) assert.deepEqual(currentSearch.get(route), sourceSearch.get(route), `${route}: integrated search record matches the exact AU source terminal.`);
 if (releaseContext) {
   const integrationSearch = searchMap(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:data/search-index.json']));
   const mainBaseSearch = searchMap(git(['show', '6d3008dac99de4d2bc9988e6d06a5f393021f81c:data/search-index.json']));
   const mainSearch = searchMap(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:data/search-index.json']));
   const allowedSearch = new Set([
-    ...[...integrationSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url))),
-    ...[...mainSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(mainSearch.get(url)) !== JSON.stringify(mainBaseSearch.get(url)))
+    ...[...integrationSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(integrationSearch.get(url)) !== JSON.stringify(baseSearch.get(url))),
+    ...[...mainSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(mainSearch.get(url)) !== JSON.stringify(mainBaseSearch.get(url)))
   ]);
-  const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url)));
+  const changedSearch = [...currentSearch.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && JSON.stringify(currentSearch.get(url)) !== JSON.stringify(baseSearch.get(url)));
   assert.deepEqual(changedSearch.filter((url) => !allowedSearch.has(url)), [], 'Search record changes must belong to the pinned integration/main parents.');
   assert.deepEqual(routes.filter((url) => !changedSearch.includes(url)), [], 'The five final-content search records remain in the substantive diff.');
 }
@@ -271,20 +272,20 @@ const sourceSitemap = sitemapMap(git(['show', `${sourceTerminal}:sitemap.xml`]))
 const currentSitemap = sitemapMap(fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8'));
 assert.equal(baseSitemap.size, 4560, 'Exact-base sitemap has 4,560 URLs.');
 assert.equal(sourceSitemap.size, 4560, 'AU source retains the exact 4,560-URL pre-Spain sitemap.');
-assert.equal(currentSitemap.size, 4725, 'Current sitemap contains 4,725 URLs across five editions.');
-assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL inventory is unchanged.');
-assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/')).sort(), [...baseSitemap.keys()].sort(), 'AU source leaves the exact sitemap URL inventory unchanged.');
+assert.equal(currentSitemap.size, 4890, 'Current sitemap contains 4,890 URLs across five editions.');
+assert.deepEqual([...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'Sitemap URL inventory is unchanged.');
+assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).sort(), [...baseSitemap.keys()].sort(), 'AU source leaves the exact sitemap URL inventory unchanged.');
 const datedUrls = routes.flatMap((route) => ['', ...locales.map((locale) => locale.prefix)].map((prefix) => `${prefix}${route}`)).sort();
-assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/')).filter((url) => sourceSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'The AU source changes exactly five routes × five sitemap dates.');
+assert.deepEqual([...sourceSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url)).filter((url) => sourceSitemap.get(url) !== baseSitemap.get(url)).sort(), datedUrls, 'The AU source changes exactly five routes × five sitemap dates.');
 if (releaseContext) {
   const integrationDates = sitemapMap(git(['show', '7f797a9685649e945a5660ea1352ce239d638389:sitemap.xml']));
   const mainBaseDates = sitemapMap(git(['show', '6d3008dac99de4d2bc9988e6d06a5f393021f81c:sitemap.xml']));
   const mainDates = sitemapMap(git(['show', 'ddea19cb80796325ed0a76087c39ad25e17f2b07:sitemap.xml']));
   const allowedDates = new Set([
-    ...[...integrationDates.keys()].filter((url) => !url.includes('/spain/') && integrationDates.get(url) !== baseSitemap.get(url)),
-    ...[...mainDates.keys()].filter((url) => !url.includes('/spain/') && mainDates.get(url) !== mainBaseDates.get(url))
+    ...[...integrationDates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && integrationDates.get(url) !== baseSitemap.get(url)),
+    ...[...mainDates.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && mainDates.get(url) !== mainBaseDates.get(url))
   ]);
-  const changedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && currentSitemap.get(url) !== baseSitemap.get(url));
+  const changedDates = [...currentSitemap.keys()].filter((url) => !url.includes('/spain/') && !isGreeceRoutePath(url) && currentSitemap.get(url) !== baseSitemap.get(url));
   assert.deepEqual(changedDates.filter((url) => !allowedDates.has(url)), [], 'Sitemap date changes must belong to the pinned integration/main parents.');
   assert.deepEqual(datedUrls.filter((url) => !changedDates.includes(url)), [], 'The five final-content route editions remain in the substantive sitemap date diff.');
 }
@@ -310,7 +311,7 @@ for (const locale of locales) {
   assert.equal(Object.keys(searchBatch.translations).length, 9, `${locale.code}: unique search-only translations.`);
   assert(Object.values(searchBatch.translations).every((value) => value.trim()), `${locale.code}: search translations are nonblank.`);
   const localSearch = searchMap(fs.readFileSync(path.join(root, locale.prefix.slice(1), 'data/search-index.json'), 'utf8'));
-  assert.equal(localSearch.size, 988, `${locale.code}: localized search inventory.`);
+  assert.equal(localSearch.size, 1021, `${locale.code}: localized search inventory.`);
   for (const route of routes) {
     const html = fs.readFileSync(routeFile(route, locale.prefix), 'utf8');
     const doc = parse(html);
@@ -359,4 +360,4 @@ assert.equal(git(['diff', '--name-only', base, sourceTerminal, '--', 'assets/ima
 const untrackedImagePaths = git(['ls-files', '--others', '--exclude-standard', '--', 'assets/images']).split(/\r?\n/u).filter(Boolean);
 assert.deepEqual(untrackedImagePaths.filter((assetPath) => !spainPhotoAssets.has(assetPath)), [], 'Only the exact licensed Spain photo set may be untracked alongside unchanged Australia source batches.');
 
-console.log('Australia final-content regression passed: exact source ancestry/tree, five substantive bodies, the separate Red Centre non-card body hash/count/decision/source check, preserved historical 92/97 ledger, Japan content floors, official source links, FAQ/schema parity, all 4,560 pre-existing sitemap URLs unchanged with 25 dated entries, 988 current English search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');
+console.log('Australia final-content regression passed: exact source ancestry/tree, five substantive bodies, the separate Red Centre non-card body hash/count/decision/source check, preserved historical 92/97 ledger, Japan content floors, official source links, FAQ/schema parity, all 4,560 pre-existing sitemap URLs unchanged with 25 dated entries, 1021 current English search records, five-language reviewed pages/search, preserved arrow fixes, and no image/SVG edits. Source/markup checks only; rendered UI remains unverified.');

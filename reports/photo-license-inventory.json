@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-20T08:52:10.724Z",
+  "generatedAt": "2026-10-20T15:08:31.079Z",
   "scope": "Deduplicated WebP photos and explicitly recorded project-original vector artwork under assets/images, with use and displayed photo-credit metadata scanned from English country index pages. Complete source/creator/license fields and project-original rights statuses are distinct from independent rights verification: independent source-page checks and unverified claims are counted from current records; every checked source is listed with its date and finding. The separate build image tally also includes favicon.svg.",
   "counts": {
-    "assetFileCount": 836,
+    "assetFileCount": 837,
     "completeSourceCreatorLicenseRecords": 764,
-    "completeProjectOriginalRightsRecords": 39,
+    "completeProjectOriginalRightsRecords": 40,
     "licenseClaimsNotIndependentlyVerified": 473,
     "currentKnownUnsuitableImages": 0,
     "previouslyMisplacedImageReplaced": 2,
     "buildImageFilesOutsidePhotoInventory": 4,
     "buildImageFilesExcludedForRightsReview": 7,
-    "expectedBuildImageCount": 833,
-    "deduplicatedImageCount": 836,
+    "expectedBuildImageCount": 834,
+    "deduplicatedImageCount": 837,
     "exactDuplicateFileCount": 0,
-    "englishCountryPagesScanned": 940,
-    "imageReferencesScanned": 3567,
-    "assetsUsedByScannedEnglishPages": 793,
+    "englishCountryPagesScanned": 973,
+    "imageReferencesScanned": 3600,
+    "assetsUsedByScannedEnglishPages": 794,
     "unusedAssetCount": 43,
-    "assetsWithStructuredSourceRecords": 623,
+    "assetsWithStructuredSourceRecords": 624,
     "assetsWithMatchedEnglishCreditOnly": 97,
     "assetsWithExplicitEnglishCreditMatch": 92,
     "assetsVisuallyReviewed": 225,
     "assetsWithOnlyRecordedSourceUrlMatch": 0,
     "sourcePageChecked": 300,
-    "metadataOrCreditOnly": 512,
-    "usedAssetsWithoutIndependentSourcePageCheck": 499,
+    "metadataOrCreditOnly": 513,
+    "usedAssetsWithoutIndependentSourcePageCheck": 500,
     "missingSourceCreditMatch": 24,
     "incompleteAttributionFields": 24,
     "activeMissingSourceCreditMatch": 0,
@@ -36,11 +36,11 @@
     "openCreditReviewCount": 0
   },
   "verificationMethod": {
-    "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images/*.webp source path.",
+    "structuredRecords": "Imported every data/*.mjs module and merged objects with a local /assets/images path; project-original vector diagrams are inventoried alongside WebP photos.",
     "visibleCredits": "Parsed photo-credit list items in English page sections with class sources, adjacent elements explicitly marked photo-credit, and figure captions containing a Commons file link. For images without structured records, unambiguous same-page or globally unique label/alt matches were accepted; explicit asset-caption mappings are documented by path and note.",
     "sourcePageChecks": "Manually checked source pages are marked source_page_checked with the check date and finding on each row. Other source/license declarations are transcribed from local metadata or visible site credits and have not been independently checked during this inventory.",
     "imageDeduplication": "Grouped image files by SHA-256 bytes; the listed paths remain attached to their group.",
-    "buildImageCountReconciliation": "The 829 published WebP photos and 3 other image assets in assets/images, plus 1 root-level image assets, explain the 833 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
+    "buildImageCountReconciliation": "The 790 published WebP photos, 40 inventoried project-original vector image(s), 3 other image assets in assets/images, and 1 root-level image asset(s) explain the 834 build image files. 7 retained rights-review source file(s) stay in the repository but are excluded from the build."
   },
   "knownHistoricalMismatch": {
     "status": "removed_from_current_inventory",
@@ -13040,6 +13040,82 @@
           "rawVisibleCredits": [
             "Photo by Basile Morin; licensed under CC BY-SA 4.0. Changes: resized, converted to WebP and displayed with a responsive cover crop. Share-alike: this adaptation is released under the same CC BY-SA 4.0 license."
           ]
+        }
+      ]
+    },
+    {
+      "sha256": "c21485ff5e392a09f9b83198524443807a4dc42b775afe0b866bce7a289febf9",
+      "assetPaths": [
+        "/assets/images/greece-atlas.svg"
+      ],
+      "byteLength": 1176,
+      "sourceRecords": [
+        {
+          "sha256": "c21485ff5e392a09f9b83198524443807a4dc42b775afe0b866bce7a289febf9",
+          "assetPath": "/assets/images/greece-atlas.svg",
+          "assetType": "original-planning-diagram",
+          "sourceUrl": "https://tripdistill.com/assets/images/greece-atlas.svg",
+          "sourceTitle": "TripDistill original Greece land and island planning schematic",
+          "sourcePhotoDate": null,
+          "creditLabel": null,
+          "creator": "TripDistill Editorial Team",
+          "license": null,
+          "sourceDeclaredLicenses": null,
+          "rightsStatus": "Project original; no separate reuse license declared",
+          "rightsStatusUrl": "https://tripdistill.com/terms-of-use/",
+          "inventoryStatus": "used",
+          "retirementNote": null,
+          "licenseUrl": null,
+          "commercialReuseEligibility": "unknown",
+          "attributionTerms": "No reuse license is declared; a source and creator credit does not grant reuse permission.",
+          "editHistory": "Original schematic for social preview use; not a geographic map and shows no scale, bearing, distance, exact route, or timetable.",
+          "localSha1": "44927f758db7eeb28ee24399d951917ed6a03f34",
+          "metadataOrigin": "structured_data_record",
+          "creditMatchNote": null,
+          "visualReviewStatus": "not_individually_visually_reviewed",
+          "verificationStatus": "site_credit_or_metadata_only",
+          "verificationDate": null,
+          "verificationDetail": "TripDistill project-original vector planning diagram. Its rights status is recorded as project-original with no separate reuse license declared, linked to the site Terms of Use. The self-hosted source URL identifies the artwork itself and is not an independent source-page check. It is not a geographic map or a photograph; the local SHA1 is recorded for source integrity.",
+          "useCount": 33,
+          "routes": [
+            "/greece/",
+            "/greece/athens-attica/",
+            "/greece/athens-attica/acropolis-plaka-anafiotika/",
+            "/greece/athens-attica/national-archaeological-museum-exarchia/",
+            "/greece/athens-attica/piraeus-port-attica-coast/",
+            "/greece/central-mainland/",
+            "/greece/central-mainland/delphi-sanctuary-arachova/",
+            "/greece/central-mainland/meteora-kalambaka-monasteries/",
+            "/greece/central-mainland/olympus-litochoro-prionia/",
+            "/greece/crete/",
+            "/greece/crete/chania-old-harbour-akrotiri/",
+            "/greece/crete/heraklion-knossos-museum/",
+            "/greece/crete/lasithi-agios-nikolaos-spinalonga/",
+            "/greece/cyclades/",
+            "/greece/cyclades/milos-sifnos-west-cyclades/",
+            "/greece/cyclades/naxos-paros-port-town-pair/",
+            "/greece/cyclades/santorini-fira-oia-port/",
+            "/greece/dodecanese/",
+            "/greece/dodecanese/kalymnos-leros-patmos-chain/",
+            "/greece/dodecanese/kos-town-asklepion-nisyros/",
+            "/greece/dodecanese/rhodes-old-town-lindos/",
+            "/greece/ionian-islands/",
+            "/greece/ionian-islands/corfu-town-paxos-harbour/",
+            "/greece/ionian-islands/kefalonia-ithaca-zakynthos-gateways/",
+            "/greece/ionian-islands/lefkada-town-west-coast/",
+            "/greece/peloponnese/",
+            "/greece/peloponnese/ancient-olympia-archaeology/",
+            "/greece/peloponnese/mani-areopoli-diros/",
+            "/greece/peloponnese/nafplio-palamedes-argolid/",
+            "/greece/thessaloniki-north/",
+            "/greece/thessaloniki-north/aigai-vergina-museum/",
+            "/greece/thessaloniki-north/halkidiki-kassandra-sithonia/",
+            "/greece/thessaloniki-north/thessaloniki-waterfront-upper-town/"
+          ],
+          "altTexts": [
+            "Original TripDistill schematic of Greece’s mainland corridors and island crossings, not to scale"
+          ],
+          "rawVisibleCredits": []
         }
       ]
     },

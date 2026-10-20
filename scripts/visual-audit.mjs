@@ -11,6 +11,7 @@ import { franceClusters, franceGuides } from '../data/france-guides.mjs';
 import { unitedKingdomClusters, unitedKingdomGuides } from '../data/united-kingdom-guides.mjs';
 import { italyClusters, italyGuides } from '../data/italy-guides.mjs';
 import { usaRoutes } from '../data/usa-guides.mjs';
+import { greeceRoutes } from '../data/greece-guides.mjs';
 
 const browserPath = process.env.TRIPDISTILL_EDGE || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const baseUrl = process.env.TRIPDISTILL_BASE_URL || 'http://127.0.0.1:8877';
@@ -23,6 +24,10 @@ const profileDir = path.join(os.tmpdir(), `tripdistill-edge-profile-${runId}-${p
 fs.mkdirSync(outputDir, { recursive: true });
 
 const allRoutes = [
+  ...['','zh','ja','ko','th'].flatMap(locale => greeceRoutes.map(route => [
+    `${locale ? locale + '-' : ''}gr-${route.split('/').filter(Boolean).join('-')}`,
+    `${locale ? '/' + locale : ''}${route}`
+  ])),
   ...['','zh','ja','ko','th'].flatMap(locale=>usaRoutes.map(route=>[(locale?locale+'-':'')+route.split('/').filter(Boolean).join('-'),(locale?'/'+locale:'')+route])),
   ['home', '/'],
   ['malaysia', '/malaysia/'],

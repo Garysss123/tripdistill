@@ -1,0 +1,140 @@
+.greece-page{--gr-ink:#173640;--gr-ink-2:#28505a;--gr-sea:#315e67;--gr-foam:#e8f0ea;--gr-paper:#f6f3ea;--gr-sand:#d9c9a7;--gr-copper:#bb704e;--gr-gold:#bc9a54;--gr-muted:#627475;color:#1d3438}
+.greece-page a{color:inherit}
+.greece-page .greece-country-hero,.greece-page .greece-hub-hero,.greece-page .greece-guide-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);align-items:center;gap:clamp(1.7rem,4vw,4.5rem);padding:clamp(2rem,5vw,5rem);margin:0 0 1.5rem;background:var(--gr-ink);color:#f6f3ea;border-radius:1.5rem;overflow:hidden;position:relative}
+.greece-page .greece-country-hero:before,.greece-page .greece-hub-hero:before,.greece-page .greece-guide-hero:before{content:"";position:absolute;width:27rem;height:27rem;border:1px solid rgba(219,202,164,.2);border-radius:50%;right:-7rem;top:-14rem;box-shadow:0 0 0 2.4rem rgba(219,202,164,.035),0 0 0 5rem rgba(219,202,164,.025);pointer-events:none}
+.greece-page .greece-hero-copy,.greece-page .greece-hub-hero>div:first-child,.greece-page .greece-guide-hero>div:first-child{position:relative;z-index:1}
+.greece-page .greece-kicker{display:block;color:#9ec4bb;font:700 .76rem/1.35 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;margin-bottom:.9rem}
+.greece-page .greece-country-hero h1,.greece-page .greece-hub-hero h1,.greece-page .greece-guide-hero h1{font:500 clamp(2.65rem,6vw,5.7rem)/.98 Georgia,serif;letter-spacing:-.045em;margin:0 0 1.15rem;color:#f8f5eb}
+.greece-page .greece-deck{font:400 clamp(1.05rem,1.55vw,1.24rem)/1.68 Georgia,serif;max-width:45rem;color:#e1e9e4;margin:0 0 1.5rem}
+.greece-page .greece-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.greece-page .greece-actions .button{font-weight:700;text-decoration:none;border-radius:999px;padding:.7rem 1rem;min-height:44px}
+.greece-page .greece-actions .button.primary{background:#e3d7bc;color:#173640;border:1px solid #e3d7bc}
+.greece-page .greece-actions .button.secondary{color:#f6f3ea;border:1px solid rgba(246,243,234,.55);background:transparent}
+.greece-page .greece-actions .button:focus-visible,.greece-page a:focus-visible,.greece-page summary:focus-visible{outline:3px solid #eab77f;outline-offset:3px}
+.greece-page .greece-diagram{margin:0;position:relative;z-index:1;background:rgba(232,240,234,.08);border:1px solid rgba(232,240,234,.2);padding:.65rem;border-radius:1.2rem;box-shadow:0 1.3rem 3rem rgba(4,20,23,.22)}
+.greece-page .greece-diagram svg{display:block;width:100%;height:auto;min-height:190px}
+.greece-page .greece-diagram .landform{fill:#e7eee6;opacity:.92}
+.greece-page .greece-diagram .route-line{fill:none;stroke:#bd734f;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 14}
+.greece-page .greece-diagram .node{fill:#315e67;stroke:#f2d49c;stroke-width:4}
+.greece-page .greece-diagram .node.start{fill:#bc704e}
+.greece-page .greece-diagram .node.finish{fill:#bc9a54}
+.greece-page .greece-diagram .node-core{fill:#173640}
+.greece-page .greece-diagram .shore-line{fill:none;stroke:#749d9a;stroke-width:2;stroke-dasharray:4 10}
+.greece-page .greece-diagram .compass{fill:#bc704e}
+.greece-page .greece-diagram .compass-label{fill:#315e67;font:700 11px system-ui,sans-serif}
+.greece-page .greece-diagram figcaption{font:600 .73rem/1.4 system-ui,sans-serif;color:#d9e6df;padding:.55rem .45rem .1rem}
+.greece-page .greece-country-thesis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:0 0 3.25rem}
+.greece-page .greece-country-thesis article{background:var(--gr-paper);border-top:3px solid var(--gr-copper);padding:1rem 1.1rem 1.25rem;border-radius:.4rem 1rem 1rem .4rem}
+.greece-page .greece-country-thesis b{display:block;color:var(--gr-copper);font:700 .8rem system-ui,sans-serif;letter-spacing:.08em;margin-bottom:.55rem}
+.greece-page .greece-country-thesis span{font:600 1.02rem Georgia,serif;color:var(--gr-ink)}
+.greece-page .greece-country-thesis p{color:#3d5455;line-height:1.62;margin:.55rem 0 0}
+.greece-page .greece-section{margin:3rem 0}
+.greece-page .greece-section>header{max-width:59rem;margin-bottom:1.35rem}
+.greece-page .greece-section>header .greece-kicker{color:var(--gr-copper)}
+.greece-page .greece-section h2{font:500 clamp(1.9rem,3.4vw,3.15rem)/1.06 Georgia,serif;letter-spacing:-.025em;color:var(--gr-ink);margin:.25rem 0 .75rem}
+.greece-page .greece-section>header p{line-height:1.68;color:#526767;max-width:56rem;margin:.4rem 0}
+.greece-page .greece-region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+.greece-page .greece-region-card{background:#f6f3ea;border:1px solid #d9dfd7;border-radius:1rem;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.greece-page .greece-region-card:hover{transform:translateY(-3px);box-shadow:0 .85rem 1.8rem rgba(23,54,64,.12)}
+.greece-page .greece-region-card>a{display:grid;grid-template-columns:2.4rem 1fr;gap:.35rem .85rem;min-height:100%;padding:1.15rem;text-decoration:none}
+.greece-page .greece-region-card .greece-number{grid-row:1/5;color:var(--gr-copper);font:600 1.15rem Georgia,serif;padding-top:.1rem}
+.greece-page .greece-card-route{display:flex;align-items:center;gap:.5rem;height:1.15rem;position:relative}
+.greece-page .greece-card-route:before{content:"";height:2px;position:absolute;left:.15rem;right:.15rem;background:linear-gradient(90deg,var(--gr-copper),var(--gr-gold),#6a9992)}
+.greece-page .greece-card-route i{position:relative;width:.52rem;height:.52rem;border-radius:50%;background:#f6f3ea;border:2px solid var(--gr-copper);z-index:1}
+.greece-page .greece-card-route i:nth-child(2){margin:auto}
+.greece-page .greece-card-route i:last-child{border-color:#315e67;background:#315e67}
+.greece-page .greece-region-card small,.greece-page .greece-route-card small{font:700 .68rem/1.35 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--gr-copper)}
+.greece-page .greece-region-card h2{font:500 clamp(1.3rem,2.1vw,1.8rem)/1.12 Georgia,serif;letter-spacing:-.02em;color:var(--gr-ink);margin:.2rem 0}
+.greece-page .greece-region-card p,.greece-page .greece-route-card p{color:#455c5e;line-height:1.62;margin:.25rem 0 .6rem}
+.greece-page .greece-region-card strong,.greece-page .greece-route-card strong{color:var(--gr-ink-2);font-size:.88rem;margin-top:auto}
+.greece-page .greece-route-shape-grid,.greece-page .greece-transport-grid,.greece-page .greece-gateway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.greece-page .greece-route-shape-grid article,.greece-page .greece-transport-grid article,.greece-page .greece-gateway-grid article{background:linear-gradient(145deg,#f8f5eb,#e9f0e9);border:1px solid #d8e0d8;padding:1.15rem;border-radius:1rem}
+.greece-page .greece-route-shape-grid small,.greece-page .greece-transport-grid .greece-mode{font:700 .67rem system-ui,sans-serif;letter-spacing:.1em;color:var(--gr-copper)}
+.greece-page .greece-route-shape-grid h3,.greece-page .greece-transport-grid h3,.greece-page .greece-gateway-grid h3{font:600 1.15rem/1.2 Georgia,serif;color:var(--gr-ink);margin:.55rem 0}
+.greece-page .greece-route-shape-grid p,.greece-page .greece-transport-grid p,.greece-page .greece-gateway-grid p{line-height:1.62;color:#455c5e;margin:.3rem 0}
+.greece-page .greece-transport-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.greece-page .greece-mode{display:inline-block;border-bottom:1px solid var(--gr-gold);padding-bottom:.35rem}
+.greece-page .greece-condition{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.75fr);gap:1.3rem;align-items:center;background:#e9f0e9;border-radius:1.2rem;padding:clamp(1.2rem,3vw,2rem)}
+.greece-page .greece-condition>div:first-child{padding:.5rem}
+.greece-page .greece-condition .greece-diagram{background:#f6f3ea;border-color:#d3ded6}
+.greece-page .greece-condition .greece-diagram figcaption{color:#425d5c}
+.greece-page .greece-condition h2{font:500 clamp(1.75rem,3vw,2.8rem)/1.08 Georgia,serif;color:var(--gr-ink);margin:.25rem 0 .8rem}
+.greece-page .greece-condition p{line-height:1.7;color:#455c5e}
+.greece-page .greece-faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.greece-page .greece-faq-grid details{border:1px solid #d8e0d8;background:#faf8f1;border-radius:.8rem;padding:.9rem 1rem}
+.greece-page .greece-faq-grid summary{cursor:pointer;color:var(--gr-ink);font-weight:700;line-height:1.45}
+.greece-page .greece-faq-grid details p{color:#455c5e;line-height:1.65;margin:.75rem 0 .1rem}
+.greece-page .greece-sources{border-top:1px solid #ccd8d2;padding-top:1.3rem}
+.greece-page .greece-sources h2{font-size:1.65rem}
+.greece-page .greece-sources>p{line-height:1.65;color:#526767}
+.greece-page .greece-sources ul{padding-left:1.25rem;display:grid;gap:.4rem;color:#526767}
+.greece-page .greece-sources a{color:#1e5963;text-decoration-thickness:1px;text-underline-offset:3px}
+.greece-page .greece-image-note,.greece-page .greece-review-note{display:block;color:#647574;font-size:.84rem;line-height:1.5;margin-top:1rem}
+.greece-page .greece-breadcrumb{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;color:#687b79;font-size:.82rem;margin:.2rem 0 1rem}
+.greece-page .greece-breadcrumb a{color:#285d66}
+.greece-page .greece-decision{max-width:48rem;background:rgba(235,240,229,.09);border-left:3px solid #bc9a54;padding:.9rem 1rem;margin:1rem 0;color:#e5ece5}
+.greece-page .greece-decision small{display:block;color:#c4d7cf;font:700 .69rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
+.greece-page .greece-decision p{margin:0;line-height:1.6}
+.greece-page .greece-regional-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0 0 2.7rem}
+.greece-page .greece-regional-ledger article{background:#e9f0e9;padding:1rem 1.15rem;border-radius:.85rem;border-left:3px solid var(--gr-gold)}
+.greece-page .greece-regional-ledger small,.greece-page .greece-field-notes small,.greece-page .greece-contingency small{display:block;color:var(--gr-copper);font:700 .67rem system-ui,sans-serif;letter-spacing:.1em;margin-bottom:.45rem}
+.greece-page .greece-regional-ledger p,.greece-page .greece-field-notes p,.greece-page .greece-contingency p{margin:.15rem 0;color:#425a5b;line-height:1.63}
+.greece-page .greece-route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.greece-page .greece-route-card{display:flex;flex-direction:column;text-decoration:none;background:#f6f3ea;padding:1.1rem;border:1px solid #d8e0d8;border-radius:.95rem;min-height:100%;transition:transform .2s ease,box-shadow .2s ease}
+.greece-page .greece-route-card:hover{transform:translateY(-3px);box-shadow:0 .75rem 1.5rem rgba(23,54,64,.12)}
+.greece-page .greece-route-card .greece-number{font:600 1.2rem Georgia,serif;color:var(--gr-gold);margin-bottom:.6rem}
+.greece-page .greece-route-card h3{font:600 1.22rem/1.2 Georgia,serif;color:var(--gr-ink);margin:.4rem 0}
+.greece-page .greece-gateway-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.greece-page .greece-gateway-grid b{font:700 .8rem system-ui,sans-serif;color:var(--gr-copper)}
+.greece-page .greece-field-notes>div,.greece-page .greece-contingency>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.greece-page .greece-field-notes article,.greece-page .greece-contingency article{background:#f6f3ea;border:1px solid #d9dfd7;padding:1rem;border-radius:.85rem}
+.greece-page .greece-route-folio{background:#173640;border-radius:1.2rem;padding:clamp(1.2rem,3.5vw,2.4rem);color:#f6f3ea}
+.greece-page .greece-route-folio .greece-kicker{color:#9ec4bb}
+.greece-page .greece-route-folio h2{color:#f7f3e9}
+.greece-page .greece-route-folio>header p{color:#d6e3dc;line-height:1.65}
+.greece-page .greece-route-folio ol{list-style:none;padding:0;margin:1.3rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;counter-reset:route}
+.greece-page .greece-route-folio li{position:relative;border-top:1px solid rgba(243,239,227,.35);padding:1rem .8rem .8rem}
+.greece-page .greece-route-folio li>b{font:600 1.4rem Georgia,serif;color:#bc9a54}
+.greece-page .greece-route-folio li small{display:block;font:700 .66rem system-ui,sans-serif;letter-spacing:.11em;color:#9ec4bb;margin:.65rem 0 .4rem}
+.greece-page .greece-route-folio li h3{font:600 1.12rem/1.2 Georgia,serif;color:#f5f2e8;margin:.2rem 0 .55rem}
+.greece-page .greece-route-folio li p{color:#d7e2dc;line-height:1.62;margin:.2rem 0}
+.greece-page .greece-time-budget{display:flex;gap:1rem;align-items:baseline;padding:.7rem 1rem;border-bottom:1px solid #d6dfd8;color:var(--gr-ink);margin:1rem 0}
+.greece-page .greece-time-budget .greece-kicker{font:700 .68rem system-ui,sans-serif;letter-spacing:.1em;color:var(--gr-copper);flex:none}
+.greece-page .greece-time-budget p{margin:.2rem 0;line-height:1.6}
+.greece-page .greece-plan-lanes>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.greece-page .greece-plan-lanes article{padding:1.1rem;border:1px solid #d9e0d9;background:#f7f5ed;border-radius:.85rem}
+.greece-page .greece-plan-lanes article small{display:block;color:var(--gr-copper);font:700 .68rem system-ui,sans-serif;letter-spacing:.1em;margin-bottom:.55rem}
+.greece-page .greece-plan-lanes article p{margin:.15rem 0;line-height:1.68;color:#435957}
+.greece-page .greece-booking-rail{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr);gap:1.2rem;align-items:start;padding:1.25rem 1.4rem;background:#e8f0ea;border-radius:1rem;border-left:4px solid var(--gr-copper);margin:2rem 0}
+.greece-page .greece-booking-rail .greece-kicker{color:var(--gr-copper)}
+.greece-page .greece-booking-rail h2{font:500 1.75rem/1.05 Georgia,serif;color:var(--gr-ink);margin:.2rem 0}
+.greece-page .greece-booking-rail>p{line-height:1.68;color:#425a5b;margin:.2rem 0}
+.greece-page .greece-related>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+.greece-page .greece-related>div>a{display:grid;gap:.4rem;text-decoration:none;border:1px solid #d8e0d8;background:#f6f3ea;padding:1rem;border-radius:.8rem}
+.greece-page .greece-related small{color:var(--gr-copper);font:700 .66rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em}
+.greece-page .greece-related strong{font:600 1.08rem Georgia,serif;color:var(--gr-ink)}
+.greece-page .greece-related span{font-size:.84rem;color:#546a69}
+@media(max-width:900px){.greece-page .greece-country-hero,.greece-page .greece-hub-hero,.greece-page .greece-guide-hero{grid-template-columns:1fr;padding:1.5rem}.greece-page .greece-country-hero .greece-diagram,.greece-page .greece-hub-hero .greece-diagram,.greece-page .greece-guide-hero .greece-diagram{max-width:40rem}.greece-page .greece-route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.greece-page .greece-route-shape-grid,.greece-page .greece-gateway-grid{grid-template-columns:1fr 1fr}.greece-page .greece-country-thesis{grid-template-columns:1fr 1fr}.greece-page .greece-condition{grid-template-columns:1fr}.greece-page .greece-condition .greece-diagram{max-width:40rem}}
+@media(max-width:620px){.greece-page .greece-country-hero,.greece-page .greece-hub-hero,.greece-page .greece-guide-hero{padding:1.2rem;border-radius:1rem;gap:1.1rem}.greece-page .greece-country-hero h1,.greece-page .greece-hub-hero h1,.greece-page .greece-guide-hero h1{font-size:clamp(2.35rem,12vw,3.5rem)}.greece-page .greece-deck{font-size:1rem;line-height:1.58}.greece-page .greece-country-thesis,.greece-page .greece-region-grid,.greece-page .greece-route-grid,.greece-page .greece-regional-ledger,.greece-page .greece-transport-grid,.greece-page .greece-route-shape-grid,.greece-page .greece-gateway-grid,.greece-page .greece-field-notes>div,.greece-page .greece-contingency>div,.greece-page .greece-faq-grid,.greece-page .greece-related>div{grid-template-columns:1fr}.greece-page .greece-route-folio ol{grid-template-columns:1fr}.greece-page .greece-route-folio li{padding:.8rem .2rem}.greece-page .greece-booking-rail{grid-template-columns:1fr;padding:1rem}.greece-page .greece-region-card>a{padding:.95rem}.greece-page .greece-diagram svg{min-height:155px}.greece-page .greece-section{margin:2.2rem 0}}
+@media(prefers-reduced-motion:reduce){.greece-page .greece-region-card,.greece-page .greece-route-card{transition:none}.greece-page .greece-region-card:hover,.greece-page .greece-route-card:hover{transform:none}}
+@media(max-width:620px){.greece-page .greece-plan-lanes>div{grid-template-columns:1fr}}
+.greece-page .greece-island-grid,.greece-page .greece-island-gateway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.greece-page .greece-island-choice,.greece-page .greece-island-gateway-grid article{min-width:0;background:var(--gr-paper);border:1px solid #d9dfd7;border-top:3px solid var(--gr-sea);border-radius:.9rem;padding:1.1rem 1.2rem;overflow-wrap:anywhere}
+.greece-page .greece-island-choice h3,.greece-page .greece-island-gateway-grid h3{color:var(--gr-ink);font:500 1.45rem/1.16 Georgia,serif;margin:.3rem 0 .9rem}
+.greece-page .greece-island-choice dl{margin:0;display:grid;gap:.75rem}
+.greece-page .greece-island-choice dl div{padding-top:.65rem;border-top:1px solid #d8dfd7}
+.greece-page .greece-island-choice dt{font:700 .72rem/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gr-copper)}
+.greece-page .greece-island-choice dd{margin:.28rem 0 0;color:#3d5455;line-height:1.62}
+.greece-page .greece-island-gateway-grid article>b{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:#e5eddf;color:var(--gr-ink);font:600 .85rem Georgia,serif}
+.greece-page .greece-island-gateway-grid article p{margin:.45rem 0 0;color:#405959;line-height:1.68}
+.greece-page .greece-crossing-note,.greece-page .greece-sailing-recovery{margin-top:1rem;background:#e9efea;border-left:4px solid var(--gr-copper);border-radius:.25rem .8rem .8rem .25rem;padding:1.1rem 1.25rem;color:#334d50}
+.greece-page .greece-crossing-note h3{margin:.1rem 0 .45rem;color:var(--gr-ink);font:500 1.32rem/1.2 Georgia,serif}
+.greece-page .greece-crossing-note p,.greece-page .greece-sailing-recovery p{max-width:74rem;line-height:1.7}
+.greece-page .greece-crossing-note ul{display:flex;flex-wrap:wrap;gap:.55rem 1.25rem;padding-left:1.2rem;margin:.8rem 0 0}
+.greece-page .greece-crossing-note a{font-weight:650;text-decoration-thickness:1px;text-underline-offset:.2em}
+.greece-page .greece-combination-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.greece-page .greece-combination-grid article{min-width:0;padding:1.1rem;background:#f6f3ea;border:1px solid #d9dfd7;border-radius:.85rem;overflow-wrap:anywhere}
+.greece-page .greece-combination-grid h3{margin:.1rem 0 .55rem;color:var(--gr-ink);font:500 1.28rem/1.2 Georgia,serif}
+.greece-page .greece-combination-grid p{margin:0;color:#435957;line-height:1.68}
+@media(max-width:900px){.greece-page .greece-combination-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.greece-page .greece-island-grid,.greece-page .greece-island-gateway-grid{grid-template-columns:1fr}.greece-page .greece-crossing-note{padding:1rem}.greece-page .greece-island-choice{padding:1rem}}

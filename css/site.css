@@ -1347,6 +1347,7 @@ body[data-page="japan"] .destination-copy p + p { margin-top: .5rem; }
 .status-card { padding: 1.5rem; border: 1px solid var(--line); background: #fff; border-radius: 1rem; box-shadow: var(--shadow-sm); }
 
 @media (min-width: 1361px) {
+  .header-inner { width: min(calc(100% - 2rem), 1600px); }
   .desktop-nav { gap: 0; margin-left: .5rem; }
   .nav-link { padding-right: .6rem; padding-left: .6rem; }
 }
